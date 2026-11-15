@@ -10,7 +10,7 @@ Genesis turns any computer into a self contained command center that keeps worki
 
 ![The Genesis dashboard: an offline map with the nearest water, medical care, fuel, power and shelter listed by distance and bearing](docs/img/dashboard.png)
 
-The repository holds the brain: the catalog and the tools. Your drive holds the vault: the content itself, from 22 GB to more than 2 TB depending on the tier you pick.
+The repository holds the brain: the catalog and the tools. Your drive holds the vault: the content itself, from 23 GB to more than 2 TB depending on the tier you pick.
 
 ## What is in the catalog
 
@@ -19,8 +19,8 @@ The repository holds the brain: the catalog and the tools. Your drive holds the 
 | Pack | What you get |
 |---|---|
 | **Knowledge** | Wikipedia in 318 languages, Wikivoyage, Wikibooks, Khan Academy, Stack Exchange, textbooks |
-| **Medical** | WikiMed in 26 languages, MDWiki, MedlinePlus, NHS medicines, military medicine, veterinary references |
-| **Survival** | US Army field manuals, Ready.gov, water, food and post disaster libraries, iFixit repair guides, the Survivor Library, primary source manuals from EPA and FAA |
+| **Medical** | WikiMed in 26 languages, MDWiki, MedlinePlus, NHS medicines, military medicine, veterinary references, the WHO monographs on medicinal plants |
+| **Survival** | US Army field manuals, Ready.gov, water, food and post disaster libraries, iFixit repair guides, the Survivor Library, and a field skills shelf of primary source manuals (see below) |
 | **Maps** | The whole planet as offline vector maps, cut to any region in minutes, plus worldwide survival layers |
 | **Scripture** | 1,296 Bible translations in 1,024 languages from eBible.org, starting with the Hebrew, Greek, Latin and Coptic sources |
 | **Library** | Project Gutenberg in about one hundred languages, Wikisource, sheet music |
@@ -38,7 +38,7 @@ Tiers are cumulative. Sizes are for English content on Linux; more languages add
 
 | Tier | Size | For |
 |---|---|---|
-| **seed** | about 22 GB | A USB stick or a Raspberry Pi. The essentials in every pack. |
+| **seed** | about 23 GB | A USB stick or a Raspberry Pi. The essentials in every pack. |
 | **ark** | about 750 GB | A 1 TB drive. Full Wikipedia with images, field manuals, every toolchain. |
 | **eden** | about 2 TB | Everything, including the full detail planet map and the largest libraries. |
 
@@ -77,6 +77,26 @@ genesis poi nearest --lat 43.7384 --lon 7.4246 --cat water
 ```
 
 The dashboard shows the same thing on a map and lists the nearest of each need by distance and compass bearing, so you can walk there with a compass.
+
+## Field skills
+
+The seed tier carries a shelf of manuals from the agencies that wrote them, as plain PDF files the dashboard serves to any phone or laptop on the hotspot.
+
+| Skill | What is on the shelf |
+|---|---|
+| Staying alive | The US Army survival manual: water, food, fire, shelter, medicine, movement |
+| Plants | Wild Edibles of Missouri, a guide to edible and poisonous mushrooms, the USDA guide to poisonous plants |
+| Plant medicine | The four volumes of WHO monographs on medicinal plants: uses, evidence, doses, dangers |
+| Game and fish | The North American trapper education manual, field dressing and storing meat, basic fishing |
+| Water | WHO technical notes on making water safe, cleaning wells and tanks, and sanitation |
+| Finding your way | Basic Land Navigation from the National Wildfire Coordinating Group: maps, compass, GPS |
+| The sky as clock and calendar | Printable star wheels for seven latitudes, Stellarium for the desktop, Sky Map for the phone |
+
+```sh
+genesis fetch --tag fieldcraft        # only this shelf, about 0.7 GB
+```
+
+A star wheel shows which constellations are up at any date and hour. Turn it until it matches the sky: with the date you read the hour, with the hour you read the date.
 
 ## Maps of anywhere
 
@@ -147,7 +167,7 @@ Full credits in [CREDITS.md](CREDITS.md).
 
 Genesis is new. This is what has and has not been proven.
 
-**Tested** in continuous integration and against live sources: the catalog resolvers, downloads with checksum verification, survival layer builds with osmium, map extraction from the live planet build, the dashboard in a headless browser, its API, and the compose files.
+**Tested** in continuous integration and against live sources: the catalog resolvers, downloads with checksum verification, survival layer builds with osmium, map extraction from the live planet build, the dashboard in a headless browser, its API, the compose files, the core services started from a real vault, and the published world data fetched and queried on a clean machine.
 
 **Not yet tested on real hardware:** the radio profiles with an actual SDR, the NVIDIA GPU path, a Raspberry Pi install, and long downloads in the hundreds of gigabytes. Reports are welcome.
 
@@ -155,6 +175,7 @@ Genesis is new. This is what has and has not been proven.
 
 * **Radio.** Listening is legal for most people in most places. Transmitting on amateur and GMRS frequencies needs a license. Know your local law.
 * **Medical.** The medical library and the medical AI models are references. They can be wrong and they do not replace training or a clinician.
+* **Wild food and plant medicine.** Never eat a plant or mushroom you cannot name with certainty. A guide written for one region can mislead in another, and a plant medicine can harm at the wrong dose or beside other medicine.
 * **Security.** The services have no login by default. Run Genesis on a network you control. Never expose it to the internet.
 * **Licenses.** The code here is MIT. Every catalog item keeps its own license, shown in the catalog. Map data is © OpenStreetMap contributors under the ODbL.
 
