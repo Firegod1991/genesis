@@ -2,6 +2,10 @@
 
 **Everything you need to begin again.**
 
+[![CI](https://github.com/Firegod1991/genesis/actions/workflows/ci.yml/badge.svg)](https://github.com/Firegod1991/genesis/actions/workflows/ci.yml)
+[![Monthly refresh](https://github.com/Firegod1991/genesis/actions/workflows/refresh.yml/badge.svg)](https://github.com/Firegod1991/genesis/actions/workflows/refresh.yml)
+[![Dashboard assets](https://github.com/Firegod1991/genesis/actions/workflows/assets.yml/badge.svg)](https://github.com/Firegod1991/genesis/actions/workflows/assets.yml)
+
 Genesis turns any computer into a self contained command center that keeps working when the internet, the power grid and the phone network do not. One catalog tracks the newest version of everything worth keeping: the world's knowledge, maps of the whole planet, where the water, hospitals, fuel and power are, the Bible from its ancient source languages to today, radio and mesh communications, local AI, programming toolchains and bootable operating systems. One command downloads and verifies it. A robot refreshes the catalog every month.
 
 ![The Genesis dashboard: an offline map with the nearest water, medical care, fuel, power and shelter listed by distance and bearing](docs/img/dashboard.png)
@@ -143,7 +147,7 @@ Full credits in [CREDITS.md](CREDITS.md).
 
 Genesis is new. This is what has and has not been proven.
 
-**Tested** in continuous integration and against live sources: the catalog resolvers, downloads with checksum verification, survival layer builds with osmium, map extraction from the live planet build, the dashboard and its API, the compose files.
+**Tested** in continuous integration and against live sources: the catalog resolvers, downloads with checksum verification, survival layer builds with osmium, map extraction from the live planet build, the dashboard in a headless browser, its API, and the compose files.
 
 **Not yet tested on real hardware:** the radio profiles with an actual SDR, the NVIDIA GPU path, a Raspberry Pi install, and long downloads in the hundreds of gigabytes. Reports are welcome.
 

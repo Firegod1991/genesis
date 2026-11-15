@@ -112,8 +112,9 @@ def _download(url, dest, size=None):
         os.replace(part, dest)
         return
     if shutil.which("curl"):
-        cmd = ["curl", "-fL", "--retry", "5", "--retry-delay", "5", "--connect-timeout", "30", "-C", "-",
-               "-A", USER_AGENT, "-o", part, url]
+        # A link that stalls is dropped after two minutes below 1 KB/s and resumed, not waited on forever.
+        cmd = ["curl", "-fL", "--retry", "5", "--retry-delay", "5", "--connect-timeout", "30",
+               "--speed-limit", "1024", "--speed-time", "120", "-C", "-", "-A", USER_AGENT, "-o", part, url]
         cmd.insert(1, "--progress-bar" if sys.stderr.isatty() else "-sS")
         rc = subprocess.call(cmd)
         if rc == 33:  # server cannot resume: start over once
