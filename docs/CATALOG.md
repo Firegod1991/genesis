@@ -90,14 +90,14 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Git for Windows | `git_for_windows` | ark | 2.56.1.windows.1 | 66.9 MB | GPL 2.0 |
 | ripgrep | `ripgrep` | ark | 15.2.0 | 7.7 MB | MIT or Unlicense |
 | jq | `jq` | ark | 1.8.2 | 5.9 MB | MIT |
-| DuckDB | `duckdb` | ark | 1.5.6 | 89.5 MB | MIT |
+| DuckDB | `duckdb` | ark | 2.0.0 | 107.0 MB | MIT |
 | Pandoc | `pandoc` | ark | 3.14 | 163.2 MB | GPL 2.0 |
 | Typst | `typst` | ark | 0.15.1 | 70.6 MB | Apache 2.0 |
 | Python Documentation | `docs.python.org_en_all` | ark | 2026-08-28 | 4.0 GB |  |
 | OpenWRT | `openwrt.org_en_all` | ark | 2026-07 | 519.9 MB |  |
 | Algorithms | `jeffe.cs.illinois.edu_en_all` | ark | 2026-09 | 516.5 MB |  |
 | Open Data Structures | `opendatastructures.org_en_all` | ark | 2026-05 | 116.4 MB |  |
-| LLVM and Clang | `llvm` | eden | 23.1.5 | 5.9 GB | Apache 2.0 with LLVM exceptions |
+| LLVM and Clang | `llvm` | eden | 23.1.5 | 6.3 GB | Apache 2.0 with LLVM exceptions |
 | Stack Overflow | `stackoverflow.com_en_all` | eden | 2026-07 | 114.9 GB |  |
 
 <details><summary><b>devdocs_all</b>: 243 items, 666.1 MB, tier seed</summary>

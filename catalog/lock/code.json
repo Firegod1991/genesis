@@ -6046,43 +6046,43 @@
    "version": "2026-10"
   },
   "duckdb": {
-   "date": "2026-09-28",
+   "date": "2026-10-21",
    "dest": "code",
    "files": [
     {
-     "filename": "duckdb_cli-linux-amd64.zip",
+     "filename": "duckdb-cli-linux-amd64.tar.gz",
      "platform": "linux-x64",
-     "sha256": "6e89deac1ebbc36eed0291caf8b567b030c7b86ac35998f71854e22b3c5d5e2f",
-     "size": 21294383,
-     "url": "https://github.com/duckdb/duckdb/releases/download/v1.5.6/duckdb_cli-linux-amd64.zip"
+     "sha256": "c6507206baf7793c6013dbd82368469a45f20dc0e17a6f92f204602f652ed2bc",
+     "size": 24424037,
+     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.0/duckdb-cli-linux-amd64.tar.gz"
     },
     {
-     "filename": "duckdb_cli-linux-arm64.zip",
+     "filename": "duckdb-cli-linux-arm64.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "c544e92c9b7c31fc53c2139802cabd8e2d1b2b3e3f933117f31611239c1402db",
-     "size": 19297624,
-     "url": "https://github.com/duckdb/duckdb/releases/download/v1.5.6/duckdb_cli-linux-arm64.zip"
+     "sha256": "859e1875d2a9515fbb4bf8871061437a14af82320da68c753f094c4b776348fe",
+     "size": 22306407,
+     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.0/duckdb-cli-linux-arm64.tar.gz"
     },
     {
-     "filename": "duckdb_cli-windows-amd64.zip",
+     "filename": "duckdb-cli-windows-amd64.tar.gz",
      "platform": "windows-x64",
-     "sha256": "798eae475d07c645ff3b914f7b0e676d06502b5412dd7552638fafed81f9e916",
-     "size": 12910895,
-     "url": "https://github.com/duckdb/duckdb/releases/download/v1.5.6/duckdb_cli-windows-amd64.zip"
+     "sha256": "91663c2f36c2a334b0e5e639006d8c29c29e013af0c477d80bb931df68870312",
+     "size": 19663611,
+     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.0/duckdb-cli-windows-amd64.tar.gz"
     },
     {
-     "filename": "duckdb_cli-osx-universal.zip",
+     "filename": "duckdb-cli-osx-universal.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "80a80c68736bd7dea53e8b02447e9759db0c8596ea156476ba396c44f54c5810",
-     "size": 35987673,
-     "url": "https://github.com/duckdb/duckdb/releases/download/v1.5.6/duckdb_cli-osx-universal.zip"
+     "sha256": "8a8f67e7c7f7d1392fa63ba3971948391392fe2a25fca63e7008e33c50beb4c2",
+     "size": 40639690,
+     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.0/duckdb-cli-osx-universal.tar.gz"
     }
    ],
    "kind": "archive",
    "license": "MIT",
    "tier": "ark",
    "title": "DuckDB",
-   "version": "1.5.6"
+   "version": "2.0.0"
   },
   "elixir": {
    "date": "2026-10-29",
@@ -7768,11 +7768,11 @@
      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/LLVM-23.1.5-Linux-ARM64.tar.xz"
     },
     {
-     "filename": "LLVM-22.1.8-win64.exe",
+     "filename": "clang+llvm-23.1.5-x86_64-pc-windows-msvc.tar.xz",
      "platform": "windows-x64",
-     "sha256": "16e5709785fef73c854646241c4a92c5cd574318d1b33c63330dd7721903e55c",
-     "size": 455545840,
-     "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/LLVM-22.1.8-win64.exe"
+     "sha256": "62fdada7f6fa2b73856486dfbbdba3d2c1882991621615bcb55c60207611c6d4",
+     "size": 901309624,
+     "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/clang%2Bllvm-23.1.5-x86_64-pc-windows-msvc.tar.xz"
     },
     {
      "filename": "LLVM-23.1.5-macOS-ARM64.tar.xz",
