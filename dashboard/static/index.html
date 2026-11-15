@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genesis</title>
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="rail" aria-label="Sections">
+  <a class="mark" href="#map">Genesis</a>
+  <a href="#map" data-view="map">Map</a>
+  <a href="#library" data-view="library">Library</a>
+  <a href="#scripture" data-view="scripture">Scripture</a>
+  <a href="#radio" data-view="radio">Radio</a>
+  <a href="#services" data-view="services">Services</a>
+  <a href="#system" data-view="system">System</a>
+  <button id="night" type="button" aria-pressed="false" title="Red light keeps your eyes adjusted to the dark">Night vision</button>
+</nav>
+
+<main>
+  <section id="view-map" class="view">
+    <form id="where" class="where" autocomplete="off">
+      <label for="pos">Your position</label>
+      <input id="pos" name="pos" inputmode="text" placeholder="43.7384, 7.4246 or click the map" spellcheck="false">
+      <button type="submit">Find nearest</button>
+      <output id="grid" title="Maidenhead grid locator"></output>
+    </form>
+    <div id="map" class="map" role="application" aria-label="Offline map"></div>
+    <div class="layers" id="layers" aria-label="Map layers"></div>
+    <p id="maphint" class="hint" hidden></p>
+    <table class="bearings" id="bearings" aria-live="polite">
+      <caption>Nearest to you</caption>
+      <thead><tr><th scope="col">Need</th><th scope="col">Place</th><th scope="col" class="num">Distance</th><th scope="col" class="num">Bearing</th></tr></thead>
+      <tbody><tr><td colspan="4" class="empty">Set your position to list the nearest water, care, fuel, power and shelter.</td></tr></tbody>
+    </table>
+  </section>
+
+  <section id="view-library" class="view" hidden>
+    <h1>Library</h1>
+    <p class="lede" id="library-lede"></p>
+    <div id="library-open" class="actions"></div>
+    <div id="library-packs"></div>
+    <h2>Documents</h2><ul id="library-docs" class="plain"></ul>
+    <h2>Phone apps</h2>
+    <p class="hint">Open this page on an Android phone connected to the box, then tap an app to install it.</p>
+    <ul id="library-apps" class="plain"></ul>
+  </section>
+
+  <section id="view-scripture" class="view" hidden>
+    <h1>Scripture</h1>
+    <p class="lede" id="scripture-lede"></p>
+    <input id="scripture-filter" type="search" placeholder="Filter by language or title" aria-label="Filter translations">
+    <div id="scripture-list"></div>
+  </section>
+
+  <section id="view-radio" class="view" hidden>
+    <h1>Radio</h1>
+    <p class="lede" id="radio-note"></p>
+    <div id="radio-open" class="actions"></div>
+    <div id="radio-tables"></div>
+    <h2>Phonetic alphabet and Morse</h2>
+    <div id="radio-alpha" class="alpha"></div>
+    <h2>Calling for help</h2>
+    <table id="radio-signals"><tbody></tbody></table>
+  </section>
+
+  <section id="view-services" class="view" hidden>
+    <h1>Services</h1>
+    <p class="lede">Everything this box runs. Start more with <code>genesis up</code> followed by a profile name.</p>
+    <table id="services-table">
+      <thead><tr><th scope="col">Service</th><th scope="col">What it does</th><th scope="col">Profile</th><th scope="col">State</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="view-system" class="view" hidden>
+    <h1>System</h1>
+    <dl id="system-list" class="facts"></dl>
+    <h2>Survival layers</h2>
+    <dl id="poi-stats" class="facts"></dl>
+  </section>
+</main>
+
+<script src="vendor/pmtiles.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

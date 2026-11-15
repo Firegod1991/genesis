@@ -1,0 +1,23 @@
+[
+ {"id": "kiwix", "name": "Library", "about": "Wikipedia, medical, survival and code references", "profile": "core", "host": "kiwix", "port": 8080, "public": 8081},
+ {"id": "files", "name": "Files", "about": "Browse everything in the vault", "profile": "core", "host": "files", "port": 80, "public": 8082},
+ {"id": "webui", "name": "AI assistant", "about": "Chat with local models and your own documents", "profile": "ai", "host": "webui", "port": 8080, "public": 8083},
+ {"id": "translate", "name": "Translate", "about": "Offline translation between languages", "profile": "ai", "host": "translate", "port": 5000, "public": 8091},
+ {"id": "cyberchef", "name": "CyberChef", "about": "Encode, decode, hash, convert", "profile": "tools", "host": "cyberchef", "port": 80, "public": 8084},
+ {"id": "ittools", "name": "IT Tools", "about": "Converters and network calculators", "profile": "tools", "host": "ittools", "port": 80, "public": 8085},
+ {"id": "notes", "name": "Notes", "about": "Shared notebook on the local network", "profile": "tools", "host": "notes", "port": 8080, "public": 8086},
+ {"id": "pdf", "name": "PDF tools", "about": "Merge, split, scan and convert documents", "profile": "tools", "host": "pdf", "port": 8080, "public": 8087},
+ {"id": "inventory", "name": "Inventory", "about": "Track supplies, tools and where they are", "profile": "tools", "host": "inventory", "port": 7745, "public": 8090},
+ {"id": "kolibri", "name": "School", "about": "Courses with progress tracking", "profile": "library", "host": "kolibri", "port": 8080, "public": 8088},
+ {"id": "calibre", "name": "Ebooks", "about": "Your ebook shelf", "profile": "library", "host": "calibre", "port": 8083, "public": 8089},
+ {"id": "jellyfin", "name": "Media", "about": "Video and music for the household", "profile": "library", "host": "jellyfin", "port": 8096, "public": 8096},
+ {"id": "devdocs", "name": "DevDocs", "about": "Documentation for every language", "profile": "dev", "host": "devdocs", "port": 9292, "public": 8092},
+ {"id": "code", "name": "Code editor", "about": "VS Code in the browser", "profile": "dev", "host": "code", "port": 8080, "public": 8093},
+ {"id": "git", "name": "Git", "about": "Host repositories on the box", "profile": "dev", "host": "git", "port": 3000, "public": 8094},
+ {"id": "chat", "name": "Chat", "about": "Text chat for everyone on the hotspot", "profile": "comms", "host": "chat", "port": 9000, "public": 8095},
+ {"id": "meshtastic", "name": "Meshtastic", "about": "Message over LoRa mesh radios", "profile": "comms", "host": "meshtastic", "port": 8080, "public": 8097},
+ {"id": "openwebrx", "name": "Radio receiver", "about": "Tune and decode with an SDR dongle", "profile": "radio", "host": "openwebrx", "port": 8073, "public": 8073},
+ {"id": "adsb", "name": "Aircraft", "about": "Live aircraft from ADS-B", "profile": "adsb", "host": "adsb", "port": 80, "public": 8098},
+ {"id": "ais", "name": "Ships", "about": "Live vessels from AIS", "profile": "ais", "host": "ais", "port": 8100, "public": 8099},
+ {"id": "routing", "name": "Routing engine", "about": "Turn by turn directions for the map", "profile": "routing", "host": "routing", "port": 8002, "public": 8002}
+]

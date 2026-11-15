@@ -1,0 +1,64 @@
+{
+ "note": "United States allocations unless marked. Listening is open to everyone in most places. Transmitting needs the right license, except in a real emergency to life where no other communication is available. Check your local rules.",
+ "tables": [
+  {"title": "Distress and calling", "columns": ["Frequency", "Mode", "Use"], "rows": [
+   ["121.500 MHz", "AM", "Aircraft emergency, monitored worldwide"],
+   ["156.800 MHz", "FM", "Marine channel 16: distress, safety and calling"],
+   ["27.065 MHz", "AM", "CB channel 9: emergency"],
+   ["27.185 MHz", "AM", "CB channel 19: highway traffic"],
+   ["462.675 MHz", "FM", "GMRS channel 20: widely used for travel and emergencies"],
+   ["146.520 MHz", "FM", "Amateur 2 m national simplex calling"],
+   ["446.000 MHz", "FM", "Amateur 70 cm national simplex calling"],
+   ["52.525 MHz", "FM", "Amateur 6 m simplex calling"],
+   ["14.300 MHz", "USB", "Amateur HF emergency centre of activity, maritime mobile nets"],
+   ["7.240 or 7.275 MHz", "LSB", "Amateur 40 m emergency centre of activity (Americas)"],
+   ["3.985 or 3.750 MHz", "LSB", "Amateur 80 m emergency centre of activity (Americas)"],
+   ["14.325 MHz", "USB", "Hurricane Watch Net (7.268 MHz LSB at night)"],
+   ["406.0 to 406.1 MHz", "Digital", "Satellite distress beacons. Never transmit here."]]},
+  {"title": "Weather radio (United States and Canada)", "columns": ["Frequency", "Mode", "Use"], "rows": [
+   ["162.400 MHz", "FM", "NOAA Weather Radio"], ["162.425 MHz", "FM", "NOAA Weather Radio"],
+   ["162.450 MHz", "FM", "NOAA Weather Radio"], ["162.475 MHz", "FM", "NOAA Weather Radio"],
+   ["162.500 MHz", "FM", "NOAA Weather Radio"], ["162.525 MHz", "FM", "NOAA Weather Radio"],
+   ["162.550 MHz", "FM", "NOAA Weather Radio"]]},
+  {"title": "FRS and GMRS", "columns": ["Channel", "Frequency", "Limits"], "rows": [
+   ["1", "462.5625 MHz", "FRS 2 W, GMRS 5 W"], ["2", "462.5875 MHz", "FRS 2 W, GMRS 5 W"],
+   ["3", "462.6125 MHz", "FRS 2 W, GMRS 5 W"], ["4", "462.6375 MHz", "FRS 2 W, GMRS 5 W"],
+   ["5", "462.6625 MHz", "FRS 2 W, GMRS 5 W"], ["6", "462.6875 MHz", "FRS 2 W, GMRS 5 W"],
+   ["7", "462.7125 MHz", "FRS 2 W, GMRS 5 W"],
+   ["8", "467.5625 MHz", "0.5 W"], ["9", "467.5875 MHz", "0.5 W"], ["10", "467.6125 MHz", "0.5 W"],
+   ["11", "467.6375 MHz", "0.5 W"], ["12", "467.6625 MHz", "0.5 W"], ["13", "467.6875 MHz", "0.5 W"],
+   ["14", "467.7125 MHz", "0.5 W"],
+   ["15", "462.5500 MHz", "FRS 2 W, GMRS 50 W"], ["16", "462.5750 MHz", "FRS 2 W, GMRS 50 W"],
+   ["17", "462.6000 MHz", "FRS 2 W, GMRS 50 W"], ["18", "462.6250 MHz", "FRS 2 W, GMRS 50 W"],
+   ["19", "462.6500 MHz", "FRS 2 W, GMRS 50 W"], ["20", "462.6750 MHz", "FRS 2 W, GMRS 50 W"],
+   ["21", "462.7000 MHz", "FRS 2 W, GMRS 50 W"], ["22", "462.7250 MHz", "FRS 2 W, GMRS 50 W"]],
+   "note": "FRS needs no license. GMRS needs an FCC license, with no exam."},
+  {"title": "MURS (no license)", "columns": ["Channel", "Frequency", "Limits"], "rows": [
+   ["1", "151.820 MHz", "2 W"], ["2", "151.880 MHz", "2 W"], ["3", "151.940 MHz", "2 W"],
+   ["4", "154.570 MHz", "2 W"], ["5", "154.600 MHz", "2 W"]]},
+  {"title": "Marine VHF", "columns": ["Channel", "Frequency", "Use"], "rows": [
+   ["16", "156.800 MHz", "Distress, safety and calling"], ["9", "156.450 MHz", "Recreational calling"],
+   ["13", "156.650 MHz", "Bridge to bridge navigation"], ["22A", "157.100 MHz", "Coast Guard liaison"],
+   ["70", "156.525 MHz", "Digital selective calling only, no voice"]]},
+  {"title": "Mesh, Europe and space", "columns": ["Frequency", "Mode", "Use"], "rows": [
+   ["906.875 MHz", "LoRa", "Meshtastic default channel, United States"],
+   ["869.525 MHz", "LoRa", "Meshtastic default channel, Europe"],
+   ["446.00625 to 446.19375 MHz", "FM", "PMR446: 16 license free channels in Europe, 12.5 kHz apart"],
+   ["145.800 MHz", "FM", "International Space Station voice downlink"],
+   ["145.825 MHz", "Packet", "International Space Station APRS digipeater"]]},
+  {"title": "Time signals", "columns": ["Frequency", "Mode", "Use"], "rows": [
+   ["2.5, 5, 10, 15, 20 MHz", "AM", "WWV and WWVH: exact time, every minute"],
+   ["3.330, 7.850, 14.670 MHz", "AM", "CHU Canada: exact time"]]}
+ ],
+ "phonetic": {"A": "Alfa", "B": "Bravo", "C": "Charlie", "D": "Delta", "E": "Echo", "F": "Foxtrot", "G": "Golf", "H": "Hotel", "I": "India", "J": "Juliett", "K": "Kilo", "L": "Lima", "M": "Mike", "N": "November", "O": "Oscar", "P": "Papa", "Q": "Quebec", "R": "Romeo", "S": "Sierra", "T": "Tango", "U": "Uniform", "V": "Victor", "W": "Whiskey", "X": "Xray", "Y": "Yankee", "Z": "Zulu"},
+ "morse": {"A": ".-", "B": "-...", "C": "-.-.", "D": "-..", "E": ".", "F": "..-.", "G": "--.", "H": "....", "I": "..", "J": ".---", "K": "-.-", "L": ".-..", "M": "--", "N": "-.", "O": "---", "P": ".--.", "Q": "--.-", "R": ".-.", "S": "...", "T": "-", "U": "..-", "V": "...-", "W": ".--", "X": "-..-", "Y": "-.--", "Z": "--..", "1": ".----", "2": "..---", "3": "...--", "4": "....-", "5": ".....", "6": "-....", "7": "--...", "8": "---..", "9": "----.", "0": "-----"},
+ "signals": [
+  ["SOS in Morse", "... --- ... sent as one group, by sound, light or radio"],
+  ["Voice distress", "Say MAYDAY three times, then who you are, where you are, what is wrong, how many people"],
+  ["Three of anything", "Three whistle blasts, three fires or three shots is a widely recognized call for help"],
+  ["Ground to air: V", "Require assistance"],
+  ["Ground to air: X", "Require medical assistance"],
+  ["Ground to air: N / Y", "No / Yes"],
+  ["Ground to air: arrow", "Proceeding in this direction"]
+ ]
+}
