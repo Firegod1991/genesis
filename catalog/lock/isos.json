@@ -48,20 +48,20 @@
    "version": "2026.11.01"
   },
   "clonezilla": {
-   "date": "2024-01-16",
+   "date": "2026-09-13",
    "dest": "isos",
    "files": [
     {
-     "filename": "clonezilla-live-3.1.2-9-amd64.zip",
-     "md5": "6ce567c7a626463eda61859ddc0c1743",
-     "size": 424968161,
-     "url": "https://downloads.sourceforge.net/project/clonezilla/clonezilla_live_stable/3.1.2-9/clonezilla-live-3.1.2-9-amd64.zip"
+     "filename": "clonezilla-live-3.3.3-37-amd64.iso",
+     "md5": "0a5a4a795ce9cfb7059870290bcbc421",
+     "size": 505413632,
+     "url": "https://downloads.sourceforge.net/project/clonezilla/clonezilla_live_stable/3.3.3-37/clonezilla-live-3.3.3-37-amd64.iso"
     }
    ],
    "kind": "iso",
    "tier": "ark",
    "title": "Clonezilla Live (disk imaging)",
-   "version": "3.1.2-9"
+   "version": "3.3.3-37"
   },
   "debian_dvd": {
    "dest": "isos",

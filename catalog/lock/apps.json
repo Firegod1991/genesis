@@ -1,22 +1,37 @@
 {
  "items": {
   "aprsdroid": {
-   "error": "GitHub release lookup failed for ge0rg/aprsdroid: HTTP 404 for https://api.github.com/repos/ge0rg/aprsdroid/releases/latest",
+   "date": "2025-12-21",
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "APRSdroid-current.apk",
+     "platform": "android",
+     "size": 2757095,
+     "url": "https://aprsdroid.org/download/APRSdroid-current.apk"
+    }
+   ],
    "kind": "app",
-   "status": "error",
+   "license": "GPL 2.0",
+   "note": "The publisher's own link to its current build.",
+   "tags": [
+    "radio",
+    "ham"
+   ],
    "tier": "ark",
-   "title": "APRSdroid"
+   "title": "APRSdroid",
+   "version": "2025-12-21"
   },
   "bitchat_android": {
    "date": "2026-10-28",
    "dest": "apps",
    "files": [
     {
-     "filename": "bitchat-android-x86_64.apk",
+     "filename": "bitchat-android-universal.apk",
      "platform": "android",
-     "sha256": "c7c56996abe66b284b3a54e0e72e216add1a2042d43603164a73e471d98e347b",
-     "size": 21947933,
-     "url": "https://github.com/permissionlesstech/bitchat-android/releases/download/v2.2.0/bitchat-android-x86_64.apk"
+     "sha256": "0ae35abafca2d727755372aa7ecc715e17b31b9fc4d7064f1a6941422f75a824",
+     "size": 52013804,
+     "url": "https://github.com/permissionlesstech/bitchat-android/releases/download/v2.2.0/bitchat-android-universal.apk"
     }
    ],
    "kind": "app",
@@ -108,15 +123,16 @@
    "dest": "apps",
    "files": [
     {
-     "filename": "v3.14.1-x86_64-standalone.apk",
+     "filename": "v3.14.1-arm64-v8a-standalone.apk",
      "platform": "android",
-     "sha256": "3aa782f421b9aa2c1dbdb7baef000fd766f2cd7adfebcad792253dcef1657ddf",
-     "size": 68754256,
-     "url": "https://github.com/kiwix/kiwix-android/releases/download/v3.14.1/v3.14.1-x86_64-standalone.apk"
+     "sha256": "62a9910be260030e642465c17d642537e6ee4ee5f2d4596c248267c2766a88b8",
+     "size": 70366062,
+     "url": "https://github.com/kiwix/kiwix-android/releases/download/v3.14.1/v3.14.1-arm64-v8a-standalone.apk"
     }
    ],
    "kind": "app",
    "license": "GPL 3.0",
+   "note": "Phones need the arm64 or universal build, not the emulator one.",
    "tags": [
     "reader"
    ],

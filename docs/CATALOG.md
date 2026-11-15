@@ -7,8 +7,8 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
 | seed | 348 | 21.8 GB | 42 |
-| ark | 588 | 758.2 GB | 84 |
-| eden | 778 | 2.0 TB | 102 |
+| ark | 589 | 758.3 GB | 84 |
+| eden | 779 | 2.0 TB | 102 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -42,15 +42,16 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Offline Survival Manual | `survival_manual` | seed | 5.0.0 | 8.1 MB | GPL 3.0 |
 | Meshtastic | `meshtastic_android` | seed | 2.8.3 (29322724) fdroid | 45.2 MB | GPL 3.0 |
 | Briar (messaging over Bluetooth, WiFi and Tor) | `briar` | seed | 1.5.24 | 50.7 MB | GPL 3.0 |
-| Kiwix (offline Wikipedia reader) | `kiwix_android` | seed | 3.14.1 | 68.8 MB | GPL 3.0 |
+| Kiwix (offline Wikipedia reader) | `kiwix_android` | seed | 3.14.1 | 70.4 MB | GPL 3.0 |
 | VLC | `vlc_android` | seed | 3.7.2 | 51.5 MB | GPL 2.0 |
 | KeePassDX (password vault) | `keepassdx` | seed | 4.5.8 | 16.8 MB | GPL 3.0 |
 | OsmAnd (offline maps, contour lines, routing) | `osmand` | ark | 5.4.10 | 161.9 MB | GPL 3.0 |
 | CoMaps (community offline maps) | `comaps` | ark | 2026.10.05-19-FDroid | 70.5 MB | Apache 2.0 |
 | Termux (Linux terminal) | `termux` | ark | 0.118.3 | 113.9 MB | GPL 3.0 |
 | NewPipe (save video while the internet lasts) | `newpipe` | ark | 0.29.3 | 17.0 MB | GPL 3.0 |
-| bitchat (Bluetooth mesh chat) | `bitchat_android` | ark | 2.2.0 | 21.9 MB | Unlicense |
+| bitchat (Bluetooth mesh chat) | `bitchat_android` | ark | 2.2.0 | 52.0 MB | Unlicense |
 | Rattlegram (text over any voice radio) | `rattlegram` | ark | 1.19 | 7.7 MB | BSD Zero Clause |
+| APRSdroid | `aprsdroid` | ark | 2025-12-21 | 2.8 MB | GPL 2.0 |
 
 ## Code
 
@@ -472,7 +473,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Arch Linux | `arch` | ark | 2026.11.01 | 1.3 GB |  |
 | Raspberry Pi OS with desktop (64 bit) | `raspios_desktop` | ark | 2026-10-06 | 1.4 GB |  |
 | OpenWrt (x86 64 router image) | `openwrt_x86` | ark | 25.12.6 | 13.8 MB |  |
-| Clonezilla Live (disk imaging) | `clonezilla` | ark | 3.1.2-9 | 425.0 MB |  |
+| Clonezilla Live (disk imaging) | `clonezilla` | ark | 3.3.3-37 | 505.4 MB |  |
 | Rescuezilla (graphical disk imaging) | `rescuezilla` | ark | 2.6.2 | 1.6 GB |  |
 | Kali Linux installer | `kali_installer` | eden | 2026.3 | 5.0 GB |  |
 | Fedora Workstation | `fedora_workstation` | eden | 45 | 2.9 GB |  |

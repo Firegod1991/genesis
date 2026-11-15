@@ -3,38 +3,31 @@
 | Pack | Items | New | Updated | Removed | Failed |
 |---|---|---|---|---|---|
 | ai | 15 | 0 | 0 | 0 | 0 |
-| apps | 16 | 0 | 0 | 0 | 1 |
-| code | 375 | 0 | 5 | 0 | 0 |
-| isos | 24 | 0 | 0 | 0 | 0 |
+| apps | 16 | 0 | 1 | 0 | 0 |
+| code | 375 | 0 | 0 | 0 | 0 |
+| isos | 24 | 0 | 1 | 0 | 0 |
 | knowledge | 689 | 0 | 0 | 0 | 0 |
 | library | 249 | 0 | 0 | 0 | 0 |
 | maps | 6 | 0 | 0 | 0 | 2 |
 | medical | 38 | 0 | 0 | 0 | 0 |
-| radio | 28 | 0 | 3 | 0 | 1 |
+| radio | 28 | 0 | 0 | 0 | 1 |
 | scripture | 1300 | 0 | 0 | 0 | 0 |
 | services | 25 | 0 | 0 | 0 | 0 |
 | survival | 44 | 0 | 0 | 0 | 0 |
 | tools | 15 | 0 | 0 | 0 | 1 |
 
-## Updated in code
+## Updated in apps
 
-* `bun`: bun-v1.4.4 to 1.4.4
-* `duckdb`: ? to 1.5.6
-* `jq`: jq-1.8.2 to 1.8.2
-* `llvm`: llvmorg-23.1.5 to 23.1.5
-* `odin`: dev-2026-11a to 2026-11a
+* `aprsdroid`: ? to 2025-12-21
 
-## Updated in radio
+## Updated in isos
 
-* `meshcore_firmware`: companion-v1.18.0 to 1.18.0
-* `rtl_sdr_blog_drivers`: V1.4.0 to 1.4.0
-* `sdrpp`: 2022-11-22 to 2026-11-07
+* `clonezilla`: 3.1.2-9 to 3.3.3-37
 
 ## Failed
 
 These lines kept their last known good version where one existed.
 
-* **apps** `aprsdroid`: GitHub release lookup failed for ge0rg/aprsdroid: HTTP 404 for https://api.github.com/repos/ge0rg/aprsdroid/releases/latest
 * **maps** `world_overview`: GitHub release lookup failed for Firegod1991/genesis-vault: HTTP 404 for https://api.github.com/repos/Firegod1991/genesis-vault/releases/latest
 * **maps** `survival_layers_world`: GitHub release lookup failed for Firegod1991/genesis-vault: HTTP 404 for https://api.github.com/repos/Firegod1991/genesis-vault/releases/latest
 * **radio** `chirp`: FetchError: HTTP 403 for https://archive.chirpmyradio.com/chirp_next/
