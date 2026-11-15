@@ -85,7 +85,7 @@ The seed tier carries a shelf of manuals from the agencies that wrote them, as p
 | Skill | What is on the shelf |
 |---|---|
 | Staying alive | The US Army survival manual: water, food, fire, shelter, medicine, movement |
-| Plants | Wild Edibles of Missouri, a guide to edible and poisonous mushrooms, the USDA guide to poisonous plants |
+| Plants | Edible plant guides for every region of the United States (table below), a guide to edible and poisonous mushrooms, the USDA guide to poisonous plants |
 | Plant medicine | The four volumes of WHO monographs on medicinal plants: uses, evidence, doses, dangers |
 | Game and fish | The North American trapper education manual, field dressing and storing meat, basic fishing |
 | Water | WHO technical notes on making water safe, cleaning wells and tanks, and sanitation |
@@ -93,10 +93,32 @@ The seed tier carries a shelf of manuals from the agencies that wrote them, as p
 | The sky as clock and calendar | Printable star wheels for seven latitudes, Stellarium for the desktop, Sky Map for the phone |
 
 ```sh
-genesis fetch --tag fieldcraft        # only this shelf, about 0.7 GB
+genesis fetch --tag fieldcraft        # only this shelf, about 0.8 GB
 ```
 
 A star wheel shows which constellations are up at any date and hour. Turn it until it matches the sky: with the date you read the hour, with the hour you read the date.
+
+### Edible plants by region
+
+No single free book covers every edible plant in the United States, so the shelf carries the best free source found for each region and two books that span the country.
+
+| Region | On the shelf |
+|---|---|
+| Whole country | Useful Wild Plants of the United States and Canada (1920), and the USDA list of 1,112 food plants with the part eaten and how it was prepared |
+| Northeast | Edible wild greens of Maine. Iroquois food plants, with how corn, beans and squash were grown, stored and cooked |
+| Great Lakes | Plants used by the Chippewa, wild rice and maple sugar among them |
+| Southeast | A foraging primer from Mississippi State University with a table of common wild food plants |
+| Midwest | Wild Edibles of Missouri |
+| Great Plains | Plants of the Missouri River tribes. About 80 plains plants with photos from the USDA |
+| Rocky Mountains | The wild berries and other wild fruit of Wyoming, inside a home canning manual written for high altitude |
+| Southwest | Desert Foods from the University of Arizona |
+| California | Plants of the Cahuilla in the southern desert. Plants of the Island Chumash on the coast |
+| Pacific Northwest | The Forest Service guide to about 60 forest plants and mushrooms |
+| Alaska | The Forest Service pocket guide to flowers and berries of the coastal forests |
+| Hawaii and the Pacific | The War Department manual of emergency food plants and poisonous plants |
+| Puerto Rico and the Virgin Islands | The Navy guide to edible and poisonous plants of the Caribbean |
+
+The modern guides teach you to recognize a plant. The older books record what people ate and how they prepared it, which matters as much: acorns must be leached and pokeweed boiled in changes of water before either is safe to eat. Alaska, the Southeast and the Rocky Mountains are the thinnest regions here, and better free guides are welcome.
 
 ## Maps of anywhere
 
@@ -175,7 +197,7 @@ Genesis is new. This is what has and has not been proven.
 
 * **Radio.** Listening is legal for most people in most places. Transmitting on amateur and GMRS frequencies needs a license. Know your local law.
 * **Medical.** The medical library and the medical AI models are references. They can be wrong and they do not replace training or a clinician.
-* **Wild food and plant medicine.** Never eat a plant or mushroom you cannot name with certainty. A guide written for one region can mislead in another, and a plant medicine can harm at the wrong dose or beside other medicine.
+* **Wild food and plant medicine.** Never eat a plant or mushroom you cannot name with certainty. A guide written for one region can mislead in another, and a plant medicine can harm at the wrong dose or beside other medicine. The older books on the shelf use the plant names of their own time and describe some foods that are poisonous until prepared the traditional way. Confirm every plant in a current picture guide, or with someone who knows it, before you eat it.
 * **Security.** The services have no login by default. Run Genesis on a network you control. Never expose it to the internet.
 * **Licenses.** The code here is MIT. Every catalog item keeps its own license, shown in the catalog. Map data is © OpenStreetMap contributors under the ODbL.
 
