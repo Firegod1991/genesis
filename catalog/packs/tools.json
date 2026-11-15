@@ -20,7 +20,7 @@
      "linux-x64": "^ventoy-[\\d.]+-linux\\.tar\\.gz$", "windows-x64": "^ventoy-[\\d.]+-windows\\.zip$"}}},
   {"id": "rpi_imager", "title": "Raspberry Pi Imager", "tier": "seed", "license": "Apache 2.0", "tags": ["usb"],
    "source": {"type": "github", "repo": "raspberrypi/rpi-imager", "assets": {
-     "linux-x64": "(?i)(amd64\\.deb|x86_64\\.AppImage)$", "linux-arm64": "(?i)(arm64\\.deb|aarch64\\.AppImage)$",
+     "linux-x64": "(?i)^(?!.*(cli|embedded)).*(amd64\\.deb|x86_64\\.AppImage)$", "linux-arm64": "(?i)^(?!.*(cli|embedded)).*(arm64\\.deb|aarch64\\.AppImage)$",
      "windows-x64": "(?i)\\.exe$", "macos-arm64": "(?i)\\.dmg$"}}},
   {"id": "sevenzip", "title": "7-Zip", "tier": "seed", "license": "LGPL 2.1", "tags": ["archive"],
    "source": {"type": "github", "repo": "ip7z/7zip", "assets": {
@@ -31,7 +31,7 @@
    "source": {"type": "github", "repo": "pbatard/rufus", "assets": {"windows-x64": "^rufus-[\\d.]+\\.exe$"}}},
   {"id": "keepassxc", "title": "KeePassXC (password vault)", "tier": "ark", "license": "GPL 3.0", "tags": ["security"],
    "source": {"type": "github", "repo": "keepassxreboot/keepassxc", "assets": {
-     "linux-x64": "x86_64\\.AppImage$", "windows-x64": "Win64\\.msi$", "macos-arm64": "arm64\\.dmg$"}}},
+     "linux-x64": "x86_64\\.AppImage$", "windows-x64": "(?i)(win64|x64|x86_64|amd64)\\.msi$", "macos-arm64": "arm64\\.dmg$"}}},
   {"id": "syncthing", "title": "Syncthing (sync folders between machines, no cloud)", "tier": "ark", "license": "MPL 2.0", "tags": ["sync"],
    "source": {"type": "github", "repo": "syncthing/syncthing", "assets": {
      "linux-x64": "^syncthing-linux-amd64-v[\\d.]+\\.tar\\.gz$", "linux-arm64": "^syncthing-linux-arm64-v[\\d.]+\\.tar\\.gz$",
@@ -45,7 +45,8 @@
      "linux-x64": "^ollama-linux-amd64\\.(tgz|tar\\.zst)$", "linux-arm64": "^ollama-linux-arm64\\.(tgz|tar\\.zst)$",
      "windows-x64": "^OllamaSetup\\.exe$", "macos-arm64": "^Ollama(-darwin)?\\.(dmg|zip)$"}}},
   {"id": "llama_cpp", "title": "llama.cpp (run GGUF models directly)", "tier": "ark", "license": "MIT", "tags": ["ai"],
-   "source": {"type": "github", "repo": "ggml-org/llama.cpp", "assets": {
+   "note": "Builds are published as numbered releases; the one marked latest carries none.",
+   "source": {"type": "github", "repo": "ggml-org/llama.cpp", "scan": true, "assets": {
      "linux-x64": "bin-ubuntu-x64\\.(zip|tar\\.gz)$", "linux-arm64": "bin-ubuntu-arm64\\.(zip|tar\\.gz)$",
      "windows-x64": "bin-win-cpu-x64\\.zip$", "macos-arm64": "bin-macos-arm64\\.(zip|tar\\.gz)$"}}},
   {"id": "yt_dlp", "title": "yt-dlp (save video while the internet lasts)", "tier": "ark", "license": "Unlicense", "tags": ["capture"],
