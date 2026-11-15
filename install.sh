@@ -60,7 +60,7 @@ chmod +x "$ROOT/bin/genesis"
 $SUDO ln -sf "$ROOT/bin/genesis" /usr/local/bin/genesis
 
 if [ "$VAULT" != "$ROOT/vault" ]; then
-  echo "export GENESIS_VAULT=\\\"$VAULT\\\"" | $SUDO tee /etc/profile.d/genesis.sh >/dev/null
+  echo "export GENESIS_VAULT=\"$VAULT\"" | $SUDO tee /etc/profile.d/genesis.sh >/dev/null
   echo "Saved GENESIS_VAULT in /etc/profile.d/genesis.sh (new shells pick it up)."
 fi
 
