@@ -96,8 +96,8 @@
      "windows-x64": "^jq-windows-amd64\\.exe$", "macos-arm64": "^jq-macos-arm64$"}}},
   {"id": "duckdb", "title": "DuckDB", "tier": "ark", "license": "MIT",
    "source": {"type": "github", "repo": "duckdb/duckdb", "assets": {
-     "linux-x64": "^duckdb_cli-linux-amd64\\.zip$", "linux-arm64": "^duckdb_cli-linux-arm64\\.zip$",
-     "windows-x64": "^duckdb_cli-windows-amd64\\.zip$", "macos-arm64": "^duckdb_cli-osx-universal\\.zip$"}}},
+     "linux-x64": "^duckdb[-_]cli-linux-amd64\\.(zip|tar\\.gz)$", "linux-arm64": "^duckdb[-_]cli-linux-arm64\\.(zip|tar\\.gz)$",
+     "windows-x64": "^duckdb[-_]cli-windows-amd64\\.(zip|tar\\.gz)$", "macos-arm64": "^duckdb[-_]cli-osx-universal\\.(zip|tar\\.gz)$"}}},
   {"id": "pandoc", "title": "Pandoc", "tier": "ark", "license": "GPL 2.0",
    "source": {"type": "github", "repo": "jgm/pandoc", "assets": {
      "linux-x64": "linux-amd64\\.tar\\.gz$", "linux-arm64": "linux-arm64\\.tar\\.gz$",
@@ -117,7 +117,7 @@
   {"id": "llvm", "title": "LLVM and Clang", "tier": "eden", "license": "Apache 2.0 with LLVM exceptions",
    "source": {"type": "github", "repo": "llvm/llvm-project", "assets": {
      "linux-x64": "^LLVM-[\\d.]+-Linux-X64\\.tar\\.xz$", "linux-arm64": "^LLVM-[\\d.]+-Linux-ARM64\\.tar\\.xz$",
-     "windows-x64": "^LLVM-[\\d.]+-win64\\.exe$", "macos-arm64": "^LLVM-[\\d.]+-macOS-ARM64\\.tar\\.xz$"}}},
+     "windows-x64": "^(LLVM-[\\d.]+-win64\\.exe|clang\\+llvm-[\\d.]+-x86_64-pc-windows-msvc\\.tar\\.xz)$", "macos-arm64": "^LLVM-[\\d.]+-macOS-ARM64\\.tar\\.xz$"}}},
   {"zim": "stackoverflow.com_en_all", "tier": "eden", "kind": "zim", "dest": "zim", "tags": ["qa"], "note": "All of Stack Overflow. Very large."},
   {"id": "coreyms_tutorials", "tier": "eden", "kind": "zim", "dest": "zim", "tags": ["courses", "video"],
    "source": {"type": "kiwix_rule", "prefix": "coreyms_en_", "flavours": [""]}}
