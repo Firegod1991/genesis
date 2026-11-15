@@ -17,19 +17,19 @@
  "refreshed": "2026-11-15",
  "tiers": {
   "ark": {
-   "bytes": 760050495640,
+   "bytes": 760062452420,
    "items": 631,
-   "unsized": 87
+   "unsized": 86
   },
   "eden": {
-   "bytes": 2019665633926,
+   "bytes": 2019677590706,
    "items": 821,
-   "unsized": 105
+   "unsized": 104
   },
   "seed": {
-   "bytes": 23576926743,
+   "bytes": 23588883523,
    "items": 389,
-   "unsized": 44
+   "unsized": 43
   }
  }
 }

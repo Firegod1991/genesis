@@ -183,6 +183,7 @@
    "kind": "document",
    "license": "Public domain",
    "note": "Southern California desert and mountains. How the Cahuilla gathered, prepared and stored mesquite, agave, yucca, cactus, acorns, pine nuts, palm fruit and chia.",
+   "stale": true,
    "tags": [
     "fieldcraft",
     "plants",
@@ -481,6 +482,8 @@
    "files": [
     {
      "filename": "pacific_islands_emergency_food_plants.pdf",
+     "sha256": "4a6143fae59c4f4794d17d1d093b572028a96763902417737ae9ca01a8c6a1a7",
+     "size": 11956780,
      "url": "https://collections.nlm.nih.gov/ext/dw/05710600R/PDF/05710600R.pdf"
     }
    ],

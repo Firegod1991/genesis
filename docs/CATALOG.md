@@ -6,9 +6,9 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
-| seed | 389 | 23.6 GB | 44 |
-| ark | 631 | 760.1 GB | 87 |
-| eden | 821 | 2.0 TB | 105 |
+| seed | 389 | 23.6 GB | 43 |
+| ark | 631 | 760.1 GB | 86 |
+| eden | 821 | 2.0 TB | 104 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -2954,11 +2954,11 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Culturally Significant Plants (USDA NRCS Plant Materials Center, Manhattan, Kansas) | `culturally_significant_plants` | seed | 2019-05-30 | 3.2 MB | US government work, photos credited inside |
 | Preserving Food in Wyoming (University of Wyoming Extension, 2018) | `preserving_food_in_wyoming` | seed | 2024-02-01 | 7.0 MB | Free from the publisher |
 | Desert Foods for a Resilient Future (University of Arizona Desert Laboratory, 2021) | `desert_foods` | seed | 2022-08-15 | 22.1 MB | Free from the publisher |
-| The Ethno-Botany of the Coahuilla Indians of Southern California (David Prescott Barrows, 1900) | `cahuilla_desert_plants` | seed | 2023-11-10 | 6.4 MB | Public domain |
+| The Ethno-Botany of the Coahuilla Indians of Southern California (David Prescott Barrows, 1900) | `cahuilla_desert_plants` | seed | 2023-11-10 (stale) | 6.4 MB | Public domain |
 | Guide to Island Chumash Plant Usage (Channel Islands National Park) | `chumash_plant_uses` | seed | 2023-07-10 | 1.6 MB | US government work |
 | Special Forest Products: Species Information Guide for the Pacific Northwest (US Forest Service, 2001) | `northwest_forest_plants` | seed | 2025-12-31 | 19.1 MB | US government work |
 | Wildflowers of the National Forests in Alaska (US Forest Service) | `alaska_forest_wildflowers` | seed | 2019-05-30 | 1.1 MB | US government work |
-| Emergency Food Plants and Poisonous Plants of the Islands of the Pacific (War Department TM 10-420, 1943) | `emergency_food_plants_pacific` | seed | current |  | US government work |
+| Emergency Food Plants and Poisonous Plants of the Islands of the Pacific (War Department TM 10-420, 1943) | `emergency_food_plants_pacific` | seed | current | 12.0 MB | US government work |
 | A Guide to Missouri's Edible and Poisonous Mushrooms (Missouri Department of Conservation) | `edible_and_poisonous_mushrooms` | seed | 2025-02-21 | 2.2 MB | Free from the publisher |
 | Plants Poisonous to Livestock in the Western States (USDA Agricultural Research Service) | `plants_poisonous_to_livestock` | seed | 2011-05-10 | 4.3 MB | US government work |
 | North American Trapper Education Manual (Association of Fish and Wildlife Agencies) | `trapper_education_manual` | seed | 2026-06-30 | 49.5 MB | Free to use, copyright AFWA |
