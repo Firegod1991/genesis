@@ -232,15 +232,20 @@ class CommandLineTests(unittest.TestCase):
             poi.fetch_region = real
         return code, err.getvalue()
 
-    def test_refused_download(self):
-        code, said = self.run_build(FetchError("curl exit 35 for https://example.invalid/nowhere.osm.pbf"))
+    def check(self, failure, line):
+        # Only the message is checked: the interpreter may add warnings of its own to the same stream.
+        code, said = self.run_build(failure)
         self.assertEqual(code, 1)
-        self.assertEqual(said.strip(), "genesis: curl exit 35 for https://example.invalid/nowhere.osm.pbf")
+        self.assertIn(line, said.splitlines())
+        self.assertNotIn("Traceback (most recent call last)", said)
+
+    def test_refused_download(self):
+        self.check(FetchError("curl exit 35 for https://example.invalid/nowhere.osm.pbf"),
+                   "genesis: curl exit 35 for https://example.invalid/nowhere.osm.pbf")
 
     def test_tool_that_stops(self):
-        code, said = self.run_build(subprocess.CalledProcessError(3, ["/usr/bin/osmium", "export"]))
-        self.assertEqual(code, 1)
-        self.assertEqual(said.strip(), "genesis: /usr/bin/osmium stopped with exit code 3")
+        self.check(subprocess.CalledProcessError(3, ["/usr/bin/osmium", "export"]),
+                   "genesis: /usr/bin/osmium stopped with exit code 3")
 
 
 if __name__ == "__main__":
