@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Add to the catalog yourself
+    url: https://github.com/Firegod1991/genesis/blob/main/CONTRIBUTING.md
+    about: One line of JSON and a pull request. The pencil icon on GitHub does the git part for you.

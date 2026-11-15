@@ -203,4 +203,11 @@ Genesis is new. This is what has and has not been proven.
 
 ## Contributing
 
-Adding content is one line of JSON in `catalog/packs/`. See [CONTRIBUTING.md](CONTRIBUTING.md) and the [roadmap](ROADMAP.md).
+Genesis is open to everyone. Pick the way that fits you.
+
+* **Suggest something.** No code and no git needed. [Open a suggestion](https://github.com/Firegod1991/genesis/issues/new/choose), paste the link and say why it matters.
+* **Add it yourself.** Adding content is one line of JSON in `catalog/packs/`. Open the pack file on GitHub, press the pencil icon, add your line and send the pull request. [CONTRIBUTING.md](CONTRIBUTING.md) shows how.
+* **Test it on real hardware.** A Raspberry Pi, a GPU, a radio. [Report what happened](https://github.com/Firegod1991/genesis/issues/new/choose), including when it simply worked.
+* **Build a feature.** The [roadmap](ROADMAP.md) lists what is planned.
+
+The test suite runs on every pull request and a maintainer reads it before it goes in.

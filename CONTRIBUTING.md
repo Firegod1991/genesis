@@ -2,6 +2,14 @@
 
 The most useful contribution is a catalog line: one more thing worth keeping, tracked at its newest version.
 
+## Three ways to help
+
+1. **Suggest something.** No code needed. [Open a suggestion](https://github.com/Firegod1991/genesis/issues/new/choose) with the link and a line on why it matters. A maintainer adds it.
+2. **Add a catalog line yourself.** The steps are below. Never used git? Open the pack file on GitHub, press the pencil icon, add your line and follow the prompts. GitHub makes your own copy of the project and turns your edit into a pull request.
+3. **Report from real hardware.** See the end of this page.
+
+Nobody needs an invitation. Every pull request is tested automatically and read by a maintainer, who checks the source link before merging it.
+
 ## Add something to the catalog
 
 1. Pick the pack in `catalog/packs/` and add a line. Three common shapes:

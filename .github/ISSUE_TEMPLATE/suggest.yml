@@ -1,0 +1,65 @@
+name: Suggest something for the catalog
+description: A book, manual, map, app, tool or data set worth keeping offline. No code needed.
+title: "Add: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping build Genesis. Fill in what you know. A maintainer turns it into a catalog line.
+  - type: input
+    id: what
+    attributes:
+      label: What is it?
+      placeholder: A field manual on making water safe to drink
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link to the official source
+      description: The publisher's own page or download, not a repost.
+      placeholder: https://
+    validations:
+      required: true
+  - type: dropdown
+    id: pack
+    attributes:
+      label: Where does it belong?
+      options:
+        - Knowledge
+        - Medical
+        - Survival
+        - Maps
+        - Scripture
+        - Library
+        - Radio
+        - Code
+        - Operating systems
+        - Local AI
+        - Phone apps
+        - Tools
+        - Services
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it worth keeping when the internet is gone?
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License, if you know it
+      placeholder: Public domain, Creative Commons, free from the publisher
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Before you send
+      options:
+        - label: It is free to download and legal to keep
+          required: true
+        - label: It is not pirated and it is not weapons manufacturing content
+          required: true

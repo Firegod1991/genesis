@@ -1,0 +1,33 @@
+name: Report from real hardware
+description: You ran Genesis on a real machine, radio or GPU. Tell us what happened, including when it simply worked.
+title: "Report: "
+body:
+  - type: input
+    id: machine
+    attributes:
+      label: What did you run it on?
+      placeholder: Raspberry Pi 5 with 8 GB, a laptop on Ubuntu 24.04, an RTL SDR dongle
+    validations:
+      required: true
+  - type: input
+    id: commands
+    attributes:
+      label: What did you run?
+      placeholder: genesis fetch --tier seed, then genesis up core
+  - type: dropdown
+    id: result
+    attributes:
+      label: Did it work?
+      options:
+        - "Yes"
+        - Partly
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened?
+      description: Paste any error text as it appeared.
+    validations:
+      required: true
