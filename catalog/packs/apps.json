@@ -12,6 +12,8 @@
    "source": {"type": "fdroid", "package": "com.kylecorry.trail_sense"}},
   {"id": "survival_manual", "title": "Offline Survival Manual", "tier": "seed", "license": "GPL 3.0", "tags": ["survival"],
    "source": {"type": "fdroid", "package": "org.ligi.survivalmanual"}},
+  {"id": "sky_map", "title": "Sky Map (point the phone at the sky to name stars and constellations)", "tier": "seed", "license": "Apache 2.0", "tags": ["fieldcraft", "sky", "navigation"],
+   "source": {"type": "fdroid", "package": "com.google.android.stardroid"}},
   {"id": "meshtastic_android", "title": "Meshtastic", "tier": "seed", "license": "GPL 3.0", "tags": ["mesh"],
    "source": {"type": "fdroid", "package": "com.geeksville.mesh"}},
   {"id": "briar", "title": "Briar (messaging over Bluetooth, WiFi and Tor)", "tier": "seed", "license": "GPL 3.0", "tags": ["messaging"],

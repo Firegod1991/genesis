@@ -26,6 +26,11 @@
    "source": {"type": "github", "repo": "ip7z/7zip", "assets": {
      "linux-x64": "^7z\\d+-linux-x64\\.tar\\.xz$", "linux-arm64": "^7z\\d+-linux-arm64\\.tar\\.xz$",
      "windows-x64": "^7z\\d+-x64\\.exe$", "macos-arm64": "^7z\\d+-mac\\.tar\\.xz$"}}},
+  {"id": "stellarium", "title": "Stellarium (planetarium: the sky for any place, date and hour)", "tier": "seed", "license": "GPL 2.0", "tags": ["fieldcraft", "sky", "navigation"],
+   "note": "Set a place and a date to learn the constellations, or match the sky you see to read the hour and the season.",
+   "source": {"type": "github", "repo": "Stellarium/stellarium", "assets": {
+     "linux-x64": "^Stellarium-[\\d.]+-qt6-x86_64\\.AppImage$", "windows-x64": "^stellarium-[\\d.]+-qt6-win64\\.exe$",
+     "macos-arm64": "^Stellarium-[\\d.]+-qt6-macOS\\.zip$"}}},
 
   {"id": "rufus", "title": "Rufus (bootable USB writer for Windows)", "tier": "ark", "license": "GPL 3.0", "tags": ["usb"],
    "source": {"type": "github", "repo": "pbatard/rufus", "assets": {"windows-x64": "^rufus-[\\d.]+\\.exe$"}}},
