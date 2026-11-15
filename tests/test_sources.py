@@ -3,12 +3,13 @@
 import json
 import os
 import sys
+import tempfile
 import unittest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
-from genesis import resolvers  # noqa: E402
+from genesis import catalog, maps, resolvers  # noqa: E402
 from genesis.util import FetchError  # noqa: E402
 
 API = "https://api.github.com/repos/o/r/releases"
@@ -179,6 +180,37 @@ class RedirectTests(unittest.TestCase):
         resolvers._redirect_target = lambda url: "https://dl.invalid/elsewhere"
         with self.assertRaises(resolvers.ResolveError):
             resolvers.r_redirect(self.SRC, Pages({}))
+
+
+class PlanetBuildTests(unittest.TestCase):
+    """Protomaps drops a daily build after about a week: the map tool must not trust an old address."""
+
+    BUILDS = "https://build-metadata.protomaps.dev/builds.json"
+    OLD = "https://build.protomaps.com/20261101.pmtiles"
+
+    def setUp(self):
+        self._load_lock = catalog.load_lock
+        catalog.load_lock = lambda pack: {"planet_basemap": {"files": [{"url": self.OLD}]}}
+
+    def tearDown(self):
+        catalog.load_lock = self._load_lock
+
+    def test_newest_build_wins_over_the_catalog(self):
+        net = Pages({self.BUILDS: [{"key": "20260811.pmtiles"}, {"key": "20261114.pmtiles", "size": 5}]})
+        with tempfile.TemporaryDirectory() as vault:
+            self.assertEqual(maps.planet_source(vault, net), "https://build.protomaps.com/20261114.pmtiles")
+
+    def test_catalog_build_is_the_fallback_offline(self):
+        with tempfile.TemporaryDirectory() as vault:
+            self.assertEqual(maps.planet_source(vault, Pages({})), self.OLD)
+            self.assertEqual(maps.planet_source(vault, Pages({self.BUILDS: []})), self.OLD)
+
+    def test_local_planet_file_needs_no_network(self):
+        with tempfile.TemporaryDirectory() as vault:
+            os.makedirs(os.path.join(vault, "maps"))
+            path = os.path.join(vault, "maps", "planet.pmtiles")
+            open(path, "w").close()
+            self.assertEqual(maps.planet_source(vault, Pages({})), path)
 
 
 if __name__ == "__main__":

@@ -20,11 +20,20 @@ def _vault(args):
     return vault_path(args)
 
 
-def planet_source(vault):
-    """A local planet file if the vault has one, else the newest remote build."""
+def planet_source(vault, net=None):
+    """A local planet file if the vault has one, else the newest remote build.
+
+    Protomaps keeps a daily build for about a week, so the address in the catalog goes stale
+    between monthly refreshes. Ask for the newest build first; the catalog is the fallback.
+    """
     local = os.path.join(vault, "maps", "planet.pmtiles")
     if os.path.exists(local):
         return local
+    try:
+        from .resolvers import r_protomaps
+        return r_protomaps({}, net or Net())["files"][0]["url"]
+    except (FetchError, LookupError, ValueError, TypeError) as e:
+        log("Protomaps did not answer (%s): trying the build named in the catalog" % e)
     entry = catalog.load_lock("maps").get("planet_basemap", {})
     if not entry.get("files"):
         raise SystemExit("the catalog has no planet build yet: run `genesis refresh --pack maps`")
