@@ -37,7 +37,7 @@ jobs:
           git update-index --chmod=+x bin/genesis install.sh dashboard/server.py tools/screenshots.py
           if git diff --cached --quiet; then echo "Vendored files are current."; exit 0; fi
           git commit -m "dashboard: vendor pinned map library, typeface and styles"
-          for attempt in 1 2 3; do
+          for _ in 1 2 3; do
             git pull --rebase --autostash && git push && exit 0
             sleep 10
           done
@@ -48,7 +48,6 @@ jobs:
     needs: vendor
     runs-on: ubuntu-latest
     env:
-      GENESIS_VAULT: ${{ runner.temp }}/vault
       GITHUB_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v7
@@ -57,6 +56,7 @@ jobs:
       - name: Install osmium and a headless browser
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+          echo "GENESIS_VAULT=$RUNNER_TEMP/vault" >> "$GITHUB_ENV"
           python3 -m venv "$RUNNER_TEMP/venv"
           "$RUNNER_TEMP/venv/bin/pip" install --quiet playwright
           "$RUNNER_TEMP/venv/bin/python" -m playwright install --with-deps chromium
@@ -78,7 +78,7 @@ jobs:
           git add docs/img
           if git diff --cached --quiet; then echo "Screenshots unchanged."; exit 0; fi
           git commit -m "docs: refresh dashboard screenshots from a live Monaco vault"
-          for attempt in 1 2 3; do
+          for _ in 1 2 3; do
             git pull --rebase --autostash && git push && exit 0
             sleep 10
           done

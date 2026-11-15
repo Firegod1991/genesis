@@ -33,12 +33,13 @@ jobs:
     name: End to end on small real data
     runs-on: ubuntu-latest
     env:
-      GENESIS_VAULT: ${{ runner.temp }}/vault
       GITHUB_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v7
-      - name: Install osmium
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+      - name: Install osmium and use a scratch vault
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+          echo "GENESIS_VAULT=$RUNNER_TEMP/vault" >> "$GITHUB_ENV"
       - name: Resolve the tools pack from live sources
         run: python3 -m genesis refresh --pack tools
       - name: Fetch and verify real content
