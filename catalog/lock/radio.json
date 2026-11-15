@@ -276,7 +276,7 @@
    ],
    "tier": "ark",
    "title": "MeshCore firmware (source)",
-   "version": "companion-v1.18.0"
+   "version": "1.18.0"
   },
   "meshtastic_firmware_esp32": {
    "date": "2026-06-24",
@@ -440,7 +440,7 @@
    ],
    "tier": "ark",
    "title": "RTL-SDR Blog drivers (source)",
-   "version": "V1.4.0"
+   "version": "1.4.0"
   },
   "satdump": {
    "date": "2024-11-29",
@@ -504,7 +504,7 @@
    "version": "8.2.0"
   },
   "sdrpp": {
-   "date": "2022-11-22",
+   "date": "2026-11-07",
    "dest": "radio",
    "files": [
     {
@@ -550,7 +550,7 @@
    ],
    "tier": "seed",
    "title": "SDR++ (SDR receiver)",
-   "version": "2022-11-22"
+   "version": "2026-11-07"
   },
   "sdrtrunk": {
    "date": "2026-11-13",

@@ -7,8 +7,8 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
 | seed | 348 | 21.8 GB | 42 |
-| ark | 587 | 758.2 GB | 84 |
-| eden | 777 | 2.0 TB | 103 |
+| ark | 588 | 758.2 GB | 84 |
+| eden | 778 | 2.0 TB | 102 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -72,12 +72,12 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Python (standalone builds) | `python` | ark | 20261110 | 228.9 MB | PSF License |
 | uv (Python package manager) | `uv` | ark | 0.13.8 | 62.8 MB | MIT or Apache 2.0 |
 | Deno (JavaScript and TypeScript runtime) | `deno` | ark | 2.9.8 | 163.8 MB | MIT |
-| Bun (JavaScript runtime) | `bun` | ark | bun-v1.4.4 | 198.5 MB | MIT |
+| Bun (JavaScript runtime) | `bun` | ark | 1.4.4 | 198.5 MB | MIT |
 | Kotlin compiler | `kotlin` | ark | 2.4.21 | 89.7 MB | Apache 2.0 |
 | Scala 3 | `scala` | ark | 3.10.1 | 178.9 MB | Apache 2.0 |
 | Elixir (precompiled) | `elixir` | ark | 1.20.5 | 8.6 MB | Apache 2.0 |
 | Gleam | `gleam` | ark | 1.19.2 | 38.6 MB | Apache 2.0 |
-| Odin | `odin` | ark | dev-2026-11a | 373.5 MB | BSD 3 Clause |
+| Odin | `odin` | ark | 2026-11a | 373.5 MB | BSD 3 Clause |
 | V | `vlang` | ark | 0.5.2 | 73.7 MB | MIT |
 | Crystal | `crystal` | ark | 1.22.3 | 61.6 MB | Apache 2.0 |
 | TinyGo (Go for microcontrollers) | `tinygo` | ark | 0.44.0 | 716.2 MB | BSD 3 Clause |
@@ -88,14 +88,15 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | VSCodium (VS Code without telemetry) | `vscodium` | ark | 1.143.17232 | 865.3 MB | MIT |
 | Git for Windows | `git_for_windows` | ark | 2.56.1.windows.1 | 66.9 MB | GPL 2.0 |
 | ripgrep | `ripgrep` | ark | 15.2.0 | 7.7 MB | MIT or Unlicense |
-| jq | `jq` | ark | jq-1.8.2 | 5.9 MB | MIT |
+| jq | `jq` | ark | 1.8.2 | 5.9 MB | MIT |
+| DuckDB | `duckdb` | ark | 1.5.6 | 89.5 MB | MIT |
 | Pandoc | `pandoc` | ark | 3.14 | 163.2 MB | GPL 2.0 |
 | Typst | `typst` | ark | 0.15.1 | 70.6 MB | Apache 2.0 |
 | Python Documentation | `docs.python.org_en_all` | ark | 2026-08-28 | 4.0 GB |  |
 | OpenWRT | `openwrt.org_en_all` | ark | 2026-07 | 519.9 MB |  |
 | Algorithms | `jeffe.cs.illinois.edu_en_all` | ark | 2026-09 | 516.5 MB |  |
 | Open Data Structures | `opendatastructures.org_en_all` | ark | 2026-05 | 116.4 MB |  |
-| LLVM and Clang | `llvm` | eden | llvmorg-23.1.5 | 5.4 GB | Apache 2.0 with LLVM exceptions |
+| LLVM and Clang | `llvm` | eden | 23.1.5 | 5.9 GB | Apache 2.0 with LLVM exceptions |
 | Stack Overflow | `stackoverflow.com_en_all` | eden | 2026-07 | 114.9 GB |  |
 
 <details><summary><b>devdocs_all</b>: 243 items, 666.1 MB, tier seed</summary>
@@ -478,7 +479,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Debian stable DVD 1 (installs with no network) | `debian_dvd` | eden | 13.7.0 | 4.0 GB |  |
 | Alpine Linux (extended) | `alpine_extended` | eden | 3.24.4 | 1.5 GB |  |
 | Proxmox VE (arm64) | `proxmox_ve_arm64` | eden | 9.2-1 | 1.6 GB |  |
-| Home Assistant OS (power and sensor monitoring) | `home_assistant_os` | eden | 18.5 | 342.2 MB |  |
+| Home Assistant OS (power and sensor monitoring) | `home_assistant_os` | eden | 18.5 | 881.1 MB |  |
 
 ## Knowledge
 
@@ -1535,7 +1536,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Item | Id | Tier | Version | Size | License |
 |---|---|---|---|---|---|
 | Amateur Radio Q&A | `ham.stackexchange.com_en_all` | seed | 2026-10 | 77.1 MB |  |
-| SDR++ (SDR receiver) | `sdrpp` | seed | 2022-11-22 | 80.8 MB | GPL 3.0 |
+| SDR++ (SDR receiver) | `sdrpp` | seed | 2026-11-07 | 80.8 MB | GPL 3.0 |
 | Pat (Winlink email over radio) | `pat_winlink` | seed | 1.0.1 | 33.6 MB | MIT |
 | Meshtastic firmware (ESP32 boards) | `meshtastic_firmware_esp32` | seed | 2.7.26.54e0d8d | 40.7 MB | GPL 3.0 |
 | Meshtastic firmware (nRF52840 boards) | `meshtastic_firmware_nrf52` | seed | 2.7.26.54e0d8d | 46.3 MB | GPL 3.0 |
@@ -1558,9 +1559,9 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Sideband (Reticulum messenger) | `sideband` | ark | 2.3.0 | 193.2 MB | CC BY-NC-SA 4.0 |
 | Reticulum MeshChat | `meshchat` | ark | 2.4.0 | 416.5 MB | MIT |
 | RNode firmware (LoRa radios for Reticulum) | `rnode_firmware` | ark | 1.86 |  | GPL 3.0 |
-| MeshCore firmware (source) | `meshcore_firmware` | ark | companion-v1.18.0 |  | MIT |
+| MeshCore firmware (source) | `meshcore_firmware` | ark | 1.18.0 |  | MIT |
 | HackRF firmware and tools | `hackrf_tools` | ark | 2026.01.3 | 25.9 MB | GPL 2.0 |
-| RTL-SDR Blog drivers (source) | `rtl_sdr_blog_drivers` | ark | V1.4.0 |  | GPL 2.0 |
+| RTL-SDR Blog drivers (source) | `rtl_sdr_blog_drivers` | ark | 1.4.0 |  | GPL 2.0 |
 
 ## Scripture
 
@@ -2982,7 +2983,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Raspberry Pi Imager | `rpi_imager` | seed | 2.0.12 | 79.8 MB | Apache 2.0 |
 | 7-Zip | `sevenzip` | seed | 26.06 | 5.5 MB | LGPL 2.1 |
 | Rufus (bootable USB writer for Windows) | `rufus` | ark | 4.15 | 2.0 MB | GPL 3.0 |
-| KeePassXC (password vault) | `keepassxc` | ark | 2.8.0 | 99.4 MB | GPL 3.0 |
+| KeePassXC (password vault) | `keepassxc` | ark | 2.8.0 | 135.3 MB | GPL 3.0 |
 | Syncthing (sync folders between machines, no cloud) | `syncthing` | ark | 2.1.7 | 54.6 MB | MPL 2.0 |
 | restic (encrypted backups) | `restic` | ark | 0.19.1 | 40.1 MB | BSD 2 Clause |
 | Ollama (run models without Docker) | `ollama_runtime` | ark | 0.40.16 | 5.2 GB | MIT |
