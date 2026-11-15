@@ -12,10 +12,12 @@ Genesis separates two things: knowing what the newest version of something is, a
 |---|---|
 | `kiwix`, `kiwix_rule` | The Kiwix library catalog. Rules pull in whole families, such as every DevDocs book or Wikipedia in every language, so new books appear with no edit here |
 | `ebible` | The eBible.org translation list, limited to translations it is allowed to share |
-| `github` | The newest release of a repository, matched to each platform |
+| `github` | The newest release of a repository, matched to each platform. A file the newest release lacks comes from the release before it, and the report says so |
 | `checksum_file`, `ubuntu`, `openwrt` | The checksum list a distribution publishes beside its images |
 | `toolchain` | The official release feed of each language |
-| `tails`, `alpine`, `fedora`, `rpi_imager`, `sourceforge`, `fdroid` | That project's own release feed |
+| `tails`, `alpine`, `fedora`, `rpi_imager`, `fdroid` | That project's own release feed |
+| `sourceforge` | The newest upload in a project folder, or the download the project marks as its default |
+| `redirect` | A publisher's "download the latest" link, followed to the versioned folder it points at |
 | `protomaps` | The newest daily planet map build |
 | `ollama`, `docker` | The model and image registries, which give a digest that proves the item exists |
 | `static`, `http_index` | A fixed address or a plain file listing |

@@ -17,7 +17,8 @@
   {"id": "briar", "title": "Briar (messaging over Bluetooth, WiFi and Tor)", "tier": "seed", "license": "GPL 3.0", "tags": ["messaging"],
    "source": {"type": "fdroid", "package": "org.briarproject.briar.android"}},
   {"id": "kiwix_android", "title": "Kiwix (offline Wikipedia reader)", "tier": "seed", "license": "GPL 3.0", "tags": ["reader"],
-   "source": {"type": "github", "repo": "kiwix/kiwix-android", "assets": {"android": "\\.apk$"}}},
+   "note": "Phones need the arm64 or universal build, not the emulator one.",
+   "source": {"type": "github", "repo": "kiwix/kiwix-android", "assets": {"android": "(universal|arm64-v8a)[^/]*\\.apk$"}}},
   {"id": "vlc_android", "title": "VLC", "tier": "seed", "license": "GPL 2.0", "tags": ["media"],
    "source": {"type": "fdroid", "package": "org.videolan.vlc"}},
   {"id": "keepassdx", "title": "KeePassDX (password vault)", "tier": "seed", "license": "GPL 3.0", "tags": ["security"],
@@ -32,10 +33,11 @@
   {"id": "newpipe", "title": "NewPipe (save video while the internet lasts)", "tier": "ark", "license": "GPL 3.0", "tags": ["media"],
    "source": {"type": "fdroid", "package": "org.schabi.newpipe"}},
   {"id": "bitchat_android", "title": "bitchat (Bluetooth mesh chat)", "tier": "ark", "license": "Unlicense", "tags": ["mesh", "messaging"],
-   "source": {"type": "github", "repo": "permissionlesstech/bitchat-android", "assets": {"android": "\\.apk$"}}},
+   "source": {"type": "github", "repo": "permissionlesstech/bitchat-android", "assets": {"android": "(universal|arm64-v8a)[^/]*\\.apk$"}}},
   {"id": "rattlegram", "title": "Rattlegram (text over any voice radio)", "tier": "ark", "license": "BSD Zero Clause", "tags": ["radio", "messaging"],
    "source": {"type": "github", "repo": "aicodix/rattlegram", "assets": {"android": "\\.apk$"}}},
   {"id": "aprsdroid", "title": "APRSdroid", "tier": "ark", "license": "GPL 2.0", "tags": ["radio", "ham"],
-   "source": {"type": "github", "repo": "ge0rg/aprsdroid", "assets": {"android": "\\.apk$"}}}
+   "note": "The publisher's own link to its current build.",
+   "source": {"type": "static", "url": "https://aprsdroid.org/download/APRSdroid-current.apk", "platform": "android"}}
  ]
 }

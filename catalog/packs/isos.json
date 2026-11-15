@@ -40,7 +40,8 @@
   {"id": "openwrt_x86", "title": "OpenWrt (x86 64 router image)", "tier": "ark", "note": "Turn any spare PC into a router or mesh node.",
    "source": {"type": "openwrt", "target": "x86/64", "pattern": "generic-ext4-combined-efi\\.img\\.gz$"}},
   {"id": "clonezilla", "title": "Clonezilla Live (disk imaging)", "tier": "ark",
-   "source": {"type": "sourceforge", "project": "clonezilla", "pattern": "clonezilla-live"}},
+   "source": {"type": "sourceforge", "project": "clonezilla", "path": "/clonezilla_live_stable",
+              "pattern": "clonezilla-live-[\\d.]+-\\d+-amd64\\.iso$"}},
   {"id": "rescuezilla", "title": "Rescuezilla (graphical disk imaging)", "tier": "ark",
    "source": {"type": "github", "repo": "rescuezilla/rescuezilla", "asset": "^rescuezilla-[\\d.]+-64bit\\.\\w+\\.iso$"}},
 
