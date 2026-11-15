@@ -63,8 +63,7 @@ jobs:
       - name: Build a small real vault (Monaco)
         run: |
           python3 -m genesis fetch --id map_assets --id global_power_plants --id bible_hboWLC --id bible_grctr --id bible_latVUC --id bible_eng-kjv --id bible_engwebp
-          python3 -m genesis poi build --region europe/monaco --replace
-          python3 -m genesis maps region --region europe/monaco
+          bash tools/monaco_vault.sh
           python3 -m genesis maps world --maxzoom 5
       - name: Drive the dashboard in a browser
         run: |
