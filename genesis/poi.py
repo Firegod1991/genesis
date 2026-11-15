@@ -163,6 +163,7 @@ def build(pbf, db_path, replace=False, label=None):
             added = ingest_geojsonseq(db, f)
         db.execute("INSERT OR REPLACE INTO meta VALUES (?, datetime('now'))", ("built:" + (label or os.path.basename(pbf)),))
         db.commit()
+        stats(db)  # counted once here, so the dashboard never has to: it sees the vault read only
         db.close()
     finally:
         shutil.rmtree(work, ignore_errors=True)
@@ -183,6 +184,7 @@ def merge(db_path, sources):
         src.close()
         db.commit()
         log("merged %s" % src_path)
+    stats(db)
     db.execute("VACUUM")
     db.close()
     return added
@@ -221,47 +223,113 @@ def _row(r):
     return d
 
 
-def in_bbox(db, west, south, east, north, cat=None, limit=2000):
+def _boxes(west, south, east, north):
+    """A box as one or two longitude ranges, so a search across the date line finds both sides.
+
+    Each range comes with the shift that puts the searcher's longitude on its side of the line.
+    """
+    south, north = max(-90.0, south), min(90.0, north)
+    if east - west >= 360:
+        return [(-180.0, south, 180.0, north, 0.0)]
+    if west < -180:
+        return [(-180.0, south, east, north, 0.0), (west + 360, south, 180.0, north, 360.0)]
+    if east > 180:
+        return [(west, south, 180.0, north, 0.0), (-180.0, south, east - 360, north, -360.0)]
+    return [(west, south, east, north, 0.0)]
+
+
+def _select(db, box, cat=None, tail="", extra=()):
+    """Rows inside a box, read through the spatial index.
+
+    CROSS JOIN and the plus sign pin the plan. Left to itself SQLite starts from the category
+    index, which on the world database reads a million rows to return a handful.
+    """
     cols = "p.id, p.cat, p.sub, p.name, p.lat, p.lon, p.osm, p.tags"
+    west, south, east, north = box[:4]
     args = [west, east, south, north]
     if _has_rtree(db):
-        sql = ("SELECT %s FROM poi_rt r JOIN poi p ON p.id = r.id "
+        sql = ("SELECT %s FROM poi_rt r CROSS JOIN poi p ON p.id = r.id "
                "WHERE r.min_lon >= ? AND r.max_lon <= ? AND r.min_lat >= ? AND r.max_lat <= ?" % cols)
     else:
         sql = "SELECT %s FROM poi p WHERE p.lon >= ? AND p.lon <= ? AND p.lat >= ? AND p.lat <= ?" % cols
     if cat:
-        sql += " AND p.cat IN (%s)" % ",".join("?" * len(cat.split(",")))
-        args += cat.split(",")
-    return [_row(r) for r in db.execute(sql + " LIMIT ?", args + [limit])]
+        cats = cat.split(",")
+        sql += " AND +p.cat IN (%s)" % ",".join("?" * len(cats))
+        args += cats
+    return db.execute(sql + tail, args + list(extra))
+
+
+def in_bbox(db, west, south, east, north, cat=None, limit=2000):
+    rows = []
+    for box in _boxes(west, south, east, north):
+        if len(rows) < limit:
+            rows += [_row(r) for r in _select(db, box, cat, " LIMIT ?", [limit - len(rows)])]
+    return rows
 
 
 def nearest(db, lat, lon, cat=None, n=5, max_km=2000):
     """Closest places by great circle distance, searching outward until n are found."""
-    radius = 5.0
+    coslat = max(0.02, math.cos(math.radians(lat)))
+    # A flat earth estimate in SQL keeps only the closest candidates of a busy box, so a search
+    # that reaches a city never hauls the whole city into memory. Exact distance decides after.
+    closest = " ORDER BY (p.lat - ?) * (p.lat - ?) + (p.lon - ?) * (p.lon - ?) * ? LIMIT ?"
+    keep = max(64, 8 * n)
+    radius = 2.0
     while True:
         dlat = radius / 111.0
-        dlon = min(180.0, radius / (111.0 * max(0.02, math.cos(math.radians(lat)))))
-        rows = in_bbox(db, lon - dlon, max(-90, lat - dlat), lon + dlon, min(90, lat + dlat), cat, limit=20000)
-        scored = []
-        for r in rows:
-            km, bearing = _distance(lat, lon, r["lat"], r["lon"])
-            if km <= radius:
-                r["km"] = round(km, 2)
-                r["bearing"] = round(bearing)
-                r["compass"] = COMPASS[int((bearing + 22.5) // 45) % 8]
-                scored.append(r)
-        if len(scored) >= n or radius >= max_km:
-            return sorted(scored, key=lambda r: r["km"])[:n]
-        radius *= 4
+        dlon = min(180.0, radius / (111.0 * coslat))
+        found = []
+        for box in _boxes(lon - dlon, lat - dlat, lon + dlon, lat + dlat):
+            here = lon + box[4]
+            for r in _select(db, box, cat, closest, [lat, lat, here, here, coslat * coslat, keep]):
+                r = _row(r)
+                km, bearing = _distance(lat, lon, r["lat"], r["lon"])
+                # Only the circle inside the box is complete: a corner can hide a nearer place outside it.
+                if km <= radius:
+                    r["km"] = round(km, 2)
+                    r["bearing"] = round(bearing)
+                    r["compass"] = COMPASS[int((bearing + 22.5) // 45) % 8]
+                    found.append(r)
+        if len(found) >= n or radius >= max_km:
+            return sorted(found, key=lambda r: r["km"])[:n]
+        radius = min(float(max_km), radius * 2)
 
 
-def stats(db):
-    out = {"total": db.execute("SELECT count(*) FROM poi").fetchone()[0], "categories": {}, "built": {}}
+def _count(db):
+    out = {"total": 0, "categories": {}}
     for cat, sub, count in db.execute("SELECT cat, sub, count(*) FROM poi GROUP BY cat, sub ORDER BY cat, count(*) DESC"):
         c = out["categories"].setdefault(cat, {"total": 0, "kinds": {}})
         c["total"] += count
         c["kinds"][sub] = count
-    for key, value in db.execute("SELECT key, value FROM meta"):
+        out["total"] += count
+    return out
+
+
+def stats(db):
+    """Totals by layer and kind, and what the database was built from.
+
+    Counting the world takes seconds, so the totals are kept in the database and counted again
+    only after places were added.
+    """
+    newest = db.execute("SELECT max(id) FROM poi").fetchone()[0] or 0
+    out = None
+    kept = db.execute("SELECT value FROM meta WHERE key = 'stats'").fetchone()
+    if kept:
+        try:
+            kept = json.loads(kept[0])
+            if kept["newest"] == newest:
+                out = {"total": kept["total"], "categories": kept["categories"]}
+        except (ValueError, KeyError, TypeError):
+            pass
+    if out is None:
+        out = _count(db)
+        try:
+            db.execute("INSERT OR REPLACE INTO meta VALUES ('stats', ?)", (json.dumps(dict(out, newest=newest)),))
+            db.commit()
+        except sqlite3.OperationalError:  # a vault on read only media: the count stands, it is just not kept
+            pass
+    out["built"] = {}
+    for key, value in db.execute("SELECT key, value FROM meta WHERE key LIKE 'built:%'"):
         out["built"][key.replace("built:", "")] = value
     return out
 
@@ -313,6 +381,7 @@ def main(args):
                 n = ingest_power_csv(db, power)
                 db.execute("INSERT OR REPLACE INTO meta VALUES ('built:wri_power_plants', datetime('now'))")
                 db.commit()
+                stats(db)
                 log("added %d power plants from the WRI database" % n)
         return 0
     db = connect(db_path)
