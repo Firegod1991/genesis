@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="genesis-test">
+  <node id="1" lat="43.7384" lon="7.4246" version="1" timestamp="2026-01-01T00:00:00Z"><tag k="amenity" v="drinking_water"/><tag k="name" v="Fontaine du Port"/></node>
+  <node id="2" lat="43.7400" lon="7.4270" version="1" timestamp="2026-01-01T00:00:00Z"><tag k="natural" v="spring"/></node>
+  <node id="3" lat="43.7350" lon="7.4200" version="1" timestamp="2026-01-01T00:00:00Z"><tag k="amenity" v="fuel"/><tag k="name" v="Station Sud"/><tag k="fuel:diesel" v="yes"/></node>
+  <node id="4" lat="43.7360" lon="7.4210" version="1" timestamp="2026-01-01T00:00:00Z"><tag k="power" v="generator"/><tag k="generator:source" v="solar"/></node>
+  <node id="5" lat="43.7370" lon="7.4220" version="1" timestamp="2026-01-01T00:00:00Z"><tag k="amenity" v="cafe"/><tag k="name" v="Not Kept"/></node>
+  <node id="6" lat="43.7500" lon="7.4400" version="1" timestamp="2026-01-01T00:00:00Z"><tag k="power" v="plant"/><tag k="plant:source" v="hydro"/><tag k="name" v="Hydro One"/></node>
+  <node id="7" lat="43.7450" lon="7.4300" version="1" timestamp="2026-01-01T00:00:00Z"><tag k="amenity" v="shelter"/></node>
+  <node id="8" lat="43.7390" lon="7.4190" version="1" timestamp="2026-01-01T00:00:00Z"><tag k="shop" v="supermarket"/><tag k="name" v="Marche Central"/></node>
+  <node id="9" lat="43.7260" lon="7.4190" version="1" timestamp="2026-01-01T00:00:00Z"><tag k="aeroway" v="helipad"/></node>
+  <node id="10" lat="43.7300" lon="7.4100" version="1" timestamp="2026-01-01T00:00:00Z"/>
+  <node id="11" lat="43.7300" lon="7.4110" version="1" timestamp="2026-01-01T00:00:00Z"/>
+  <node id="12" lat="43.7310" lon="7.4110" version="1" timestamp="2026-01-01T00:00:00Z"/>
+  <node id="13" lat="43.7310" lon="7.4100" version="1" timestamp="2026-01-01T00:00:00Z"/>
+  <way id="100" version="1" timestamp="2026-01-01T00:00:00Z"><nd ref="10"/><nd ref="11"/><nd ref="12"/><nd ref="13"/><nd ref="10"/><tag k="amenity" v="hospital"/><tag k="name" v="Centre Hospitalier"/><tag k="emergency" v="yes"/><tag k="building" v="yes"/></way>
+</osm>
