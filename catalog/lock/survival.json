@@ -21,6 +21,28 @@
    "title": "Hundred Rabbits",
    "version": "2026-08"
   },
+  "alaska_forest_wildflowers": {
+   "date": "2019-05-30",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "alaska_wildflowers_edible_and_poisonous.pdf",
+     "size": 1129749,
+     "url": "https://www.fs.usda.gov/wildflowers/regions/alaska/documents/WildflowersNFsinAK.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "note": "Coastal Alaska. Pocket guide to common flowers and berries of the Tongass and Chugach forests. Several entries are marked edible or poisonous.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Wildflowers of the National Forests in Alaska (US Forest Service)",
+   "version": "2019-05-30"
+  },
   "appropedia_en_all.maxi": {
    "date": "2026-02-26",
    "dest": "zim",
@@ -147,6 +169,28 @@
    "tier": "seed",
    "title": "Basic Land Navigation: maps, compass and GPS (National Wildfire Coordinating Group, PMS 475)",
    "version": "2024-04-05"
+  },
+  "cahuilla_desert_plants": {
+   "date": "2023-11-10",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "california_desert_plants_of_the_cahuilla.pdf",
+     "size": 6363910,
+     "url": "https://archive.org/download/ethnobotany00barrrich/ethnobotany00barrrich.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Public domain",
+   "note": "Southern California desert and mountains. How the Cahuilla gathered, prepared and stored mesquite, agave, yucca, cactus, acorns, pine nuts, palm fruit and chia.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "The Ethno-Botany of the Coahuilla Indians of Southern California (David Prescott Barrows, 1900)",
+   "version": "2023-11-10"
   },
   "canadian-prepper_en_bugoutconcepts": {
    "date": "2026-08-26",
@@ -278,6 +322,94 @@
    "title": "CD3WD Project",
    "version": "2026-11"
   },
+  "chippewa_plant_uses": {
+   "date": "2024-02-02",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "great_lakes_plants_used_by_the_chippewa.pdf",
+     "size": 18051788,
+     "url": "https://archive.org/download/usesofplantsbych00dens/usesofplantsbych00dens.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "note": "Great Lakes and the northern woods. Plants the Chippewa of Minnesota used for food and medicine, wild rice and maple sugar among them.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Uses of Plants by the Chippewa Indians (Frances Densmore, Smithsonian, 1928)",
+   "version": "2024-02-02"
+  },
+  "chumash_plant_uses": {
+   "date": "2023-07-10",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "california_coast_chumash_plant_uses.pdf",
+     "size": 1623950,
+     "url": "https://www.nps.gov/chis/learn/upload/CHIS-Plant-Usage-Garden-Guide-2023-ADA.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "note": "California coast. Plant foods and medicines of the Island Chumash, among them acorns, island cherry, chia, red maids and toyon.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Guide to Island Chumash Plant Usage (Channel Islands National Park)",
+   "version": "2023-07-10"
+  },
+  "culturally_significant_plants": {
+   "date": "2019-05-30",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "plains_culturally_significant_plants.pdf",
+     "size": 3229128,
+     "url": "https://www.fs.usda.gov/wildflowers/pollinators/documents/CulturallySignificantPlants.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work, photos credited inside",
+   "note": "Great Plains and the eastern states. About 80 plants, one to a page, with a photo and the food, medicine and craft uses of each. It says which ones are poisonous unless prepared.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Culturally Significant Plants (USDA NRCS Plant Materials Center, Manhattan, Kansas)",
+   "version": "2019-05-30"
+  },
+  "desert_foods": {
+   "date": "2022-08-15",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "southwest_desert_foods.pdf",
+     "size": 22125155,
+     "url": "https://desertlaboratory.arizona.edu/sites/default/files/desert%2520foods_ENG_FINAL.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Free from the publisher",
+   "note": "Southwest deserts. Mesquite, prickly pear, cholla buds, agave, wild chile, amaranth, purslane and tepary beans: how to harvest and cook each, with cautions.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Desert Foods for a Resilient Future (University of Arizona Desert Laboratory, 2021)",
+   "version": "2022-08-15"
+  },
   "edible_and_poisonous_mushrooms": {
    "date": "2025-02-21",
    "dest": "documents/plants",
@@ -299,6 +431,70 @@
    "tier": "seed",
    "title": "A Guide to Missouri's Edible and Poisonous Mushrooms (Missouri Department of Conservation)",
    "version": "2025-02-21"
+  },
+  "edible_poisonous_plants_caribbean": {
+   "date": "2024-07-08",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "caribbean_edible_and_poisonous_plants.pdf",
+     "size": 12856785,
+     "url": "https://archive.org/download/ediblepoisonousp00dahl/ediblepoisonousp00dahl.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "note": "Puerto Rico and the Virgin Islands. Drawings of tropical food plants and of the poisonous ones. Many of the same plants grow in south Florida and Hawaii.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Edible and Poisonous Plants of the Caribbean Region (US Navy, 1944)",
+   "version": "2024-07-08"
+  },
+  "edible_wild_greens_maine": {
+   "date": "2022-06-09",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "northeast_edible_wild_greens_maine.pdf",
+     "size": 169688,
+     "url": "https://www1.maine.gov/DACF/php/gotpests/weeds/factsheets/edible-wild-greens-of-maine.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Free from the publisher",
+   "note": "Northeast. Dandelions, fiddleheads, lamb's quarters, orache and purslane: how to pick them and cook them.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Facts on Edible Wild Greens in Maine (University of Maine Cooperative Extension)",
+   "version": "2022-06-09"
+  },
+  "emergency_food_plants_pacific": {
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "pacific_islands_emergency_food_plants.pdf",
+     "url": "https://collections.nlm.nih.gov/ext/dw/05710600R/PDF/05710600R.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "note": "Pacific islands. Drawings of the food plants and the poisonous plants, with how to prepare each. Many of the same plants grow in Hawaii, Guam and American Samoa.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Emergency Food Plants and Poisonous Plants of the Islands of the Pacific (War Department TM 10-420, 1943)",
+   "version": "current"
   },
   "energypedia_en_all.maxi": {
    "date": "2026-06-20",
@@ -358,6 +554,28 @@
    "tier": "ark",
    "title": "FAA Pilot's Handbook of Aeronautical Knowledge",
    "version": "2022-03-29"
+  },
+  "food_plants_north_american_indians": {
+   "date": "2023-11-11",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "us_food_plants_of_the_north_american_indians.pdf",
+     "size": 8224455,
+     "url": "https://archive.org/download/foodplantsofnort237yano/foodplantsofnort237yano.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "note": "A list of 1,112 plants eaten across the United States and Canada: which part, how it was prepared and where. No pictures. Use it to learn what grows in your region, then identify each plant with a picture guide before you trust it.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Food Plants of the North American Indians (Elias Yanovsky, USDA, 1936)",
+   "version": "2023-11-11"
   },
   "foss.cooking_en_all": {
    "date": "2026-11-02",
@@ -671,6 +889,28 @@
    "title": "iFixit in Chinese",
    "version": "2024-06"
   },
+  "iroquois_food_plants": {
+   "date": "2023-11-13",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "northeast_iroquois_food_plants.pdf",
+     "size": 27977018,
+     "url": "https://archive.org/download/iroquoisusesofma00parkrich/iroquoisusesofma00parkrich.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Public domain",
+   "note": "Northeast. How the Iroquois of New York grew, stored and cooked corn, beans and squash, and the wild greens, fungi, fruits, nuts, saps and roots they ate beside them.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Iroquois Uses of Maize and Other Food Plants (Arthur C. Parker, New York State Museum, 1910)",
+   "version": "2023-11-13"
+  },
   "lrnselfreliance_en_all": {
    "date": "2026-09-26",
    "dest": "zim",
@@ -691,6 +931,28 @@
    "tier": "ark",
    "title": "Learning Self-Reliance",
    "version": "2026-09"
+  },
+  "northwest_forest_plants": {
+   "date": "2025-12-31",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "northwest_forest_plants_and_mushrooms.pdf",
+     "size": 19128907,
+     "url": "https://research.fs.usda.gov/download/treesearch/3075.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "note": "Oregon and Washington; many of the species also grow in Alaska, northern Idaho and western Montana. About 60 forest plants and mushrooms that people gather, with harvest notes. Food, medicine and craft plants sit together, so read each entry: not everything in it is edible.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Special Forest Products: Species Information Guide for the Pacific Northwest (US Forest Service, 2001)",
+   "version": "2025-12-31"
   },
   "nuclear_war_survival_skills": {
    "date": "2026-08-27",
@@ -900,6 +1162,28 @@
    "title": "Star wheel for latitude 60 north (planisphere kit, Dominic Ford)",
    "version": "2026-06-02"
   },
+  "plants_missouri_river_region": {
+   "date": "2023-12-23",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "plains_plants_of_the_missouri_river_region.pdf",
+     "size": 7041544,
+     "url": "https://archive.org/download/usesofplantsbyin00gilm/usesofplantsbyin00gilm.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "note": "Great Plains. Plants the Dakota, Omaha, Ponca and Pawnee used for food and medicine, with photographs.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919)",
+   "version": "2023-12-23"
+  },
   "plants_poisonous_to_livestock": {
    "date": "2011-05-10",
    "dest": "documents/plants",
@@ -920,6 +1204,28 @@
    "tier": "seed",
    "title": "Plants Poisonous to Livestock in the Western States (USDA Agricultural Research Service)",
    "version": "2011-05-10"
+  },
+  "preserving_food_in_wyoming": {
+   "date": "2024-02-01",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "rockies_wild_berries_preserving_food_in_wyoming.pdf",
+     "size": 6999441,
+     "url": "https://www.wyoextension.org/agpubs/pubs/B-1210.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Free from the publisher",
+   "note": "Rocky Mountains and High Plains. The wild fruit chapter covers chokecherry, wild plum, serviceberry, rose hips, buffaloberry, currants, gooseberries, wild grapes and prickly pear. The rest is a full home canning manual written for high altitude.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Preserving Food in Wyoming (University of Wyoming Extension, 2018)",
+   "version": "2024-02-01"
   },
   "publicdomainrecipes.com_en_all": {
    "date": "2026-11-02",
@@ -1131,6 +1437,28 @@
    "title": "USDA Guide to Home Canning",
    "version": "2025-04"
   },
+  "useful_wild_plants_us": {
+   "date": "2023-12-23",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "us_useful_wild_plants_1920.pdf",
+     "size": 19137026,
+     "url": "https://archive.org/download/usefulwildplants00saunrich/usefulwildplants00saunrich.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Public domain",
+   "note": "The whole country in one book, strongest on California and the Southwest. Roots, seeds, nuts, berries, greens, drinks, soap and medicine plants, with drawings and a chapter on poisonous ones. Plant names are those of 1920.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Useful Wild Plants of the United States and Canada (Charles Francis Saunders, 1920)",
+   "version": "2023-12-23"
+  },
   "water_sanitation_in_emergencies": {
    "date": "2013-09-04",
    "dest": "documents/water",
@@ -1153,6 +1481,28 @@
    "title": "Drinking Water, Sanitation and Hygiene in Emergencies: 15 technical notes (WHO and WEDC)",
    "version": "2013-09-04"
   },
+  "wild_edible_plants_primer": {
+   "date": "2026-02-04",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "southeast_wild_edible_plants_primer.pdf",
+     "size": 115964,
+     "url": "https://extension.msstate.edu/sites/default/files/document/2026-02/P4173_web.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Free to copy unchanged for nonprofit teaching, with credit",
+   "note": "Southeast. Four pages on the rules of safe foraging, with a table of common wild food plants and which part of each is eaten.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Forgotten Foods: Introduction to Wild Edible Plants (Mississippi State University Extension)",
+   "version": "2026-02-04"
+  },
   "wild_edibles_of_missouri": {
    "date": "2025-02-21",
    "dest": "documents/plants",
@@ -1165,7 +1515,7 @@
    ],
    "kind": "document",
    "license": "Free from the publisher",
-   "note": "243 pages of edible wild plants with drawings and recipes. Written for the Midwest; most of these plants grow across North America.",
+   "note": "Midwest. 243 pages of edible wild plants with drawings and recipes. Most of these plants grow across the eastern half of North America.",
    "tags": [
     "fieldcraft",
     "plants",

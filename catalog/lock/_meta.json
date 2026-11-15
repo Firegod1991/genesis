@@ -11,25 +11,25 @@
   "radio": 28,
   "scripture": 1300,
   "services": 25,
-  "survival": 60,
+  "survival": 76,
   "tools": 16
  },
  "refreshed": "2026-11-15",
  "tiers": {
   "ark": {
-   "bytes": 759896321132,
-   "items": 615,
-   "unsized": 86
+   "bytes": 760050495640,
+   "items": 631,
+   "unsized": 87
   },
   "eden": {
-   "bytes": 2019511459418,
-   "items": 805,
-   "unsized": 104
+   "bytes": 2019665633926,
+   "items": 821,
+   "unsized": 105
   },
   "seed": {
-   "bytes": 23422752235,
-   "items": 373,
-   "unsized": 43
+   "bytes": 23576926743,
+   "items": 389,
+   "unsized": 44
   }
  }
 }

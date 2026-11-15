@@ -3,60 +3,37 @@
 | Pack | Items | New | Updated | Removed | Failed |
 |---|---|---|---|---|---|
 | ai | 15 | 0 | 0 | 0 | 0 |
-| apps | 17 | 1 | 0 | 0 | 0 |
+| apps | 17 | 0 | 0 | 0 | 0 |
 | code | 375 | 0 | 0 | 0 | 0 |
 | isos | 24 | 0 | 0 | 0 | 0 |
 | knowledge | 689 | 0 | 0 | 0 | 0 |
 | library | 249 | 0 | 0 | 0 | 0 |
 | maps | 6 | 0 | 0 | 0 | 0 |
-| medical | 42 | 4 | 0 | 0 | 0 |
+| medical | 42 | 0 | 0 | 0 | 0 |
 | radio | 28 | 0 | 0 | 0 | 0 |
 | scripture | 1300 | 0 | 0 | 0 | 0 |
-| services | 25 | 0 | 1 | 0 | 0 |
-| survival | 60 | 16 | 0 | 0 | 0 |
-| tools | 16 | 1 | 1 | 0 | 0 |
-
-## New in apps
-
-* `sky_map`: Sky Map (point the phone at the sky to name stars and constellations)
-
-## New in medical
-
-* `who_medicinal_plants_1`: WHO Monographs on Selected Medicinal Plants, Volume 1
-* `who_medicinal_plants_2`: WHO Monographs on Selected Medicinal Plants, Volume 2
-* `who_medicinal_plants_3`: WHO Monographs on Selected Medicinal Plants, Volume 3
-* `who_medicinal_plants_4`: WHO Monographs on Selected Medicinal Plants, Volume 4
-
-## Updated in services
-
-* `img_git`: 8967bf9deaf3 to aa90e8f00b75
+| services | 25 | 0 | 0 | 0 | 0 |
+| survival | 76 | 16 | 0 | 0 | 0 |
+| tools | 16 | 0 | 0 | 0 | 0 |
 
 ## New in survival
 
-* `army_survival_manual`: Survival (US Army ATP 3-50.21): water, food, fire, shelter, medicine, navigation
-* `basic_fishing`: Basic Fishing: tackle, knots, where fish live, cleaning the catch (Kentucky Department of Fish and Wildlife Resources)
-* `basic_land_navigation`: Basic Land Navigation: maps, compass and GPS (National Wildfire Coordinating Group, PMS 475)
-* `care_of_game`: Care of Game: field dressing and storing meat (Connecticut Hunter Safety Manual)
-* `edible_and_poisonous_mushrooms`: A Guide to Missouri's Edible and Poisonous Mushrooms (Missouri Department of Conservation)
-* `planisphere_20n`: Star wheel for latitude 20 north (planisphere kit, Dominic Ford)
-* `planisphere_20s`: Star wheel for latitude 20 south (planisphere kit, Dominic Ford)
-* `planisphere_30n`: Star wheel for latitude 30 north (planisphere kit, Dominic Ford)
-* `planisphere_35s`: Star wheel for latitude 35 south (planisphere kit, Dominic Ford)
-* `planisphere_40n`: Star wheel for latitude 40 north (planisphere kit, Dominic Ford)
-* `planisphere_50n`: Star wheel for latitude 50 north (planisphere kit, Dominic Ford)
-* `planisphere_60n`: Star wheel for latitude 60 north (planisphere kit, Dominic Ford)
-* `plants_poisonous_to_livestock`: Plants Poisonous to Livestock in the Western States (USDA Agricultural Research Service)
-* `trapper_education_manual`: North American Trapper Education Manual (Association of Fish and Wildlife Agencies)
-* `water_sanitation_in_emergencies`: Drinking Water, Sanitation and Hygiene in Emergencies: 15 technical notes (WHO and WEDC)
-* `wild_edibles_of_missouri`: Wild Edibles of Missouri (Jan Phillips, Missouri Department of Conservation)
-
-## Updated in tools
-
-* `llama_cpp`: b12424 to b12426
-
-## New in tools
-
-* `stellarium`: Stellarium (planetarium: the sky for any place, date and hour)
+* `alaska_forest_wildflowers`: Wildflowers of the National Forests in Alaska (US Forest Service)
+* `cahuilla_desert_plants`: The Ethno-Botany of the Coahuilla Indians of Southern California (David Prescott Barrows, 1900)
+* `chippewa_plant_uses`: Uses of Plants by the Chippewa Indians (Frances Densmore, Smithsonian, 1928)
+* `chumash_plant_uses`: Guide to Island Chumash Plant Usage (Channel Islands National Park)
+* `culturally_significant_plants`: Culturally Significant Plants (USDA NRCS Plant Materials Center, Manhattan, Kansas)
+* `desert_foods`: Desert Foods for a Resilient Future (University of Arizona Desert Laboratory, 2021)
+* `edible_poisonous_plants_caribbean`: Edible and Poisonous Plants of the Caribbean Region (US Navy, 1944)
+* `edible_wild_greens_maine`: Facts on Edible Wild Greens in Maine (University of Maine Cooperative Extension)
+* `emergency_food_plants_pacific`: Emergency Food Plants and Poisonous Plants of the Islands of the Pacific (War Department TM 10-420, 1943)
+* `food_plants_north_american_indians`: Food Plants of the North American Indians (Elias Yanovsky, USDA, 1936)
+* `iroquois_food_plants`: Iroquois Uses of Maize and Other Food Plants (Arthur C. Parker, New York State Museum, 1910)
+* `northwest_forest_plants`: Special Forest Products: Species Information Guide for the Pacific Northwest (US Forest Service, 2001)
+* `plants_missouri_river_region`: Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919)
+* `preserving_food_in_wyoming`: Preserving Food in Wyoming (University of Wyoming Extension, 2018)
+* `useful_wild_plants_us`: Useful Wild Plants of the United States and Canada (Charles Francis Saunders, 1920)
+* `wild_edible_plants_primer`: Forgotten Foods: Introduction to Wild Edible Plants (Mississippi State University Extension)
 
 ## Warnings
 
