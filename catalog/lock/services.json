@@ -1,0 +1,230 @@
+{
+ "items": {
+  "img_adsb": {
+   "dest": "images",
+   "digest": "sha256:ed8a1395ad666d792d23e5306e468d12e91ff7b5a2c435fe8ff1868bbb7e3be5",
+   "image": "ghcr.io/sdr-enthusiasts/docker-adsb-ultrafeeder:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "ADS-B aircraft tracker (readsb and tar1090)",
+   "version": "ed8a1395ad66"
+  },
+  "img_ais": {
+   "dest": "images",
+   "digest": "sha256:124f510731c9c4e62d429e9a48198af09b4acd09e62a86de39435385260458ea",
+   "image": "ghcr.io/jvde-github/ais-catcher:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "AIS-catcher (ship tracking)",
+   "version": "124f510731c9"
+  },
+  "img_calibre": {
+   "dest": "images",
+   "digest": "sha256:8eabbc9ac4d7fcbc252434493078ba22e4e8c3aa461e11b102020b040c5fc3e6",
+   "image": "linuxserver/calibre-web:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "Calibre Web (ebook library)",
+   "version": "8eabbc9ac4d7"
+  },
+  "img_chat": {
+   "dest": "images",
+   "digest": "sha256:b19c2ef06efce2a494a7f142e5acba2db3086a591453f25916e204d342e3d194",
+   "image": "ghcr.io/thelounge/thelounge:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "The Lounge (web chat client)",
+   "version": "b19c2ef06efc"
+  },
+  "img_code": {
+   "dest": "images",
+   "digest": "sha256:09565f9e07f5624554e295e8bab0e2fec4a7c533eb3cff459ed6596a4d3d7c1c",
+   "image": "codercom/code-server:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "code-server (VS Code in the browser)",
+   "version": "09565f9e07f5"
+  },
+  "img_cyberchef": {
+   "dest": "images",
+   "digest": "sha256:f04a39926344faf8e4cbbc8c92fb125d2b466f9be62db09aff23c7c406101a51",
+   "image": "ghcr.io/gchq/cyberchef:latest",
+   "kind": "image",
+   "tier": "seed",
+   "title": "CyberChef",
+   "version": "f04a39926344"
+  },
+  "img_dashboard": {
+   "dest": "images",
+   "digest": "sha256:9ef1a599f863231c3d91e941389bfdc4a2d6070557243d54df1a4e57015b960e",
+   "image": "python:3.13-alpine",
+   "kind": "image",
+   "tier": "seed",
+   "title": "Python (runs the Genesis dashboard)",
+   "version": "9ef1a599f863"
+  },
+  "img_devdocs": {
+   "dest": "images",
+   "digest": "sha256:8623d9b9c6c3ac12bafbd3e378711c6f2d61a0baf23350c9da6e9261b3d66a60",
+   "image": "ghcr.io/freecodecamp/devdocs:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "DevDocs (developer documentation)",
+   "version": "8623d9b9c6c3"
+  },
+  "img_files": {
+   "dest": "images",
+   "digest": "sha256:a469ea076d4a1b4b1d86a41d130f2f536cd9da996a2b1fb39c0d7635f9d89b9a",
+   "image": "filebrowser/filebrowser:v2",
+   "kind": "image",
+   "tier": "seed",
+   "title": "File Browser",
+   "version": "a469ea076d4a"
+  },
+  "img_git": {
+   "dest": "images",
+   "digest": "sha256:8967bf9deaf3c5c4adae13519436dc1b20c646ac83fe37ae810c933a1045227d",
+   "image": "gitea/gitea:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "Gitea (local Git hosting)",
+   "version": "8967bf9deaf3"
+  },
+  "img_inventory": {
+   "dest": "images",
+   "digest": "sha256:9d0b64776c694f018c0ca06faf52105a33ca376024f46bb58e6ab0e2b728bb61",
+   "image": "ghcr.io/sysadminsmedia/homebox:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "Homebox (supply inventory)",
+   "version": "9d0b64776c69"
+  },
+  "img_irc": {
+   "dest": "images",
+   "digest": "sha256:72db5b93b437ea0512fb79d9d4d035f0916ccba07ed736dec19e8d5b5a73f972",
+   "image": "ghcr.io/ergochat/ergo:stable",
+   "kind": "image",
+   "tier": "ark",
+   "title": "Ergo (local chat server)",
+   "version": "72db5b93b437"
+  },
+  "img_ittools": {
+   "dest": "images",
+   "digest": "sha256:8b8128748339583ca951af03dfe02a9a4d7363f61a216226fc28030731a5a61f",
+   "image": "ghcr.io/corentinth/it-tools:latest",
+   "kind": "image",
+   "tier": "seed",
+   "title": "IT Tools",
+   "version": "8b8128748339"
+  },
+  "img_jellyfin": {
+   "dest": "images",
+   "digest": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+   "image": "jellyfin/jellyfin:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "Jellyfin (video and music)",
+   "version": "fea863d0cd9e"
+  },
+  "img_kiwix": {
+   "dest": "images",
+   "digest": "sha256:e478554a9920412eeb5ce1d73f24e4b28445ebed233187cdd03c623c32be46a5",
+   "image": "ghcr.io/kiwix/kiwix-serve:latest",
+   "kind": "image",
+   "tier": "seed",
+   "title": "Kiwix server",
+   "version": "e478554a9920"
+  },
+  "img_kolibri": {
+   "dest": "images",
+   "digest": "sha256:19810f674f1e94a4f925f4f45f8a45de1735310e83540361c4e8614eca34a9fe",
+   "image": "learningequality/kolibri:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "Kolibri (courses with progress tracking)",
+   "version": "19810f674f1e"
+  },
+  "img_meshtastic": {
+   "dest": "images",
+   "digest": "sha256:369cf3556168e4e0b307e0b901877f7276e0ed99e23a2bcea8cd3d9cff366183",
+   "image": "ghcr.io/meshtastic/web:latest",
+   "kind": "image",
+   "tier": "seed",
+   "title": "Meshtastic web client",
+   "version": "369cf3556168"
+  },
+  "img_notes": {
+   "dest": "images",
+   "digest": "sha256:ca4b40ee7491aabf6b52bbb20ab140145cb96981d4b3fe96ab1e797ac6cd93e5",
+   "image": "dullage/flatnotes:latest",
+   "kind": "image",
+   "tier": "seed",
+   "title": "FlatNotes",
+   "version": "ca4b40ee7491"
+  },
+  "img_ollama": {
+   "dest": "images",
+   "digest": "sha256:910d0d8107b538fb0894e63163eb195de0cc7aefcbc666dc62d3b18f71124592",
+   "image": "ollama/ollama:latest",
+   "kind": "image",
+   "tier": "seed",
+   "title": "Ollama",
+   "version": "910d0d8107b5"
+  },
+  "img_openwebrx": {
+   "dest": "images",
+   "digest": "sha256:c527062bdc85203c6050bbb2ed6f2e1750bb9eca2d75b03538779d7b20c4cded",
+   "image": "slechev/openwebrxplus:latest",
+   "kind": "image",
+   "tier": "seed",
+   "title": "OpenWebRX+ (web SDR receiver)",
+   "version": "c527062bdc85"
+  },
+  "img_openwebui": {
+   "dest": "images",
+   "digest": "sha256:59b912d4246103c7285de0e9a5f2f6586614c06b4c4e46edc51a8f29e7b099a5",
+   "image": "ghcr.io/open-webui/open-webui:main",
+   "kind": "image",
+   "tier": "seed",
+   "title": "Open WebUI (chat with documents)",
+   "version": "59b912d42461"
+  },
+  "img_pdf": {
+   "dest": "images",
+   "digest": "sha256:ed7b1775c6706b5e5ea24fa6155f078eff1027bd35a17d21834e4407036025e6",
+   "image": "ghcr.io/stirling-tools/s-pdf:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "Stirling PDF",
+   "version": "ed7b1775c670"
+  },
+  "img_routing": {
+   "dest": "images",
+   "digest": "sha256:5402c8543f083350dade401673cd66071f17e3220983aef4cd10296c72dee77d",
+   "image": "ghcr.io/valhalla/valhalla-scripted:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "Valhalla (offline turn by turn routing)",
+   "version": "5402c8543f08"
+  },
+  "img_translate": {
+   "dest": "images",
+   "digest": "sha256:6f03f063a10d120cdb5986e8995d4524729d14125269bc6c49f791e49789aec8",
+   "image": "libretranslate/libretranslate:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "LibreTranslate (offline translation)",
+   "version": "6f03f063a10d"
+  },
+  "img_voice": {
+   "dest": "images",
+   "digest": "sha256:018ad3515932e513d8fdc970df918373a2664c4da32b09a89a4aaee28eb7507a",
+   "image": "mumblevoip/mumble-server:latest",
+   "kind": "image",
+   "tier": "ark",
+   "title": "Mumble server (voice on the local network)",
+   "version": "018ad3515932"
+  }
+ },
+ "pack": "services"
+}

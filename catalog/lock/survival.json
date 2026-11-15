@@ -1,0 +1,920 @@
+{
+ "items": {
+  "100r.co_en_all": {
+   "date": "2026-08-31",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "100r.co_en_all_2026-08.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/100r.co_en_all_2026-08.zim.sha256",
+     "size": 177187840,
+     "url": "https://download.kiwix.org/zim/zimit/100r.co_en_all_2026-08.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "skills",
+    "sailing"
+   ],
+   "tier": "ark",
+   "title": "Hundred Rabbits",
+   "version": "2026-08"
+  },
+  "appropedia_en_all.maxi": {
+   "date": "2026-02-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "appropedia_en_all_maxi_2026-02.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/appropedia_en_all_maxi_2026-02.zim.sha256",
+     "size": 581642240,
+     "url": "https://download.kiwix.org/zim/other/appropedia_en_all_maxi_2026-02.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "skills",
+    "sustainability"
+   ],
+   "tier": "seed",
+   "title": "Appropedia",
+   "version": "2026-02"
+  },
+  "armypubs_en_all": {
+   "date": "2024-12-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "armypubs_en_all_2024-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/armypubs_en_all_2024-12.zim.sha256",
+     "size": 8232397824,
+     "url": "https://download.kiwix.org/zim/zimit/armypubs_en_all_2024-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "license": "US government work",
+   "note": "US Army field manuals and technical publications.",
+   "tags": [
+    "field",
+    "manuals"
+   ],
+   "tier": "ark",
+   "title": "Army Publishing Directorate",
+   "version": "2024-12"
+  },
+  "based.cooking_en_all": {
+   "date": "2026-11-09",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "based.cooking_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/based.cooking_en_all_2026-11.zim.sha256",
+     "size": 23023616,
+     "url": "https://download.kiwix.org/zim/zimit/based.cooking_en_all_2026-11.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "food"
+   ],
+   "tier": "seed",
+   "title": "based.cooking LukeSmith",
+   "version": "2026-11"
+  },
+  "canadian-prepper_en_bugoutconcepts": {
+   "date": "2026-08-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "canadian-prepper_en_bugoutconcepts_2026-08.zim",
+     "sha256_url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_bugoutconcepts_2026-08.zim.sha256",
+     "size": 2886220800,
+     "url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_bugoutconcepts_2026-08.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "rule": "canadian_prepper_videos",
+   "tags": [
+    "disaster",
+    "video"
+   ],
+   "tier": "eden",
+   "title": "Canadian prepper",
+   "version": "2026-08"
+  },
+  "canadian-prepper_en_bugoutroll": {
+   "date": "2026-10-21",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "canadian-prepper_en_bugoutroll_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_bugoutroll_2026-10.zim.sha256",
+     "size": 879090688,
+     "url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_bugoutroll_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "rule": "canadian_prepper_videos",
+   "tags": [
+    "disaster",
+    "video"
+   ],
+   "tier": "eden",
+   "title": "Canadian Prepper",
+   "version": "2026-10"
+  },
+  "canadian-prepper_en_preppingfood": {
+   "date": "2026-10-21",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "canadian-prepper_en_preppingfood_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_preppingfood_2026-10.zim.sha256",
+     "size": 2194586624,
+     "url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_preppingfood_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "rule": "canadian_prepper_videos",
+   "tags": [
+    "disaster",
+    "video"
+   ],
+   "tier": "eden",
+   "title": "Canadian prepper",
+   "version": "2026-10"
+  },
+  "canadian-prepper_en_winterprepping": {
+   "date": "2026-08-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "canadian-prepper_en_winterprepping_2026-08.zim",
+     "sha256_url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_winterprepping_2026-08.zim.sha256",
+     "size": 1341548544,
+     "url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_winterprepping_2026-08.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "rule": "canadian_prepper_videos",
+   "tags": [
+    "disaster",
+    "video"
+   ],
+   "tier": "eden",
+   "title": "Canadian prepper",
+   "version": "2026-08"
+  },
+  "cd3wdproject.org_en_all": {
+   "date": "2026-11-07",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "cd3wdproject.org_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/cd3wdproject.org_en_all_2026-11.zim.sha256",
+     "size": 572638208,
+     "url": "https://download.kiwix.org/zim/zimit/cd3wdproject.org_en_all_2026-11.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "skills",
+    "development"
+   ],
+   "tier": "seed",
+   "title": "CD3WD Project",
+   "version": "2026-11"
+  },
+  "energypedia_en_all.maxi": {
+   "date": "2026-06-20",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "energypedia_en_all_maxi_2026-06.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/energypedia_en_all_maxi_2026-06.zim.sha256",
+     "size": 799713280,
+     "url": "https://download.kiwix.org/zim/other/energypedia_en_all_maxi_2026-06.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "power"
+   ],
+   "tier": "ark",
+   "title": "energypedia",
+   "version": "2026-06"
+  },
+  "epa_emergency_water_disinfection": {
+   "date": "2021-06-25",
+   "dest": "documents/water",
+   "files": [
+    {
+     "filename": "emergency_disinfection_of_drinking_water_sept2017.pdf",
+     "size": 754723,
+     "url": "https://www.epa.gov/sites/default/files/2017-09/documents/emergency_disinfection_of_drinking_water_sept2017.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "tags": [
+    "water"
+   ],
+   "tier": "seed",
+   "title": "EPA: Emergency Disinfection of Drinking Water",
+   "version": "2021-06-25"
+  },
+  "faa_pilots_handbook": {
+   "date": "2022-03-29",
+   "dest": "documents/navigation",
+   "files": [
+    {
+     "filename": "faa_pilots_handbook.pdf",
+     "size": 56133125,
+     "url": "https://www.faa.gov/sites/faa.gov/files/2022-03/pilot_handbook.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "tags": [
+    "navigation",
+    "weather"
+   ],
+   "tier": "ark",
+   "title": "FAA Pilot's Handbook of Aeronautical Knowledge",
+   "version": "2022-03-29"
+  },
+  "foss.cooking_en_all": {
+   "date": "2026-11-02",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "foss.cooking_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/foss.cooking_en_all_2026-11.zim.sha256",
+     "size": 30425088,
+     "url": "https://download.kiwix.org/zim/zimit/foss.cooking_en_all_2026-11.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "food"
+   ],
+   "tier": "ark",
+   "title": "FOSS cooking",
+   "version": "2026-11"
+  },
+  "gardenology_en_all": {
+   "date": "2026-09-09",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gardenology.org_en_all_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/gardenology.org_en_all_2026-09.zim.sha256",
+     "size": 112499712,
+     "url": "https://download.kiwix.org/zim/other/gardenology.org_en_all_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "food",
+    "growing"
+   ],
+   "tier": "ark",
+   "title": "Gardenology",
+   "version": "2026-09"
+  },
+  "grimgrains_en_all": {
+   "date": "2026-11-09",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "grimgrains_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/grimgrains_en_all_2026-11.zim.sha256",
+     "size": 26584064,
+     "url": "https://download.kiwix.org/zim/zimit/grimgrains_en_all_2026-11.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "food"
+   ],
+   "tier": "seed",
+   "title": "GrimGrains Recipes",
+   "version": "2026-11"
+  },
+  "ifixit_de_all": {
+   "date": "2026-03-19",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_de_all_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_de_all_2026-03.zim.sha256",
+     "size": 3592670208,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_de_all_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "deu",
+   "rule": "ifixit_every_language",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit in German",
+   "version": "2026-03"
+  },
+  "ifixit_en_all": {
+   "date": "2025-12-21",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_en_all_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_en_all_2025-12.zim.sha256",
+     "size": 3570696192,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_en_all_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit in English",
+   "version": "2025-12"
+  },
+  "ifixit_es_all": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_es_all_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_es_all_2026-03.zim.sha256",
+     "size": 3680870400,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_es_all_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "spa",
+   "rule": "ifixit_every_language",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit in Spanish",
+   "version": "2026-03"
+  },
+  "ifixit_fr_all": {
+   "date": "2026-03-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_fr_all_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_fr_all_2026-03.zim.sha256",
+     "size": 3652281344,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_fr_all_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fra",
+   "rule": "ifixit_every_language",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit en Français",
+   "version": "2026-03"
+  },
+  "ifixit_it_all": {
+   "date": "2026-03-12",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_it_all_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_it_all_2026-03.zim.sha256",
+     "size": 3640310784,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_it_all_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ita",
+   "rule": "ifixit_every_language",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit in Italian",
+   "version": "2026-03"
+  },
+  "ifixit_ja_all": {
+   "date": "2026-02-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_ja_all_2026-02.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_ja_all_2026-02.zim.sha256",
+     "size": 3437526016,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_ja_all_2026-02.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "jpn",
+   "rule": "ifixit_every_language",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit in Japanese",
+   "version": "2026-02"
+  },
+  "ifixit_ko_all": {
+   "date": "2025-12-28",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_ko_all_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_ko_all_2025-12.zim.sha256",
+     "size": 3544698880,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_ko_all_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kor",
+   "rule": "ifixit_every_language",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit in Korean",
+   "version": "2025-12"
+  },
+  "ifixit_nl_all": {
+   "date": "2025-12-31",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_nl_all_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_nl_all_2025-12.zim.sha256",
+     "size": 3606337536,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_nl_all_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nld",
+   "rule": "ifixit_every_language",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit in Dutch",
+   "version": "2025-12"
+  },
+  "ifixit_pt_all": {
+   "date": "2026-03-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_pt_all_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_pt_all_2026-03.zim.sha256",
+     "size": 3632912384,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_pt_all_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "por",
+   "rule": "ifixit_every_language",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit in Portuguese",
+   "version": "2026-03"
+  },
+  "ifixit_ru_all": {
+   "date": "2026-03-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_ru_all_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_ru_all_2026-03.zim.sha256",
+     "size": 3629973504,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_ru_all_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "rus",
+   "rule": "ifixit_every_language",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit in Russian",
+   "version": "2026-03"
+  },
+  "ifixit_tr_all": {
+   "date": "2026-03-10",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_tr_all_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_tr_all_2026-03.zim.sha256",
+     "size": 3633666048,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_tr_all_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tur",
+   "rule": "ifixit_every_language",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit in Turkish",
+   "version": "2026-03"
+  },
+  "ifixit_zh_all": {
+   "date": "2024-06-07",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ifixit_zh_all_2024-06.zim",
+     "sha256_url": "https://download.kiwix.org/zim/ifixit/ifixit_zh_all_2024-06.zim.sha256",
+     "size": 3104607232,
+     "url": "https://download.kiwix.org/zim/ifixit/ifixit_zh_all_2024-06.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "zho",
+   "rule": "ifixit_every_language",
+   "tags": [
+    "repair"
+   ],
+   "tier": "ark",
+   "title": "iFixit in Chinese",
+   "version": "2024-06"
+  },
+  "lrnselfreliance_en_all": {
+   "date": "2026-09-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "lrnselfreliance_en_all_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/videos/lrnselfreliance_en_all_2026-09.zim.sha256",
+     "size": 3974044672,
+     "url": "https://download.kiwix.org/zim/videos/lrnselfreliance_en_all_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "skills",
+    "video"
+   ],
+   "tier": "ark",
+   "title": "Learning Self-Reliance",
+   "version": "2026-09"
+  },
+  "nuclear_war_survival_skills": {
+   "date": "2026-08-27",
+   "dest": "documents/disaster",
+   "files": [
+    {
+     "filename": "nuclear_war_survival_skills.pdf",
+     "size": 73531186,
+     "url": "https://www.oism.org/nwss/nwss.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Copying permitted by the author",
+   "tags": [
+    "disaster"
+   ],
+   "tier": "seed",
+   "title": "Nuclear War Survival Skills (Kearny, Oak Ridge National Laboratory)",
+   "version": "2026-08-27"
+  },
+  "outdoors.stackexchange.com_en_all": {
+   "date": "2026-10-20",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "outdoors.stackexchange.com_en_all_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/stack_exchange/outdoors.stackexchange.com_en_all_2026-10.zim.sha256",
+     "size": 141820928,
+     "url": "https://download.kiwix.org/zim/stack_exchange/outdoors.stackexchange.com_en_all_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "outdoors",
+    "qa"
+   ],
+   "tier": "seed",
+   "title": "The Great Outdoors Q&A",
+   "version": "2026-10"
+  },
+  "permacomputing.net_en_all": {
+   "date": "2026-09-13",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "permacomputing.net_en_all_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/permacomputing.net_en_all_2026-09.zim.sha256",
+     "size": 1038336,
+     "url": "https://download.kiwix.org/zim/zimit/permacomputing.net_en_all_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "computing"
+   ],
+   "tier": "ark",
+   "title": "Permacomputing",
+   "version": "2026-09"
+  },
+  "publicdomainrecipes.com_en_all": {
+   "date": "2026-11-02",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "publicdomainrecipes.com_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/publicdomainrecipes.com_en_all_2026-11.zim.sha256",
+     "size": 17144832,
+     "url": "https://download.kiwix.org/zim/zimit/publicdomainrecipes.com_en_all_2026-11.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Public Domain Recipes",
+   "version": "2026-11"
+  },
+  "ready.gov_en_all": {
+   "date": "2026-10-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ready.gov_en_all_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/ready.gov_en_all_2026-10.zim.sha256",
+     "size": 2063895552,
+     "url": "https://download.kiwix.org/zim/zimit/ready.gov_en_all_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "license": "US government work",
+   "tags": [
+    "disaster"
+   ],
+   "tier": "seed",
+   "title": "Ready.gov",
+   "version": "2026-10"
+  },
+  "s2underground_en_all": {
+   "date": "2026-10-12",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "s2underground_en_all_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/videos/s2underground_en_all_2026-10.zim.sha256",
+     "size": 5492854784,
+     "url": "https://download.kiwix.org/zim/videos/s2underground_en_all_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "comms",
+    "video"
+   ],
+   "tier": "eden",
+   "title": "S2 Underground",
+   "version": "2026-10"
+  },
+  "scoutwiki.org_en_all.maxi": {
+   "date": "2026-10-01",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "scoutwiki.org_en_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/scoutwiki.org_en_all_maxi_2026-10.zim.sha256",
+     "size": 25332736,
+     "url": "https://download.kiwix.org/zim/other/scoutwiki.org_en_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "skills",
+    "outdoors"
+   ],
+   "tier": "seed",
+   "title": "ScoutWiki",
+   "version": "2026-10"
+  },
+  "solar.lowtechmagazine.com_mul_all": {
+   "date": "2025-01-02",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "solar.lowtechmagazine.com_mul_all_2025-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/solar.lowtechmagazine.com_mul_all_2025-01.zim.sha256",
+     "size": 700556288,
+     "url": "https://download.kiwix.org/zim/zimit/solar.lowtechmagazine.com_mul_all_2025-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mul",
+   "tags": [
+    "power",
+    "skills"
+   ],
+   "tier": "ark",
+   "title": "Solar Powered LowTech Magazine",
+   "version": "2025-01"
+  },
+  "survivorlibrary.com_en_all": {
+   "date": "2026-09-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "survivorlibrary.com_en_all_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/survivorlibrary.com_en_all_2026-09.zim.sha256",
+     "size": 220347600896,
+     "url": "https://download.kiwix.org/zim/zimit/survivorlibrary.com_en_all_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Thousands of scanned books on pre industrial trades and skills. Very large.",
+   "tags": [
+    "skills",
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Survivor Library",
+   "version": "2026-09"
+  },
+  "trueprepper.com_en_all": {
+   "date": "2026-05-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "trueprepper.com_en_all_2026-05.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/trueprepper.com_en_all_2026-05.zim.sha256",
+     "size": 1423585280,
+     "url": "https://download.kiwix.org/zim/other/trueprepper.com_en_all_2026-05.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "disaster"
+   ],
+   "tier": "ark",
+   "title": "True prepper",
+   "version": "2026-05"
+  },
+  "urban-prepper_en_all": {
+   "date": "2026-08-27",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "urban-prepper_en_all_2026-08.zim",
+     "sha256_url": "https://download.kiwix.org/zim/videos/urban-prepper_en_all_2026-08.zim.sha256",
+     "size": 2245235712,
+     "url": "https://download.kiwix.org/zim/videos/urban-prepper_en_all_2026-08.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "disaster",
+    "video"
+   ],
+   "tier": "eden",
+   "title": "Urban Prepper",
+   "version": "2026-08"
+  },
+  "usda-2015_en": {
+   "date": "2025-04-11",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "usda-2015_en_2025-04.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/usda-2015_en_2025-04.zim.sha256",
+     "size": 19787776,
+     "url": "https://download.kiwix.org/zim/other/usda-2015_en_2025-04.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "license": "US government work",
+   "note": "USDA Complete Guide to Home Canning.",
+   "tags": [
+    "food"
+   ],
+   "tier": "seed",
+   "title": "USDA Guide to Home Canning",
+   "version": "2025-04"
+  },
+  "zimgit-food-preparation_en": {
+   "date": "2025-04-11",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "zimgit-food-preparation_en_2025-04.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/zimgit-food-preparation_en_2025-04.zim.sha256",
+     "size": 97822720,
+     "url": "https://download.kiwix.org/zim/other/zimgit-food-preparation_en_2025-04.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Food for Preppers",
+   "version": "2025-04"
+  },
+  "zimgit-knots_en": {
+   "date": "2024-08-29",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "zimgit-knots_en_2024-08.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/zimgit-knots_en_2024-08.zim.sha256",
+     "size": 27945984,
+     "url": "https://download.kiwix.org/zim/other/zimgit-knots_en_2024-08.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "skills"
+   ],
+   "tier": "seed",
+   "title": "A Library of Knots",
+   "version": "2024-08"
+  },
+  "zimgit-post-disaster_en": {
+   "date": "2024-05-25",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "zimgit-post-disaster_en_2024-05.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/zimgit-post-disaster_en_2024-05.zim.sha256",
+     "size": 644666368,
+     "url": "https://download.kiwix.org/zim/other/zimgit-post-disaster_en_2024-05.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "disaster"
+   ],
+   "tier": "seed",
+   "title": "Post Disaster Resource Library",
+   "version": "2024-05"
+  },
+  "zimgit-water_en": {
+   "date": "2024-08-29",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "zimgit-water_en_2024-08.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/zimgit-water_en_2024-08.zim.sha256",
+     "size": 20925440,
+     "url": "https://download.kiwix.org/zim/other/zimgit-water_en_2024-08.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "water"
+   ],
+   "tier": "seed",
+   "title": "Water Treatment Library",
+   "version": "2024-08"
+  }
+ },
+ "pack": "survival"
+}

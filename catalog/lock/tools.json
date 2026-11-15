@@ -1,0 +1,499 @@
+{
+ "items": {
+  "ffmpeg": {
+   "date": "2026-11-14",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "ffmpeg-master-latest-linux64-gpl.tar.xz",
+     "platform": "linux-x64",
+     "sha256": "0ce90f5f1c5867f40af7789b602c433e3b900910c5999f98591107fb67a2a6e5",
+     "size": 157177268,
+     "url": "https://github.com/FFmpeg-Builds/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz"
+    },
+    {
+     "filename": "ffmpeg-master-latest-linuxarm64-gpl.tar.xz",
+     "platform": "linux-arm64",
+     "sha256": "f6fd339b562e3df9601df0651324e7aff1f70a1e43e6f6aa609bfbbfc4f37ff1",
+     "size": 132835640,
+     "url": "https://github.com/FFmpeg-Builds/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linuxarm64-gpl.tar.xz"
+    },
+    {
+     "filename": "ffmpeg-master-latest-win64-gpl.zip",
+     "platform": "windows-x64",
+     "sha256": "1fc58ec4589b2157fdfc23cfe514b55bcd85a822d07701840d4d96fad74a85bf",
+     "size": 201951595,
+     "url": "https://github.com/FFmpeg-Builds/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip"
+    }
+   ],
+   "kind": "tool",
+   "license": "GPL 3.0",
+   "tags": [
+    "media"
+   ],
+   "tier": "ark",
+   "title": "FFmpeg (static builds)",
+   "version": "2026-11-14"
+  },
+  "keepassxc": {
+   "date": "2026-10-21",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "KeePassXC-2.8.0-x86_64.AppImage",
+     "platform": "linux-x64",
+     "sha256": "b52889fd627ae7a1c609b91b2526ccd5d847ec6707ac6eb634553186dee4f705",
+     "size": 52062712,
+     "url": "https://github.com/keepassxreboot/keepassxc/releases/download/2.8.0/KeePassXC-2.8.0-x86_64.AppImage"
+    },
+    {
+     "filename": "KeePassXC-2.8.0-arm64.dmg",
+     "platform": "macos-arm64",
+     "sha256": "223d5c71ae6c11d48192c69fd582fd5f10047e91ebcebc014de33a42539b9519",
+     "size": 47298038,
+     "url": "https://github.com/keepassxreboot/keepassxc/releases/download/2.8.0/KeePassXC-2.8.0-arm64.dmg"
+    }
+   ],
+   "kind": "tool",
+   "license": "GPL 3.0",
+   "tags": [
+    "security"
+   ],
+   "tier": "ark",
+   "title": "KeePassXC (password vault)",
+   "version": "2.8.0"
+  },
+  "kiwix_desktop": {
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "kiwix-desktop_x86_64_2.5.1.appimage",
+     "platform": "linux-x64",
+     "size": 168125632,
+     "url": "https://download.kiwix.org/release/kiwix-desktop/kiwix-desktop_x86_64_2.5.1.appimage"
+    },
+    {
+     "filename": "kiwix-desktop_windows_x64_2.5.1.zip",
+     "platform": "windows-x64",
+     "size": 157265310,
+     "url": "https://download.kiwix.org/release/kiwix-desktop/kiwix-desktop_windows_x64_2.5.1.zip"
+    }
+   ],
+   "kind": "tool",
+   "license": "GPL 3.0",
+   "tags": [
+    "reader"
+   ],
+   "tier": "seed",
+   "title": "Kiwix Desktop (offline reader)",
+   "version": "2.5.1"
+  },
+  "kiwix_tools": {
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "kiwix-tools_linux-x86_64-3.8.2.tar.gz",
+     "platform": "linux-x64",
+     "size": 21661067,
+     "url": "https://download.kiwix.org/release/kiwix-tools/kiwix-tools_linux-x86_64-3.8.2.tar.gz"
+    },
+    {
+     "filename": "kiwix-tools_linux-aarch64-3.8.2.tar.gz",
+     "platform": "linux-arm64",
+     "size": 20507463,
+     "url": "https://download.kiwix.org/release/kiwix-tools/kiwix-tools_linux-aarch64-3.8.2.tar.gz"
+    },
+    {
+     "filename": "kiwix-tools_win-x86_64-3.8.1.zip",
+     "platform": "windows-x64",
+     "size": 18301924,
+     "url": "https://download.kiwix.org/release/kiwix-tools/kiwix-tools_win-x86_64-3.8.1.zip"
+    },
+    {
+     "filename": "kiwix-tools_macos-arm64-3.8.2.tar.gz",
+     "platform": "macos-arm64",
+     "size": 10283222,
+     "url": "https://download.kiwix.org/release/kiwix-tools/kiwix-tools_macos-arm64-3.8.2.tar.gz"
+    }
+   ],
+   "kind": "tool",
+   "license": "GPL 3.0",
+   "tags": [
+    "reader"
+   ],
+   "tier": "seed",
+   "title": "Kiwix tools (kiwix-serve without Docker)",
+   "version": "3.8.2"
+  },
+  "llama_cpp": {
+   "error": "no asset in ggml-org/llama.cpp v1.0.0 matched ['bin-ubuntu-x64\\\\.(zip|tar\\\\.gz)$', 'bin-ubuntu-arm64\\\\.(zip|tar\\\\.gz)$', 'bin-win-cpu-x64\\\\.zip$', 'bin-macos-arm64\\\\.(zip|tar\\\\.gz)$']; assets: ['nightly-tag.txt']",
+   "kind": "tool",
+   "status": "error",
+   "tier": "ark",
+   "title": "llama.cpp (run GGUF models directly)"
+  },
+  "ollama_runtime": {
+   "date": "2026-11-09",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "ollama-linux-amd64.tar.zst",
+     "platform": "linux-x64",
+     "sha256": "87bfafb2acbc89b2e6a1be0a9043de6aa75fb450696f86bc426e65fc448f788d",
+     "size": 1545767640,
+     "url": "https://github.com/ollama/ollama/releases/download/v0.40.16/ollama-linux-amd64.tar.zst"
+    },
+    {
+     "filename": "ollama-linux-arm64.tar.zst",
+     "platform": "linux-arm64",
+     "sha256": "e45b8e6dcb86cb9f3057396351655079c9a4879b4ced2678c9350d375dcbc224",
+     "size": 1600610073,
+     "url": "https://github.com/ollama/ollama/releases/download/v0.40.16/ollama-linux-arm64.tar.zst"
+    },
+    {
+     "filename": "OllamaSetup.exe",
+     "platform": "windows-x64",
+     "sha256": "84db4f756ddc9e091142a85cdc0f7ae5db68bc9b3e075f114388b326f8ed912d",
+     "size": 1857663944,
+     "url": "https://github.com/ollama/ollama/releases/download/v0.40.16/OllamaSetup.exe"
+    },
+    {
+     "filename": "Ollama-darwin.zip",
+     "platform": "macos-arm64",
+     "sha256": "4715531bc49d21337381b193765041e535a9fb4716f84e5d6eccc3a9af1b5303",
+     "size": 229245253,
+     "url": "https://github.com/ollama/ollama/releases/download/v0.40.16/Ollama-darwin.zip"
+    }
+   ],
+   "kind": "tool",
+   "license": "MIT",
+   "tags": [
+    "ai"
+   ],
+   "tier": "ark",
+   "title": "Ollama (run models without Docker)",
+   "version": "0.40.16"
+  },
+  "pmtiles": {
+   "date": "2026-07-22",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "go-pmtiles_1.31.2_Linux_x86_64.tar.gz",
+     "platform": "linux-x64",
+     "sha256": "3ed7dbf4ec2e6dfe5e25b6f70d1ffc932729f93c86db353bf514dd71010a312f",
+     "size": 17444324,
+     "url": "https://github.com/protomaps/go-pmtiles/releases/download/v1.31.2/go-pmtiles_1.31.2_Linux_x86_64.tar.gz"
+    },
+    {
+     "filename": "go-pmtiles_1.31.2_Linux_arm64.tar.gz",
+     "platform": "linux-arm64",
+     "sha256": "f8bd47e7ea866863489cad588fbaf2f31f42e5821f7a03f009b3769f05801cb1",
+     "size": 15779781,
+     "url": "https://github.com/protomaps/go-pmtiles/releases/download/v1.31.2/go-pmtiles_1.31.2_Linux_arm64.tar.gz"
+    },
+    {
+     "filename": "go-pmtiles_1.31.2_Windows_x86_64.zip",
+     "platform": "windows-x64",
+     "sha256": "a658baa4d7e55020aef6ca17bd9ff9faa1582671266b36f58c52db0ac8e785a1",
+     "size": 17842310,
+     "url": "https://github.com/protomaps/go-pmtiles/releases/download/v1.31.2/go-pmtiles_1.31.2_Windows_x86_64.zip"
+    },
+    {
+     "filename": "go-pmtiles-1.31.2_Darwin_arm64.zip",
+     "platform": "macos-arm64",
+     "sha256": "40528f7f616fcbf91207cd48c8fc023d213f6d86c0cbf1f748732803d1880f3d",
+     "size": 15963714,
+     "url": "https://github.com/protomaps/go-pmtiles/releases/download/v1.31.2/go-pmtiles-1.31.2_Darwin_arm64.zip"
+    }
+   ],
+   "kind": "tool",
+   "license": "BSD 3 Clause",
+   "tags": [
+    "maps"
+   ],
+   "tier": "seed",
+   "title": "pmtiles (cut and inspect offline maps)",
+   "version": "1.31.2"
+  },
+  "restic": {
+   "date": "2026-07-05",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "restic_0.19.1_linux_amd64.bz2",
+     "platform": "linux-x64",
+     "sha256": "f415415624dcc452f2a02b8c33641791a8c6d6d3b65bbb3543fcf9a25151585c",
+     "size": 10107515,
+     "url": "https://github.com/restic/restic/releases/download/v0.19.1/restic_0.19.1_linux_amd64.bz2"
+    },
+    {
+     "filename": "restic_0.19.1_linux_arm64.bz2",
+     "platform": "linux-arm64",
+     "sha256": "a5f64aaab53d51e311fa3829124c5b703f2d14cf187d8640b6be3b2b49376465",
+     "size": 9044264,
+     "url": "https://github.com/restic/restic/releases/download/v0.19.1/restic_0.19.1_linux_arm64.bz2"
+    },
+    {
+     "filename": "restic_0.19.1_windows_amd64.zip",
+     "platform": "windows-x64",
+     "sha256": "da948ad707ed690426473aaba2046cd61f8f90f6f0e7dab6be0d5796531de67d",
+     "size": 11237567,
+     "url": "https://github.com/restic/restic/releases/download/v0.19.1/restic_0.19.1_windows_amd64.zip"
+    },
+    {
+     "filename": "restic_0.19.1_darwin_arm64.bz2",
+     "platform": "macos-arm64",
+     "sha256": "7be0a144ccc377880f294204aa271d76e4b79554b42a751151d425ce6ebac143",
+     "size": 9733199,
+     "url": "https://github.com/restic/restic/releases/download/v0.19.1/restic_0.19.1_darwin_arm64.bz2"
+    }
+   ],
+   "kind": "tool",
+   "license": "BSD 2 Clause",
+   "tags": [
+    "backup"
+   ],
+   "tier": "ark",
+   "title": "restic (encrypted backups)",
+   "version": "0.19.1"
+  },
+  "rpi_imager": {
+   "date": "2026-10-08",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "Raspberry_Pi_Imager-v2.0.12-cli-x86_64.AppImage",
+     "platform": "linux-x64",
+     "sha256": "8a2fa9c0fe6c61f57d5826a7419131b18f33226c681c740ebc30a713928d05e3",
+     "size": 10516984,
+     "url": "https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.12/Raspberry_Pi_Imager-v2.0.12-cli-x86_64.AppImage"
+    },
+    {
+     "filename": "Raspberry_Pi_Imager-v2.0.12-cli-aarch64.AppImage",
+     "platform": "linux-arm64",
+     "sha256": "b87c82db68fbe8f4fd7c266af8a5d7b2aad3d0ddc2e4243ebd6ea77bcb65573c",
+     "size": 10312200,
+     "url": "https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.12/Raspberry_Pi_Imager-v2.0.12-cli-aarch64.AppImage"
+    },
+    {
+     "filename": "imager-v2.0.12.exe",
+     "platform": "windows-x64",
+     "sha256": "98bff90afe23339d0768915f6f68d35ac254740ec1eac2082ebeaa9ba41bc8e3",
+     "size": 22315568,
+     "url": "https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.12/imager-v2.0.12.exe"
+    },
+    {
+     "filename": "rpi-imager-v2.0.12.dmg",
+     "platform": "macos-arm64",
+     "sha256": "15b1a94c712c0032750855653c2bf129dceb401329fbce0a83d7cf05dc58a421",
+     "size": 36609779,
+     "url": "https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.12/rpi-imager-v2.0.12.dmg"
+    }
+   ],
+   "kind": "tool",
+   "license": "Apache 2.0",
+   "tags": [
+    "usb"
+   ],
+   "tier": "seed",
+   "title": "Raspberry Pi Imager",
+   "version": "2.0.12"
+  },
+  "rufus": {
+   "date": "2026-06-30",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "rufus-4.15.exe",
+     "platform": "windows-x64",
+     "sha256": "84c8a437f8af89257524478489e5c85f1edf25f761d299e2bcde46ac0afbe106",
+     "size": 1989992,
+     "url": "https://github.com/pbatard/rufus/releases/download/v4.15/rufus-4.15.exe"
+    }
+   ],
+   "kind": "tool",
+   "license": "GPL 3.0",
+   "tags": [
+    "usb"
+   ],
+   "tier": "ark",
+   "title": "Rufus (bootable USB writer for Windows)",
+   "version": "4.15"
+  },
+  "sevenzip": {
+   "date": "2026-11-07",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "7z2606-linux-x64.tar.xz",
+     "platform": "linux-x64",
+     "sha256": "2b539cf067b2ad48e1baa5093dbaa8818b73542d1222a0ffde9dc5f2922ea62e",
+     "size": 1575552,
+     "url": "https://github.com/ip7z/7zip/releases/download/26.06/7z2606-linux-x64.tar.xz"
+    },
+    {
+     "filename": "7z2606-linux-arm64.tar.xz",
+     "platform": "linux-arm64",
+     "sha256": "edcc408aacce77da5223728f2eceb5e9f6dc713b8a9df934ad21e2a7f7560627",
+     "size": 1326668,
+     "url": "https://github.com/ip7z/7zip/releases/download/26.06/7z2606-linux-arm64.tar.xz"
+    },
+    {
+     "filename": "7z2606-x64.exe",
+     "platform": "windows-x64",
+     "sha256": "9b697f65ecc2d9b0152f5ee96d72dde522a7827690349d9307935dacf40f42ec",
+     "size": 1659704,
+     "url": "https://github.com/ip7z/7zip/releases/download/26.06/7z2606-x64.exe"
+    },
+    {
+     "filename": "7z2606-mac.tar.xz",
+     "platform": "macos-arm64",
+     "sha256": "b6f17920b4240940461dac8ef4009891881ac44d2a5ead625ede2ec8472185dd",
+     "size": 965712,
+     "url": "https://github.com/ip7z/7zip/releases/download/26.06/7z2606-mac.tar.xz"
+    }
+   ],
+   "kind": "tool",
+   "license": "LGPL 2.1",
+   "tags": [
+    "archive"
+   ],
+   "tier": "seed",
+   "title": "7-Zip",
+   "version": "26.06"
+  },
+  "syncthing": {
+   "date": "2026-10-21",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "syncthing-linux-amd64-v2.1.7.tar.gz",
+     "platform": "linux-x64",
+     "sha256": "2edc416e7ed136b7c858ed5f3f02a3b8316589605e54c380228ceea7acbf0142",
+     "size": 14046697,
+     "url": "https://github.com/syncthing/syncthing/releases/download/v2.1.7/syncthing-linux-amd64-v2.1.7.tar.gz"
+    },
+    {
+     "filename": "syncthing-linux-arm64-v2.1.7.tar.gz",
+     "platform": "linux-arm64",
+     "sha256": "48e456690cd2b97e7d26b02b5ac35f62a3b36172267b144cfeaf02c993ab955c",
+     "size": 12866755,
+     "url": "https://github.com/syncthing/syncthing/releases/download/v2.1.7/syncthing-linux-arm64-v2.1.7.tar.gz"
+    },
+    {
+     "filename": "syncthing-windows-amd64-v2.1.7.zip",
+     "platform": "windows-x64",
+     "sha256": "3ce7da770f546a8d02b65b2e7ee31f2a3b8b7c3f990ede045590cca4172ecfe1",
+     "size": 14281765,
+     "url": "https://github.com/syncthing/syncthing/releases/download/v2.1.7/syncthing-windows-amd64-v2.1.7.zip"
+    },
+    {
+     "filename": "syncthing-macos-arm64-v2.1.7.zip",
+     "platform": "macos-arm64",
+     "sha256": "2df075b463231a307c91da657157beaed06383a941ba7ea04d33d536e3c4af38",
+     "size": 13372993,
+     "url": "https://github.com/syncthing/syncthing/releases/download/v2.1.7/syncthing-macos-arm64-v2.1.7.zip"
+    }
+   ],
+   "kind": "tool",
+   "license": "MPL 2.0",
+   "tags": [
+    "sync"
+   ],
+   "tier": "ark",
+   "title": "Syncthing (sync folders between machines, no cloud)",
+   "version": "2.1.7"
+  },
+  "ventoy": {
+   "date": "2026-10-09",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "ventoy-1.1.18-linux.tar.gz",
+     "platform": "linux-x64",
+     "sha256": "d86ff9de63d94c8b8f1f6b14d23c55af4b88e8207bf2893890892a6a97b1ad54",
+     "size": 20320548,
+     "url": "https://github.com/ventoy/Ventoy/releases/download/v1.1.18/ventoy-1.1.18-linux.tar.gz"
+    },
+    {
+     "filename": "ventoy-1.1.18-windows.zip",
+     "platform": "windows-x64",
+     "sha256": "082c478e8c432e1ac653899fcf50e3a4077a2851bc6112b5ddd30545962164a9",
+     "size": 16680699,
+     "url": "https://github.com/ventoy/Ventoy/releases/download/v1.1.18/ventoy-1.1.18-windows.zip"
+    }
+   ],
+   "kind": "tool",
+   "license": "GPL 3.0",
+   "tags": [
+    "usb"
+   ],
+   "tier": "seed",
+   "title": "Ventoy (one USB stick, many bootable ISOs)",
+   "version": "1.1.18"
+  },
+  "vlc_windows": {
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "vlc-3.0.24-win64.exe",
+     "platform": "windows-x64",
+     "size": 46269360,
+     "url": "https://get.videolan.org/vlc/last/win64/vlc-3.0.24-win64.exe"
+    }
+   ],
+   "kind": "tool",
+   "license": "GPL 2.0",
+   "tags": [
+    "media"
+   ],
+   "tier": "ark",
+   "title": "VLC for Windows",
+   "version": "3.0.24"
+  },
+  "yt_dlp": {
+   "date": "2026-10-26",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "yt-dlp_linux",
+     "platform": "linux-x64",
+     "sha256": "767ba9dce7052aa196f8b12652f433d76de128ba168966fa84b6394d5e6c6795",
+     "size": 41166968,
+     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_linux"
+    },
+    {
+     "filename": "yt-dlp_linux_aarch64",
+     "platform": "linux-arm64",
+     "sha256": "e87e9533e89fe5889abaa21f5114dfe7756d6aa6219b83551add04d48b18e483",
+     "size": 40789792,
+     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_linux_aarch64"
+    },
+    {
+     "filename": "yt-dlp.exe",
+     "platform": "windows-x64",
+     "sha256": "f5389d3698ecde4ef06f4e6b1ce0294fe9ac1396228c8990b8d3416d6d177a7d",
+     "size": 23575744,
+     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp.exe"
+    },
+    {
+     "filename": "yt-dlp_macos",
+     "platform": "macos-arm64",
+     "sha256": "0f922c15ccc0b83eefa1c8bc9104e434318c4bf16e408e1ee93b7745a6efe0aa",
+     "size": 37466304,
+     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_macos"
+    }
+   ],
+   "kind": "tool",
+   "license": "Unlicense",
+   "tags": [
+    "capture"
+   ],
+   "tier": "ark",
+   "title": "yt-dlp (save video while the internet lasts)",
+   "version": "2026.10.26"
+  }
+ },
+ "pack": "tools"
+}

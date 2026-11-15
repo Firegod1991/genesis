@@ -1,0 +1,5335 @@
+{
+ "items": {
+  "folgerpedia.folger.edu_en_all": {
+   "date": "2026-03-17",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "folgerpedia.folger.edu_en_all_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/folgerpedia.folger.edu_en_all_2026-03.zim.sha256",
+     "size": 4201535488,
+     "url": "https://download.kiwix.org/zim/other/folgerpedia.folger.edu_en_all_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "books",
+    "shakespeare"
+   ],
+   "tier": "eden",
+   "title": "Folgerpedia",
+   "version": "2026-03"
+  },
+  "gutenberg_af_all": {
+   "date": "2026-11-13",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_af_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_af_all_2026-11a.zim.sha256",
+     "size": 40877056,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_af_all_2026-11a.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "afr",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Projek Gutenberg-biblioteek",
+   "version": "2026-11-13"
+  },
+  "gutenberg_ale_all": {
+   "date": "2025-09-09",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ale_all_2025-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ale_all_2025-09.zim.sha256",
+     "size": 2093056,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ale_all_2025-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ale",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-09"
+  },
+  "gutenberg_ang_all": {
+   "date": "2025-09-09",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ang_all_2025-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ang_all_2025-09.zim.sha256",
+     "size": 6083584,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ang_all_2025-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ang",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-09"
+  },
+  "gutenberg_ar_all": {
+   "date": "2025-12-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ar_all_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ar_all_2025-12.zim.sha256",
+     "size": 2184192,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ar_all_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ara",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "مكتبة مشروع جوتنبرج",
+   "version": "2025-12"
+  },
+  "gutenberg_arp_all": {
+   "date": "2025-09-09",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_arp_all_2025-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_arp_all_2025-09.zim.sha256",
+     "size": 2391040,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_arp_all_2025-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "arp",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Nookóó",
+   "version": "2025-09"
+  },
+  "gutenberg_bg_all": {
+   "date": "2025-12-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_bg_all_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_bg_all_2025-12.zim.sha256",
+     "size": 3662848,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_bg_all_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bul",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Библиотека на проект Гутенберг",
+   "version": "2025-12"
+  },
+  "gutenberg_bgs_all": {
+   "date": "2025-10-07",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_bgs_all_2025-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_bgs_all_2025-10.zim.sha256",
+     "size": 2271232,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_bgs_all_2025-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bgs",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-10"
+  },
+  "gutenberg_br_all": {
+   "date": "2025-12-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_br_all_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_br_all_2025-12.zim.sha256",
+     "size": 2728960,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_br_all_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bre",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Levraoueg Raktres Gutenberg",
+   "version": "2025-12"
+  },
+  "gutenberg_brx_all": {
+   "date": "2025-09-09",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_brx_all_2025-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_brx_all_2025-09.zim.sha256",
+     "size": 9890816,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_brx_all_2025-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "brx",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-09"
+  },
+  "gutenberg_ca_all": {
+   "date": "2025-12-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ca_all_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ca_all_2025-12.zim.sha256",
+     "size": 51143680,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ca_all_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "cat",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Biblioteca Project Gutenberg",
+   "version": "2025-12"
+  },
+  "gutenberg_ceb_all": {
+   "date": "2025-09-09",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ceb_all_2025-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ceb_all_2025-09.zim.sha256",
+     "size": 3419136,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ceb_all_2025-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ceb",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Librarya sa Proyekto Gutenberg",
+   "version": "2025-09"
+  },
+  "gutenberg_cs_all": {
+   "date": "2025-12-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_cs_all_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_cs_all_2025-12.zim.sha256",
+     "size": 9963520,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_cs_all_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ces",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Projekt Gutenbergova knihovna",
+   "version": "2025-12"
+  },
+  "gutenberg_csb_all": {
+   "date": "2025-10-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_csb_all_2025-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_csb_all_2025-10.zim.sha256",
+     "size": 2111488,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_csb_all_2025-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "csb",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-10"
+  },
+  "gutenberg_cy_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_cy_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_cy_all_2026-01.zim.sha256",
+     "size": 50861056,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_cy_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "cym",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Llyfrgell Prosiect Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_da_all": {
+   "date": "2025-12-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_da_all_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_da_all_2025-12.zim.sha256",
+     "size": 67191808,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_da_all_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "dan",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Projekt Gutenbergs Bibliotek",
+   "version": "2025-12"
+  },
+  "gutenberg_de_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_de_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_de_all_2026-01.zim.sha256",
+     "size": 11045174272,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_de_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "deu",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Projekt Gutenberg-Bibliothek",
+   "version": "2026-01"
+  },
+  "gutenberg_el_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_el_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_el_all_2026-01.zim.sha256",
+     "size": 145582080,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_el_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ell",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Βιβλιοθήκη Project Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_en_all": {
+   "date": "2025-11-25",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_all_2025-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_all_2025-11.zim.sha256",
+     "size": 221251591168,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_all_2025-11.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "The complete English Project Gutenberg library.",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Project Gutenberg Library",
+   "version": "2025-11"
+  },
+  "gutenberg_en_lcc-a": {
+   "date": "2026-03-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-a_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-a_2026-03.zim.sha256",
+     "size": 9746185216,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-a_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-b": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-b_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-b_2026-03.zim.sha256",
+     "size": 6365165568,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-b_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-c": {
+   "date": "2025-12-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-c_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-c_2025-12.zim.sha256",
+     "size": 1322988544,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-c_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-12"
+  },
+  "gutenberg_en_lcc-d": {
+   "date": "2025-12-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-d_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-d_2025-12.zim.sha256",
+     "size": 40254449664,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-d_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-12"
+  },
+  "gutenberg_en_lcc-e": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-e_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-e_2026-03.zim.sha256",
+     "size": 10196818944,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-e_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-f": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-f_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-f_2026-03.zim.sha256",
+     "size": 9888134144,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-f_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-g": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-g_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-g_2026-03.zim.sha256",
+     "size": 8095142912,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-g_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-h": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-h_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-h_2026-03.zim.sha256",
+     "size": 4543003648,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-h_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-j": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-j_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-j_2026-03.zim.sha256",
+     "size": 456641536,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-j_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-k": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-k_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-k_2026-03.zim.sha256",
+     "size": 246517760,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-k_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-l": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-l_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-l_2026-03.zim.sha256",
+     "size": 628986880,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-l_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-m": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-m_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-m_2026-03.zim.sha256",
+     "size": 3994272768,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-m_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-n": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-n_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-n_2026-03.zim.sha256",
+     "size": 22752881664,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-n_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-p": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-p_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-p_2026-03.zim.sha256",
+     "size": 38550528,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-p_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pa": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pa_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pa_2026-03.zim.sha256",
+     "size": 521989120,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pa_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pb": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pb_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pb_2026-03.zim.sha256",
+     "size": 61479936,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pb_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pc": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pc_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pc_2026-03.zim.sha256",
+     "size": 180376576,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pc_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pd": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pd_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pd_2026-03.zim.sha256",
+     "size": 15091712,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pd_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pe": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pe_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pe_2026-03.zim.sha256",
+     "size": 794872832,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pe_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pf": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pf_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pf_2026-03.zim.sha256",
+     "size": 13156352,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pf_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pg": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pg_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pg_2026-03.zim.sha256",
+     "size": 273911808,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pg_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-ph": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-ph_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-ph_2026-03.zim.sha256",
+     "size": 48643072,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-ph_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pj": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pj_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pj_2026-03.zim.sha256",
+     "size": 265420800,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pj_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pk": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pk_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pk_2026-03.zim.sha256",
+     "size": 83982336,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pk_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pl": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pl_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pl_2026-03.zim.sha256",
+     "size": 107229184,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pl_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pm": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pm_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pm_2026-03.zim.sha256",
+     "size": 46747648,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pm_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pn": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pn_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pn_2026-03.zim.sha256",
+     "size": 3248474112,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pn_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pq": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pq_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pq_2026-03.zim.sha256",
+     "size": 4032702464,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pq_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pr": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pr_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pr_2026-03.zim.sha256",
+     "size": 16152121344,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pr_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-ps": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-ps_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-ps_2026-03.zim.sha256",
+     "size": 16022294528,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-ps_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pt": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pt_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pt_2026-03.zim.sha256",
+     "size": 759081984,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pt_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-pz": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-pz_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pz_2026-03.zim.sha256",
+     "size": 19770263552,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pz_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-q": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-q_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-q_2026-03.zim.sha256",
+     "size": 17724715008,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-q_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-r": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-r_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-r_2026-03.zim.sha256",
+     "size": 2019298304,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-r_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-s": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-s_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-s_2026-03.zim.sha256",
+     "size": 4532683776,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-s_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-t": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-t_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-t_2026-03.zim.sha256",
+     "size": 13154803712,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-t_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-u": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-u_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-u_2026-03.zim.sha256",
+     "size": 1288016896,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-u_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-v": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-v_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-v_2026-03.zim.sha256",
+     "size": 1368904704,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-v_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_en_lcc-z": {
+   "date": "2026-03-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-z_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-z_2026-03.zim.sha256",
+     "size": 2690468864,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-z_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
+  },
+  "gutenberg_enm_all": {
+   "date": "2025-10-07",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_enm_all_2025-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_enm_all_2025-10.zim.sha256",
+     "size": 5615616,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_enm_all_2025-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "enm",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Proiecte Gutenberge Libraire",
+   "version": "2025-10"
+  },
+  "gutenberg_eo_all": {
+   "date": "2025-12-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_eo_all_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_eo_all_2025-12.zim.sha256",
+     "size": 89372672,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_eo_all_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "epo",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Projekto Biblioteko Gutenberg",
+   "version": "2025-12"
+  },
+  "gutenberg_es_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_es_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_es_all_2026-01.zim.sha256",
+     "size": 1860106240,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_es_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "spa",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Biblioteca Proyecto Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_et_all": {
+   "date": "2026-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_et_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_et_all_2026-01.zim.sha256",
+     "size": 2237440,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_et_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "est",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Projekt Gutenbergi raamatukogu",
+   "version": "2026-01"
+  },
+  "gutenberg_fa_all": {
+   "date": "2026-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_fa_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fa_all_2026-01.zim.sha256",
+     "size": 2395136,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fa_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fas",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "پروژه کتابخانه گوتنبرگ",
+   "version": "2026-01"
+  },
+  "gutenberg_fi_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_fi_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fi_all_2026-01.zim.sha256",
+     "size": 1620224000,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fi_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fin",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenbergin Kirjasto",
+   "version": "2026-01"
+  },
+  "gutenberg_fr_all": {
+   "date": "2026-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_fr_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fr_all_2026-01.zim.sha256",
+     "size": 10534730752,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fr_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fra",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Projet Bibliothèque Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_fur_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_fur_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fur_all_2026-01.zim.sha256",
+     "size": 5398528,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fur_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fvr",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Biblioteche Project Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_fy_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_fy_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fy_all_2026-01.zim.sha256",
+     "size": 65013760,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fy_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fry",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Bibleteek",
+   "version": "2026-01"
+  },
+  "gutenberg_ga_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ga_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ga_all_2026-01.zim.sha256",
+     "size": 3438592,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ga_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "gle",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Leabharlann Project Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_gl_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_gl_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_gl_all_2026-01.zim.sha256",
+     "size": 3558400,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_gl_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "glg",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Biblioteca Proxecto Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_gla_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_gla_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_gla_all_2026-01.zim.sha256",
+     "size": 3622912,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_gla_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "gla",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Wigamig Project Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_grc_all": {
+   "date": "2025-10-07",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_grc_all_2025-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_grc_all_2025-10.zim.sha256",
+     "size": 4887552,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_grc_all_2025-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "grc",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-10"
+  },
+  "gutenberg_he_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_he_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_he_all_2026-01.zim.sha256",
+     "size": 5057536,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_he_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "heb",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "ספריית פרויקט גוטנברג",
+   "version": "2026-01"
+  },
+  "gutenberg_hu_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_hu_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_hu_all_2026-01.zim.sha256",
+     "size": 1023427584,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_hu_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "hun",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Projekt Gutenberg Könyvtár",
+   "version": "2026-01"
+  },
+  "gutenberg_ia_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ia_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ia_all_2026-01.zim.sha256",
+     "size": 2205696,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ia_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ina",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Bibliotheca Project Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_ilo_all": {
+   "date": "2025-10-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ilo_all_2025-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ilo_all_2025-10.zim.sha256",
+     "size": 2789376,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ilo_all_2025-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ilo",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Libroyan ti Proyekto Gutenberg",
+   "version": "2025-10"
+  },
+  "gutenberg_is_all": {
+   "date": "2026-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_is_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_is_all_2026-01.zim.sha256",
+     "size": 9988096,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_is_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "isl",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Gutenberg Verkefnisbókasafnið",
+   "version": "2026-01"
+  },
+  "gutenberg_it_all": {
+   "date": "2026-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_it_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_it_all_2026-01.zim.sha256",
+     "size": 1074391040,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_it_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ita",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Biblioteca Progetto Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_iu_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_iu_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_iu_all_2026-01.zim.sha256",
+     "size": 2575360,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_iu_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "iku",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "ᐱᕙᓪᓕᐊᔪᖅ ᐃᓄᒃᑎᑐᑦ ᒪᓕᒐᖃᑎᒌᖕᒥ",
+   "version": "2026-01"
+  },
+  "gutenberg_ja_all": {
+   "date": "2026-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ja_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ja_all_2026-01.zim.sha256",
+     "size": 12253184,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ja_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "jpn",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "プロジェクト・グーテンベルク・ライブラリー",
+   "version": "2026-01"
+  },
+  "gutenberg_kha_all": {
+   "date": "2025-10-07",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_kha_all_2025-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_kha_all_2025-10.zim.sha256",
+     "size": 2581504,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_kha_all_2025-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kha",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-10"
+  },
+  "gutenberg_kld_all": {
+   "date": "2025-10-07",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_kld_all_2025-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_kld_all_2025-10.zim.sha256",
+     "size": 2297856,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_kld_all_2025-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kld",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-10"
+  },
+  "gutenberg_ko_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ko_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ko_all_2026-01.zim.sha256",
+     "size": 2275328,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ko_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kor",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "metadata_defaults.title",
+   "version": "2026-01"
+  },
+  "gutenberg_la_all": {
+   "date": "2026-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_la_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_la_all_2026-01.zim.sha256",
+     "size": 162458624,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_la_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "lat",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Bibliotheca Projecti Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_mi_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_mi_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_mi_all_2026-01.zim.sha256",
+     "size": 2872320,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_mi_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mri",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Pukapuka Project Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_mul_all": {
+   "date": "2025-11-27",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_mul_all_2025-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_mul_all_2025-11.zim.sha256",
+     "size": 253055617024,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_mul_all_2025-11.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mul",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-11"
+  },
+  "gutenberg_nah_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_nah_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nah_all_2026-01.zim.sha256",
+     "size": 6657024,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nah_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nhe",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Amoxcalli Project Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_nap_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_nap_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nap_all_2026-01.zim.sha256",
+     "size": 2489344,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nap_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nap",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Librarìa Project Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_nav_all": {
+   "date": "2025-10-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_nav_all_2025-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nav_all_2025-10.zim.sha256",
+     "size": 5783552,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nav_all_2025-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nav",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-10"
+  },
+  "gutenberg_nl_all": {
+   "date": "2026-01-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_nl_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nl_all_2026-01.zim.sha256",
+     "size": 4150723584,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nl_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nld",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg-bibliotheek",
+   "version": "2026-01"
+  },
+  "gutenberg_no_all": {
+   "date": "2026-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_no_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_no_all_2026-01.zim.sha256",
+     "size": 47293440,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_no_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nor",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Prosjekt Gutenberg bibliotek",
+   "version": "2026-01"
+  },
+  "gutenberg_oc_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_oc_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_oc_all_2026-01.zim.sha256",
+     "size": 3712000,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_oc_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "oci",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Bibliotèca Project Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_oji_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_oji_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_oji_all_2026-01.zim.sha256",
+     "size": 2400256,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_oji_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "oji",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Ogimaawintamowin Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_pl_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_pl_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_pl_all_2026-01.zim.sha256",
+     "size": 21102592,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_pl_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "pol",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Biblioteka Projektu Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_pt_all": {
+   "date": "2025-10-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_pt_all_2025-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_pt_all_2025-10.zim.sha256",
+     "size": 522836992,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_pt_all_2025-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "por",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Biblioteca Projeto Gutenberg",
+   "version": "2025-10"
+  },
+  "gutenberg_rmq_all": {
+   "date": "2025-09-09",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_rmq_all_2025-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_rmq_all_2025-09.zim.sha256",
+     "size": 2207744,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_rmq_all_2025-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "rmq",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2025-09"
+  },
+  "gutenberg_ro_all": {
+   "date": "2026-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ro_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ro_all_2026-01.zim.sha256",
+     "size": 5746688,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ro_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ron",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Biblioteca Proiect Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_ru_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_ru_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ru_all_2026-01.zim.sha256",
+     "size": 7234560,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ru_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "rus",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Библиотека Проекта Гутенберг",
+   "version": "2026-01"
+  },
+  "gutenberg_sa_all": {
+   "date": "2026-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_sa_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sa_all_2026-01.zim.sha256",
+     "size": 2217984,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sa_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "san",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "परियोजना गुटेनबर्ग पुस्तकालय",
+   "version": "2026-01"
+  },
+  "gutenberg_sl_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_sl_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sl_all_2026-01.zim.sha256",
+     "size": 4828160,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sl_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "slv",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Projekt Gutenbergova knjižnica",
+   "version": "2026-01"
+  },
+  "gutenberg_sr_all": {
+   "date": "2026-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_sr_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sr_all_2026-01.zim.sha256",
+     "size": 3624960,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sr_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "srp",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Пројекат Библиотека Гутенберг",
+   "version": "2026-01"
+  },
+  "gutenberg_sv_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_sv_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sv_all_2026-01.zim.sha256",
+     "size": 220386304,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sv_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "swe",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Projekt Gutenbergs Bibliotek",
+   "version": "2026-01"
+  },
+  "gutenberg_te_all": {
+   "date": "2026-01-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_te_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_te_all_2026-01.zim.sha256",
+     "size": 5981184,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_te_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tel",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "ప్రాజెక్ట్ గుటెన్బర్గ్ లైబ్రరీ",
+   "version": "2026-01"
+  },
+  "gutenberg_tl_all": {
+   "date": "2026-01-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_tl_all_2026-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_tl_all_2026-01.zim.sha256",
+     "size": 67336192,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_tl_all_2026-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tgl",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Aklatan Proyektong Gutenberg",
+   "version": "2026-01"
+  },
+  "gutenberg_zh_all": {
+   "date": "2025-12-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_zh_all_2025-12.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_zh_all_2025-12.zim.sha256",
+     "size": 315750400,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_zh_all_2025-12.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "zho",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "古腾堡图书馆项目",
+   "version": "2025-12"
+  },
+  "mutopiaproject.org_en_all": {
+   "date": "2026-11-02",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "mutopiaproject.org_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/mutopiaproject.org_en_all_2026-11.zim.sha256",
+     "size": 6632491008,
+     "url": "https://download.kiwix.org/zim/zimit/mutopiaproject.org_en_all_2026-11.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "music",
+    "sheet music"
+   ],
+   "tier": "eden",
+   "title": "Mutopia Project",
+   "version": "2026-11"
+  },
+  "openmusictheory.com_en_all": {
+   "date": "2026-09-11",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "openmusictheory.com_en_all_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/openmusictheory.com_en_all_2026-09.zim.sha256",
+     "size": 76967936,
+     "url": "https://download.kiwix.org/zim/zimit/openmusictheory.com_en_all_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "music"
+   ],
+   "tier": "ark",
+   "title": "Open Music Theory",
+   "version": "2026-09"
+  },
+  "wikibooks_af_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_af_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_af_all_maxi_2026-10.zim.sha256",
+     "size": 1130496,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_af_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "afr",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_ar_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ar_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ar_all_maxi_2026-10.zim.sha256",
+     "size": 26384384,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ar_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ara",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "ويكي كتب",
+   "version": "2026-10"
+  },
+  "wikibooks_az_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_az_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_az_all_maxi_2026-10.zim.sha256",
+     "size": 27489280,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_az_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "aze",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Vikikitab",
+   "version": "2026-10"
+  },
+  "wikibooks_ba_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ba_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ba_all_maxi_2026-10.zim.sha256",
+     "size": 21326848,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ba_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bak",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Викидәреслек",
+   "version": "2026-10"
+  },
+  "wikibooks_be_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_be_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_be_all_maxi_2026-10.zim.sha256",
+     "size": 3031040,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_be_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bel",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Вікікнігі",
+   "version": "2026-10"
+  },
+  "wikibooks_bg_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_bg_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_bg_all_maxi_2026-10.zim.sha256",
+     "size": 6964224,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_bg_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bul",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Уикикниги",
+   "version": "2026-10"
+  },
+  "wikibooks_bn_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_bn_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_bn_all_maxi_2026-10.zim.sha256",
+     "size": 192222208,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_bn_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ben",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "উইকিবই",
+   "version": "2026-10"
+  },
+  "wikibooks_bs_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_bs_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_bs_all_maxi_2026-10.zim.sha256",
+     "size": 2059264,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_bs_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bos",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikiknjige",
+   "version": "2026-10"
+  },
+  "wikibooks_ca_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ca_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ca_all_maxi_2026-10.zim.sha256",
+     "size": 63491072,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ca_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "cat",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Viquillibres",
+   "version": "2026-10"
+  },
+  "wikibooks_cs_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_cs_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_cs_all_maxi_2026-10.zim.sha256",
+     "size": 47153152,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_cs_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ces",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikiknihy",
+   "version": "2026-10"
+  },
+  "wikibooks_cv_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_cv_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_cv_all_maxi_2026-10.zim.sha256",
+     "size": 867328,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_cv_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "chv",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_cy_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_cy_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_cy_all_maxi_2026-10.zim.sha256",
+     "size": 1171456,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_cy_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "cym",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wicilyfrau",
+   "version": "2026-10"
+  },
+  "wikibooks_da_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_da_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_da_all_maxi_2026-10.zim.sha256",
+     "size": 36864000,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_da_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "dan",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_de_all.maxi": {
+   "date": "2026-10-27",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_de_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_de_all_maxi_2026-10.zim.sha256",
+     "size": 3367022592,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_de_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "deu",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_el_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_el_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_el_all_maxi_2026-10.zim.sha256",
+     "size": 21969920,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_el_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ell",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Βικιβιβλία",
+   "version": "2026-10"
+  },
+  "wikibooks_en_all.maxi": {
+   "date": "2026-10-25",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_en_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_en_all_maxi_2026-10.zim.sha256",
+     "size": 4739740672,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_en_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_eo_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_eo_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_eo_all_maxi_2026-10.zim.sha256",
+     "size": 16283648,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_eo_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "epo",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Vikilibroj",
+   "version": "2026-10"
+  },
+  "wikibooks_es_all.maxi": {
+   "date": "2026-10-25",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_es_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_es_all_maxi_2026-10.zim.sha256",
+     "size": 281408512,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_es_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "spa",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikilibro",
+   "version": "2026-10"
+  },
+  "wikibooks_et_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_et_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_et_all_maxi_2026-10.zim.sha256",
+     "size": 7910400,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_et_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "est",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Vikiõpikud",
+   "version": "2026-10"
+  },
+  "wikibooks_eu_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_eu_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_eu_all_maxi_2026-10.zim.sha256",
+     "size": 59133952,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_eu_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eus",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_fa_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_fa_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_fa_all_maxi_2026-10.zim.sha256",
+     "size": 60600320,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_fa_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fas",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "ویکی‌کتاب",
+   "version": "2026-10"
+  },
+  "wikibooks_fi_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_fi_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_fi_all_maxi_2026-10.zim.sha256",
+     "size": 65833984,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_fi_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fin",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikikirjasto",
+   "version": "2026-10"
+  },
+  "wikibooks_fr_all.maxi": {
+   "date": "2026-10-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_fr_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_fr_all_maxi_2026-10.zim.sha256",
+     "size": 1151934464,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_fr_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fra",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikilivres",
+   "version": "2026-10"
+  },
+  "wikibooks_fy_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_fy_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_fy_all_maxi_2026-10.zim.sha256",
+     "size": 1709056,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_fy_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fry",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_gl_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_gl_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_gl_all_maxi_2026-10.zim.sha256",
+     "size": 11906048,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_gl_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "glg",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_he_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_he_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_he_all_maxi_2026-10.zim.sha256",
+     "size": 68503552,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_he_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "heb",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "ויקיספר",
+   "version": "2026-10"
+  },
+  "wikibooks_hi_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_hi_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_hi_all_maxi_2026-10.zim.sha256",
+     "size": 23330816,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_hi_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "hin",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "विकिपुस्तक",
+   "version": "2026-10"
+  },
+  "wikibooks_hr_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_hr_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_hr_all_maxi_2026-10.zim.sha256",
+     "size": 9398272,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_hr_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "hrv",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_hu_all.maxi": {
+   "date": "2026-10-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_hu_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_hu_all_maxi_2026-10.zim.sha256",
+     "size": 471053312,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_hu_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "hun",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikikönyvek",
+   "version": "2026-10"
+  },
+  "wikibooks_hy_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_hy_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_hy_all_maxi_2026-10.zim.sha256",
+     "size": 3857408,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_hy_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "hye",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Վիքիգրքեր",
+   "version": "2026-10"
+  },
+  "wikibooks_ia_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ia_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ia_all_maxi_2026-10.zim.sha256",
+     "size": 5255168,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ia_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ina",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_id_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_id_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_id_all_maxi_2026-10.zim.sha256",
+     "size": 125954048,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_id_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ind",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibuku",
+   "version": "2026-10"
+  },
+  "wikibooks_is_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_is_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_is_all_maxi_2026-10.zim.sha256",
+     "size": 24187904,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_is_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "isl",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibækur",
+   "version": "2026-10"
+  },
+  "wikibooks_it_all.maxi": {
+   "date": "2026-10-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_it_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_it_all_maxi_2026-10.zim.sha256",
+     "size": 2007337984,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_it_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ita",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_ja_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ja_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ja_all_maxi_2026-10.zim.sha256",
+     "size": 189999104,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ja_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "jpn",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_ka_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ka_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ka_all_maxi_2026-10.zim.sha256",
+     "size": 30633984,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ka_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kat",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "ვიკიწიგნები",
+   "version": "2026-10"
+  },
+  "wikibooks_kk_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_kk_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_kk_all_maxi_2026-10.zim.sha256",
+     "size": 6134784,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_kk_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kaz",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Уикикітап",
+   "version": "2026-10"
+  },
+  "wikibooks_km_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_km_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_km_all_maxi_2026-10.zim.sha256",
+     "size": 12483584,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_km_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "khm",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_ko_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ko_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ko_all_maxi_2026-10.zim.sha256",
+     "size": 18349056,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ko_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kor",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "위키책",
+   "version": "2026-10"
+  },
+  "wikibooks_ku_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ku_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ku_all_maxi_2026-10.zim.sha256",
+     "size": 4008960,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ku_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kur",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_ky_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ky_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ky_all_maxi_2026-10.zim.sha256",
+     "size": 706560,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ky_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kir",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_la_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_la_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_la_all_maxi_2026-10.zim.sha256",
+     "size": 4251648,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_la_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "lat",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Vicilibri",
+   "version": "2026-10"
+  },
+  "wikibooks_li_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_li_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_li_all_maxi_2026-10.zim.sha256",
+     "size": 1065984,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_li_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "lim",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibeuk",
+   "version": "2026-10"
+  },
+  "wikibooks_lt_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_lt_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_lt_all_maxi_2026-10.zim.sha256",
+     "size": 22574080,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_lt_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "lit",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_mg_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_mg_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_mg_all_maxi_2026-10.zim.sha256",
+     "size": 1193984,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_mg_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mlg",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_mk_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_mk_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_mk_all_maxi_2026-10.zim.sha256",
+     "size": 1675264,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_mk_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mkd",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Викикниги",
+   "version": "2026-10"
+  },
+  "wikibooks_ml_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ml_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ml_all_maxi_2026-10.zim.sha256",
+     "size": 3244032,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ml_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mal",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "വിക്കിപാഠശാല",
+   "version": "2026-10"
+  },
+  "wikibooks_mr_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_mr_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_mr_all_maxi_2026-10.zim.sha256",
+     "size": 15755264,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_mr_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mar",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "विकिबुक्स",
+   "version": "2026-10"
+  },
+  "wikibooks_ms_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ms_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ms_all_maxi_2026-10.zim.sha256",
+     "size": 8453120,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ms_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "msa",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibuku",
+   "version": "2026-10"
+  },
+  "wikibooks_nb_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_nb_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_nb_all_maxi_2026-10.zim.sha256",
+     "size": 14988288,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_nb_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nob",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibøker",
+   "version": "2026-10"
+  },
+  "wikibooks_ne_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ne_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ne_all_maxi_2026-10.zim.sha256",
+     "size": 4944896,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ne_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nep",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "विकिपुस्तक",
+   "version": "2026-10"
+  },
+  "wikibooks_nl_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_nl_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_nl_all_maxi_2026-10.zim.sha256",
+     "size": 256651264,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_nl_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nld",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_oc_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_oc_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_oc_all_maxi_2026-10.zim.sha256",
+     "size": 3493888,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_oc_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "oci",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikilibres",
+   "version": "2026-10"
+  },
+  "wikibooks_pa_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_pa_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_pa_all_maxi_2026-10.zim.sha256",
+     "size": 2468864,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_pa_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "pan",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_pl_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_pl_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_pl_all_maxi_2026-10.zim.sha256",
+     "size": 193185792,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_pl_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "pol",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_pt_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_pt_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_pt_all_maxi_2026-10.zim.sha256",
+     "size": 169410560,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_pt_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "por",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikilivros",
+   "version": "2026-10"
+  },
+  "wikibooks_ro_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ro_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ro_all_maxi_2026-10.zim.sha256",
+     "size": 8327168,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ro_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ron",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikimanuale",
+   "version": "2026-10"
+  },
+  "wikibooks_ru_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ru_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ru_all_maxi_2026-10.zim.sha256",
+     "size": 130569216,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ru_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "rus",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Викиучебник",
+   "version": "2026-10"
+  },
+  "wikibooks_sa_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_sa_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sa_all_maxi_2026-10.zim.sha256",
+     "size": 21409792,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sa_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "san",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "विकिपुस्तकानि",
+   "version": "2026-10"
+  },
+  "wikibooks_si_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_si_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_si_all_maxi_2026-10.zim.sha256",
+     "size": 464461824,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_si_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "sin",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_sk_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_sk_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sk_all_maxi_2026-10.zim.sha256",
+     "size": 6896640,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sk_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "slk",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikiknihy",
+   "version": "2026-10"
+  },
+  "wikibooks_sl_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_sl_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sl_all_maxi_2026-10.zim.sha256",
+     "size": 31942656,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sl_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "slv",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikiknjige",
+   "version": "2026-10"
+  },
+  "wikibooks_sq_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_sq_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sq_all_maxi_2026-10.zim.sha256",
+     "size": 30220288,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sq_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "sqi",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_sr_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_sr_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sr_all_maxi_2026-10.zim.sha256",
+     "size": 17553408,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sr_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "srp",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Викикњиге",
+   "version": "2026-10"
+  },
+  "wikibooks_sv_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_sv_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sv_all_maxi_2026-10.zim.sha256",
+     "size": 30251008,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_sv_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "swe",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_ta_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ta_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ta_all_maxi_2026-10.zim.sha256",
+     "size": 13668352,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ta_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tam",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "விக்கிநூல்கள்",
+   "version": "2026-10"
+  },
+  "wikibooks_te_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_te_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_te_all_maxi_2026-10.zim.sha256",
+     "size": 22016000,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_te_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tel",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_tg_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_tg_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_tg_all_maxi_2026-10.zim.sha256",
+     "size": 1245184,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_tg_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tgk",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_th_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_th_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_th_all_maxi_2026-10.zim.sha256",
+     "size": 26114048,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_th_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tha",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "วิกิตำราภาษาไทย",
+   "version": "2026-10"
+  },
+  "wikibooks_tl_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_tl_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_tl_all_maxi_2026-10.zim.sha256",
+     "size": 3641344,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_tl_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tgl",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_tr_all.maxi": {
+   "date": "2026-09-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_tr_all_maxi_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_tr_all_maxi_2026-09.zim.sha256",
+     "size": 26889216,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_tr_all_maxi_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tur",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Vikikitap",
+   "version": "2026-09"
+  },
+  "wikibooks_tt_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_tt_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_tt_all_maxi_2026-10.zim.sha256",
+     "size": 5580800,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_tt_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tat",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_uk_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_uk_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_uk_all_maxi_2026-10.zim.sha256",
+     "size": 21013504,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_uk_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ukr",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Вікіпідручник",
+   "version": "2026-10"
+  },
+  "wikibooks_ur_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_ur_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ur_all_maxi_2026-10.zim.sha256",
+     "size": 3880960,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_ur_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "urd",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "ویکی کتب",
+   "version": "2026-10"
+  },
+  "wikibooks_vi_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_vi_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_vi_all_maxi_2026-10.zim.sha256",
+     "size": 166120448,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_vi_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "vie",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikibooks_zh_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikibooks_zh_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikibooks/wikibooks_zh_all_maxi_2026-10.zim.sha256",
+     "size": 136554496,
+     "url": "https://download.kiwix.org/zim/wikibooks/wikibooks_zh_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "zho",
+   "rule": "wikibooks_every_language",
+   "tags": [
+    "textbooks"
+   ],
+   "tier": "eden",
+   "title": "Wikibooks",
+   "version": "2026-10"
+  },
+  "wikisource_ar_all.maxi": {
+   "date": "2026-06-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_ar_all_maxi_2026-06.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_ar_all_maxi_2026-06.zim.sha256",
+     "size": 5922753536,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_ar_all_maxi_2026-06.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ara",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "ويكي مصدر",
+   "version": "2026-06"
+  },
+  "wikisource_as_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_as_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_as_all_maxi_2026-10.zim.sha256",
+     "size": 92857344,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_as_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "asm",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "ৱিকিউৎস",
+   "version": "2026-10"
+  },
+  "wikisource_az_all.maxi": {
+   "date": "2026-04-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_az_all_maxi_2026-04.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_az_all_maxi_2026-04.zim.sha256",
+     "size": 37190656,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_az_all_maxi_2026-04.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "aze",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Vikimənbə",
+   "version": "2026-04"
+  },
+  "wikisource_be_all.maxi": {
+   "date": "2026-10-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_be_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_be_all_maxi_2026-10.zim.sha256",
+     "size": 203284480,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_be_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bel",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Вікікрыніцы",
+   "version": "2026-10"
+  },
+  "wikisource_bg_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_bg_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_bg_all_maxi_2026-10.zim.sha256",
+     "size": 20444160,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_bg_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bul",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Уикиизточник",
+   "version": "2026-10"
+  },
+  "wikisource_bn_all.maxi": {
+   "date": "2026-10-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_bn_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_bn_all_maxi_2026-10.zim.sha256",
+     "size": 193966080,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_bn_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ben",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "উইকিসংকলন",
+   "version": "2026-10"
+  },
+  "wikisource_br_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_br_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_br_all_maxi_2026-10.zim.sha256",
+     "size": 72968192,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_br_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bre",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikimammenn",
+   "version": "2026-10"
+  },
+  "wikisource_bs_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_bs_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_bs_all_maxi_2026-10.zim.sha256",
+     "size": 13981696,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_bs_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bos",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikizvor",
+   "version": "2026-10"
+  },
+  "wikisource_ca_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_ca_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_ca_all_maxi_2026-10.zim.sha256",
+     "size": 83649536,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_ca_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "cat",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Viquitexts",
+   "version": "2026-10"
+  },
+  "wikisource_cs_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_cs_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_cs_all_maxi_2026-10.zim.sha256",
+     "size": 284045312,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_cs_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ces",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikizdroje",
+   "version": "2026-10"
+  },
+  "wikisource_cy_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_cy_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_cy_all_maxi_2026-10.zim.sha256",
+     "size": 204945408,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_cy_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "cym",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wicidestun",
+   "version": "2026-10"
+  },
+  "wikisource_da_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_da_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_da_all_maxi_2026-10.zim.sha256",
+     "size": 116637696,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_da_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "dan",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_de_all.maxi": {
+   "date": "2026-09-27",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_de_all_maxi_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_de_all_maxi_2026-09.zim.sha256",
+     "size": 2577434624,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_de_all_maxi_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "deu",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-09"
+  },
+  "wikisource_el_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_el_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_el_all_maxi_2026-10.zim.sha256",
+     "size": 143721472,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_el_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ell",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Βικιθήκη",
+   "version": "2026-10"
+  },
+  "wikisource_en_all.maxi": {
+   "date": "2026-09-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_en_all_maxi_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_en_all_maxi_2026-09.zim.sha256",
+     "size": 8615937024,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_en_all_maxi_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "books",
+    "primary sources"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-09"
+  },
+  "wikisource_en_all.nopic": {
+   "date": "2026-09-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_en_all_nopic_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_en_all_nopic_2026-09.zim.sha256",
+     "size": 3905589248,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_en_all_nopic_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "books",
+    "primary sources"
+   ],
+   "tier": "ark",
+   "title": "Wikisource",
+   "version": "2026-09"
+  },
+  "wikisource_eo_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_eo_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_eo_all_maxi_2026-10.zim.sha256",
+     "size": 43397120,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_eo_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "epo",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Vikifontaro",
+   "version": "2026-10"
+  },
+  "wikisource_es_all.maxi": {
+   "date": "2026-10-12",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_es_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_es_all_maxi_2026-10.zim.sha256",
+     "size": 512136192,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_es_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "spa",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_et_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_et_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_et_all_maxi_2026-10.zim.sha256",
+     "size": 28575744,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_et_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "est",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Vikitekstid",
+   "version": "2026-10"
+  },
+  "wikisource_eu_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_eu_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_eu_all_maxi_2026-10.zim.sha256",
+     "size": 21232640,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_eu_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eus",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikiteka",
+   "version": "2026-10"
+  },
+  "wikisource_fa_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_fa_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_fa_all_maxi_2026-10.zim.sha256",
+     "size": 181283840,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_fa_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fas",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "ویکی‌نبشته",
+   "version": "2026-10"
+  },
+  "wikisource_fi_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_fi_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_fi_all_maxi_2026-10.zim.sha256",
+     "size": 61733888,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_fi_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fin",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikiaineisto",
+   "version": "2026-10"
+  },
+  "wikisource_fo_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_fo_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_fo_all_maxi_2026-10.zim.sha256",
+     "size": 576512,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_fo_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fao",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikiheimild",
+   "version": "2026-10"
+  },
+  "wikisource_fr_all.maxi": {
+   "date": "2025-09-25",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_fr_all_maxi_2025-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_fr_all_maxi_2025-09.zim.sha256",
+     "size": 15680109568,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_fr_all_maxi_2025-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fra",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2025-09"
+  },
+  "wikisource_gl_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_gl_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_gl_all_maxi_2026-10.zim.sha256",
+     "size": 12857344,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_gl_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "glg",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_gu_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_gu_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_gu_all_maxi_2026-10.zim.sha256",
+     "size": 59224064,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_gu_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "guj",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "વિકિસ્રોત",
+   "version": "2026-10"
+  },
+  "wikisource_he_all.maxi": {
+   "date": "2026-07-13",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_he_all_maxi_2026-07.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_he_all_maxi_2026-07.zim.sha256",
+     "size": 1418535936,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_he_all_maxi_2026-07.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "heb",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "ויקיטקסט",
+   "version": "2026-07"
+  },
+  "wikisource_hr_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_hr_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_hr_all_maxi_2026-10.zim.sha256",
+     "size": 58443776,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_hr_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "hrv",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikizvor",
+   "version": "2026-10"
+  },
+  "wikisource_hu_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_hu_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_hu_all_maxi_2026-10.zim.sha256",
+     "size": 84610048,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_hu_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "hun",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikiforrás",
+   "version": "2026-10"
+  },
+  "wikisource_hy_all.maxi": {
+   "date": "2026-10-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_hy_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_hy_all_maxi_2026-10.zim.sha256",
+     "size": 119669760,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_hy_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "hye",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Վիքիդարան",
+   "version": "2026-10"
+  },
+  "wikisource_id_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_id_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_id_all_maxi_2026-10.zim.sha256",
+     "size": 119363584,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_id_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ind",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisumber",
+   "version": "2026-10"
+  },
+  "wikisource_is_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_is_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_is_all_maxi_2026-10.zim.sha256",
+     "size": 19471360,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_is_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "isl",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikiheimild",
+   "version": "2026-10"
+  },
+  "wikisource_it_all.maxi": {
+   "date": "2026-09-12",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_it_all_maxi_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_it_all_maxi_2026-09.zim.sha256",
+     "size": 1315990528,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_it_all_maxi_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ita",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-09"
+  },
+  "wikisource_ja_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_ja_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_ja_all_maxi_2026-10.zim.sha256",
+     "size": 286032896,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_ja_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "jpn",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_kn_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_kn_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_kn_all_maxi_2026-10.zim.sha256",
+     "size": 122065920,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_kn_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kan",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "ವಿಕಿಸೋರ್ಸ್",
+   "version": "2026-10"
+  },
+  "wikisource_ko_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_ko_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_ko_all_maxi_2026-10.zim.sha256",
+     "size": 389979136,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_ko_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kor",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "위키문헌",
+   "version": "2026-10"
+  },
+  "wikisource_la_all.maxi": {
+   "date": "2026-09-18",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_la_all_maxi_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_la_all_maxi_2026-09.zim.sha256",
+     "size": 380783616,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_la_all_maxi_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "lat",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-09"
+  },
+  "wikisource_li_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_li_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_li_all_maxi_2026-10.zim.sha256",
+     "size": 3247104,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_li_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "lim",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikibrónne",
+   "version": "2026-10"
+  },
+  "wikisource_lt_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_lt_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_lt_all_maxi_2026-10.zim.sha256",
+     "size": 7199744,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_lt_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "lit",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Vikišaltiniai",
+   "version": "2026-10"
+  },
+  "wikisource_mk_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_mk_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_mk_all_maxi_2026-10.zim.sha256",
+     "size": 15613952,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_mk_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mkd",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_ml_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_ml_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_ml_all_maxi_2026-10.zim.sha256",
+     "size": 154052608,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_ml_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mal",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "വിക്കിഗ്രന്ഥശാല",
+   "version": "2026-10"
+  },
+  "wikisource_mr_all.maxi": {
+   "date": "2026-10-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_mr_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_mr_all_maxi_2026-10.zim.sha256",
+     "size": 84706304,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_mr_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mar",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "विकिस्रोत",
+   "version": "2026-10"
+  },
+  "wikisource_nan_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_nan_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_nan_all_maxi_2026-10.zim.sha256",
+     "size": 8902656,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_nan_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nan",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wiki Tô·-su-kóan",
+   "version": "2026-10"
+  },
+  "wikisource_nb_all.maxi": {
+   "date": "2026-10-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_nb_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_nb_all_maxi_2026-10.zim.sha256",
+     "size": 156214272,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_nb_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nob",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikikilden",
+   "version": "2026-10"
+  },
+  "wikisource_nl_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_nl_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_nl_all_maxi_2026-10.zim.sha256",
+     "size": 216351744,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_nl_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "nld",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_or_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_or_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_or_all_maxi_2026-10.zim.sha256",
+     "size": 16019456,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_or_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ori",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "ଉଇକିପାଠାଗାର",
+   "version": "2026-10"
+  },
+  "wikisource_pa_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_pa_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_pa_all_maxi_2026-10.zim.sha256",
+     "size": 21513216,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_pa_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "pan",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "ਵਿਕੀਸਰੋਤ",
+   "version": "2026-10"
+  },
+  "wikisource_pl_all.maxi": {
+   "date": "2026-09-23",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_pl_all_maxi_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_pl_all_maxi_2026-09.zim.sha256",
+     "size": 2588930048,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_pl_all_maxi_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "pol",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikiźródła",
+   "version": "2026-09"
+  },
+  "wikisource_pms_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_pms_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_pms_all_maxi_2026-10.zim.sha256",
+     "size": 19579904,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_pms_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "pms",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_pt_all.maxi": {
+   "date": "2026-10-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_pt_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_pt_all_maxi_2026-10.zim.sha256",
+     "size": 1716089856,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_pt_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "por",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_ro_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_ro_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_ro_all_maxi_2026-10.zim.sha256",
+     "size": 107695104,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_ro_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ron",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_ru_all.maxi": {
+   "date": "2026-07-08",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_ru_all_maxi_2026-07.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_ru_all_maxi_2026-07.zim.sha256",
+     "size": 6796374016,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_ru_all_maxi_2026-07.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "rus",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Викитека",
+   "version": "2026-07"
+  },
+  "wikisource_sa_all.maxi": {
+   "date": "2026-10-06",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_sa_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_sa_all_maxi_2026-10.zim.sha256",
+     "size": 693236736,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_sa_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "san",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "विकिस्रोतः",
+   "version": "2026-10"
+  },
+  "wikisource_sah_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_sah_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_sah_all_maxi_2026-10.zim.sha256",
+     "size": 5379072,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_sah_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "sah",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Бикитиэкэ",
+   "version": "2026-10"
+  },
+  "wikisource_sk_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_sk_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_sk_all_maxi_2026-10.zim.sha256",
+     "size": 3970048,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_sk_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "slk",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikizdroje",
+   "version": "2026-10"
+  },
+  "wikisource_sl_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_sl_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_sl_all_maxi_2026-10.zim.sha256",
+     "size": 248455168,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_sl_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "slv",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikivir",
+   "version": "2026-10"
+  },
+  "wikisource_sr_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_sr_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_sr_all_maxi_2026-10.zim.sha256",
+     "size": 153480192,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_sr_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "srp",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Викизворник",
+   "version": "2026-10"
+  },
+  "wikisource_sv_all.maxi": {
+   "date": "2026-10-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_sv_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_sv_all_maxi_2026-10.zim.sha256",
+     "size": 292678656,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_sv_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "swe",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_ta_all.maxi": {
+   "date": "2026-10-10",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_ta_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_ta_all_maxi_2026-10.zim.sha256",
+     "size": 494857216,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_ta_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tam",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "விக்கிமூலம்",
+   "version": "2026-10"
+  },
+  "wikisource_te_all.maxi": {
+   "date": "2026-10-13",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_te_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_te_all_maxi_2026-10.zim.sha256",
+     "size": 472144896,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_te_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tel",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "వికీసోర్స్",
+   "version": "2026-10"
+  },
+  "wikisource_th_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_th_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_th_all_maxi_2026-10.zim.sha256",
+     "size": 94522368,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_th_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tha",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "วิกิซอร์ซ",
+   "version": "2026-10"
+  },
+  "wikisource_tr_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_tr_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_tr_all_maxi_2026-10.zim.sha256",
+     "size": 68264960,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_tr_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tur",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Vikikaynak",
+   "version": "2026-10"
+  },
+  "wikisource_uk_all.maxi": {
+   "date": "2026-10-09",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_uk_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_uk_all_maxi_2026-10.zim.sha256",
+     "size": 1601642496,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_uk_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ukr",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Вікіджерела",
+   "version": "2026-10"
+  },
+  "wikisource_vec_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_vec_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_vec_all_maxi_2026-10.zim.sha256",
+     "size": 18850816,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_vec_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "vec",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_vi_all.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_vi_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_vi_all_maxi_2026-10.zim.sha256",
+     "size": 94074880,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_vi_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "vie",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-10"
+  },
+  "wikisource_yi_all.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_yi_all_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_yi_all_maxi_2026-10.zim.sha256",
+     "size": 173399040,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_yi_all_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "yid",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "װיקיביבליאָטעק",
+   "version": "2026-10"
+  },
+  "wikisource_zh_all.maxi": {
+   "date": "2026-02-28",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikisource_zh_all_maxi_2026-02.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikisource/wikisource_zh_all_maxi_2026-02.zim.sha256",
+     "size": 12977035264,
+     "url": "https://download.kiwix.org/zim/wikisource/wikisource_zh_all_maxi_2026-02.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "zho",
+   "rule": "wikisource_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "eden",
+   "title": "Wikisource",
+   "version": "2026-02"
+  }
+ },
+ "pack": "library"
+}

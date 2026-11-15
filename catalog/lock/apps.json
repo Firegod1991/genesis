@@ -1,0 +1,303 @@
+{
+ "items": {
+  "aprsdroid": {
+   "error": "GitHub release lookup failed for ge0rg/aprsdroid: HTTP 404 for https://api.github.com/repos/ge0rg/aprsdroid/releases/latest",
+   "kind": "app",
+   "status": "error",
+   "tier": "ark",
+   "title": "APRSdroid"
+  },
+  "bitchat_android": {
+   "date": "2026-10-28",
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "bitchat-android-x86_64.apk",
+     "platform": "android",
+     "sha256": "c7c56996abe66b284b3a54e0e72e216add1a2042d43603164a73e471d98e347b",
+     "size": 21947933,
+     "url": "https://github.com/permissionlesstech/bitchat-android/releases/download/v2.2.0/bitchat-android-x86_64.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "Unlicense",
+   "tags": [
+    "mesh",
+    "messaging"
+   ],
+   "tier": "ark",
+   "title": "bitchat (Bluetooth mesh chat)",
+   "version": "2.2.0"
+  },
+  "briar": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "org.briarproject.briar.android_10524.apk",
+     "platform": "android",
+     "size": 50686498,
+     "url": "https://f-droid.org/repo/org.briarproject.briar.android_10524.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tags": [
+    "messaging"
+   ],
+   "tier": "seed",
+   "title": "Briar (messaging over Bluetooth, WiFi and Tor)",
+   "version": "1.5.24"
+  },
+  "comaps": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "app.comaps.fdroid_26100519.apk",
+     "platform": "android",
+     "size": 70478884,
+     "url": "https://f-droid.org/repo/app.comaps.fdroid_26100519.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "Apache 2.0",
+   "tags": [
+    "maps"
+   ],
+   "tier": "ark",
+   "title": "CoMaps (community offline maps)",
+   "version": "2026.10.05-19-FDroid"
+  },
+  "fdroid": {
+   "date": "2026-11-06",
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "F-Droid.apk",
+     "platform": "android",
+     "size": 12774751,
+     "url": "https://f-droid.org/F-Droid.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tier": "seed",
+   "title": "F-Droid (open source app store)",
+   "version": "2026-11-06"
+  },
+  "keepassdx": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "com.kunzisoft.keepass.libre_45800.apk",
+     "platform": "android",
+     "size": 16778665,
+     "url": "https://f-droid.org/repo/com.kunzisoft.keepass.libre_45800.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tags": [
+    "security"
+   ],
+   "tier": "seed",
+   "title": "KeePassDX (password vault)",
+   "version": "4.5.8"
+  },
+  "kiwix_android": {
+   "date": "2026-05-14",
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "v3.14.1-x86_64-standalone.apk",
+     "platform": "android",
+     "sha256": "3aa782f421b9aa2c1dbdb7baef000fd766f2cd7adfebcad792253dcef1657ddf",
+     "size": 68754256,
+     "url": "https://github.com/kiwix/kiwix-android/releases/download/v3.14.1/v3.14.1-x86_64-standalone.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tags": [
+    "reader"
+   ],
+   "tier": "seed",
+   "title": "Kiwix (offline Wikipedia reader)",
+   "version": "3.14.1"
+  },
+  "meshtastic_android": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "com.geeksville.mesh_29322724.apk",
+     "platform": "android",
+     "size": 45238103,
+     "url": "https://f-droid.org/repo/com.geeksville.mesh_29322724.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tags": [
+    "mesh"
+   ],
+   "tier": "seed",
+   "title": "Meshtastic",
+   "version": "2.8.3 (29322724) fdroid"
+  },
+  "newpipe": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "org.schabi.newpipe_1017.apk",
+     "platform": "android",
+     "size": 16980865,
+     "url": "https://f-droid.org/repo/org.schabi.newpipe_1017.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tags": [
+    "media"
+   ],
+   "tier": "ark",
+   "title": "NewPipe (save video while the internet lasts)",
+   "version": "0.29.3"
+  },
+  "organic_maps": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "app.organicmaps_26092932.apk",
+     "platform": "android",
+     "size": 63797784,
+     "url": "https://f-droid.org/repo/app.organicmaps_26092932.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "Apache 2.0",
+   "tags": [
+    "maps"
+   ],
+   "tier": "seed",
+   "title": "Organic Maps (offline maps and navigation)",
+   "version": "2026.09.29-32-FDroid"
+  },
+  "osmand": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "net.osmand.plus_541003.apk",
+     "platform": "android",
+     "size": 161855613,
+     "url": "https://f-droid.org/repo/net.osmand.plus_541003.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tags": [
+    "maps"
+   ],
+   "tier": "ark",
+   "title": "OsmAnd (offline maps, contour lines, routing)",
+   "version": "5.4.10"
+  },
+  "rattlegram": {
+   "date": "2026-09-15",
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "app-release.apk",
+     "platform": "android",
+     "sha256": "3098114e035aec1df480f6fc2220a415cfee50f604f17c4374cb4b46d2fe9928",
+     "size": 7740362,
+     "url": "https://github.com/aicodix/rattlegram/releases/download/v1.19/app-release.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "BSD Zero Clause",
+   "tags": [
+    "radio",
+    "messaging"
+   ],
+   "tier": "ark",
+   "title": "Rattlegram (text over any voice radio)",
+   "version": "1.19"
+  },
+  "survival_manual": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "org.ligi.survivalmanual_500.apk",
+     "platform": "android",
+     "size": 8121175,
+     "url": "https://f-droid.org/repo/org.ligi.survivalmanual_500.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tags": [
+    "survival"
+   ],
+   "tier": "seed",
+   "title": "Offline Survival Manual",
+   "version": "5.0.0"
+  },
+  "termux": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "com.termux_1002.apk",
+     "platform": "android",
+     "size": 113880067,
+     "url": "https://f-droid.org/repo/com.termux_1002.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tags": [
+    "tools"
+   ],
+   "tier": "ark",
+   "title": "Termux (Linux terminal)",
+   "version": "0.118.3"
+  },
+  "trail_sense": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "com.kylecorry.trail_sense_148.apk",
+     "platform": "android",
+     "size": 13271554,
+     "url": "https://f-droid.org/repo/com.kylecorry.trail_sense_148.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "MIT",
+   "tags": [
+    "survival"
+   ],
+   "tier": "seed",
+   "title": "Trail Sense (offline navigation and survival tools)",
+   "version": "8.2.0"
+  },
+  "vlc_android": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "org.videolan.vlc_13070208.apk",
+     "platform": "android",
+     "size": 51460280,
+     "url": "https://f-droid.org/repo/org.videolan.vlc_13070208.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 2.0",
+   "tags": [
+    "media"
+   ],
+   "tier": "seed",
+   "title": "VLC",
+   "version": "3.7.2"
+  }
+ },
+ "pack": "apps"
+}

@@ -1,0 +1,89 @@
+{
+ "items": {
+  "global_power_plants": {
+   "dest": "poi/sources",
+   "files": [
+    {
+     "filename": "global_power_plant_database.csv",
+     "size": 11973385,
+     "url": "https://raw.githubusercontent.com/wri/global-power-plant-database/master/output_database/global_power_plant_database.csv"
+    }
+   ],
+   "kind": "data",
+   "license": "CC BY 4.0",
+   "note": "About 35,000 power plants in 167 countries with fuel type and capacity. Last revised by WRI in 2021.",
+   "tier": "seed",
+   "title": "Global Power Plant Database (World Resources Institute)",
+   "version": "current"
+  },
+  "map_assets": {
+   "dest": "maps/assets",
+   "files": [
+    {
+     "filename": "basemaps-assets.tar.gz",
+     "url": "https://github.com/protomaps/basemaps-assets/archive/refs/heads/main.tar.gz"
+    }
+   ],
+   "kind": "archive",
+   "license": "SIL OFL (fonts), CC0 (icons)",
+   "post": "untar",
+   "tier": "seed",
+   "title": "Map fonts and icons (Protomaps basemap assets)",
+   "version": "current"
+  },
+  "planet_basemap": {
+   "date": "2026-11-14",
+   "dest": "maps",
+   "files": [
+    {
+     "filename": "planet.pmtiles",
+     "md5": "9735ee0dd5ad0af5192e207631ff68dc",
+     "size": 139488191421,
+     "url": "https://build.protomaps.com/20261114.pmtiles"
+    }
+   ],
+   "kind": "map",
+   "license": "ODbL (OpenStreetMap contributors)",
+   "meta": {
+    "basemap_version": "4.15.2"
+   },
+   "note": "Every street on Earth in one file. You do not need it to map your own region: `genesis maps region` cuts any area straight from this build.",
+   "tier": "eden",
+   "title": "Planet basemap, full detail (Protomaps daily build)",
+   "version": "20261114"
+  },
+  "planet_osm": {
+   "date": "2026-11-12",
+   "dest": "osm",
+   "files": [
+    {
+     "filename": "planet-latest.osm.pbf",
+     "md5_url": "https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf.md5",
+     "size": 95827888806,
+     "url": "https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf"
+    }
+   ],
+   "kind": "osm",
+   "license": "ODbL (OpenStreetMap contributors)",
+   "note": "Input for building survival layers and routing for the entire world yourself.",
+   "tier": "eden",
+   "title": "OpenStreetMap planet (raw data)",
+   "version": "2026-11-12"
+  },
+  "survival_layers_world": {
+   "error": "GitHub release lookup failed for Firegod1991/genesis-vault: HTTP 404 for https://api.github.com/repos/Firegod1991/genesis-vault/releases/latest",
+   "kind": "poi",
+   "status": "error",
+   "tier": "seed",
+   "title": "Survival layers for the whole world (water, medical, fuel, power, shelter and more)"
+  },
+  "world_overview": {
+   "error": "GitHub release lookup failed for Firegod1991/genesis-vault: HTTP 404 for https://api.github.com/repos/Firegod1991/genesis-vault/releases/latest",
+   "kind": "map",
+   "status": "error",
+   "tier": "seed",
+   "title": "World overview map (every country, zoom 0 to 6)"
+  }
+ },
+ "pack": "maps"
+}

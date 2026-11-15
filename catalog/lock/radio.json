@@ -1,0 +1,702 @@
+{
+ "items": {
+  "chirp": {
+   "error": "FetchError: HTTP 403 for https://archive.chirpmyradio.com/chirp_next/",
+   "kind": "archive",
+   "status": "error",
+   "tier": "seed",
+   "title": "CHIRP (radio programming)"
+  },
+  "direwolf": {
+   "date": "2025-11-13",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "direwolf-1.8.1.tar.gz",
+     "platform": "source",
+     "url": "https://github.com/wb2osz/direwolf/archive/refs/tags/1.8.1.tar.gz"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 2.0",
+   "tags": [
+    "ham",
+    "packet"
+   ],
+   "tier": "ark",
+   "title": "Dire Wolf (APRS and packet modem, source)",
+   "version": "1.8.1"
+  },
+  "eibi_shortwave_schedule": {
+   "date": "2026-10-31",
+   "dest": "radio/data",
+   "files": [
+    {
+     "filename": "sked-b26.csv",
+     "size": 490500,
+     "url": "http://www.eibispace.de/dx/sked-b26.csv"
+    }
+   ],
+   "kind": "data",
+   "license": "Free to use, credit EiBi",
+   "note": "Seasonal file. The monthly review moves this line to the next season.",
+   "tags": [
+    "shortwave",
+    "data"
+   ],
+   "tier": "seed",
+   "title": "EiBi shortwave broadcast schedule (season B26)",
+   "version": "2026-10-31"
+  },
+  "fcc_amateur_licenses": {
+   "date": "2026-11-08",
+   "dest": "radio/data",
+   "files": [
+    {
+     "filename": "l_amat.zip",
+     "size": 198117503,
+     "url": "https://data.fcc.gov/download/pub/uls/complete/l_amat.zip"
+    }
+   ],
+   "kind": "data",
+   "license": "US government work",
+   "tags": [
+    "ham",
+    "data"
+   ],
+   "tier": "seed",
+   "title": "FCC amateur license database (offline callsign lookup)",
+   "version": "2026-11-08"
+  },
+  "fldigi": {
+   "date": "2026-08-03",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "fldigi-4.2.13.tar.gz",
+     "md5": "bec4586a08983f53f01c9a722895c8a8",
+     "size": 5244946,
+     "url": "https://downloads.sourceforge.net/project/fldigi/fldigi/fldigi-4.2.13.tar.gz"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "ham",
+    "digital"
+   ],
+   "tier": "ark",
+   "title": "Fldigi (digital modes, NBEMS)",
+   "version": "4.2.13"
+  },
+  "freedv": {
+   "date": "2026-10-31",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "FreeDV-2.4.1-windows-x86_64.exe",
+     "platform": "windows-x64",
+     "sha256": "d4108c4b0243221bc22c227e220e65cd9eb57ce06150dd0258778cd194cfcab0",
+     "size": 49737744,
+     "url": "https://github.com/freedv/freedv-gui/releases/download/v2.4.1/FreeDV-2.4.1-windows-x86_64.exe"
+    },
+    {
+     "filename": "FreeDV-2.4.1-x86_64.AppImage",
+     "platform": "linux-x64",
+     "sha256": "469a9ffeefb700996676f815255837ae25a0134b3409280f16b23bc7ef3d7356",
+     "size": 81066488,
+     "url": "https://github.com/freedv/freedv-gui/releases/download/v2.4.1/FreeDV-2.4.1-x86_64.AppImage"
+    },
+    {
+     "filename": "FreeDV-2.4.1.dmg",
+     "platform": "macos-arm64",
+     "sha256": "e5683d1ac51ca36b9c3458bdfe604bf4b9718e89bdec2d1ccab6035967f2b287",
+     "size": 68695313,
+     "url": "https://github.com/freedv/freedv-gui/releases/download/v2.4.1/FreeDV-2.4.1.dmg"
+    }
+   ],
+   "kind": "archive",
+   "license": "LGPL 2.1",
+   "tags": [
+    "ham",
+    "digital"
+   ],
+   "tier": "ark",
+   "title": "FreeDV (digital voice on HF)",
+   "version": "2.4.1"
+  },
+  "gqrx": {
+   "date": "2025-05-27",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "Gqrx-2.17.7-x86_64.AppImage",
+     "platform": "linux-x64",
+     "size": 65520832,
+     "url": "https://github.com/gqrx-sdr/gqrx/releases/download/v2.17.7/Gqrx-2.17.7-x86_64.AppImage"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "sdr"
+   ],
+   "tier": "ark",
+   "title": "Gqrx (SDR receiver)",
+   "version": "2.17.7"
+  },
+  "hackrf_tools": {
+   "date": "2026-01-30",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "hackrf-2026.01.3.tar.xz",
+     "sha256": "d2b76a1115d9b4df648c29efb2f3c8e80009b7cf9a8adf37abbfdba72101b086",
+     "size": 25945024,
+     "url": "https://github.com/greatscottgadgets/hackrf/releases/download/v2026.01.3/hackrf-2026.01.3.tar.xz"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 2.0",
+   "tags": [
+    "sdr",
+    "firmware"
+   ],
+   "tier": "ark",
+   "title": "HackRF firmware and tools",
+   "version": "2026.01.3"
+  },
+  "ham.stackexchange.com_en_all": {
+   "date": "2026-10-20",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "ham.stackexchange.com_en_all_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/stack_exchange/ham.stackexchange.com_en_all_2026-10.zim.sha256",
+     "size": 77109248,
+     "url": "https://download.kiwix.org/zim/stack_exchange/ham.stackexchange.com_en_all_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "ham",
+    "qa"
+   ],
+   "tier": "seed",
+   "title": "Amateur Radio Q&A",
+   "version": "2026-10"
+  },
+  "js8call": {
+   "date": "2025-06-28",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "js8call_2.3.1-x86_64.AppImage",
+     "platform": "linux-x64",
+     "sha256": "b6aa6cbdba9a300af159a0521cff8604689e975370369308a8f1b135252ada72",
+     "size": 144652792,
+     "url": "https://github.com/js8call/js8call/releases/download/v2.3.1/js8call_2.3.1-x86_64.AppImage"
+    },
+    {
+     "filename": "js8call-2.3.1-win64.exe",
+     "platform": "windows-x64",
+     "sha256": "ca3273ac1ee943f032f2e701889cd10ebf71f3c6887f41b789d3cd372b916e7f",
+     "size": 21165527,
+     "url": "https://github.com/js8call/js8call/releases/download/v2.3.1/js8call-2.3.1-win64.exe"
+    },
+    {
+     "filename": "JS8Call_2.3.1.dmg",
+     "platform": "macos-arm64",
+     "sha256": "4f364e7b94af49bceaf554169d710fa0d464b4ee9f43d72120387c258c7975a9",
+     "size": 65098848,
+     "url": "https://github.com/js8call/js8call/releases/download/v2.3.1/JS8Call_2.3.1.dmg"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "ham",
+    "digital"
+   ],
+   "tier": "ark",
+   "title": "JS8Call (weak signal keyboard messaging)",
+   "version": "2.3.1"
+  },
+  "meshchat": {
+   "date": "2026-07-06",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "ReticulumMeshChat-v2.4.0-linux.AppImage",
+     "platform": "linux-x64",
+     "sha256": "456263d59b230f4a5651cbe1b704cadfc1c69826c44efda272c98b5fe59582be",
+     "size": 162295565,
+     "url": "https://github.com/liamcottle/reticulum-meshchat/releases/download/v2.4.0/ReticulumMeshChat-v2.4.0-linux.AppImage"
+    },
+    {
+     "filename": "ReticulumMeshChat-v2.4.0-win-installer.exe",
+     "platform": "windows-x64",
+     "sha256": "911478f02c8f477bdbd5e965729cbc8b53708fb95d326c4a4820d76cc8f91871",
+     "size": 95329405,
+     "url": "https://github.com/liamcottle/reticulum-meshchat/releases/download/v2.4.0/ReticulumMeshChat-v2.4.0-win-installer.exe"
+    },
+    {
+     "filename": "ReticulumMeshChat-v2.4.0-mac-arm64.dmg",
+     "platform": "macos-arm64",
+     "sha256": "84c6302d53d80a61ee8c7a9d9e04c762e3ac67624d63d666ced0383a9171701b",
+     "size": 158848680,
+     "url": "https://github.com/liamcottle/reticulum-meshchat/releases/download/v2.4.0/ReticulumMeshChat-v2.4.0-mac-arm64.dmg"
+    }
+   ],
+   "kind": "archive",
+   "license": "MIT",
+   "tags": [
+    "mesh"
+   ],
+   "tier": "ark",
+   "title": "Reticulum MeshChat",
+   "version": "2.4.0"
+  },
+  "meshcore_firmware": {
+   "date": "2026-10-15",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "MeshCore-companion-v1.18.0.tar.gz",
+     "platform": "source",
+     "url": "https://github.com/meshcore-dev/MeshCore/archive/refs/tags/companion-v1.18.0.tar.gz"
+    }
+   ],
+   "kind": "archive",
+   "license": "MIT",
+   "tags": [
+    "mesh",
+    "firmware"
+   ],
+   "tier": "ark",
+   "title": "MeshCore firmware (source)",
+   "version": "companion-v1.18.0"
+  },
+  "meshtastic_firmware_esp32": {
+   "date": "2026-06-24",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "firmware-esp32-2.7.26.54e0d8d.zip",
+     "sha256": "67f94bb2f0fe32c0f64d34429527e89fcb3d3c84fa444965987e297ce80745d1",
+     "size": 40738495,
+     "url": "https://github.com/meshtastic/firmware/releases/download/v2.7.26.54e0d8d/firmware-esp32-2.7.26.54e0d8d.zip"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "mesh",
+    "firmware"
+   ],
+   "tier": "seed",
+   "title": "Meshtastic firmware (ESP32 boards)",
+   "version": "2.7.26.54e0d8d"
+  },
+  "meshtastic_firmware_nrf52": {
+   "date": "2026-06-24",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "firmware-nrf52840-2.7.26.54e0d8d.zip",
+     "sha256": "69ae5c1f38474e32d815dc8bc54291944fb1eb2bf0c3bd0abf5513cb078de5b2",
+     "size": 46259773,
+     "url": "https://github.com/meshtastic/firmware/releases/download/v2.7.26.54e0d8d/firmware-nrf52840-2.7.26.54e0d8d.zip"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "mesh",
+    "firmware"
+   ],
+   "tier": "seed",
+   "title": "Meshtastic firmware (nRF52840 boards)",
+   "version": "2.7.26.54e0d8d"
+  },
+  "nomadnet": {
+   "date": "2026-11-07",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "nomadnet-1.5.0-py3-none-any.whl",
+     "sha256": "deb9d34d8b514c26cf6f15b43d01b058f2cb04ff1892900d8d44b4a584400b6d",
+     "size": 336808,
+     "url": "https://github.com/markqvist/NomadNet/releases/download/1.5.0/nomadnet-1.5.0-py3-none-any.whl"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "mesh"
+   ],
+   "tier": "ark",
+   "title": "Nomad Network (messaging over Reticulum)",
+   "version": "1.5.0"
+  },
+  "pat_winlink": {
+   "date": "2026-11-01",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "pat_1.0.1_linux_amd64.deb",
+     "platform": "linux-x64",
+     "sha256": "21b5c7cbf96375d10da977a014c83d5bd11b2119d72b303db75b4ff168e163c0",
+     "size": 4940336,
+     "url": "https://github.com/la5nta/pat/releases/download/v1.0.1/pat_1.0.1_linux_amd64.deb"
+    },
+    {
+     "filename": "pat_1.0.1_linux_arm64.deb",
+     "platform": "linux-arm64",
+     "sha256": "4c82ca496d440ee2a6a32dc50f7304a40c899cbbfbebaf300ec260820310b82f",
+     "size": 4313408,
+     "url": "https://github.com/la5nta/pat/releases/download/v1.0.1/pat_1.0.1_linux_arm64.deb"
+    },
+    {
+     "filename": "pat_1.0.1_windows_i386.zip",
+     "platform": "windows-x64",
+     "sha256": "79b4319d8ea1b725af95a026678fe71c23fad2dc59e5b5cfc24fbabb24d4cd0d",
+     "size": 11780378,
+     "url": "https://github.com/la5nta/pat/releases/download/v1.0.1/pat_1.0.1_windows_i386.zip"
+    },
+    {
+     "filename": "pat_1.0.1_darwin_amd64.pkg",
+     "platform": "macos-arm64",
+     "sha256": "dd057ce6987d2094d81a1a988d0b7c24a059952cdb09a358be26b4f82c2cd5ee",
+     "size": 12540174,
+     "url": "https://github.com/la5nta/pat/releases/download/v1.0.1/pat_1.0.1_darwin_amd64.pkg"
+    }
+   ],
+   "kind": "archive",
+   "license": "MIT",
+   "tags": [
+    "ham",
+    "email"
+   ],
+   "tier": "seed",
+   "title": "Pat (Winlink email over radio)",
+   "version": "1.0.1"
+  },
+  "reticulum": {
+   "date": "2026-11-07",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "rns-1.6.0-py3-none-any.whl",
+     "sha256": "fcf2d07eebafea7e56a94542bd74646e451b0f33bb3efb5f914bbbba38b39f36",
+     "size": 681475,
+     "url": "https://github.com/markqvist/Reticulum/releases/download/1.6.0/rns-1.6.0-py3-none-any.whl"
+    }
+   ],
+   "kind": "archive",
+   "license": "Reticulum License",
+   "tags": [
+    "mesh"
+   ],
+   "tier": "ark",
+   "title": "Reticulum network stack",
+   "version": "1.6.0"
+  },
+  "rnode_firmware": {
+   "date": "2026-04-24",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "RNode_Firmware-1.86.tar.gz",
+     "platform": "source",
+     "url": "https://github.com/markqvist/RNode_Firmware/archive/refs/tags/1.86.tar.gz"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "mesh",
+    "firmware"
+   ],
+   "tier": "ark",
+   "title": "RNode firmware (LoRa radios for Reticulum)",
+   "version": "1.86"
+  },
+  "rtl_sdr_blog_drivers": {
+   "date": "2026-08-10",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "rtl-sdr-blog-V1.4.0.tar.gz",
+     "platform": "source",
+     "url": "https://github.com/rtlsdrblog/rtl-sdr-blog/archive/refs/tags/V1.4.0.tar.gz"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 2.0",
+   "tags": [
+    "sdr"
+   ],
+   "tier": "ark",
+   "title": "RTL-SDR Blog drivers (source)",
+   "version": "V1.4.0"
+  },
+  "satdump": {
+   "date": "2024-11-29",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "satdump_1.2.2_ubuntu_24.04_amd64.deb",
+     "platform": "linux-x64",
+     "size": 37215796,
+     "url": "https://github.com/SatDump/SatDump/releases/download/1.2.2/satdump_1.2.2_ubuntu_24.04_amd64.deb"
+    },
+    {
+     "filename": "SatDump-Windows_x64_Installer.exe",
+     "platform": "windows-x64",
+     "size": 42162614,
+     "url": "https://github.com/SatDump/SatDump/releases/download/1.2.2/SatDump-Windows_x64_Installer.exe"
+    },
+    {
+     "filename": "SatDump_Android_1.2.2.apk",
+     "platform": "android",
+     "size": 73661686,
+     "url": "https://github.com/SatDump/SatDump/releases/download/1.2.2/SatDump_Android_1.2.2.apk"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "sdr",
+    "satellite"
+   ],
+   "tier": "ark",
+   "title": "SatDump (weather satellite decoding)",
+   "version": "1.2.2"
+  },
+  "sdrangel": {
+   "date": "2026-11-13",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "sdrangel_8.2.0_ubuntu-26.04_amd64.deb",
+     "platform": "linux-x64",
+     "sha256": "5d79abf324dcabcb19931f03c46c2c03e41c23b97ad6aa1626ed6387f9e8e590",
+     "size": 170919070,
+     "url": "https://github.com/f4exb/sdrangel/releases/download/v8.2.0/sdrangel_8.2.0_ubuntu-26.04_amd64.deb"
+    },
+    {
+     "filename": "sdrangel-8.2.0-win64.exe",
+     "platform": "windows-x64",
+     "sha256": "8a552b4f6b93807109747648501d3032d6615f7570233c914f1d9917b1c1e830",
+     "size": 421058936,
+     "url": "https://github.com/f4exb/sdrangel/releases/download/v8.2.0/sdrangel-8.2.0-win64.exe"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "sdr"
+   ],
+   "tier": "ark",
+   "title": "SDRangel (SDR and signal analyzer)",
+   "version": "8.2.0"
+  },
+  "sdrpp": {
+   "date": "2022-11-22",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "sdrpp_debian_bookworm_amd64.deb",
+     "platform": "linux-x64",
+     "sha256": "45a7d350e3a2b893f88c6d3e195a3854845e9a775d9818b8a343056750bad5f0",
+     "size": 2158344,
+     "url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp_debian_bookworm_amd64.deb"
+    },
+    {
+     "filename": "sdrpp_debian_bookworm_aarch64.deb",
+     "platform": "linux-arm64",
+     "sha256": "35abbf5316de2123c1d069b2d06f503559742cf229d076d15a90120212efbcc6",
+     "size": 1986084,
+     "url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp_debian_bookworm_aarch64.deb"
+    },
+    {
+     "filename": "sdrpp_windows_x64.zip",
+     "platform": "windows-x64",
+     "sha256": "c0458e74e7dff6787d6e927b627022f37d2e93a821b4484532e26dd5cf2bed72",
+     "size": 8524098,
+     "url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp_windows_x64.zip"
+    },
+    {
+     "filename": "sdrpp_macos_arm.zip",
+     "platform": "macos-arm64",
+     "sha256": "7731d91ca4784363ea7ffb908925a77d8863720f2daab315c2d5883626661062",
+     "size": 4239544,
+     "url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp_macos_arm.zip"
+    },
+    {
+     "filename": "sdrpp.apk",
+     "platform": "android",
+     "sha256": "f91ef5199d4a0fd8e213b3d802d24f4245a35723fa0cc5a19c48cd6d1f2d1d2f",
+     "size": 63853572,
+     "url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp.apk"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "sdr"
+   ],
+   "tier": "seed",
+   "title": "SDR++ (SDR receiver)",
+   "version": "2022-11-22"
+  },
+  "sdrtrunk": {
+   "date": "2026-11-13",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "sdr-trunk-linux-x86_64-v1.0.0.zip",
+     "platform": "linux-x64",
+     "sha256": "33e4b25cbb6c44d088ef220fc46482c150ef4a91ef18a723d1cf35b977c0c3d5",
+     "size": 86507912,
+     "url": "https://github.com/DSheirer/sdrtrunk/releases/download/v1.0.0/sdr-trunk-linux-x86_64-v1.0.0.zip"
+    },
+    {
+     "filename": "sdr-trunk-linux-aarch64-v1.0.0.zip",
+     "platform": "linux-arm64",
+     "sha256": "243abf4b2e2da9a37e584fe2f6c91258926be63dc478e663d316bd520e0518f5",
+     "size": 87263181,
+     "url": "https://github.com/DSheirer/sdrtrunk/releases/download/v1.0.0/sdr-trunk-linux-aarch64-v1.0.0.zip"
+    },
+    {
+     "filename": "sdr-trunk-windows-x86_64-v1.0.0.zip",
+     "platform": "windows-x64",
+     "sha256": "4998a44a31e36e0e7e8dabd697cedafef6ab6d6b54a9215d59944bfafd607440",
+     "size": 76328660,
+     "url": "https://github.com/DSheirer/sdrtrunk/releases/download/v1.0.0/sdr-trunk-windows-x86_64-v1.0.0.zip"
+    },
+    {
+     "filename": "sdr-trunk-osx-aarch64-v1.0.0.zip",
+     "platform": "macos-arm64",
+     "sha256": "fdb4fc46f93db55f5a394732fb424f60bf6dfbcd28aae285a50ebf9661095ba7",
+     "size": 75886244,
+     "url": "https://github.com/DSheirer/sdrtrunk/releases/download/v1.0.0/sdr-trunk-osx-aarch64-v1.0.0.zip"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "sdr",
+    "scanner"
+   ],
+   "tier": "ark",
+   "title": "SDRTrunk (trunked radio decoding)",
+   "version": "1.0.0"
+  },
+  "sideband": {
+   "date": "2026-11-08",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "Sideband_2.3.0.apk",
+     "platform": "android",
+     "sha256": "58887dd3fef73b5ae56b1f1dc50e0877f9b50308e5a0ddb52d49ddc8d682c3fe",
+     "size": 124383940,
+     "url": "https://github.com/markqvist/Sideband/releases/download/2.3.0/Sideband_2.3.0.apk"
+    },
+    {
+     "filename": "sbapp-2.3.0-py3-none-any.whl",
+     "sha256": "918e20217083e893c3b7be2f86b37df90e294b91477cf42e60d06a5dd181de39",
+     "size": 68809330,
+     "url": "https://github.com/markqvist/Sideband/releases/download/2.3.0/sbapp-2.3.0-py3-none-any.whl"
+    }
+   ],
+   "kind": "archive",
+   "license": "CC BY-NC-SA 4.0",
+   "tags": [
+    "mesh"
+   ],
+   "tier": "ark",
+   "title": "Sideband (Reticulum messenger)",
+   "version": "2.3.0"
+  },
+  "tle_amateur": {
+   "dest": "radio/data",
+   "files": [
+    {
+     "filename": "tle_amateur.txt",
+     "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=amateur&FORMAT=tle"
+    }
+   ],
+   "kind": "data",
+   "license": "Public data, credit CelesTrak",
+   "tags": [
+    "satellite",
+    "data"
+   ],
+   "tier": "seed",
+   "title": "Satellite orbits: amateur radio (TLE)",
+   "version": "current"
+  },
+  "tle_gnss": {
+   "dest": "radio/data",
+   "files": [
+    {
+     "filename": "tle_gnss.txt",
+     "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=gnss&FORMAT=tle"
+    }
+   ],
+   "kind": "data",
+   "license": "Public data, credit CelesTrak",
+   "tags": [
+    "satellite",
+    "data"
+   ],
+   "tier": "seed",
+   "title": "Satellite orbits: navigation (TLE)",
+   "version": "current"
+  },
+  "tle_weather": {
+   "dest": "radio/data",
+   "files": [
+    {
+     "filename": "tle_weather.txt",
+     "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=weather&FORMAT=tle"
+    }
+   ],
+   "kind": "data",
+   "license": "Public data, credit CelesTrak",
+   "tags": [
+    "satellite",
+    "data"
+   ],
+   "tier": "seed",
+   "title": "Satellite orbits: weather (TLE)",
+   "version": "current"
+  },
+  "wsjtx": {
+   "date": "2025-09-14",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "wsjtx-3.0.0-rc1.tgz",
+     "md5": "c926d698a5c6b157046e7b9cffee88a1",
+     "size": 37536606,
+     "url": "https://downloads.sourceforge.net/project/wsjt/wsjtx-3.0.0-rc1/wsjtx-3.0.0-rc1.tgz"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "ham",
+    "digital"
+   ],
+   "tier": "ark",
+   "title": "WSJT-X (FT8 and other weak signal modes)",
+   "version": "3.0.0"
+  }
+ },
+ "pack": "radio"
+}

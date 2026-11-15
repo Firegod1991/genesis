@@ -1,0 +1,376 @@
+{
+ "items": {
+  "alpine": {
+   "date": "2026-11-05",
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "alpine-standard-3.24.4-x86_64.iso",
+     "sha256": "92e3e4e4c6b8e265a889278de2a633c0f1456ca52820952666ecb395c3d23582",
+     "size": 370147328,
+     "url": "https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/x86_64/alpine-standard-3.24.4-x86_64.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "seed",
+   "title": "Alpine Linux (standard)",
+   "version": "3.24.4"
+  },
+  "alpine_extended": {
+   "date": "2026-11-05",
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "alpine-extended-3.24.4-x86_64.iso",
+     "sha256": "e14670256c008398f06e985ffa5f2844f4ecc1944b4a004f9dfc1b87265586ce",
+     "size": 1458192384,
+     "url": "https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/x86_64/alpine-extended-3.24.4-x86_64.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "eden",
+   "title": "Alpine Linux (extended)",
+   "version": "3.24.4"
+  },
+  "arch": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "archlinux-2026.11.01-x86_64.iso",
+     "sha256": "01bcdcf01af2f7d58f2794899c834770d25c9bfc945bd092b32bb66672a4a216",
+     "size": 1317568512,
+     "url": "https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.11.01-x86_64.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Arch Linux",
+   "version": "2026.11.01"
+  },
+  "clonezilla": {
+   "date": "2024-01-16",
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "clonezilla-live-3.1.2-9-amd64.zip",
+     "md5": "6ce567c7a626463eda61859ddc0c1743",
+     "size": 424968161,
+     "url": "https://downloads.sourceforge.net/project/clonezilla/clonezilla_live_stable/3.1.2-9/clonezilla-live-3.1.2-9-amd64.zip"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Clonezilla Live (disk imaging)",
+   "version": "3.1.2-9"
+  },
+  "debian_dvd": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "debian-13.7.0-amd64-DVD-1.iso",
+     "sha256": "347b6c67a3cc0b7ddb60b178f683470c4e2b7ac426c996d9337a2ff36c1a32d2",
+     "size": 3992977408,
+     "url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-13.7.0-amd64-DVD-1.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "eden",
+   "title": "Debian stable DVD 1 (installs with no network)",
+   "version": "13.7.0"
+  },
+  "debian_live": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "debian-live-13.7.0-amd64-xfce.iso",
+     "sha256": "379fcf159fa72a2ed8e3b74f4047df6061bc65adf5217e3d194e41a26fdb85e4",
+     "size": 3826974720,
+     "url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-xfce.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Debian stable Live (Xfce)",
+   "version": "13.7.0"
+  },
+  "debian_netinst": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "debian-13.7.0-amd64-netinst.iso",
+     "sha256": "a7ef94ac2fb9a7fec454552abd629b7cc9d5155c886165a45649f5ce6167e355",
+     "size": 792723456,
+     "url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.7.0-amd64-netinst.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Debian stable (network installer)",
+   "version": "13.7.0"
+  },
+  "fedora_workstation": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "Fedora-Workstation-Live-45-1.4.x86_64.iso",
+     "sha256": "68338c6bfe4f0d64151f2e47efe9f44a8855ad05b460e56b844fb3fa2c9a3beb",
+     "size": 2925092864,
+     "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/45/Workstation/x86_64/iso/Fedora-Workstation-Live-45-1.4.x86_64.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "eden",
+   "title": "Fedora Workstation",
+   "version": "45"
+  },
+  "gparted_live": {
+   "date": "2026-04-04",
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "gparted-live-1.8.1-3-amd64.iso",
+     "md5": "a4c701431cd41f24b6557622d922918e",
+     "size": 649068544,
+     "url": "https://downloads.sourceforge.net/project/gparted/gparted-live-stable/1.8.1-3/gparted-live-1.8.1-3-amd64.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "seed",
+   "title": "GParted Live (partition rescue)",
+   "version": "1.8.1-3"
+  },
+  "home_assistant_os": {
+   "date": "2026-11-06",
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "haos_rpi5-64-18.5.img.xz",
+     "platform": "linux-arm64",
+     "sha256": "79004a2fda343f7cb9e6c510bfc56acac25f684d2ad20b7b116ef17c4c4b0136",
+     "size": 342243184,
+     "url": "https://github.com/home-assistant/operating-system/releases/download/18.5/haos_rpi5-64-18.5.img.xz"
+    }
+   ],
+   "kind": "iso",
+   "tier": "eden",
+   "title": "Home Assistant OS (power and sensor monitoring)",
+   "version": "18.5"
+  },
+  "kali_installer": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "kali-linux-2026.3-installer-amd64.iso",
+     "sha256": "db9cbed33edb45727d16911813c2434fcd1419585007884153be22a03b30ec2f",
+     "size": 5047031808,
+     "url": "https://cdimage.kali.org/current/kali-linux-2026.3-installer-amd64.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "eden",
+   "title": "Kali Linux installer",
+   "version": "2026.3"
+  },
+  "kali_live": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "kali-linux-2026.3-live-amd64.iso",
+     "sha256": "93a40ef53936719119824c3f0f0742ab50a045e2e082b95e382cf9f2f1f8acbb",
+     "url": "https://cdimage.kali.org/current/kali-linux-2026.3-live-amd64.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Kali Linux Live",
+   "version": "2026.3"
+  },
+  "linux_mint": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "linuxmint-22.3-cinnamon-64bit.iso",
+     "sha256": "a081ab202cfda17f6924128dbd2de8b63518ac0531bcfe3f1a1b88097c459bd4",
+     "size": 3091660800,
+     "url": "https://mirrors.kernel.org/linuxmint/stable/22.3/linuxmint-22.3-cinnamon-64bit.iso"
+    }
+   ],
+   "kind": "iso",
+   "note": "The friendliest desktop for people coming from Windows.",
+   "tier": "ark",
+   "title": "Linux Mint (Cinnamon)",
+   "version": "22.3"
+  },
+  "openwrt_x86": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "openwrt-25.12.6-x86-64-generic-ext4-combined-efi.img.gz",
+     "sha256": "1ef06b324d04490a90de26d6f2a292111854f05e3c946648fad70c339b52f739",
+     "size": 13813344,
+     "url": "https://downloads.openwrt.org/releases/25.12.6/targets/x86/64/openwrt-25.12.6-x86-64-generic-ext4-combined-efi.img.gz"
+    }
+   ],
+   "kind": "iso",
+   "note": "Turn any spare PC into a router or mesh node.",
+   "tier": "ark",
+   "title": "OpenWrt (x86 64 router image)",
+   "version": "25.12.6"
+  },
+  "proxmox_ve": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "proxmox-ve_9.2-1.iso",
+     "sha256": "4e88fe416df9b527624a175f24c9aa07c714d3332afb1ee3dbf3879573ef2c6c",
+     "size": 1706178560,
+     "url": "https://enterprise.proxmox.com/iso/proxmox-ve_9.2-1.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Proxmox VE (hypervisor)",
+   "version": "9.2-1"
+  },
+  "proxmox_ve_arm64": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "proxmox-ve_9.2-1-arm64.iso",
+     "sha256": "b1619dcd1f5b1a6d67d77b59e7e2fa2033174551d1e1b9dc22b2171ec093abbd",
+     "size": 1581182976,
+     "url": "https://enterprise.proxmox.com/iso/proxmox-ve_9.2-1-arm64.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "eden",
+   "title": "Proxmox VE (arm64)",
+   "version": "9.2-1"
+  },
+  "raspios_desktop": {
+   "date": "2026-10-06",
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "2026-10-06-raspios-trixie-arm64.img.xz",
+     "sha256_url": "https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2026-10-06/2026-10-06-raspios-trixie-arm64.img.xz.sha256",
+     "size": 1364720984,
+     "url": "https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2026-10-06/2026-10-06-raspios-trixie-arm64.img.xz"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Raspberry Pi OS with desktop (64 bit)",
+   "version": "2026-10-06"
+  },
+  "raspios_lite": {
+   "date": "2026-10-06",
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "2026-10-06-raspios-trixie-arm64-lite.img.xz",
+     "sha256_url": "https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2026-10-06/2026-10-06-raspios-trixie-arm64-lite.img.xz.sha256",
+     "size": 550466056,
+     "url": "https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2026-10-06/2026-10-06-raspios-trixie-arm64-lite.img.xz"
+    }
+   ],
+   "kind": "iso",
+   "tier": "seed",
+   "title": "Raspberry Pi OS Lite (64 bit)",
+   "version": "2026-10-06"
+  },
+  "rescuezilla": {
+   "date": "2026-05-16",
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "rescuezilla-2.6.2-64bit.noble.iso",
+     "sha256": "285db0af83213e2297490ca1cfd74ecd607c3b0a2f1d14e11a8412c0b71eea50",
+     "size": 1594339328,
+     "url": "https://github.com/rescuezilla/rescuezilla/releases/download/2.6.2/rescuezilla-2.6.2-64bit.noble.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Rescuezilla (graphical disk imaging)",
+   "version": "2.6.2"
+  },
+  "tails": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "tails-amd64-7.17.img",
+     "sha256": "1b2b7f345f9ee753791b9526ef620287dae82e00c4d326223dc7ccbfa66abaf2",
+     "size": 1901068288,
+     "url": "https://download.tails.net/tails/stable/tails-amd64-7.17/tails-amd64-7.17.img"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Tails (amnesic live system, USB image)",
+   "version": "7.17"
+  },
+  "ubuntu_desktop": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "ubuntu-26.04.1-desktop-amd64.iso",
+     "sha256": "601e30fbf5d97759367c632e2c33630665039b7e2158fd068403da3ccf1bda1f",
+     "size": 6482409472,
+     "url": "https://releases.ubuntu.com/26.04/ubuntu-26.04.1-desktop-amd64.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Ubuntu Desktop LTS",
+   "version": "26.04.1"
+  },
+  "ubuntu_raspi": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "ubuntu-26.04.1-preinstalled-server-arm64+raspi.img.xz",
+     "sha256": "d59ef9c6e85b906995501f166d00726ab80b59be7b65cdeac0fa31b996053e13",
+     "size": 1528288776,
+     "url": "https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04.1-preinstalled-server-arm64+raspi.img.xz"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Ubuntu Server LTS for Raspberry Pi",
+   "version": "26.04.1"
+  },
+  "ubuntu_server": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "ubuntu-26.04.1-live-server-amd64.iso",
+     "sha256": "cc8a95cde20f6ced61a322420de00f10cc3c90ced545daa46cb9c1a117f1d927",
+     "size": 2927861760,
+     "url": "https://releases.ubuntu.com/26.04/ubuntu-26.04.1-live-server-amd64.iso"
+    }
+   ],
+   "kind": "iso",
+   "note": "The recommended base for a Genesis box.",
+   "tier": "seed",
+   "title": "Ubuntu Server LTS",
+   "version": "26.04.1"
+  },
+  "ubuntu_server_arm64": {
+   "dest": "isos",
+   "files": [
+    {
+     "filename": "ubuntu-26.04.1-live-server-arm64.iso",
+     "sha256": "af78753c94b924c85c4964c670692a853f7c80299a4064e317edad95462e3168",
+     "size": 3076861952,
+     "url": "https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04.1-live-server-arm64.iso"
+    }
+   ],
+   "kind": "iso",
+   "tier": "ark",
+   "title": "Ubuntu Server LTS (arm64)",
+   "version": "26.04.1"
+  }
+ },
+ "pack": "isos"
+}

@@ -1,0 +1,218 @@
+{
+ "items": {
+  "embeddinggemma": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Gemma Terms of Use",
+   "model": "embeddinggemma:latest",
+   "size": 621875501,
+   "tags": [
+    "embedding"
+   ],
+   "tier": "seed",
+   "title": "EmbeddingGemma (document search)",
+   "version": "3901c6a1d7c2"
+  },
+  "gemma4_12b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Gemma Terms of Use",
+   "model": "gemma4:12b",
+   "size": 8021618699,
+   "tags": [
+    "chat",
+    "vision"
+   ],
+   "tier": "ark",
+   "title": "Gemma 4 12B (general assistant, text and images)",
+   "version": "e5ca99f91896"
+  },
+  "gemma4_31b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Gemma Terms of Use",
+   "model": "gemma4:31b",
+   "size": 20385457992,
+   "tags": [
+    "chat",
+    "vision"
+   ],
+   "tier": "eden",
+   "title": "Gemma 4 31B (strongest Gemma)",
+   "version": "094d707563aa"
+  },
+  "gemma4_e2b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Gemma Terms of Use",
+   "model": "gemma4:e2b",
+   "size": 4587156264,
+   "tags": [
+    "chat",
+    "vision"
+   ],
+   "tier": "seed",
+   "title": "Gemma 4 E2B (general assistant, text and images)",
+   "version": "3ff8a734c316"
+  },
+  "gpt_oss_20b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Apache 2.0",
+   "model": "gpt-oss:20b",
+   "size": 13793441427,
+   "tags": [
+    "chat",
+    "reasoning"
+   ],
+   "tier": "eden",
+   "title": "gpt-oss 20B (reasoning)",
+   "version": "e103573196b6"
+  },
+  "medgemma15_4b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Health AI Developer Foundations terms",
+   "model": "medgemma1.5:4b",
+   "note": "A research model. It can be wrong. It does not replace a clinician.",
+   "size": 3338940499,
+   "tags": [
+    "medical"
+   ],
+   "tier": "ark",
+   "title": "MedGemma 1.5 4B (medical text and images)",
+   "version": "b785fcc637b2"
+  },
+  "medgemma_27b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Health AI Developer Foundations terms",
+   "model": "medgemma:27b",
+   "note": "A research model. It can be wrong. It does not replace a clinician.",
+   "size": 17397223635,
+   "tags": [
+    "medical"
+   ],
+   "tier": "eden",
+   "title": "MedGemma 27B (medical)",
+   "version": "7bc3e809711a"
+  },
+  "qwen25_coder_7b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Apache 2.0",
+   "model": "qwen2.5-coder:7b",
+   "size": 4683087074,
+   "tags": [
+    "code"
+   ],
+   "tier": "ark",
+   "title": "Qwen 2.5 Coder 7B (code completion)",
+   "version": "d9bb33f27869"
+  },
+  "qwen35_2b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Apache 2.0",
+   "model": "qwen3.5:2b",
+   "size": 2683396637,
+   "tags": [
+    "chat"
+   ],
+   "tier": "seed",
+   "title": "Qwen 3.5 2B (small and fast)",
+   "version": "0f7af3a2d414"
+  },
+  "qwen35_35b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Apache 2.0",
+   "model": "qwen3.5:35b",
+   "size": 22069591997,
+   "tags": [
+    "chat",
+    "vision"
+   ],
+   "tier": "eden",
+   "title": "Qwen 3.5 35B",
+   "version": "6d2a5ac892aa"
+  },
+  "qwen35_9b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Apache 2.0",
+   "model": "qwen3.5:9b",
+   "size": 6550825373,
+   "tags": [
+    "chat",
+    "vision"
+   ],
+   "tier": "ark",
+   "title": "Qwen 3.5 9B (general assistant, tools)",
+   "version": "08f9698c1116"
+  },
+  "qwen3_coder_30b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Apache 2.0",
+   "model": "qwen3-coder:30b",
+   "size": 18556700222,
+   "tags": [
+    "code"
+   ],
+   "tier": "eden",
+   "title": "Qwen3 Coder 30B (agentic coding)",
+   "version": "24a94682582c"
+  },
+  "translategemma_4b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Gemma Terms of Use",
+   "model": "translategemma:4b",
+   "size": 3298875218,
+   "tags": [
+    "translation"
+   ],
+   "tier": "ark",
+   "title": "TranslateGemma 4B (translation across 55 languages)",
+   "version": "37490ee3c3a4"
+  },
+  "whisper_base": {
+   "dest": "models/whisper",
+   "files": [
+    {
+     "filename": "ggml-base.bin",
+     "size": 147951465,
+     "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin"
+    }
+   ],
+   "kind": "file",
+   "license": "MIT",
+   "tags": [
+    "speech"
+   ],
+   "tier": "seed",
+   "title": "Whisper base (speech to text, 99 languages)",
+   "version": "current"
+  },
+  "whisper_small": {
+   "dest": "models/whisper",
+   "files": [
+    {
+     "filename": "ggml-small.bin",
+     "size": 487601967,
+     "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin"
+    }
+   ],
+   "kind": "file",
+   "license": "MIT",
+   "tags": [
+    "speech"
+   ],
+   "tier": "ark",
+   "title": "Whisper small (speech to text, better accuracy)",
+   "version": "current"
+  }
+ },
+ "pack": "ai"
+}

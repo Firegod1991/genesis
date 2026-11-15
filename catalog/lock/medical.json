@@ -1,0 +1,824 @@
+{
+ "items": {
+  "genomicseducation_en_all": {
+   "date": "2026-09-26",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "genomicseducation_en_all_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/videos/genomicseducation_en_all_2026-09.zim.sha256",
+     "size": 670235648,
+     "url": "https://download.kiwix.org/zim/videos/genomicseducation_en_all_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "medical"
+   ],
+   "tier": "eden",
+   "title": "Genomics Education Programme",
+   "version": "2026-09"
+  },
+  "irp.fas.org_en_military-medicine": {
+   "date": "2026-10-31",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "irp.fas.org_en_military-medicine_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/irp.fas.org_en_military-medicine_2026-10.zim.sha256",
+     "size": 64986112,
+     "url": "https://download.kiwix.org/zim/zimit/irp.fas.org_en_military-medicine_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "medical",
+    "field"
+   ],
+   "tier": "seed",
+   "title": "Military Medicine",
+   "version": "2026-10"
+  },
+  "librepathology_en_all.maxi": {
+   "date": "2026-09-01",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "librepathology_en_all_maxi_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/librepathology_en_all_maxi_2026-09.zim.sha256",
+     "size": 95280128,
+     "url": "https://download.kiwix.org/zim/other/librepathology_en_all_maxi_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "medical"
+   ],
+   "tier": "eden",
+   "title": "Libre Pathology",
+   "version": "2026-09"
+  },
+  "mdwiki_en_all.maxi": {
+   "date": "2025-11-12",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "mdwiki_en_all_maxi_2025-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/mdwiki_en_all_maxi_2025-11.zim.sha256",
+     "size": 2302838784,
+     "url": "https://download.kiwix.org/zim/other/mdwiki_en_all_maxi_2025-11.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "medical"
+   ],
+   "tier": "ark",
+   "title": "MDWiki Medical Encyclopedia",
+   "version": "2025-11"
+  },
+  "medicalsciences.stackexchange.com_en_all": {
+   "date": "2026-10-20",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "medicalsciences.stackexchange.com_en_all_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/stack_exchange/medicalsciences.stackexchange.com_en_all_2026-10.zim.sha256",
+     "size": 60660736,
+     "url": "https://download.kiwix.org/zim/stack_exchange/medicalsciences.stackexchange.com_en_all_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "medical",
+    "qa"
+   ],
+   "tier": "ark",
+   "title": "Medical Sciences Q&A",
+   "version": "2026-10"
+  },
+  "medlineplus.gov_en_all": {
+   "date": "2025-01-04",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "medlineplus.gov_en_all_2025-01.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/medlineplus.gov_en_all_2025-01.zim.sha256",
+     "size": 1944841216,
+     "url": "https://download.kiwix.org/zim/zimit/medlineplus.gov_en_all_2025-01.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "license": "US government work",
+   "tags": [
+    "medical"
+   ],
+   "tier": "ark",
+   "title": "MedlinePlus",
+   "version": "2025-01"
+  },
+  "nhs.uk_en_medicines": {
+   "date": "2026-09-18",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "nhs.uk_en_medicines_2026-09b.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/nhs.uk_en_medicines_2026-09b.zim.sha256",
+     "size": 15323136,
+     "url": "https://download.kiwix.org/zim/zimit/nhs.uk_en_medicines_2026-09b.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "medical",
+    "medicines"
+   ],
+   "tier": "seed",
+   "title": "NHS' Medicines A to Z",
+   "version": "2026-09-18"
+  },
+  "quickguidesformedicine_en_all": {
+   "date": "2026-06-29",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "quickguidesformedicine_en_all_2026-06.zim",
+     "sha256_url": "https://download.kiwix.org/zim/videos/quickguidesformedicine_en_all_2026-06.zim.sha256",
+     "size": 527712256,
+     "url": "https://download.kiwix.org/zim/videos/quickguidesformedicine_en_all_2026-06.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "medical"
+   ],
+   "tier": "ark",
+   "title": "Surviving Residency",
+   "version": "2026-06"
+  },
+  "skin-of-color-society_en_all": {
+   "date": "2026-05-28",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "skin-of-color-society_en_all_2026-05.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/skin-of-color-society_en_all_2026-05.zim.sha256",
+     "size": 1136035840,
+     "url": "https://download.kiwix.org/zim/other/skin-of-color-society_en_all_2026-05.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "medical",
+    "video"
+   ],
+   "tier": "eden",
+   "title": "Skin of Color Society",
+   "version": "2026-05"
+  },
+  "wikipedia_ar_medicine.maxi": {
+   "date": "2026-10-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_ar_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ar_medicine_maxi_2026-10.zim.sha256",
+     "size": 567397376,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ar_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ara",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "وِيكيبيديا الطبية",
+   "version": "2026-10"
+  },
+  "wikipedia_as_medicine.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_as_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_as_medicine_maxi_2026-10.zim.sha256",
+     "size": 14133248,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_as_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "asm",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "WikiMed in Assamese",
+   "version": "2026-10"
+  },
+  "wikipedia_bn_medicine.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_bn_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_bn_medicine_maxi_2026-10.zim.sha256",
+     "size": 140679168,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_bn_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ben",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "উইকিমেড চিকিৎসা বিশ্বকোষ",
+   "version": "2026-10"
+  },
+  "wikipedia_bpy_medicine.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_bpy_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_bpy_medicine_maxi_2026-10.zim.sha256",
+     "size": 324608,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_bpy_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "bpy",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "উইকিমেড ঔষধি বিশ্বকোষ",
+   "version": "2026-10"
+  },
+  "wikipedia_de_medicine.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_de_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_de_medicine_maxi_2026-10.zim.sha256",
+     "size": 421071872,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_de_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "deu",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "WikiMed Medizin Enzyklopädie",
+   "version": "2026-10"
+  },
+  "wikipedia_en_medicine.maxi": {
+   "date": "2026-10-10",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_en_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_en_medicine_maxi_2026-10.zim.sha256",
+     "size": 1864210432,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_en_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "WikiMed, the medical encyclopedia built from Wikipedia.",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "WikiMed Medical Encyclopedia",
+   "version": "2026-10"
+  },
+  "wikipedia_es_medicine.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_es_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_es_medicine_maxi_2026-10.zim.sha256",
+     "size": 468835328,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_es_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "spa",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "Wikipedia Médica",
+   "version": "2026-10"
+  },
+  "wikipedia_fa_medicine.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_fa_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_fa_medicine_maxi_2026-10.zim.sha256",
+     "size": 357498880,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_fa_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fas",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "ویکی‌پدیای پزشکی",
+   "version": "2026-10"
+  },
+  "wikipedia_fr_medicine.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_fr_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_fr_medicine_maxi_2026-10.zim.sha256",
+     "size": 864254976,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_fr_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "fra",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "Encyclopédie médicale WikiMed",
+   "version": "2026-10"
+  },
+  "wikipedia_gu_medicine.maxi": {
+   "date": "2026-10-31",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_gu_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_gu_medicine_maxi_2026-10.zim.sha256",
+     "size": 9648128,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_gu_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "guj",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "વિકીમેડ મેડિકલ એનસાયક્લોપેડિયા ગુજરાતીમાં",
+   "version": "2026-10"
+  },
+  "wikipedia_hi_medicine.maxi": {
+   "date": "2026-10-31",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_hi_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_hi_medicine_maxi_2026-10.zim.sha256",
+     "size": 63203328,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_hi_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "hin",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "विकी मेड मेडिकल इनसाइक्लोपीडिया हिंदी में",
+   "version": "2026-10"
+  },
+  "wikipedia_it_medicine.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_it_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_it_medicine_maxi_2026-10.zim.sha256",
+     "size": 273359872,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_it_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ita",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "Enciclopedia Medica Wikimed",
+   "version": "2026-10"
+  },
+  "wikipedia_ja_medicine.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_ja_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ja_medicine_maxi_2026-10.zim.sha256",
+     "size": 353709056,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ja_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "jpn",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "医療ウィキペディア",
+   "version": "2026-10"
+  },
+  "wikipedia_kn_medicine.maxi": {
+   "date": "2026-10-31",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_kn_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_kn_medicine_maxi_2026-10.zim.sha256",
+     "size": 37246976,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_kn_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "kan",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "ಕನ್ನಡದಲ್ಲಿ ವಿಕಿಮೀಡ್ ವೈದ್ಯಕೀಯ ಎನ್ಸೈಕ್ಲೋಪೀಡಿಯಾ",
+   "version": "2026-10"
+  },
+  "wikipedia_lo_medicine.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_lo_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_lo_medicine_maxi_2026-10.zim.sha256",
+     "size": 2452480,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_lo_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "lao",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "ວິກິເມດ ສາລະນຸກົມການແພດ",
+   "version": "2026-10"
+  },
+  "wikipedia_ml_medicine.maxi": {
+   "date": "2026-10-31",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_ml_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ml_medicine_maxi_2026-10.zim.sha256",
+     "size": 67008512,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ml_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mal",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "വിക്കിമീഡിയ മെഡിക്കൽ എൻസൈക്ലോപീഡിയ മലയാളം",
+   "version": "2026-10"
+  },
+  "wikipedia_mr_medicine.maxi": {
+   "date": "2026-10-31",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_mr_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_mr_medicine_maxi_2026-10.zim.sha256",
+     "size": 11970560,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_mr_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "mar",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "मराठीतील विकीमेड मेडिकल एनसायक्लोपीडिया",
+   "version": "2026-10"
+  },
+  "wikipedia_or_medicine.maxi": {
+   "date": "2026-09-18",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_or_medicine_maxi_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_or_medicine_maxi_2026-09.zim.sha256",
+     "size": 48951296,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_or_medicine_maxi_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ori",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "ମେଡିକାଲ ଉଇକିପିଡିଆ",
+   "version": "2026-09"
+  },
+  "wikipedia_pa_medicine.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_pa_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_pa_medicine_maxi_2026-10.zim.sha256",
+     "size": 13878272,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_pa_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "pan",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "ਮੈਡੀਕਲ ਐਨਸਾਈਕਲੋਪੀਡੀਆ",
+   "version": "2026-10"
+  },
+  "wikipedia_pt_medicine.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_pt_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_pt_medicine_maxi_2026-10.zim.sha256",
+     "size": 294412288,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_pt_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "por",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "Medical Wikipedia",
+   "version": "2026-10"
+  },
+  "wikipedia_ru_medicine.maxi": {
+   "date": "2026-10-15",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_ru_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ru_medicine_maxi_2026-10.zim.sha256",
+     "size": 320864256,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ru_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "rus",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "Медицинская Википедия",
+   "version": "2026-10"
+  },
+  "wikipedia_ta_medicine.maxi": {
+   "date": "2026-10-31",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_ta_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ta_medicine_maxi_2026-10.zim.sha256",
+     "size": 73483264,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ta_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tam",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "ਤਾਮਿਲ ਵਿਚ ਵਿਕੀਮੈੱਡ ਮੈਡੀਕਲ ਐਨਸਾਈਕਲੋਪੀਡੀਆ...",
+   "version": "2026-10"
+  },
+  "wikipedia_te_medicine.maxi": {
+   "date": "2026-10-31",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_te_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_te_medicine_maxi_2026-10.zim.sha256",
+     "size": 48909312,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_te_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "tel",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "తెలుగులో వికీమెడ్ మెడికల్ ఎన్సైక్లోపీడియా",
+   "version": "2026-10"
+  },
+  "wikipedia_uk_medicine.maxi": {
+   "date": "2026-07-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_uk_medicine_maxi_2026-07.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_uk_medicine_maxi_2026-07.zim.sha256",
+     "size": 422929408,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_uk_medicine_maxi_2026-07.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "ukr",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "Медична енциклопедія WikiMed",
+   "version": "2026-07"
+  },
+  "wikipedia_ur_medicine.maxi": {
+   "date": "2026-10-16",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_ur_medicine_maxi_2026-10.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ur_medicine_maxi_2026-10.zim.sha256",
+     "size": 40235008,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ur_medicine_maxi_2026-10.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "urd",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "ویکیپیڈیا طبی انسائیکلوپیڈیا",
+   "version": "2026-10"
+  },
+  "wikipedia_zh_medicine.maxi": {
+   "date": "2026-09-13",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikipedia_zh_medicine_maxi_2026-09.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_zh_medicine_maxi_2026-09.zim.sha256",
+     "size": 398633984,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_zh_medicine_maxi_2026-09.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "zho",
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "rule": "wikimed_every_language",
+   "tags": [
+    "medical"
+   ],
+   "tier": "seed",
+   "title": "醫學維基百科",
+   "version": "2026-09"
+  },
+  "wikivet.net_en_all.maxi": {
+   "date": "2026-07-09",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wikivet.net_en_all_maxi_2026-07a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/wikivet.net_en_all_maxi_2026-07a.zim.sha256",
+     "size": 56980480,
+     "url": "https://download.kiwix.org/zim/other/wikivet.net_en_all_maxi_2026-07a.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "veterinary"
+   ],
+   "tier": "ark",
+   "title": "WikiVet",
+   "version": "2026-07-09"
+  },
+  "wwwnc.cdc.gov_en_all": {
+   "date": "2024-11-14",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "wwwnc.cdc.gov_en_all_2024-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/wwwnc.cdc.gov_en_all_2024-11.zim.sha256",
+     "size": 178327552,
+     "url": "https://download.kiwix.org/zim/zimit/wwwnc.cdc.gov_en_all_2024-11.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "license": "US government work",
+   "tags": [
+    "medical",
+    "travel"
+   ],
+   "tier": "ark",
+   "title": "Travelers' Health",
+   "version": "2024-11"
+  },
+  "zimgit-medicine_en": {
+   "date": "2024-08-29",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "zimgit-medicine_en_2024-08.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/zimgit-medicine_en_2024-08.zim.sha256",
+     "size": 70179840,
+     "url": "https://download.kiwix.org/zim/other/zimgit-medicine_en_2024-08.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "tags": [
+    "medical",
+    "field"
+   ],
+   "tier": "seed",
+   "title": "Medical Library",
+   "version": "2024-08"
+  }
+ },
+ "pack": "medical"
+}
