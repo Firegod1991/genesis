@@ -20,12 +20,12 @@
   },
   "img_calibre": {
    "dest": "images",
-   "digest": "sha256:8eabbc9ac4d7fcbc252434493078ba22e4e8c3aa461e11b102020b040c5fc3e6",
+   "digest": "sha256:adb69d75b9c252e580fc691096f858833b901b5d106ae4080fb476bab104d946",
    "image": "linuxserver/calibre-web:latest",
    "kind": "image",
    "tier": "ark",
    "title": "Calibre Web (ebook library)",
-   "version": "8eabbc9ac4d7"
+   "version": "adb69d75b9c2"
   },
   "img_chat": {
    "dest": "images",

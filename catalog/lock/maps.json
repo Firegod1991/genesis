@@ -32,14 +32,14 @@
    "version": "current"
   },
   "planet_basemap": {
-   "date": "2026-11-14",
+   "date": "2026-11-15",
    "dest": "maps",
    "files": [
     {
      "filename": "planet.pmtiles",
-     "md5": "9735ee0dd5ad0af5192e207631ff68dc",
-     "size": 139488191421,
-     "url": "https://build.protomaps.com/20261114.pmtiles"
+     "md5": "d937945732c8acc15f33c2e77a20e1cf",
+     "size": 139532869447,
+     "url": "https://build.protomaps.com/20261115.pmtiles"
     }
    ],
    "kind": "map",
@@ -50,7 +50,7 @@
    "note": "Every street on Earth in one file. You do not need it to map your own region: `genesis maps region` cuts any area straight from this build.",
    "tier": "eden",
    "title": "Planet basemap, full detail (Protomaps daily build)",
-   "version": "20261114"
+   "version": "20261115"
   },
   "planet_osm": {
    "date": "2026-11-12",
@@ -71,18 +71,41 @@
    "version": "2026-11-12"
   },
   "survival_layers_world": {
-   "error": "GitHub release lookup failed for Firegod1991/genesis-vault: HTTP 404 for https://api.github.com/repos/Firegod1991/genesis-vault/releases/latest",
+   "date": "2026-11-15",
+   "dest": "poi",
+   "files": [
+    {
+     "filename": "survival.sqlite.gz",
+     "sha256": "ada4572abe471ed657f4de725d966358ad4c262b0b8aec597413f07138d7e006",
+     "size": 757058235,
+     "url": "https://github.com/Firegod1991/genesis-vault/releases/download/2026.11/survival.sqlite.gz"
+    }
+   ],
    "kind": "poi",
-   "status": "error",
+   "license": "ODbL (OpenStreetMap contributors)",
+   "note": "Prebuilt monthly by genesis-vault from the OpenStreetMap planet file. Build your own region any time with `genesis poi build`.",
+   "post": "gunzip",
    "tier": "seed",
-   "title": "Survival layers for the whole world (water, medical, fuel, power, shelter and more)"
+   "title": "Survival layers for the whole world (water, medical, fuel, power, shelter and more)",
+   "version": "2026.11"
   },
   "world_overview": {
-   "error": "GitHub release lookup failed for Firegod1991/genesis-vault: HTTP 404 for https://api.github.com/repos/Firegod1991/genesis-vault/releases/latest",
+   "date": "2026-11-15",
+   "dest": "maps",
+   "files": [
+    {
+     "filename": "world_overview.pmtiles",
+     "sha256": "660e60cb3d555d19b224a5e54dd4d17bb5de3f61ddfff4daa6fa6797b8743fdb",
+     "size": 45126822,
+     "url": "https://github.com/Firegod1991/genesis-vault/releases/download/2026.11/world_overview.pmtiles"
+    }
+   ],
    "kind": "map",
-   "status": "error",
+   "license": "ODbL (OpenStreetMap contributors)",
+   "note": "Cut monthly by genesis-vault so a first install has a map of the whole planet within seconds.",
    "tier": "seed",
-   "title": "World overview map (every country, zoom 0 to 6)"
+   "title": "World overview map (every country, zoom 0 to 6)",
+   "version": "2026.11"
   }
  },
  "pack": "maps"

@@ -72,12 +72,12 @@
    "version": "2026-10-31"
   },
   "fcc_amateur_licenses": {
-   "date": "2026-11-08",
+   "date": "2026-11-15",
    "dest": "radio/data",
    "files": [
     {
      "filename": "l_amat.zip",
-     "size": 198117503,
+     "size": 198401544,
      "url": "https://data.fcc.gov/download/pub/uls/complete/l_amat.zip"
     }
    ],
@@ -89,7 +89,7 @@
    ],
    "tier": "seed",
    "title": "FCC amateur license database (offline callsign lookup)",
-   "version": "2026-11-08"
+   "version": "2026-11-15"
   },
   "fldigi": {
    "date": "2026-08-03",

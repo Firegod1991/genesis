@@ -11687,7 +11687,7 @@
    "version": "2018-08-24"
   },
   "bible_eng-kjv": {
-   "date": "2026-11-09",
+   "date": "2026-11-15",
    "dest": "scripture",
    "files": [
     {
@@ -11721,10 +11721,10 @@
    "rule": "bible_ancient_to_today",
    "tier": "seed",
    "title": "English: King James Version + Apocrypha",
-   "version": "2026-11-09"
+   "version": "2026-11-15"
   },
   "bible_eng-kjv2006": {
-   "date": "2026-11-09",
+   "date": "2026-11-15",
    "dest": "scripture",
    "files": [
     {
@@ -11758,7 +11758,7 @@
    "rule": "bible_public_domain",
    "tier": "ark",
    "title": "English: King James Version",
-   "version": "2026-11-09"
+   "version": "2026-11-15"
   },
   "bible_eng-lxx2012": {
    "date": "2026-03-12",
@@ -31311,7 +31311,7 @@
    "version": "2014-04-30"
   },
   "bible_nrz": {
-   "date": "2026-11-10",
+   "date": "2026-11-15",
    "dest": "scripture",
    "files": [
     {
@@ -31346,7 +31346,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Lala: Nara NT",
-   "version": "2026-11-10"
+   "version": "2026-11-15"
   },
   "bible_nsn": {
    "date": "2012-01-19",
@@ -35828,7 +35828,7 @@
    "version": "2022-01-13"
   },
   "bible_ronBayash": {
-   "date": "2026-11-13",
+   "date": "2026-11-15",
    "dest": "scripture",
    "files": [
     {
@@ -35863,7 +35863,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Romanian: Bayash Bible",
-   "version": "2026-11-13"
+   "version": "2026-11-15"
   },
   "bible_ronbl": {
    "date": "2026-10-28",
@@ -36245,7 +36245,7 @@
    "version": "2025-07-02"
   },
   "bible_rusfb": {
-   "date": "2026-11-13",
+   "date": "2026-11-15",
    "dest": "scripture",
    "files": [
     {
@@ -36270,7 +36270,7 @@
     "name": "Библия свободы",
     "native": "Русский",
     "nt": 27,
-    "ot": 21,
+    "ot": 25,
     "public_domain": true,
     "script": "Latin",
     "translation": "rusfb"
@@ -36279,7 +36279,7 @@
    "rule": "bible_public_domain",
    "tier": "ark",
    "title": "Russian: Russian Freedom Bible",
-   "version": "2026-11-13"
+   "version": "2026-11-15"
   },
   "bible_russyn": {
    "date": "2022-11-25",
@@ -42960,7 +42960,7 @@
    "version": "2025-05-21"
   },
   "bible_turytc": {
-   "date": "2026-11-09",
+   "date": "2026-11-15",
    "dest": "scripture",
    "files": [
     {
@@ -42995,7 +42995,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Turkish: Turkish WEB",
-   "version": "2026-11-09"
+   "version": "2026-11-15"
   },
   "bible_tvk": {
    "date": "2016-09-06",

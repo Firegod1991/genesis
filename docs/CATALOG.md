@@ -6,9 +6,9 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
-| seed | 349 | 21.9 GB | 43 |
-| ark | 591 | 758.3 GB | 86 |
-| eden | 781 | 2.0 TB | 104 |
+| seed | 351 | 22.7 GB | 43 |
+| ark | 593 | 759.1 GB | 86 |
+| eden | 783 | 2.0 TB | 104 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -1479,9 +1479,11 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 
 | Item | Id | Tier | Version | Size | License |
 |---|---|---|---|---|---|
+| World overview map (every country, zoom 0 to 6) | `world_overview` | seed | 2026.11 | 45.1 MB | ODbL (OpenStreetMap contributors) |
+| Survival layers for the whole world (water, medical, fuel, power, shelter and more) | `survival_layers_world` | seed | 2026.11 | 757.1 MB | ODbL (OpenStreetMap contributors) |
 | Map fonts and icons (Protomaps basemap assets) | `map_assets` | seed | current |  | SIL OFL (fonts), CC0 (icons) |
 | Global Power Plant Database (World Resources Institute) | `global_power_plants` | seed | current | 12.0 MB | CC BY 4.0 |
-| Planet basemap, full detail (Protomaps daily build) | `planet_basemap` | eden | 20261114 | 139.5 GB | ODbL (OpenStreetMap contributors) |
+| Planet basemap, full detail (Protomaps daily build) | `planet_basemap` | eden | 20261115 | 139.5 GB | ODbL (OpenStreetMap contributors) |
 | OpenStreetMap planet (raw data) | `planet_osm` | eden | 2026-11-12 | 95.8 GB | ODbL (OpenStreetMap contributors) |
 
 ## Medical
@@ -1542,7 +1544,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Meshtastic firmware (ESP32 boards) | `meshtastic_firmware_esp32` | seed | 2.7.26.54e0d8d | 40.7 MB | GPL 3.0 |
 | Meshtastic firmware (nRF52840 boards) | `meshtastic_firmware_nrf52` | seed | 2.7.26.54e0d8d | 46.3 MB | GPL 3.0 |
 | CHIRP (radio programming) | `chirp` | seed | 20261113 |  | GPL 3.0 |
-| FCC amateur license database (offline callsign lookup) | `fcc_amateur_licenses` | seed | 2026-11-08 | 198.1 MB | US government work |
+| FCC amateur license database (offline callsign lookup) | `fcc_amateur_licenses` | seed | 2026-11-15 | 198.4 MB | US government work |
 | EiBi shortwave broadcast schedule (season B26) | `eibi_shortwave_schedule` | seed | 2026-10-31 | 490 KB | Free to use, credit EiBi |
 | Satellite orbits: amateur radio (TLE) | `tle_amateur` | seed | current |  | Public data, credit CelesTrak |
 | Satellite orbits: weather (TLE) | `tle_weather` | seed | current |  | Public data, credit CelesTrak |
@@ -1591,7 +1593,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * English: Wycliffe Bible portions (`bible_engWycliffe`, 2016-11-08)
 * English: Tyndale NT (`bible_engtnt`, 2020-12-20)
 * English: Geneva Bible 1599 (`bible_enggnv`, 2024-03-16)
-* English: King James Version + Apocrypha (`bible_eng-kjv`, 2026-11-09)
+* English: King James Version + Apocrypha (`bible_eng-kjv`, 2026-11-15)
 * English: Douay-Rheims 1899 (`bible_engDRA`, 2022-11-03)
 * English: Webster Bible (`bible_engwebster`, 2024-08-01)
 * English: Young's Literal Translation (`bible_engylt`, 2019-10-20)
@@ -1641,7 +1643,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * German, Standard: German Textbibel (`bible_deutkw`, 2025-08-30)
 * Dieri: Dieri NT (`bible_dif`, 2023-07-26)
 * English: ASV Byzantine Text (`bible_engasvbt`, 2026-11-13)
-* English: King James Version (`bible_eng-kjv2006`, 2026-11-09)
+* English: King James Version (`bible_eng-kjv2006`, 2026-11-15)
 * English: KJV Cambridge Paragraph (`bible_engkjvcpb`, 2026-11-09)
 * English: Leeser Tanakh (`bible_englee`, 2020-10-14)
 * English: LXX2012 U. S. English (`bible_eng-lxx2012`, 2026-03-12)
@@ -1682,7 +1684,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Pohnpeian: Pohnpeian NT & Psalms, new alphabet (`bible_pon-pdn`, 2024-07-28)
 * Romanian: Romanian Bible (Cyrillic) (`bible_ron1924`, 2022-01-13)
 * Romanian: Romanian Free Holy Bible (`bible_ronbl`, 2026-10-28)
-* Russian: Russian Freedom Bible (`bible_rusfb`, 2026-11-13)
+* Russian: Russian Freedom Bible (`bible_rusfb`, 2026-11-15)
 * Spanish: La Biblia en Español Sencillo (`bible_spabes`, 2026-10-30)
 * Spanish: Spanish BLL (`bible_spabll`, 2026-10-30)
 * Spanish: Spanish Free Bible for the World (`bible_spablm`, 2026-10-30)
@@ -2434,7 +2436,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * नेपाली: Nepali Contemporary Bible (`bible_npioncb`, 2025-05-17)
 * Nepali: Nepali Bible (`bible_npiulb`, 2020-06-10)
 * Nahuatl, Southeastern Puebla: Southeastern Puebla Nahuatl NT (`bible_nplNT`, 2014-04-30)
-* Lala: Nara NT (`bible_nrz`, 2026-11-10)
+* Lala: Nara NT (`bible_nrz`, 2026-11-15)
 * Nehan: Nehan NT (`bible_nsn`, 2012-01-19)
 * Nali: Nali Bible (`bible_nss`, 2026-11-10)
 * Ngaanyatjarra: Ngaanyatjarra Shorter Bible (`bible_ntj`, 2021-11-12)
@@ -2548,7 +2550,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Romani: Lovari Vlax Romani Bible (`bible_rmylovari`, 2025-06-28)
 * Romani, Vlax: Servi Romani Bible portions (`bible_rmyservi`, 2025-06-27)
 * Romani: Eastern Vlakh Romani (`bible_rmyvlakh`, 2025-06-28)
-* Romanian: Bayash Bible (`bible_ronBayash`, 2026-11-13)
+* Romanian: Bayash Bible (`bible_ronBayash`, 2026-11-15)
 * Romanian: Ludari Luke (`bible_ronludari`, 2026-07-15)
 * Rotokas: Rotokas NT (`bible_roo`, 2016-09-20)
 * Kriol: Kriol Bible (`bible_rop`, 2026-01-11)
@@ -2724,7 +2726,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Tunebo, Central: Central Tunebo NT (`bible_tuf`, 2014-08-06)
 * Tucano: Tucano NT (`bible_tuoNT`, 2020-12-01)
 * Turkish: Open Basic Turkish New Testament (`bible_turobt`, 2025-05-21)
-* Turkish: Turkish WEB (`bible_turytc`, 2026-11-09)
+* Turkish: Turkish WEB (`bible_turytc`, 2026-11-15)
 * Ambrym, Southeast: Southeast Ambrym Bible portions (`bible_tvk`, 2016-09-06)
 * Tavoyan: Tavoyan Bible (`bible_tvn`, 2025-07-09)
 * Naga, Tutsa: Tutsa Naga NT (`bible_tvt`, 2023-04-18)
@@ -2901,7 +2903,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | OpenWebRX+ (web SDR receiver) | `img_openwebrx` | seed | c527062bdc85 |  |  |
 | Stirling PDF | `img_pdf` | ark | ed7b1775c670 |  |  |
 | Kolibri (courses with progress tracking) | `img_kolibri` | ark | 19810f674f1e |  |  |
-| Calibre Web (ebook library) | `img_calibre` | ark | 8eabbc9ac4d7 |  |  |
+| Calibre Web (ebook library) | `img_calibre` | ark | adb69d75b9c2 |  |  |
 | Jellyfin (video and music) | `img_jellyfin` | ark | fea863d0cd9e |  |  |
 | Homebox (supply inventory) | `img_inventory` | ark | 9d0b64776c69 |  |  |
 | LibreTranslate (offline translation) | `img_translate` | ark | 6f03f063a10d |  |  |
@@ -2989,8 +2991,8 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Syncthing (sync folders between machines, no cloud) | `syncthing` | ark | 2.1.7 | 54.6 MB | MPL 2.0 |
 | restic (encrypted backups) | `restic` | ark | 0.19.1 | 40.1 MB | BSD 2 Clause |
 | Ollama (run models without Docker) | `ollama_runtime` | ark | 0.40.16 | 5.2 GB | MIT |
-| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12396 | 84.4 MB | MIT |
+| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12424 | 84.6 MB | MIT |
 | yt-dlp (save video while the internet lasts) | `yt_dlp` | ark | 2026.10.26 | 143.0 MB | Unlicense |
-| FFmpeg (static builds) | `ffmpeg` | ark | 2026-11-14 | 492.0 MB | GPL 3.0 |
+| FFmpeg (static builds) | `ffmpeg` | ark | 2026-11-15 | 492.0 MB | GPL 3.0 |
 | VLC for Windows | `vlc_windows` | ark | 3.0.24 | 46.3 MB | GPL 2.0 |
 
