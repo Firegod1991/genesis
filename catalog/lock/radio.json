@@ -1,11 +1,34 @@
 {
  "items": {
   "chirp": {
-   "error": "FetchError: HTTP 403 for https://archive.chirpmyradio.com/chirp_next/",
+   "date": "2026-11-13",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "chirp-next-20261113-installer.exe",
+     "platform": "windows-x64",
+     "url": "https://archive.chirpmyradio.com/chirp_next/next-20261113/chirp-next-20261113-installer.exe"
+    },
+    {
+     "filename": "chirp-20261113-py3-none-any.whl",
+     "url": "https://archive.chirpmyradio.com/chirp_next/next-20261113/chirp-20261113-py3-none-any.whl"
+    },
+    {
+     "filename": "chirp-next-20261113.app.zip",
+     "platform": "macos-arm64",
+     "url": "https://archive.chirpmyradio.com/chirp_next/next-20261113/chirp-next-20261113.app.zip"
+    }
+   ],
    "kind": "archive",
-   "status": "error",
+   "license": "GPL 3.0",
+   "note": "Resolved through the publisher's own link to its latest build.",
+   "tags": [
+    "ham",
+    "programming"
+   ],
    "tier": "seed",
-   "title": "CHIRP (radio programming)"
+   "title": "CHIRP (radio programming)",
+   "version": "20261113"
   },
   "direwolf": {
    "date": "2025-11-13",
@@ -73,8 +96,23 @@
    "dest": "radio",
    "files": [
     {
+     "filename": "fldigi-4.2.13_setup.exe",
+     "md5": "b715785b28a5c9da1dbd2c2eda2d1b81",
+     "platform": "windows-x64",
+     "size": 7504796,
+     "url": "https://downloads.sourceforge.net/project/fldigi/fldigi/fldigi-4.2.13_setup.exe"
+    },
+    {
+     "filename": "fldigi-4.2.13.dmg",
+     "md5": "049819aaf0fb9dfa09c07a1683d251a6",
+     "platform": "macos-arm64",
+     "size": 14277145,
+     "url": "https://downloads.sourceforge.net/project/fldigi/fldigi/fldigi-4.2.13.dmg"
+    },
+    {
      "filename": "fldigi-4.2.13.tar.gz",
      "md5": "bec4586a08983f53f01c9a722895c8a8",
+     "platform": "source",
      "size": 5244946,
      "url": "https://downloads.sourceforge.net/project/fldigi/fldigi/fldigi-4.2.13.tar.gz"
     }
@@ -681,10 +719,25 @@
    "dest": "radio",
    "files": [
     {
-     "filename": "wsjtx-3.0.0-rc1.tgz",
-     "md5": "c926d698a5c6b157046e7b9cffee88a1",
-     "size": 37536606,
-     "url": "https://downloads.sourceforge.net/project/wsjt/wsjtx-3.0.0-rc1/wsjtx-3.0.0-rc1.tgz"
+     "filename": "wsjtx-3.0.0-rc1-win64.exe",
+     "md5": "c98729f00cee8fdd84b5054c4aceccdc",
+     "platform": "windows-x64",
+     "size": 39639137,
+     "url": "https://downloads.sourceforge.net/project/wsjt/wsjtx-3.0.0-rc1/wsjtx-3.0.0-rc1-win64.exe"
+    },
+    {
+     "filename": "wsjtx-3.0.0-rc1-Darwin.dmg",
+     "md5": "be5ddd92ea5b561674cdbff16e3810d2",
+     "platform": "macos-arm64",
+     "size": 50794328,
+     "url": "https://downloads.sourceforge.net/project/wsjt/wsjtx-3.0.0-rc1/wsjtx-3.0.0-rc1-Darwin.dmg"
+    },
+    {
+     "filename": "wsjtx_3.0.0-rc1_amd64.deb",
+     "md5": "9036454c68d208791822ebce444dd35d",
+     "platform": "linux-x64",
+     "size": 27242160,
+     "url": "https://downloads.sourceforge.net/project/wsjt/wsjtx-3.0.0-rc1/wsjtx_3.0.0-rc1_amd64.deb"
     }
    ],
    "kind": "archive",
@@ -695,7 +748,7 @@
    ],
    "tier": "ark",
    "title": "WSJT-X (FT8 and other weak signal modes)",
-   "version": "3.0.0"
+   "version": "3.0.0-rc1"
   }
  },
  "pack": "radio"

@@ -47,11 +47,11 @@
      "url": "https://github.com/keepassxreboot/keepassxc/releases/download/2.8.0/KeePassXC-2.8.0-x86_64.AppImage"
     },
     {
-     "filename": "KeePassXC-2.7.12-Win64.msi",
+     "filename": "KeePassXC-2.8.0-x64.msi",
      "platform": "windows-x64",
-     "sha256": "feee096c1d5d0d7bb7b36b18174818f7bac889be7668c550ff0e5ef9206ea9a5",
-     "size": 35901440,
-     "url": "https://github.com/keepassxreboot/keepassxc/releases/download/2.7.12/KeePassXC-2.7.12-Win64.msi"
+     "sha256": "4f105af5ba780428718c8be5614cf95deceed5cb3b474a9bd624c5df81cec6e5",
+     "size": 69419008,
+     "url": "https://github.com/keepassxreboot/keepassxc/releases/download/2.8.0/KeePassXC-2.8.0-x64.msi"
     },
     {
      "filename": "KeePassXC-2.8.0-arm64.dmg",
@@ -133,11 +133,47 @@
    "version": "3.8.2"
   },
   "llama_cpp": {
-   "error": "no asset in ggml-org/llama.cpp v1.0.0 matched ['bin-ubuntu-x64\\\\.(zip|tar\\\\.gz)$', 'bin-ubuntu-arm64\\\\.(zip|tar\\\\.gz)$', 'bin-win-cpu-x64\\\\.zip$', 'bin-macos-arm64\\\\.(zip|tar\\\\.gz)$']; assets: ['nightly-tag.txt']",
+   "date": "2026-11-15",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "llama-b12396-bin-ubuntu-x64.tar.gz",
+     "platform": "linux-x64",
+     "sha256": "49cf8a81c39201743d5578303b0558530395dc9dcd1cf51434dbee03d6d80273",
+     "size": 23340042,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12396/llama-b12396-bin-ubuntu-x64.tar.gz"
+    },
+    {
+     "filename": "llama-b12396-bin-ubuntu-arm64.tar.gz",
+     "platform": "linux-arm64",
+     "sha256": "fca28c43f8037d14f29811314cf45c9d3819d12ab273ee687bf7f780946be041",
+     "size": 18978582,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12396/llama-b12396-bin-ubuntu-arm64.tar.gz"
+    },
+    {
+     "filename": "llama-b12396-bin-win-cpu-x64.zip",
+     "platform": "windows-x64",
+     "sha256": "3b0b61e7a51e988d9a2c5db5f370012b728d936b9262528b4c11f3769f6560a8",
+     "size": 25127274,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12396/llama-b12396-bin-win-cpu-x64.zip"
+    },
+    {
+     "filename": "llama-b12396-bin-macos-arm64.tar.gz",
+     "platform": "macos-arm64",
+     "sha256": "b2fc8146ff3e20d047e40e588d28d8726e51b5c65be9298b1fbdf838762fb14f",
+     "size": 16925292,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12396/llama-b12396-bin-macos-arm64.tar.gz"
+    }
+   ],
    "kind": "tool",
-   "status": "error",
+   "license": "MIT",
+   "note": "Builds are published as numbered releases; the one marked latest carries none.",
+   "tags": [
+    "ai"
+   ],
    "tier": "ark",
-   "title": "llama.cpp (run GGUF models directly)"
+   "title": "llama.cpp (run GGUF models directly)",
+   "version": "b12396"
   },
   "ollama_runtime": {
    "date": "2026-11-09",
@@ -270,18 +306,18 @@
    "dest": "tools",
    "files": [
     {
-     "filename": "Raspberry_Pi_Imager-v2.0.12-cli-x86_64.AppImage",
+     "filename": "Raspberry_Pi_Imager-v2.0.12-desktop-x86_64.AppImage",
      "platform": "linux-x64",
-     "sha256": "8a2fa9c0fe6c61f57d5826a7419131b18f33226c681c740ebc30a713928d05e3",
-     "size": 10516984,
-     "url": "https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.12/Raspberry_Pi_Imager-v2.0.12-cli-x86_64.AppImage"
+     "sha256": "9589b1619b12008de8d2ed9e928d8d58901c1013f3305091c5cc238a5c9691e5",
+     "size": 35154424,
+     "url": "https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.12/Raspberry_Pi_Imager-v2.0.12-desktop-x86_64.AppImage"
     },
     {
-     "filename": "Raspberry_Pi_Imager-v2.0.12-cli-aarch64.AppImage",
+     "filename": "Raspberry_Pi_Imager-v2.0.12-desktop-aarch64.AppImage",
      "platform": "linux-arm64",
-     "sha256": "b87c82db68fbe8f4fd7c266af8a5d7b2aad3d0ddc2e4243ebd6ea77bcb65573c",
-     "size": 10312200,
-     "url": "https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.12/Raspberry_Pi_Imager-v2.0.12-cli-aarch64.AppImage"
+     "sha256": "9f499de3d44d2cd67fcc7d633f2b4607058a597811c467a6574f0f5bddf37424",
+     "size": 35355144,
+     "url": "https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.12/Raspberry_Pi_Imager-v2.0.12-desktop-aarch64.AppImage"
     },
     {
      "filename": "imager-v2.0.12.exe",

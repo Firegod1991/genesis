@@ -6,9 +6,9 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
-| seed | 348 | 21.8 GB | 42 |
-| ark | 589 | 758.3 GB | 84 |
-| eden | 779 | 2.0 TB | 102 |
+| seed | 349 | 21.9 GB | 43 |
+| ark | 591 | 758.3 GB | 86 |
+| eden | 781 | 2.0 TB | 104 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -1541,6 +1541,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Pat (Winlink email over radio) | `pat_winlink` | seed | 1.0.1 | 33.6 MB | MIT |
 | Meshtastic firmware (ESP32 boards) | `meshtastic_firmware_esp32` | seed | 2.7.26.54e0d8d | 40.7 MB | GPL 3.0 |
 | Meshtastic firmware (nRF52840 boards) | `meshtastic_firmware_nrf52` | seed | 2.7.26.54e0d8d | 46.3 MB | GPL 3.0 |
+| CHIRP (radio programming) | `chirp` | seed | 20261113 |  | GPL 3.0 |
 | FCC amateur license database (offline callsign lookup) | `fcc_amateur_licenses` | seed | 2026-11-08 | 198.1 MB | US government work |
 | EiBi shortwave broadcast schedule (season B26) | `eibi_shortwave_schedule` | seed | 2026-10-31 | 490 KB | Free to use, credit EiBi |
 | Satellite orbits: amateur radio (TLE) | `tle_amateur` | seed | current |  | Public data, credit CelesTrak |
@@ -1551,8 +1552,8 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | SDRTrunk (trunked radio decoding) | `sdrtrunk` | ark | 1.0.0 | 326.0 MB | GPL 3.0 |
 | Gqrx (SDR receiver) | `gqrx` | ark | 2.17.7 | 65.5 MB | GPL 3.0 |
 | JS8Call (weak signal keyboard messaging) | `js8call` | ark | 2.3.1 | 230.9 MB | GPL 3.0 |
-| WSJT-X (FT8 and other weak signal modes) | `wsjtx` | ark | 3.0.0 | 37.5 MB | GPL 3.0 |
-| Fldigi (digital modes, NBEMS) | `fldigi` | ark | 4.2.13 | 5.2 MB | GPL 3.0 |
+| WSJT-X (FT8 and other weak signal modes) | `wsjtx` | ark | 3.0.0-rc1 | 117.7 MB | GPL 3.0 |
+| Fldigi (digital modes, NBEMS) | `fldigi` | ark | 4.2.13 | 27.0 MB | GPL 3.0 |
 | FreeDV (digital voice on HF) | `freedv` | ark | 2.4.1 | 199.5 MB | LGPL 2.1 |
 | Dire Wolf (APRS and packet modem, source) | `direwolf` | ark | 1.8.1 |  | GPL 2.0 |
 | Reticulum network stack | `reticulum` | ark | 1.6.0 | 681 KB | Reticulum License |
@@ -2981,13 +2982,14 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Kiwix tools (kiwix-serve without Docker) | `kiwix_tools` | seed | 3.8.2 | 70.8 MB | GPL 3.0 |
 | Kiwix Desktop (offline reader) | `kiwix_desktop` | seed | 2.5.1 | 325.4 MB | GPL 3.0 |
 | Ventoy (one USB stick, many bootable ISOs) | `ventoy` | seed | 1.1.18 | 37.0 MB | GPL 3.0 |
-| Raspberry Pi Imager | `rpi_imager` | seed | 2.0.12 | 79.8 MB | Apache 2.0 |
+| Raspberry Pi Imager | `rpi_imager` | seed | 2.0.12 | 129.4 MB | Apache 2.0 |
 | 7-Zip | `sevenzip` | seed | 26.06 | 5.5 MB | LGPL 2.1 |
 | Rufus (bootable USB writer for Windows) | `rufus` | ark | 4.15 | 2.0 MB | GPL 3.0 |
-| KeePassXC (password vault) | `keepassxc` | ark | 2.8.0 | 135.3 MB | GPL 3.0 |
+| KeePassXC (password vault) | `keepassxc` | ark | 2.8.0 | 168.8 MB | GPL 3.0 |
 | Syncthing (sync folders between machines, no cloud) | `syncthing` | ark | 2.1.7 | 54.6 MB | MPL 2.0 |
 | restic (encrypted backups) | `restic` | ark | 0.19.1 | 40.1 MB | BSD 2 Clause |
 | Ollama (run models without Docker) | `ollama_runtime` | ark | 0.40.16 | 5.2 GB | MIT |
+| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12396 | 84.4 MB | MIT |
 | yt-dlp (save video while the internet lasts) | `yt_dlp` | ark | 2026.10.26 | 143.0 MB | Unlicense |
 | FFmpeg (static builds) | `ffmpeg` | ark | 2026-11-14 | 492.0 MB | GPL 3.0 |
 | VLC for Windows | `vlc_windows` | ark | 3.0.24 | 46.3 MB | GPL 2.0 |
