@@ -1,0 +1,125 @@
+{
+ "title": "Code",
+ "about": "Build software with no internet: the newest stable toolchain of every major language as an offline archive, editors, and complete documentation.",
+ "kind": "archive",
+ "dest": "code",
+ "items": [
+  {"id": "devdocs_all", "tier": "seed", "kind": "zim", "dest": "zim", "tags": ["docs"],
+   "note": "Offline documentation for every language and framework DevDocs covers. New ones appear here automatically.",
+   "source": {"type": "kiwix_rule", "prefix": "devdocs_", "flavours": [""]}},
+  {"id": "freecodecamp_all", "tier": "seed", "kind": "zim", "dest": "zim", "tags": ["docs", "courses"],
+   "source": {"type": "kiwix_rule", "prefix": "freecodecamp_", "flavours": [""]}},
+  {"zim": "www.mankier.com_en_all", "tier": "seed", "kind": "zim", "dest": "zim", "tags": ["docs", "linux"], "note": "Linux man pages."},
+  {"zim": "archlinux_en_all", "flavour": "maxi", "tier": "seed", "kind": "zim", "dest": "zim", "tags": ["docs", "linux"]},
+  {"zim": "devhints.io_en_all", "tier": "seed", "kind": "zim", "dest": "zim", "tags": ["docs"]},
+  {"zim": "gobyexample.com_en_all", "tier": "seed", "kind": "zim", "dest": "zim", "tags": ["docs"]},
+  {"zim": "termux_en_all", "flavour": "maxi", "tier": "seed", "kind": "zim", "dest": "zim", "tags": ["docs", "android"]},
+
+  {"id": "go", "title": "Go toolchain", "tier": "ark", "license": "BSD 3 Clause", "source": {"type": "toolchain", "lang": "go"}},
+  {"id": "rust", "title": "Rust toolchain (standalone installer)", "tier": "ark", "license": "MIT or Apache 2.0", "source": {"type": "toolchain", "lang": "rust"}},
+  {"id": "node", "title": "Node.js LTS", "tier": "ark", "license": "MIT", "source": {"type": "toolchain", "lang": "node"}},
+  {"id": "zig", "title": "Zig toolchain", "tier": "ark", "license": "MIT", "source": {"type": "toolchain", "lang": "zig"}},
+  {"id": "java", "title": "Java JDK (Eclipse Temurin LTS)", "tier": "ark", "license": "GPL 2.0 with Classpath Exception", "source": {"type": "toolchain", "lang": "java"}},
+  {"id": "dotnet", "title": ".NET SDK LTS (C#, F#)", "tier": "ark", "license": "MIT", "source": {"type": "toolchain", "lang": "dotnet"}},
+  {"id": "julia", "title": "Julia", "tier": "ark", "license": "MIT", "source": {"type": "toolchain", "lang": "julia"}},
+  {"id": "dart", "title": "Dart SDK", "tier": "ark", "license": "BSD 3 Clause", "source": {"type": "toolchain", "lang": "dart"}},
+  {"id": "python", "title": "Python (standalone builds)", "tier": "ark", "license": "PSF License",
+   "source": {"type": "github", "repo": "astral-sh/python-build-standalone", "assets": {
+     "linux-x64": "^cpython-3\\.\\d+\\.\\d+\\+\\d+-x86_64-unknown-linux-gnu-install_only\\.tar\\.gz$",
+     "linux-arm64": "^cpython-3\\.\\d+\\.\\d+\\+\\d+-aarch64-unknown-linux-gnu-install_only\\.tar\\.gz$",
+     "windows-x64": "^cpython-3\\.\\d+\\.\\d+\\+\\d+-x86_64-pc-windows-msvc-install_only\\.tar\\.gz$",
+     "macos-arm64": "^cpython-3\\.\\d+\\.\\d+\\+\\d+-aarch64-apple-darwin-install_only\\.tar\\.gz$"}}},
+  {"id": "uv", "title": "uv (Python package manager)", "tier": "ark", "license": "MIT or Apache 2.0",
+   "source": {"type": "github", "repo": "astral-sh/uv", "assets": {
+     "linux-x64": "^uv-x86_64-unknown-linux-gnu\\.tar\\.gz$", "linux-arm64": "^uv-aarch64-unknown-linux-gnu\\.tar\\.gz$",
+     "windows-x64": "^uv-x86_64-pc-windows-msvc\\.zip$", "macos-arm64": "^uv-aarch64-apple-darwin\\.tar\\.gz$"}}},
+  {"id": "deno", "title": "Deno (JavaScript and TypeScript runtime)", "tier": "ark", "license": "MIT",
+   "source": {"type": "github", "repo": "denoland/deno", "assets": {
+     "linux-x64": "^deno-x86_64-unknown-linux-gnu\\.zip$", "linux-arm64": "^deno-aarch64-unknown-linux-gnu\\.zip$",
+     "windows-x64": "^deno-x86_64-pc-windows-msvc\\.zip$", "macos-arm64": "^deno-aarch64-apple-darwin\\.zip$"}}},
+  {"id": "bun", "title": "Bun (JavaScript runtime)", "tier": "ark", "license": "MIT",
+   "source": {"type": "github", "repo": "oven-sh/bun", "assets": {
+     "linux-x64": "^bun-linux-x64\\.zip$", "linux-arm64": "^bun-linux-aarch64\\.zip$",
+     "windows-x64": "^bun-windows-x64\\.zip$", "macos-arm64": "^bun-darwin-aarch64\\.zip$"}}},
+  {"id": "kotlin", "title": "Kotlin compiler", "tier": "ark", "license": "Apache 2.0",
+   "source": {"type": "github", "repo": "JetBrains/kotlin", "asset": "^kotlin-compiler-[\\d.]+\\.zip$"}},
+  {"id": "scala", "title": "Scala 3", "tier": "ark", "license": "Apache 2.0",
+   "source": {"type": "github", "repo": "scala/scala3", "asset": "^scala3-[\\d.]+\\.tar\\.gz$"}},
+  {"id": "elixir", "title": "Elixir (precompiled)", "tier": "ark", "license": "Apache 2.0",
+   "source": {"type": "github", "repo": "elixir-lang/elixir", "asset": "^elixir-otp-\\d+\\.zip$"}},
+  {"id": "gleam", "title": "Gleam", "tier": "ark", "license": "Apache 2.0",
+   "source": {"type": "github", "repo": "gleam-lang/gleam", "assets": {
+     "linux-x64": "x86_64-unknown-linux-musl\\.tar\\.gz$", "linux-arm64": "aarch64-unknown-linux-musl\\.tar\\.gz$",
+     "windows-x64": "x86_64-pc-windows-msvc\\.zip$", "macos-arm64": "aarch64-apple-darwin\\.tar\\.gz$"}}},
+  {"id": "odin", "title": "Odin", "tier": "ark", "license": "BSD 3 Clause",
+   "source": {"type": "github", "repo": "odin-lang/Odin", "assets": {
+     "linux-x64": "^odin-linux-amd64-.*\\.(tar\\.gz|zip)$", "linux-arm64": "^odin-linux-arm64-.*\\.(tar\\.gz|zip)$",
+     "windows-x64": "^odin-windows-amd64-.*\\.zip$", "macos-arm64": "^odin-macos-arm64-.*\\.(tar\\.gz|zip)$"}}},
+  {"id": "vlang", "title": "V", "tier": "ark", "license": "MIT",
+   "source": {"type": "github", "repo": "vlang/v", "assets": {
+     "linux-x64": "^v_linux\\.zip$", "windows-x64": "^v_windows\\.zip$", "macos-arm64": "^v_macos_arm64\\.zip$"}}},
+  {"id": "crystal", "title": "Crystal", "tier": "ark", "license": "Apache 2.0",
+   "source": {"type": "github", "repo": "crystal-lang/crystal", "assets": {"linux-x64": "linux-x86_64\\.tar\\.gz$"}}},
+  {"id": "tinygo", "title": "TinyGo (Go for microcontrollers)", "tier": "ark", "license": "BSD 3 Clause",
+   "source": {"type": "github", "repo": "tinygo-org/tinygo", "assets": {
+     "linux-x64": "linux-amd64\\.tar\\.gz$", "linux-arm64": "linux-arm64\\.tar\\.gz$",
+     "windows-x64": "windows-amd64\\.zip$", "macos-arm64": "darwin-arm64\\.tar\\.gz$"}}},
+  {"id": "arduino_cli", "title": "Arduino CLI", "tier": "ark", "license": "GPL 3.0",
+   "source": {"type": "github", "repo": "arduino/arduino-cli", "assets": {
+     "linux-x64": "Linux_64bit\\.tar\\.gz$", "linux-arm64": "Linux_ARM64\\.tar\\.gz$",
+     "windows-x64": "Windows_64bit\\.zip$", "macos-arm64": "macOS_ARM64\\.tar\\.gz$"}}},
+  {"id": "cmake", "title": "CMake", "tier": "ark", "license": "BSD 3 Clause",
+   "source": {"type": "github", "repo": "Kitware/CMake", "assets": {
+     "linux-x64": "^cmake-[\\d.]+-linux-x86_64\\.tar\\.gz$", "linux-arm64": "^cmake-[\\d.]+-linux-aarch64\\.tar\\.gz$",
+     "windows-x64": "^cmake-[\\d.]+-windows-x86_64\\.zip$", "macos-arm64": "^cmake-[\\d.]+-macos-universal\\.tar\\.gz$"}}},
+  {"id": "neovim", "title": "Neovim", "tier": "ark", "license": "Apache 2.0",
+   "source": {"type": "github", "repo": "neovim/neovim", "assets": {
+     "linux-x64": "^nvim-linux-x86_64\\.tar\\.gz$", "linux-arm64": "^nvim-linux-arm64\\.tar\\.gz$",
+     "windows-x64": "^nvim-win64\\.zip$", "macos-arm64": "^nvim-macos-arm64\\.tar\\.gz$"}}},
+  {"id": "helix", "title": "Helix editor", "tier": "ark", "license": "MPL 2.0",
+   "source": {"type": "github", "repo": "helix-editor/helix", "assets": {
+     "linux-x64": "x86_64-linux\\.tar\\.xz$", "linux-arm64": "aarch64-linux\\.tar\\.xz$",
+     "windows-x64": "x86_64-windows\\.zip$", "macos-arm64": "aarch64-macos\\.tar\\.xz$"}}},
+  {"id": "vscodium", "title": "VSCodium (VS Code without telemetry)", "tier": "ark", "license": "MIT",
+   "source": {"type": "github", "repo": "VSCodium/vscodium", "assets": {
+     "linux-x64": "^VSCodium-linux-x64-[\\d.]+\\.tar\\.gz$", "linux-arm64": "^VSCodium-linux-arm64-[\\d.]+\\.tar\\.gz$",
+     "windows-x64": "^VSCodium-win32-x64-[\\d.]+\\.zip$", "macos-arm64": "^VSCodium-darwin-arm64-[\\d.]+\\.zip$"}}},
+  {"id": "git_for_windows", "title": "Git for Windows", "tier": "ark", "license": "GPL 2.0",
+   "source": {"type": "github", "repo": "git-for-windows/git", "assets": {"windows-x64": "^Git-[\\d.]+-64-bit\\.exe$"}}},
+  {"id": "ripgrep", "title": "ripgrep", "tier": "ark", "license": "MIT or Unlicense",
+   "source": {"type": "github", "repo": "BurntSushi/ripgrep", "assets": {
+     "linux-x64": "x86_64-unknown-linux-musl\\.tar\\.gz$", "linux-arm64": "aarch64-unknown-linux-gnu\\.tar\\.gz$",
+     "windows-x64": "x86_64-pc-windows-msvc\\.zip$", "macos-arm64": "aarch64-apple-darwin\\.tar\\.gz$"}}},
+  {"id": "jq", "title": "jq", "tier": "ark", "license": "MIT",
+   "source": {"type": "github", "repo": "jqlang/jq", "assets": {
+     "linux-x64": "^jq-linux-amd64$", "linux-arm64": "^jq-linux-arm64$",
+     "windows-x64": "^jq-windows-amd64\\.exe$", "macos-arm64": "^jq-macos-arm64$"}}},
+  {"id": "duckdb", "title": "DuckDB", "tier": "ark", "license": "MIT",
+   "source": {"type": "github", "repo": "duckdb/duckdb", "assets": {
+     "linux-x64": "^duckdb_cli-linux-amd64\\.zip$", "linux-arm64": "^duckdb_cli-linux-arm64\\.zip$",
+     "windows-x64": "^duckdb_cli-windows-amd64\\.zip$", "macos-arm64": "^duckdb_cli-osx-universal\\.zip$"}}},
+  {"id": "pandoc", "title": "Pandoc", "tier": "ark", "license": "GPL 2.0",
+   "source": {"type": "github", "repo": "jgm/pandoc", "assets": {
+     "linux-x64": "linux-amd64\\.tar\\.gz$", "linux-arm64": "linux-arm64\\.tar\\.gz$",
+     "windows-x64": "windows-x86_64\\.zip$", "macos-arm64": "arm64-macOS\\.zip$"}}},
+  {"id": "typst", "title": "Typst", "tier": "ark", "license": "Apache 2.0",
+   "source": {"type": "github", "repo": "typst/typst", "assets": {
+     "linux-x64": "x86_64-unknown-linux-musl\\.tar\\.xz$", "linux-arm64": "aarch64-unknown-linux-musl\\.tar\\.xz$",
+     "windows-x64": "x86_64-pc-windows-msvc\\.zip$", "macos-arm64": "aarch64-apple-darwin\\.tar\\.xz$"}}},
+  {"zim": "docs.python.org_en_all", "tier": "ark", "kind": "zim", "dest": "zim", "tags": ["docs"]},
+  {"zim": "openwrt.org_en_all", "tier": "ark", "kind": "zim", "dest": "zim", "tags": ["docs", "networking"]},
+  {"zim": "jeffe.cs.illinois.edu_en_all", "tier": "ark", "kind": "zim", "dest": "zim", "tags": ["docs", "algorithms"]},
+  {"zim": "opendatastructures.org_en_all", "tier": "ark", "kind": "zim", "dest": "zim", "tags": ["docs", "algorithms"]},
+  {"id": "stackexchange_technical", "tier": "ark", "kind": "zim", "dest": "zim", "tags": ["qa"],
+   "source": {"type": "kiwix_rule", "category": "stack_exchange", "flavours": [""],
+              "regex": "^((unix|security|raspberrypi|arduino|softwareengineering|codereview|cs|dba|devops|networkengineering|reverseengineering|crypto|datascience|ai|iot|robotics|retrocomputing|tor|dsp)\\.stackexchange\\.com|askubuntu\\.com|superuser\\.com|serverfault\\.com)_en_all$"}},
+
+  {"id": "llvm", "title": "LLVM and Clang", "tier": "eden", "license": "Apache 2.0 with LLVM exceptions",
+   "source": {"type": "github", "repo": "llvm/llvm-project", "assets": {
+     "linux-x64": "^LLVM-[\\d.]+-Linux-X64\\.tar\\.xz$", "linux-arm64": "^LLVM-[\\d.]+-Linux-ARM64\\.tar\\.xz$",
+     "windows-x64": "^LLVM-[\\d.]+-win64\\.exe$", "macos-arm64": "^LLVM-[\\d.]+-macOS-ARM64\\.tar\\.xz$"}}},
+  {"zim": "stackoverflow.com_en_all", "tier": "eden", "kind": "zim", "dest": "zim", "tags": ["qa"], "note": "All of Stack Overflow. Very large."},
+  {"id": "coreyms_tutorials", "tier": "eden", "kind": "zim", "dest": "zim", "tags": ["courses", "video"],
+   "source": {"type": "kiwix_rule", "prefix": "coreyms_en_", "flavours": [""]}}
+ ]
+}

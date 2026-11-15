@@ -1,0 +1,62 @@
+{
+ "title": "Tools",
+ "about": "Portable programs for every desktop platform: readers, map tools, USB writers, archivers, backup and capture. Kept so a bare Windows, Mac or Linux machine can be made useful with no internet.",
+ "kind": "tool",
+ "dest": "tools",
+ "items": [
+  {"id": "pmtiles", "title": "pmtiles (cut and inspect offline maps)", "tier": "seed", "license": "BSD 3 Clause", "tags": ["maps"],
+   "source": {"type": "github", "repo": "protomaps/go-pmtiles", "assets": {
+     "linux-x64": "^go-pmtiles_[\\d.]+_Linux_x86_64\\.tar\\.gz$", "linux-arm64": "^go-pmtiles_[\\d.]+_Linux_arm64\\.tar\\.gz$",
+     "windows-x64": "^go-pmtiles_[\\d.]+_Windows_x86_64\\.zip$", "macos-arm64": "^go-pmtiles[_-][\\d.]+_Darwin_arm64\\.zip$"}}},
+  {"id": "kiwix_tools", "title": "Kiwix tools (kiwix-serve without Docker)", "tier": "seed", "license": "GPL 3.0", "tags": ["reader"],
+   "source": {"type": "http_index", "url": "https://download.kiwix.org/release/kiwix-tools/", "files": {
+     "linux-x64": "kiwix-tools_linux-x86_64-[\\d.]+(?:-\\d+)?\\.tar\\.gz", "linux-arm64": "kiwix-tools_linux-aarch64-[\\d.]+(?:-\\d+)?\\.tar\\.gz",
+     "windows-x64": "kiwix-tools_win-x86_64-[\\d.]+(?:-\\d+)?\\.zip", "macos-arm64": "kiwix-tools_macos-arm64-[\\d.]+(?:-\\d+)?\\.tar\\.gz"}}},
+  {"id": "kiwix_desktop", "title": "Kiwix Desktop (offline reader)", "tier": "seed", "license": "GPL 3.0", "tags": ["reader"],
+   "source": {"type": "http_index", "url": "https://download.kiwix.org/release/kiwix-desktop/", "files": {
+     "linux-x64": "kiwix-desktop_x86_64_[\\d.]+(?:-\\d+)?\\.appimage", "windows-x64": "kiwix-desktop_windows_x64_[\\d.]+(?:-\\d+)?\\.zip"}}},
+  {"id": "ventoy", "title": "Ventoy (one USB stick, many bootable ISOs)", "tier": "seed", "license": "GPL 3.0", "tags": ["usb"],
+   "source": {"type": "github", "repo": "ventoy/Ventoy", "assets": {
+     "linux-x64": "^ventoy-[\\d.]+-linux\\.tar\\.gz$", "windows-x64": "^ventoy-[\\d.]+-windows\\.zip$"}}},
+  {"id": "rpi_imager", "title": "Raspberry Pi Imager", "tier": "seed", "license": "Apache 2.0", "tags": ["usb"],
+   "source": {"type": "github", "repo": "raspberrypi/rpi-imager", "assets": {
+     "linux-x64": "(?i)(amd64\\.deb|x86_64\\.AppImage)$", "linux-arm64": "(?i)(arm64\\.deb|aarch64\\.AppImage)$",
+     "windows-x64": "(?i)\\.exe$", "macos-arm64": "(?i)\\.dmg$"}}},
+  {"id": "sevenzip", "title": "7-Zip", "tier": "seed", "license": "LGPL 2.1", "tags": ["archive"],
+   "source": {"type": "github", "repo": "ip7z/7zip", "assets": {
+     "linux-x64": "^7z\\d+-linux-x64\\.tar\\.xz$", "linux-arm64": "^7z\\d+-linux-arm64\\.tar\\.xz$",
+     "windows-x64": "^7z\\d+-x64\\.exe$", "macos-arm64": "^7z\\d+-mac\\.tar\\.xz$"}}},
+
+  {"id": "rufus", "title": "Rufus (bootable USB writer for Windows)", "tier": "ark", "license": "GPL 3.0", "tags": ["usb"],
+   "source": {"type": "github", "repo": "pbatard/rufus", "assets": {"windows-x64": "^rufus-[\\d.]+\\.exe$"}}},
+  {"id": "keepassxc", "title": "KeePassXC (password vault)", "tier": "ark", "license": "GPL 3.0", "tags": ["security"],
+   "source": {"type": "github", "repo": "keepassxreboot/keepassxc", "assets": {
+     "linux-x64": "x86_64\\.AppImage$", "windows-x64": "Win64\\.msi$", "macos-arm64": "arm64\\.dmg$"}}},
+  {"id": "syncthing", "title": "Syncthing (sync folders between machines, no cloud)", "tier": "ark", "license": "MPL 2.0", "tags": ["sync"],
+   "source": {"type": "github", "repo": "syncthing/syncthing", "assets": {
+     "linux-x64": "^syncthing-linux-amd64-v[\\d.]+\\.tar\\.gz$", "linux-arm64": "^syncthing-linux-arm64-v[\\d.]+\\.tar\\.gz$",
+     "windows-x64": "^syncthing-windows-amd64-v[\\d.]+\\.zip$", "macos-arm64": "^syncthing-macos-arm64-v[\\d.]+\\.zip$"}}},
+  {"id": "restic", "title": "restic (encrypted backups)", "tier": "ark", "license": "BSD 2 Clause", "tags": ["backup"],
+   "source": {"type": "github", "repo": "restic/restic", "assets": {
+     "linux-x64": "_linux_amd64\\.bz2$", "linux-arm64": "_linux_arm64\\.bz2$",
+     "windows-x64": "_windows_amd64\\.zip$", "macos-arm64": "_darwin_arm64\\.bz2$"}}},
+  {"id": "ollama_runtime", "title": "Ollama (run models without Docker)", "tier": "ark", "license": "MIT", "tags": ["ai"],
+   "source": {"type": "github", "repo": "ollama/ollama", "assets": {
+     "linux-x64": "^ollama-linux-amd64\\.(tgz|tar\\.zst)$", "linux-arm64": "^ollama-linux-arm64\\.(tgz|tar\\.zst)$",
+     "windows-x64": "^OllamaSetup\\.exe$", "macos-arm64": "^Ollama(-darwin)?\\.(dmg|zip)$"}}},
+  {"id": "llama_cpp", "title": "llama.cpp (run GGUF models directly)", "tier": "ark", "license": "MIT", "tags": ["ai"],
+   "source": {"type": "github", "repo": "ggml-org/llama.cpp", "assets": {
+     "linux-x64": "bin-ubuntu-x64\\.(zip|tar\\.gz)$", "linux-arm64": "bin-ubuntu-arm64\\.(zip|tar\\.gz)$",
+     "windows-x64": "bin-win-cpu-x64\\.zip$", "macos-arm64": "bin-macos-arm64\\.(zip|tar\\.gz)$"}}},
+  {"id": "yt_dlp", "title": "yt-dlp (save video while the internet lasts)", "tier": "ark", "license": "Unlicense", "tags": ["capture"],
+   "source": {"type": "github", "repo": "yt-dlp/yt-dlp", "assets": {
+     "linux-x64": "^yt-dlp_linux$", "linux-arm64": "^yt-dlp_linux_aarch64$",
+     "windows-x64": "^yt-dlp\\.exe$", "macos-arm64": "^yt-dlp_macos$"}}},
+  {"id": "ffmpeg", "title": "FFmpeg (static builds)", "tier": "ark", "license": "GPL 3.0", "tags": ["media"],
+   "source": {"type": "github", "repo": "BtbN/FFmpeg-Builds", "tag": "latest", "assets": {
+     "linux-x64": "^ffmpeg-master-latest-linux64-gpl\\.tar\\.xz$", "linux-arm64": "^ffmpeg-master-latest-linuxarm64-gpl\\.tar\\.xz$",
+     "windows-x64": "^ffmpeg-master-latest-win64-gpl\\.zip$"}}},
+  {"id": "vlc_windows", "title": "VLC for Windows", "tier": "ark", "license": "GPL 2.0", "tags": ["media"],
+   "source": {"type": "http_index", "url": "https://get.videolan.org/vlc/last/win64/", "files": {"windows-x64": "vlc-[\\d.]+-win64\\.exe"}}}
+ ]
+}
