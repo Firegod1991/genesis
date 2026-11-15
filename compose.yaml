@@ -1,0 +1,273 @@
+# Genesis services. Start with `genesis up <profiles>`, for example: genesis up core ai tools
+#
+# Profiles: core, ai, tools, library, dev, comms, radio, adsb, ais, routing
+# Nothing here has a login by default: run it on a network you trust, never straight on the internet.
+# Every image below is tracked in catalog/packs/services.json and checked by the monthly refresh.
+
+name: genesis
+
+x-defaults: &defaults
+  restart: unless-stopped
+
+services:
+  # ------------------------------------------------------------------ core
+  dashboard:
+    <<: *defaults
+    profiles: [core]
+    image: python:3.13-alpine
+    command: ["python", "/genesis/dashboard/server.py"]
+    environment:
+      GENESIS_VAULT: /vault
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ${GENESIS_ROOT:-.}:/genesis:ro
+      - ${GENESIS_VAULT:-./vault}:/vault:ro
+    ports: ["${GENESIS_PORT:-8080}:8080"]
+
+  kiwix:
+    <<: *defaults
+    profiles: [core]
+    image: ghcr.io/kiwix/kiwix-serve:latest
+    entrypoint: ["/bin/sh", "-c"]
+    # Waits for the first book instead of crash looping on an empty vault.
+    command:
+      - "until ls /data/*.zim >/dev/null 2>&1; do echo 'no books yet: run genesis fetch'; sleep 60; done; exec kiwix-serve --port 8080 /data/*.zim"
+    volumes:
+      - ${GENESIS_VAULT:-./vault}/zim:/data:ro
+    ports: ["8081:8080"]
+
+  files:
+    <<: *defaults
+    profiles: [core]
+    image: filebrowser/filebrowser:v2
+    user: "${GENESIS_UID:-1000}:${GENESIS_GID:-1000}"
+    command: ["--noauth", "--root", "/srv", "--database", "/database/filebrowser.db", "--address", "0.0.0.0", "--port", "80"]
+    volumes:
+      - ${GENESIS_VAULT:-./vault}:/srv:ro
+      - ${GENESIS_VAULT:-./vault}/files:/srv/files
+      - ${GENESIS_VAULT:-./vault}/config:/database
+    ports: ["8082:80"]
+
+  # ------------------------------------------------------------------ ai
+  ollama:
+    <<: *defaults
+    profiles: [ai]
+    image: ollama/ollama:latest
+    volumes:
+      - ${GENESIS_VAULT:-./vault}/models/ollama:/root/.ollama
+    ports: ["11434:11434"]
+
+  webui:
+    <<: *defaults
+    profiles: [ai]
+    image: ghcr.io/open-webui/open-webui:main
+    depends_on: [ollama]
+    environment:
+      OLLAMA_BASE_URL: http://ollama:11434
+      WEBUI_AUTH: "False"
+      OFFLINE_MODE: "True"
+    volumes:
+      - openwebui:/app/backend/data
+    ports: ["8083:8080"]
+
+  translate:
+    <<: *defaults
+    profiles: [ai]
+    image: libretranslate/libretranslate:latest
+    environment:
+      LT_LOAD_ONLY: ${GENESIS_TRANSLATE_LANGS:-en,es,fr,de,pt,it,ru,ar,zh,ja,ko,hi,uk}
+    volumes:
+      - translate:/home/libretranslate/.local
+    ports: ["8091:5000"]
+
+  # ------------------------------------------------------------------ tools
+  cyberchef:
+    <<: *defaults
+    profiles: [tools]
+    image: ghcr.io/gchq/cyberchef:latest
+    ports: ["8084:80"]
+
+  ittools:
+    <<: *defaults
+    profiles: [tools]
+    image: ghcr.io/corentinth/it-tools:latest
+    ports: ["8085:80"]
+
+  notes:
+    <<: *defaults
+    profiles: [tools]
+    image: dullage/flatnotes:latest
+    environment:
+      FLATNOTES_AUTH_TYPE: none
+      PUID: ${GENESIS_UID:-1000}
+      PGID: ${GENESIS_GID:-1000}
+    volumes:
+      - ${GENESIS_VAULT:-./vault}/files/notes:/data
+    ports: ["8086:8080"]
+
+  pdf:
+    <<: *defaults
+    profiles: [tools]
+    image: ghcr.io/stirling-tools/s-pdf:latest
+    environment:
+      SECURITY_ENABLELOGIN: "false"
+    ports: ["8087:8080"]
+
+  inventory:
+    <<: *defaults
+    profiles: [tools]
+    image: ghcr.io/sysadminsmedia/homebox:latest
+    volumes:
+      - homebox:/data
+    ports: ["8090:7745"]
+
+  # ------------------------------------------------------------------ library
+  kolibri:
+    <<: *defaults
+    profiles: [library]
+    image: learningequality/kolibri:latest
+    environment:
+      KOLIBRI_ZIP_CONTENT_PORT: "8311"
+    volumes:
+      - kolibri:/kolibri
+    ports: ["8088:8080", "8311:8311"]
+
+  calibre:
+    <<: *defaults
+    profiles: [library]
+    image: linuxserver/calibre-web:latest
+    environment:
+      PUID: ${GENESIS_UID:-1000}
+      PGID: ${GENESIS_GID:-1000}
+    volumes:
+      - calibre:/config
+      - ${GENESIS_VAULT:-./vault}/files/books:/books
+    ports: ["8089:8083"]
+
+  jellyfin:
+    <<: *defaults
+    profiles: [library]
+    image: jellyfin/jellyfin:latest
+    volumes:
+      - jellyfin_config:/config
+      - jellyfin_cache:/cache
+      - ${GENESIS_VAULT:-./vault}/files/media:/media:ro
+    ports: ["8096:8096"]
+
+  # ------------------------------------------------------------------ dev
+  devdocs:
+    <<: *defaults
+    profiles: [dev]
+    image: ghcr.io/freecodecamp/devdocs:latest
+    ports: ["8092:9292"]
+
+  code:
+    <<: *defaults
+    profiles: [dev]
+    image: codercom/code-server:latest
+    user: "${GENESIS_UID:-1000}:${GENESIS_GID:-1000}"
+    command: ["--auth", "none", "--bind-addr", "0.0.0.0:8080", "/home/coder/project"]
+    volumes:
+      - ${GENESIS_VAULT:-./vault}/files/code:/home/coder/project
+    # A browser editor is a shell. It listens on this machine only: reach it over SSH forwarding.
+    ports: ["127.0.0.1:8093:8080"]
+
+  git:
+    <<: *defaults
+    profiles: [dev]
+    image: gitea/gitea:latest
+    volumes:
+      - gitea:/data
+    ports: ["8094:3000", "2222:22"]
+
+  # ------------------------------------------------------------------ comms
+  irc:
+    <<: *defaults
+    profiles: [comms]
+    image: ghcr.io/ergochat/ergo:stable
+    volumes:
+      - ergo:/ircd
+    ports: ["6667:6667"]
+
+  chat:
+    <<: *defaults
+    profiles: [comms]
+    image: ghcr.io/thelounge/thelounge:latest
+    depends_on: [irc]
+    volumes:
+      - thelounge:/var/opt/thelounge
+    ports: ["8095:9000"]
+
+  voice:
+    <<: *defaults
+    profiles: [comms]
+    image: mumblevoip/mumble-server:latest
+    volumes:
+      - mumble:/data
+    ports: ["64738:64738/tcp", "64738:64738/udp"]
+
+  meshtastic:
+    <<: *defaults
+    profiles: [comms]
+    image: ghcr.io/meshtastic/web:latest
+    ports: ["8097:8080"]
+
+  # ------------------------------------------------------------------ radio (one SDR dongle per service)
+  openwebrx:
+    <<: *defaults
+    profiles: [radio]
+    image: slechev/openwebrxplus:latest
+    devices: ["/dev/bus/usb:/dev/bus/usb"]
+    tmpfs: ["/tmp/openwebrx"]
+    volumes:
+      - openwebrx_settings:/var/lib/openwebrx
+      - openwebrx_etc:/etc/openwebrx
+    ports: ["8073:8073"]
+
+  adsb:
+    <<: *defaults
+    profiles: [adsb]
+    image: ghcr.io/sdr-enthusiasts/docker-adsb-ultrafeeder:latest
+    device_cgroup_rules: ["c 189:* rwm"]
+    environment:
+      READSB_DEVICE_TYPE: rtlsdr
+      READSB_LAT: ${GENESIS_LAT:-0}
+      READSB_LON: ${GENESIS_LON:-0}
+      TZ: ${TZ:-UTC}
+    tmpfs: ["/run:exec,size=256M", "/var/log"]
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+    ports: ["8098:80"]
+
+  ais:
+    <<: *defaults
+    profiles: [ais]
+    image: ghcr.io/jvde-github/ais-catcher:latest
+    command: ["-N", "8100"]
+    devices: ["/dev/bus/usb:/dev/bus/usb"]
+    ports: ["8099:8100"]
+
+  # ------------------------------------------------------------------ routing
+  routing:
+    <<: *defaults
+    profiles: [routing]
+    image: ghcr.io/valhalla/valhalla-scripted:latest
+    volumes:
+      # Drop .osm.pbf extracts here (the vault keeps them in osm/): the engine builds its graph on start.
+      - ${GENESIS_VAULT:-./vault}/osm:/custom_files
+    ports: ["8002:8002"]
+
+volumes:
+  openwebui:
+  translate:
+  homebox:
+  kolibri:
+  calibre:
+  jellyfin_config:
+  jellyfin_cache:
+  gitea:
+  ergo:
+  thelounge:
+  mumble:
+  openwebrx_settings:
+  openwebrx_etc:

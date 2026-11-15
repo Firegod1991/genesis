@@ -1,0 +1,15 @@
+#!/bin/sh
+# Genesis launcher: runs the Python module from wherever this repository lives.
+set -e
+self="$0"
+while [ -L "$self" ]; do
+  target=$(readlink "$self")
+  case "$target" in /*) self="$target" ;; *) self="$(dirname "$self")/$target" ;; esac
+done
+root=$(cd "$(dirname "$self")/.." && pwd)
+python=$(command -v python3 || true)
+if [ -z "$python" ]; then
+  echo "genesis needs python3 (3.9 or newer). Install it and run again." >&2
+  exit 1
+fi
+PYTHONPATH="$root${PYTHONPATH:+:$PYTHONPATH}" exec "$python" -m genesis "$@"

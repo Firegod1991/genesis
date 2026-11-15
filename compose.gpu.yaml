@@ -1,0 +1,10 @@
+# Added automatically by `genesis up ai` when an NVIDIA GPU and the NVIDIA container runtime are present.
+services:
+  ollama:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
