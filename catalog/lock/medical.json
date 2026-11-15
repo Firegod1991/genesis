@@ -185,6 +185,91 @@
    "title": "Skin of Color Society",
    "version": "2026-05"
   },
+  "who_medicinal_plants_1": {
+   "dest": "documents/medical",
+   "files": [
+    {
+     "filename": "who_medicinal_plants_volume_1.pdf",
+     "sha256": "f0c4dcae255cfb58bde7104472b995d132f0d326b0c14d1ccdffb07fc161e247",
+     "size": 2737468,
+     "url": "https://iris.who.int/bitstreams/6e21eaaa-d157-421d-a136-eb61964de18c/download"
+    }
+   ],
+   "kind": "document",
+   "license": "Copyright WHO, free to download",
+   "note": "Plant medicines one by one: what each is used for, the evidence, doses, and when it is dangerous.",
+   "tags": [
+    "fieldcraft",
+    "medical",
+    "plants"
+   ],
+   "tier": "seed",
+   "title": "WHO Monographs on Selected Medicinal Plants, Volume 1",
+   "version": "current"
+  },
+  "who_medicinal_plants_2": {
+   "dest": "documents/medical",
+   "files": [
+    {
+     "filename": "who_medicinal_plants_volume_2.pdf",
+     "sha256": "02958c589d02308f7d8fefc86819a92bdc79a6de10705c27fa50ae0ef10c39cb",
+     "size": 2678644,
+     "url": "https://iris.who.int/bitstreams/3d613749-d5e9-4286-96db-7b3abc5dfdbe/download"
+    }
+   ],
+   "kind": "document",
+   "license": "Copyright WHO, free to download",
+   "tags": [
+    "fieldcraft",
+    "medical",
+    "plants"
+   ],
+   "tier": "seed",
+   "title": "WHO Monographs on Selected Medicinal Plants, Volume 2",
+   "version": "current"
+  },
+  "who_medicinal_plants_3": {
+   "dest": "documents/medical",
+   "files": [
+    {
+     "filename": "who_medicinal_plants_volume_3.pdf",
+     "sha256": "a14d4dc741ea4975a4741719e521b54130b0dd5c23d45ef3690248785e7a1942",
+     "size": 1977010,
+     "url": "https://iris.who.int/bitstreams/f4e276e8-6a1a-4ea4-979f-776a7ddfe2d1/download"
+    }
+   ],
+   "kind": "document",
+   "license": "Copyright WHO, free to download",
+   "tags": [
+    "fieldcraft",
+    "medical",
+    "plants"
+   ],
+   "tier": "seed",
+   "title": "WHO Monographs on Selected Medicinal Plants, Volume 3",
+   "version": "current"
+  },
+  "who_medicinal_plants_4": {
+   "dest": "documents/medical",
+   "files": [
+    {
+     "filename": "who_medicinal_plants_volume_4.pdf",
+     "sha256": "0ecc3a9dc5558fd597dc5378b9668904ad11f321c165c776197a774236c05d65",
+     "size": 1438105,
+     "url": "https://iris.who.int/bitstreams/64ddcde7-127f-455d-827e-3ba757a4fabd/download"
+    }
+   ],
+   "kind": "document",
+   "license": "Copyright WHO, free to download",
+   "tags": [
+    "fieldcraft",
+    "medical",
+    "plants"
+   ],
+   "tier": "seed",
+   "title": "WHO Monographs on Selected Medicinal Plants, Volume 4",
+   "version": "current"
+  },
   "wikipedia_ar_medicine.maxi": {
    "date": "2026-10-14",
    "dest": "zim",

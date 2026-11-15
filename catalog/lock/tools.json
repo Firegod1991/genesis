@@ -137,32 +137,32 @@
    "dest": "tools",
    "files": [
     {
-     "filename": "llama-b12423-bin-ubuntu-x64.tar.gz",
+     "filename": "llama-b12426-bin-ubuntu-x64.tar.gz",
      "platform": "linux-x64",
-     "sha256": "93efda4ab31e2e4e148b4bb40e55edccec8a493cf07bddbbbcdc0ca74bd09630",
-     "size": 23373268,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12423/llama-b12423-bin-ubuntu-x64.tar.gz"
+     "sha256": "011212b7a6052a213034d4c313f99f131cb09fb5fb5a4ee61cd7572b81febf67",
+     "size": 23455590,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12426/llama-b12426-bin-ubuntu-x64.tar.gz"
     },
     {
-     "filename": "llama-b12424-bin-ubuntu-arm64.tar.gz",
+     "filename": "llama-b12426-bin-ubuntu-arm64.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "ddc45634a314a1264f539f574dc199bf4757d96f02eed3333724278d513b6a61",
-     "size": 19067776,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12424/llama-b12424-bin-ubuntu-arm64.tar.gz"
+     "sha256": "a89810a5486fc7f4269995942577cf3c2f3f87f7e023238f42dcb32978fe3f0d",
+     "size": 19087305,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12426/llama-b12426-bin-ubuntu-arm64.tar.gz"
     },
     {
-     "filename": "llama-b12423-bin-win-cpu-x64.zip",
+     "filename": "llama-b12426-bin-win-cpu-x64.zip",
      "platform": "windows-x64",
-     "sha256": "3c128703eca49ad2a70ad51bbf5e1ce36121070a33f27c275804e3f3d5567e48",
-     "size": 25142919,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12423/llama-b12423-bin-win-cpu-x64.zip"
+     "sha256": "61145645c26cf8d7b3ed76435812192ae42f51c4c51e895936adc61dc1eb0410",
+     "size": 25209516,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12426/llama-b12426-bin-win-cpu-x64.zip"
     },
     {
-     "filename": "llama-b12424-bin-macos-arm64.tar.gz",
+     "filename": "llama-b12426-bin-macos-arm64.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "4a37460f069a07850f0035c93a3c640c9b0757fde90e76375d183ecd72e415de",
-     "size": 16986601,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12424/llama-b12424-bin-macos-arm64.tar.gz"
+     "sha256": "509014dded612bf2d1afeb30852ff7b5735f2761da74c6f39845a4c04378a3e4",
+     "size": 17003210,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12426/llama-b12426-bin-macos-arm64.tar.gz"
     }
    ],
    "kind": "tool",
@@ -173,7 +173,7 @@
    ],
    "tier": "ark",
    "title": "llama.cpp (run GGUF models directly)",
-   "version": "b12424"
+   "version": "b12426"
   },
   "ollama_runtime": {
    "date": "2026-11-09",
@@ -405,6 +405,44 @@
    "tier": "seed",
    "title": "7-Zip",
    "version": "26.06"
+  },
+  "stellarium": {
+   "date": "2026-09-28",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "Stellarium-26.3-qt6-x86_64.AppImage",
+     "platform": "linux-x64",
+     "sha256": "c1297da651217b2566d00f934d300ce9c666e3ee94a6bcb26832cf1a42641e94",
+     "size": 598770880,
+     "url": "https://github.com/Stellarium/stellarium/releases/download/v26.3/Stellarium-26.3-qt6-x86_64.AppImage"
+    },
+    {
+     "filename": "stellarium-26.3-qt6-win64.exe",
+     "platform": "windows-x64",
+     "sha256": "06d0444e02bca3ad9703e08a641270576c1df581088eb3e7549870887e039cd8",
+     "size": 489006448,
+     "url": "https://github.com/Stellarium/stellarium/releases/download/v26.3/stellarium-26.3-qt6-win64.exe"
+    },
+    {
+     "filename": "Stellarium-26.3-qt6-macOS.zip",
+     "platform": "macos-arm64",
+     "sha256": "919579d2e5537089796e7fb925d8f2d07926dae657a147b60cb756cb391aba8b",
+     "size": 552945699,
+     "url": "https://github.com/Stellarium/stellarium/releases/download/v26.3/Stellarium-26.3-qt6-macOS.zip"
+    }
+   ],
+   "kind": "tool",
+   "license": "GPL 2.0",
+   "note": "Set a place and a date to learn the constellations, or match the sky you see to read the hour and the season.",
+   "tags": [
+    "fieldcraft",
+    "sky",
+    "navigation"
+   ],
+   "tier": "seed",
+   "title": "Stellarium (planetarium: the sky for any place, date and hour)",
+   "version": "26.3"
   },
   "syncthing": {
    "date": "2026-10-21",

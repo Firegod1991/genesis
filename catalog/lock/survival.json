@@ -42,6 +42,28 @@
    "title": "Appropedia",
    "version": "2026-02"
   },
+  "army_survival_manual": {
+   "date": "2020-07-07",
+   "dest": "documents/fieldcraft",
+   "files": [
+    {
+     "filename": "army_survival_atp_3-50-21.pdf",
+     "size": 23772309,
+     "url": "https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN12086_ATP%203-50x21%20FINAL%20WEB%202.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "note": "The Army's current survival manual, approved for public release. Start here.",
+   "tags": [
+    "fieldcraft",
+    "field",
+    "manuals"
+   ],
+   "tier": "seed",
+   "title": "Survival (US Army ATP 3-50.21): water, food, fire, shelter, medicine, navigation",
+   "version": "2020-07-07"
+  },
   "armypubs_en_all": {
    "date": "2024-12-06",
    "dest": "zim",
@@ -84,6 +106,47 @@
    "tier": "seed",
    "title": "based.cooking LukeSmith",
    "version": "2026-11"
+  },
+  "basic_fishing": {
+   "date": "2013-06-20",
+   "dest": "documents/game_and_fish",
+   "files": [
+    {
+     "filename": "basic_fishing.pdf",
+     "size": 2075556,
+     "url": "https://fw.ky.gov/More/Documents/basicfishingbook%5B1%5D.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Free from the publisher",
+   "tags": [
+    "fieldcraft",
+    "fishing",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Basic Fishing: tackle, knots, where fish live, cleaning the catch (Kentucky Department of Fish and Wildlife Resources)",
+   "version": "2013-06-20"
+  },
+  "basic_land_navigation": {
+   "date": "2024-04-05",
+   "dest": "documents/navigation",
+   "files": [
+    {
+     "filename": "basic_land_navigation.pdf",
+     "size": 30650584,
+     "url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/publication/pms475.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "tags": [
+    "fieldcraft",
+    "navigation"
+   ],
+   "tier": "seed",
+   "title": "Basic Land Navigation: maps, compass and GPS (National Wildfire Coordinating Group, PMS 475)",
+   "version": "2024-04-05"
   },
   "canadian-prepper_en_bugoutconcepts": {
    "date": "2026-08-26",
@@ -173,6 +236,27 @@
    "title": "Canadian prepper",
    "version": "2026-08"
   },
+  "care_of_game": {
+   "date": "2020-06-03",
+   "dest": "documents/game_and_fish",
+   "files": [
+    {
+     "filename": "care_of_game.pdf",
+     "size": 3674716,
+     "url": "https://portal.ct.gov/-/media/deep/hunting_trapping/pdf_files/hunter_safety_manual/chapter13.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Free from the publisher",
+   "tags": [
+    "fieldcraft",
+    "hunting",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Care of Game: field dressing and storing meat (Connecticut Hunter Safety Manual)",
+   "version": "2020-06-03"
+  },
   "cd3wdproject.org_en_all": {
    "date": "2026-11-07",
    "dest": "zim",
@@ -193,6 +277,28 @@
    "tier": "seed",
    "title": "CD3WD Project",
    "version": "2026-11"
+  },
+  "edible_and_poisonous_mushrooms": {
+   "date": "2025-02-21",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "edible_and_poisonous_mushrooms.pdf",
+     "size": 2160338,
+     "url": "https://huntfish.mdc.mo.gov/sites/default/files/mo_nature/downloads/page/MushroomGuide.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Free from the publisher",
+   "note": "Never eat a mushroom you cannot name with certainty.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "A Guide to Missouri's Edible and Poisonous Mushrooms (Missouri Department of Conservation)",
+   "version": "2025-02-21"
   },
   "energypedia_en_all.maxi": {
    "date": "2026-06-20",
@@ -646,6 +752,175 @@
    "title": "Permacomputing",
    "version": "2026-09"
   },
+  "planisphere_20n": {
+   "date": "2026-06-02",
+   "dest": "documents/sky",
+   "files": [
+    {
+     "filename": "star_wheel_20_north.pdf",
+     "size": 250085,
+     "url": "https://in-the-sky.org/planisphere/pdfs/planisphere_20N.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "GPL 3.0",
+   "tags": [
+    "fieldcraft",
+    "sky",
+    "navigation"
+   ],
+   "tier": "seed",
+   "title": "Star wheel for latitude 20 north (planisphere kit, Dominic Ford)",
+   "version": "2026-06-02"
+  },
+  "planisphere_20s": {
+   "date": "2026-06-02",
+   "dest": "documents/sky",
+   "files": [
+    {
+     "filename": "star_wheel_20_south.pdf",
+     "size": 249764,
+     "url": "https://in-the-sky.org/planisphere/pdfs/planisphere_20S.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "GPL 3.0",
+   "tags": [
+    "fieldcraft",
+    "sky",
+    "navigation"
+   ],
+   "tier": "seed",
+   "title": "Star wheel for latitude 20 south (planisphere kit, Dominic Ford)",
+   "version": "2026-06-02"
+  },
+  "planisphere_30n": {
+   "date": "2026-06-02",
+   "dest": "documents/sky",
+   "files": [
+    {
+     "filename": "star_wheel_30_north.pdf",
+     "size": 250424,
+     "url": "https://in-the-sky.org/planisphere/pdfs/planisphere_30N.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "GPL 3.0",
+   "tags": [
+    "fieldcraft",
+    "sky",
+    "navigation"
+   ],
+   "tier": "seed",
+   "title": "Star wheel for latitude 30 north (planisphere kit, Dominic Ford)",
+   "version": "2026-06-02"
+  },
+  "planisphere_35s": {
+   "date": "2026-06-02",
+   "dest": "documents/sky",
+   "files": [
+    {
+     "filename": "star_wheel_35_south.pdf",
+     "size": 250145,
+     "url": "https://in-the-sky.org/planisphere/pdfs/planisphere_35S.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "GPL 3.0",
+   "tags": [
+    "fieldcraft",
+    "sky",
+    "navigation"
+   ],
+   "tier": "seed",
+   "title": "Star wheel for latitude 35 south (planisphere kit, Dominic Ford)",
+   "version": "2026-06-02"
+  },
+  "planisphere_40n": {
+   "date": "2026-06-02",
+   "dest": "documents/sky",
+   "files": [
+    {
+     "filename": "star_wheel_40_north.pdf",
+     "size": 248531,
+     "url": "https://in-the-sky.org/planisphere/pdfs/planisphere_40N.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "GPL 3.0",
+   "note": "Print, cut out and pin together. It shows which stars are up at any date and hour, so the sky tells you the hour when you know the date, or the date when you know the hour. Take the wheel nearest your latitude.",
+   "tags": [
+    "fieldcraft",
+    "sky",
+    "navigation"
+   ],
+   "tier": "seed",
+   "title": "Star wheel for latitude 40 north (planisphere kit, Dominic Ford)",
+   "version": "2026-06-02"
+  },
+  "planisphere_50n": {
+   "date": "2026-06-02",
+   "dest": "documents/sky",
+   "files": [
+    {
+     "filename": "star_wheel_50_north.pdf",
+     "size": 245916,
+     "url": "https://in-the-sky.org/planisphere/pdfs/planisphere_50N.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "GPL 3.0",
+   "tags": [
+    "fieldcraft",
+    "sky",
+    "navigation"
+   ],
+   "tier": "seed",
+   "title": "Star wheel for latitude 50 north (planisphere kit, Dominic Ford)",
+   "version": "2026-06-02"
+  },
+  "planisphere_60n": {
+   "date": "2026-06-02",
+   "dest": "documents/sky",
+   "files": [
+    {
+     "filename": "star_wheel_60_north.pdf",
+     "size": 241842,
+     "url": "https://in-the-sky.org/planisphere/pdfs/planisphere_60N.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "GPL 3.0",
+   "tags": [
+    "fieldcraft",
+    "sky",
+    "navigation"
+   ],
+   "tier": "seed",
+   "title": "Star wheel for latitude 60 north (planisphere kit, Dominic Ford)",
+   "version": "2026-06-02"
+  },
+  "plants_poisonous_to_livestock": {
+   "date": "2011-05-10",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "plants_poisonous_to_livestock.pdf",
+     "size": 4334791,
+     "url": "https://www.ars.usda.gov/ARSUserFiles/oc/np/PoisonousPlants/PoisonousPlants.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "US government work",
+   "note": "Written for stock keepers. The same plants poison people.",
+   "tags": [
+    "fieldcraft",
+    "plants"
+   ],
+   "tier": "seed",
+   "title": "Plants Poisonous to Livestock in the Western States (USDA Agricultural Research Service)",
+   "version": "2011-05-10"
+  },
   "publicdomainrecipes.com_en_all": {
    "date": "2026-11-02",
    "dest": "zim",
@@ -772,6 +1047,27 @@
    "title": "Survivor Library",
    "version": "2026-09"
   },
+  "trapper_education_manual": {
+   "date": "2026-06-30",
+   "dest": "documents/game_and_fish",
+   "files": [
+    {
+     "filename": "trapper_education_manual.pdf",
+     "size": 49518422,
+     "url": "https://www.fishwildlife.org/download_file/view/4323/1213"
+    }
+   ],
+   "kind": "document",
+   "license": "Free to use, copyright AFWA",
+   "tags": [
+    "fieldcraft",
+    "trapping",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "North American Trapper Education Manual (Association of Fish and Wildlife Agencies)",
+   "version": "2026-06-30"
+  },
   "trueprepper.com_en_all": {
    "date": "2026-05-04",
    "dest": "zim",
@@ -834,6 +1130,50 @@
    "tier": "seed",
    "title": "USDA Guide to Home Canning",
    "version": "2025-04"
+  },
+  "water_sanitation_in_emergencies": {
+   "date": "2013-09-04",
+   "dest": "documents/water",
+   "files": [
+    {
+     "filename": "who_water_sanitation_in_emergencies.pdf",
+     "size": 13587357,
+     "url": "https://wedc-knowledge.lboro.ac.uk/resources/who_notes/WHO_TNE_ALL.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Copyright WHO, free to download",
+   "note": "Note 5 covers making water safe where you use it. Others cover cleaning wells and tanks, how much water people need, and latrines.",
+   "tags": [
+    "fieldcraft",
+    "water",
+    "sanitation"
+   ],
+   "tier": "seed",
+   "title": "Drinking Water, Sanitation and Hygiene in Emergencies: 15 technical notes (WHO and WEDC)",
+   "version": "2013-09-04"
+  },
+  "wild_edibles_of_missouri": {
+   "date": "2025-02-21",
+   "dest": "documents/plants",
+   "files": [
+    {
+     "filename": "wild_edibles_of_missouri.pdf",
+     "size": 3903338,
+     "url": "https://mdc.mo.gov/sites/default/files/2022-01/WildEdibles.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "Free from the publisher",
+   "note": "243 pages of edible wild plants with drawings and recipes. Written for the Midwest; most of these plants grow across North America.",
+   "tags": [
+    "fieldcraft",
+    "plants",
+    "food"
+   ],
+   "tier": "seed",
+   "title": "Wild Edibles of Missouri (Jan Phillips, Missouri Department of Conservation)",
+   "version": "2025-02-21"
   },
   "zimgit-food-preparation_en": {
    "date": "2025-04-11",

@@ -3,50 +3,63 @@
 | Pack | Items | New | Updated | Removed | Failed |
 |---|---|---|---|---|---|
 | ai | 15 | 0 | 0 | 0 | 0 |
-| apps | 16 | 0 | 0 | 0 | 0 |
+| apps | 17 | 1 | 0 | 0 | 0 |
 | code | 375 | 0 | 0 | 0 | 0 |
 | isos | 24 | 0 | 0 | 0 | 0 |
 | knowledge | 689 | 0 | 0 | 0 | 0 |
 | library | 249 | 0 | 0 | 0 | 0 |
-| maps | 6 | 0 | 3 | 0 | 0 |
-| medical | 38 | 0 | 0 | 0 | 0 |
-| radio | 28 | 0 | 1 | 0 | 0 |
-| scripture | 1300 | 0 | 6 | 0 | 0 |
+| maps | 6 | 0 | 0 | 0 | 0 |
+| medical | 42 | 4 | 0 | 0 | 0 |
+| radio | 28 | 0 | 0 | 0 | 0 |
+| scripture | 1300 | 0 | 0 | 0 | 0 |
 | services | 25 | 0 | 1 | 0 | 0 |
-| survival | 44 | 0 | 0 | 0 | 0 |
-| tools | 15 | 0 | 2 | 0 | 0 |
+| survival | 60 | 16 | 0 | 0 | 0 |
+| tools | 16 | 1 | 1 | 0 | 0 |
 
-## Updated in maps
+## New in apps
 
-* `planet_basemap`: 20261114 to 20261115
-* `survival_layers_world`: ? to 2026.11
-* `world_overview`: ? to 2026.11
+* `sky_map`: Sky Map (point the phone at the sky to name stars and constellations)
 
-## Updated in radio
+## New in medical
 
-* `fcc_amateur_licenses`: 2026-11-08 to 2026-11-15
-
-## Updated in scripture
-
-* `bible_eng-kjv`: 2026-11-09 to 2026-11-15
-* `bible_eng-kjv2006`: 2026-11-09 to 2026-11-15
-* `bible_nrz`: 2026-11-10 to 2026-11-15
-* `bible_ronBayash`: 2026-11-13 to 2026-11-15
-* `bible_rusfb`: 2026-11-13 to 2026-11-15
-* `bible_turytc`: 2026-11-09 to 2026-11-15
+* `who_medicinal_plants_1`: WHO Monographs on Selected Medicinal Plants, Volume 1
+* `who_medicinal_plants_2`: WHO Monographs on Selected Medicinal Plants, Volume 2
+* `who_medicinal_plants_3`: WHO Monographs on Selected Medicinal Plants, Volume 3
+* `who_medicinal_plants_4`: WHO Monographs on Selected Medicinal Plants, Volume 4
 
 ## Updated in services
 
-* `img_calibre`: 8eabbc9ac4d7 to adb69d75b9c2
+* `img_git`: 8967bf9deaf3 to aa90e8f00b75
+
+## New in survival
+
+* `army_survival_manual`: Survival (US Army ATP 3-50.21): water, food, fire, shelter, medicine, navigation
+* `basic_fishing`: Basic Fishing: tackle, knots, where fish live, cleaning the catch (Kentucky Department of Fish and Wildlife Resources)
+* `basic_land_navigation`: Basic Land Navigation: maps, compass and GPS (National Wildfire Coordinating Group, PMS 475)
+* `care_of_game`: Care of Game: field dressing and storing meat (Connecticut Hunter Safety Manual)
+* `edible_and_poisonous_mushrooms`: A Guide to Missouri's Edible and Poisonous Mushrooms (Missouri Department of Conservation)
+* `planisphere_20n`: Star wheel for latitude 20 north (planisphere kit, Dominic Ford)
+* `planisphere_20s`: Star wheel for latitude 20 south (planisphere kit, Dominic Ford)
+* `planisphere_30n`: Star wheel for latitude 30 north (planisphere kit, Dominic Ford)
+* `planisphere_35s`: Star wheel for latitude 35 south (planisphere kit, Dominic Ford)
+* `planisphere_40n`: Star wheel for latitude 40 north (planisphere kit, Dominic Ford)
+* `planisphere_50n`: Star wheel for latitude 50 north (planisphere kit, Dominic Ford)
+* `planisphere_60n`: Star wheel for latitude 60 north (planisphere kit, Dominic Ford)
+* `plants_poisonous_to_livestock`: Plants Poisonous to Livestock in the Western States (USDA Agricultural Research Service)
+* `trapper_education_manual`: North American Trapper Education Manual (Association of Fish and Wildlife Agencies)
+* `water_sanitation_in_emergencies`: Drinking Water, Sanitation and Hygiene in Emergencies: 15 technical notes (WHO and WEDC)
+* `wild_edibles_of_missouri`: Wild Edibles of Missouri (Jan Phillips, Missouri Department of Conservation)
 
 ## Updated in tools
 
-* `ffmpeg`: 2026-11-14 to 2026-11-15
-* `llama_cpp`: b12396 to b12424
+* `llama_cpp`: b12424 to b12426
+
+## New in tools
+
+* `stellarium`: Stellarium (planetarium: the sky for any place, date and hour)
 
 ## Warnings
 
 * **isos** `home_assistant_os`: not in 18.5, taken from an earlier release: linux-x64 from 18.4; assets there: ['haos_rpi3-64-18.5.img.xz', 'haos_rpi3-64-18.5.raucb', 'haos_rpi4-64-18.5.img.xz', 'haos_rpi4-64-18.5.raucb', 'haos_rpi5-64-18.5.img.xz', 'haos_rpi5-64-18.5.raucb', 'haos_yellow-18.5.img.xz', 'haos_yellow-18.5.raucb']
 * **radio** `chirp`: the server would not confirm chirp-next-20261113-installer.exe, chirp-20261113-py3-none-any.whl, chirp-next-20261113.app.zip
-* **tools** `llama_cpp`: not in b12424, taken from an earlier release: linux-x64 from b12423, windows-x64 from b12423; assets there: ['cudart-llama-b12424-bin-ubuntu-cuda-13.5-arm64.tar.gz', 'cudart-llama-bin-win-cuda-12.4-x64.zip', 'cudart-llama-bin-win-cuda-13.5-arm64.zip', 'cudart-llama-bin-win-cuda-13.5-x64.zip', 'llama-b12424-bin-android-arm64-snapdragon.tar.gz', 'llama-b12424-bin-android-arm64.tar.gz', 'llama-b12424-bin-linux-arm64-snapdragon.tar.gz', 'llama-b12424-bin-macos-arm64.tar.gz', 'llama-b12424-bin-macos-x64.tar.gz', 'llama-b12424-bin-ubuntu-arm64.tar.gz', 'llama-b12424-bin-ubuntu-cuda-13.5-arm64.tar.gz
 

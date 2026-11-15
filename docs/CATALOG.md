@@ -6,9 +6,9 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
-| seed | 351 | 22.7 GB | 43 |
-| ark | 593 | 759.1 GB | 86 |
-| eden | 783 | 2.0 TB | 104 |
+| seed | 373 | 23.4 GB | 43 |
+| ark | 615 | 759.9 GB | 86 |
+| eden | 805 | 2.0 TB | 104 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -40,6 +40,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Organic Maps (offline maps and navigation) | `organic_maps` | seed | 2026.09.29-32-FDroid | 63.8 MB | Apache 2.0 |
 | Trail Sense (offline navigation and survival tools) | `trail_sense` | seed | 8.2.0 | 13.3 MB | MIT |
 | Offline Survival Manual | `survival_manual` | seed | 5.0.0 | 8.1 MB | GPL 3.0 |
+| Sky Map (point the phone at the sky to name stars and constellations) | `sky_map` | seed | 2.3.1:Cassini | 23.5 MB | Apache 2.0 |
 | Meshtastic | `meshtastic_android` | seed | 2.8.3 (29322724) fdroid | 45.2 MB | GPL 3.0 |
 | Briar (messaging over Bluetooth, WiFi and Tor) | `briar` | seed | 1.5.24 | 50.7 MB | GPL 3.0 |
 | Kiwix (offline Wikipedia reader) | `kiwix_android` | seed | 3.14.1 | 70.4 MB | GPL 3.0 |
@@ -1494,6 +1495,10 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Medical Library | `zimgit-medicine_en` | seed | 2024-08 | 70.2 MB |  |
 | Military Medicine | `irp.fas.org_en_military-medicine` | seed | 2026-10 | 65.0 MB |  |
 | NHS' Medicines A to Z | `nhs.uk_en_medicines` | seed | 2026-09-18 | 15.3 MB |  |
+| WHO Monographs on Selected Medicinal Plants, Volume 1 | `who_medicinal_plants_1` | seed | current | 2.7 MB | Copyright WHO, free to download |
+| WHO Monographs on Selected Medicinal Plants, Volume 2 | `who_medicinal_plants_2` | seed | current | 2.7 MB | Copyright WHO, free to download |
+| WHO Monographs on Selected Medicinal Plants, Volume 3 | `who_medicinal_plants_3` | seed | current | 2.0 MB | Copyright WHO, free to download |
+| WHO Monographs on Selected Medicinal Plants, Volume 4 | `who_medicinal_plants_4` | seed | current | 1.4 MB | Copyright WHO, free to download |
 | MDWiki Medical Encyclopedia | `mdwiki_en_all.maxi` | ark | 2025-11 | 2.3 GB |  |
 | MedlinePlus | `medlineplus.gov_en_all` | ark | 2025-01 | 1.9 GB | US government work |
 | Travelers' Health | `wwwnc.cdc.gov_en_all` | ark | 2024-11 | 178.3 MB | US government work |
@@ -2909,7 +2914,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | LibreTranslate (offline translation) | `img_translate` | ark | 6f03f063a10d |  |  |
 | DevDocs (developer documentation) | `img_devdocs` | ark | 8623d9b9c6c3 |  |  |
 | code-server (VS Code in the browser) | `img_code` | ark | 09565f9e07f5 |  |  |
-| Gitea (local Git hosting) | `img_git` | ark | 8967bf9deaf3 |  |  |
+| Gitea (local Git hosting) | `img_git` | ark | aa90e8f00b75 |  |  |
 | Ergo (local chat server) | `img_irc` | ark | 72db5b93b437 |  |  |
 | The Lounge (web chat client) | `img_chat` | ark | b19c2ef06efc |  |  |
 | Mumble server (voice on the local network) | `img_voice` | ark | 018ad3515932 |  |  |
@@ -2936,6 +2941,22 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | ScoutWiki | `scoutwiki.org_en_all.maxi` | seed | 2026-10 | 25.3 MB |  |
 | EPA: Emergency Disinfection of Drinking Water | `epa_emergency_water_disinfection` | seed | 2021-06-25 | 755 KB | US government work |
 | Nuclear War Survival Skills (Kearny, Oak Ridge National Laboratory) | `nuclear_war_survival_skills` | seed | 2026-08-27 | 73.5 MB | Copying permitted by the author |
+| Survival (US Army ATP 3-50.21): water, food, fire, shelter, medicine, navigation | `army_survival_manual` | seed | 2020-07-07 | 23.8 MB | US government work |
+| Wild Edibles of Missouri (Jan Phillips, Missouri Department of Conservation) | `wild_edibles_of_missouri` | seed | 2025-02-21 | 3.9 MB | Free from the publisher |
+| A Guide to Missouri's Edible and Poisonous Mushrooms (Missouri Department of Conservation) | `edible_and_poisonous_mushrooms` | seed | 2025-02-21 | 2.2 MB | Free from the publisher |
+| Plants Poisonous to Livestock in the Western States (USDA Agricultural Research Service) | `plants_poisonous_to_livestock` | seed | 2011-05-10 | 4.3 MB | US government work |
+| North American Trapper Education Manual (Association of Fish and Wildlife Agencies) | `trapper_education_manual` | seed | 2026-06-30 | 49.5 MB | Free to use, copyright AFWA |
+| Care of Game: field dressing and storing meat (Connecticut Hunter Safety Manual) | `care_of_game` | seed | 2020-06-03 | 3.7 MB | Free from the publisher |
+| Basic Fishing: tackle, knots, where fish live, cleaning the catch (Kentucky Department of Fish and Wildlife Resources) | `basic_fishing` | seed | 2013-06-20 | 2.1 MB | Free from the publisher |
+| Drinking Water, Sanitation and Hygiene in Emergencies: 15 technical notes (WHO and WEDC) | `water_sanitation_in_emergencies` | seed | 2013-09-04 | 13.6 MB | Copyright WHO, free to download |
+| Basic Land Navigation: maps, compass and GPS (National Wildfire Coordinating Group, PMS 475) | `basic_land_navigation` | seed | 2024-04-05 | 30.7 MB | US government work |
+| Star wheel for latitude 40 north (planisphere kit, Dominic Ford) | `planisphere_40n` | seed | 2026-06-02 | 249 KB | GPL 3.0 |
+| Star wheel for latitude 30 north (planisphere kit, Dominic Ford) | `planisphere_30n` | seed | 2026-06-02 | 250 KB | GPL 3.0 |
+| Star wheel for latitude 50 north (planisphere kit, Dominic Ford) | `planisphere_50n` | seed | 2026-06-02 | 246 KB | GPL 3.0 |
+| Star wheel for latitude 20 north (planisphere kit, Dominic Ford) | `planisphere_20n` | seed | 2026-06-02 | 250 KB | GPL 3.0 |
+| Star wheel for latitude 60 north (planisphere kit, Dominic Ford) | `planisphere_60n` | seed | 2026-06-02 | 242 KB | GPL 3.0 |
+| Star wheel for latitude 20 south (planisphere kit, Dominic Ford) | `planisphere_20s` | seed | 2026-06-02 | 250 KB | GPL 3.0 |
+| Star wheel for latitude 35 south (planisphere kit, Dominic Ford) | `planisphere_35s` | seed | 2026-06-02 | 250 KB | GPL 3.0 |
 | iFixit in English | `ifixit_en_all` | ark | 2025-12 | 3.6 GB |  |
 | Army Publishing Directorate | `armypubs_en_all` | ark | 2024-12 | 8.2 GB | US government work |
 | True prepper | `trueprepper.com_en_all` | ark | 2026-05 | 1.4 GB |  |
@@ -2986,12 +3007,13 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Ventoy (one USB stick, many bootable ISOs) | `ventoy` | seed | 1.1.18 | 37.0 MB | GPL 3.0 |
 | Raspberry Pi Imager | `rpi_imager` | seed | 2.0.12 | 129.4 MB | Apache 2.0 |
 | 7-Zip | `sevenzip` | seed | 26.06 | 5.5 MB | LGPL 2.1 |
+| Stellarium (planetarium: the sky for any place, date and hour) | `stellarium` | seed | 26.3 | 1.6 GB | GPL 2.0 |
 | Rufus (bootable USB writer for Windows) | `rufus` | ark | 4.15 | 2.0 MB | GPL 3.0 |
 | KeePassXC (password vault) | `keepassxc` | ark | 2.8.0 | 168.8 MB | GPL 3.0 |
 | Syncthing (sync folders between machines, no cloud) | `syncthing` | ark | 2.1.7 | 54.6 MB | MPL 2.0 |
 | restic (encrypted backups) | `restic` | ark | 0.19.1 | 40.1 MB | BSD 2 Clause |
 | Ollama (run models without Docker) | `ollama_runtime` | ark | 0.40.16 | 5.2 GB | MIT |
-| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12424 | 84.6 MB | MIT |
+| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12426 | 84.8 MB | MIT |
 | yt-dlp (save video while the internet lasts) | `yt_dlp` | ark | 2026.10.26 | 143.0 MB | Unlicense |
 | FFmpeg (static builds) | `ffmpeg` | ark | 2026-11-15 | 492.0 MB | GPL 3.0 |
 | VLC for Windows | `vlc_windows` | ark | 3.0.24 | 46.3 MB | GPL 2.0 |

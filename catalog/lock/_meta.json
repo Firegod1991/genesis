@@ -1,34 +1,34 @@
 {
  "packs": {
   "ai": 15,
-  "apps": 16,
+  "apps": 17,
   "code": 375,
   "isos": 24,
   "knowledge": 689,
   "library": 249,
   "maps": 6,
-  "medical": 38,
+  "medical": 42,
   "radio": 28,
   "scripture": 1300,
   "services": 25,
-  "survival": 44,
-  "tools": 15
+  "survival": 60,
+  "tools": 16
  },
  "refreshed": "2026-11-15",
  "tiers": {
   "ark": {
-   "bytes": 759129715896,
-   "items": 593,
+   "bytes": 759896321132,
+   "items": 615,
    "unsized": 86
   },
   "eden": {
-   "bytes": 2018744854182,
-   "items": 783,
+   "bytes": 2019511459418,
+   "items": 805,
    "unsized": 104
   },
   "seed": {
-   "bytes": 22656229321,
-   "items": 351,
+   "bytes": 23422752235,
+   "items": 373,
    "unsized": 43
   }
  }
