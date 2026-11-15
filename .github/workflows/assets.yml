@@ -1,0 +1,85 @@
+name: Dashboard assets
+
+# Rebuilds the vendored map library, typeface and map styles from pinned packages,
+# then proves the dashboard in a real browser and saves the README screenshots.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "tools/**"
+      - "dashboard/**"
+      - "!dashboard/static/vendor/**"
+      - "!dashboard/static/map-*.json"
+      - ".github/workflows/assets.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: assets
+  cancel-in-progress: false
+
+jobs:
+  vendor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Vendor pinned packages
+        run: node tools/vendor.mjs
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dashboard/static/vendor dashboard/static/map-light.json dashboard/static/map-dark.json
+          # Files pushed through the GitHub API arrive without the executable bit.
+          git update-index --chmod=+x bin/genesis install.sh dashboard/server.py tools/screenshots.py
+          if git diff --cached --quiet; then echo "Vendored files are current."; exit 0; fi
+          git commit -m "dashboard: vendor pinned map library, typeface and styles"
+          for attempt in 1 2 3; do
+            git pull --rebase --autostash && git push && exit 0
+            sleep 10
+          done
+          exit 1
+
+  browser:
+    name: Browser test and screenshots
+    needs: vendor
+    runs-on: ubuntu-latest
+    env:
+      GENESIS_VAULT: ${{ runner.temp }}/vault
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - name: Install osmium and a headless browser
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --quiet playwright
+          "$RUNNER_TEMP/venv/bin/python" -m playwright install --with-deps chromium
+      - name: Build a small real vault (Monaco)
+        run: |
+          python3 -m genesis fetch --id map_assets --id global_power_plants --id bible_hboWLC --id bible_grctr --id bible_latVUC --id bible_eng-kjv --id bible_engwebp
+          python3 -m genesis poi build --region europe/monaco --replace
+          python3 -m genesis maps region --region europe/monaco
+          python3 -m genesis maps world --maxzoom 5
+      - name: Drive the dashboard in a browser
+        run: |
+          PORT=8765 python3 dashboard/server.py &
+          sleep 2
+          "$RUNNER_TEMP/venv/bin/python" tools/screenshots.py http://127.0.0.1:8765 docs/img
+      - name: Commit screenshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/img
+          if git diff --cached --quiet; then echo "Screenshots unchanged."; exit 0; fi
+          git commit -m "docs: refresh dashboard screenshots from a live Monaco vault"
+          for attempt in 1 2 3; do
+            git pull --rebase --autostash && git push && exit 0
+            sleep 10
+          done
+          exit 1
