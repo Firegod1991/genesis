@@ -261,7 +261,10 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 cat = (q.get("cat") or [None])[0] or None
                 if name == "poi/stats":
-                    return self._json(cached("poistats", 300, lambda: poi.stats(db)))
+                    # Good until the file changes: counting the world database takes seconds.
+                    seen = os.stat(poi.default_db(VAULT))
+                    return self._json(cached("poistats:%d:%d" % (seen.st_mtime_ns, seen.st_size), 86400,
+                                             lambda: poi.stats(db)))
                 if name == "poi/nearest":
                     lat, lon = num("lat"), num("lon")
                     if lat is None or lon is None:

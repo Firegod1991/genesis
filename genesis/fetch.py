@@ -250,6 +250,13 @@ def _fetch_item(vault, iid, entry, files, net, state):
             os.replace(out + ".part", out)
             os.remove(dest)
             written[-1] = os.path.relpath(out, vault)
+            if kind == "poi":
+                # The dashboard mounts the vault read only and cannot keep its own count.
+                from . import poi
+                log("  counting places ...")
+                db = poi.connect(out)
+                log("  %s places" % format(poi.stats(db)["total"], ","))
+                db.close()
     if kind == "bible":
         write_json(os.path.join(folder, "genesis.json"), dict(
             entry.get("meta", {}), id=iid, title=entry.get("title"), license=entry.get("license"),
