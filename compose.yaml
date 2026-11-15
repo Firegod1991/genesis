@@ -46,6 +46,9 @@ services:
       - ${GENESIS_VAULT:-./vault}:/srv:ro
       - ${GENESIS_VAULT:-./vault}/files:/srv/files
       - ${GENESIS_VAULT:-./vault}/config:/database
+      # The image writes its settings on first start, into a folder only its own user 1000 may
+      # write. Hand it one that belongs to whoever runs Genesis, or it never starts for anyone else.
+      - ${GENESIS_VAULT:-./vault}/config:/config
     ports: ["8082:80"]
 
   # ------------------------------------------------------------------ ai

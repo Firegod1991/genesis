@@ -38,8 +38,9 @@ def _gpu():
 
 def compose(vault, profiles, *cmd):
     env = dict(os.environ, GENESIS_VAULT=vault, GENESIS_ROOT=ROOT)
-    env.setdefault("GENESIS_UID", str(os.getuid()))
-    env.setdefault("GENESIS_GID", str(os.getgid()))
+    # Windows has no user ids. Docker Desktop maps the files there, and 1000 is the images' own user.
+    env.setdefault("GENESIS_UID", str(getattr(os, "getuid", lambda: 1000)()))
+    env.setdefault("GENESIS_GID", str(getattr(os, "getgid", lambda: 1000)()))
     base = ["docker", "compose", "--project-name", "genesis", "-f", os.path.join(ROOT, "compose.yaml")]
     if "ai" in profiles and _gpu():
         base += ["-f", os.path.join(ROOT, "compose.gpu.yaml")]
@@ -49,6 +50,9 @@ def compose(vault, profiles, *cmd):
 
 
 def _timer(vault):
+    if not hasattr(os, "geteuid"):
+        log("the monthly timer uses systemd. On Windows, run `python -m genesis update` from Task Scheduler.")
+        return 1
     system = os.geteuid() == 0
     folder = "/etc/systemd/system" if system else os.path.expanduser("~/.config/systemd/user")
     os.makedirs(folder, exist_ok=True)
@@ -95,8 +99,11 @@ def main(args):
     if not shutil.which("docker"):
         raise SystemExit("docker is not installed: run ./install.sh or see https://docs.docker.com/engine/install/")
     if args.action == "up":
-        for sub in ("zim", "maps", "scripture", "poi", "files", "apps", "config"):
-            os.makedirs(os.path.join(vault, sub), exist_ok=True)
+        # Made here, as you. A folder Docker has to make for a service belongs to root instead,
+        # and then neither you nor the file browser can write to it.
+        for sub in ("zim", "maps", "scripture", "poi", "apps", "config",
+                    "files", "files/notes", "files/books", "files/media", "files/code"):
+            os.makedirs(os.path.join(vault, *sub.split("/")), exist_ok=True)
         write_json(_meta(vault, "profiles.json"), sorted(set(profiles)))
         rc = compose(vault, profiles, "up", "-d", "--remove-orphans")
         if rc == 0:
