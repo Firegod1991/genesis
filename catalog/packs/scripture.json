@@ -1,0 +1,27 @@
+{
+ "title": "Scripture",
+ "about": "The Bible from the ancient source languages to today, in every language eBible.org is allowed to share. Seed is a curated line from Hebrew, Greek, Latin and Coptic through the landmark English translations to major world languages. Ark adds every public domain translation. Eden adds every translation eBible.org may redistribute.",
+ "kind": "bible",
+ "dest": "scripture",
+ "items": [
+  {"id": "bible_ancient_to_today", "tier": "seed", "post": "unzip", "home": "https://ebible.org",
+   "source": {"type": "ebible", "select": "ids",
+     "always": ["hboWLC", "hbo", "grclxx", "grcbrent", "grctr", "grcbyz", "grcmt", "grc-tisch", "grctcgnt", "latVUC", "copbhc", "copcnt"],
+     "ids": [
+     "hboWLC", "hbo", "grclxx", "grcbrent", "grctr", "grcbyz", "grcmt", "grc-tisch", "grctcgnt", "latVUC", "copbhc", "copcnt",
+     "engWycliffe", "engtnt", "enggnv", "eng-kjv", "engDRA", "engwebster", "engylt", "engDBY", "eng-rv", "eng-asv",
+     "engjps", "eng-Brenton", "engBBE", "engbsb", "engwebp", "eng-web",
+     "heb", "arb-vd", "cmn-cu89s", "cmn-cu89t", "spaRV1909", "fraLSG", "deu1912", "ita1927", "porbrbsl", "russyn",
+     "ukr1871", "nld", "kor", "jpnm", "vie1934", "pesOPV", "hat", "thafb", "epo"]}},
+  {"id": "bible_public_domain", "tier": "ark", "post": "unzip", "home": "https://ebible.org",
+   "source": {"type": "ebible", "select": "public_domain"}},
+  {"id": "bible_every_language", "tier": "eden", "post": "unzip", "home": "https://ebible.org",
+   "note": "More than a thousand languages. Each translation keeps its own copyright notice inside the download.",
+   "source": {"type": "ebible", "select": "redistributable"}},
+
+  {"zim": "hermeneutics.stackexchange.com_en_all", "tier": "ark", "kind": "zim", "dest": "zim", "tags": ["study", "qa"]},
+  {"zim": "christianity.stackexchange.com_en_all", "tier": "ark", "kind": "zim", "dest": "zim", "tags": ["study", "qa"]},
+  {"zim": "judaism.stackexchange.com_en_all", "tier": "ark", "kind": "zim", "dest": "zim", "tags": ["study", "qa"]},
+  {"zim": "gotquestions.org_en_all", "tier": "eden", "kind": "zim", "dest": "zim", "tags": ["study"], "note": "Commentary and answers from one ministry, not scripture."}
+ ]
+}

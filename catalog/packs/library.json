@@ -1,0 +1,22 @@
+{
+ "title": "Library",
+ "about": "Books. Project Gutenberg in every language it publishes, Wikisource, music and classics.",
+ "kind": "zim",
+ "dest": "zim",
+ "items": [
+  {"id": "gutenberg_every_language", "tier": "ark", "tags": ["books"],
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "source": {"type": "kiwix_rule", "category": "gutenberg", "flavours": [""], "exclude": "^gutenberg_en_all$"}},
+  {"zim": "wikisource_en_all", "flavour": "nopic", "tier": "ark", "tags": ["books", "primary sources"]},
+  {"zim": "openmusictheory.com_en_all", "tier": "ark", "tags": ["music"]},
+
+  {"zim": "gutenberg_en_all", "tier": "eden", "tags": ["books"], "note": "The complete English Project Gutenberg library."},
+  {"zim": "wikisource_en_all", "flavour": "maxi", "tier": "eden", "tags": ["books", "primary sources"]},
+  {"zim": "folgerpedia.folger.edu_en_all", "tier": "eden", "tags": ["books", "shakespeare"]},
+  {"zim": "mutopiaproject.org_en_all", "tier": "eden", "tags": ["music", "sheet music"]},
+  {"id": "wikisource_every_language", "tier": "eden", "tags": ["books"],
+   "source": {"type": "kiwix_rule", "category": "wikisource", "regex": "^wikisource_[a-z-]+_all$", "flavours": ["maxi", "nopic"]}},
+  {"id": "wikibooks_every_language", "tier": "eden", "tags": ["textbooks"],
+   "source": {"type": "kiwix_rule", "category": "wikibooks", "regex": "^wikibooks_[a-z-]+_all$", "flavours": ["maxi", "nopic"]}}
+ ]
+}

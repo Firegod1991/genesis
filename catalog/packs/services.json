@@ -1,0 +1,33 @@
+{
+ "title": "Services",
+ "about": "The container images behind compose.yaml. The monthly refresh resolves each tag to its current digest, which both proves the image still exists and records exactly what a sealed vault contains.",
+ "kind": "image",
+ "dest": "images",
+ "items": [
+  {"id": "img_dashboard", "title": "Python (runs the Genesis dashboard)", "tier": "seed", "source": {"type": "docker", "image": "python:3.13-alpine"}},
+  {"id": "img_kiwix", "title": "Kiwix server", "tier": "seed", "source": {"type": "docker", "image": "ghcr.io/kiwix/kiwix-serve:latest"}},
+  {"id": "img_files", "title": "File Browser", "tier": "seed", "source": {"type": "docker", "image": "filebrowser/filebrowser:v2"}},
+  {"id": "img_ollama", "title": "Ollama", "tier": "seed", "source": {"type": "docker", "image": "ollama/ollama:latest"}},
+  {"id": "img_openwebui", "title": "Open WebUI (chat with documents)", "tier": "seed", "source": {"type": "docker", "image": "ghcr.io/open-webui/open-webui:main"}},
+  {"id": "img_cyberchef", "title": "CyberChef", "tier": "seed", "source": {"type": "docker", "image": "ghcr.io/gchq/cyberchef:latest"}},
+  {"id": "img_ittools", "title": "IT Tools", "tier": "seed", "source": {"type": "docker", "image": "ghcr.io/corentinth/it-tools:latest"}},
+  {"id": "img_notes", "title": "FlatNotes", "tier": "seed", "source": {"type": "docker", "image": "dullage/flatnotes:latest"}},
+  {"id": "img_meshtastic", "title": "Meshtastic web client", "tier": "seed", "source": {"type": "docker", "image": "ghcr.io/meshtastic/web:latest"}},
+  {"id": "img_openwebrx", "title": "OpenWebRX+ (web SDR receiver)", "tier": "seed", "source": {"type": "docker", "image": "slechev/openwebrxplus:latest"}},
+  {"id": "img_pdf", "title": "Stirling PDF", "tier": "ark", "source": {"type": "docker", "image": "ghcr.io/stirling-tools/s-pdf:latest"}},
+  {"id": "img_kolibri", "title": "Kolibri (courses with progress tracking)", "tier": "ark", "source": {"type": "docker", "image": "learningequality/kolibri:latest"}},
+  {"id": "img_calibre", "title": "Calibre Web (ebook library)", "tier": "ark", "source": {"type": "docker", "image": "linuxserver/calibre-web:latest"}},
+  {"id": "img_jellyfin", "title": "Jellyfin (video and music)", "tier": "ark", "source": {"type": "docker", "image": "jellyfin/jellyfin:latest"}},
+  {"id": "img_inventory", "title": "Homebox (supply inventory)", "tier": "ark", "source": {"type": "docker", "image": "ghcr.io/sysadminsmedia/homebox:latest"}},
+  {"id": "img_translate", "title": "LibreTranslate (offline translation)", "tier": "ark", "source": {"type": "docker", "image": "libretranslate/libretranslate:latest"}},
+  {"id": "img_devdocs", "title": "DevDocs (developer documentation)", "tier": "ark", "source": {"type": "docker", "image": "ghcr.io/freecodecamp/devdocs:latest"}},
+  {"id": "img_code", "title": "code-server (VS Code in the browser)", "tier": "ark", "source": {"type": "docker", "image": "codercom/code-server:latest"}},
+  {"id": "img_git", "title": "Gitea (local Git hosting)", "tier": "ark", "source": {"type": "docker", "image": "gitea/gitea:latest"}},
+  {"id": "img_irc", "title": "Ergo (local chat server)", "tier": "ark", "source": {"type": "docker", "image": "ghcr.io/ergochat/ergo:stable"}},
+  {"id": "img_chat", "title": "The Lounge (web chat client)", "tier": "ark", "source": {"type": "docker", "image": "ghcr.io/thelounge/thelounge:latest"}},
+  {"id": "img_voice", "title": "Mumble server (voice on the local network)", "tier": "ark", "source": {"type": "docker", "image": "mumblevoip/mumble-server:latest"}},
+  {"id": "img_adsb", "title": "ADS-B aircraft tracker (readsb and tar1090)", "tier": "ark", "source": {"type": "docker", "image": "ghcr.io/sdr-enthusiasts/docker-adsb-ultrafeeder:latest"}},
+  {"id": "img_ais", "title": "AIS-catcher (ship tracking)", "tier": "ark", "source": {"type": "docker", "image": "ghcr.io/jvde-github/ais-catcher:latest"}},
+  {"id": "img_routing", "title": "Valhalla (offline turn by turn routing)", "tier": "ark", "source": {"type": "docker", "image": "ghcr.io/valhalla/valhalla-scripted:latest"}}
+ ]
+}

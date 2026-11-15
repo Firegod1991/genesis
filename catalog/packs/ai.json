@@ -1,0 +1,43 @@
+{
+ "title": "Local AI",
+ "about": "Language models that run entirely on your own hardware through Ollama. Tiers follow memory: seed runs on a CPU or a Raspberry Pi 5, ark wants a GPU with 8 to 16 GB, eden wants 24 GB or more. `genesis doctor` tells you which fits.",
+ "kind": "model",
+ "dest": "models",
+ "items": [
+  {"id": "gemma4_e2b", "title": "Gemma 4 E2B (general assistant, text and images)", "tier": "seed", "license": "Gemma Terms of Use", "tags": ["chat", "vision"],
+   "source": {"type": "ollama", "model": "gemma4:e2b"}},
+  {"id": "qwen35_2b", "title": "Qwen 3.5 2B (small and fast)", "tier": "seed", "license": "Apache 2.0", "tags": ["chat"],
+   "source": {"type": "ollama", "model": "qwen3.5:2b"}},
+  {"id": "embeddinggemma", "title": "EmbeddingGemma (document search)", "tier": "seed", "license": "Gemma Terms of Use", "tags": ["embedding"],
+   "source": {"type": "ollama", "model": "embeddinggemma:latest"}},
+
+  {"id": "gemma4_12b", "title": "Gemma 4 12B (general assistant, text and images)", "tier": "ark", "license": "Gemma Terms of Use", "tags": ["chat", "vision"],
+   "source": {"type": "ollama", "model": "gemma4:12b"}},
+  {"id": "qwen35_9b", "title": "Qwen 3.5 9B (general assistant, tools)", "tier": "ark", "license": "Apache 2.0", "tags": ["chat", "vision"],
+   "source": {"type": "ollama", "model": "qwen3.5:9b"}},
+  {"id": "medgemma15_4b", "title": "MedGemma 1.5 4B (medical text and images)", "tier": "ark", "license": "Health AI Developer Foundations terms", "tags": ["medical"],
+   "note": "A research model. It can be wrong. It does not replace a clinician.",
+   "source": {"type": "ollama", "model": "medgemma1.5:4b"}},
+  {"id": "translategemma_4b", "title": "TranslateGemma 4B (translation across 55 languages)", "tier": "ark", "license": "Gemma Terms of Use", "tags": ["translation"],
+   "source": {"type": "ollama", "model": "translategemma:4b"}},
+  {"id": "qwen25_coder_7b", "title": "Qwen 2.5 Coder 7B (code completion)", "tier": "ark", "license": "Apache 2.0", "tags": ["code"],
+   "source": {"type": "ollama", "model": "qwen2.5-coder:7b"}},
+
+  {"id": "gemma4_31b", "title": "Gemma 4 31B (strongest Gemma)", "tier": "eden", "license": "Gemma Terms of Use", "tags": ["chat", "vision"],
+   "source": {"type": "ollama", "model": "gemma4:31b"}},
+  {"id": "qwen35_35b", "title": "Qwen 3.5 35B", "tier": "eden", "license": "Apache 2.0", "tags": ["chat", "vision"],
+   "source": {"type": "ollama", "model": "qwen3.5:35b"}},
+  {"id": "gpt_oss_20b", "title": "gpt-oss 20B (reasoning)", "tier": "eden", "license": "Apache 2.0", "tags": ["chat", "reasoning"],
+   "source": {"type": "ollama", "model": "gpt-oss:20b"}},
+  {"id": "qwen3_coder_30b", "title": "Qwen3 Coder 30B (agentic coding)", "tier": "eden", "license": "Apache 2.0", "tags": ["code"],
+   "source": {"type": "ollama", "model": "qwen3-coder:30b"}},
+  {"id": "medgemma_27b", "title": "MedGemma 27B (medical)", "tier": "eden", "license": "Health AI Developer Foundations terms", "tags": ["medical"],
+   "note": "A research model. It can be wrong. It does not replace a clinician.",
+   "source": {"type": "ollama", "model": "medgemma:27b"}},
+
+  {"id": "whisper_base", "title": "Whisper base (speech to text, 99 languages)", "tier": "seed", "kind": "file", "dest": "models/whisper", "license": "MIT", "tags": ["speech"],
+   "source": {"type": "static", "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin"}},
+  {"id": "whisper_small", "title": "Whisper small (speech to text, better accuracy)", "tier": "ark", "kind": "file", "dest": "models/whisper", "license": "MIT", "tags": ["speech"],
+   "source": {"type": "static", "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin"}}
+ ]
+}

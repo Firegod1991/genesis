@@ -1,0 +1,29 @@
+{
+ "title": "Maps",
+ "about": "The whole world as offline vector maps, plus the raw OpenStreetMap data that the survival layers (water, medical, fuel, power, shelter) are built from. Map data is from OpenStreetMap contributors under the ODbL.",
+ "kind": "map",
+ "dest": "maps",
+ "items": [
+  {"id": "world_overview", "title": "World overview map (every country, zoom 0 to 6)", "tier": "seed", "license": "ODbL (OpenStreetMap contributors)",
+   "note": "Cut monthly by genesis-vault so a first install has a map of the whole planet within seconds.",
+   "source": {"type": "github", "repo": "Firegod1991/genesis-vault", "asset": "^world_overview\\.pmtiles$"}},
+  {"id": "survival_layers_world", "title": "Survival layers for the whole world (water, medical, fuel, power, shelter and more)", "tier": "seed",
+   "kind": "poi", "dest": "poi", "post": "gunzip", "license": "ODbL (OpenStreetMap contributors)",
+   "note": "Prebuilt monthly by genesis-vault from every continent. Build your own region any time with `genesis poi build`.",
+   "source": {"type": "github", "repo": "Firegod1991/genesis-vault", "asset": "^survival\\.sqlite\\.gz$"}},
+  {"id": "map_assets", "title": "Map fonts and icons (Protomaps basemap assets)", "tier": "seed", "kind": "archive", "dest": "maps/assets",
+   "post": "untar", "license": "SIL OFL (fonts), CC0 (icons)",
+   "source": {"type": "static", "url": "https://github.com/protomaps/basemaps-assets/archive/refs/heads/main.tar.gz", "filename": "basemaps-assets.tar.gz", "probe": false}},
+  {"id": "global_power_plants", "title": "Global Power Plant Database (World Resources Institute)", "tier": "seed", "kind": "data", "dest": "poi/sources",
+   "license": "CC BY 4.0", "note": "About 35,000 power plants in 167 countries with fuel type and capacity. Last revised by WRI in 2021.",
+   "source": {"type": "static", "url": "https://raw.githubusercontent.com/wri/global-power-plant-database/master/output_database/global_power_plant_database.csv"}},
+
+  {"id": "planet_basemap", "title": "Planet basemap, full detail (Protomaps daily build)", "tier": "eden", "license": "ODbL (OpenStreetMap contributors)",
+   "note": "Every street on Earth in one file. You do not need it to map your own region: `genesis maps region` cuts any area straight from this build.",
+   "source": {"type": "protomaps"}},
+  {"id": "planet_osm", "title": "OpenStreetMap planet (raw data)", "tier": "eden", "kind": "osm", "dest": "osm", "license": "ODbL (OpenStreetMap contributors)",
+   "note": "Input for building survival layers and routing for the entire world yourself.",
+   "source": {"type": "static", "url": "https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf",
+              "md5_url": "https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf.md5"}}
+ ]
+}

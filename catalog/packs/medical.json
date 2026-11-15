@@ -1,0 +1,26 @@
+{
+ "title": "Medical",
+ "about": "Medical references for when no clinician is reachable. Reference material only: it does not replace training or professional care.",
+ "kind": "zim",
+ "dest": "zim",
+ "items": [
+  {"zim": "wikipedia_en_medicine", "flavour": "maxi", "tier": "seed", "tags": ["medical"], "note": "WikiMed, the medical encyclopedia built from Wikipedia."},
+  {"zim": "zimgit-medicine_en", "tier": "seed", "tags": ["medical", "field"]},
+  {"zim": "irp.fas.org_en_military-medicine", "tier": "seed", "tags": ["medical", "field"]},
+  {"zim": "nhs.uk_en_medicines", "tier": "seed", "tags": ["medical", "medicines"]},
+  {"id": "wikimed_every_language", "tier": "seed", "tags": ["medical"],
+   "note": "WikiMed in every language Kiwix publishes. You only download the languages you choose.",
+   "source": {"type": "kiwix_rule", "category": "wikipedia", "regex": "^wikipedia_[a-z-]+_medicine$", "flavours": ["maxi", "nopic", "mini"]}},
+
+  {"zim": "mdwiki_en_all", "flavour": "maxi", "tier": "ark", "tags": ["medical"]},
+  {"zim": "medlineplus.gov_en_all", "tier": "ark", "tags": ["medical"], "license": "US government work"},
+  {"zim": "wwwnc.cdc.gov_en_all", "tier": "ark", "tags": ["medical", "travel"], "license": "US government work"},
+  {"zim": "quickguidesformedicine_en_all", "tier": "ark", "tags": ["medical"]},
+  {"zim": "wikivet.net_en_all", "flavour": "maxi", "tier": "ark", "tags": ["veterinary"]},
+  {"zim": "medicalsciences.stackexchange.com_en_all", "tier": "ark", "tags": ["medical", "qa"]},
+
+  {"zim": "librepathology_en_all", "flavour": "maxi", "tier": "eden", "tags": ["medical"]},
+  {"zim": "skin-of-color-society_en_all", "tier": "eden", "tags": ["medical", "video"]},
+  {"zim": "genomicseducation_en_all", "tier": "eden", "tags": ["medical"]}
+ ]
+}
