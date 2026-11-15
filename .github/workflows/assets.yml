@@ -30,8 +30,8 @@ jobs:
         run: node tools/vendor.mjs
       - name: Commit
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Firegod1991"
+          git config user.email "193648396+Firegod1991@users.noreply.github.com"
           git add dashboard/static/vendor dashboard/static/map-light.json dashboard/static/map-dark.json
           # Files pushed through the GitHub API arrive without the executable bit.
           git update-index --chmod=+x bin/genesis install.sh dashboard/server.py tools/screenshots.py
@@ -72,8 +72,8 @@ jobs:
           "$RUNNER_TEMP/venv/bin/python" tools/screenshots.py http://127.0.0.1:8765 docs/img
       - name: Commit screenshots
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Firegod1991"
+          git config user.email "193648396+Firegod1991@users.noreply.github.com"
           git add docs/img
           if git diff --cached --quiet; then echo "Screenshots unchanged."; exit 0; fi
           git commit -m "docs: refresh dashboard screenshots from a live Monaco vault"

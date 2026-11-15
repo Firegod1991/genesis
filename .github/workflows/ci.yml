@@ -69,3 +69,48 @@ jobs:
           curl -fsS -o /dev/null -w '%{http_code}\n' -H 'Range: bytes=0-126' http://127.0.0.1:8765/maps/europe_monaco.pmtiles | grep -q 206
       - name: Seal
         run: python3 -m genesis seal && test -s "$GENESIS_VAULT/restore/MANIFEST.json"
+
+  stack:
+    name: Services start and answer
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build a small real vault
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+          echo "GENESIS_VAULT=$RUNNER_TEMP/vault" >> "$GITHUB_ENV"
+          export GENESIS_VAULT="$RUNNER_TEMP/vault"
+          python3 -m genesis fetch --id devdocs_en_zig --id bible_engwebp --id global_power_plants --id map_assets
+          bash tools/monaco_vault.sh
+      - name: Start the core services
+        run: python3 -m genesis up core
+      - name: Every core service answers
+        run: |
+          wait_for() {  # address, then text the answer must contain
+            for _ in $(seq 1 60); do
+              if body=$(curl -fsS -m 5 "$1" 2> /dev/null) && grep -qi -- "$2" <<< "$body"; then echo "ok   $1"; return 0; fi
+              sleep 2
+            done
+            echo "FAIL $1"
+            return 1
+          }
+          wait_for http://127.0.0.1:8080/ "Genesis"
+          # The dashboard container sees the vault read only. The layers must answer all the same.
+          wait_for "http://127.0.0.1:8080/api/poi/nearest?lat=43.7384&lon=7.4246&each=1" '"water": \[{'
+          wait_for http://127.0.0.1:8080/api/poi/stats '"total"'
+          wait_for http://127.0.0.1:8080/api/maps europe_monaco
+          wait_for http://127.0.0.1:8080/api/scripture engwebp
+          wait_for http://127.0.0.1:8081/ "kiwix"
+          wait_for http://127.0.0.1:8082/ "<html"
+          python3 -m genesis ps
+          # From inside the stack the dashboard must see its neighbours up.
+          curl -fsS http://127.0.0.1:8080/api/services | python3 -c "import json,sys; up={s['id']: s['up'] for s in json.load(sys.stdin)}; assert up['kiwix'] and up['files'], up; print('dashboard sees kiwix and files up')"
+      - name: Service logs when something failed
+        if: failure()
+        run: docker compose --project-name genesis logs --no-color --tail 60
+      - name: Stop the services
+        if: always()
+        run: python3 -m genesis down

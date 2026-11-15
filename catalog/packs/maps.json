@@ -9,7 +9,7 @@
    "source": {"type": "github", "repo": "Firegod1991/genesis-vault", "asset": "^world_overview\\.pmtiles$"}},
   {"id": "survival_layers_world", "title": "Survival layers for the whole world (water, medical, fuel, power, shelter and more)", "tier": "seed",
    "kind": "poi", "dest": "poi", "post": "gunzip", "license": "ODbL (OpenStreetMap contributors)",
-   "note": "Prebuilt monthly by genesis-vault from every continent. Build your own region any time with `genesis poi build`.",
+   "note": "Prebuilt monthly by genesis-vault from the OpenStreetMap planet file. Build your own region any time with `genesis poi build`.",
    "source": {"type": "github", "repo": "Firegod1991/genesis-vault", "asset": "^survival\\.sqlite\\.gz$"}},
   {"id": "map_assets", "title": "Map fonts and icons (Protomaps basemap assets)", "tier": "seed", "kind": "archive", "dest": "maps/assets",
    "post": "untar", "license": "SIL OFL (fonts), CC0 (icons)",

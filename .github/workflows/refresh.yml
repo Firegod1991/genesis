@@ -21,6 +21,7 @@ concurrency:
 
 jobs:
   refresh:
+    name: Resolve the catalog
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -32,8 +33,8 @@ jobs:
         run: cat reports/latest.md >> "$GITHUB_STEP_SUMMARY"
       - name: Commit the new lock files
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Firegod1991"
+          git config user.email "193648396+Firegod1991@users.noreply.github.com"
           git add catalog/lock docs/CATALOG.md reports/latest.md
           if git diff --cached --quiet; then
             echo "Nothing changed."
@@ -41,20 +42,41 @@ jobs:
           fi
           git commit -m "catalog: refresh $(date -u +%Y-%m-%d)"
           # Another workflow may push at the same moment: rebase and try again.
-          for attempt in 1 2 3; do
+          for _ in 1 2 3; do
             git pull --rebase --autostash && git push && exit 0
             sleep 10
           done
           exit 1
       - name: Publish the monthly release
-        if: github.event_name != 'push'
         env:
           GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
         run: |
           tag="v$(date -u +%Y.%m)"
           title="Genesis catalog $(date -u +'%B %Y')"
-          if gh release view "$tag" >/dev/null 2>&1; then
-            gh release edit "$tag" --notes-file reports/latest.md
-          else
+          if ! gh release view "$tag" >/dev/null 2>&1; then
             gh release create "$tag" --title "$title" --notes-file reports/latest.md --target "$(git rev-parse HEAD)"
+          elif [ "$EVENT" != "push" ]; then
+            # The monthly run and a manual run rewrite the notes. A push that touches one pack does not.
+            gh release edit "$tag" --notes-file reports/latest.md
           fi
+
+  world:
+    name: World data works end to end
+    needs: refresh
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main   # the catalog the job above just committed
+      - name: Fetch the world layers and map the way a new box does
+        run: |
+          echo "GENESIS_VAULT=$RUNNER_TEMP/vault" >> "$GITHUB_ENV"
+          export GENESIS_VAULT="$RUNNER_TEMP/vault"
+          python3 -m genesis fetch --id survival_layers_world --id world_overview --id map_assets
+          python3 -m genesis verify
+      - name: Ask it real questions
+        run: python3 tools/world_check.py
