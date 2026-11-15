@@ -10,12 +10,14 @@ return a list of (item overrides, resolved) pairs instead.
 
 import base64
 import csv
+import email.utils
 import io
 import re
 import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+from html import unescape
 
 from .util import FetchError, _headers, fkey, http_open, parse_checksums, vkey
 
@@ -312,18 +314,72 @@ def r_fedora(src, net):
                        "size": int(r["size"]) if str(r.get("size", "")).isdigit() else None}]}
 
 
+def _sf_file(project, path, platform, size, md5):
+    f = {"url": "https://downloads.sourceforge.net/project/%s%s" % (project, urllib.parse.quote(path)),
+         "filename": path.rsplit("/", 1)[-1]}
+    if size:
+        f["size"] = int(size)
+    if md5:
+        f["md5"] = md5
+    if platform != "any":
+        f["platform"] = platform
+    return f
+
+
+def _sf_feed(net, project, path):
+    """Files under a SourceForge folder as its file feed lists them: path, date, size, md5."""
+    url = "https://sourceforge.net/projects/%s/rss?path=%s&limit=100" % (project, urllib.parse.quote(path))
+    out = []
+    for item in re.findall(r"(?s)<item>(.*?)</item>", net.text(url)):
+        title = re.search(r"(?s)<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?</title>", item)
+        if not title:
+            continue
+        when = re.search(r"<pubDate>(.*?)</pubDate>", item)
+        md5 = re.search(r'<media:hash algo="md5">([0-9a-f]{32})</media:hash>', item)
+        size = re.search(r'filesize="(\d+)"', item)
+        try:
+            date = email.utils.parsedate_to_datetime(when.group(1)).strftime("%Y-%m-%d")
+        except (AttributeError, TypeError, ValueError):
+            date = ""
+        out.append({"path": unescape(title.group(1).strip()), "date": date,
+                    "size": size.group(1) if size else None, "md5": md5.group(1) if md5 else None})
+    return out
+
+
 def r_sourceforge(src, net):
-    d = net.json("https://sourceforge.net/projects/%s/best_release.json" % src["project"])
-    rel = (d.get("platform_releases") or {}).get(src["platform"]) if src.get("platform") else d.get("release")
-    if not rel or not rel.get("filename"):
-        raise ResolveError("SourceForge project %r has no best release" % src["project"])
-    fn = rel["filename"]
-    if src.get("pattern") and not re.search(src["pattern"], fn):
-        raise ResolveError("SourceForge best release %r does not match %r" % (fn, src["pattern"]))
-    url = "https://downloads.sourceforge.net/project/%s%s" % (src["project"], urllib.parse.quote(fn))
-    return {"version": _version_from(fn, src), "date": (rel.get("date") or "")[:10] or None,
-            "files": [{"url": url, "filename": fn.rsplit("/", 1)[-1], "size": rel.get("bytes"),
-                       "md5": rel.get("md5sum")}]}
+    """SourceForge. With path: the newest upload in that folder, per platform when files is given.
+    Without: the download the project marks as its default, or with platforms its default for each
+    operating system. A project's default can lag years behind its newest upload, so prefer path."""
+    project = src["project"]
+    files, missing, dates = [], [], []
+    if src.get("path"):
+        feed = _sf_feed(net, project, src["path"])
+        for platform, pattern in (src.get("files") or {"any": src["pattern"]}).items():
+            cands = [f for f in feed if re.search(pattern, f["path"])]
+            if not cands:
+                missing.append(platform)
+                continue
+            best = max(cands, key=lambda f: (f["date"], fkey(f["path"])))
+            files.append(_sf_file(project, best["path"], platform, best["size"], best["md5"]))
+            dates.append(best["date"])
+    else:
+        d = net.json("https://sourceforge.net/projects/%s/best_release.json" % project)
+        per = d.get("platform_releases") or {}
+        for platform, theirs in (src.get("platforms") or {"any": src.get("platform")}).items():
+            rel = (per.get(theirs) if theirs else d.get("release")) or {}
+            fn = rel.get("filename")
+            if not fn or (src.get("pattern") and not re.search(src["pattern"], fn)):
+                missing.append(platform)
+                continue
+            files.append(_sf_file(project, fn, platform, rel.get("bytes"), rel.get("md5sum")))
+            dates.append((rel.get("date") or "")[:10])
+    if not files:
+        raise ResolveError("SourceForge project %r has no download matching %r"
+                           % (project, src.get("files") or src.get("pattern")))
+    res = {"version": _version_from(files[0]["filename"], src), "date": max(dates) or None, "files": files}
+    if missing:
+        res["warnings"] = ["no file for " + ", ".join(missing)]
+    return res
 
 
 def r_fdroid(src, net):
@@ -367,39 +423,120 @@ def _gh_release(net, repo, tag, prerelease):
             for n in dict.fromkeys(names)]}
 
 
+def _gh_recent(net, repo):
+    """Recent releases, newest first, drafts left out. Empty when the list cannot be read."""
+    try:
+        rels = net.json("https://api.github.com/repos/%s/releases?per_page=30" % repo)
+    except FetchError:
+        return []
+    return [r for r in rels if isinstance(r, dict) and r.get("tag_name") and not r.get("draft")]
+
+
+def _gh_earlier(older, tag, anywhere):
+    """The releases a file missing from release `tag` may be taken from, best first."""
+    if anywhere:  # scan: the newest listed release that has the file, whatever is marked latest
+        return [r for r in older if r["tag_name"] != tag]
+    tags = [r["tag_name"] for r in older]
+    earlier = older[tags.index(tag) + 1:] if tag in tags else older
+    return [r for r in earlier if not r.get("prerelease")]
+
+
+def _gh_match(rel, pattern):
+    cands = [a for a in rel.get("assets") or [] if re.search(pattern, a["name"])]
+    return max(cands, key=lambda a: fkey(a["name"])) if cands else None
+
+
+_NOISE = re.compile(r"(?i)\.(sig|asc|sha\d+(sum)?|md5|digest|zsync|jsonl|pem|sbom|intoto|blockmap)(\.|$)")
+_HINTS = {"windows-x64": r"(?i)win|\.exe$|\.msi$", "macos-arm64": r"(?i)mac|darwin|osx|apple|\.dmg$",
+          "linux-x64": r"(?i)linux|\.deb$|\.rpm$|appimage", "linux-arm64": r"(?i)aarch64|arm64",
+          "android": r"(?i)android|\.apk$"}
+
+
+def _gh_names(rel, platforms=(), limit=12):
+    """A short list of asset names for the report: no signatures, likely names for the platforms first."""
+    names = [a["name"] for a in rel.get("assets") or [] if not _NOISE.search(a["name"])]
+    hints = [re.compile(_HINTS[p]) for p in platforms if p in _HINTS]
+    names.sort(key=lambda n: not any(h.search(n) for h in hints))
+    return names[:limit] + (["and %d more" % (len(names) - limit)] if len(names) > limit else [])
+
+
+def _gh_version(tag):
+    """v1.2.3, jq-1.8.2 and llvmorg-23.1.5 are versions with a label in front: drop the label."""
+    m = re.match(r"(?:[A-Za-z][\w.-]*?[-_/])?[vV]?(\d.*)$", tag)
+    return m.group(1) if m else tag
+
+
 def r_github(src, net):
-    """Newest GitHub release. assets maps platform to a regex; asset is a single regex."""
-    repo = src["repo"]
-    rel = _gh_release(net, repo, src.get("tag"), src.get("prerelease"))
-    tag, assets = rel["tag_name"], rel.get("assets") or []
+    """Newest GitHub release. assets maps platform to a regex; asset is a single regex.
+
+    A file the newest release lacks (a point release for some boards only) comes from the newest
+    earlier stable release that has it, and the report says so: the line keeps working while
+    someone looks at the pattern. With scan, the release marked latest is only a hint and the
+    newest listed release that has the files wins, for projects that publish builds apart from it.
+    """
+    repo, pinned = src["repo"], src.get("tag")
     wanted = src.get("assets") or ({"any": src["asset"]} if src.get("asset") else {})
-    files, missing = [], []
+    older = None
+    try:
+        rel = _gh_release(net, repo, pinned, src.get("prerelease"))
+    except ResolveError:
+        older = [] if pinned else _gh_recent(net, repo)  # nothing marked latest: take the newest listed
+        if not older:
+            raise
+        rel = older[0]
+    tag = rel["tag_name"]
+    files, used, borrowed, missing = [], [], [], []
     for platform, pattern in wanted.items():
-        rx = re.compile(pattern)
-        cands = [a for a in assets if rx.search(a["name"])]
-        if not cands:
+        asset, origin = _gh_match(rel, pattern), rel
+        if asset is None and not pinned:
+            if older is None:
+                older = _gh_recent(net, repo)
+            for old in _gh_earlier(older, tag, src.get("scan") or src.get("prerelease")):
+                found = _gh_match(old, pattern)
+                if found is not None:
+                    asset, origin = found, old
+                    break
+        if asset is None:
             missing.append(platform)
             continue
-        a = max(cands, key=lambda a: fkey(a["name"]))
-        f = {"url": a["browser_download_url"], "filename": a["name"]}
-        if a.get("size"):
-            f["size"] = a["size"]
-        if str(a.get("digest") or "").startswith("sha256:"):
-            f["sha256"] = a["digest"][7:]
+        f = {"url": asset["browser_download_url"], "filename": asset["name"]}
+        if asset.get("size"):
+            f["size"] = asset["size"]
+        if str(asset.get("digest") or "").startswith("sha256:"):
+            f["sha256"] = asset["digest"][7:]
         if platform != "any":
             f["platform"] = platform
         files.append(f)
+        used.append(asset)
+        if origin is not rel:
+            borrowed.append((platform, origin))
+    # The release that names the version: the newest one, unless every file came from an earlier one.
+    main = rel
+    if borrowed and len(borrowed) == len(files):
+        main = min((o for _, o in borrowed), key=lambda o: [r["tag_name"] for r in older].index(o["tag_name"]))
     if src.get("source"):
         files.append({"url": "https://github.com/%s/archive/refs/tags/%s.tar.gz" % (repo, tag),
                       "filename": "%s-%s.tar.gz" % (repo.split("/")[1], tag.replace("/", "_")),
                       "platform": "source"})
     if not files:
         raise ResolveError("no asset in %s %s matched %s; assets: %s"
-                           % (repo, tag, list(wanted.values()), [a["name"] for a in assets[:25]]))
-    date = (rel.get("published_at") or "")[:10] or None
-    res = {"version": (date or tag) if src.get("tag") else tag.lstrip("v"), "date": date, "files": files}
+                           % (repo, tag, list(wanted.values()), _gh_names(rel, wanted)))
+    date = (main.get("published_at") or "")[:10] or None
+    if pinned:  # a rolling tag (nightly, latest) swaps files under one name: date it by the newest upload
+        date = max((a.get("updated_at") or "" for a in used), default="")[:10] or date
+    res = {"version": (date or tag) if pinned else _gh_version(main["tag_name"]), "date": date, "files": files}
+    warnings = []
+    if main is not rel and not src.get("scan"):
+        warnings.append("newest release %s has none of the files, using %s; assets there: %s"
+                        % (tag, main["tag_name"], _gh_names(rel, wanted)))
+    late = ["%s from %s" % (p, o["tag_name"]) for p, o in borrowed if o is not main]
+    if late:
+        warnings.append("not in %s, taken from an earlier release: %s; assets there: %s"
+                        % (main["tag_name"], ", ".join(late), _gh_names(main, [p for p, _ in borrowed])))
     if missing:
-        res["warnings"] = ["no asset for %s; assets: %s" % (", ".join(missing), [a["name"] for a in assets[:25]])]
+        warnings.append("no asset for %s; assets: %s" % (", ".join(missing), _gh_names(rel, missing)))
+    if warnings:
+        res["warnings"] = warnings
     return res
 
 
@@ -669,12 +806,69 @@ def r_http_index(src, net):
     return res
 
 
+class _NoFollow(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):
+        return None
+
+
+def _redirect_target(url):
+    """Where a "latest" link points, without visiting the place it points to."""
+    req = urllib.request.Request(url, headers=_headers(url))
+    try:
+        urllib.request.build_opener(_NoFollow).open(req, timeout=60).close()
+    except urllib.error.HTTPError as e:
+        where = e.headers.get("Location")
+        if e.code in (301, 302, 303, 307, 308) and where:
+            return urllib.parse.urljoin(url, where)
+        raise FetchError("HTTP %s for %s" % (e.code, url))
+    except (urllib.error.URLError, OSError) as e:
+        raise FetchError("%s for %s" % (e, url))
+    raise FetchError("%s did not redirect" % url)
+
+
+def r_redirect(src, net):
+    """A "download the latest" link that redirects to a versioned folder.
+
+    version_regex reads the version out of the folder address. files maps a platform to a file
+    name with {version} in it. Each address is checked: one the server says is absent is dropped,
+    one the server will not answer for is kept, since it follows the publisher's naming rule.
+    """
+    target = _redirect_target(src["url"])
+    m = re.search(src["version_regex"], target)
+    if not m:
+        raise ResolveError("%s leads to %s, which does not look like a release" % (src["url"], target))
+    version = m.group(1)
+    base = target.rstrip("/") + "/"
+    files, unsure = [], []
+    for platform, template in src["files"].items():
+        fn = template.replace("{version}", version)
+        f = {"url": base + fn, "filename": fn}
+        try:
+            _, headers = net.head(f["url"])
+            if str(headers.get("content-length", "")).isdigit():
+                f["size"] = int(headers["content-length"])
+        except FetchError as e:
+            if "HTTP 404" in str(e):
+                continue
+            unsure.append(fn)
+        if platform != "any":
+            f["platform"] = platform
+        files.append(f)
+    if not files:
+        raise ResolveError("none of the expected files exist under %s" % base)
+    date = "%s-%s-%s" % (version[:4], version[4:6], version[6:]) if re.fullmatch(r"\d{8}", version) else None
+    res = {"version": version, "date": date, "files": files}
+    if unsure:
+        res["warnings"] = ["the server would not confirm " + ", ".join(unsure)]
+    return res
+
+
 RESOLVERS = {
     "kiwix": r_kiwix, "checksum_file": r_checksum_file, "ubuntu": r_ubuntu, "openwrt": r_openwrt,
     "tails": r_tails, "rpi_imager": r_rpi_imager, "alpine": r_alpine, "fedora": r_fedora,
     "sourceforge": r_sourceforge, "fdroid": r_fdroid, "github": r_github, "toolchain": r_toolchain,
     "protomaps": r_protomaps, "ollama": r_ollama, "docker": r_docker, "static": r_static,
-    "http_index": r_http_index,
+    "http_index": r_http_index, "redirect": r_redirect,
 }
 EXPANDERS = {"kiwix_rule": x_kiwix_rule, "ebible": x_ebible}
 
