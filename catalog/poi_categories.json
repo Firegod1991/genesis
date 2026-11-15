@@ -1,0 +1,35 @@
+{
+ "water": {"label": "Water", "color": "#3aa0ff", "match": [
+   {"amenity": ["drinking_water", "water_point", "watering_place"]},
+   {"man_made": ["water_well", "water_tap", "water_tower", "water_works", "reservoir_covered"]},
+   {"natural": ["spring"]},
+   {"drinking_water": ["yes"]}]},
+ "medical": {"label": "Medical", "color": "#ff5d5d", "match": [
+   {"amenity": ["hospital", "clinic", "doctors", "pharmacy", "dentist", "veterinary"]},
+   {"emergency": ["ambulance_station", "defibrillator"]},
+   {"healthcare": ["hospital", "clinic", "centre", "doctor", "pharmacy", "blood_donation"]}]},
+ "fuel": {"label": "Fuel", "color": "#ffb020", "match": [
+   {"amenity": ["fuel", "charging_station"]},
+   {"shop": ["gas"]},
+   {"waterway": ["fuel"]}]},
+ "power": {"label": "Power", "color": "#f5e642", "match": [
+   {"power": ["plant", "substation", "generator"]}]},
+ "shelter": {"label": "Shelter and safety", "color": "#8fd18f", "match": [
+   {"amenity": ["shelter", "fire_station", "police", "community_centre"]},
+   {"emergency": ["assembly_point"]},
+   {"tourism": ["alpine_hut", "wilderness_hut", "camp_site"]},
+   {"military": ["bunker"]}]},
+ "supply": {"label": "Supply", "color": "#c59bff", "match": [
+   {"shop": ["supermarket", "convenience", "hardware", "doityourself", "outdoor", "agrarian", "farm"]},
+   {"amenity": ["marketplace"]}]},
+ "comms": {"label": "Communications", "color": "#5ee6d0", "match": [
+   {"man_made": ["communications_tower"]},
+   {"tower:type": ["communication"]},
+   {"emergency": ["phone"]},
+   {"amenity": ["telephone"]}]},
+ "transport": {"label": "Transport", "color": "#b0b7c3", "match": [
+   {"aeroway": ["aerodrome", "helipad"]},
+   {"amenity": ["ferry_terminal"]},
+   {"railway": ["station"]},
+   {"leisure": ["marina"]}]}
+}
