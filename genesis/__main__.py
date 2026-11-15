@@ -1,10 +1,11 @@
 """Genesis command line. Run `genesis help` for the list."""
 
 import argparse
+import subprocess
 import sys
 
 from . import __version__, catalog
-from .util import human
+from .util import FetchError, human
 
 
 def cmd_lint(args):
@@ -168,6 +169,14 @@ def main(argv=None):
     except KeyboardInterrupt:
         print("interrupted", file=sys.stderr)
         return 130
+    except FetchError as e:
+        # A source that is down or turns the connection away is not a bug: one line, no traceback.
+        print("genesis: %s" % e, file=sys.stderr)
+        return 1
+    except subprocess.CalledProcessError as e:
+        tool = e.cmd[0] if isinstance(e.cmd, (list, tuple)) else str(e.cmd).split()[0]
+        print("genesis: %s stopped with exit code %s" % (tool, e.returncode), file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":

@@ -1,7 +1,10 @@
 """Offline tests for sources that drift: GitHub releases, SourceForge folders, "latest" links."""
 
+import contextlib
+import io
 import json
 import os
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -9,7 +12,8 @@ import unittest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
-from genesis import catalog, maps, resolvers  # noqa: E402
+from genesis import catalog, maps, poi, resolvers  # noqa: E402
+from genesis.__main__ import main  # noqa: E402
 from genesis.util import FetchError  # noqa: E402
 
 API = "https://api.github.com/repos/o/r/releases"
@@ -211,6 +215,32 @@ class PlanetBuildTests(unittest.TestCase):
             path = os.path.join(vault, "maps", "planet.pmtiles")
             open(path, "w").close()
             self.assertEqual(maps.planet_source(vault, Pages({})), path)
+
+
+class CommandLineTests(unittest.TestCase):
+    """A source that is down, or a tool that stops, is reported in one line."""
+
+    def run_build(self, failure):
+        def fail(region, vault):
+            raise failure
+        real, err = poi.fetch_region, io.StringIO()
+        poi.fetch_region = fail
+        try:
+            with tempfile.TemporaryDirectory() as vault, contextlib.redirect_stderr(err):
+                code = main(["poi", "build", "--region", "nowhere", "--vault", vault])
+        finally:
+            poi.fetch_region = real
+        return code, err.getvalue()
+
+    def test_refused_download(self):
+        code, said = self.run_build(FetchError("curl exit 35 for https://example.invalid/nowhere.osm.pbf"))
+        self.assertEqual(code, 1)
+        self.assertEqual(said.strip(), "genesis: curl exit 35 for https://example.invalid/nowhere.osm.pbf")
+
+    def test_tool_that_stops(self):
+        code, said = self.run_build(subprocess.CalledProcessError(3, ["/usr/bin/osmium", "export"]))
+        self.assertEqual(code, 1)
+        self.assertEqual(said.strip(), "genesis: /usr/bin/osmium stopped with exit code 3")
 
 
 if __name__ == "__main__":
