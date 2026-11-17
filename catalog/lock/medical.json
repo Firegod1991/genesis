@@ -20,6 +20,76 @@
    "title": "Genomics Education Programme",
    "version": "2026-09"
   },
+  "how_to_live_better_en": {
+   "date": "2026-10-26",
+   "dest": "documents/health",
+   "files": [
+    {
+     "filename": "HowToLiveBetter-en.pdf",
+     "sha256": "3e332a2701a4194bd2ca3736f2cd5f440885f2e7b8fa81e5adee383ec12c24a3",
+     "size": 5528900,
+     "url": "https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-en.pdf"
+    }
+   ],
+   "home": "https://github.com/eternity4719/HowToLiveBetter",
+   "kind": "document",
+   "license": "CC BY 4.0",
+   "note": "Translated from a widely read Chinese guide. Every rule gives its cost, its benefit, an evidence grade and the study behind it. Start with chapter 13, Emergencies: what to do first. Laws, prices and phone numbers are those of China. A reader's translation, not reviewed by the authors: where they differ, the Chinese original is right.",
+   "tags": [
+    "health",
+    "emergency"
+   ],
+   "tier": "seed",
+   "title": "How to Live Better: an evidence based guide to emergencies, health and money (English translation)",
+   "version": "2026-10-26"
+  },
+  "how_to_live_better_en_page": {
+   "date": "2026-10-26",
+   "dest": "documents/health",
+   "files": [
+    {
+     "filename": "HowToLiveBetter-en.html",
+     "sha256": "1dd90a2995adf0ffda81d958e7f4a1e842c56df4f5ecbd0b1c81a0f153a27495",
+     "size": 5132778,
+     "url": "https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-en.html"
+    }
+   ],
+   "home": "https://github.com/eternity4719/HowToLiveBetter",
+   "kind": "document",
+   "license": "CC BY 4.0",
+   "note": "The same book as a single page with its own search box. Opens in any browser with no connection.",
+   "tags": [
+    "health",
+    "emergency"
+   ],
+   "tier": "seed",
+   "title": "How to Live Better (English translation, one searchable page)",
+   "version": "2026-10-26"
+  },
+  "how_to_live_better_zh": {
+   "date": "2026-11-16",
+   "dest": "documents/health",
+   "files": [
+    {
+     "filename": "HowToLiveBetter.pdf",
+     "sha256": "d46759828c3483be49c502f0c79c5dd1a421e950a13a77545d0437fa3e7a6874",
+     "size": 11249887,
+     "url": "https://github.com/eternity4719/HowToLiveBetter/releases/download/epub-latest/HowToLiveBetter.pdf"
+    }
+   ],
+   "home": "https://github.com/eternity4719/HowToLiveBetter",
+   "kind": "document",
+   "lang": "zho",
+   "license": "CC BY 4.0",
+   "note": "Every rule gives its cost, its benefit, an evidence grade and the study behind it. Start with chapter 13, Emergencies: what to do first.",
+   "tags": [
+    "health",
+    "emergency"
+   ],
+   "tier": "seed",
+   "title": "高性价比人生指南 (How to Live Better, the Chinese original)",
+   "version": "2026-11-16"
+  },
   "irp.fas.org_en_military-medicine": {
    "date": "2026-10-31",
    "dest": "zim",

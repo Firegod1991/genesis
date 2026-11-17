@@ -1,5 +1,39 @@
 {
  "items": {
+  "ardopcf": {
+   "date": "2024-11-01",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "ardopcf_amd64_Linux_64",
+     "platform": "linux-x64",
+     "size": 743344,
+     "url": "https://github.com/pflarue/ardop/releases/download/1.0.4.1.3/ardopcf_amd64_Linux_64"
+    },
+    {
+     "filename": "ardopcf_arm_Linux_64",
+     "platform": "linux-arm64",
+     "size": 798384,
+     "url": "https://github.com/pflarue/ardop/releases/download/1.0.4.1.3/ardopcf_arm_Linux_64"
+    },
+    {
+     "filename": "ardopcf_amd64_Windows_64.exe",
+     "platform": "windows-x64",
+     "size": 910722,
+     "url": "https://github.com/pflarue/ardop/releases/download/1.0.4.1.3/ardopcf_amd64_Windows_64.exe"
+    }
+   ],
+   "kind": "archive",
+   "license": "MIT",
+   "note": "The free modem that lets Pat send email over shortwave.",
+   "tags": [
+    "ham",
+    "email"
+   ],
+   "tier": "seed",
+   "title": "ardopcf (ARDOP modem: Winlink email over HF with a sound card)",
+   "version": "1.0.4.1.3"
+  },
   "chirp": {
    "date": "2026-11-13",
    "dest": "radio",
@@ -162,6 +196,33 @@
    "tier": "ark",
    "title": "FreeDV (digital voice on HF)",
    "version": "2.4.1"
+  },
+  "gpredict": {
+   "date": "2026-11-01",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "gpredict_2.7-windows_amd64.zip",
+     "platform": "windows-x64",
+     "sha256": "819028c1c173ede85ff82357580706af380b414edc0755eec5df218a3150d77f",
+     "size": 31141335,
+     "url": "https://github.com/csete/gpredict/releases/download/v2.7/gpredict_2.7-windows_amd64.zip"
+    },
+    {
+     "filename": "gpredict-v2.7.tar.gz",
+     "platform": "source",
+     "url": "https://github.com/csete/gpredict/archive/refs/tags/v2.7.tar.gz"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 2.0",
+   "note": "Uses the orbit files in this pack to say when a weather or amateur satellite rises over you.",
+   "tags": [
+    "satellite"
+   ],
+   "tier": "ark",
+   "title": "Gpredict (predict satellite passes)",
+   "version": "2.7"
   },
   "gqrx": {
    "date": "2025-05-27",
@@ -358,6 +419,33 @@
    "title": "Meshtastic firmware (nRF52840 boards)",
    "version": "2.7.26.54e0d8d"
   },
+  "nanovna_saver": {
+   "date": "2025-02-24",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "nanovna-saver.raspi",
+     "platform": "linux-arm64",
+     "size": 112099520,
+     "url": "https://github.com/NanoVNA-Saver/nanovna-saver/releases/download/v0.7.3/nanovna-saver.raspi"
+    },
+    {
+     "filename": "NanoVNASaver.x64.zip",
+     "platform": "windows-x64",
+     "size": 95505059,
+     "url": "https://github.com/NanoVNA-Saver/nanovna-saver/releases/download/v0.7.3/NanoVNASaver.x64.zip"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 3.0",
+   "tags": [
+    "ham",
+    "antenna"
+   ],
+   "tier": "ark",
+   "title": "NanoVNA Saver (measure and tune antennas with a NanoVNA)",
+   "version": "0.7.3"
+  },
   "nomadnet": {
    "date": "2026-11-07",
    "dest": "radio",
@@ -460,6 +548,50 @@
    "tier": "ark",
    "title": "RNode firmware (LoRa radios for Reticulum)",
    "version": "1.86"
+  },
+  "rtl_433": {
+   "date": "2025-12-12",
+   "dest": "radio",
+   "files": [
+    {
+     "filename": "rtl_433-rtlsdr-openssl3-Linux-amd64-25.12.zip",
+     "platform": "linux-x64",
+     "sha256": "db590bcfc5600b75dfbb06953a081ca2fbf5cc709f0b7aaa3e11129caf97c84b",
+     "size": 492586,
+     "url": "https://github.com/merbanan/rtl_433/releases/download/25.12/rtl_433-rtlsdr-openssl3-Linux-amd64-25.12.zip"
+    },
+    {
+     "filename": "rtl_433-rtlsdr-openssl3-Linux-arm64-25.12.zip",
+     "platform": "linux-arm64",
+     "sha256": "e653af3925d705a5d90efb2b9cdc29dae14986c6e2170f6a654c5e4f6b2bf141",
+     "size": 500523,
+     "url": "https://github.com/merbanan/rtl_433/releases/download/25.12/rtl_433-rtlsdr-openssl3-Linux-arm64-25.12.zip"
+    },
+    {
+     "filename": "rtl_433-win-x64-25.12.zip",
+     "platform": "windows-x64",
+     "sha256": "ed42651d2a2a94f6419f7675955bd65449d8247e27822c65c363595b715b7de6",
+     "size": 1806689,
+     "url": "https://github.com/merbanan/rtl_433/releases/download/25.12/rtl_433-win-x64-25.12.zip"
+    },
+    {
+     "filename": "rtl_433-rtlsdr-MacOS-arm64-25.12.zip",
+     "platform": "macos-arm64",
+     "sha256": "62d5f7d4963ad2feb93ad40a927c1804f59269a09ee7850c9e536f7e167a9256",
+     "size": 382344,
+     "url": "https://github.com/merbanan/rtl_433/releases/download/25.12/rtl_433-rtlsdr-MacOS-arm64-25.12.zip"
+    }
+   ],
+   "kind": "archive",
+   "license": "GPL 2.0",
+   "note": "Reads the wireless thermometers, rain gauges and tank sensors already around you with a cheap SDR dongle.",
+   "tags": [
+    "sdr",
+    "sensors"
+   ],
+   "tier": "seed",
+   "title": "rtl_433 (decode weather stations and other wireless sensors)",
+   "version": "25.12"
   },
   "rtl_sdr_blog_drivers": {
    "date": "2026-08-10",
@@ -713,6 +845,26 @@
    "tier": "seed",
    "title": "Satellite orbits: weather (TLE)",
    "version": "current"
+  },
+  "wireless_networking_developing_world": {
+   "date": "2013-04-15",
+   "dest": "documents/networks",
+   "files": [
+    {
+     "filename": "wireless_networking_in_the_developing_world.pdf",
+     "size": 10426371,
+     "url": "https://wndw.net/pdf/wndw3-en/wndw3-ebook.pdf"
+    }
+   ],
+   "kind": "document",
+   "license": "CC BY-SA 3.0",
+   "tags": [
+    "network",
+    "mesh"
+   ],
+   "tier": "seed",
+   "title": "Wireless Networking in the Developing World (build long range WiFi links and mesh networks)",
+   "version": "2013-04-15"
   },
   "wsjtx": {
    "date": "2025-09-14",

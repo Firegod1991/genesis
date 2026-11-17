@@ -6,9 +6,9 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
-| seed | 395 | 23.8 GB | 44 |
-| ark | 652 | 782.3 GB | 88 |
-| eden | 844 | 2.0 TB | 107 |
+| seed | 400 | 23.8 GB | 44 |
+| ark | 660 | 782.3 GB | 90 |
+| eden | 852 | 2.0 TB | 109 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -490,6 +490,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Alpine Linux (extended) | `alpine_extended` | eden | 3.24.4 | 1.5 GB |  |
 | Proxmox VE (arm64) | `proxmox_ve_arm64` | eden | 9.2-1 | 1.6 GB |  |
 | Home Assistant OS (power and sensor monitoring) | `home_assistant_os` | eden | 18.5 | 881.1 MB |  |
+| Collapse OS (an operating system for machines built from scavenged parts) | `collapseos` | ark | 2025-12-03 | 2.5 MB | GPL 3.0 |
 
 ## Knowledge
 
@@ -1519,6 +1520,9 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Libre Pathology | `librepathology_en_all.maxi` | eden | 2026-09 | 95.3 MB |  |
 | Skin of Color Society | `skin-of-color-society_en_all` | eden | 2026-05 | 1.1 GB |  |
 | Genomics Education Programme | `genomicseducation_en_all` | eden | 2026-09 | 670.2 MB |  |
+| How to Live Better: an evidence based guide to emergencies, health and money (English translation) | `how_to_live_better_en` | seed | 2026-10-26 | 5.5 MB | CC BY 4.0 |
+| How to Live Better (English translation, one searchable page) | `how_to_live_better_en_page` | seed | 2026-10-26 | 5.1 MB | CC BY 4.0 |
+| 高性价比人生指南 (How to Live Better, the Chinese original) | `how_to_live_better_zh` | seed | 2026-11-16 | 11.2 MB | CC BY 4.0 |
 
 <details><summary><b>wikimed_every_language</b>: 25 items, 5.3 GB, tier seed</summary>
 
@@ -1582,6 +1586,11 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | MeshCore firmware (source) | `meshcore_firmware` | ark | 1.18.0 |  | MIT |
 | HackRF firmware and tools | `hackrf_tools` | ark | 2026.01.3 | 25.9 MB | GPL 2.0 |
 | RTL-SDR Blog drivers (source) | `rtl_sdr_blog_drivers` | ark | 1.4.0 |  | GPL 2.0 |
+| rtl_433 (decode weather stations and other wireless sensors) | `rtl_433` | seed | 25.12 | 3.2 MB | GPL 2.0 |
+| ardopcf (ARDOP modem: Winlink email over HF with a sound card) | `ardopcf` | seed | 1.0.4.1.3 | 2.5 MB | MIT |
+| NanoVNA Saver (measure and tune antennas with a NanoVNA) | `nanovna_saver` | ark | 0.7.3 | 207.6 MB | GPL 3.0 |
+| Gpredict (predict satellite passes) | `gpredict` | ark | 2.7 | 31.1 MB | GPL 2.0 |
+| Wireless Networking in the Developing World (build long range WiFi links and mesh networks) | `wireless_networking_developing_world` | seed | 2013-04-15 | 10.4 MB | CC BY-SA 3.0 |
 
 ## Scripture
 
@@ -2958,7 +2967,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Useful Wild Plants of the United States and Canada (Charles Francis Saunders, 1920) | `useful_wild_plants_us` | seed | 2023-12-23 | 19.1 MB | Public domain |
 | Food Plants of the North American Indians (Elias Yanovsky, USDA, 1936) | `food_plants_north_american_indians` | seed | 2023-11-11 | 8.2 MB | US government work |
 | Facts on Edible Wild Greens in Maine (University of Maine Cooperative Extension) | `edible_wild_greens_maine` | seed | 2022-06-09 | 170 KB | Free from the publisher |
-| Iroquois Uses of Maize and Other Food Plants (Arthur C. Parker, New York State Museum, 1910) | `iroquois_food_plants` | seed | 2023-11-13 (stale) | 28.0 MB | Public domain |
+| Iroquois Uses of Maize and Other Food Plants (Arthur C. Parker, New York State Museum, 1910) | `iroquois_food_plants` | seed | 2023-11-13 | 28.0 MB | Public domain |
 | Uses of Plants by the Chippewa Indians (Frances Densmore, Smithsonian, 1928) | `chippewa_plant_uses` | seed | 2024-02-02 | 18.1 MB | US government work |
 | Forgotten Foods: Introduction to Wild Edible Plants (Mississippi State University Extension) | `wild_edible_plants_primer` | seed | 2026-02-04 | 116 KB | Free to copy unchanged for nonprofit teaching, with credit |
 | Edible and Poisonous Plants of the Caribbean Region (US Navy, 1944) | `edible_poisonous_plants_caribbean` | seed | 2024-07-08 | 12.9 MB | US government work |
@@ -3041,7 +3050,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Syncthing (sync folders between machines, no cloud) | `syncthing` | ark | 2.1.7 | 54.6 MB | MPL 2.0 |
 | restic (encrypted backups) | `restic` | ark | 0.19.1 | 40.1 MB | BSD 2 Clause |
 | Ollama (run models without Docker) | `ollama_runtime` | ark | 0.40.16 | 5.2 GB | MIT |
-| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12458 | 85.0 MB | MIT |
+| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12463 | 85.0 MB | MIT |
 | yt-dlp (save video while the internet lasts) | `yt_dlp` | ark | 2026.10.26 | 143.0 MB | Unlicense |
 | FFmpeg (static builds) | `ffmpeg` | ark | 2026-11-16 | 491.9 MB | GPL 3.0 |
 | VLC for Windows | `vlc_windows` | ark | 3.0.24 | 46.3 MB | GPL 2.0 |

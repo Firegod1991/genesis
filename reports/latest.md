@@ -2,68 +2,41 @@
 
 | Pack | Items | New | Updated | Removed | Failed |
 |---|---|---|---|---|---|
-| ai | 17 | 2 | 0 | 0 | 0 |
-| apps | 23 | 6 | 0 | 0 | 0 |
+| ai | 17 | 0 | 0 | 0 | 0 |
+| apps | 23 | 0 | 0 | 0 | 0 |
 | code | 375 | 0 | 0 | 0 | 0 |
-| isos | 24 | 0 | 0 | 0 | 0 |
+| isos | 25 | 1 | 0 | 0 | 0 |
 | knowledge | 689 | 0 | 0 | 0 | 0 |
-| library | 252 | 2 | 0 | 0 | 0 |
+| library | 252 | 0 | 0 | 0 | 0 |
 | maps | 6 | 0 | 0 | 0 | 0 |
-| medical | 42 | 0 | 0 | 0 | 0 |
-| radio | 28 | 0 | 0 | 0 | 0 |
+| medical | 45 | 3 | 0 | 0 | 0 |
+| radio | 33 | 5 | 0 | 0 | 0 |
 | scripture | 1301 | 0 | 0 | 0 | 0 |
-| services | 25 | 0 | 1 | 0 | 0 |
-| survival | 76 | 0 | 0 | 0 | 1 |
-| tools | 29 | 13 | 1 | 0 | 0 |
+| services | 25 | 0 | 0 | 0 | 0 |
+| survival | 76 | 0 | 0 | 0 | 0 |
+| tools | 29 | 0 | 1 | 0 | 0 |
 
-## New in ai
+## New in isos
 
-* `deepseek_r1_8b`: DeepSeek R1 8B (step by step reasoning)
-* `glm_ocr`: GLM-OCR (reads printed pages, tables and formulas from images)
+* `collapseos`: Collapse OS (an operating system for machines built from scavenged parts)
 
-## New in apps
+## New in medical
 
-* `ankidroid`: AnkiDroid (flashcards)
-* `columba`: Columba (Reticulum messenger over Bluetooth, WiFi and LoRa)
-* `koreader`: KOReader (reads PDF, EPUB and DjVu)
-* `localsend_android`: LocalSend (send files between nearby devices)
-* `meshenger`: Meshenger (voice and video calls on a local network, no server)
-* `wifi_analyzer`: WiFi Analyzer (pick a clear channel for the hotspot)
+* `how_to_live_better_en`: How to Live Better: an evidence based guide to emergencies, health and money (English translation)
+* `how_to_live_better_en_page`: How to Live Better (English translation, one searchable page)
+* `how_to_live_better_zh`: 高性价比人生指南 (How to Live Better, the Chinese original)
 
-## New in library
+## New in radio
 
-* `chinese_poetry`: 中华古诗词数据库 (classical Chinese poetry: 55,000 Tang and 260,000 Song poems)
-* `howtocook_zh`: 程序员做饭指南 HowToCook (a precise home cooking guide, in Chinese)
-
-## Updated in services
-
-* `img_adsb`: ed8a1395ad66 to a0a6c252492e
+* `ardopcf`: ardopcf (ARDOP modem: Winlink email over HF with a sound card)
+* `gpredict`: Gpredict (predict satellite passes)
+* `nanovna_saver`: NanoVNA Saver (measure and tune antennas with a NanoVNA)
+* `rtl_433`: rtl_433 (decode weather stations and other wireless sensors)
+* `wireless_networking_developing_world`: Wireless Networking in the Developing World (build long range WiFi links and mesh networks)
 
 ## Updated in tools
 
-* `llama_cpp`: b12455 to b12458
-
-## New in tools
-
-* `anki`: Anki (flashcards that schedule what to review)
-* `copyparty`: copyparty (turn any computer into a file server with one file)
-* `freecad`: FreeCAD (design parts in 3D)
-* `kicad`: KiCad (design circuit boards)
-* `localsend`: LocalSend (send files between nearby devices, no internet)
-* `openscad`: OpenSCAD (design parts by writing code)
-* `orcaslicer`: OrcaSlicer (prepare 3D prints for almost any printer)
-* `radpro`: Rad Pro (open firmware for common handheld Geiger counters)
-* `rustdesk`: RustDesk (remote desktop that works on a local network)
-* `umi_ocr`: Umi-OCR (read text out of photos and scans, offline)
-* `universal_gcode_sender`: Universal G-code Sender (run CNC mills, routers and lasers)
-* `veracrypt`: VeraCrypt (encrypted drives and containers)
-* `whisper_cpp`: whisper.cpp (speech to text engine, source)
-
-## Failed
-
-These lines kept their last known good version where one existed.
-
-* **survival** `iroquois_food_plants`: FetchError: <urlopen error _ssl.c:1063: The handshake operation timed out> for https://archive.org/download/iroquoisusesofma00parkrich/iroquoisusesofma00parkrich.pdf
+* `llama_cpp`: b12458 to b12463
 
 ## Warnings
 

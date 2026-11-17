@@ -281,32 +281,32 @@
    "dest": "tools",
    "files": [
     {
-     "filename": "llama-b12458-bin-ubuntu-x64.tar.gz",
+     "filename": "llama-b12463-bin-ubuntu-x64.tar.gz",
      "platform": "linux-x64",
-     "sha256": "7cbd93c44b0c74b96c4ff99f9ab3c8cff2002c05307add362f0d50e175a3fa79",
-     "size": 23535948,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12458/llama-b12458-bin-ubuntu-x64.tar.gz"
+     "sha256": "0a8c39f7b8e765d84f7bca57883309b33c6b57fd79b016b43f502a8ef2941cff",
+     "size": 23535730,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12463/llama-b12463-bin-ubuntu-x64.tar.gz"
     },
     {
-     "filename": "llama-b12458-bin-ubuntu-arm64.tar.gz",
+     "filename": "llama-b12463-bin-ubuntu-arm64.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "68d190366f7f107ce4271273fedb7aabbb0bb4530853e09e4928bc422b03e8b8",
-     "size": 19161529,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12458/llama-b12458-bin-ubuntu-arm64.tar.gz"
+     "sha256": "359c81f7b6fb3806c72599e834954360317f2016bb5e3349f05dcefa441b03ce",
+     "size": 19164540,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12463/llama-b12463-bin-ubuntu-arm64.tar.gz"
     },
     {
-     "filename": "llama-b12458-bin-win-cpu-x64.zip",
+     "filename": "llama-b12463-bin-win-cpu-x64.zip",
      "platform": "windows-x64",
-     "sha256": "ff05445f5b5253d02d5033bf8d5deb360455bd99c3c216af0825a5e1dac87374",
-     "size": 25272066,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12458/llama-b12458-bin-win-cpu-x64.zip"
+     "sha256": "40f2b4093de8b015b9fee641d0415b01db7634aeaae24a370a8bdae571d716bd",
+     "size": 25272860,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12463/llama-b12463-bin-win-cpu-x64.zip"
     },
     {
-     "filename": "llama-b12458-bin-macos-arm64.tar.gz",
+     "filename": "llama-b12463-bin-macos-arm64.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "d1073215821d6cccecf639661e26bf9d154f92f1193625782fcd8714df9aa293",
-     "size": 17065183,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12458/llama-b12458-bin-macos-arm64.tar.gz"
+     "sha256": "6b0ec1570152cfdf36969fc9f2f9b26d4ae7d5ce267a3e1658d6c1f849e3c35a",
+     "size": 17065365,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12463/llama-b12463-bin-macos-arm64.tar.gz"
     }
    ],
    "kind": "tool",
@@ -317,7 +317,7 @@
    ],
    "tier": "ark",
    "title": "llama.cpp (run GGUF models directly)",
-   "version": "b12458"
+   "version": "b12463"
   },
   "localsend": {
    "date": "2026-08-21",
