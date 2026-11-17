@@ -130,6 +130,79 @@ class ParallelFetchTests(unittest.TestCase):
         self.assertEqual((code, state), (1, {}))
 
 
+class MirrorTests(unittest.TestCase):
+    URL = fetch.KIWIX + "zim/wikipedia/wikipedia_en_medicine_maxi_2026-10.zim"
+    META = ('<metalink><file name="x"><url location="us" priority="1">https://slow.example/kiwix/zim/wikipedia/'
+            'wikipedia_en_medicine_maxi_2026-10.zim</url>\n<url location="us" priority="2">https://quick.example/pub/'
+            'zim/wikipedia/wikipedia_en_medicine_maxi_2026-10.zim</url>\n<url location="de" priority="3">https://dead.'
+            'example/zim/wikipedia/wikipedia_en_medicine_maxi_2026-10.zim</url></file></metalink>')
+    SPEED = {"slow.example": 6e5, "quick.example": 23e6, "dead.example": 0}
+
+    def setUp(self):
+        self.asked, self.timed = [], []
+        fetch._mirror.clear()
+        self.addCleanup(fetch._mirror.clear)
+
+        class Page:
+            def __enter__(page):
+                return page
+
+            def __exit__(page, *exc):
+                return False
+
+            def read(page):
+                return self.META.encode()
+
+        def http_open(url, **kw):
+            self.asked.append(url)
+            return Page()
+
+        def speed(url, seconds=3.0):
+            self.timed.append(url)
+            return self.SPEED[url.split("/")[2]]
+
+        for patch in (mock.patch.object(fetch, "http_open", side_effect=http_open),
+                      mock.patch.object(fetch, "_speed", side_effect=speed)):
+            patch.start()
+            self.addCleanup(patch.stop)
+
+    def test_the_quickest_mirror_is_found_once_and_kept_for_the_folder(self):
+        quick = "https://quick.example/pub/zim/wikipedia/"
+        self.assertEqual(fetch._kiwix_mirror(self.URL, 2e9), quick + "wikipedia_en_medicine_maxi_2026-10.zim")
+        self.assertEqual(self.asked, [self.URL + ".meta4"])
+        self.assertEqual(len(self.timed), 3, "every mirror is timed")
+        other = fetch.KIWIX + "zim/wikipedia/wikipedia_en_all_maxi_2026-08.zim"
+        self.assertEqual(fetch._kiwix_mirror(other, 1e11), quick + "wikipedia_en_all_maxi_2026-08.zim")
+        self.assertEqual(len(self.asked), 1, "the next file in the folder costs no second comparison")
+
+    def test_small_files_and_other_publishers_are_left_alone(self):
+        self.assertIsNone(fetch._kiwix_mirror(self.URL, 5e6))
+        self.assertIsNone(fetch._kiwix_mirror(self.URL, None))
+        self.assertIsNone(fetch._kiwix_mirror("https://example.org/big.iso", 4e9))
+        self.assertEqual(self.asked, [])
+
+    def test_no_mirror_answering_means_the_publishers_own_address(self):
+        self.SPEED = dict.fromkeys(self.SPEED, 0)
+        self.assertIsNone(fetch._kiwix_mirror(self.URL, 2e9))
+
+    def test_a_mirror_that_gives_up_hands_back_to_the_publisher(self):
+        vault = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, vault, ignore_errors=True)
+        dest, tried = os.path.join(vault, "zim", "m.zim"), []
+
+        def transfer(url, part):
+            tried.append(url.split("/")[2])
+            if "quick.example" in url:
+                raise FetchError("curl exit 22 for " + url)
+            with open(part, "w") as f:
+                f.write("zim")
+
+        with mock.patch.object(fetch, "_transfer", side_effect=transfer):
+            fetch._download(self.URL, dest, 2e9)
+        self.assertEqual(tried, ["quick.example", "download.kiwix.org"])
+        self.assertTrue(os.path.isfile(dest))
+
+
 class SealTests(unittest.TestCase):
     def test_a_sealed_drive_proves_itself(self):
         vault = tempfile.mkdtemp()

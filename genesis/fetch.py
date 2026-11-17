@@ -4,6 +4,7 @@ import datetime
 import gzip
 import json
 import os
+import re
 import shutil
 import socket
 import subprocess
@@ -14,6 +15,7 @@ import time
 import urllib.request
 import zipfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from urllib.parse import urlsplit
 
 from . import catalog
 from .util import ROOT, USER_AGENT, FetchError, Net, file_hash, http_open, human, log, read_json, write_json
@@ -23,6 +25,9 @@ STACK_OLLAMA = "http://127.0.0.1:11434"
 _DIRECT = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 # One download at a time can draw a progress bar. Several at once would only scribble over each other.
 PROGRESS = True
+KIWIX = "https://download.kiwix.org/"
+# For this run: a folder on the Kiwix server, and the address of that folder on the quickest mirror.
+_mirror, _mirror_lock = {}, threading.Lock()
 
 
 def vault_path(args=None):
@@ -133,12 +138,58 @@ def plan(args):
 
 # ------------------------------------------------------------------ download and verify
 
-def _download(url, dest, size=None):
-    part = dest + ".part"
-    os.makedirs(os.path.dirname(dest), exist_ok=True)
-    if size and os.path.exists(part) and os.path.getsize(part) == size:
-        os.replace(part, dest)
-        return
+def _speed(url, seconds=3.0):
+    """Bytes a second from the start of a file. Nothing at all when the mirror will not answer."""
+    start, got = time.time(), 0
+    try:
+        with http_open(url, headers={"Range": "bytes=0-67108863"}, retries=1, timeout=6) as r:
+            while time.time() - start < seconds:
+                block = r.read(256 * 1024)
+                if not block:
+                    break
+                got += len(block)
+    except (FetchError, OSError):
+        return 0
+    return got / max(time.time() - start, 0.001)
+
+
+def _pick_mirror(url):
+    """Time every mirror that carries this file for a few seconds and return the folder on the quickest."""
+    name = url.rsplit("/", 1)[1]
+    try:
+        with http_open(url + ".meta4", retries=2, timeout=20) as r:
+            listed = re.findall(r"<url[^>]*>\s*(https://[^<\s]+)\s*</url>", r.read().decode("utf-8", "replace"))
+    except (FetchError, OSError):
+        return None
+    listed = [u for u in listed if u.endswith("/" + name)]
+    if len(listed) < 2:
+        return None
+    with ThreadPoolExecutor(max_workers=len(listed)) as pool:
+        speeds = list(pool.map(_speed, listed))
+    best = max(range(len(listed)), key=speeds.__getitem__)
+    if not speeds[best]:
+        return None
+    log("  mirror %s, %s a second" % (urlsplit(listed[best]).hostname, human(speeds[best])))
+    return listed[best].rsplit("/", 1)[0]
+
+
+def _kiwix_mirror(url, size):
+    """The same file on the quickest Kiwix mirror, or None to take the one the publisher hands out.
+
+    The publisher's own address sends everyone to a nearby mirror, and near is not always quick: forty
+    times slower than the best one has been measured. Every download is still checked against the
+    checksum the publisher lists, so a mirror can be slow or missing a file but never wrong.
+    """
+    if not url.startswith(KIWIX) or not size or size < 50e6:
+        return None  # small files finish before a comparison would
+    folder, name = url.rsplit("/", 1)
+    with _mirror_lock:
+        if folder not in _mirror:
+            _mirror[folder] = _pick_mirror(url)
+        return _mirror[folder] + "/" + name if _mirror[folder] else None
+
+
+def _transfer(url, part):
     if shutil.which("curl"):
         # A link that stalls is dropped after two minutes below 1 KB/s and resumed, not waited on forever.
         cmd = ["curl", "-fL", "--retry", "5", "--retry-delay", "5", "--connect-timeout", "30",
@@ -157,6 +208,23 @@ def _download(url, dest, size=None):
             mode = "ab" if start and r.status == 206 else "wb"
             with open(part, mode) as f:
                 shutil.copyfileobj(r, f, 1024 * 1024)
+
+
+def _download(url, dest, size=None):
+    part = dest + ".part"
+    os.makedirs(os.path.dirname(dest), exist_ok=True)
+    if size and os.path.exists(part) and os.path.getsize(part) == size:
+        os.replace(part, dest)
+        return
+    quick = _kiwix_mirror(url, size)
+    if quick:
+        try:
+            _transfer(quick, part)
+        except (FetchError, OSError) as e:
+            log("  that mirror gave up (%s): back to the publisher's own address" % e)
+            _transfer(url, part)
+    else:
+        _transfer(url, part)
     os.replace(part, dest)
 
 
