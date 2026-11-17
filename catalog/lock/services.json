@@ -200,12 +200,12 @@
   },
   "img_routing": {
    "dest": "images",
-   "digest": "sha256:7a1c2e6c86122af34c315430c646fe5790f9dc3275c47ad586453411a12ee6a2",
+   "digest": "sha256:693617873d42f24d9023eaa9aa002dccd832c9629c9ce8b60eb4ff30547215e1",
    "image": "ghcr.io/valhalla/valhalla-scripted:latest",
    "kind": "image",
    "tier": "ark",
    "title": "Valhalla (offline turn by turn routing)",
-   "version": "7a1c2e6c8612"
+   "version": "693617873d42"
   },
   "img_translate": {
    "dest": "images",

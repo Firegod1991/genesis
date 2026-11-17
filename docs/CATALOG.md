@@ -7,8 +7,8 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
 | seed | 400 | 23.8 GB | 44 |
-| ark | 655 | 467.6 GB | 90 |
-| eden | 847 | 1.7 TB | 109 |
+| ark | 656 | 467.6 GB | 90 |
+| eden | 848 | 1.7 TB | 109 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -2936,7 +2936,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Mumble server (voice on the local network) | `img_voice` | ark | 018ad3515932 |  |  |
 | ADS-B aircraft tracker (readsb and tar1090) | `img_adsb` | ark | a0a6c252492e |  |  |
 | AIS-catcher (ship tracking) | `img_ais` | ark | 124f510731c9 |  |  |
-| Valhalla (offline turn by turn routing) | `img_routing` | ark | 7a1c2e6c8612 |  |  |
+| Valhalla (offline turn by turn routing) | `img_routing` | ark | 693617873d42 |  |  |
 
 ## Survival
 
@@ -2966,11 +2966,11 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Uses of Plants by the Chippewa Indians (Frances Densmore, Smithsonian, 1928) | `chippewa_plant_uses` | seed | 2024-02-02 | 18.1 MB | US government work |
 | Forgotten Foods: Introduction to Wild Edible Plants (Mississippi State University Extension) | `wild_edible_plants_primer` | seed | 2026-02-04 | 116 KB | Free to copy unchanged for nonprofit teaching, with credit |
 | Edible and Poisonous Plants of the Caribbean Region (US Navy, 1944) | `edible_poisonous_plants_caribbean` | seed | 2024-07-08 | 12.9 MB | US government work |
-| Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919) | `plants_missouri_river_region` | seed | 2023-12-23 (stale) | 7.0 MB | US government work |
+| Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919) | `plants_missouri_river_region` | seed | 2023-12-23 | 7.0 MB | US government work |
 | Culturally Significant Plants (USDA NRCS Plant Materials Center, Manhattan, Kansas) | `culturally_significant_plants` | seed | 2019-05-30 | 3.2 MB | US government work, photos credited inside |
 | Preserving Food in Wyoming (University of Wyoming Extension, 2018) | `preserving_food_in_wyoming` | seed | 2024-02-01 | 7.0 MB | Free from the publisher |
 | Desert Foods for a Resilient Future (University of Arizona Desert Laboratory, 2021) | `desert_foods` | seed | 2022-08-15 | 22.1 MB | Free from the publisher |
-| The Ethno-Botany of the Coahuilla Indians of Southern California (David Prescott Barrows, 1900) | `cahuilla_desert_plants` | seed | 2023-11-10 (stale) | 6.4 MB | Public domain |
+| The Ethno-Botany of the Coahuilla Indians of Southern California (David Prescott Barrows, 1900) | `cahuilla_desert_plants` | seed | 2023-11-10 | 6.4 MB | Public domain |
 | Guide to Island Chumash Plant Usage (Channel Islands National Park) | `chumash_plant_uses` | seed | 2023-07-10 | 1.6 MB | US government work |
 | Special Forest Products: Species Information Guide for the Pacific Northwest (US Forest Service, 2001) | `northwest_forest_plants` | seed | 2025-12-31 | 19.1 MB | US government work |
 | Wildflowers of the National Forests in Alaska (US Forest Service) | `alaska_forest_wildflowers` | seed | 2019-05-30 | 1.1 MB | US government work |
@@ -3062,4 +3062,5 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | KiCad (design circuit boards) | `kicad` | eden | 10.0.8 | 2.4 GB | GPL 3.0 |
 | Universal G-code Sender (run CNC mills, routers and lasers) | `universal_gcode_sender` | eden | 2.1.30 | 1.2 GB | GPL 3.0 |
 | Rad Pro (open firmware for common handheld Geiger counters) | `radpro` | ark | 3.1.1 | 18.6 MB | MIT |
+| QtScrcpy (see and drive an Android phone from a computer, over USB or WiFi) | `qtscrcpy` | ark | 4.2.1 | 121.1 MB | Apache 2.0 |
 
