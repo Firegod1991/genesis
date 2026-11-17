@@ -10,7 +10,7 @@ Genesis turns any computer into a self contained command center that keeps worki
 
 ![The Genesis dashboard: an offline map with the nearest water, medical care, fuel, power and shelter listed by distance and bearing](docs/img/dashboard.png)
 
-The repository holds the brain: the catalog and the tools. Your drive holds the vault: the content itself, from 23 GB to more than 2 TB depending on the tier you pick.
+The repository holds the brain: the catalog and the tools. Your drive holds the vault: the content itself, from 24 GB to more than 2 TB depending on the tier you pick.
 
 ## What is in the catalog
 
@@ -38,8 +38,8 @@ Tiers are cumulative. Sizes are for English content on Linux; more languages add
 
 | Tier | Size | For |
 |---|---|---|
-| **seed** | about 23 GB | A USB stick or a Raspberry Pi. The essentials in every pack. |
-| **ark** | about 750 GB | A 1 TB drive. Full Wikipedia with images, field manuals, every toolchain. |
+| **seed** | about 24 GB | A USB stick or a Raspberry Pi. The essentials in every pack. |
+| **ark** | about 780 GB | A 1 TB drive. Full Wikipedia with images, field manuals, every toolchain. |
 | **eden** | about 2 TB | Everything, including the full detail planet map and the largest libraries. |
 
 ## Quick start
@@ -52,7 +52,7 @@ cd genesis
 bash install.sh                 # base packages, Docker if you agree, the genesis command
 genesis doctor                  # what this machine can carry
 genesis plan --tier seed        # what it costs in disk space
-genesis fetch --tier seed       # download and verify
+genesis fetch --tier seed       # download and verify, four files at a time
 genesis up core                 # dashboard at http://localhost:8080
 genesis timer                   # update everything once a month
 ```
@@ -68,7 +68,7 @@ $env:GENESIS_VAULT = "E:\genesis"
 py dashboard\server.py          # dashboard at http://localhost:8080
 ```
 
-Filling a drive on one machine for another? Name the machine it is for. `genesis fetch --tier seed --platform linux-arm64,android` loads a drive for a Raspberry Pi from any computer.
+Filling a drive on one machine for another? Name the machine it is for. `genesis fetch --tier seed --platform linux-arm64,android` loads a drive for a Raspberry Pi from any computer. The AI models ride along when Ollama is installed on that computer: they go into the vault, never into your own model library.
 
 ## Find water, care, fuel and power with no network
 
