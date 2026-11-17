@@ -48,6 +48,27 @@ The dashboard lists every installed translation under Scripture, source language
 
 The same pack carries the Biblical Hermeneutics, Christianity and Mi Yodeya (Judaism) Stack Exchange archives. These are commentary and discussion, not scripture.
 
+## People, places and events
+
+The seed tier also carries [Theographic Bible Metadata](https://github.com/robertrouse/theographic-bible-metadata) by Robert Rouse of Viz.Bible: a knowledge graph that ties every verse of the King James Version to the people, places and events it mentions.
+
+| Table | What it holds |
+|---|---|
+| People | More than 3,000, each with the verses that name them and, where the text gives it, family and group |
+| Places | About 1,300, nearly all with map coordinates |
+| Events | A dated timeline with the people and places involved |
+| Easton's Bible Dictionary | About 6,500 entries, linked to the people and places |
+
+It comes with the seed tier. To fetch it alone:
+
+```sh
+genesis fetch --id theographic
+```
+
+It lands in `<vault>/study/theographic/` as JSON, CSV and GeoJSON: raw material for study tools, not pages to read. The dashboard does not browse it yet. `geo/bible-places.geojson` opens in any mapping program. The monthly refresh follows the newest commit of that repository.
+
+The data is free to use and copy under CC BY-SA 4.0. If you build on it, credit Theographic and the sources it lists in `docs/data-source-bibliography.md`, some of which carry their own licenses. Its dates follow Dr. Floyd Nolen Jones, *The Chronology of the Old Testament*, which is one chronology among several.
+
 ## Rights
 
 Genesis only lists translations that eBible.org marks as redistributable, and labels each one public domain or copyrighted in the catalog. If you hold rights to a translation and believe it is listed in error, open an issue and it will be removed from the catalog.

@@ -47,8 +47,9 @@ jobs:
       - name: Fetch and verify real content
         run: |
           python3 -m genesis fetch --id devdocs_en_zig --id bible_hboWLC --id bible_engwebp \
-            --id epa_emergency_water_disinfection --id global_power_plants --id map_assets
+            --id epa_emergency_water_disinfection --id global_power_plants --id map_assets --id theographic
           python3 -m genesis verify
+          test -s "$GENESIS_VAULT/study/theographic/json/people.json"
       - name: Build survival layers and a map for Monaco from OpenStreetMap
         run: |
           bash tools/monaco_vault.sh

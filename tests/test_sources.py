@@ -122,6 +122,64 @@ FEED = """<rss><channel>
 </channel></rss>"""
 
 
+class GitHubBranchTests(unittest.TestCase):
+    """Data that lives in a repository with no releases: follow the newest commit on a branch."""
+
+    TIP, OTHER = "0180b4fc418aac2b377ee648a561345745a3bedd", "8f4465358ab70b276e9770cbd7602ec370c1cb78"
+    REFS = "https://github.com/o/data.git/info/refs?service=git-upload-pack"
+    COMMITS = "https://api.github.com/repos/o/data/commits/"
+    # What the git address answers: a length, the commit, a space, the name. The first name also lists abilities.
+    ADVERT = ("001e# service=git-upload-pack\n0000005a" + TIP + " HEAD\x00multi_ack symref=HEAD:refs/heads/master\n"
+              "003f" + TIP + " refs/heads/master\n0041" + TIP + " refs/heads/next-gen\n"
+              "003d" + OTHER + " refs/heads/next\n0000")
+
+    @staticmethod
+    def commit(sha):
+        return {"sha": sha, "commit": {"committer": {"date": "2026-11-16T09:30:00Z"}}}
+
+    def test_default_branch_tip_becomes_one_archive_named_after_the_commit(self):
+        res = resolvers.r_github_branch({"repo": "o/data"}, Pages({self.REFS: self.ADVERT}))
+        self.assertEqual(res["version"], "0180b4f")
+        self.assertEqual(res["files"], [{"url": "https://github.com/o/data/archive/%s.tar.gz" % self.TIP,
+                                         "filename": "data-0180b4f.tar.gz"}])
+        self.assertIsNone(res["date"])  # the API did not answer: the commit alone is enough
+
+    def test_named_branch_is_matched_whole_and_without_the_length_digits(self):
+        res = resolvers.r_github_branch({"repo": "o/data", "branch": "next"}, Pages({self.REFS: self.ADVERT}))
+        self.assertEqual(res["version"], self.OTHER[:7])
+        self.assertTrue(res["files"][0]["url"].endswith("/archive/" + self.OTHER + ".tar.gz"))
+
+    def test_date_comes_from_the_api_when_it_answers(self):
+        net = Pages({self.REFS: self.ADVERT, self.COMMITS + self.TIP: self.commit(self.TIP)})
+        self.assertEqual(resolvers.r_github_branch({"repo": "o/data"}, net)["date"], "2026-11-16")
+
+    def test_api_stands_in_when_the_git_address_will_not_answer(self):
+        net = Pages({self.COMMITS + "HEAD": self.commit(self.TIP), self.COMMITS + "heads/next": self.commit(self.OTHER)})
+        self.assertEqual(resolvers.r_github_branch({"repo": "o/data"}, net)["version"], "0180b4f")
+        res = resolvers.r_github_branch({"repo": "o/data", "branch": "next"}, net)
+        self.assertEqual((res["version"], res["date"]), (self.OTHER[:7], "2026-11-16"))
+
+    def test_missing_branch_or_repository_is_an_error(self):
+        with self.assertRaises(resolvers.ResolveError):
+            resolvers.r_github_branch({"repo": "o/data", "branch": "gone"}, Pages({self.REFS: self.ADVERT}))
+        with self.assertRaises(resolvers.ResolveError):
+            resolvers.r_github_branch({"repo": "o/absent"}, Pages({}))
+
+    def test_archive_lands_without_its_top_folder(self):
+        import tarfile
+        from genesis import fetch
+        with tempfile.TemporaryDirectory() as tmp:
+            src = os.path.join(tmp, "data-0180b4f", "json")
+            os.makedirs(src)
+            with open(os.path.join(src, "people.json"), "w") as f:
+                f.write("[]")
+            ball = os.path.join(tmp, "data-0180b4f.tar.gz")
+            with tarfile.open(ball, "w:gz") as t:
+                t.add(os.path.join(tmp, "data-0180b4f"), arcname="data-0180b4f")
+            fetch._untar(ball, os.path.join(tmp, "vault", "study", "data"))
+            self.assertTrue(os.path.isfile(os.path.join(tmp, "vault", "study", "data", "json", "people.json")))
+
+
 class SourceForgeTests(unittest.TestCase):
     def test_folder_feed_finds_the_newest_upload(self):
         net = Pages({"https://sourceforge.net/projects/disk/rss?path=/stable&limit=100": FEED})

@@ -17,6 +17,7 @@ No code or text from these projects is included here.
 * [Kiwix](https://kiwix.org) and [openZIM](https://openzim.org) package Wikipedia and thousands of other sites for offline use.
 * [Wikimedia](https://wikimediafoundation.org) projects, under Creative Commons licenses.
 * [eBible.org](https://ebible.org) gathers and shares Bible translations in more than a thousand languages.
+* [Theographic Bible Metadata](https://github.com/robertrouse/theographic-bible-metadata) by Robert Rouse of Viz.Bible links the people, places and events of the Bible verse by verse, under CC BY-SA 4.0.
 * [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors made the map of the world, under the Open Database License. [Geofabrik](https://www.geofabrik.de) publishes the regional extracts. [Protomaps](https://protomaps.com) builds the planet into one file.
 * [Project Gutenberg](https://www.gutenberg.org), [iFixit](https://www.ifixit.com), [Khan Academy](https://www.khanacademy.org), [Stack Exchange](https://stackexchange.com) contributors, [DevDocs](https://devdocs.io) and [freeCodeCamp](https://www.freecodecamp.org).
 * The World Resources Institute for the Global Power Plant Database (CC BY 4.0).

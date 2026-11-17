@@ -22,7 +22,7 @@ The repository holds the brain: the catalog and the tools. Your drive holds the 
 | **Medical** | WikiMed in 26 languages, MDWiki, MedlinePlus, NHS medicines, military medicine, veterinary references, the WHO monographs on medicinal plants |
 | **Survival** | US Army field manuals, Ready.gov, water, food and post disaster libraries, iFixit repair guides, the Survivor Library, and a field skills shelf of primary source manuals (see below) |
 | **Maps** | The whole planet as offline vector maps, cut to any region in minutes, plus worldwide survival layers |
-| **Scripture** | 1,296 Bible translations in 1,024 languages from eBible.org, starting with the Hebrew, Greek, Latin and Coptic sources |
+| **Scripture** | 1,296 Bible translations in 1,024 languages from eBible.org, starting with the Hebrew, Greek, Latin and Coptic sources, plus the people, places and events of the Bible as linked data |
 | **Library** | Project Gutenberg in about one hundred languages, Wikisource, sheet music |
 | **Radio** | SDR receivers, ham digital modes, Winlink, Meshtastic, MeshCore and Reticulum firmware and apps, the FCC callsign database, satellite orbits, shortwave schedules |
 | **Code** | The newest stable Go, Rust, Python, Node, Zig, Java, .NET, Julia, Dart, Kotlin and more as offline archives for Linux, Windows and macOS, editors, and documentation for 240 languages and frameworks |
@@ -139,7 +139,7 @@ genesis fetch --pack scripture --tier ark       # every public domain translatio
 genesis fetch --pack scripture --tier eden --lang '*'   # every language
 ```
 
-Seed carries the Westminster Leningrad Codex, the Septuagint, the Greek New Testament in five editions, the Clementine Vulgate and the Coptic New Testament, then Wycliffe, Tyndale, Geneva, King James, Douay Rheims, Young, Darby, the American Standard, the World English Bible and major world languages. The dashboard serves them as readable pages. Details in [docs/SCRIPTURE.md](docs/SCRIPTURE.md).
+Seed carries the Westminster Leningrad Codex, the Septuagint, the Greek New Testament in five editions, the Clementine Vulgate and the Coptic New Testament, then Wycliffe, Tyndale, Geneva, King James, Douay Rheims, Young, Darby, the American Standard, the World English Bible and major world languages. The dashboard serves them as readable pages. Seed also carries [Theographic Bible Metadata](https://github.com/robertrouse/theographic-bible-metadata): more than 3,000 people, about 1,300 places and a timeline of events, each linked to its verses, as open data for anyone building study tools. Details in [docs/SCRIPTURE.md](docs/SCRIPTURE.md).
 
 ## Services
 
