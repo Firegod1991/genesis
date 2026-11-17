@@ -47,6 +47,7 @@ def inspect(vault):
     info["gpus"] = gpus
     info["tools"] = {t: bool(shutil.which(t)) for t in ("docker", "curl", "git", "osmium")}
     info["compose"] = bool(_run(["docker", "compose", "version"]).strip())
+    info["aria2"] = bool(shutil.which("aria2c"))  # optional: very big files from several mirrors at once
     usb = _run(["lsusb"])
     info["sdr"] = sorted({name for usbid, name in SDR_IDS.items() if usbid in usb.lower()})
     info["serial"] = sorted(d for d in os.listdir("/dev") if d.startswith(("ttyUSB", "ttyACM"))) if os.path.isdir("/dev") else []
@@ -81,6 +82,8 @@ def doctor(args):
         print("serial    %s (mesh radios show up here)" % ", ".join(info["serial"]))
     missing = [t for t, ok in info["tools"].items() if not ok] + ([] if info["compose"] else ["docker compose"])
     print("tools     %s" % ("all present" if not missing else "missing: " + ", ".join(missing)))
+    if not info["aria2"]:
+        print("          aria2 is not installed: with it, very big files come from several mirrors at once")
     print()
     print("content tier that fits this drive: %s" % (info["content_tier"] or "none yet: free up space or use a bigger drive"))
     print("AI tier this machine can run:      %s" % (info["ai_tier"] or "none: under 8 GB of RAM"))

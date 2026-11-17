@@ -13,6 +13,7 @@ Genesis separates two things: knowing what the newest version of something is, a
 | `kiwix`, `kiwix_rule` | The Kiwix library catalog. Rules pull in whole families, such as every DevDocs book or Wikipedia in every language, so new books appear with no edit here |
 | `ebible` | The eBible.org translation list, limited to translations it is allowed to share |
 | `github` | The newest release of a repository, matched to each platform. A file the newest release lacks comes from the release before it, and the report says so |
+| `gitee` | The newest release of a repository on Gitee, matched to each platform the same way. Gitee answers this with no account |
 | `github_branch` | The newest commit on a branch, for data kept in a repository that never cuts a release. The download names the commit, so a locked version cannot change |
 | `checksum_file`, `ubuntu`, `openwrt` | The checksum list a distribution publishes beside its images |
 | `toolchain` | The official release feed of each language |
@@ -46,7 +47,9 @@ genesis update       # the same thing, right now
 
 A drive can carry items its tier does not include: `genesis fetch --tier ark --also planet_basemap` adds the whole planet map to an ark drive. The choice is remembered, so every later `genesis update` keeps that item current too.
 
-Downloads run several at once (`--jobs`, 4 unless you say otherwise). While items from other places wait, no single source gets more than half the slots, so one slow mirror cannot hold up everything else.
+Downloads run several at once (`--jobs`, 4 unless you say otherwise). While items from other places wait, no single source gets more than half the slots, so one slow mirror cannot hold up everything else. An item bigger than an even share of the whole run decides when the run ends, so it starts first.
+
+Kiwix files come from the quickest mirrors that carry them. A brand new file that the publisher's own address cannot find yet is asked for from each mirror on its list. With `aria2` installed (`sudo apt install aria2`, and the installer adds it), a file of 20 GB or more comes from several mirrors at once: on a 220 GB library that measured 19 MB a second against 3 from the best single mirror. An interrupted download of that kind is continued by aria2 from its own record of the pieces it has. Nothing changes without aria2, and every file is checked against the publisher's checksum however it arrived.
 
 Publishers reorganize. When several volumes are folded into one (Project Gutenberg did it with four shelves of its English library in November 2026), the refresh drops the old volumes from the catalog and the combined volume records which ones it replaces. A drive that holds the old volumes keeps them until the combined one is downloaded and checked, then removes them. Nothing else is ever removed because a publisher stopped listing it. A partial download of a file the catalog no longer lists can never be finished, so the next fetch clears it away.
 

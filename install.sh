@@ -4,7 +4,7 @@
 #   git clone https://github.com/Firegod1991/genesis && cd genesis && bash install.sh
 #
 # What it does, and nothing else:
-#   1. installs git, curl, python3 and osmium-tool from your distribution
+#   1. installs git, curl, python3, osmium-tool and aria2 from your distribution
 #   2. installs Docker with the official convenience script, if Docker is missing (asks first)
 #   3. creates the vault folder and links `genesis` into /usr/local/bin
 # It never downloads content. You choose that with `genesis fetch`.
@@ -35,6 +35,8 @@ fi
 say "Installing base packages"
 $SUDO apt-get update -qq
 $SUDO apt-get install -y -qq git curl ca-certificates python3 osmium-tool usbutils
+# Optional: with aria2, very big files come down from several mirrors at once.
+$SUDO apt-get install -y -qq aria2 || echo "aria2 is not on offer here. Downloads work without it, one mirror at a time."
 
 if ! command -v docker >/dev/null 2>&1; then
   say "Docker is not installed"
