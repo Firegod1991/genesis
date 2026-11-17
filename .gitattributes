@@ -1,0 +1,8 @@
+# One line ending everywhere, so a copy cloned on Windows still runs on a Raspberry Pi.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.woff2 binary
+*.pmtiles binary
+*.pbf binary
+*.bundle binary

@@ -11,13 +11,17 @@ import tempfile
 import threading
 import unittest
 import urllib.request
+from unittest import mock
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
 from genesis import catalog, maps, poi, resolvers  # noqa: E402
 from genesis.fetch import _safe_join, _untar  # noqa: E402
-from genesis.util import FetchError, fkey, parse_checksums  # noqa: E402
+from genesis.util import FetchError, fkey, memory, parse_checksums, uptime  # noqa: E402
+
+# The systems where the machine facts below must be read, not merely survived.
+MEASURED = sys.platform.startswith("linux") or os.name == "nt"
 
 
 class FakeNet:
@@ -273,9 +277,21 @@ class DashboardTests(unittest.TestCase):
         self.assertEqual(self.get("/")[0], 200)
         status, body, _ = self.get("/api/system")
         self.assertEqual(status, 200)
-        self.assertIn("disk_free", json.loads(body))
+        system = json.loads(body)
+        self.assertIn("disk_free", system)
+        if MEASURED:
+            self.assertGreater(system["ram_total"], 0)
+            self.assertGreaterEqual(system["uptime"], 0)
         self.assertEqual(json.loads(self.get("/api/maps")[1])["maps"][0]["name"], "t")
         self.assertIn("water", json.loads(self.get("/api/poi/categories")[1]))
+
+    def test_system_without_a_load_average(self):
+        # Windows has no os.getloadavg at all, which is not the OSError other systems raise.
+        import server
+        with mock.patch.object(server.os, "getloadavg", side_effect=AttributeError("getloadavg"), create=True):
+            info = server.system()
+        self.assertNotIn("load", info)
+        self.assertIn("disk_free", info)
 
     def test_range_requests(self):
         status, body, headers = self.get("/maps/t.pmtiles", {"Range": "bytes=10-19"})
@@ -286,6 +302,24 @@ class DashboardTests(unittest.TestCase):
     def test_private_files_stay_private(self):
         for path in ("/maps/../.genesis/state.json", "/maps/%2e%2e/.genesis/state.json", "/.genesis/state.json"):
             self.assertEqual(self.get(path)[0], 404, path)
+
+
+class MachineTests(unittest.TestCase):
+    def test_memory_and_uptime(self):
+        total, free = memory()
+        if MEASURED:
+            self.assertGreater(total, 64 * 1024 * 1024)
+            self.assertTrue(0 < free <= total, (total, free))
+            self.assertGreaterEqual(uptime(), 0)
+        else:  # elsewhere an answer may be missing, never wrong
+            self.assertTrue(total is None or total > 0, total)
+            self.assertTrue(free is None or 0 < free <= total, (total, free))
+
+    def test_scripts_keep_unix_line_endings(self):
+        # A copy cloned on Windows has to run on a Raspberry Pi. .gitattributes is what keeps that true.
+        for name in ("install.sh", "bin/genesis", "tools/monaco_vault.sh", "compose.yaml"):
+            with open(os.path.join(ROOT, name), "rb") as f:
+                self.assertNotIn(b"\r", f.read(), name)
 
 
 if __name__ == "__main__":

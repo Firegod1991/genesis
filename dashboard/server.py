@@ -24,7 +24,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
 
 from genesis import __version__, catalog, maps, poi  # noqa: E402
-from genesis.util import read_json  # noqa: E402
+from genesis.util import memory, read_json, uptime  # noqa: E402
 
 STATIC = os.path.join(HERE, "static")
 VAULT = os.path.abspath(os.environ.get("GENESIS_VAULT") or os.path.join(ROOT, "vault"))
@@ -75,19 +75,14 @@ def system():
     info = {"genesis": __version__, "cpus": os.cpu_count()}
     try:
         info["load"] = round(os.getloadavg()[0], 2)
-    except OSError:
+    except (OSError, AttributeError):  # Windows has no load average at all
         pass
-    try:
-        mem = {}
-        with open("/proc/meminfo") as f:
-            for line in f:
-                k, v = line.split(":", 1)
-                mem[k] = int(v.split()[0]) * 1024
-        info["ram_total"], info["ram_free"] = mem.get("MemTotal"), mem.get("MemAvailable")
-        with open("/proc/uptime") as f:
-            info["uptime"] = int(float(f.read().split()[0]))
-    except (OSError, ValueError):
-        pass
+    total, free = memory()
+    if total:
+        info["ram_total"], info["ram_free"] = total, free
+    up = uptime()
+    if up is not None:
+        info["uptime"] = up
     temps = []
     base = "/sys/class/thermal"
     if os.path.isdir(base):

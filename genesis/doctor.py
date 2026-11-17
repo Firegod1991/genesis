@@ -7,7 +7,7 @@ import shutil
 import subprocess
 
 from . import catalog
-from .util import human, read_json
+from .util import human, memory, read_json
 
 # USB ids of common receivers, so we can tell the owner what the radio stack will see.
 SDR_IDS = {"0bda:2838": "RTL-SDR", "0bda:2832": "RTL-SDR", "1d50:6089": "HackRF One", "1d50:60a1": "Airspy",
@@ -23,14 +23,8 @@ def _run(cmd):
 
 
 def _mem_gb():
-    try:
-        with open("/proc/meminfo") as f:
-            for line in f:
-                if line.startswith("MemTotal"):
-                    return int(line.split()[1]) / 1e6
-    except OSError:
-        pass
-    return None
+    total = memory()[0]
+    return total / 1024 / 1e6 if total else None
 
 
 def inspect(vault):

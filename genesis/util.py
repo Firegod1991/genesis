@@ -115,6 +115,57 @@ def human(n):
     return "?"
 
 
+def memory():
+    """Total and free memory in bytes. Either is None where this system will not say."""
+    try:  # Linux
+        mem = {}
+        with open("/proc/meminfo") as f:
+            for line in f:
+                k, v = line.split(":", 1)
+                mem[k] = int(v.split()[0]) * 1024
+        if mem.get("MemTotal"):
+            return mem["MemTotal"], mem.get("MemAvailable")
+    except (OSError, ValueError, IndexError):
+        pass
+    if os.name == "nt":
+        try:
+            import ctypes
+
+            class Status(ctypes.Structure):  # MEMORYSTATUSEX
+                _fields_ = [("size", ctypes.c_ulong), ("load", ctypes.c_ulong)] + [
+                    (name, ctypes.c_ulonglong) for name in
+                    ("total", "free", "page_total", "page_free", "virtual_total", "virtual_free", "extended")]
+
+            status = Status()
+            status.size = ctypes.sizeof(status)
+            if ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(status)):
+                return status.total, status.free
+        except (OSError, AttributeError, ValueError):
+            pass
+    try:  # macOS and the BSDs say how much there is, not how much is free
+        return os.sysconf("SC_PHYS_PAGES") * os.sysconf("SC_PAGE_SIZE"), None
+    except (OSError, AttributeError, ValueError):
+        return None, None
+
+
+def uptime():
+    """Seconds since this machine started, or None where it will not say."""
+    try:  # Linux
+        with open("/proc/uptime") as f:
+            return int(float(f.read().split()[0]))
+    except (OSError, ValueError, IndexError):
+        pass
+    if os.name == "nt":
+        try:
+            import ctypes
+            ticks = ctypes.windll.kernel32.GetTickCount64
+            ticks.restype = ctypes.c_ulonglong
+            return int(ticks() // 1000)
+        except (OSError, AttributeError):
+            pass
+    return None
+
+
 def file_hash(path, algo="sha256", chunk=4 * 1024 * 1024):
     h = hashlib.new(algo)
     with open(path, "rb") as f:
