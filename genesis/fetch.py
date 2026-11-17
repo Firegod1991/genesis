@@ -294,12 +294,19 @@ def _transfer(url, part):
         cmd = ["curl", "-fL", "--retry", "5", "--retry-delay", "5", "--connect-timeout", "30",
                "--speed-limit", "1024", "--speed-time", "120", "-C", "-", "-A", USER_AGENT, "-o", part, url]
         cmd.insert(1, "--progress-bar" if PROGRESS and sys.stderr.isatty() else "-sS")
-        rc = subprocess.call(cmd)
-        if rc == 33:  # server cannot resume: start over once
-            os.remove(part)
+        for _ in range(50):
+            before = os.path.getsize(part) if os.path.exists(part) else 0
             rc = subprocess.call(cmd)
-        if rc != 0:
-            raise FetchError("curl exit %d for %s" % (rc, url))
+            if rc == 33:  # server cannot resume: start over once
+                os.remove(part)
+                before, rc = 0, subprocess.call(cmd)
+            if rc == 0:
+                return
+            if (os.path.getsize(part) if os.path.exists(part) else 0) <= before:
+                break  # nothing arrived: this address does not have it, or the line is down
+            # A long transfer cut off part way has lost nothing: go on from where it stopped.
+            log("  %s was cut off (curl exit %d): going on from where it stopped" % (os.path.basename(part)[:-len(".part")], rc))
+        raise FetchError("curl exit %d for %s" % (rc, url))
     else:
         start = os.path.getsize(part) if os.path.exists(part) else 0
         headers = {"Range": "bytes=%d-" % start} if start else None
@@ -421,6 +428,24 @@ def _check(path, f, net):
             raise FetchError("size mismatch for %s" % path)
         return "size"
     return "none published"
+
+
+def _whole(dest, f, net):
+    """What was checked, when the file is already here and passes: a run that was cut off after a
+    download and before its record leaves one. None when it has to be downloaded."""
+    if not os.path.isfile(dest):
+        return None
+    size = f.get("size")
+    if size and not 0 <= size - os.path.getsize(dest) < 1024:  # Kiwix lists sizes rounded up to the next KiB
+        return None  # another version under the same name, or a file cut short
+    try:
+        how = _check(dest, f, net)
+    except FetchError:
+        return None
+    for left in (dest + ".part", dest + ".part.aria2"):  # a second download of it had begun
+        if os.path.isfile(left):
+            os.remove(left)
+    return how
 
 
 def _safe_join(base, name):
@@ -572,10 +597,11 @@ def _fetch_item(vault, iid, entry, files, net, state, models):
     written = []
     for f in files:
         dest = os.path.join(folder, f["filename"])
-        if not os.path.exists(dest) or (f.get("size") and os.path.getsize(dest) != f["size"]):
+        how = _whole(dest, f, net)
+        if not how:
             log("  get %s (%s)" % (f["filename"], human(f.get("size"))))
             _download(f["url"], dest, f.get("size"))
-        how = _check(dest, f, net)
+            how = _check(dest, f, net)
         log("  ok %s (%s)" % (f["filename"], how))
         written.append(_rel(dest, vault))
         post = entry.get("post")
