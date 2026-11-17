@@ -19,17 +19,17 @@ The repository holds the brain: the catalog and the tools. Your drive holds the 
 | Pack | What you get |
 |---|---|
 | **Knowledge** | Wikipedia in 318 languages, Wikivoyage, Wikibooks, Khan Academy, Stack Exchange, textbooks |
-| **Medical** | WikiMed in 26 languages, MDWiki, MedlinePlus, NHS medicines, military medicine, veterinary references, the WHO monographs on medicinal plants |
+| **Medical** | WikiMed in 26 languages, MDWiki, MedlinePlus, NHS medicines, military medicine, veterinary references, the WHO monographs on medicinal plants, an evidence graded guide to emergencies |
 | **Survival** | US Army field manuals, Ready.gov, water, food and post disaster libraries, iFixit repair guides, the Survivor Library, and a field skills shelf of primary source manuals (see below) |
 | **Maps** | The whole planet as offline vector maps, cut to any region in minutes, plus worldwide survival layers |
 | **Scripture** | 1,296 Bible translations in 1,024 languages from eBible.org, starting with the Hebrew, Greek, Latin and Coptic sources, plus the people, places and events of the Bible as linked data |
 | **Library** | Project Gutenberg in about one hundred languages, Wikisource, sheet music |
-| **Radio** | SDR receivers, ham digital modes, Winlink, Meshtastic, MeshCore and Reticulum firmware and apps, the FCC callsign database, satellite orbits, shortwave schedules |
+| **Radio** | SDR receivers, ham digital modes, Winlink, Meshtastic, MeshCore and Reticulum firmware and apps, the FCC callsign database, satellite orbits and pass prediction, a decoder for weather stations and other wireless sensors, shortwave schedules |
 | **Code** | The newest stable Go, Rust, Python, Node, Zig, Java, .NET, Julia, Dart, Kotlin and more as offline archives for Linux, Windows and macOS, editors, and documentation for 240 languages and frameworks |
 | **Operating systems** | Ubuntu, Debian, Mint, Kali, Tails, Arch, Fedora, Alpine, Proxmox, OpenWrt, Raspberry Pi OS and rescue disks, each pinned to its newest release and official checksum |
-| **Local AI** | Current open models sized for a Raspberry Pi, a gaming GPU or a workstation, with medical, translation, coding and speech models |
-| **Phone apps** | Android apps to side load over the hotspot: offline maps, mesh messaging, survival tools |
-| **Tools** | Portable readers, USB writers, backup and capture tools for every desktop platform |
+| **Local AI** | Current open models sized for a Raspberry Pi, a gaming GPU or a workstation, with medical, translation, coding, reasoning, document reading and speech models |
+| **Phone apps** | Android apps to side load over the hotspot: offline maps, mesh messaging, file sharing, calls on the local network, readers, survival tools |
+| **Tools** | Portable readers, USB writers, file sharing, encryption, text recognition, CAD and 3D printing, backup and capture tools for every desktop platform |
 | **Services** | 25 container images behind the dashboard, each checked monthly |
 
 ## Tiers
@@ -140,6 +140,28 @@ genesis fetch --pack scripture --tier eden --lang '*'   # every language
 ```
 
 Seed carries the Westminster Leningrad Codex, the Septuagint, the Greek New Testament in five editions, the Clementine Vulgate and the Coptic New Testament, then Wycliffe, Tyndale, Geneva, King James, Douay Rheims, Young, Darby, the American Standard, the World English Bible and major world languages. The dashboard serves them as readable pages. Seed also carries [Theographic Bible Metadata](https://github.com/robertrouse/theographic-bible-metadata): more than 3,000 people, about 1,300 places and a timeline of events, each linked to its verses, as open data for anyone building study tools. Details in [docs/SCRIPTURE.md](docs/SCRIPTURE.md).
+
+## From GitHub in China
+
+Some of the best work for a kit like this is written in Chinese. Genesis carries it, with the names and notes in English.
+
+| Project | What it is |
+|---|---|
+| How to Live Better (高性价比人生指南) | A guide to emergencies, health and money in which every rule names its cost, its benefit and the study behind it. Seed carries a reader's English translation as a PDF and as one searchable page |
+| HowToCook (程序员做饭指南) | 374 recipes written like engineering documents, in the public domain. In Chinese |
+| Umi-OCR | Reads text out of photos, screenshots and scans with no internet |
+| GLM-OCR, DeepSeek R1, Qwen | Open models from Z.ai, DeepSeek and Alibaba for reading documents, reasoning and everyday questions |
+| OrcaSlicer | Prepares 3D prints for almost any printer |
+| RustDesk | Remote desktop between machines on the same network |
+| Ventoy | One USB stick that boots many operating systems |
+| Classical Chinese poetry | 55,000 Tang and 260,000 Song poems |
+
+```sh
+genesis fetch --id how_to_live_better_en --id how_to_live_better_en_page   # the English guide
+genesis fetch --lang eng,zho                                               # add what is in Chinese
+```
+
+Start with chapter 13 of the guide, Emergencies: what to do first. Its laws, prices and phone numbers are those of China, and the translation is a reader's work that the authors have not reviewed.
 
 ## Services
 

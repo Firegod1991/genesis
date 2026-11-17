@@ -18,6 +18,9 @@ No code or text from these projects is included here.
 * [Wikimedia](https://wikimediafoundation.org) projects, under Creative Commons licenses.
 * [eBible.org](https://ebible.org) gathers and shares Bible translations in more than a thousand languages.
 * [Theographic Bible Metadata](https://github.com/robertrouse/theographic-bible-metadata) by Robert Rouse of Viz.Bible links the people, places and events of the Bible verse by verse, under CC BY-SA 4.0.
+* [How to Live Better](https://github.com/eternity4719/HowToLiveBetter) by eternity4719 and contributors, under CC BY 4.0, in the English translation kept by [dlgrv](https://github.com/dlgrv/HowToLiveBetter).
+* [HowToCook](https://github.com/Anduin2017/HowToCook) by Anduin Xue and contributors, in the public domain, and the [chinese-poetry](https://github.com/chinese-poetry/chinese-poetry) contributors, under MIT.
+* [Wireless Networking in the Developing World](https://wndw.net) by its authors, under CC BY-SA 3.0.
 * [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors made the map of the world, under the Open Database License. [Geofabrik](https://www.geofabrik.de) publishes the regional extracts. [Protomaps](https://protomaps.com) builds the planet into one file.
 * [Project Gutenberg](https://www.gutenberg.org), [iFixit](https://www.ifixit.com), [Khan Academy](https://www.khanacademy.org), [Stack Exchange](https://stackexchange.com) contributors, [DevDocs](https://devdocs.io) and [freeCodeCamp](https://www.freecodecamp.org).
 * The World Resources Institute for the Global Power Plant Database (CC BY 4.0).
