@@ -6,9 +6,9 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
-| seed | 390 | 23.6 GB | 44 |
-| ark | 633 | 772.4 GB | 87 |
-| eden | 823 | 2.0 TB | 105 |
+| seed | 395 | 23.8 GB | 44 |
+| ark | 652 | 782.3 GB | 88 |
+| eden | 844 | 2.0 TB | 107 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -31,6 +31,8 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | MedGemma 27B (medical) | `medgemma_27b` | eden | 7bc3e809711a | 17.4 GB | Health AI Developer Foundations terms |
 | Whisper base (speech to text, 99 languages) | `whisper_base` | seed | current | 148.0 MB | MIT |
 | Whisper small (speech to text, better accuracy) | `whisper_small` | ark | current | 487.6 MB | MIT |
+| DeepSeek R1 8B (step by step reasoning) | `deepseek_r1_8b` | ark | f64cd5418e4b | 5.2 GB | MIT |
+| GLM-OCR (reads printed pages, tables and formulas from images) | `glm_ocr` | ark | cf3ed78794b5 | 2.7 GB | MIT |
 
 ## Phone apps
 
@@ -53,6 +55,12 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | bitchat (Bluetooth mesh chat) | `bitchat_android` | ark | 2.2.0 | 52.0 MB | Unlicense |
 | Rattlegram (text over any voice radio) | `rattlegram` | ark | 1.19 | 7.7 MB | BSD Zero Clause |
 | APRSdroid | `aprsdroid` | ark | 2025-12-21 | 2.8 MB | GPL 2.0 |
+| LocalSend (send files between nearby devices) | `localsend_android` | seed | 1.18.2 | 46.6 MB | Apache 2.0 |
+| Meshenger (voice and video calls on a local network, no server) | `meshenger` | seed | 4.4.8 | 19.4 MB | GPL 3.0 |
+| KOReader (reads PDF, EPUB and DjVu) | `koreader` | seed | v2026.07.1 | 30.7 MB | AGPL 3.0 |
+| AnkiDroid (flashcards) | `ankidroid` | ark | 2.25.3 | 44.0 MB | GPL 3.0 |
+| WiFi Analyzer (pick a clear channel for the hotspot) | `wifi_analyzer` | ark | 3.3.1 | 2.1 MB | GPL 3.0 |
+| Columba (Reticulum messenger over Bluetooth, WiFi and LoRa) | `columba` | ark | 2.3.5 | 60.5 MB | MPL 2.0 |
 
 ## Code
 
@@ -1217,6 +1225,8 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Wikisource | `wikisource_en_all.maxi` | eden | 2026-09 | 8.6 GB |  |
 | Folgerpedia | `folgerpedia.folger.edu_en_all` | eden | 2026-03 | 4.2 GB |  |
 | Mutopia Project | `mutopiaproject.org_en_all` | eden | 2026-11 | 6.6 GB |  |
+| 程序员做饭指南 HowToCook (a precise home cooking guide, in Chinese) | `howtocook_zh` | ark | 2585488 |  | Unlicense (public domain) |
+| 中华古诗词数据库 (classical Chinese poetry: 55,000 Tang and 260,000 Song poems) | `chinese_poetry` | eden | b8594f8 |  | MIT |
 
 <details><summary><b>gutenberg_every_language</b>: 103 items, 515.0 GB, tier ark</summary>
 
@@ -2920,7 +2930,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Ergo (local chat server) | `img_irc` | ark | 72db5b93b437 |  |  |
 | The Lounge (web chat client) | `img_chat` | ark | b19c2ef06efc |  |  |
 | Mumble server (voice on the local network) | `img_voice` | ark | 018ad3515932 |  |  |
-| ADS-B aircraft tracker (readsb and tar1090) | `img_adsb` | ark | ed8a1395ad66 |  |  |
+| ADS-B aircraft tracker (readsb and tar1090) | `img_adsb` | ark | a0a6c252492e |  |  |
 | AIS-catcher (ship tracking) | `img_ais` | ark | 124f510731c9 |  |  |
 | Valhalla (offline turn by turn routing) | `img_routing` | ark | 7a1c2e6c8612 |  |  |
 
@@ -2949,7 +2959,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Food Plants of the North American Indians (Elias Yanovsky, USDA, 1936) | `food_plants_north_american_indians` | seed | 2023-11-11 | 8.2 MB | US government work |
 | Facts on Edible Wild Greens in Maine (University of Maine Cooperative Extension) | `edible_wild_greens_maine` | seed | 2022-06-09 | 170 KB | Free from the publisher |
 | Iroquois Uses of Maize and Other Food Plants (Arthur C. Parker, New York State Museum, 1910) | `iroquois_food_plants` | seed | 2023-11-13 (stale) | 28.0 MB | Public domain |
-| Uses of Plants by the Chippewa Indians (Frances Densmore, Smithsonian, 1928) | `chippewa_plant_uses` | seed | 2024-02-02 (stale) | 18.1 MB | US government work |
+| Uses of Plants by the Chippewa Indians (Frances Densmore, Smithsonian, 1928) | `chippewa_plant_uses` | seed | 2024-02-02 | 18.1 MB | US government work |
 | Forgotten Foods: Introduction to Wild Edible Plants (Mississippi State University Extension) | `wild_edible_plants_primer` | seed | 2026-02-04 | 116 KB | Free to copy unchanged for nonprofit teaching, with credit |
 | Edible and Poisonous Plants of the Caribbean Region (US Navy, 1944) | `edible_poisonous_plants_caribbean` | seed | 2024-07-08 | 12.9 MB | US government work |
 | Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919) | `plants_missouri_river_region` | seed | 2023-12-23 | 7.0 MB | US government work |
@@ -3031,8 +3041,21 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Syncthing (sync folders between machines, no cloud) | `syncthing` | ark | 2.1.7 | 54.6 MB | MPL 2.0 |
 | restic (encrypted backups) | `restic` | ark | 0.19.1 | 40.1 MB | BSD 2 Clause |
 | Ollama (run models without Docker) | `ollama_runtime` | ark | 0.40.16 | 5.2 GB | MIT |
-| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12455 | 84.9 MB | MIT |
+| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12458 | 85.0 MB | MIT |
 | yt-dlp (save video while the internet lasts) | `yt_dlp` | ark | 2026.10.26 | 143.0 MB | Unlicense |
 | FFmpeg (static builds) | `ffmpeg` | ark | 2026-11-16 | 491.9 MB | GPL 3.0 |
 | VLC for Windows | `vlc_windows` | ark | 3.0.24 | 46.3 MB | GPL 2.0 |
+| LocalSend (send files between nearby devices, no internet) | `localsend` | seed | 1.18.2 | 177.6 MB | Apache 2.0 |
+| copyparty (turn any computer into a file server with one file) | `copyparty` | seed | 1.20.26 | 14.4 MB | MIT |
+| VeraCrypt (encrypted drives and containers) | `veracrypt` | ark | 1.26.31 | 92.4 MB | Apache 2.0 and TrueCrypt 3.0 |
+| Umi-OCR (read text out of photos and scans, offline) | `umi_ocr` | ark | 2.1.5 | 380.7 MB | MIT |
+| RustDesk (remote desktop that works on a local network) | `rustdesk` | ark | 1.5.3 | 231.7 MB | AGPL 3.0 |
+| Anki (flashcards that schedule what to review) | `anki` | ark | 26.09.4 | 810.1 MB | AGPL 3.0 |
+| whisper.cpp (speech to text engine, source) | `whisper_cpp` | ark | 1.9.5 |  | MIT |
+| FreeCAD (design parts in 3D) | `freecad` | ark | 1.1.4 | 2.6 GB | LGPL 2.1 |
+| OpenSCAD (design parts by writing code) | `openscad` | ark | 2021.01 | 91.4 MB | GPL 2.0 |
+| OrcaSlicer (prepare 3D prints for almost any printer) | `orcaslicer` | ark | 2.5.1 | 964.4 MB | AGPL 3.0 |
+| KiCad (design circuit boards) | `kicad` | eden | 10.0.8 | 2.4 GB | GPL 3.0 |
+| Universal G-code Sender (run CNC mills, routers and lasers) | `universal_gcode_sender` | eden | 2.1.30 | 1.2 GB | GPL 3.0 |
+| Rad Pro (open firmware for common handheld Geiger counters) | `radpro` | ark | 3.1.1 | 18.6 MB | MIT |
 

@@ -1,5 +1,24 @@
 {
  "items": {
+  "ankidroid": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "com.ichi2.anki_225033004.apk",
+     "platform": "android",
+     "size": 43962488,
+     "url": "https://f-droid.org/repo/com.ichi2.anki_225033004.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tags": [
+    "learning"
+   ],
+   "tier": "ark",
+   "title": "AnkiDroid (flashcards)",
+   "version": "2.25.3"
+  },
   "aprsdroid": {
    "date": "2025-12-21",
    "dest": "apps",
@@ -62,6 +81,29 @@
    "tier": "seed",
    "title": "Briar (messaging over Bluetooth, WiFi and Tor)",
    "version": "1.5.24"
+  },
+  "columba": {
+   "date": "2026-11-16",
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "columba-2.3.5-official-rns-py-arm64-v8a-no-sentry.apk",
+     "platform": "android",
+     "sha256": "5fa071c6c23924e481736ec17d1cc6fdeafac0f82c1d7cbbb69aae9de237f107",
+     "size": 60471715,
+     "url": "https://github.com/torlando-tech/columba/releases/download/v2.3.5/columba-2.3.5-official-rns-py-arm64-v8a-no-sentry.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "MPL 2.0",
+   "note": "The build without crash reporting.",
+   "tags": [
+    "mesh",
+    "messaging"
+   ],
+   "tier": "ark",
+   "title": "Columba (Reticulum messenger over Bluetooth, WiFi and LoRa)",
+   "version": "2.3.5"
   },
   "comaps": {
    "dest": "apps",
@@ -139,6 +181,63 @@
    "tier": "seed",
    "title": "Kiwix (offline Wikipedia reader)",
    "version": "3.14.1"
+  },
+  "koreader": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "org.koreader.launcher.fdroid_119463.apk",
+     "platform": "android",
+     "size": 30711408,
+     "url": "https://f-droid.org/repo/org.koreader.launcher.fdroid_119463.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "AGPL 3.0",
+   "tags": [
+    "reader"
+   ],
+   "tier": "seed",
+   "title": "KOReader (reads PDF, EPUB and DjVu)",
+   "version": "v2026.07.1"
+  },
+  "localsend_android": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "org.localsend.localsend_app_643.apk",
+     "platform": "android",
+     "size": 46558706,
+     "url": "https://f-droid.org/repo/org.localsend.localsend_app_643.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "Apache 2.0",
+   "tags": [
+    "sharing"
+   ],
+   "tier": "seed",
+   "title": "LocalSend (send files between nearby devices)",
+   "version": "1.18.2"
+  },
+  "meshenger": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "d.d.meshenger_448.apk",
+     "platform": "android",
+     "size": 19379976,
+     "url": "https://f-droid.org/repo/d.d.meshenger_448.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tags": [
+    "calls"
+   ],
+   "tier": "seed",
+   "title": "Meshenger (voice and video calls on a local network, no server)",
+   "version": "4.4.8"
   },
   "meshtastic_android": {
    "dest": "apps",
@@ -334,6 +433,25 @@
    "tier": "seed",
    "title": "VLC",
    "version": "3.7.2"
+  },
+  "wifi_analyzer": {
+   "dest": "apps",
+   "files": [
+    {
+     "filename": "com.vrem.wifianalyzer_72.apk",
+     "platform": "android",
+     "size": 2119103,
+     "url": "https://f-droid.org/repo/com.vrem.wifianalyzer_72.apk"
+    }
+   ],
+   "kind": "app",
+   "license": "GPL 3.0",
+   "tags": [
+    "network"
+   ],
+   "tier": "ark",
+   "title": "WiFi Analyzer (pick a clear channel for the hotspot)",
+   "version": "3.3.1"
   }
  },
  "pack": "apps"

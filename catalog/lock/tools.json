@@ -1,5 +1,76 @@
 {
  "items": {
+  "anki": {
+   "date": "2026-11-04",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "anki-26.09.4-linux-x86_64.tar.zst",
+     "platform": "linux-x64",
+     "sha256": "1f4a6bdffcfbfc75dc5ef632aa0e44b87bdf7615679d40be8bb8db44efc06e9a",
+     "size": 194727701,
+     "url": "https://github.com/ankitects/anki/releases/download/26.09.4/anki-26.09.4-linux-x86_64.tar.zst"
+    },
+    {
+     "filename": "anki-26.09.4-linux-aarch64.tar.zst",
+     "platform": "linux-arm64",
+     "sha256": "956c88d8c224de757d90fbe0880a92b82d09677d40025bc25f190c1e8c67e75b",
+     "size": 185559361,
+     "url": "https://github.com/ankitects/anki/releases/download/26.09.4/anki-26.09.4-linux-aarch64.tar.zst"
+    },
+    {
+     "filename": "anki-26.09.4-win-x64.msi",
+     "platform": "windows-x64",
+     "sha256": "c35e7b90acf2929a71d70ac755a3dd0685f9fbe1a89d2f9edabb6fe7c0d91cba",
+     "size": 201621504,
+     "url": "https://github.com/ankitects/anki/releases/download/26.09.4/anki-26.09.4-win-x64.msi"
+    },
+    {
+     "filename": "anki-26.09.4-mac-apple.dmg",
+     "platform": "macos-arm64",
+     "sha256": "527b968b88d54cb0308d1de7a1ee193109863546e1cb62dcd016bd93bd816684",
+     "size": 228182839,
+     "url": "https://github.com/ankitects/anki/releases/download/26.09.4/anki-26.09.4-mac-apple.dmg"
+    }
+   ],
+   "kind": "tool",
+   "license": "AGPL 3.0",
+   "note": "For anything that must be known cold: Morse code, plant names, first aid steps, a new language.",
+   "tags": [
+    "learning"
+   ],
+   "tier": "ark",
+   "title": "Anki (flashcards that schedule what to review)",
+   "version": "26.09.4"
+  },
+  "copyparty": {
+   "date": "2026-10-14",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "copyparty-sfx.py",
+     "sha256": "8f9a0def8a9c15252a06395781ec083372043b60caa80fb33c3d6dafa7f1b40a",
+     "size": 1206486,
+     "url": "https://github.com/9001/copyparty/releases/download/v1.20.26/copyparty-sfx.py"
+    },
+    {
+     "filename": "copyparty.exe",
+     "platform": "windows-x64",
+     "sha256": "6c51a154d0a173fec6e2ca0dfd5ffbc10a0c81f184bae8f920e79cafc12ae0c1",
+     "size": 13207240,
+     "url": "https://github.com/9001/copyparty/releases/download/v1.20.26/copyparty.exe"
+    }
+   ],
+   "kind": "tool",
+   "license": "MIT",
+   "note": "Runs wherever Python runs: uploads, downloads and a media player in the browser, with nothing to install.",
+   "tags": [
+    "sharing"
+   ],
+   "tier": "seed",
+   "title": "copyparty (turn any computer into a file server with one file)",
+   "version": "1.20.26"
+  },
   "ffmpeg": {
    "date": "2026-11-16",
    "dest": "tools",
@@ -35,6 +106,49 @@
    "title": "FFmpeg (static builds)",
    "version": "2026-11-16"
   },
+  "freecad": {
+   "date": "2026-09-28",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "FreeCAD_1.1.4-Linux-x86_64-py311.AppImage",
+     "platform": "linux-x64",
+     "sha256": "f6dc6ba676e5ac96a565ebc8d657232f94c6158e85b4352141bd1a46f6b43434",
+     "size": 820812280,
+     "url": "https://github.com/FreeCAD/FreeCAD/releases/download/1.1.4/FreeCAD_1.1.4-Linux-x86_64-py311.AppImage"
+    },
+    {
+     "filename": "FreeCAD_1.1.4-Linux-aarch64-py311.AppImage",
+     "platform": "linux-arm64",
+     "sha256": "675d1a4295b2183e0e1d816a4b5557dcb63aeced4e60aaa28d6c3686f4c71dc9",
+     "size": 755591688,
+     "url": "https://github.com/FreeCAD/FreeCAD/releases/download/1.1.4/FreeCAD_1.1.4-Linux-aarch64-py311.AppImage"
+    },
+    {
+     "filename": "FreeCAD_1.1.4-Windows-x86_64-py311.7z",
+     "platform": "windows-x64",
+     "sha256": "4828741fc91ee37fafcdb97a1abacb18b04ba451ac4372d9ff7a7349b36f4d6d",
+     "size": 418088341,
+     "url": "https://github.com/FreeCAD/FreeCAD/releases/download/1.1.4/FreeCAD_1.1.4-Windows-x86_64-py311.7z"
+    },
+    {
+     "filename": "FreeCAD_1.1.4-macOS-arm64-py311.dmg",
+     "platform": "macos-arm64",
+     "sha256": "071343b4abb70492b75c973f41eaf1d2528f9b9c7ea018d22a4f46ae14d27ac0",
+     "size": 649760538,
+     "url": "https://github.com/FreeCAD/FreeCAD/releases/download/1.1.4/FreeCAD_1.1.4-macOS-arm64-py311.dmg"
+    }
+   ],
+   "kind": "tool",
+   "license": "LGPL 2.1",
+   "tags": [
+    "fabrication",
+    "cad"
+   ],
+   "tier": "ark",
+   "title": "FreeCAD (design parts in 3D)",
+   "version": "1.1.4"
+  },
   "keepassxc": {
    "date": "2026-10-21",
    "dest": "tools",
@@ -69,6 +183,36 @@
    "tier": "ark",
    "title": "KeePassXC (password vault)",
    "version": "2.8.0"
+  },
+  "kicad": {
+   "date": "2026-11-06",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "kicad-10.0.8-x86_64.exe",
+     "platform": "windows-x64",
+     "sha256": "5652b9ed52fca4aa63ec2ec61c8bfd4fab4f6a2fbfdb441def2972b0e9b2dfc7",
+     "size": 969079176,
+     "url": "https://github.com/KiCad/kicad-source-mirror/releases/download/10.0.8/kicad-10.0.8-x86_64.exe"
+    },
+    {
+     "filename": "kicad-unified-universal-10.0.8.dmg",
+     "platform": "macos-arm64",
+     "sha256": "501d3e2933a385f1833497469f55326662df7e5d40401239826c40d6fa583f16",
+     "size": 1405602755,
+     "url": "https://github.com/KiCad/kicad-source-mirror/releases/download/10.0.8/kicad-unified-universal-10.0.8.dmg"
+    }
+   ],
+   "kind": "tool",
+   "license": "GPL 3.0",
+   "note": "Windows and macOS installers. On Linux, install it from the distribution.",
+   "tags": [
+    "fabrication",
+    "electronics"
+   ],
+   "tier": "eden",
+   "title": "KiCad (design circuit boards)",
+   "version": "10.0.8"
   },
   "kiwix_desktop": {
    "dest": "tools",
@@ -137,32 +281,32 @@
    "dest": "tools",
    "files": [
     {
-     "filename": "llama-b12455-bin-ubuntu-x64.tar.gz",
+     "filename": "llama-b12458-bin-ubuntu-x64.tar.gz",
      "platform": "linux-x64",
-     "sha256": "d07a0dfdfeca68bb9924f689aa1878f8146d4f1c1ffd342ef05e64d823e0724c",
-     "size": 23500203,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12455/llama-b12455-bin-ubuntu-x64.tar.gz"
+     "sha256": "7cbd93c44b0c74b96c4ff99f9ab3c8cff2002c05307add362f0d50e175a3fa79",
+     "size": 23535948,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12458/llama-b12458-bin-ubuntu-x64.tar.gz"
     },
     {
-     "filename": "llama-b12455-bin-ubuntu-arm64.tar.gz",
+     "filename": "llama-b12458-bin-ubuntu-arm64.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "dd8034f888044adf1377844aebfed5745db2ba646be41346f0172064510440c5",
-     "size": 19129556,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12455/llama-b12455-bin-ubuntu-arm64.tar.gz"
+     "sha256": "68d190366f7f107ce4271273fedb7aabbb0bb4530853e09e4928bc422b03e8b8",
+     "size": 19161529,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12458/llama-b12458-bin-ubuntu-arm64.tar.gz"
     },
     {
-     "filename": "llama-b12455-bin-win-cpu-x64.zip",
+     "filename": "llama-b12458-bin-win-cpu-x64.zip",
      "platform": "windows-x64",
-     "sha256": "2810b4ce94dfca9403eaee56c6b017f1ef51b4f6fb7f1342923b75cb2681a610",
-     "size": 25241603,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12455/llama-b12455-bin-win-cpu-x64.zip"
+     "sha256": "ff05445f5b5253d02d5033bf8d5deb360455bd99c3c216af0825a5e1dac87374",
+     "size": 25272066,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12458/llama-b12458-bin-win-cpu-x64.zip"
     },
     {
-     "filename": "llama-b12455-bin-macos-arm64.tar.gz",
+     "filename": "llama-b12458-bin-macos-arm64.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "3cd2856525e48dc76ec3387b2ee67cd7b9d477c4fb4e444a2c9d4ca62dc55308",
-     "size": 17029055,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12455/llama-b12455-bin-macos-arm64.tar.gz"
+     "sha256": "d1073215821d6cccecf639661e26bf9d154f92f1193625782fcd8714df9aa293",
+     "size": 17065183,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12458/llama-b12458-bin-macos-arm64.tar.gz"
     }
    ],
    "kind": "tool",
@@ -173,7 +317,50 @@
    ],
    "tier": "ark",
    "title": "llama.cpp (run GGUF models directly)",
-   "version": "b12455"
+   "version": "b12458"
+  },
+  "localsend": {
+   "date": "2026-08-21",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "LocalSend-1.18.2-linux-x86-64.AppImage",
+     "platform": "linux-x64",
+     "sha256": "19f21613d1834f6caa69517113670461a3f10b80a2a315f86548c0663d9c0aaf",
+     "size": 66471104,
+     "url": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-linux-x86-64.AppImage"
+    },
+    {
+     "filename": "LocalSend-1.18.2-linux-arm-64.tar.gz",
+     "platform": "linux-arm64",
+     "sha256": "dd61f74f1ce3f4e25aca41cd3ce650d6a99353d7baba81a8139807275b88e606",
+     "size": 32354331,
+     "url": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-linux-arm-64.tar.gz"
+    },
+    {
+     "filename": "LocalSend-1.18.2-windows-x86-64.zip",
+     "platform": "windows-x64",
+     "sha256": "737aab1829d901e1d798cddd1e5fdc06ba9dfcc9ea50cfe3805e047005d5e71a",
+     "size": 26113764,
+     "url": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-windows-x86-64.zip"
+    },
+    {
+     "filename": "LocalSend-1.18.2.dmg",
+     "platform": "macos-arm64",
+     "sha256": "126860d56f6f49b11845f601aac51de27a49b16d2b48102415da91e0e37e5155",
+     "size": 52700247,
+     "url": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2.dmg"
+    }
+   ],
+   "kind": "tool",
+   "license": "Apache 2.0",
+   "note": "Works over the box's own hotspot. The phone app is in the apps pack.",
+   "tags": [
+    "sharing"
+   ],
+   "tier": "seed",
+   "title": "LocalSend (send files between nearby devices, no internet)",
+   "version": "1.18.2"
   },
   "ollama_runtime": {
    "date": "2026-11-09",
@@ -217,6 +404,83 @@
    "title": "Ollama (run models without Docker)",
    "version": "0.40.16"
   },
+  "openscad": {
+   "date": "2021-02-07",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "OpenSCAD-2021.01-x86_64.AppImage",
+     "platform": "linux-x64",
+     "size": 40759336,
+     "url": "https://github.com/openscad/openscad/releases/download/openscad-2021.01/OpenSCAD-2021.01-x86_64.AppImage"
+    },
+    {
+     "filename": "OpenSCAD-2021.01-x86-64.zip",
+     "platform": "windows-x64",
+     "size": 21884613,
+     "url": "https://github.com/openscad/openscad/releases/download/openscad-2021.01/OpenSCAD-2021.01-x86-64.zip"
+    },
+    {
+     "filename": "OpenSCAD-2021.01.dmg",
+     "platform": "macos-arm64",
+     "size": 28770738,
+     "url": "https://github.com/openscad/openscad/releases/download/openscad-2021.01/OpenSCAD-2021.01.dmg"
+    }
+   ],
+   "kind": "tool",
+   "license": "GPL 2.0",
+   "tags": [
+    "fabrication",
+    "cad"
+   ],
+   "tier": "ark",
+   "title": "OpenSCAD (design parts by writing code)",
+   "version": "2021.01"
+  },
+  "orcaslicer": {
+   "date": "2026-11-14",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "OrcaSlicer_Linux_AppImage_Ubuntu2404_V2.5.1.AppImage",
+     "platform": "linux-x64",
+     "sha256": "073b8105c928356141db0ddbce88b81d52c7a9e2442f9baae0a9089c89ff04eb",
+     "size": 201116152,
+     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.1/OrcaSlicer_Linux_AppImage_Ubuntu2404_V2.5.1.AppImage"
+    },
+    {
+     "filename": "OrcaSlicer_Linux_AppImage_Ubuntu2404_aarch64_V2.5.1.AppImage",
+     "platform": "linux-arm64",
+     "sha256": "1336bbae0359466632066697780f314a8564542f8278e9ea4cdf18ec61383fc0",
+     "size": 196819464,
+     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.1/OrcaSlicer_Linux_AppImage_Ubuntu2404_aarch64_V2.5.1.AppImage"
+    },
+    {
+     "filename": "OrcaSlicer_Windows_V2.5.1_x64_portable.zip",
+     "platform": "windows-x64",
+     "sha256": "f73194789c9a114974e3587f646bb627fa69c7686d949bf040fdb710c41515e8",
+     "size": 201859696,
+     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.1/OrcaSlicer_Windows_V2.5.1_x64_portable.zip"
+    },
+    {
+     "filename": "OrcaSlicer_Mac_universal_V2.5.1.dmg",
+     "platform": "macos-arm64",
+     "sha256": "ddf48a7f34785a4d5b4313e4dc4d7ad01769d48bc4c8d825f809da96593e6f46",
+     "size": 364654009,
+     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.1/OrcaSlicer_Mac_universal_V2.5.1.dmg"
+    }
+   ],
+   "kind": "tool",
+   "license": "AGPL 3.0",
+   "note": "Started by a developer in China. With FreeCAD it takes a broken part from measurement to a printed replacement.",
+   "tags": [
+    "fabrication",
+    "printing"
+   ],
+   "tier": "ark",
+   "title": "OrcaSlicer (prepare 3D prints for almost any printer)",
+   "version": "2.5.1"
+  },
   "pmtiles": {
    "date": "2026-07-22",
    "dest": "tools",
@@ -258,6 +522,27 @@
    "tier": "seed",
    "title": "pmtiles (cut and inspect offline maps)",
    "version": "1.31.2"
+  },
+  "radpro": {
+   "date": "2026-04-26",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "radpro-3.1.1.zip",
+     "sha256": "855ed391dd1875e1d7932abefe22136ca04c20ed14e856ac15908b4caf68e69c",
+     "size": 18630908,
+     "url": "https://github.com/Gissio/radpro/releases/download/3.1.1/radpro-3.1.1.zip"
+    }
+   ],
+   "kind": "tool",
+   "license": "MIT",
+   "note": "For the low cost FNIRSI, Bosean and FS series meters: better dose math, logging and alarms. Flashing replaces the factory firmware, so read its manual first.",
+   "tags": [
+    "radiation"
+   ],
+   "tier": "ark",
+   "title": "Rad Pro (open firmware for common handheld Geiger counters)",
+   "version": "3.1.1"
   },
   "restic": {
    "date": "2026-07-05",
@@ -363,6 +648,49 @@
    "tier": "ark",
    "title": "Rufus (bootable USB writer for Windows)",
    "version": "4.15"
+  },
+  "rustdesk": {
+   "date": "2026-11-09",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "rustdesk-1.5.3-x86_64.AppImage",
+     "platform": "linux-x64",
+     "sha256": "ff7fff208fed218fc9f895457a36cc2dd31fefbfae0461a27b54f3d391204506",
+     "size": 88492536,
+     "url": "https://github.com/rustdesk/rustdesk/releases/download/1.5.3/rustdesk-1.5.3-x86_64.AppImage"
+    },
+    {
+     "filename": "rustdesk-1.5.3-aarch64.AppImage",
+     "platform": "linux-arm64",
+     "sha256": "924c8dee36cbd7873ba222979ea1e3274c5537c382321504edf1be824e7cde37",
+     "size": 85486088,
+     "url": "https://github.com/rustdesk/rustdesk/releases/download/1.5.3/rustdesk-1.5.3-aarch64.AppImage"
+    },
+    {
+     "filename": "rustdesk-1.5.3-x86_64.exe",
+     "platform": "windows-x64",
+     "sha256": "523ba0efbf62a21739961b62c7daaffb44d3da86139c546b364fd4e1333ed249",
+     "size": 26233712,
+     "url": "https://github.com/rustdesk/rustdesk/releases/download/1.5.3/rustdesk-1.5.3-x86_64.exe"
+    },
+    {
+     "filename": "rustdesk-1.5.3-aarch64.dmg",
+     "platform": "macos-arm64",
+     "sha256": "e6d30fa1633d772c48935907c208ca4e555a856fb2038af3aaa87a327c29360b",
+     "size": 31464911,
+     "url": "https://github.com/rustdesk/rustdesk/releases/download/1.5.3/rustdesk-1.5.3-aarch64.dmg"
+    }
+   ],
+   "kind": "tool",
+   "license": "AGPL 3.0",
+   "note": "Connects straight to another machine's address on the same network, with no server and no internet.",
+   "tags": [
+    "remote"
+   ],
+   "tier": "ark",
+   "title": "RustDesk (remote desktop that works on a local network)",
+   "version": "1.5.3"
   },
   "sevenzip": {
    "date": "2026-11-07",
@@ -486,6 +814,77 @@
    "title": "Syncthing (sync folders between machines, no cloud)",
    "version": "2.1.7"
   },
+  "umi_ocr": {
+   "date": "2025-03-25",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "Umi-OCR_Linux_Paddle_2.1.5.tar.xz",
+     "platform": "linux-x64",
+     "size": 277369884,
+     "url": "https://github.com/hiroi-sora/Umi-OCR/releases/download/v2.1.5/Umi-OCR_Linux_Paddle_2.1.5.tar.xz"
+    },
+    {
+     "filename": "Umi-OCR_Rapid_v2.1.5.7z.exe",
+     "platform": "windows-x64",
+     "size": 103369422,
+     "url": "https://github.com/hiroi-sora/Umi-OCR/releases/download/v2.1.5/Umi-OCR_Rapid_v2.1.5.7z.exe"
+    }
+   ],
+   "kind": "tool",
+   "license": "MIT",
+   "note": "From China, with an English interface. Photograph a label, a sign or a manual, get the text, then hand it to the offline translator.",
+   "tags": [
+    "ocr",
+    "translation"
+   ],
+   "tier": "ark",
+   "title": "Umi-OCR (read text out of photos and scans, offline)",
+   "version": "2.1.5"
+  },
+  "universal_gcode_sender": {
+   "date": "2026-11-09",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "linux-x64-ugs-platform-app-2.1.30.tar.gz",
+     "platform": "linux-x64",
+     "sha256": "6fe9d531ac1e01b4583bd2d979367e75504be4b1efe5c2d4c40c02b59b31e5bd",
+     "size": 254823698,
+     "url": "https://github.com/winder/Universal-G-Code-Sender/releases/download/v2.1.30/linux-x64-ugs-platform-app-2.1.30.tar.gz"
+    },
+    {
+     "filename": "linux-aarch64-ugs-platform-app-2.1.30.tar.gz",
+     "platform": "linux-arm64",
+     "sha256": "f43813c95dfe8efbfec0ace8672bcb0714ee2afd36e90946ab46df451fdf63d5",
+     "size": 253590649,
+     "url": "https://github.com/winder/Universal-G-Code-Sender/releases/download/v2.1.30/linux-aarch64-ugs-platform-app-2.1.30.tar.gz"
+    },
+    {
+     "filename": "win64-ugs-platform-app-2.1.30.zip",
+     "platform": "windows-x64",
+     "sha256": "640685852f621a67b300103aea877dbffeca12fb7529f97a5da36ef222e6b8bb",
+     "size": 252107370,
+     "url": "https://github.com/winder/Universal-G-Code-Sender/releases/download/v2.1.30/win64-ugs-platform-app-2.1.30.zip"
+    },
+    {
+     "filename": "macosx-aarch64-ugs-platform-app-2.1.30.dmg",
+     "platform": "macos-arm64",
+     "sha256": "00ef8e7b5150021120f7474248ced802e716a9ae6544210b24a20e9d75f22038",
+     "size": 449937408,
+     "url": "https://github.com/winder/Universal-G-Code-Sender/releases/download/v2.1.30/macosx-aarch64-ugs-platform-app-2.1.30.dmg"
+    }
+   ],
+   "kind": "tool",
+   "license": "GPL 3.0",
+   "tags": [
+    "fabrication",
+    "cnc"
+   ],
+   "tier": "eden",
+   "title": "Universal G-code Sender (run CNC mills, routers and lasers)",
+   "version": "2.1.30"
+  },
   "ventoy": {
    "date": "2026-10-09",
    "dest": "tools",
@@ -514,6 +913,48 @@
    "title": "Ventoy (one USB stick, many bootable ISOs)",
    "version": "1.1.18"
   },
+  "veracrypt": {
+   "date": "2026-11-02",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "VeraCrypt-1.26.31-x86_64.AppImage",
+     "platform": "linux-x64",
+     "sha256": "6492bc3c440102ad8788b26056503a7daeddd00f131fbbc35736618fe5aa4149",
+     "size": 13847032,
+     "url": "https://github.com/veracrypt/VeraCrypt/releases/download/VeraCrypt_1.26.31/VeraCrypt-1.26.31-x86_64.AppImage"
+    },
+    {
+     "filename": "VeraCrypt-1.26.31-aarch64.AppImage",
+     "platform": "linux-arm64",
+     "sha256": "16ff6ace0d7e5832d066d4a6d61d961d419c24de2b1872701d9e53ca726f3350",
+     "size": 13773320,
+     "url": "https://github.com/veracrypt/VeraCrypt/releases/download/VeraCrypt_1.26.31/VeraCrypt-1.26.31-aarch64.AppImage"
+    },
+    {
+     "filename": "VeraCrypt.Portable.1.26.31.exe",
+     "platform": "windows-x64",
+     "sha256": "05712c10d0e27b88a2e16ae62b807a77afd2d11c48847fccb2e51d004bd4252b",
+     "size": 44240112,
+     "url": "https://github.com/veracrypt/VeraCrypt/releases/download/VeraCrypt_1.26.31/VeraCrypt.Portable.1.26.31.exe"
+    },
+    {
+     "filename": "VeraCrypt_1.26.31.dmg",
+     "platform": "macos-arm64",
+     "sha256": "a596f2e5cd43fd8e1a343a1e85869b9d72c4244206b511724455d02297d12290",
+     "size": 20577862,
+     "url": "https://github.com/veracrypt/VeraCrypt/releases/download/VeraCrypt_1.26.31/VeraCrypt_1.26.31.dmg"
+    }
+   ],
+   "kind": "tool",
+   "license": "Apache 2.0 and TrueCrypt 3.0",
+   "tags": [
+    "security"
+   ],
+   "tier": "ark",
+   "title": "VeraCrypt (encrypted drives and containers)",
+   "version": "1.26.31"
+  },
   "vlc_windows": {
    "dest": "tools",
    "files": [
@@ -532,6 +973,27 @@
    "tier": "ark",
    "title": "VLC for Windows",
    "version": "3.0.24"
+  },
+  "whisper_cpp": {
+   "date": "2026-10-06",
+   "dest": "tools",
+   "files": [
+    {
+     "filename": "whisper.cpp-v1.9.5.tar.gz",
+     "platform": "source",
+     "url": "https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.9.5.tar.gz"
+    }
+   ],
+   "kind": "tool",
+   "license": "MIT",
+   "note": "Runs the Whisper models from the AI pack. Build it with the toolchains in the code pack.",
+   "tags": [
+    "ai",
+    "speech"
+   ],
+   "tier": "ark",
+   "title": "whisper.cpp (speech to text engine, source)",
+   "version": "1.9.5"
   },
   "yt_dlp": {
    "date": "2026-10-26",

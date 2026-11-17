@@ -1,5 +1,19 @@
 {
  "items": {
+  "deepseek_r1_8b": {
+   "dest": "models",
+   "kind": "model",
+   "license": "MIT",
+   "model": "deepseek-r1:8b",
+   "size": 5225375560,
+   "tags": [
+    "chat",
+    "reasoning"
+   ],
+   "tier": "ark",
+   "title": "DeepSeek R1 8B (step by step reasoning)",
+   "version": "f64cd5418e4b"
+  },
   "embeddinggemma": {
    "dest": "models",
    "kind": "model",
@@ -54,6 +68,21 @@
    "tier": "seed",
    "title": "Gemma 4 E2B (general assistant, text and images)",
    "version": "3ff8a734c316"
+  },
+  "glm_ocr": {
+   "dest": "models",
+   "kind": "model",
+   "license": "MIT",
+   "model": "glm-ocr",
+   "note": "From Z.ai. Eight languages, Chinese, Japanese and Korean among them.",
+   "size": 2655025567,
+   "tags": [
+    "vision",
+    "ocr"
+   ],
+   "tier": "ark",
+   "title": "GLM-OCR (reads printed pages, tables and formulas from images)",
+   "version": "cf3ed78794b5"
   },
   "gpt_oss_20b": {
    "dest": "models",

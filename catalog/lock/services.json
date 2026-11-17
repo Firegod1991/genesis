@@ -2,12 +2,12 @@
  "items": {
   "img_adsb": {
    "dest": "images",
-   "digest": "sha256:ed8a1395ad666d792d23e5306e468d12e91ff7b5a2c435fe8ff1868bbb7e3be5",
+   "digest": "sha256:a0a6c252492e7f3a1a1f3800307cb1b2ec2989ce4bf543888c48466ad738825d",
    "image": "ghcr.io/sdr-enthusiasts/docker-adsb-ultrafeeder:latest",
    "kind": "image",
    "tier": "ark",
    "title": "ADS-B aircraft tracker (readsb and tar1090)",
-   "version": "ed8a1395ad66"
+   "version": "a0a6c252492e"
   },
   "img_ais": {
    "dest": "images",

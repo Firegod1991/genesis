@@ -2,163 +2,68 @@
 
 | Pack | Items | New | Updated | Removed | Failed |
 |---|---|---|---|---|---|
-| ai | 15 | 0 | 0 | 0 | 0 |
-| apps | 17 | 0 | 0 | 0 | 0 |
+| ai | 17 | 2 | 0 | 0 | 0 |
+| apps | 23 | 6 | 0 | 0 | 0 |
 | code | 375 | 0 | 0 | 0 | 0 |
 | isos | 24 | 0 | 0 | 0 | 0 |
-| knowledge | 689 | 0 | 3 | 0 | 0 |
-| library | 250 | 1 | 96 | 0 | 0 |
-| maps | 6 | 0 | 1 | 0 | 0 |
+| knowledge | 689 | 0 | 0 | 0 | 0 |
+| library | 252 | 2 | 0 | 0 | 0 |
+| maps | 6 | 0 | 0 | 0 | 0 |
 | medical | 42 | 0 | 0 | 0 | 0 |
 | radio | 28 | 0 | 0 | 0 | 0 |
-| scripture | 1301 | 1 | 8 | 0 | 0 |
+| scripture | 1301 | 0 | 0 | 0 | 0 |
 | services | 25 | 0 | 1 | 0 | 0 |
-| survival | 76 | 0 | 0 | 0 | 2 |
-| tools | 16 | 0 | 2 | 0 | 0 |
+| survival | 76 | 0 | 0 | 0 | 1 |
+| tools | 29 | 13 | 1 | 0 | 0 |
 
-## Updated in knowledge
+## New in ai
 
-* `milneopentextbooks.org_en_all`: 2026-08 to 2026-11
-* `wikipedia_fa_all.maxi`: 2026-10 to 2026-11
-* `wikipedia_id_all.maxi`: 2026-08 to 2026-11
+* `deepseek_r1_8b`: DeepSeek R1 8B (step by step reasoning)
+* `glm_ocr`: GLM-OCR (reads printed pages, tables and formulas from images)
 
-## Updated in library
+## New in apps
 
-* `gutenberg_ale_all`: 2025-09 to 2026-11-13
-* `gutenberg_ang_all`: 2025-09 to 2026-11-13
-* `gutenberg_ar_all`: 2025-12 to 2026-11-13
-* `gutenberg_arp_all`: 2025-09 to 2026-11-13
-* `gutenberg_bg_all`: 2025-12 to 2026-11-13
-* `gutenberg_bgs_all`: 2025-10 to 2026-11-13
-* `gutenberg_br_all`: 2025-12 to 2026-11-13
-* `gutenberg_brx_all`: 2025-09 to 2026-11-13
-* `gutenberg_ca_all`: 2025-12 to 2026-11-13
-* `gutenberg_ceb_all`: 2025-09 to 2026-11-13
-* `gutenberg_cs_all`: 2025-12 to 2026-11-13
-* `gutenberg_csb_all`: 2025-10 to 2026-11-13
-* `gutenberg_cy_all`: 2026-01 to 2026-11-13
-* `gutenberg_da_all`: 2025-12 to 2026-11-13
-* `gutenberg_de_all`: 2026-01 to 2026-11-13
-* `gutenberg_el_all`: 2026-01 to 2026-11-13
-* `gutenberg_en_lcc-a`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-b`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-g`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-h`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-j`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-k`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-l`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-m`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-n`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-p`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pa`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pb`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pc`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pd`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pe`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pf`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pg`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-ph`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pj`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pk`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pl`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pm`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pn`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pq`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pr`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-ps`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pt`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-pz`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-q`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-r`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-s`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-t`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-u`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-v`: 2026-03 to 2026-11-13
-* `gutenberg_en_lcc-z`: 2026-03 to 2026-11-13
-* `gutenberg_enm_all`: 2025-10 to 2026-11-13
-* `gutenberg_eo_all`: 2025-12 to 2026-11-13
-* `gutenberg_es_all`: 2026-01 to 2026-11-13
-* `gutenberg_et_all`: 2026-01 to 2026-11-13
-* `gutenberg_fa_all`: 2026-01 to 2026-11-13
-* `gutenberg_fi_all`: 2026-01 to 2026-11-13
-* `gutenberg_fr_all`: 2026-01 to 2026-11-13
-* `gutenberg_fur_all`: 2026-01 to 2026-11-13
-* `gutenberg_fy_all`: 2026-01 to 2026-11-13
-* `gutenberg_ga_all`: 2026-01 to 2026-11-13
-* `gutenberg_gl_all`: 2026-01 to 2026-11-13
-* `gutenberg_gla_all`: 2026-01 to 2026-11-13
-* `gutenberg_grc_all`: 2025-10 to 2026-11-13
-* `gutenberg_he_all`: 2026-01 to 2026-11-13
-* `gutenberg_hu_all`: 2026-01 to 2026-11-13
-* `gutenberg_ia_all`: 2026-01 to 2026-11-13
-* `gutenberg_ilo_all`: 2025-10 to 2026-11-13
-* `gutenberg_is_all`: 2026-01 to 2026-11-13
-* `gutenberg_it_all`: 2026-01 to 2026-11-13
-* `gutenberg_iu_all`: 2026-01 to 2026-11-13
-* `gutenberg_ja_all`: 2026-01 to 2026-11-13
-* `gutenberg_kha_all`: 2025-10 to 2026-11-13
-* `gutenberg_kld_all`: 2025-10 to 2026-11-13
-* `gutenberg_ko_all`: 2026-01 to 2026-11-13
-* `gutenberg_la_all`: 2026-01 to 2026-11-13
-* `gutenberg_mi_all`: 2026-01 to 2026-11-13
-* `gutenberg_nah_all`: 2026-01 to 2026-11-13
-* `gutenberg_nap_all`: 2026-01 to 2026-11-13
-* `gutenberg_nav_all`: 2025-10 to 2026-11-13
-* `gutenberg_nl_all`: 2026-01 to 2026-11-13
-* `gutenberg_no_all`: 2026-01 to 2026-11-13
-* `gutenberg_oc_all`: 2026-01 to 2026-11-13
-* `gutenberg_oji_all`: 2026-01 to 2026-11-13
-* `gutenberg_pl_all`: 2026-01 to 2026-11-13
-* `gutenberg_pt_all`: 2025-10 to 2026-11
-* `gutenberg_rmq_all`: 2025-09 to 2026-11-13
-* `gutenberg_ro_all`: 2026-01 to 2026-11-13
-* `gutenberg_ru_all`: 2026-01 to 2026-11-13
-* `gutenberg_sa_all`: 2026-01 to 2026-11-13
-* `gutenberg_sl_all`: 2026-01 to 2026-11-13
-* `gutenberg_sr_all`: 2026-01 to 2026-11-13
-* `gutenberg_sv_all`: 2026-01 to 2026-11-13
-* `gutenberg_te_all`: 2026-01 to 2026-11-13
-* `gutenberg_tl_all`: 2026-01 to 2026-11-13
-* `gutenberg_zh_all`: 2025-12 to 2026-11-13
+* `ankidroid`: AnkiDroid (flashcards)
+* `columba`: Columba (Reticulum messenger over Bluetooth, WiFi and LoRa)
+* `koreader`: KOReader (reads PDF, EPUB and DjVu)
+* `localsend_android`: LocalSend (send files between nearby devices)
+* `meshenger`: Meshenger (voice and video calls on a local network, no server)
+* `wifi_analyzer`: WiFi Analyzer (pick a clear channel for the hotspot)
 
 ## New in library
 
-* `gutenberg_en_lcc-cdef`: Project Gutenberg Library
-
-## Updated in maps
-
-* `planet_basemap`: 20261115 to 20261116
-
-## Updated in scripture
-
-* `bible_adz`: 2026-11-13 to 2026-11-16
-* `bible_engwebu`: 2026-11-13 to 2026-11-17
-* `bible_gvs`: 2026-11-13 to 2026-11-16
-* `bible_mkj`: 2026-11-12 to 2026-11-17
-* `bible_rmyArli`: 2026-11-13 to 2026-11-16
-* `bible_ronBayash`: 2026-11-15 to 2026-11-17
-* `bible_rusfb`: 2026-11-15 to 2026-11-16
-* `bible_tdt`: 2026-11-13 to 2026-11-17
-
-## New in scripture
-
-* `theographic`: Theographic Bible Metadata: the people, places and events of the Bible, linked verse by verse
+* `chinese_poetry`: 中华古诗词数据库 (classical Chinese poetry: 55,000 Tang and 260,000 Song poems)
+* `howtocook_zh`: 程序员做饭指南 HowToCook (a precise home cooking guide, in Chinese)
 
 ## Updated in services
 
-* `img_routing`: 5402c8543f08 to 7a1c2e6c8612
+* `img_adsb`: ed8a1395ad66 to a0a6c252492e
 
 ## Updated in tools
 
-* `ffmpeg`: 2026-11-15 to 2026-11-16
-* `llama_cpp`: b12426 to b12455
+* `llama_cpp`: b12455 to b12458
+
+## New in tools
+
+* `anki`: Anki (flashcards that schedule what to review)
+* `copyparty`: copyparty (turn any computer into a file server with one file)
+* `freecad`: FreeCAD (design parts in 3D)
+* `kicad`: KiCad (design circuit boards)
+* `localsend`: LocalSend (send files between nearby devices, no internet)
+* `openscad`: OpenSCAD (design parts by writing code)
+* `orcaslicer`: OrcaSlicer (prepare 3D prints for almost any printer)
+* `radpro`: Rad Pro (open firmware for common handheld Geiger counters)
+* `rustdesk`: RustDesk (remote desktop that works on a local network)
+* `umi_ocr`: Umi-OCR (read text out of photos and scans, offline)
+* `universal_gcode_sender`: Universal G-code Sender (run CNC mills, routers and lasers)
+* `veracrypt`: VeraCrypt (encrypted drives and containers)
+* `whisper_cpp`: whisper.cpp (speech to text engine, source)
 
 ## Failed
 
 These lines kept their last known good version where one existed.
 
 * **survival** `iroquois_food_plants`: FetchError: <urlopen error _ssl.c:1063: The handshake operation timed out> for https://archive.org/download/iroquoisusesofma00parkrich/iroquoisusesofma00parkrich.pdf
-* **survival** `chippewa_plant_uses`: FetchError: <urlopen error _ssl.c:1063: The handshake operation timed out> for https://archive.org/download/usesofplantsbych00dens/usesofplantsbych00dens.pdf
 
 ## Warnings
 

@@ -1,5 +1,26 @@
 {
  "items": {
+  "chinese_poetry": {
+   "date": "2026-06-17",
+   "dest": "library/chinese-poetry",
+   "files": [
+    {
+     "filename": "chinese-poetry-b8594f8.tar.gz",
+     "url": "https://github.com/chinese-poetry/chinese-poetry/archive/b8594f81a89752241442f2ce267d6f66f96704ee.tar.gz"
+    }
+   ],
+   "home": "https://github.com/chinese-poetry/chinese-poetry",
+   "kind": "data",
+   "lang": "zho",
+   "license": "MIT",
+   "post": "untar",
+   "tags": [
+    "poetry"
+   ],
+   "tier": "eden",
+   "title": "中华古诗词数据库 (classical Chinese poetry: 55,000 Tang and 260,000 Song poems)",
+   "version": "b8594f8"
+  },
   "folgerpedia.folger.edu_en_all": {
    "date": "2026-03-17",
    "dest": "zim",
@@ -2307,6 +2328,28 @@
    "tier": "ark",
    "title": "古腾堡图书馆项目",
    "version": "2026-11-13"
+  },
+  "howtocook_zh": {
+   "date": "2026-11-14",
+   "dest": "library/howtocook",
+   "files": [
+    {
+     "filename": "HowToCook-2585488.tar.gz",
+     "url": "https://github.com/Anduin2017/HowToCook/archive/25854882a423d7dbd6f6146b6554e2fa3b8f9804.tar.gz"
+    }
+   ],
+   "home": "https://github.com/Anduin2017/HowToCook",
+   "kind": "data",
+   "lang": "zho",
+   "license": "Unlicense (public domain)",
+   "note": "374 recipes and 19 chapters on technique and food safety, written like engineering documents with exact amounts and steps. Chinese only: the offline translator on the box can read it.",
+   "post": "untar",
+   "tags": [
+    "cooking"
+   ],
+   "tier": "ark",
+   "title": "程序员做饭指南 HowToCook (a precise home cooking guide, in Chinese)",
+   "version": "2585488"
   },
   "mutopiaproject.org_en_all": {
    "date": "2026-11-02",
