@@ -89,6 +89,8 @@
   {"id": "universal_gcode_sender", "title": "Universal G-code Sender (run CNC mills, routers and lasers)", "tier": "eden", "license": "GPL 3.0", "tags": ["fabrication", "cnc"],
    "source": {"type": "github", "repo": "winder/Universal-G-Code-Sender", "assets": {"linux-x64": "^linux-x64-ugs-platform-app-[\\d.]+\\.tar\\.gz$", "linux-arm64": "^linux-aarch64-ugs-platform-app-[\\d.]+\\.tar\\.gz$", "windows-x64": "^win64-ugs-platform-app-[\\d.]+\\.zip$", "macos-arm64": "^macosx-aarch64-ugs-platform-app-[\\d.]+\\.dmg$"}}},
   {"id": "radpro", "title": "Rad Pro (open firmware for common handheld Geiger counters)", "tier": "ark", "license": "MIT", "tags": ["radiation"], "note": "For the low cost FNIRSI, Bosean and FS series meters: better dose math, logging and alarms. Flashing replaces the factory firmware, so read its manual first.",
-   "source": {"type": "github", "repo": "Gissio/radpro", "assets": {"any": "^radpro-[\\d.]+\\.zip$"}}}
+   "source": {"type": "github", "repo": "Gissio/radpro", "assets": {"any": "^radpro-[\\d.]+\\.zip$"}}},
+  {"id": "qtscrcpy", "title": "QtScrcpy (see and drive an Android phone from a computer, over USB or WiFi)", "tier": "ark", "license": "Apache 2.0", "home": "https://gitee.com/Barryda/QtScrcpy", "tags": ["android", "repair"], "note": "From Gitee, by its author. A phone with a cracked screen or a dead touch panel is still a working camera, map and radio: plug it in and drive it with the mouse and keyboard. Nothing is installed on the phone and it needs no root, but USB debugging has to be switched on in the phone beforehand, so do that on every phone you keep while its screen still works.",
+   "source": {"type": "gitee", "repo": "Barryda/QtScrcpy", "assets": {"linux-x64": "^QtScrcpy-ubuntu-x64-v[\\d.]+\\.AppImage$", "windows-x64": "^QtScrcpy-win-x64-v[\\d.]+\\.zip$", "macos-arm64": "^QtScrcpy-mac-arm64-.*v[\\d.]+\\.dmg$"}}}
  ]
 }
