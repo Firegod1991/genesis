@@ -1563,7 +1563,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Pat (Winlink email over radio) | `pat_winlink` | seed | 1.0.1 | 33.6 MB | MIT |
 | Meshtastic firmware (ESP32 boards) | `meshtastic_firmware_esp32` | seed | 2.7.26.54e0d8d | 40.7 MB | GPL 3.0 |
 | Meshtastic firmware (nRF52840 boards) | `meshtastic_firmware_nrf52` | seed | 2.7.26.54e0d8d | 46.3 MB | GPL 3.0 |
-| CHIRP (radio programming) | `chirp` | seed | 20261113 |  | GPL 3.0 |
+| CHIRP (radio programming, source code) | `chirp` | seed | ae35e89 |  | GPL 3.0 |
 | FCC amateur license database (offline callsign lookup) | `fcc_amateur_licenses` | seed | 2026-11-15 | 198.4 MB | US government work |
 | EiBi shortwave broadcast schedule (season B26) | `eibi_shortwave_schedule` | seed | 2026-10-31 | 490 KB | Free to use, credit EiBi |
 | Satellite orbits: amateur radio (TLE) | `tle_amateur` | seed | current |  | Public data, credit CelesTrak |
@@ -3050,7 +3050,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Syncthing (sync folders between machines, no cloud) | `syncthing` | ark | 2.1.7 | 54.6 MB | MPL 2.0 |
 | restic (encrypted backups) | `restic` | ark | 0.19.1 | 40.1 MB | BSD 2 Clause |
 | Ollama (run models without Docker) | `ollama_runtime` | ark | 0.40.16 | 5.2 GB | MIT |
-| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12463 | 85.0 MB | MIT |
+| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12464 | 85.0 MB | MIT |
 | yt-dlp (save video while the internet lasts) | `yt_dlp` | ark | 2026.10.26 | 143.0 MB | Unlicense |
 | FFmpeg (static builds) | `ffmpeg` | ark | 2026-11-16 | 491.9 MB | GPL 3.0 |
 | VLC for Windows | `vlc_windows` | ark | 3.0.24 | 46.3 MB | GPL 2.0 |

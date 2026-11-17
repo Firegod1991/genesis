@@ -35,34 +35,26 @@
    "version": "1.0.4.1.3"
   },
   "chirp": {
-   "date": "2026-11-13",
-   "dest": "radio",
+   "date": "2026-11-17",
+   "dest": "radio/chirp",
    "files": [
     {
-     "filename": "chirp-next-20261113-installer.exe",
-     "platform": "windows-x64",
-     "url": "https://archive.chirpmyradio.com/chirp_next/next-20261113/chirp-next-20261113-installer.exe"
-    },
-    {
-     "filename": "chirp-20261113-py3-none-any.whl",
-     "url": "https://archive.chirpmyradio.com/chirp_next/next-20261113/chirp-20261113-py3-none-any.whl"
-    },
-    {
-     "filename": "chirp-next-20261113.app.zip",
-     "platform": "macos-arm64",
-     "url": "https://archive.chirpmyradio.com/chirp_next/next-20261113/chirp-next-20261113.app.zip"
+     "filename": "chirp-ae35e89.tar.gz",
+     "url": "https://github.com/kk7ds/chirp/archive/ae35e8998da98bfc322d721e276d1d3aa6799ef4.tar.gz"
     }
    ],
+   "home": "https://chirpmyradio.com",
    "kind": "archive",
    "license": "GPL 3.0",
-   "note": "Resolved through the publisher's own link to its latest build.",
+   "note": "The publisher's installers sit behind a browser check that no downloader can pass, so Genesis carries the source. Install the packages in its requirements.txt, then run python3 chirpwx.py.",
+   "post": "untar",
    "tags": [
     "ham",
     "programming"
    ],
    "tier": "seed",
-   "title": "CHIRP (radio programming)",
-   "version": "20261113"
+   "title": "CHIRP (radio programming, source code)",
+   "version": "ae35e89"
   },
   "direwolf": {
    "date": "2025-11-13",
