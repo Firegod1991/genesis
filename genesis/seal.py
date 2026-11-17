@@ -10,7 +10,7 @@ import shutil
 import subprocess
 
 from . import __version__, catalog
-from .util import ROOT, file_hash, human, log, write_json
+from .util import ROOT, file_hash, human, log, read_json, write_json
 
 RESTORE = """Genesis restore kit
 ===================
@@ -24,7 +24,7 @@ Sealed %(date)s with Genesis %(version)s. Everything here works with no network.
 5. Start:                  cd genesis && sh bin/genesis up core
 
 MANIFEST.json lists every file in the vault with its size and SHA 256.
-Check the drive any time with: sh bin/genesis verify
+Check the whole drive against it any time with: sh bin/genesis verify --sealed
 """
 
 
@@ -73,3 +73,28 @@ def seal(args):
         f.write(RESTORE % {"date": today, "version": __version__})
     log("sealed %d files (%s) and %d service images into %s" % (len(manifest), human(total), saved, out))
     return 0
+
+
+def check(args):
+    """Prove the drive against its seal: every file the manifest lists, by size and by SHA 256."""
+    from .fetch import vault_path
+    vault = vault_path(args)
+    manifest = read_json(os.path.join(vault, "restore", "MANIFEST.json"))
+    if not manifest:
+        print("this vault has no seal yet: run `genesis seal` first")
+        return 1
+    bad, total = [], 0
+    for rel, want in sorted(manifest["files"].items()):
+        path = os.path.join(vault, *rel.split("/"))
+        if not os.path.isfile(path):
+            bad.append("missing: %s" % rel)
+        elif os.path.getsize(path) != want["bytes"]:
+            bad.append("size changed: %s" % rel)
+        elif file_hash(path) != want["sha256"]:
+            bad.append("contents changed: %s" % rel)
+        total += want["bytes"]
+    for b in bad:
+        print("BAD " + b)
+    print("sealed %s: %d files (%s) checked against the manifest, %d problems"
+          % (manifest.get("sealed"), len(manifest["files"]), human(total), len(bad)))
+    return 1 if bad else 0

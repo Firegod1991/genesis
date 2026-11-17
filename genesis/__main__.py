@@ -39,6 +39,9 @@ def cmd_fetch(args):
 
 
 def cmd_verify(args):
+    if args.sealed:
+        from .seal import check
+        return check(args)
     from .fetch import verify
     return verify(args)
 
@@ -109,6 +112,7 @@ def build_parser():
 
     p = sub.add_parser("verify", help="re hash everything in the vault to catch bit rot")
     p.add_argument("--vault")
+    p.add_argument("--sealed", action="store_true", help="check every file against the manifest `genesis seal` wrote")
     p.set_defaults(fn=cmd_verify)
 
     p = sub.add_parser("status", help="what is installed, what is outdated")

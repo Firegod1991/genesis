@@ -60,9 +60,10 @@ Models live inside the vault, in `models/ollama`, so the drive carries them like
 genesis status       # current, outdated and missing, per pack
 genesis verify       # re hash installed files against the catalog
 genesis seal         # write an offline restore kit into the vault
+genesis verify --sealed   # prove the whole drive against that kit, on any machine
 ```
 
-A sealed vault contains the service images (`docker save`), a git bundle of this repository and a manifest with the SHA 256 of every file. `restore/RESTORE.txt` on the drive explains how to bring up a new machine from it.
+A sealed vault contains the service images (`docker save`), a git bundle of this repository and a manifest with the SHA 256 of every file. `restore/RESTORE.txt` on the drive explains how to bring up a new machine from it. After copying a vault to another drive, `genesis verify --sealed` on the copy shows that every file arrived whole. Seal again after an update, because an update replaces files.
 
 ## Adding or fixing a line
 

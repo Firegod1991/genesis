@@ -13,8 +13,8 @@ from unittest import mock
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
-from genesis import fetch  # noqa: E402
-from genesis.util import FetchError, read_json, write_json  # noqa: E402
+from genesis import fetch, seal  # noqa: E402
+from genesis.util import FetchError, file_hash, read_json, write_json  # noqa: E402
 
 STUB = [sys.executable, os.path.join(ROOT, "tests", "stub_ollama.py")]
 
@@ -128,6 +128,28 @@ class ParallelFetchTests(unittest.TestCase):
     def test_a_dead_connection_stops_the_run_early(self):
         code, _, _, state = self.run_fetch(jobs=2, keep_going=False, broken=tuple("item%d" % n for n in range(40)))
         self.assertEqual((code, state), (1, {}))
+
+
+class SealTests(unittest.TestCase):
+    def test_a_sealed_drive_proves_itself(self):
+        vault = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, vault, ignore_errors=True)
+        args = argparse.Namespace(vault=vault)
+        self.assertEqual(seal.check(args), 1, "nothing to prove before the first seal")
+        files = {}
+        for rel, text in (("documents/a.txt", "alpha"), ("maps/world/b.bin", "beta"), ("c.txt", "gamma")):
+            path = os.path.join(vault, *rel.split("/"))
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "w") as f:
+                f.write(text)
+            files[rel] = {"bytes": len(text), "sha256": file_hash(path)}
+        write_json(os.path.join(vault, "restore", "MANIFEST.json"), {"sealed": "2026-11-16", "files": files})
+        self.assertEqual(seal.check(args), 0)
+        with open(os.path.join(vault, "documents", "a.txt"), "w") as f:
+            f.write("alphA")  # same size, one flipped letter
+        self.assertEqual(seal.check(args), 1, "a changed file is caught by its hash")
+        os.remove(os.path.join(vault, "c.txt"))
+        self.assertEqual(seal.check(args), 1, "and so is a missing one")
 
 
 if __name__ == "__main__":
