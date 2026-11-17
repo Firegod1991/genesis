@@ -1,0 +1,52 @@
+{
+ "shelves": [
+  {"id": "fieldcraft", "name": "Staying alive", "icon": "flame", "about": "Water, food, fire, shelter, medicine and movement. Start with the Army manual."},
+  {"id": "water", "name": "Water", "icon": "drop", "about": "Making water safe to drink, cleaning wells and tanks, and sanitation."},
+  {"id": "medical", "name": "Plant medicine", "icon": "medical", "about": "Medicinal plants one by one: what each is used for, the evidence, the dose and the danger."},
+  {"id": "health", "name": "Health", "icon": "health", "about": "Everyday rules for emergencies, health and money, each with the evidence behind it."},
+  {"id": "game_and_fish", "name": "Game and fish", "icon": "fish", "about": "Trapping, fishing, field dressing and storing meat."},
+  {"id": "navigation", "name": "Finding your way", "icon": "compass", "about": "Map, compass and GPS on the ground, and the pilot's handbook for the air."},
+  {"id": "sky", "name": "The sky as clock and calendar", "icon": "star", "about": "Star wheels to print and pin together. Take the one nearest your latitude."},
+  {"id": "disaster", "name": "Disaster", "icon": "hazard", "about": "What to do before, during and after."},
+  {"id": "networks", "name": "Networks", "icon": "network", "about": "Building long range wireless links and mesh networks."}
+ ],
+ "first": [
+  {"name": "Make water safe", "icon": "drop", "file": "/documents/water/emergency_disinfection_of_drinking_water_sept2017.pdf"},
+  {"name": "Stay alive", "icon": "flame", "file": "/documents/fieldcraft/army_survival_atp_3-50-21.pdf"},
+  {"name": "Find where you are", "icon": "compass", "view": "map"},
+  {"name": "Call for help", "icon": "radio", "view": "radio"}
+ ],
+ "plants": {
+  "rules": [
+   "Never eat a plant you cannot name with certainty. A picture that looks right is not enough: check the leaf, stem, flower, fruit and root against the guide, one by one.",
+   "Learn the dangerous ones first. The guides under What can hurt you show them.",
+   "Edible does not mean edible raw. Acorns must be leached and pokeweed boiled in changes of water before either is safe to eat.",
+   "Never eat a mushroom you cannot name with certainty.",
+   "The modern guides teach you to recognize a plant. The older books record what people ate and how they prepared it. Use both."
+  ],
+  "regions": [
+   {"name": "What can hurt you", "danger": true, "files": ["edible_and_poisonous_mushrooms.pdf", "plants_poisonous_to_livestock.pdf"]},
+   {"name": "Whole country", "files": ["us_useful_wild_plants_1920.pdf", "us_food_plants_of_the_north_american_indians.pdf"]},
+   {"name": "Northeast", "files": ["northeast_edible_wild_greens_maine.pdf", "northeast_iroquois_food_plants.pdf"]},
+   {"name": "Great Lakes", "files": ["great_lakes_plants_used_by_the_chippewa.pdf"]},
+   {"name": "Southeast", "files": ["southeast_wild_edible_plants_primer.pdf"]},
+   {"name": "Midwest", "files": ["wild_edibles_of_missouri.pdf"]},
+   {"name": "Great Plains", "files": ["plains_plants_of_the_missouri_river_region.pdf", "plains_culturally_significant_plants.pdf"]},
+   {"name": "Rocky Mountains", "files": ["rockies_wild_berries_preserving_food_in_wyoming.pdf"]},
+   {"name": "Southwest", "files": ["southwest_desert_foods.pdf"]},
+   {"name": "California", "files": ["california_desert_plants_of_the_cahuilla.pdf", "california_coast_chumash_plant_uses.pdf"]},
+   {"name": "Pacific Northwest", "files": ["northwest_forest_plants_and_mushrooms.pdf"]},
+   {"name": "Alaska", "files": ["alaska_wildflowers_edible_and_poisonous.pdf"]},
+   {"name": "Hawaii and the Pacific", "files": ["pacific_islands_emergency_food_plants.pdf"]},
+   {"name": "Puerto Rico and the Virgin Islands", "files": ["caribbean_edible_and_poisonous_plants.pdf"]}
+  ]
+ },
+ "packs": [
+  {"id": "survival", "name": "Survival and repair"},
+  {"id": "medical", "name": "Medicine"},
+  {"id": "knowledge", "name": "Encyclopedias and school"},
+  {"id": "library", "name": "Books"},
+  {"id": "code", "name": "Programming manuals"},
+  {"id": "other", "name": "Other"}
+ ]
+}

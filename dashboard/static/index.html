@@ -4,23 +4,59 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Genesis</title>
+<link rel="icon" href="icons/genesis.svg" type="image/svg+xml">
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav class="rail" aria-label="Sections">
-  <a class="mark" href="#map">Genesis</a>
-  <a href="#map" data-view="map">Map</a>
-  <a href="#library" data-view="library">Library</a>
-  <a href="#scripture" data-view="scripture">Scripture</a>
-  <a href="#radio" data-view="radio">Radio</a>
-  <a href="#services" data-view="services">Services</a>
-  <a href="#system" data-view="system">System</a>
+  <a class="mark" href="#home">Genesis</a>
+  <a href="#home" data-view="home"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/home.svg#g"/></svg>Home</a>
+  <a href="#ask" data-view="ask"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/assistant.svg#g"/></svg>Ask</a>
+  <a href="#map" data-view="map"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/map.svg#g"/></svg>Map</a>
+  <a href="#manuals" data-view="manuals"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/manual.svg#g"/></svg>Manuals</a>
+  <a href="#plants" data-view="plants"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/leaf.svg#g"/></svg>Plants</a>
+  <a href="#library" data-view="library"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/book.svg#g"/></svg>Library</a>
+  <a href="#scripture" data-view="scripture"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/scripture.svg#g"/></svg>Scripture</a>
+  <a href="#radio" data-view="radio"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/radio.svg#g"/></svg>Radio</a>
+  <a href="#notes" data-view="notes"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/note.svg#g"/></svg>Notes</a>
+  <a href="#programs" data-view="programs"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/tools.svg#g"/></svg>Programs</a>
+  <a href="#system" data-view="system"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/gear.svg#g"/></svg>System</a>
   <button id="night" type="button" aria-pressed="false" title="Red light keeps your eyes adjusted to the dark">Night vision</button>
 </nav>
 
 <main>
-  <section id="view-map" class="view">
+  <section id="view-home" class="view" hidden>
+    <form id="need" class="need-form" autocomplete="off">
+      <label for="need-q"><h1>What do you need?</h1></label>
+      <div class="need-row">
+        <input id="need-q" name="q" type="search" placeholder="clean water, a fever, a knot, Psalm 23, a plant by name" spellcheck="false">
+        <button type="submit">Find it</button>
+      </div>
+    </form>
+    <div id="found" class="found" hidden></div>
+    <div id="first" class="first" aria-label="Start here"></div>
+    <div id="tiles" class="tiles" aria-label="Everything on this box"></div>
+    <p id="home-foot" class="hint"></p>
+  </section>
+
+  <section id="view-ask" class="view" hidden>
+    <h1>Ask</h1>
+    <p class="lede" id="ask-lede">A language model that runs on this box. It reads the library before it answers and names the book it used. It can be wrong: for anything that can hurt you, open the manual it points to.</p>
+    <div class="ask-bar">
+      <label for="ask-model">Model</label>
+      <select id="ask-model"></select>
+      <label class="check"><input id="ask-library" type="checkbox" checked> Read the library first</label>
+      <button id="ask-clear" type="button" class="quiet">New conversation</button>
+    </div>
+    <div id="ask-log" class="ask-log" aria-live="polite"></div>
+    <form id="ask-form" class="ask-form" autocomplete="off">
+      <textarea id="ask-q" rows="2" placeholder="Ask a question, or ask it to write or fix something" aria-label="Your question"></textarea>
+      <button type="submit" id="ask-go">Ask</button>
+    </form>
+  </section>
+
+  <section id="view-map" class="view" hidden>
     <form id="where" class="where" autocomplete="off">
       <label for="pos">Your position</label>
       <input id="pos" name="pos" inputmode="text" placeholder="43.7384, 7.4246 or click the map" spellcheck="false">
@@ -37,15 +73,23 @@
     </table>
   </section>
 
+  <section id="view-manuals" class="view" hidden>
+    <h1>Manuals</h1>
+    <p class="lede">Written by the agencies and schools that teach these skills. Each opens here, with its pictures, and prints on any printer.</p>
+    <div id="manual-shelves"></div>
+  </section>
+
+  <section id="view-plants" class="view" hidden>
+    <h1>Plants</h1>
+    <div class="rules" id="plant-rules"></div>
+    <div id="plant-shelves"></div>
+  </section>
+
   <section id="view-library" class="view" hidden>
     <h1>Library</h1>
     <p class="lede" id="library-lede"></p>
-    <div id="library-open" class="actions"></div>
-    <div id="library-packs"></div>
-    <h2>Documents</h2><ul id="library-docs" class="plain"></ul>
-    <h2>Phone apps</h2>
-    <p class="hint">Open this page on an Android phone connected to the box, then tap an app to install it.</p>
-    <ul id="library-apps" class="plain"></ul>
+    <input id="library-filter" type="search" placeholder="Filter the books" aria-label="Filter the books">
+    <div id="library-books"></div>
   </section>
 
   <section id="view-scripture" class="view" hidden>
@@ -66,13 +110,37 @@
     <table id="radio-signals"><tbody></tbody></table>
   </section>
 
-  <section id="view-services" class="view" hidden>
-    <h1>Services</h1>
-    <p class="lede">Everything this box runs. Start more with <code>genesis up</code> followed by a profile name.</p>
-    <table id="services-table">
-      <thead><tr><th scope="col">Service</th><th scope="col">What it does</th><th scope="col">Profile</th><th scope="col">State</th></tr></thead>
-      <tbody></tbody>
-    </table>
+  <section id="view-notes" class="view" hidden>
+    <h1>Notes</h1>
+    <p class="lede">Kept on the drive, in plain text that any computer can read. Write down what you learn, what you have and where it is.</p>
+    <div class="notes">
+      <div class="notes-list">
+        <button id="note-new" type="button" class="act">New note</button>
+        <ul id="note-names" class="plain"></ul>
+      </div>
+      <form id="note-form" class="note-form" hidden>
+        <input id="note-name" aria-label="Name of the note" placeholder="Name of the note" spellcheck="false">
+        <textarea id="note-text" rows="18" aria-label="The note"></textarea>
+        <div class="actions">
+          <button type="submit" class="act">Save</button>
+          <button type="button" class="quiet" id="note-ask">Ask the assistant to tidy it</button>
+          <output id="note-state"></output>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="view-programs" class="view" hidden>
+    <h1>Programs</h1>
+    <p class="lede">For the other computers and phones you may still have. Open this page from one of them while it is joined to the box, and take what it needs.</p>
+    <h2>Phone apps</h2>
+    <p class="hint">On an Android phone, tap an app to install it. No app store is needed.</p>
+    <div id="programs-apps" class="rows"></div>
+    <h2>Desktop programs</h2>
+    <div id="programs-tools" class="rows"></div>
+    <h2>Systems to install</h2>
+    <p class="hint">Whole operating systems. Write one to a USB stick to bring a dead computer back.</p>
+    <div id="programs-isos" class="rows"></div>
   </section>
 
   <section id="view-system" class="view" hidden>
@@ -80,6 +148,23 @@
     <dl id="system-list" class="facts"></dl>
     <h2>Survival layers</h2>
     <dl id="poi-stats" class="facts"></dl>
+    <h2>What is in the vault</h2>
+    <div id="library-packs"></div>
+    <h2>Services</h2>
+    <p class="hint">The extra services need Docker. Start them with <code>genesis up</code> followed by a profile name.</p>
+    <table id="services-table">
+      <thead><tr><th scope="col">Service</th><th scope="col">What it does</th><th scope="col">Profile</th><th scope="col">State</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="view-read" class="view reader" hidden>
+    <div class="reader-bar">
+      <a id="read-back" href="#home"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/back.svg#g"/></svg>Back</a>
+      <strong id="read-title"></strong>
+      <a id="read-out" target="_blank" rel="noopener">Open in its own tab</a>
+    </div>
+    <iframe id="read-frame" title="Reader"></iframe>
   </section>
 </main>
 
