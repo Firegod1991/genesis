@@ -42,6 +42,55 @@ def _fill_sizes(entry, net):
                 pass
 
 
+def _days(earlier, later):
+    """Days from one ISO date to another, or 0 when either cannot be read."""
+    try:
+        return (datetime.date.fromisoformat(later) - datetime.date.fromisoformat(earlier)).days
+    except (TypeError, ValueError):
+        return 0
+
+
+def merged(entries):
+    """Volumes that a newer combined volume has replaced: {combined id: [the parts it took over]}.
+
+    A publisher now and then folds several volumes into one and goes on listing the old ones. Project
+    Gutenberg's shelves C, D, E and F became one volume, CDEF, in November 2026. A combined volume is
+    told from an ordinary one (PA is a shelf of its own, not P plus A) by three things at once: its
+    code spells out three or more volumes of the same rule that all exist, every one of them is a
+    generation older, and it is about as big as all of them together.
+    """
+    def size(e):
+        return catalog.entry_size(e) or 0
+    out = {}
+    for iid, e in entries.items():
+        stem, dash, code = iid.rpartition("-")
+        if not dash or not e.get("rule") or len(code) < 3 or not code.isalpha() or len(set(code)) != len(code):
+            continue
+        parts = [stem + "-" + letter for letter in code]
+        if not all(p in entries and entries[p].get("rule") == e["rule"] for p in parts):
+            continue
+        if all(_days(entries[p].get("date"), e.get("date")) >= 45 for p in parts) and \
+                size(e) >= 0.5 * sum(size(entries[p]) for p in parts):
+            out[iid] = parts
+    return out
+
+
+def _fold(new, old):
+    """Drop the parts a combined volume replaced, and have that volume say so in the lock.
+
+    A drive that already holds the parts removes them once the combined volume is on it. The note
+    stays for as long as the parts stay gone, so a drive that skips a few months still learns of it.
+    """
+    for iid, e in new.items():
+        before = [p for p in (old.get(iid) or {}).get("replaces", []) if p not in new]
+        if before:
+            e["replaces"] = before
+    for iid, parts in merged(new).items():
+        new[iid]["replaces"] = sorted(set(new[iid].get("replaces", []) + parts))
+        for p in parts:
+            new.pop(p, None)
+
+
 def refresh_pack(name, net, jobs=8):
     pack = catalog.load_pack(name)
     old = catalog.load_lock(name)
@@ -71,6 +120,7 @@ def refresh_pack(name, net, jobs=8):
 
     with ThreadPoolExecutor(max_workers=jobs) as pool:
         list(pool.map(lambda e: _fill_sizes(e, net), new.values()))
+    _fold(new, old)
 
     def ver(e):
         return (e.get("version"), e.get("status"))

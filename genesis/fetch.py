@@ -136,6 +136,52 @@ def plan(args):
     return 0
 
 
+def _folder(vault, iid, entry):
+    """Where an item's downloads land."""
+    sub = entry.get("dest", "misc")
+    if entry.get("kind") == "bible":
+        sub = os.path.join(sub, entry.get("meta", {}).get("translation", iid))
+    return os.path.join(vault, sub)
+
+
+def _retire(vault, state, iid):
+    """Take an item out of the vault once a newer volume carries its contents."""
+    for rel in state.pop(iid, {}).get("files", []):
+        path = _inside(vault, rel)
+        if os.path.isfile(path):
+            os.remove(path)
+            log("  removed %s: a newer volume on this drive replaces it" % rel)
+
+
+def _tidy(vault, sel, state):
+    """Clear out what the catalog has moved on from, before anything is downloaded.
+
+    Partial downloads of files the catalog no longer lists can never be finished, so they go. Only
+    folders that hold plain downloads are looked at, and only their own `.part` files: a folder that
+    archives are unpacked into is left alone, whatever its contents are called. Items that a combined
+    volume already on the drive has replaced go too.
+    """
+    plain, unpacked, waiting = set(), set(), set()
+    known = [(iid, entry, entry.get("files", [])) for _, iid, entry in catalog.all_locked()]
+    for iid, entry, files in known + [(iid, entry, files) for _, iid, entry, files in sel]:
+        folder = _folder(vault, iid, entry)
+        (unpacked if entry.get("post") in ("unzip", "untar") else plain).add(folder)
+        waiting.update(os.path.join(folder, f["filename"] + ".part") for f in files)
+    for folder in sorted(plain - unpacked):
+        for name in sorted(os.listdir(folder)) if os.path.isdir(folder) else []:
+            path = os.path.join(folder, name)
+            if name.endswith(".part") and path not in waiting and os.path.isfile(path):
+                log("removed %s (%s): a partial download of a file the catalog no longer lists"
+                    % (_rel(path, vault), human(os.path.getsize(path))))
+                os.remove(path)
+    left = [old for _, iid, entry, _ in sel if state.get(iid, {}).get("version") == entry.get("version")
+            for old in entry.get("replaces") or [] if old in state]
+    for old in left:
+        _retire(vault, state, old)
+    if left:
+        write_json(_meta(vault, "state.json"), state)
+
+
 # ------------------------------------------------------------------ download and verify
 
 def _speed(url, seconds=3.0):
@@ -395,10 +441,7 @@ def _fetch_item(vault, iid, entry, files, net, state, models):
         if not models.pull(entry["model"]):
             return None
         return {"version": entry.get("version"), "files": [], "model": entry["model"]}
-    sub = entry.get("dest", "misc")
-    if kind == "bible":
-        sub = os.path.join(sub, entry.get("meta", {}).get("translation", iid))
-    folder = os.path.join(vault, sub)
+    folder = _folder(vault, iid, entry)
     written = []
     for f in files:
         dest = os.path.join(folder, f["filename"])
@@ -446,6 +489,7 @@ def fetch(args):
     vault = vault_path(args)
     cfg, sel = _selection(args, vault, save=True)
     state = _state(vault)
+    _tidy(vault, sel, state)
     todo = [(p, i, e, f) for p, i, e, f in sel
             if state.get(i, {}).get("version") != e.get("version") and e.get("kind") != "image"]
     need = sum(catalog.entry_size(e, f) or 0 for _, _, e, f in todo)
@@ -476,6 +520,8 @@ def fetch(args):
             result["pack"] = pack
             with lock:  # one writer at a time, so no item is lost from the record
                 state[iid] = result
+                for old in entry.get("replaces") or []:
+                    _retire(vault, state, old)
                 write_json(_meta(vault, "state.json"), state)
                 done.append(iid)
 

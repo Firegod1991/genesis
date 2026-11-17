@@ -44,6 +44,8 @@ genesis update       # the same thing, right now
 
 `genesis update` pulls the newest catalog with git, fetches whatever changed for the tier, languages and packs you chose, verifies it, removes the superseded files, pulls newer service images and restarts the library so new books show up. With no connection it leaves everything exactly as it is.
 
+Publishers reorganize. When several volumes are folded into one (Project Gutenberg did it with four shelves of its English library in November 2026), the refresh drops the old volumes from the catalog and the combined volume records which ones it replaces. A drive that holds the old volumes keeps them until the combined one is downloaded and checked, then removes them. Nothing else is ever removed because a publisher stopped listing it. A partial download of a file the catalog no longer lists can never be finished, so the next fetch clears it away.
+
 ## Where the models go
 
 Models live inside the vault, in `models/ollama`, so the drive carries them like everything else. `genesis fetch` puts them there in one of three ways:
