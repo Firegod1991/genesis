@@ -7,8 +7,8 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
 | seed | 400 | 23.8 GB | 44 |
-| ark | 660 | 782.3 GB | 90 |
-| eden | 852 | 2.0 TB | 109 |
+| ark | 656 | 720.6 GB | 90 |
+| eden | 848 | 2.0 TB | 109 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -1229,7 +1229,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | 程序员做饭指南 HowToCook (a precise home cooking guide, in Chinese) | `howtocook_zh` | ark | 2585488 |  | Unlicense (public domain) |
 | 中华古诗词数据库 (classical Chinese poetry: 55,000 Tang and 260,000 Song poems) | `chinese_poetry` | eden | b8594f8 |  | MIT |
 
-<details><summary><b>gutenberg_every_language</b>: 103 items, 515.0 GB, tier ark</summary>
+<details><summary><b>gutenberg_every_language</b>: 99 items, 453.3 GB, tier ark</summary>
 
 * Projek Gutenberg-biblioteek (`gutenberg_af_all`, 2026-11-13)
 * Project Gutenberg Library (`gutenberg_ale_all`, 2026-11-13)
@@ -1250,11 +1250,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Βιβλιοθήκη Project Gutenberg (`gutenberg_el_all`, 2026-11-13)
 * Project Gutenberg Library (`gutenberg_en_lcc-a`, 2026-11-13)
 * Project Gutenberg Library (`gutenberg_en_lcc-b`, 2026-11-13)
-* Project Gutenberg Library (`gutenberg_en_lcc-c`, 2025-12)
 * Project Gutenberg Library (`gutenberg_en_lcc-cdef`, 2026-11-13)
-* Project Gutenberg Library (`gutenberg_en_lcc-d`, 2025-12)
-* Project Gutenberg Library (`gutenberg_en_lcc-e`, 2026-03)
-* Project Gutenberg Library (`gutenberg_en_lcc-f`, 2026-03)
 * Project Gutenberg Library (`gutenberg_en_lcc-g`, 2026-11-13)
 * Project Gutenberg Library (`gutenberg_en_lcc-h`, 2026-11-13)
 * Project Gutenberg Library (`gutenberg_en_lcc-j`, 2026-11-13)
@@ -3050,7 +3046,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Syncthing (sync folders between machines, no cloud) | `syncthing` | ark | 2.1.7 | 54.6 MB | MPL 2.0 |
 | restic (encrypted backups) | `restic` | ark | 0.19.1 | 40.1 MB | BSD 2 Clause |
 | Ollama (run models without Docker) | `ollama_runtime` | ark | 0.40.16 | 5.2 GB | MIT |
-| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12464 | 85.0 MB | MIT |
+| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12465 | 85.0 MB | MIT |
 | yt-dlp (save video while the internet lasts) | `yt_dlp` | ark | 2026.10.26 | 143.0 MB | Unlicense |
 | FFmpeg (static builds) | `ffmpeg` | ark | 2026-11-16 | 491.9 MB | GPL 3.0 |
 | VLC for Windows | `vlc_windows` | ark | 3.0.24 | 46.3 MB | GPL 2.0 |

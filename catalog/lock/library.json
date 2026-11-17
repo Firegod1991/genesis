@@ -481,28 +481,6 @@
    "title": "Project Gutenberg Library",
    "version": "2026-11-13"
   },
-  "gutenberg_en_lcc-c": {
-   "date": "2025-12-05",
-   "dest": "zim",
-   "files": [
-    {
-     "filename": "gutenberg_en_lcc-c_2025-12.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-c_2025-12.zim.sha256",
-     "size": 1322988544,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-c_2025-12.zim"
-    }
-   ],
-   "kind": "zim",
-   "lang": "eng",
-   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
-   "rule": "gutenberg_every_language",
-   "tags": [
-    "books"
-   ],
-   "tier": "ark",
-   "title": "Project Gutenberg Library",
-   "version": "2025-12"
-  },
   "gutenberg_en_lcc-cdef": {
    "date": "2026-11-13",
    "dest": "zim",
@@ -517,6 +495,12 @@
    "kind": "zim",
    "lang": "eng",
    "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "replaces": [
+    "gutenberg_en_lcc-c",
+    "gutenberg_en_lcc-d",
+    "gutenberg_en_lcc-e",
+    "gutenberg_en_lcc-f"
+   ],
    "rule": "gutenberg_every_language",
    "tags": [
     "books"
@@ -524,72 +508,6 @@
    "tier": "ark",
    "title": "Project Gutenberg Library",
    "version": "2026-11-13"
-  },
-  "gutenberg_en_lcc-d": {
-   "date": "2025-12-06",
-   "dest": "zim",
-   "files": [
-    {
-     "filename": "gutenberg_en_lcc-d_2025-12.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-d_2025-12.zim.sha256",
-     "size": 40254449664,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-d_2025-12.zim"
-    }
-   ],
-   "kind": "zim",
-   "lang": "eng",
-   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
-   "rule": "gutenberg_every_language",
-   "tags": [
-    "books"
-   ],
-   "tier": "ark",
-   "title": "Project Gutenberg Library",
-   "version": "2025-12"
-  },
-  "gutenberg_en_lcc-e": {
-   "date": "2026-03-05",
-   "dest": "zim",
-   "files": [
-    {
-     "filename": "gutenberg_en_lcc-e_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-e_2026-03.zim.sha256",
-     "size": 10196818944,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-e_2026-03.zim"
-    }
-   ],
-   "kind": "zim",
-   "lang": "eng",
-   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
-   "rule": "gutenberg_every_language",
-   "tags": [
-    "books"
-   ],
-   "tier": "ark",
-   "title": "Project Gutenberg Library",
-   "version": "2026-03"
-  },
-  "gutenberg_en_lcc-f": {
-   "date": "2026-03-05",
-   "dest": "zim",
-   "files": [
-    {
-     "filename": "gutenberg_en_lcc-f_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-f_2026-03.zim.sha256",
-     "size": 9888134144,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-f_2026-03.zim"
-    }
-   ],
-   "kind": "zim",
-   "lang": "eng",
-   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
-   "rule": "gutenberg_every_language",
-   "tags": [
-    "books"
-   ],
-   "tier": "ark",
-   "title": "Project Gutenberg Library",
-   "version": "2026-03"
   },
   "gutenberg_en_lcc-g": {
    "date": "2026-11-13",
