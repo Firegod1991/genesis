@@ -26,6 +26,8 @@ _DIRECT = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 # One download at a time can draw a progress bar. Several at once would only scribble over each other.
 PROGRESS = True
 KIWIX = "https://download.kiwix.org/"
+# From this size up, a Kiwix file comes down from several mirrors at once when aria2 is installed.
+SWARM = 20e9
 
 
 class _Mirrors(dict):
@@ -199,6 +201,8 @@ def _tidy(vault, sel, state):
                 log("removed %s (%s): a partial download of a file the catalog no longer lists"
                     % (_rel(path, vault), human(os.path.getsize(path))))
                 os.remove(path)
+                if os.path.isfile(path + ".aria2"):
+                    os.remove(path + ".aria2")
     left = [old for _, iid, entry, _ in sel if state.get(iid, {}).get("version") == entry.get("version")
             for old in entry.get("replaces") or [] if old in state]
     for old in left:
@@ -305,10 +309,52 @@ def _transfer(url, part):
                 shutil.copyfileobj(r, f, 1024 * 1024)
 
 
+def _swarm(url, part, size):
+    """A very big Kiwix file through aria2, when it is installed: several connections at once, spread
+    over every mirror that carries the file. One mirror alone decides how long such a file takes, and
+    together they have been measured at four times the best of them. False when this is not on offer,
+    and the ordinary download takes over.
+
+    aria2 fills the file in pieces and keeps a record beside it of which pieces it has. A file with
+    that record is only ever continued by aria2, since nothing else can tell the holes from the data.
+    """
+    record = part + ".aria2"
+    exe = shutil.which("aria2c")
+    if not exe:
+        if os.path.exists(record):
+            log("  starting %s again: aria2 began it in pieces and is not installed here to finish it"
+                % os.path.basename(part)[:-len(".part")])
+            for path in (part, record):
+                if os.path.exists(path):
+                    os.remove(path)
+        return False
+    begun = os.path.exists(record)
+    if not begun and not (size and size >= SWARM and url.startswith(KIWIX)):
+        return False
+    mirrors = _listed(url) if url.startswith(KIWIX) else [url]
+    if len(mirrors) < 2 and not (begun and mirrors):
+        if begun:
+            raise FetchError("the mirrors for %s could not be listed" % url)
+        return False
+    log("  %d mirrors at once for %s" % (len(mirrors), os.path.basename(url)))
+    rc = subprocess.call([
+        exe, "--continue=true", "--max-connection-per-server=2", "--split=%d" % min(8, 2 * len(mirrors)),
+        "--min-split-size=16M", "--file-allocation=none", "--auto-file-renaming=false", "--auto-save-interval=15",
+        "--max-tries=20", "--retry-wait=15", "--timeout=60", "--connect-timeout=30", "--summary-interval=0",
+        "--console-log-level=warn", "--download-result=hide", "--user-agent=" + USER_AGENT,
+        "--dir=" + os.path.dirname(part), "--out=" + os.path.basename(part)] + mirrors)
+    if rc != 0:
+        raise FetchError("aria2c exit %d for %s" % (rc, url))
+    return True
+
+
 def _download(url, dest, size=None):
     part = dest + ".part"
     os.makedirs(os.path.dirname(dest), exist_ok=True)
-    if size and os.path.exists(part) and os.path.getsize(part) == size:
+    if size and os.path.exists(part) and os.path.getsize(part) == size and not os.path.exists(part + ".aria2"):
+        os.replace(part, dest)
+        return
+    if _swarm(url, part, size):
         os.replace(part, dest)
         return
     tried = []
@@ -584,6 +630,11 @@ def fetch(args):
     global PROGRESS
     jobs = max(1, getattr(args, "jobs", None) or 4)
     PROGRESS = jobs == 1
+    # An item bigger than an even share of the whole run decides when the run ends, so it starts first.
+    sizes = {id(t): catalog.entry_size(t[2], t[3]) or 0 for t in todo}
+    first = sorted((t for t in todo if need > sizes[id(t)] and sizes[id(t)] * jobs > need),
+                   key=lambda t: -sizes[id(t)])
+    todo = first + [t for t in todo if all(t is not f for f in first)]
     net, models, lock, failed, done = Net(), Models(vault), threading.Lock(), [], []
     # One slow source must not hold every slot: while items from elsewhere wait, a source gets half.
     waiting, busy, halt, share = list(enumerate(todo, 1)), {}, [], max(1, jobs // 2)
