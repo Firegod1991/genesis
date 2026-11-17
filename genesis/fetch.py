@@ -225,16 +225,21 @@ def _speed(url, seconds=3.0):
     return got / max(time.time() - start, 0.001)
 
 
-def _pick_mirror(url):
-    """Time every mirror that carries this file for a few seconds. Returns the folder each one keeps
-    it in, with the host, and notes how quick each host was."""
+def _listed(url):
+    """Every mirror address the publisher lists for this file."""
     name = url.rsplit("/", 1)[1]
     try:
         with http_open(url + ".meta4", retries=2, timeout=20) as r:
-            listed = re.findall(r"<url[^>]*>\s*(https://[^<\s]+)\s*</url>", r.read().decode("utf-8", "replace"))
+            found = re.findall(r"<url[^>]*>\s*(https://[^<\s]+)\s*</url>", r.read().decode("utf-8", "replace"))
     except (FetchError, OSError):
         return []
-    listed = [u for u in listed if u.endswith("/" + name)]
+    return [u for u in found if u.endswith("/" + name)]
+
+
+def _pick_mirror(url):
+    """Time every mirror that carries this file for a few seconds. Returns the folder each one keeps
+    it in, with the host, and notes how quick each host was."""
+    listed = _listed(url)
     if len(listed) < 2:
         return []
     with ThreadPoolExecutor(max_workers=len(listed)) as pool:
@@ -322,7 +327,19 @@ def _download(url, dest, size=None):
         finally:
             with _mirror_lock:
                 _mirror.busy[host] = max(0, _mirror.busy.get(host, 0) - 1)
-    _transfer(url, part)
+    try:
+        _transfer(url, part)
+    except FetchError as e:
+        # A file published in the last day can be missing from the mirror the publisher hands out
+        # while other mirrors already carry it: ask each of the listed ones before giving up.
+        for other in [u for u in _listed(url) if urlsplit(u).hostname not in tried] if url.startswith(KIWIX) else []:
+            try:
+                _transfer(other, part)
+                break
+            except (FetchError, OSError):
+                continue
+        else:
+            raise e
     os.replace(part, dest)
 
 

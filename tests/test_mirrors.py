@@ -91,6 +91,39 @@ class MirrorChoiceTests(unittest.TestCase):
         self.assertTrue(os.path.isfile(dest))
         self.assertEqual(set(fetch._mirror.busy.values()), {0}, "no host is left counted as busy")
 
+    def test_a_new_file_the_publisher_sends_to_a_stale_mirror_comes_from_one_that_has_it(self):
+        vault = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, vault, ignore_errors=True)
+        dest, tried = os.path.join(vault, "zim", "small.zim"), []
+
+        def transfer(url, part):
+            tried.append(self.host(url))
+            if "dk.example" not in url:
+                raise FetchError("curl exit 22 for " + url)  # the publisher's pick and nl have not synced yet
+            with open(part, "w") as f:
+                f.write("zim")
+
+        with mock.patch.object(fetch, "_transfer", side_effect=transfer):
+            fetch._download(BOOKS + "small.zim", dest, 5e6)  # too small for a speed comparison
+        self.assertEqual(tried, ["download.kiwix.org", "nl.example", "dk.example"])
+        self.assertTrue(os.path.isfile(dest))
+        self.assertEqual(self.timed, [], "no mirror is timed for a small file")
+
+    def test_a_file_no_mirror_has_fails_with_what_the_publisher_said(self):
+        vault = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, vault, ignore_errors=True)
+
+        def transfer(url, part):
+            raise FetchError("curl exit 22 for " + url)
+
+        with mock.patch.object(fetch, "_transfer", side_effect=transfer):
+            with self.assertRaises(FetchError) as caught:
+                fetch._download(BOOKS + "small.zim", os.path.join(vault, "zim", "small.zim"), 5e6)
+        self.assertIn(fetch.KIWIX, str(caught.exception))
+        with mock.patch.object(fetch, "_transfer", side_effect=transfer):
+            with self.assertRaises(FetchError):
+                fetch._download("https://example.org/file.bin", os.path.join(vault, "x", "file.bin"), 5e6)
+
     def test_a_finished_download_frees_its_mirror(self):
         vault = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, vault, ignore_errors=True)
