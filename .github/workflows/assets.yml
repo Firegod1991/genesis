@@ -62,9 +62,14 @@ jobs:
           "$RUNNER_TEMP/venv/bin/python" -m playwright install --with-deps chromium
       - name: Build a small real vault (Monaco)
         run: |
-          python3 -m genesis fetch --id map_assets --id global_power_plants --id bible_hboWLC --id bible_grctr --id bible_latVUC --id bible_eng-kjv --id bible_engwebp
-          bash tools/monaco_vault.sh
-          python3 -m genesis maps world --maxzoom 5
+          # The map source drops a connection now and then, and a second try is cheap.
+          for attempt in 1 2 3; do
+            python3 -m genesis fetch --id map_assets --id global_power_plants --id bible_hboWLC --id bible_grctr --id bible_latVUC --id bible_eng-kjv --id bible_engwebp \
+              && bash tools/monaco_vault.sh && python3 -m genesis maps world --maxzoom 5 && exit 0
+            echo "Attempt $attempt did not finish. Waiting, then trying again."
+            sleep 30
+          done
+          exit 1
       - name: Drive the dashboard in a browser
         run: |
           PORT=8765 python3 dashboard/server.py &
