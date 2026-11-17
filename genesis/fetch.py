@@ -337,10 +337,12 @@ def _swarm(url, part, size):
             raise FetchError("the mirrors for %s could not be listed" % url)
         return False
     log("  %d mirrors at once for %s" % (len(mirrors), os.path.basename(url)))
+    # Pieces down to 1 MB can change hands, so a slow mirror never keeps the last of a file waiting.
     rc = subprocess.call([
         exe, "--continue=true", "--max-connection-per-server=2", "--split=%d" % min(8, 2 * len(mirrors)),
-        "--min-split-size=16M", "--file-allocation=none", "--auto-file-renaming=false", "--auto-save-interval=15",
+        "--min-split-size=1M", "--file-allocation=none", "--auto-file-renaming=false", "--auto-save-interval=15",
         "--max-tries=20", "--retry-wait=15", "--timeout=60", "--connect-timeout=30", "--summary-interval=0",
+        "--show-console-readout=" + ("true" if PROGRESS and sys.stderr.isatty() else "false"),
         "--console-log-level=warn", "--download-result=hide", "--user-agent=" + USER_AGENT,
         "--dir=" + os.path.dirname(part), "--out=" + os.path.basename(part)] + mirrors)
     if rc != 0:
