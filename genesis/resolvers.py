@@ -540,6 +540,37 @@ def r_github(src, net):
     return res
 
 
+def r_github_branch(src, net):
+    """The newest commit on a branch, as one source archive that names that commit.
+
+    For data that lives in a repository and never gets a release. The branch tip comes from the
+    public address `git clone` itself starts with, which needs no token. The API adds the date of
+    that commit and stands in when the address will not answer. The download address carries the
+    commit, so the file a lock entry points at cannot change under it.
+    """
+    repo, branch = src["repo"], src.get("branch")
+    ref = "heads/" + branch if branch else "HEAD"
+    sha = date = None
+    try:
+        refs = net.text("https://github.com/%s.git/info/refs?service=git-upload-pack" % repo)
+        # Each line is a four digit length, the commit, a space and the name. Taking the forty
+        # digits that touch the space keeps the length out of the commit.
+        m = re.search(r"([0-9a-f]{40}) (?:refs/)?%s[\x00\n]" % re.escape(ref), refs)
+        sha = m.group(1) if m else None
+    except FetchError:
+        pass
+    try:
+        c = net.json("https://api.github.com/repos/%s/commits/%s" % (repo, sha or ref))
+        sha, date = sha or c["sha"], c["commit"]["committer"]["date"][:10]
+    except (FetchError, KeyError, TypeError, ValueError):
+        pass
+    if not sha:
+        raise ResolveError("cannot read %s of %s" % ("branch " + branch if branch else "the default branch", repo))
+    return {"version": sha[:7], "date": date,
+            "files": [{"url": "https://github.com/%s/archive/%s.tar.gz" % (repo, sha),
+                       "filename": "%s-%s.tar.gz" % (repo.split("/")[1], sha[:7])}]}
+
+
 # ---------------------------------------------------------------- language toolchains
 
 _GO = {"linux-x64": ("linux", "amd64"), "linux-arm64": ("linux", "arm64"),
@@ -866,9 +897,9 @@ def r_redirect(src, net):
 RESOLVERS = {
     "kiwix": r_kiwix, "checksum_file": r_checksum_file, "ubuntu": r_ubuntu, "openwrt": r_openwrt,
     "tails": r_tails, "rpi_imager": r_rpi_imager, "alpine": r_alpine, "fedora": r_fedora,
-    "sourceforge": r_sourceforge, "fdroid": r_fdroid, "github": r_github, "toolchain": r_toolchain,
-    "protomaps": r_protomaps, "ollama": r_ollama, "docker": r_docker, "static": r_static,
-    "http_index": r_http_index, "redirect": r_redirect,
+    "sourceforge": r_sourceforge, "fdroid": r_fdroid, "github": r_github, "github_branch": r_github_branch,
+    "toolchain": r_toolchain, "protomaps": r_protomaps, "ollama": r_ollama, "docker": r_docker,
+    "static": r_static, "http_index": r_http_index, "redirect": r_redirect,
 }
 EXPANDERS = {"kiwix_rule": x_kiwix_rule, "ebible": x_ebible}
 

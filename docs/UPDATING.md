@@ -13,6 +13,7 @@ Genesis separates two things: knowing what the newest version of something is, a
 | `kiwix`, `kiwix_rule` | The Kiwix library catalog. Rules pull in whole families, such as every DevDocs book or Wikipedia in every language, so new books appear with no edit here |
 | `ebible` | The eBible.org translation list, limited to translations it is allowed to share |
 | `github` | The newest release of a repository, matched to each platform. A file the newest release lacks comes from the release before it, and the report says so |
+| `github_branch` | The newest commit on a branch, for data kept in a repository that never cuts a release. The download names the commit, so a locked version cannot change |
 | `checksum_file`, `ubuntu`, `openwrt` | The checksum list a distribution publishes beside its images |
 | `toolchain` | The official release feed of each language |
 | `tails`, `alpine`, `fedora`, `rpi_imager`, `fdroid` | That project's own release feed |

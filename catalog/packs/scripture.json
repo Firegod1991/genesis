@@ -19,6 +19,11 @@
    "note": "More than a thousand languages. Each translation keeps its own copyright notice inside the download.",
    "source": {"type": "ebible", "select": "redistributable"}},
 
+  {"id": "theographic", "title": "Theographic Bible Metadata: the people, places and events of the Bible, linked verse by verse", "tier": "seed",
+   "kind": "data", "dest": "study/theographic", "post": "untar", "license": "CC BY-SA 4.0", "home": "https://github.com/robertrouse/theographic-bible-metadata",
+   "tags": ["study", "data"],
+   "note": "More than 3,000 people, about 1,300 places (nearly all with map coordinates) and a timeline of events, each tied to the King James verses that mention it, plus Easton's Bible Dictionary. JSON, CSV and GeoJSON for builders and researchers, by Robert Rouse of Viz.Bible. Its dates follow Floyd Nolen Jones, The Chronology of the Old Testament.",
+   "source": {"type": "github_branch", "repo": "robertrouse/theographic-bible-metadata"}},
   {"zim": "hermeneutics.stackexchange.com_en_all", "tier": "ark", "kind": "zim", "dest": "zim", "tags": ["study", "qa"]},
   {"zim": "christianity.stackexchange.com_en_all", "tier": "ark", "kind": "zim", "dest": "zim", "tags": ["study", "qa"]},
   {"zim": "judaism.stackexchange.com_en_all", "tier": "ark", "kind": "zim", "dest": "zim", "tags": ["study", "qa"]},
