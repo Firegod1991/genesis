@@ -2504,14 +2504,14 @@
    "version": "2026-10"
   },
   "milneopentextbooks.org_en_all": {
-   "date": "2026-08-15",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "milneopentextbooks.org_en_all_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/zimit/milneopentextbooks.org_en_all_2026-08.zim.sha256",
-     "size": 422804480,
-     "url": "https://download.kiwix.org/zim/zimit/milneopentextbooks.org_en_all_2026-08.zim"
+     "filename": "milneopentextbooks.org_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/milneopentextbooks.org_en_all_2026-11.zim.sha256",
+     "size": 1630354432,
+     "url": "https://download.kiwix.org/zim/zimit/milneopentextbooks.org_en_all_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -2521,7 +2521,7 @@
    ],
    "tier": "ark",
    "title": "Milne Open Textbooks",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "monero.stackexchange.com_en_all": {
    "date": "2026-10-20",
@@ -5842,14 +5842,14 @@
    "version": "2026-10"
   },
   "wikipedia_fa_all.maxi": {
-   "date": "2026-10-01",
+   "date": "2026-11-10",
    "dest": "zim",
    "files": [
     {
-     "filename": "wikipedia_fa_all_maxi_2026-10.zim",
-     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_fa_all_maxi_2026-10.zim.sha256",
-     "size": 13776057344,
-     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_fa_all_maxi_2026-10.zim"
+     "filename": "wikipedia_fa_all_maxi_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_fa_all_maxi_2026-11.zim.sha256",
+     "size": 15267231744,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_fa_all_maxi_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -5861,7 +5861,7 @@
    ],
    "tier": "ark",
    "title": "ویکی‌پدیا",
-   "version": "2026-10"
+   "version": "2026-11"
   },
   "wikipedia_fat_all.maxi": {
    "date": "2026-10-31",
@@ -6766,14 +6766,14 @@
    "version": "2026-10"
   },
   "wikipedia_id_all.maxi": {
-   "date": "2026-08-01",
+   "date": "2026-11-14",
    "dest": "zim",
    "files": [
     {
-     "filename": "wikipedia_id_all_maxi_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_id_all_maxi_2026-08.zim.sha256",
-     "size": 10422448128,
-     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_id_all_maxi_2026-08.zim"
+     "filename": "wikipedia_id_all_maxi_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_id_all_maxi_2026-11.zim.sha256",
+     "size": 10246757376,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_id_all_maxi_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -6785,7 +6785,7 @@
    ],
    "tier": "ark",
    "title": "Wikipedia",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "wikipedia_ie_all.maxi": {
    "date": "2026-10-13",

@@ -183,7 +183,6 @@
    "kind": "document",
    "license": "Public domain",
    "note": "Southern California desert and mountains. How the Cahuilla gathered, prepared and stored mesquite, agave, yucca, cactus, acorns, pine nuts, palm fruit and chia.",
-   "stale": true,
    "tags": [
     "fieldcraft",
     "plants",
@@ -336,6 +335,7 @@
    "kind": "document",
    "license": "US government work",
    "note": "Great Lakes and the northern woods. Plants the Chippewa of Minnesota used for food and medicine, wild rice and maple sugar among them.",
+   "stale": true,
    "tags": [
     "fieldcraft",
     "plants",
@@ -905,6 +905,7 @@
    "kind": "document",
    "license": "Public domain",
    "note": "Northeast. How the Iroquois of New York grew, stored and cooked corn, beans and squash, and the wild greens, fungi, fruits, nuts, saps and roots they ate beside them.",
+   "stale": true,
    "tags": [
     "fieldcraft",
     "plants",

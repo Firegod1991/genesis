@@ -5,31 +5,31 @@
   "code": 375,
   "isos": 24,
   "knowledge": 689,
-  "library": 249,
+  "library": 250,
   "maps": 6,
   "medical": 42,
   "radio": 28,
-  "scripture": 1300,
+  "scripture": 1301,
   "services": 25,
   "survival": 76,
   "tools": 16
  },
- "refreshed": "2026-11-15",
+ "refreshed": "2026-11-17",
  "tiers": {
   "ark": {
-   "bytes": 760062452420,
-   "items": 631,
-   "unsized": 86
+   "bytes": 772448063321,
+   "items": 633,
+   "unsized": 87
   },
   "eden": {
-   "bytes": 2019677590706,
-   "items": 821,
-   "unsized": 104
+   "bytes": 2032065746812,
+   "items": 823,
+   "unsized": 105
   },
   "seed": {
    "bytes": 23588883523,
-   "items": 389,
-   "unsized": 43
+   "items": 390,
+   "unsized": 44
   }
  }
 }

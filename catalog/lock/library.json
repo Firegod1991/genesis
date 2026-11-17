@@ -44,14 +44,14 @@
    "version": "2026-11-13"
   },
   "gutenberg_ale_all": {
-   "date": "2025-09-09",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ale_all_2025-09.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ale_all_2025-09.zim.sha256",
-     "size": 2093056,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ale_all_2025-09.zim"
+     "filename": "gutenberg_ale_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ale_all_2026-11a.zim.sha256",
+     "size": 11625472,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ale_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -63,17 +63,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2025-09"
+   "version": "2026-11-13"
   },
   "gutenberg_ang_all": {
-   "date": "2025-09-09",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ang_all_2025-09.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ang_all_2025-09.zim.sha256",
-     "size": 6083584,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ang_all_2025-09.zim"
+     "filename": "gutenberg_ang_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ang_all_2026-11a.zim.sha256",
+     "size": 15774720,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ang_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -85,17 +85,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2025-09"
+   "version": "2026-11-13"
   },
   "gutenberg_ar_all": {
-   "date": "2025-12-08",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ar_all_2025-12.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ar_all_2025-12.zim.sha256",
-     "size": 2184192,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ar_all_2025-12.zim"
+     "filename": "gutenberg_ar_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ar_all_2026-11a.zim.sha256",
+     "size": 11525120,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ar_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -107,17 +107,17 @@
    ],
    "tier": "ark",
    "title": "مكتبة مشروع جوتنبرج",
-   "version": "2025-12"
+   "version": "2026-11-13"
   },
   "gutenberg_arp_all": {
-   "date": "2025-09-09",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_arp_all_2025-09.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_arp_all_2025-09.zim.sha256",
-     "size": 2391040,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_arp_all_2025-09.zim"
+     "filename": "gutenberg_arp_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_arp_all_2026-11a.zim.sha256",
+     "size": 11963392,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_arp_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -129,17 +129,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Nookóó",
-   "version": "2025-09"
+   "version": "2026-11-13"
   },
   "gutenberg_bg_all": {
-   "date": "2025-12-08",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_bg_all_2025-12.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_bg_all_2025-12.zim.sha256",
-     "size": 3662848,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_bg_all_2025-12.zim"
+     "filename": "gutenberg_bg_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_bg_all_2026-11a.zim.sha256",
+     "size": 12834816,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_bg_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -151,17 +151,17 @@
    ],
    "tier": "ark",
    "title": "Библиотека на проект Гутенберг",
-   "version": "2025-12"
+   "version": "2026-11-13"
   },
   "gutenberg_bgs_all": {
-   "date": "2025-10-07",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_bgs_all_2025-10.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_bgs_all_2025-10.zim.sha256",
-     "size": 2271232,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_bgs_all_2025-10.zim"
+     "filename": "gutenberg_bgs_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_bgs_all_2026-11a.zim.sha256",
+     "size": 11823104,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_bgs_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -173,17 +173,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2025-10"
+   "version": "2026-11-13"
   },
   "gutenberg_br_all": {
-   "date": "2025-12-08",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_br_all_2025-12.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_br_all_2025-12.zim.sha256",
-     "size": 2728960,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_br_all_2025-12.zim"
+     "filename": "gutenberg_br_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_br_all_2026-11a.zim.sha256",
+     "size": 12062720,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_br_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -195,17 +195,17 @@
    ],
    "tier": "ark",
    "title": "Levraoueg Raktres Gutenberg",
-   "version": "2025-12"
+   "version": "2026-11-13"
   },
   "gutenberg_brx_all": {
-   "date": "2025-09-09",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_brx_all_2025-09.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_brx_all_2025-09.zim.sha256",
-     "size": 9890816,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_brx_all_2025-09.zim"
+     "filename": "gutenberg_brx_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_brx_all_2026-11a.zim.sha256",
+     "size": 16369664,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_brx_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -217,17 +217,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2025-09"
+   "version": "2026-11-13"
   },
   "gutenberg_ca_all": {
-   "date": "2025-12-08",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ca_all_2025-12.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ca_all_2025-12.zim.sha256",
-     "size": 51143680,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ca_all_2025-12.zim"
+     "filename": "gutenberg_ca_all_2026-11c.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ca_all_2026-11c.zim.sha256",
+     "size": 46427136,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ca_all_2026-11c.zim"
     }
    ],
    "kind": "zim",
@@ -239,17 +239,17 @@
    ],
    "tier": "ark",
    "title": "Biblioteca Project Gutenberg",
-   "version": "2025-12"
+   "version": "2026-11-13"
   },
   "gutenberg_ceb_all": {
-   "date": "2025-09-09",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ceb_all_2025-09.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ceb_all_2025-09.zim.sha256",
-     "size": 3419136,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ceb_all_2025-09.zim"
+     "filename": "gutenberg_ceb_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ceb_all_2026-11a.zim.sha256",
+     "size": 12924928,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ceb_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -261,17 +261,17 @@
    ],
    "tier": "ark",
    "title": "Librarya sa Proyekto Gutenberg",
-   "version": "2025-09"
+   "version": "2026-11-13"
   },
   "gutenberg_cs_all": {
-   "date": "2025-12-08",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_cs_all_2025-12.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_cs_all_2025-12.zim.sha256",
-     "size": 9963520,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_cs_all_2025-12.zim"
+     "filename": "gutenberg_cs_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_cs_all_2026-11a.zim.sha256",
+     "size": 18544640,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_cs_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -283,17 +283,17 @@
    ],
    "tier": "ark",
    "title": "Projekt Gutenbergova knihovna",
-   "version": "2025-12"
+   "version": "2026-11-13"
   },
   "gutenberg_csb_all": {
-   "date": "2025-10-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_csb_all_2025-10.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_csb_all_2025-10.zim.sha256",
-     "size": 2111488,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_csb_all_2025-10.zim"
+     "filename": "gutenberg_csb_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_csb_all_2026-11a.zim.sha256",
+     "size": 11668480,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_csb_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -305,17 +305,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2025-10"
+   "version": "2026-11-13"
   },
   "gutenberg_cy_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_cy_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_cy_all_2026-01.zim.sha256",
-     "size": 50861056,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_cy_all_2026-01.zim"
+     "filename": "gutenberg_cy_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_cy_all_2026-11a.zim.sha256",
+     "size": 49155072,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_cy_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -327,17 +327,17 @@
    ],
    "tier": "ark",
    "title": "Llyfrgell Prosiect Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_da_all": {
-   "date": "2025-12-08",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_da_all_2025-12.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_da_all_2025-12.zim.sha256",
-     "size": 67191808,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_da_all_2025-12.zim"
+     "filename": "gutenberg_da_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_da_all_2026-11a.zim.sha256",
+     "size": 69305344,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_da_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -349,17 +349,17 @@
    ],
    "tier": "ark",
    "title": "Projekt Gutenbergs Bibliotek",
-   "version": "2025-12"
+   "version": "2026-11-13"
   },
   "gutenberg_de_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_de_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_de_all_2026-01.zim.sha256",
-     "size": 11045174272,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_de_all_2026-01.zim"
+     "filename": "gutenberg_de_all_2026-11e.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_de_all_2026-11e.zim.sha256",
+     "size": 7340707840,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_de_all_2026-11e.zim"
     }
    ],
    "kind": "zim",
@@ -371,17 +371,17 @@
    ],
    "tier": "ark",
    "title": "Projekt Gutenberg-Bibliothek",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_el_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_el_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_el_all_2026-01.zim.sha256",
-     "size": 145582080,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_el_all_2026-01.zim"
+     "filename": "gutenberg_el_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_el_all_2026-11a.zim.sha256",
+     "size": 118660096,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_el_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -393,7 +393,7 @@
    ],
    "tier": "ark",
    "title": "Βιβλιοθήκη Project Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_en_all": {
    "date": "2025-11-25",
@@ -417,14 +417,14 @@
    "version": "2025-11"
   },
   "gutenberg_en_lcc-a": {
-   "date": "2026-03-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-a_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-a_2026-03.zim.sha256",
-     "size": 9746185216,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-a_2026-03.zim"
+     "filename": "gutenberg_en_lcc-a_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-a_2026-11a.zim.sha256",
+     "size": 9673135104,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-a_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -436,17 +436,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-b": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-b_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-b_2026-03.zim.sha256",
-     "size": 6365165568,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-b_2026-03.zim"
+     "filename": "gutenberg_en_lcc-b_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-b_2026-11a.zim.sha256",
+     "size": 5416889344,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-b_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -458,7 +458,7 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-c": {
    "date": "2025-12-05",
@@ -481,6 +481,28 @@
    "tier": "ark",
    "title": "Project Gutenberg Library",
    "version": "2025-12"
+  },
+  "gutenberg_en_lcc-cdef": {
+   "date": "2026-11-13",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-cdef_2026-11b.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-cdef_2026-11b.zim.sha256",
+     "size": 46939635712,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-cdef_2026-11b.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-d": {
    "date": "2025-12-06",
@@ -549,14 +571,14 @@
    "version": "2026-03"
   },
   "gutenberg_en_lcc-g": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-g_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-g_2026-03.zim.sha256",
-     "size": 8095142912,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-g_2026-03.zim"
+     "filename": "gutenberg_en_lcc-g_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-g_2026-11a.zim.sha256",
+     "size": 6258953216,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-g_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -568,17 +590,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-h": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-h_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-h_2026-03.zim.sha256",
-     "size": 4543003648,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-h_2026-03.zim"
+     "filename": "gutenberg_en_lcc-h_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-h_2026-11a.zim.sha256",
+     "size": 4062749696,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-h_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -590,17 +612,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-j": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-j_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-j_2026-03.zim.sha256",
-     "size": 456641536,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-j_2026-03.zim"
+     "filename": "gutenberg_en_lcc-j_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-j_2026-11a.zim.sha256",
+     "size": 478050304,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-j_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -612,17 +634,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-k": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-k_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-k_2026-03.zim.sha256",
-     "size": 246517760,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-k_2026-03.zim"
+     "filename": "gutenberg_en_lcc-k_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-k_2026-11a.zim.sha256",
+     "size": 218300416,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-k_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -634,17 +656,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-l": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-l_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-l_2026-03.zim.sha256",
-     "size": 628986880,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-l_2026-03.zim"
+     "filename": "gutenberg_en_lcc-l_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-l_2026-11a.zim.sha256",
+     "size": 451155968,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-l_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -656,17 +678,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-m": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-m_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-m_2026-03.zim.sha256",
-     "size": 3994272768,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-m_2026-03.zim"
+     "filename": "gutenberg_en_lcc-m_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-m_2026-11a.zim.sha256",
+     "size": 3688970240,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-m_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -678,17 +700,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-n": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-n_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-n_2026-03.zim.sha256",
-     "size": 22752881664,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-n_2026-03.zim"
+     "filename": "gutenberg_en_lcc-n_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-n_2026-11a.zim.sha256",
+     "size": 16709753856,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-n_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -700,17 +722,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-p": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-p_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-p_2026-03.zim.sha256",
-     "size": 38550528,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-p_2026-03.zim"
+     "filename": "gutenberg_en_lcc-p_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-p_2026-11a.zim.sha256",
+     "size": 40686592,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-p_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -722,17 +744,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pa": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pa_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pa_2026-03.zim.sha256",
-     "size": 521989120,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pa_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pa_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pa_2026-11a.zim.sha256",
+     "size": 503474176,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pa_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -744,17 +766,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pb": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pb_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pb_2026-03.zim.sha256",
-     "size": 61479936,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pb_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pb_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pb_2026-11a.zim.sha256",
+     "size": 61661184,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pb_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -766,17 +788,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pc": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pc_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pc_2026-03.zim.sha256",
-     "size": 180376576,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pc_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pc_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pc_2026-11a.zim.sha256",
+     "size": 124631040,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pc_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -788,17 +810,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pd": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pd_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pd_2026-03.zim.sha256",
-     "size": 15091712,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pd_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pd_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pd_2026-11a.zim.sha256",
+     "size": 20763648,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pd_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -810,17 +832,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pe": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pe_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pe_2026-03.zim.sha256",
-     "size": 794872832,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pe_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pe_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pe_2026-11a.zim.sha256",
+     "size": 620291072,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pe_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -832,17 +854,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pf": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pf_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pf_2026-03.zim.sha256",
-     "size": 13156352,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pf_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pf_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pf_2026-11a.zim.sha256",
+     "size": 21098496,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pf_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -854,17 +876,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pg": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pg_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pg_2026-03.zim.sha256",
-     "size": 273911808,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pg_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pg_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pg_2026-11a.zim.sha256",
+     "size": 222789632,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pg_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -876,17 +898,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-ph": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-ph_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-ph_2026-03.zim.sha256",
-     "size": 48643072,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-ph_2026-03.zim"
+     "filename": "gutenberg_en_lcc-ph_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-ph_2026-11a.zim.sha256",
+     "size": 49537024,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-ph_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -898,17 +920,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pj": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pj_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pj_2026-03.zim.sha256",
-     "size": 265420800,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pj_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pj_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pj_2026-11a.zim.sha256",
+     "size": 210635776,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pj_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -920,17 +942,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pk": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pk_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pk_2026-03.zim.sha256",
-     "size": 83982336,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pk_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pk_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pk_2026-11a.zim.sha256",
+     "size": 77867008,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pk_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -942,17 +964,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pl": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pl_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pl_2026-03.zim.sha256",
-     "size": 107229184,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pl_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pl_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pl_2026-11a.zim.sha256",
+     "size": 100070400,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pl_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -964,17 +986,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pm": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pm_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pm_2026-03.zim.sha256",
-     "size": 46747648,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pm_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pm_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pm_2026-11a.zim.sha256",
+     "size": 46120960,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pm_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -986,17 +1008,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pn": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pn_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pn_2026-03.zim.sha256",
-     "size": 3248474112,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pn_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pn_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pn_2026-11a.zim.sha256",
+     "size": 3056210944,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pn_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1008,17 +1030,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pq": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pq_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pq_2026-03.zim.sha256",
-     "size": 4032702464,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pq_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pq_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pq_2026-11a.zim.sha256",
+     "size": 2809449472,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pq_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1030,17 +1052,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pr": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pr_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pr_2026-03.zim.sha256",
-     "size": 16152121344,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pr_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pr_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pr_2026-11a.zim.sha256",
+     "size": 12958725120,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pr_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1052,17 +1074,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-ps": {
-   "date": "2026-03-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-ps_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-ps_2026-03.zim.sha256",
-     "size": 16022294528,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-ps_2026-03.zim"
+     "filename": "gutenberg_en_lcc-ps_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-ps_2026-11a.zim.sha256",
+     "size": 11588012032,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-ps_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1074,17 +1096,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pt": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pt_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pt_2026-03.zim.sha256",
-     "size": 759081984,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pt_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pt_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pt_2026-11a.zim.sha256",
+     "size": 647008256,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pt_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1096,17 +1118,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-pz": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-pz_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pz_2026-03.zim.sha256",
-     "size": 19770263552,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-pz_2026-03.zim"
+     "filename": "gutenberg_en_lcc-pz_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pz_2026-11a.zim.sha256",
+     "size": 14537395200,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-pz_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1118,17 +1140,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-q": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-q_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-q_2026-03.zim.sha256",
-     "size": 17724715008,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-q_2026-03.zim"
+     "filename": "gutenberg_en_lcc-q_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-q_2026-11a.zim.sha256",
+     "size": 12882717696,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-q_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1140,17 +1162,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-r": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-r_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-r_2026-03.zim.sha256",
-     "size": 2019298304,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-r_2026-03.zim"
+     "filename": "gutenberg_en_lcc-r_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-r_2026-11a.zim.sha256",
+     "size": 1533202432,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-r_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1162,17 +1184,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-s": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-s_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-s_2026-03.zim.sha256",
-     "size": 4532683776,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-s_2026-03.zim"
+     "filename": "gutenberg_en_lcc-s_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-s_2026-11a.zim.sha256",
+     "size": 3422461952,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-s_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1184,17 +1206,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-t": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-t_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-t_2026-03.zim.sha256",
-     "size": 13154803712,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-t_2026-03.zim"
+     "filename": "gutenberg_en_lcc-t_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-t_2026-11a.zim.sha256",
+     "size": 9565649920,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-t_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1206,17 +1228,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-u": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-u_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-u_2026-03.zim.sha256",
-     "size": 1288016896,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-u_2026-03.zim"
+     "filename": "gutenberg_en_lcc-u_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-u_2026-11a.zim.sha256",
+     "size": 906354688,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-u_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1228,17 +1250,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-v": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-v_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-v_2026-03.zim.sha256",
-     "size": 1368904704,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-v_2026-03.zim"
+     "filename": "gutenberg_en_lcc-v_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-v_2026-11a.zim.sha256",
+     "size": 811744256,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-v_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1250,17 +1272,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_en_lcc-z": {
-   "date": "2026-03-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_en_lcc-z_2026-03.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-z_2026-03.zim.sha256",
-     "size": 2690468864,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-z_2026-03.zim"
+     "filename": "gutenberg_en_lcc-z_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-z_2026-11a.zim.sha256",
+     "size": 2505925632,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_en_lcc-z_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1272,17 +1294,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2026-03"
+   "version": "2026-11-13"
   },
   "gutenberg_enm_all": {
-   "date": "2025-10-07",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_enm_all_2025-10.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_enm_all_2025-10.zim.sha256",
-     "size": 5615616,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_enm_all_2025-10.zim"
+     "filename": "gutenberg_enm_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_enm_all_2026-11a.zim.sha256",
+     "size": 15282176,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_enm_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1294,17 +1316,17 @@
    ],
    "tier": "ark",
    "title": "Proiecte Gutenberge Libraire",
-   "version": "2025-10"
+   "version": "2026-11-13"
   },
   "gutenberg_eo_all": {
-   "date": "2025-12-08",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_eo_all_2025-12.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_eo_all_2025-12.zim.sha256",
-     "size": 89372672,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_eo_all_2025-12.zim"
+     "filename": "gutenberg_eo_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_eo_all_2026-11a.zim.sha256",
+     "size": 85033984,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_eo_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1316,17 +1338,17 @@
    ],
    "tier": "ark",
    "title": "Projekto Biblioteko Gutenberg",
-   "version": "2025-12"
+   "version": "2026-11-13"
   },
   "gutenberg_es_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_es_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_es_all_2026-01.zim.sha256",
-     "size": 1860106240,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_es_all_2026-01.zim"
+     "filename": "gutenberg_es_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_es_all_2026-11a.zim.sha256",
+     "size": 1490973696,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_es_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1338,17 +1360,17 @@
    ],
    "tier": "ark",
    "title": "Biblioteca Proyecto Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_et_all": {
-   "date": "2026-01-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_et_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_et_all_2026-01.zim.sha256",
-     "size": 2237440,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_et_all_2026-01.zim"
+     "filename": "gutenberg_et_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_et_all_2026-11a.zim.sha256",
+     "size": 11585536,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_et_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1360,17 +1382,17 @@
    ],
    "tier": "ark",
    "title": "Projekt Gutenbergi raamatukogu",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_fa_all": {
-   "date": "2026-01-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_fa_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fa_all_2026-01.zim.sha256",
-     "size": 2395136,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fa_all_2026-01.zim"
+     "filename": "gutenberg_fa_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_fa_all_2026-11a.zim.sha256",
+     "size": 11849728,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_fa_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1382,17 +1404,17 @@
    ],
    "tier": "ark",
    "title": "پروژه کتابخانه گوتنبرگ",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_fi_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_fi_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fi_all_2026-01.zim.sha256",
-     "size": 1620224000,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fi_all_2026-01.zim"
+     "filename": "gutenberg_fi_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_fi_all_2026-11a.zim.sha256",
+     "size": 1459584000,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_fi_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1404,17 +1426,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenbergin Kirjasto",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_fr_all": {
-   "date": "2026-01-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_fr_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fr_all_2026-01.zim.sha256",
-     "size": 10534730752,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fr_all_2026-01.zim"
+     "filename": "gutenberg_fr_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_fr_all_2026-11a.zim.sha256",
+     "size": 8446413824,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_fr_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1426,17 +1448,17 @@
    ],
    "tier": "ark",
    "title": "Projet Bibliothèque Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_fur_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_fur_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fur_all_2026-01.zim.sha256",
-     "size": 5398528,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fur_all_2026-01.zim"
+     "filename": "gutenberg_fur_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_fur_all_2026-11a.zim.sha256",
+     "size": 14531584,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_fur_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1448,17 +1470,17 @@
    ],
    "tier": "ark",
    "title": "Biblioteche Project Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_fy_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_fy_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fy_all_2026-01.zim.sha256",
-     "size": 65013760,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_fy_all_2026-01.zim"
+     "filename": "gutenberg_fy_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_fy_all_2026-11a.zim.sha256",
+     "size": 60059648,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_fy_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1470,17 +1492,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Bibleteek",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_ga_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ga_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ga_all_2026-01.zim.sha256",
-     "size": 3438592,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ga_all_2026-01.zim"
+     "filename": "gutenberg_ga_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ga_all_2026-11a.zim.sha256",
+     "size": 20525056,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ga_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1492,17 +1514,17 @@
    ],
    "tier": "ark",
    "title": "Leabharlann Project Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_gl_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_gl_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_gl_all_2026-01.zim.sha256",
-     "size": 3558400,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_gl_all_2026-01.zim"
+     "filename": "gutenberg_gl_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_gl_all_2026-11a.zim.sha256",
+     "size": 12935168,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_gl_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1514,17 +1536,17 @@
    ],
    "tier": "ark",
    "title": "Biblioteca Proxecto Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_gla_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_gla_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_gla_all_2026-01.zim.sha256",
-     "size": 3622912,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_gla_all_2026-01.zim"
+     "filename": "gutenberg_gla_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_gla_all_2026-11a.zim.sha256",
+     "size": 12949504,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_gla_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1536,17 +1558,17 @@
    ],
    "tier": "ark",
    "title": "Wigamig Project Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_grc_all": {
-   "date": "2025-10-07",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_grc_all_2025-10.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_grc_all_2025-10.zim.sha256",
-     "size": 4887552,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_grc_all_2025-10.zim"
+     "filename": "gutenberg_grc_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_grc_all_2026-11a.zim.sha256",
+     "size": 14650368,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_grc_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1558,17 +1580,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2025-10"
+   "version": "2026-11-13"
   },
   "gutenberg_he_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_he_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_he_all_2026-01.zim.sha256",
-     "size": 5057536,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_he_all_2026-01.zim"
+     "filename": "gutenberg_he_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_he_all_2026-11a.zim.sha256",
+     "size": 14258176,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_he_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1580,17 +1602,17 @@
    ],
    "tier": "ark",
    "title": "ספריית פרויקט גוטנברג",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_hu_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_hu_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_hu_all_2026-01.zim.sha256",
-     "size": 1023427584,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_hu_all_2026-01.zim"
+     "filename": "gutenberg_hu_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_hu_all_2026-11a.zim.sha256",
+     "size": 935463936,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_hu_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1602,17 +1624,17 @@
    ],
    "tier": "ark",
    "title": "Projekt Gutenberg Könyvtár",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_ia_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ia_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ia_all_2026-01.zim.sha256",
-     "size": 2205696,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ia_all_2026-01.zim"
+     "filename": "gutenberg_ia_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ia_all_2026-11a.zim.sha256",
+     "size": 11651072,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ia_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1624,17 +1646,17 @@
    ],
    "tier": "ark",
    "title": "Bibliotheca Project Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_ilo_all": {
-   "date": "2025-10-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ilo_all_2025-10.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ilo_all_2025-10.zim.sha256",
-     "size": 2789376,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ilo_all_2025-10.zim"
+     "filename": "gutenberg_ilo_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ilo_all_2026-11a.zim.sha256",
+     "size": 12558336,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ilo_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1646,17 +1668,17 @@
    ],
    "tier": "ark",
    "title": "Libroyan ti Proyekto Gutenberg",
-   "version": "2025-10"
+   "version": "2026-11-13"
   },
   "gutenberg_is_all": {
-   "date": "2026-01-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_is_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_is_all_2026-01.zim.sha256",
-     "size": 9988096,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_is_all_2026-01.zim"
+     "filename": "gutenberg_is_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_is_all_2026-11a.zim.sha256",
+     "size": 16316416,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_is_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1668,17 +1690,17 @@
    ],
    "tier": "ark",
    "title": "Gutenberg Verkefnisbókasafnið",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_it_all": {
-   "date": "2026-01-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_it_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_it_all_2026-01.zim.sha256",
-     "size": 1074391040,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_it_all_2026-01.zim"
+     "filename": "gutenberg_it_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_it_all_2026-11a.zim.sha256",
+     "size": 866308096,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_it_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1690,17 +1712,17 @@
    ],
    "tier": "ark",
    "title": "Biblioteca Progetto Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_iu_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_iu_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_iu_all_2026-01.zim.sha256",
-     "size": 2575360,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_iu_all_2026-01.zim"
+     "filename": "gutenberg_iu_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_iu_all_2026-11a.zim.sha256",
+     "size": 12028928,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_iu_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1712,17 +1734,17 @@
    ],
    "tier": "ark",
    "title": "ᐱᕙᓪᓕᐊᔪᖅ ᐃᓄᒃᑎᑐᑦ ᒪᓕᒐᖃᑎᒌᖕᒥ",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_ja_all": {
-   "date": "2026-01-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ja_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ja_all_2026-01.zim.sha256",
-     "size": 12253184,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ja_all_2026-01.zim"
+     "filename": "gutenberg_ja_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ja_all_2026-11a.zim.sha256",
+     "size": 20808704,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ja_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1734,17 +1756,17 @@
    ],
    "tier": "ark",
    "title": "プロジェクト・グーテンベルク・ライブラリー",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_kha_all": {
-   "date": "2025-10-07",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_kha_all_2025-10.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_kha_all_2025-10.zim.sha256",
-     "size": 2581504,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_kha_all_2025-10.zim"
+     "filename": "gutenberg_kha_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_kha_all_2026-11a.zim.sha256",
+     "size": 12023808,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_kha_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1756,17 +1778,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2025-10"
+   "version": "2026-11-13"
   },
   "gutenberg_kld_all": {
-   "date": "2025-10-07",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_kld_all_2025-10.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_kld_all_2025-10.zim.sha256",
-     "size": 2297856,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_kld_all_2025-10.zim"
+     "filename": "gutenberg_kld_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_kld_all_2026-11a.zim.sha256",
+     "size": 11982848,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_kld_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1778,17 +1800,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2025-10"
+   "version": "2026-11-13"
   },
   "gutenberg_ko_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ko_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ko_all_2026-01.zim.sha256",
-     "size": 2275328,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ko_all_2026-01.zim"
+     "filename": "gutenberg_ko_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ko_all_2026-11a.zim.sha256",
+     "size": 11703296,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ko_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1799,18 +1821,18 @@
     "books"
    ],
    "tier": "ark",
-   "title": "metadata_defaults.title",
-   "version": "2026-01"
+   "title": "프로젝트 구텐베르크 도서관",
+   "version": "2026-11-13"
   },
   "gutenberg_la_all": {
-   "date": "2026-01-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_la_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_la_all_2026-01.zim.sha256",
-     "size": 162458624,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_la_all_2026-01.zim"
+     "filename": "gutenberg_la_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_la_all_2026-11a.zim.sha256",
+     "size": 154555392,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_la_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1822,17 +1844,17 @@
    ],
    "tier": "ark",
    "title": "Bibliotheca Projecti Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_mi_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_mi_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_mi_all_2026-01.zim.sha256",
-     "size": 2872320,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_mi_all_2026-01.zim"
+     "filename": "gutenberg_mi_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_mi_all_2026-11a.zim.sha256",
+     "size": 12155904,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_mi_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1844,7 +1866,7 @@
    ],
    "tier": "ark",
    "title": "Pukapuka Project Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_mul_all": {
    "date": "2025-11-27",
@@ -1869,14 +1891,14 @@
    "version": "2025-11"
   },
   "gutenberg_nah_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_nah_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nah_all_2026-01.zim.sha256",
-     "size": 6657024,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nah_all_2026-01.zim"
+     "filename": "gutenberg_nah_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_nah_all_2026-11a.zim.sha256",
+     "size": 15773696,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_nah_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1888,17 +1910,17 @@
    ],
    "tier": "ark",
    "title": "Amoxcalli Project Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_nap_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_nap_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nap_all_2026-01.zim.sha256",
-     "size": 2489344,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nap_all_2026-01.zim"
+     "filename": "gutenberg_nap_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_nap_all_2026-11a.zim.sha256",
+     "size": 11975680,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_nap_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1910,17 +1932,17 @@
    ],
    "tier": "ark",
    "title": "Librarìa Project Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_nav_all": {
-   "date": "2025-10-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_nav_all_2025-10.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nav_all_2025-10.zim.sha256",
-     "size": 5783552,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nav_all_2025-10.zim"
+     "filename": "gutenberg_nav_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_nav_all_2026-11a.zim.sha256",
+     "size": 14846976,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_nav_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1932,17 +1954,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2025-10"
+   "version": "2026-11-13"
   },
   "gutenberg_nl_all": {
-   "date": "2026-01-14",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_nl_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nl_all_2026-01.zim.sha256",
-     "size": 4150723584,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_nl_all_2026-01.zim"
+     "filename": "gutenberg_nl_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_nl_all_2026-11a.zim.sha256",
+     "size": 4094707712,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_nl_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1954,17 +1976,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg-bibliotheek",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_no_all": {
-   "date": "2026-01-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_no_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_no_all_2026-01.zim.sha256",
-     "size": 47293440,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_no_all_2026-01.zim"
+     "filename": "gutenberg_no_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_no_all_2026-11a.zim.sha256",
+     "size": 51162112,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_no_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1976,17 +1998,17 @@
    ],
    "tier": "ark",
    "title": "Prosjekt Gutenberg bibliotek",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_oc_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_oc_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_oc_all_2026-01.zim.sha256",
-     "size": 3712000,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_oc_all_2026-01.zim"
+     "filename": "gutenberg_oc_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_oc_all_2026-11a.zim.sha256",
+     "size": 12771328,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_oc_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -1998,17 +2020,17 @@
    ],
    "tier": "ark",
    "title": "Bibliotèca Project Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_oji_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_oji_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_oji_all_2026-01.zim.sha256",
-     "size": 2400256,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_oji_all_2026-01.zim"
+     "filename": "gutenberg_oji_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_oji_all_2026-11a.zim.sha256",
+     "size": 11709440,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_oji_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2020,17 +2042,17 @@
    ],
    "tier": "ark",
    "title": "Ogimaawintamowin Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_pl_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_pl_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_pl_all_2026-01.zim.sha256",
-     "size": 21102592,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_pl_all_2026-01.zim"
+     "filename": "gutenberg_pl_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_pl_all_2026-11a.zim.sha256",
+     "size": 26458112,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_pl_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2042,17 +2064,17 @@
    ],
    "tier": "ark",
    "title": "Biblioteka Projektu Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_pt_all": {
-   "date": "2025-10-06",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_pt_all_2025-10.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_pt_all_2025-10.zim.sha256",
-     "size": 522836992,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_pt_all_2025-10.zim"
+     "filename": "gutenberg_pt_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_pt_all_2026-11.zim.sha256",
+     "size": 532426752,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_pt_all_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -2064,17 +2086,17 @@
    ],
    "tier": "ark",
    "title": "Biblioteca Projeto Gutenberg",
-   "version": "2025-10"
+   "version": "2026-11"
   },
   "gutenberg_rmq_all": {
-   "date": "2025-09-09",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_rmq_all_2025-09.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_rmq_all_2025-09.zim.sha256",
-     "size": 2207744,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_rmq_all_2025-09.zim"
+     "filename": "gutenberg_rmq_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_rmq_all_2026-11a.zim.sha256",
+     "size": 11664384,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_rmq_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2086,17 +2108,17 @@
    ],
    "tier": "ark",
    "title": "Project Gutenberg Library",
-   "version": "2025-09"
+   "version": "2026-11-13"
   },
   "gutenberg_ro_all": {
-   "date": "2026-01-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ro_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ro_all_2026-01.zim.sha256",
-     "size": 5746688,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ro_all_2026-01.zim"
+     "filename": "gutenberg_ro_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ro_all_2026-11a.zim.sha256",
+     "size": 14900224,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ro_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2108,17 +2130,17 @@
    ],
    "tier": "ark",
    "title": "Biblioteca Proiect Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_ru_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_ru_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ru_all_2026-01.zim.sha256",
-     "size": 7234560,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_ru_all_2026-01.zim"
+     "filename": "gutenberg_ru_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_ru_all_2026-11a.zim.sha256",
+     "size": 15877120,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_ru_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2130,17 +2152,17 @@
    ],
    "tier": "ark",
    "title": "Библиотека Проекта Гутенберг",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_sa_all": {
-   "date": "2026-01-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_sa_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sa_all_2026-01.zim.sha256",
-     "size": 2217984,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sa_all_2026-01.zim"
+     "filename": "gutenberg_sa_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_sa_all_2026-11a.zim.sha256",
+     "size": 11560960,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_sa_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2152,17 +2174,17 @@
    ],
    "tier": "ark",
    "title": "परियोजना गुटेनबर्ग पुस्तकालय",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_sl_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_sl_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sl_all_2026-01.zim.sha256",
-     "size": 4828160,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sl_all_2026-01.zim"
+     "filename": "gutenberg_sl_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_sl_all_2026-11a.zim.sha256",
+     "size": 14684160,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_sl_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2174,17 +2196,17 @@
    ],
    "tier": "ark",
    "title": "Projekt Gutenbergova knjižnica",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_sr_all": {
-   "date": "2026-01-04",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_sr_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sr_all_2026-01.zim.sha256",
-     "size": 3624960,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sr_all_2026-01.zim"
+     "filename": "gutenberg_sr_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_sr_all_2026-11a.zim.sha256",
+     "size": 12802048,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_sr_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2196,17 +2218,17 @@
    ],
    "tier": "ark",
    "title": "Пројекат Библиотека Гутенберг",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_sv_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_sv_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sv_all_2026-01.zim.sha256",
-     "size": 220386304,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_sv_all_2026-01.zim"
+     "filename": "gutenberg_sv_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_sv_all_2026-11a.zim.sha256",
+     "size": 283909120,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_sv_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2218,17 +2240,17 @@
    ],
    "tier": "ark",
    "title": "Projekt Gutenbergs Bibliotek",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_te_all": {
-   "date": "2026-01-05",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_te_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_te_all_2026-01.zim.sha256",
-     "size": 5981184,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_te_all_2026-01.zim"
+     "filename": "gutenberg_te_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_te_all_2026-11a.zim.sha256",
+     "size": 16335872,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_te_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2240,17 +2262,17 @@
    ],
    "tier": "ark",
    "title": "ప్రాజెక్ట్ గుటెన్బర్గ్ లైబ్రరీ",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_tl_all": {
-   "date": "2026-01-26",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_tl_all_2026-01.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_tl_all_2026-01.zim.sha256",
-     "size": 67336192,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_tl_all_2026-01.zim"
+     "filename": "gutenberg_tl_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_tl_all_2026-11a.zim.sha256",
+     "size": 63926272,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_tl_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2262,17 +2284,17 @@
    ],
    "tier": "ark",
    "title": "Aklatan Proyektong Gutenberg",
-   "version": "2026-01"
+   "version": "2026-11-13"
   },
   "gutenberg_zh_all": {
-   "date": "2025-12-08",
+   "date": "2026-11-13",
    "dest": "zim",
    "files": [
     {
-     "filename": "gutenberg_zh_all_2025-12.zim",
-     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_zh_all_2025-12.zim.sha256",
-     "size": 315750400,
-     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_zh_all_2025-12.zim"
+     "filename": "gutenberg_zh_all_2026-11a.zim",
+     "sha256_url": "https://download.kiwix.org/zim/books/gutenberg_zh_all_2026-11a.zim.sha256",
+     "size": 278715392,
+     "url": "https://download.kiwix.org/zim/books/gutenberg_zh_all_2026-11a.zim"
     }
    ],
    "kind": "zim",
@@ -2284,7 +2306,7 @@
    ],
    "tier": "ark",
    "title": "古腾堡图书馆项目",
-   "version": "2025-12"
+   "version": "2026-11-13"
   },
   "mutopiaproject.org_en_all": {
    "date": "2026-11-02",

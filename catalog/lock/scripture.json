@@ -571,7 +571,7 @@
    "version": "2021-11-23"
   },
   "bible_adz": {
-   "date": "2026-11-13",
+   "date": "2026-11-16",
    "dest": "scripture",
    "files": [
     {
@@ -606,7 +606,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Adzera: Adzera Bible",
-   "version": "2026-11-13"
+   "version": "2026-11-16"
   },
   "bible_aeb": {
    "date": "2025-04-26",
@@ -13330,7 +13330,7 @@
    "version": "2024-08-01"
   },
   "bible_engwebu": {
-   "date": "2026-11-13",
+   "date": "2026-11-17",
    "dest": "scripture",
    "files": [
     {
@@ -13364,7 +13364,7 @@
    "rule": "bible_public_domain",
    "tier": "ark",
    "title": "English: World English Bible Updated",
-   "version": "2026-11-13"
+   "version": "2026-11-17"
   },
   "bible_engwmb": {
    "date": "2026-10-30",
@@ -16854,7 +16854,7 @@
    "version": "2019-05-14"
   },
   "bible_gvs": {
-   "date": "2026-11-13",
+   "date": "2026-11-16",
    "dest": "scripture",
    "files": [
     {
@@ -16889,7 +16889,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Gumawana: Gumawana Bible",
-   "version": "2026-11-13"
+   "version": "2026-11-16"
   },
   "bible_gwiNT": {
    "date": "2014-04-25",
@@ -27060,7 +27060,7 @@
    "version": "2014-04-30"
   },
   "bible_mkj": {
-   "date": "2026-11-12",
+   "date": "2026-11-17",
    "dest": "scripture",
    "files": [
     {
@@ -27095,7 +27095,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Mokilese: Mokilese Bible",
-   "version": "2026-11-12"
+   "version": "2026-11-17"
   },
   "bible_mkl": {
    "date": "2014-10-02",
@@ -35563,7 +35563,7 @@
    "version": "2025-06-27"
   },
   "bible_rmyArli": {
-   "date": "2026-11-13",
+   "date": "2026-11-16",
    "dest": "scripture",
    "files": [
     {
@@ -35598,7 +35598,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Romani, Vlax: Arli Luke",
-   "version": "2026-11-13"
+   "version": "2026-11-16"
   },
   "bible_rmyChergash": {
    "date": "2025-06-28",
@@ -35828,7 +35828,7 @@
    "version": "2022-01-13"
   },
   "bible_ronBayash": {
-   "date": "2026-11-15",
+   "date": "2026-11-17",
    "dest": "scripture",
    "files": [
     {
@@ -35863,7 +35863,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Romanian: Bayash Bible",
-   "version": "2026-11-15"
+   "version": "2026-11-17"
   },
   "bible_ronbl": {
    "date": "2026-10-28",
@@ -36245,7 +36245,7 @@
    "version": "2025-07-02"
   },
   "bible_rusfb": {
-   "date": "2026-11-15",
+   "date": "2026-11-16",
    "dest": "scripture",
    "files": [
     {
@@ -36270,7 +36270,7 @@
     "name": "Библия свободы",
     "native": "Русский",
     "nt": 27,
-    "ot": 25,
+    "ot": 39,
     "public_domain": true,
     "script": "Latin",
     "translation": "rusfb"
@@ -36279,7 +36279,7 @@
    "rule": "bible_public_domain",
    "tier": "ark",
    "title": "Russian: Russian Freedom Bible",
-   "version": "2026-11-15"
+   "version": "2026-11-16"
   },
   "bible_russyn": {
    "date": "2022-11-25",
@@ -40720,7 +40720,7 @@
    "version": "2026-11-13"
   },
   "bible_tdt": {
-   "date": "2026-11-13",
+   "date": "2026-11-17",
    "dest": "scripture",
    "files": [
     {
@@ -40755,7 +40755,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Tetun Dili: Tetun Dili NT",
-   "version": "2026-11-13"
+   "version": "2026-11-17"
   },
   "bible_tdx": {
    "date": "2024-12-05",
@@ -49231,6 +49231,28 @@
    "tier": "ark",
    "title": "Mi Yodeya Q&A",
    "version": "2026-10"
+  },
+  "theographic": {
+   "date": "2026-11-17",
+   "dest": "study/theographic",
+   "files": [
+    {
+     "filename": "theographic-bible-metadata-ac9ca92.tar.gz",
+     "url": "https://github.com/robertrouse/theographic-bible-metadata/archive/ac9ca923c4d53df874ffb26aebb4d9812d0fbdef.tar.gz"
+    }
+   ],
+   "home": "https://github.com/robertrouse/theographic-bible-metadata",
+   "kind": "data",
+   "license": "CC BY-SA 4.0",
+   "note": "More than 3,000 people, about 1,300 places (nearly all with map coordinates) and a timeline of events, each tied to the King James verses that mention it, plus Easton's Bible Dictionary. JSON, CSV and GeoJSON for builders and researchers, by Robert Rouse of Viz.Bible. Its dates follow Floyd Nolen Jones, The Chronology of the Old Testament.",
+   "post": "untar",
+   "tags": [
+    "study",
+    "data"
+   ],
+   "tier": "seed",
+   "title": "Theographic Bible Metadata: the people, places and events of the Bible, linked verse by verse",
+   "version": "ac9ca92"
   }
  },
  "pack": "scripture"
