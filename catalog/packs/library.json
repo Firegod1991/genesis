@@ -5,8 +5,8 @@
  "dest": "zim",
  "items": [
   {"id": "gutenberg_every_language", "tier": "ark", "tags": ["books"],
-   "note": "Project Gutenberg, one library per language (about one hundred languages). The English library is over 200 GB and sits in eden.",
-   "source": {"type": "kiwix_rule", "category": "gutenberg", "flavours": [""], "exclude": "^gutenberg_en_all$"}},
+   "note": "Project Gutenberg, one library per language (about one hundred languages), with the English library shelf by shelf. The two single file editions are left out of this line because they repeat all of it: the one with every language (over 250 GB), and the English one (over 200 GB), which sits in eden.",
+   "source": {"type": "kiwix_rule", "category": "gutenberg", "flavours": [""], "exclude": "^gutenberg_(en|mul)_all$"}},
   {"zim": "wikisource_en_all", "flavour": "nopic", "tier": "ark", "tags": ["books", "primary sources"]},
   {"zim": "openmusictheory.com_en_all", "tier": "ark", "tags": ["music"]},
 
