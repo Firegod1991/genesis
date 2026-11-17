@@ -65,14 +65,17 @@ a { color: var(--water); text-underline-offset: 0.15em; }
   border-right: 1px solid var(--rule);
 }
 .rail a {
-  padding: 0.55rem 1.5rem;
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.42rem 1.5rem;
   color: var(--ink); text-decoration: none;
   font-weight: 600;
   border-left: 0.3rem solid transparent;
 }
+.ic { width: 1.35em; height: 1.35em; flex: none; }
 .rail a:hover { background: var(--sheet); }
 .rail a[aria-current="page"] { border-left-color: var(--revision); color: var(--revision); }
 .rail .mark {
+  display: block;
   font-size: 1.75rem; font-weight: 850; letter-spacing: -0.02em; line-height: 1;
   padding-bottom: 1.5rem; border-left-color: transparent; color: var(--ink);
 }
@@ -111,11 +114,11 @@ html.night .actions a, html.night button.act { color: #000; }
   font: inherit; font-size: 1.25rem; font-weight: 650; color: var(--ink);
   background: var(--sheet); border: 2px solid var(--ink); border-radius: 0;
 }
-.where button {
+.where button, .need-row button, .ask-form button {
   padding: 0.55rem 1rem; font: inherit; font-size: 1.25rem; font-weight: 750;
   color: var(--paper); background: var(--revision); border: 2px solid var(--revision); border-radius: 0; cursor: pointer;
 }
-html.night .where button { color: #000; }
+html.night .where button, html.night .need-row button, html.night .ask-form button { color: #000; }
 .where output { font-size: 1.25rem; font-weight: 750; color: var(--revision); min-width: 5ch; padding-bottom: 0.6rem; }
 input[type="search"] {
   width: min(100%, 28rem); padding: 0.5rem 0.7rem; margin-bottom: 1rem; font: inherit; color: var(--ink);
@@ -176,6 +179,116 @@ dl.facts dd { margin: 0; font-weight: 650; }
 .alpha b { font-weight: 850; }
 .alpha i { font-style: normal; font-weight: 750; letter-spacing: 0.12em; }
 
+/* ---------- home: ask the box, then the index of the sheet ---------- */
+.need-form h1 { margin-bottom: 0.75rem; }
+.need-row { display: flex; gap: 0.5rem; max-width: 46rem; }
+.need-row input { flex: 1; min-width: 0; width: auto; margin: 0; padding: 0.7rem 0.8rem; font-size: 1.25rem; font-weight: 650; }
+.first { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 0.75rem; margin: 1.75rem 0 0.75rem; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 0.75rem; }
+.tile {
+  display: grid; grid-template-columns: auto 1fr; column-gap: 0.9rem; align-items: center;
+  min-height: 5.5rem; padding: 1rem 1.1rem;
+  color: var(--ink); background: var(--sheet); border: 2px solid var(--ink); text-decoration: none;
+}
+.tile .ic { grid-row: span 2; width: 2.6rem; height: 2.6rem; }
+.tile strong { font-size: 1.25rem; font-weight: 800; line-height: 1.2; align-self: end; }
+.tile span { grid-column: 2; align-self: start; color: var(--contour); line-height: 1.3; }
+.tile:hover { border-color: var(--revision); color: var(--revision); }
+.tile.strong { min-height: 4.25rem; color: var(--paper); background: var(--ink); }
+.tile.strong .ic { grid-row: auto; width: 2rem; height: 2rem; }
+.tile.strong strong { align-self: center; }
+.tile.strong:hover { color: var(--paper); background: var(--revision); }
+html.night .tile.strong, html.night .tile.strong:hover { color: #000; }
+
+.found { max-width: 54rem; margin: 1.25rem 0 0; }
+.found h2 { margin-top: 0; }
+.hit {
+  display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; align-items: start;
+  padding: 0.6rem 0; border-bottom: 1px solid var(--rule); color: var(--ink); text-decoration: none;
+}
+.hit .ic { width: 1.6rem; height: 1.6rem; margin-top: 0.15rem; }
+.hit strong { display: block; font-weight: 750; }
+.hit small { display: block; color: var(--contour); }
+.hit span span { display: block; font-size: 0.92rem; }
+a.hit:hover strong, .card:hover strong, a.bookcard:hover strong { color: var(--revision); text-decoration: underline; }
+
+/* ---------- shelves of manuals ---------- */
+.shelf h2, .rules h2 { display: flex; align-items: center; gap: 0.6rem; }
+.shelf h2 small { font-weight: 400; color: var(--contour); }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: 1.1rem 1.5rem; margin-top: 0.75rem; }
+.card { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.9rem; align-items: start; color: var(--ink); text-decoration: none; }
+.cover { display: block; width: 6.5rem; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; background: #fff; border: 1px solid var(--ink); }
+.cover.drawn {
+  display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;
+  padding: 0.5rem; color: var(--paper); background: var(--contour); border-color: var(--contour);
+}
+.cover.drawn b { font-size: 0.72rem; font-weight: 800; line-height: 1.15; overflow-wrap: anywhere; }
+.cover.drawn i { font-size: 0.58rem; font-style: normal; line-height: 1.15; }
+html.night .cover, html.night .bookcard img { filter: grayscale(1) sepia(1) hue-rotate(-38deg) saturate(7) brightness(0.55); }
+.card-text { display: flex; flex-direction: column; gap: 0.2rem; }
+.card-text strong { font-weight: 750; line-height: 1.25; }
+.card-text small { color: var(--contour); }
+.card-text span { font-size: 0.92rem; line-height: 1.4; }
+.shelf.danger h2 { color: var(--down); border-top-color: var(--down); }
+.rules { max-width: 62rem; padding: 0.25rem 1.25rem 0.9rem; background: var(--sheet); border: 2px solid var(--down); }
+.rules h2 { margin-top: 0.75rem; padding-top: 0; color: var(--down); border: 0; }
+.rules ol { max-width: 75ch; margin: 0; padding-left: 1.25rem; }
+.rules li { padding: 0.15rem 0; }
+
+/* ---------- the library ---------- */
+.books { display: grid; grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); gap: 0 1.5rem; }
+.bookcard {
+  display: grid; grid-template-columns: 3rem 1fr; gap: 0.75rem; align-items: start;
+  padding: 0.6rem 0; border-bottom: 1px solid var(--rule); color: var(--ink); text-decoration: none;
+}
+.bookcard img, .bookcard .ic { width: 3rem; height: 3rem; }
+.bookcard strong { display: block; font-weight: 750; line-height: 1.25; }
+.bookcard span span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.92rem; }
+.bookcard small { color: var(--contour); }
+.bookcard.shut { color: var(--contour); }
+
+/* ---------- the assistant and the notes ---------- */
+.ask-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; margin-bottom: 0.75rem; }
+.ask-bar label { font-weight: 700; }
+.ask-bar select {
+  max-width: 100%; padding: 0.4rem 0.5rem; font: inherit; color: var(--ink);
+  background: var(--sheet); border: 2px solid var(--ink); border-radius: 0;
+}
+.ask-bar .check { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; cursor: pointer; }
+.check input { width: 1.05rem; height: 1.05rem; margin: 0; accent-color: var(--ink); }
+button.quiet {
+  padding: 0.4rem 0; font: inherit; font-weight: 700; color: var(--water); background: none; border: 0;
+  text-decoration: underline; text-underline-offset: 0.15em; cursor: pointer;
+}
+.ask-log { max-width: 54rem; }
+.say { padding: 0.75rem 0; border-top: 1px solid var(--rule); }
+.say > b { display: block; font-weight: 700; color: var(--contour); }
+.say.user > b { color: var(--revision); }
+.say .words { max-width: 75ch; white-space: pre-wrap; overflow-wrap: anywhere; }
+.sources { margin: 0.5rem 0 0; padding-left: 0.9rem; border-left: 0.3rem solid var(--rule); }
+.sources > small { font-weight: 700; color: var(--contour); }
+.ask-form { position: sticky; bottom: 0; display: flex; gap: 0.5rem; max-width: 54rem; padding: 0.75rem 0; background: var(--paper); }
+.ask-form textarea, .note-form textarea, .note-form input {
+  padding: 0.55rem 0.7rem; font: inherit; color: var(--ink); background: var(--sheet); border: 2px solid var(--ink); border-radius: 0;
+}
+.ask-form textarea { flex: 1; min-width: 0; font-size: 1.1rem; resize: vertical; }
+.notes { display: grid; grid-template-columns: minmax(11rem, 15rem) minmax(0, 1fr); gap: 2rem; }
+.notes-list ul.plain { columns: auto; margin-top: 1rem; }
+.note-form { display: grid; gap: 0.6rem; }
+.note-form input { font-size: 1.25rem; font-weight: 750; }
+.note-form textarea { width: 100%; line-height: 1.5; resize: vertical; }
+.note-form .actions { align-items: center; gap: 0.5rem 1.25rem; margin: 0; }
+.note-form output { color: var(--contour); }
+
+/* ---------- the reader: a manual or a book, inside the sheet ---------- */
+body.reading main { padding: 0.75rem 1rem 0; }
+.reader { max-width: none; }
+.reader-bar { display: flex; align-items: center; gap: 1.25rem; padding-bottom: 0.6rem; }
+.reader-bar a { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; white-space: nowrap; }
+.reader-bar strong { flex: 1; min-width: 0; overflow: hidden; font-size: 1.1rem; text-overflow: ellipsis; white-space: nowrap; }
+#read-frame { display: block; width: 100%; height: calc(100vh - 4.2rem); background: #fff; border: 2px solid var(--ink); }
+html.night #read-frame { filter: grayscale(1) sepia(1) hue-rotate(-38deg) saturate(7) brightness(0.6); }
+
 /* ---------- small screens: the rail becomes a bottom bar ---------- */
 @media (max-width: 760px) {
   body { grid-template-columns: 1fr; padding-bottom: 3.6rem; }
@@ -193,7 +306,12 @@ dl.facts dd { margin: 0; font-weight: 650; }
   .map { height: 46vh; }
   .lang { grid-template-columns: 1fr; }
   .bearings th:nth-child(2), .bearings td:nth-child(2) { overflow-wrap: anywhere; }
+  .rail a { flex-direction: column; gap: 0.1rem; font-size: 0.8rem; }
+  .cards { grid-template-columns: 1fr; }
+  .notes { grid-template-columns: 1fr; gap: 1rem; }
+  #read-frame { height: calc(100vh - 8.4rem); }
+  .reader-bar strong { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
-@media print { .rail, .where, .layers, .map { display: none; } body { display: block; background: #fff; } }
+@media print { .rail, .where, .layers, .map, .need-form, .ask-form, .reader-bar { display: none; } body { display: block; background: #fff; } }
