@@ -1,0 +1,29 @@
+name: Launcher stays executable
+
+# A file pushed through the GitHub API loses its executable flag, and the launcher needs it.
+on:
+  push:
+    branches: [main]
+    paths: ["bin/genesis", ".github/workflows/modes.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Give bin/genesis its flag back
+        run: |
+          if [ "$(git ls-files -s bin/genesis | cut -c1-6)" = "100755" ]; then exit 0; fi
+          git config user.name "Firegod1991"
+          git config user.email "193648396+Firegod1991@users.noreply.github.com"
+          git update-index --chmod=+x bin/genesis
+          git commit -q -m "Keep the launcher executable"
+          for attempt in 1 2 3; do
+            git pull --rebase --autostash && git push && exit 0
+            sleep 5
+          done
+          exit 1
