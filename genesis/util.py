@@ -24,7 +24,9 @@ class FetchError(Exception):
 
 
 def log(msg):
-    print(msg, file=sys.stderr, flush=True)
+    # One write per line, so lines from downloads running side by side never run into each other.
+    sys.stderr.write("%s\n" % (msg,))
+    sys.stderr.flush()
 
 
 def _headers(url, extra=None):

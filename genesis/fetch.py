@@ -5,14 +5,24 @@ import gzip
 import json
 import os
 import shutil
+import socket
 import subprocess
 import sys
 import tarfile
+import threading
+import time
 import urllib.request
 import zipfile
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from . import catalog
 from .util import ROOT, USER_AGENT, FetchError, Net, file_hash, http_open, human, log, read_json, write_json
+
+STACK_OLLAMA = "http://127.0.0.1:11434"
+# Model servers are on this machine or this network: never send those requests through a proxy.
+_DIRECT = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+# One download at a time can draw a progress bar. Several at once would only scribble over each other.
+PROGRESS = True
 
 
 def vault_path(args=None):
@@ -23,6 +33,24 @@ def vault_path(args=None):
 
 def _meta(vault, name):
     return os.path.join(vault, ".genesis", name)
+
+
+def _rel(path, vault):
+    """A path inside the vault as the record keeps it: forward slashes on every system, so a drive
+    filled on Windows reads the same on a Raspberry Pi."""
+    return os.path.relpath(path, vault).replace(os.sep, "/")
+
+
+def _inside(vault, rel):
+    return os.path.join(vault, *rel.replace("\\", "/").split("/"))
+
+
+def _state(vault):
+    """What is installed. Records written by an older Genesis on Windows are read with their slashes turned."""
+    state = read_json(_meta(vault, "state.json"), {})
+    for st in state.values():
+        st["files"] = [f.replace("\\", "/") for f in st.get("files", [])]
+    return state
 
 
 def load_config(vault):
@@ -77,7 +105,7 @@ def _free(path):
 def plan(args):
     vault = vault_path(args)
     cfg, sel = _selection(args, vault)
-    state = read_json(_meta(vault, "state.json"), {})
+    state = _state(vault)
     per, need, unsized = {}, 0, 0
     for pack, iid, entry, files in sel:
         size = catalog.entry_size(entry, files)
@@ -115,7 +143,7 @@ def _download(url, dest, size=None):
         # A link that stalls is dropped after two minutes below 1 KB/s and resumed, not waited on forever.
         cmd = ["curl", "-fL", "--retry", "5", "--retry-delay", "5", "--connect-timeout", "30",
                "--speed-limit", "1024", "--speed-time", "120", "-C", "-", "-A", USER_AGENT, "-o", part, url]
-        cmd.insert(1, "--progress-bar" if sys.stderr.isatty() else "-sS")
+        cmd.insert(1, "--progress-bar" if PROGRESS and sys.stderr.isatty() else "-sS")
         rc = subprocess.call(cmd)
         if rc == 33:  # server cannot resume: start over once
             os.remove(part)
@@ -195,30 +223,108 @@ def _untar(path, into):
                     shutil.copyfileobj(src, dst)
 
 
-def _ollama_pull(model):
-    host = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434").rstrip("/")
-    if not host.startswith("http"):
-        host = "http://" + host
-    req = urllib.request.Request(host + "/api/pull", data=json.dumps({"model": model}).encode(),
-                                 headers={"Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=3600) as r:
-            for line in r:
-                msg = json.loads(line or b"{}")
-                if msg.get("error"):
-                    raise FetchError("ollama: " + msg["error"])
-        return True
-    except (OSError, ValueError) as e:
-        log("  skipped: Ollama is not reachable at %s (%s). Start it with `genesis up ai`, then fetch again." % (host, e))
+def _ollama_command():
+    exe = shutil.which("ollama")
+    return [exe, "serve"] if exe else None
+
+
+def _stack_ollama_running():
+    """True when the Ollama that `genesis up ai` starts is running. It keeps its models in the vault."""
+    if not shutil.which("docker"):
         return False
+    try:
+        out = subprocess.run(["docker", "compose", "--project-name", "genesis", "ps", "--status", "running",
+                              "--services"], capture_output=True, text=True, timeout=30).stdout
+    except (OSError, subprocess.SubprocessError):
+        return False
+    return "ollama" in out.split()
 
 
-def _fetch_item(vault, iid, entry, files, net, state):
+class Models:
+    """Pulls models so that they land inside the vault, whichever machine fills it.
+
+    The stack keeps its models in <vault>/models/ollama. When the stack's own Ollama is running, it
+    does the pulling. Otherwise an Ollama installed on this machine is started for the length of the
+    fetch with that folder as its store, so nothing lands in the owner's own model library.
+    GENESIS_OLLAMA names another server to pull through, wherever that one keeps its models.
+    """
+
+    def __init__(self, vault):
+        self.vault, self.host, self.proc, self.why = vault, None, None, None
+        self.lock = threading.Lock()
+
+    def start(self):
+        explicit = os.environ.get("GENESIS_OLLAMA")
+        if explicit:
+            return (explicit if explicit.startswith("http") else "http://" + explicit).rstrip("/")
+        if _stack_ollama_running():
+            return STACK_OLLAMA
+        cmd = _ollama_command()
+        if not cmd:
+            self.why = "no Ollama to pull with. Start the stack with `genesis up ai` or install Ollama, then fetch again."
+            return None
+        store = os.path.join(self.vault, "models", "ollama", "models")
+        os.makedirs(store, exist_ok=True)
+        with socket.socket() as s:
+            s.bind(("127.0.0.1", 0))
+            port = s.getsockname()[1]
+        host = "http://127.0.0.1:%d" % port
+        env = dict(os.environ, OLLAMA_MODELS=store, OLLAMA_HOST="127.0.0.1:%d" % port)
+        try:
+            self.proc = subprocess.Popen(cmd, env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                         creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+        except OSError as e:
+            self.why = "Ollama would not start (%s)." % e
+            return None
+        for _ in range(60):
+            try:
+                with _DIRECT.open(host + "/api/version", timeout=2):
+                    log("  models go into %s" % store)
+                    return host
+            except (OSError, ValueError):
+                if self.proc.poll() is not None:
+                    break
+                time.sleep(0.5)
+        self.close()
+        self.why = "Ollama started and did not answer."
+        return None
+
+    def pull(self, model):
+        with self.lock:
+            if self.host is None and self.why is None:
+                self.host = self.start()
+        if self.host is None:
+            log("  skipped: " + self.why)
+            return False
+        req = urllib.request.Request(self.host + "/api/pull", data=json.dumps({"model": model}).encode(),
+                                     headers={"Content-Type": "application/json"})
+        try:
+            with _DIRECT.open(req, timeout=3600) as r:
+                for line in r:
+                    msg = json.loads(line or b"{}")
+                    if msg.get("error"):
+                        raise FetchError("ollama: " + msg["error"])
+            return True
+        except (OSError, ValueError) as e:
+            log("  skipped: Ollama is not reachable at %s (%s)." % (self.host, e))
+            return False
+
+    def close(self):
+        if self.proc and self.proc.poll() is None:
+            self.proc.terminate()
+            try:
+                self.proc.wait(timeout=15)
+            except subprocess.TimeoutExpired:
+                self.proc.kill()
+        self.proc = None
+
+
+def _fetch_item(vault, iid, entry, files, net, state, models):
     kind = entry.get("kind")
     if kind == "image":
         return None  # pulled by `genesis up` and saved by `genesis seal`
     if kind == "model":
-        if not _ollama_pull(entry["model"]):
+        if not models.pull(entry["model"]):
             return None
         return {"version": entry.get("version"), "files": [], "model": entry["model"]}
     sub = entry.get("dest", "misc")
@@ -233,23 +339,23 @@ def _fetch_item(vault, iid, entry, files, net, state):
             _download(f["url"], dest, f.get("size"))
         how = _check(dest, f, net)
         log("  ok %s (%s)" % (f["filename"], how))
-        written.append(os.path.relpath(dest, vault))
+        written.append(_rel(dest, vault))
         post = entry.get("post")
         if post == "unzip" and f.get("role", "html") == "html":
             _unzip(dest, folder)
             os.remove(dest)
-            written[-1] = os.path.relpath(folder, vault)
+            written[-1] = _rel(folder, vault)
         elif post == "untar":
             _untar(dest, folder)
             os.remove(dest)
-            written[-1] = os.path.relpath(folder, vault)
+            written[-1] = _rel(folder, vault)
         elif post == "gunzip":
             out = dest[:-3]
             with gzip.open(dest, "rb") as src, open(out + ".part", "wb") as dst:
                 shutil.copyfileobj(src, dst, 1024 * 1024)
             os.replace(out + ".part", out)
             os.remove(dest)
-            written[-1] = os.path.relpath(out, vault)
+            written[-1] = _rel(out, vault)
             if kind == "poi":
                 # The dashboard mounts the vault read only and cannot keep its own count.
                 from . import poi
@@ -263,15 +369,15 @@ def _fetch_item(vault, iid, entry, files, net, state):
             version=entry.get("version"), lang=entry.get("lang")))
     # A newer version replaced an older one: drop the superseded files Genesis put there.
     for old in state.get(iid, {}).get("files", []):
-        if old not in written and os.path.isfile(os.path.join(vault, old)):
-            os.remove(os.path.join(vault, old))
+        if old not in written and os.path.isfile(_inside(vault, old)):
+            os.remove(_inside(vault, old))
     return {"version": entry.get("version"), "files": written}
 
 
 def fetch(args):
     vault = vault_path(args)
     cfg, sel = _selection(args, vault, save=True)
-    state = read_json(_meta(vault, "state.json"), {})
+    state = _state(vault)
     todo = [(p, i, e, f) for p, i, e, f in sel
             if state.get(i, {}).get("version") != e.get("version") and e.get("kind") != "image"]
     need = sum(catalog.entry_size(e, f) or 0 for _, _, e, f in todo)
@@ -284,32 +390,45 @@ def fetch(args):
     if need > 20e9 and not args.yes and sys.stdin.isatty():
         if input("Download %s? [y/N] " % human(need)).strip().lower() != "y":
             return 1
-    net, failed, done = Net(), [], 0
-    for n, (pack, iid, entry, files) in enumerate(todo, 1):
+    global PROGRESS
+    jobs = max(1, getattr(args, "jobs", None) or 4)
+    PROGRESS = jobs == 1
+    net, models, lock, failed, done = Net(), Models(vault), threading.Lock(), [], []
+
+    def one(n, pack, iid, entry, files):
         log("[%d/%d] %s: %s" % (n, len(todo), pack, entry.get("title") or iid))
         try:
-            result = _fetch_item(vault, iid, entry, files, net, state)
+            result = _fetch_item(vault, iid, entry, files, net, state, models)
         except (FetchError, OSError, zipfile.BadZipFile, tarfile.TarError) as e:
-            log("  FAILED %s" % e)
+            log("  FAILED %s: %s" % (iid, e))
             failed.append(iid)
-            if not args.keep_going and len(failed) >= 5 and done == 0:
-                log("five failures and no success: stopping. Check your connection.")
-                break
-            continue
+            return
         if result:
             result["fetched"] = datetime.date.today().isoformat()
             result["pack"] = pack
-            state[iid] = result
-            write_json(_meta(vault, "state.json"), state)
-            done += 1
-    log("fetched %d, failed %d%s" % (done, len(failed), (": " + ", ".join(failed[:20])) if failed else ""))
+            with lock:  # one writer at a time, so no item is lost from the record
+                state[iid] = result
+                write_json(_meta(vault, "state.json"), state)
+                done.append(iid)
+
+    pool = ThreadPoolExecutor(max_workers=jobs)
+    try:
+        for job in as_completed([pool.submit(one, n, *item) for n, item in enumerate(todo, 1)]):
+            job.result()  # anything unexpected stops the run here, as it always has
+            if not args.keep_going and len(failed) >= 5 and not done:
+                log("five failures and no success: stopping. Check your connection.")
+                break
+    finally:
+        pool.shutdown(wait=True, cancel_futures=True)
+        models.close()
+    log("fetched %d, failed %d%s" % (len(done), len(failed), (": " + ", ".join(sorted(failed)[:20])) if failed else ""))
     return 1 if failed else 0
 
 
 def status(args):
     vault = vault_path(args)
     cfg, sel = _selection(args, vault)
-    state = read_json(_meta(vault, "state.json"), {})
+    state = _state(vault)
     meta = read_json(os.path.join(catalog.LOCK_DIR, "_meta.json"), {})
     rows = {}
     for pack, iid, entry, _ in sel:
@@ -330,18 +449,18 @@ def status(args):
 def verify(args):
     """Re check every installed file against the catalog checksum for its installed version."""
     vault = vault_path(args)
-    state = read_json(_meta(vault, "state.json"), {})
+    state = _state(vault)
     locked = {iid: entry for _, iid, entry in catalog.all_locked()}
     net, bad, checked = Net(), [], 0
     for iid, st in sorted(state.items()):
         entry = locked.get(iid, {})
         by_name = {f["filename"]: f for f in entry.get("files", [])} if entry.get("version") == st.get("version") else {}
         for rel in st.get("files", []):
-            path = os.path.join(vault, rel)
+            path = _inside(vault, rel)
             if not os.path.exists(path):
                 bad.append("%s: missing %s" % (iid, rel))
                 continue
-            f = by_name.get(os.path.basename(rel))
+            f = by_name.get(rel.rsplit("/", 1)[-1])
             if f and os.path.isfile(path):
                 try:
                     _check(path, f, net)
