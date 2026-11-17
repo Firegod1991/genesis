@@ -14,7 +14,7 @@ import threading
 import time
 import urllib.request
 import zipfile
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlsplit
 
 from . import catalog
@@ -59,7 +59,8 @@ def _state(vault):
 
 
 def load_config(vault):
-    cfg = {"tier": "seed", "langs": ["eng"], "platforms": [catalog.host_platform(), "android"], "packs": None}
+    cfg = {"tier": "seed", "langs": ["eng"], "platforms": [catalog.host_platform(), "android"], "packs": None,
+           "also": []}
     cfg.update(read_json(_meta(vault, "config.json"), {}))
     return cfg
 
@@ -74,11 +75,20 @@ def _selection(args, vault, save=False):
         cfg["platforms"] = [x.strip() for x in args.platform.split(",") if x.strip()]
     ids = getattr(args, "id", None)
     packs = getattr(args, "pack", None)
-    if save and not ids and not packs and not getattr(args, "tag", None):
+    whole = not ids and not packs and not getattr(args, "tag", None)
+    if getattr(args, "also", None):
+        cfg["also"] = sorted(set(cfg.get("also") or []) | set(args.also))
+    if save and whole:
         write_json(_meta(vault, "config.json"), cfg)  # remembered for `genesis update`
     sel = catalog.select(tier=cfg["tier"], packs=packs or cfg.get("packs"), ids=ids, langs=cfg["langs"],
                          platforms=cfg["platforms"], tags=getattr(args, "tag", None))
-    return cfg, sel + _resolve_now(set(ids or []) - {i for _, i, _, _ in sel}, cfg["platforms"])
+    named = set(ids or [])
+    if whole:  # items wanted on top of the tier, such as the planet map beside ark
+        extra = set(cfg.get("also") or []) - {i for _, i, _, _ in sel}
+        if extra:
+            sel += catalog.select(ids=sorted(extra), langs=cfg["langs"], platforms=cfg["platforms"])
+            named |= extra
+    return cfg, sel + _resolve_now(named - {i for _, i, _, _ in sel}, cfg["platforms"])
 
 
 def _resolve_now(missing, platforms):
@@ -189,6 +199,7 @@ def _speed(url, seconds=3.0):
     start, got = time.time(), 0
     try:
         with http_open(url, headers={"Range": "bytes=0-67108863"}, retries=1, timeout=6) as r:
+            start = time.time()  # the transfer is what is timed, not how long the mirror took to pick up
             while time.time() - start < seconds:
                 block = r.read(256 * 1024)
                 if not block:
@@ -433,6 +444,16 @@ class Models:
         self.proc = None
 
 
+def _source(entry, files):
+    """What an item is downloaded from. No one source is given every slot while others wait."""
+    if entry.get("kind") == "model":
+        return "models"
+    url = files[0]["url"] if files else ""
+    if url.startswith(KIWIX):
+        return url.rsplit("/", 1)[0]  # each Kiwix folder has its own set of mirrors
+    return urlsplit(url).hostname or ""
+
+
 def _fetch_item(vault, iid, entry, files, net, state, models):
     kind = entry.get("kind")
     if kind == "image":
@@ -506,6 +527,8 @@ def fetch(args):
     jobs = max(1, getattr(args, "jobs", None) or 4)
     PROGRESS = jobs == 1
     net, models, lock, failed, done = Net(), Models(vault), threading.Lock(), [], []
+    # One slow source must not hold every slot: while items from elsewhere wait, a source gets half.
+    waiting, busy, halt, share = list(enumerate(todo, 1)), {}, [], max(1, jobs // 2)
 
     def one(n, pack, iid, entry, files):
         log("[%d/%d] %s: %s" % (n, len(todo), pack, entry.get("title") or iid))
@@ -525,15 +548,41 @@ def fetch(args):
                 write_json(_meta(vault, "state.json"), state)
                 done.append(iid)
 
+    def take():
+        with lock:
+            if halt or not waiting:
+                return None
+            job = next((w for w in waiting if busy.get(_source(w[1][2], w[1][3]), 0) < share), waiting[0])
+            waiting.remove(job)
+            key = _source(job[1][2], job[1][3])
+            busy[key] = busy.get(key, 0) + 1
+            return job, key
+
+    def work():
+        while True:
+            got = take()
+            if got is None:
+                return
+            (n, item), key = got
+            try:
+                one(n, *item)
+            except BaseException:
+                halt.append(True)  # anything unexpected stops the run here, as it always has
+                raise
+            finally:
+                with lock:
+                    busy[key] -= 1
+            with lock:
+                if not args.keep_going and len(failed) >= 5 and not done and not halt:
+                    log("five failures and no success: stopping. Check your connection.")
+                    halt.append(True)
+
     pool = ThreadPoolExecutor(max_workers=jobs)
     try:
-        for job in as_completed([pool.submit(one, n, *item) for n, item in enumerate(todo, 1)]):
-            job.result()  # anything unexpected stops the run here, as it always has
-            if not args.keep_going and len(failed) >= 5 and not done:
-                log("five failures and no success: stopping. Check your connection.")
-                break
+        for worker in [pool.submit(work) for _ in range(jobs)]:
+            worker.result()
     finally:
-        pool.shutdown(wait=True, cancel_futures=True)
+        pool.shutdown(wait=True)
         models.close()
     log("fetched %d, failed %d%s" % (len(done), len(failed), (": " + ", ".join(sorted(failed)[:20])) if failed else ""))
     return 1 if failed else 0

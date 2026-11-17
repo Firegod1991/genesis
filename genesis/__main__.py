@@ -83,6 +83,7 @@ def _selection(p):
     p.add_argument("--lang", help="comma separated ISO 639-3 codes, or * for every language")
     p.add_argument("--platform", help="comma separated: " + ", ".join(catalog.PLATFORMS))
     p.add_argument("--tag", action="append", help="only items carrying this tag (repeatable)")
+    p.add_argument("--also", action="append", help="an item to keep on top of the tier, by id (repeatable, remembered)")
     p.add_argument("--vault", help="where content lives (default: $GENESIS_VAULT or ./vault)")
 
 

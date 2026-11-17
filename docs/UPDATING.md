@@ -44,6 +44,10 @@ genesis update       # the same thing, right now
 
 `genesis update` pulls the newest catalog with git, fetches whatever changed for the tier, languages and packs you chose, verifies it, removes the superseded files, pulls newer service images and restarts the library so new books show up. With no connection it leaves everything exactly as it is.
 
+A drive can carry items its tier does not include: `genesis fetch --tier ark --also planet_basemap` adds the whole planet map to an ark drive. The choice is remembered, so every later `genesis update` keeps that item current too.
+
+Downloads run several at once (`--jobs`, 4 unless you say otherwise). While items from other places wait, no single source gets more than half the slots, so one slow mirror cannot hold up everything else.
+
 Publishers reorganize. When several volumes are folded into one (Project Gutenberg did it with four shelves of its English library in November 2026), the refresh drops the old volumes from the catalog and the combined volume records which ones it replaces. A drive that holds the old volumes keeps them until the combined one is downloaded and checked, then removes them. Nothing else is ever removed because a publisher stopped listing it. A partial download of a file the catalog no longer lists can never be finished, so the next fetch clears it away.
 
 ## Where the models go
