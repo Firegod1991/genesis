@@ -26,8 +26,23 @@ _DIRECT = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 # One download at a time can draw a progress bar. Several at once would only scribble over each other.
 PROGRESS = True
 KIWIX = "https://download.kiwix.org/"
-# For this run: a folder on the Kiwix server, and the address of that folder on the quickest mirror.
-_mirror, _mirror_lock = {}, threading.Lock()
+
+
+class _Mirrors(dict):
+    """For this run: the mirrors that carry each Kiwix folder, the best speed seen from each host,
+    and how many downloads each host is serving right now."""
+
+    def __init__(self):
+        super().__init__()
+        self.hosts, self.busy = {}, {}
+
+    def clear(self):
+        super().clear()
+        self.hosts.clear()
+        self.busy.clear()
+
+
+_mirror, _mirror_lock = _Mirrors(), threading.Lock()
 
 
 def vault_path(args=None):
@@ -211,39 +226,57 @@ def _speed(url, seconds=3.0):
 
 
 def _pick_mirror(url):
-    """Time every mirror that carries this file for a few seconds and return the folder on the quickest."""
+    """Time every mirror that carries this file for a few seconds. Returns the folder each one keeps
+    it in, with the host, and notes how quick each host was."""
     name = url.rsplit("/", 1)[1]
     try:
         with http_open(url + ".meta4", retries=2, timeout=20) as r:
             listed = re.findall(r"<url[^>]*>\s*(https://[^<\s]+)\s*</url>", r.read().decode("utf-8", "replace"))
     except (FetchError, OSError):
-        return None
+        return []
     listed = [u for u in listed if u.endswith("/" + name)]
     if len(listed) < 2:
-        return None
+        return []
     with ThreadPoolExecutor(max_workers=len(listed)) as pool:
         speeds = list(pool.map(_speed, listed))
-    best = max(range(len(listed)), key=speeds.__getitem__)
-    if not speeds[best]:
-        return None
-    log("  mirror %s, %s a second" % (urlsplit(listed[best]).hostname, human(speeds[best])))
-    return listed[best].rsplit("/", 1)[0]
+    found = []
+    for u, speed in zip(listed, speeds):
+        host = urlsplit(u).hostname
+        # A line that is busy with other downloads measures low, so the best reading of a host counts.
+        _mirror.hosts[host] = max(_mirror.hosts.get(host, 0), speed)
+        found.append((u.rsplit("/", 1)[0], host))
+    return found
 
 
-def _kiwix_mirror(url, size):
-    """The same file on the quickest Kiwix mirror, or None to take the one the publisher hands out.
+def _kiwix_mirror(url, size, tried=()):
+    """The same file on a quick Kiwix mirror, or None to take the one the publisher hands out.
 
     The publisher's own address sends everyone to a nearby mirror, and near is not always quick: forty
-    times slower than the best one has been measured. Every download is still checked against the
-    checksum the publisher lists, so a mirror can be slow or missing a file but never wrong.
+    times slower than the best one has been measured. A host that was quick for one folder is taken
+    for the next folder it carries, and when several mirrors are within half the speed of the best,
+    downloads are shared between them. Every download is still checked against the checksum the
+    publisher lists, so a mirror can be slow or missing a file but never wrong.
     """
     if not url.startswith(KIWIX) or not size or size < 50e6:
         return None  # small files finish before a comparison would
     folder, name = url.rsplit("/", 1)
     with _mirror_lock:
+        hosts, busy = _mirror.hosts, _mirror.busy
         if folder not in _mirror:
             _mirror[folder] = _pick_mirror(url)
-        return _mirror[folder] + "/" + name if _mirror[folder] else None
+            known = [(hosts[h], h) for _, h in _mirror[folder] if hosts.get(h)]
+            if known:
+                log("  mirror %s, %s a second" % (max(known)[1], human(max(known)[0])))
+        live = [(m, h) for m, h in _mirror[folder] if hosts.get(h)]
+        if not live:
+            return None
+        best = max(hosts[h] for _, h in live)
+        quick = [(m, h) for m, h in live if hosts[h] * 2 >= best and h not in tried]
+        if not quick:
+            return None
+        m, h = min(quick, key=lambda c: (busy.get(c[1], 0), -hosts[c[1]]))
+        busy[h] = busy.get(h, 0) + 1
+        return m + "/" + name
 
 
 def _transfer(url, part):
@@ -273,15 +306,23 @@ def _download(url, dest, size=None):
     if size and os.path.exists(part) and os.path.getsize(part) == size:
         os.replace(part, dest)
         return
-    quick = _kiwix_mirror(url, size)
-    if quick:
+    tried = []
+    while True:
+        quick = _kiwix_mirror(url, size, tried)
+        if not quick:
+            break
+        host = urlsplit(quick).hostname
         try:
             _transfer(quick, part)
+            os.replace(part, dest)
+            return
         except (FetchError, OSError) as e:
-            log("  that mirror gave up (%s): back to the publisher's own address" % e)
-            _transfer(url, part)
-    else:
-        _transfer(url, part)
+            tried.append(host)
+            log("  %s gave up (%s): trying elsewhere" % (host, e))
+        finally:
+            with _mirror_lock:
+                _mirror.busy[host] = max(0, _mirror.busy.get(host, 0) - 1)
+    _transfer(url, part)
     os.replace(part, dest)
 
 
