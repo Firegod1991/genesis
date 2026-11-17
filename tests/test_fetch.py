@@ -130,6 +130,55 @@ class ParallelFetchTests(unittest.TestCase):
         self.assertEqual((code, state), (1, {}))
 
 
+class VerifyTests(unittest.TestCase):
+    def setUp(self):
+        self.vault = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.vault, ignore_errors=True)
+        files, state = [], {}
+        for n in range(12):
+            path = os.path.join(self.vault, "zim", "book%d.zim" % n)
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "w") as f:
+                f.write("book %d" % n)
+            sums = {"sha256": file_hash(path)} if n % 2 else {"sha256_url": "https://example.invalid/book%d.sha256" % n}
+            files.append(("zim", "book%d" % n, {"version": "1", "files": [dict(sums, filename="book%d.zim" % n)]}))
+            state["book%d" % n] = {"version": "1", "files": ["zim/book%d.zim" % n]}
+        write_json(os.path.join(self.vault, ".genesis", "state.json"), state)
+        patch = mock.patch.object(fetch.catalog, "all_locked", return_value=files)
+        patch.start()
+        self.addCleanup(patch.stop)
+
+    def run_verify(self, online):
+        def text(net, url, headers=None):
+            if not online:
+                raise FetchError("no route to " + url)
+            number = url.rsplit("book", 1)[1].split(".")[0]
+            return file_hash(os.path.join(self.vault, "zim", "book%s.zim" % number)) + "  book%s.zim" % number
+        out = []
+        with mock.patch.object(fetch.Net, "text", text), mock.patch("builtins.print", lambda *a: out.append(" ".join(map(str, a)))):
+            code = fetch.verify(argparse.Namespace(vault=self.vault, jobs=4))
+        return code, "\n".join(out)
+
+    def test_every_file_is_compared_when_the_publishers_answer(self):
+        code, said = self.run_verify(online=True)
+        self.assertEqual(code, 0)
+        self.assertIn("12 installed items, 12 files re hashed, 0 problems", said)
+
+    def test_with_no_connection_nothing_is_called_bad_that_could_not_be_compared(self):
+        code, said = self.run_verify(online=False)
+        self.assertEqual(code, 0)
+        self.assertIn("12 installed items, 6 files re hashed, 0 problems", said)
+        self.assertIn("6 files had nothing to be compared with", said)
+        self.assertIn("verify --sealed", said)
+
+    def test_a_changed_file_is_still_caught(self):
+        with open(os.path.join(self.vault, "zim", "book3.zim"), "w") as f:
+            f.write("book X")
+        code, said = self.run_verify(online=False)
+        self.assertEqual(code, 1)
+        self.assertIn("BAD book3: sha256 mismatch", said)
+
+
 class MirrorTests(unittest.TestCase):
     URL = fetch.KIWIX + "zim/wikipedia/wikipedia_en_medicine_maxi_2026-10.zim"
     META = ('<metalink><file name="x"><url location="us" priority="1">https://slow.example/kiwix/zim/wikipedia/'

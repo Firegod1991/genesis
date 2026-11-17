@@ -519,7 +519,7 @@ def verify(args):
     vault = vault_path(args)
     state = _state(vault)
     locked = {iid: entry for _, iid, entry in catalog.all_locked()}
-    net, bad, checked = Net(), [], 0
+    net, bad, work = Net(), [], []
     for iid, st in sorted(state.items()):
         entry = locked.get(iid, {})
         by_name = {f["filename"]: f for f in entry.get("files", [])} if entry.get("version") == st.get("version") else {}
@@ -530,12 +530,27 @@ def verify(args):
                 continue
             f = by_name.get(rel.rsplit("/", 1)[-1])
             if f and os.path.isfile(path):
-                try:
-                    _check(path, f, net)
-                    checked += 1
-                except FetchError as e:
-                    bad.append("%s: %s" % (iid, e))
+                work.append((iid, path, f))
+
+    def one(job):
+        iid, path, f = job
+        try:
+            _expected(f, net)  # some publishers keep the checksum in a file beside the download
+        except FetchError:
+            return None  # no connection, or the publisher moved on: nothing to compare with
+        try:
+            _check(path, f, net)
+        except FetchError as e:
+            return "%s: %s" % (iid, e)
+        return True
+
+    with ThreadPoolExecutor(max_workers=max(1, getattr(args, "jobs", None) or 4)) as pool:
+        results = list(pool.map(one, work))
+    bad += [r for r in results if isinstance(r, str)]
     for b in bad:
         print("BAD " + b)
-    print("%d installed items, %d files re hashed, %d problems" % (len(state), checked, len(bad)))
+    print("%d installed items, %d files re hashed, %d problems" % (len(state), results.count(True), len(bad)))
+    if None in results:
+        print("%d files had nothing to be compared with: their checksums are published online and could not be read.\n"
+              "`genesis verify --sealed` checks every file against the seal and needs no connection." % results.count(None))
     return 1 if bad else 0
