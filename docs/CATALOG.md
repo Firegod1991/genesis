@@ -7,8 +7,8 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
 | seed | 400 | 23.8 GB | 44 |
-| ark | 656 | 720.6 GB | 90 |
-| eden | 848 | 2.0 TB | 109 |
+| ark | 655 | 467.6 GB | 90 |
+| eden | 847 | 1.7 TB | 109 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -109,7 +109,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | LLVM and Clang | `llvm` | eden | 23.1.5 | 6.3 GB | Apache 2.0 with LLVM exceptions |
 | Stack Overflow | `stackoverflow.com_en_all` | eden | 2026-07 | 114.9 GB |  |
 
-<details><summary><b>devdocs_all</b>: 243 items, 666.1 MB, tier seed</summary>
+<details><summary><b>devdocs_all</b>: 243 items, 663.6 MB, tier seed</summary>
 
 * Angular Docs (`devdocs_en_angular`, 2026-08)
 * Angular.js Docs (`devdocs_en_angularjs`, 2026-10)
@@ -118,7 +118,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Apache Pig Docs (`devdocs_en_apache-pig`, 2026-10)
 * Astro Docs (`devdocs_en_astro`, 2026-10)
 * Async Docs (`devdocs_en_async`, 2026-05)
-* Axios Docs (`devdocs_en_axios`, 2026-05)
+* Axios Docs (`devdocs_en_axios`, 2026-11)
 * Babel Docs (`devdocs_en_babel`, 2026-10)
 * Backbone.js Docs (`devdocs_en_backbone`, 2026-10)
 * Bash Docs (`devdocs_en_bash`, 2026-10)
@@ -159,7 +159,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Django REST Framework Docs (`devdocs_en_django-rest-framework`, 2026-10)
 * Docker Docs (`devdocs_en_docker`, 2026-10)
 * Dojo Docs (`devdocs_en_dojo`, 2026-10)
-* Web APIs Docs (`devdocs_en_dom`, 2026-05)
+* Web APIs Docs (`devdocs_en_dom`, 2026-11)
 * Drupal Docs (`devdocs_en_drupal`, 2026-10)
 * DuckDB Docs (`devdocs_en_duckdb`, 2026-10)
 * Eigen3 Docs (`devdocs_en_eigen3`, 2026-10)
@@ -168,11 +168,11 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Elixir Docs (`devdocs_en_elixir`, 2026-10)
 * Ember.js Docs (`devdocs_en_ember`, 2026-10)
 * Enzyme Docs (`devdocs_en_enzyme`, 2026-10)
-* Erlang Docs (`devdocs_en_erlang`, 2026-08)
+* Erlang Docs (`devdocs_en_erlang`, 2026-11)
 * es-toolkit Docs (`devdocs_en_es-toolkit`, 2026-10)
 * esbuild Docs (`devdocs_en_esbuild`, 2026-10)
 * ESLint Docs (`devdocs_en_eslint`, 2026-10)
-* Express Docs (`devdocs_en_express`, 2026-05)
+* Express Docs (`devdocs_en_express`, 2026-11)
 * Falcon Docs (`devdocs_en_falcon`, 2026-10)
 * FastAPI Docs (`devdocs_en_fastapi`, 2026-10)
 * Fish Docs (`devdocs_en_fish`, 2026-10)
@@ -217,7 +217,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * jQuery UI Docs (`devdocs_en_jqueryui`, 2026-10)
 * JSDoc Docs (`devdocs_en_jsdoc`, 2026-10)
 * Julia Docs (`devdocs_en_julia`, 2026-06)
-* Knockout.js Docs (`devdocs_en_knockout`, 2026-05)
+* Knockout.js Docs (`devdocs_en_knockout`, 2026-11)
 * Koa Docs (`devdocs_en_koa`, 2026-10)
 * Kotlin Docs (`devdocs_en_kotlin`, 2026-10)
 * Kubectl Docs (`devdocs_en_kubectl`, 2026-10)
@@ -250,9 +250,9 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Nix Docs (`devdocs_en_nix`, 2026-10)
 * Node.js Docs (`devdocs_en_node`, 2026-08)
 * Nokogiri Docs (`devdocs_en_nokogiri`, 2026-10)
-* npm Docs (`devdocs_en_npm`, 2026-08)
+* npm Docs (`devdocs_en_npm`, 2026-11)
 * NumPy Docs (`devdocs_en_numpy`, 2026-10)
-* Nushell Docs (`devdocs_en_nushell`, 2026-08)
+* Nushell Docs (`devdocs_en_nushell`, 2026-11)
 * OCaml Docs (`devdocs_en_ocaml`, 2026-05)
 * Octave Docs (`devdocs_en_octave`, 2026-10)
 * Odin Docs (`devdocs_en_odin`, 2026-10)
@@ -267,7 +267,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Phalcon Docs (`devdocs_en_phalcon`, 2026-10)
 * Phaser Docs (`devdocs_en_phaser`, 2026-10)
 * Phoenix Docs (`devdocs_en_phoenix`, 2026-10)
-* PHP Docs (`devdocs_en_php`, 2026-08)
+* PHP Docs (`devdocs_en_php`, 2026-11)
 * PHPUnit Docs (`devdocs_en_phpunit`, 2026-10)
 * Playwright Docs (`devdocs_en_playwright`, 2026-10)
 * PointCloudLibrary Docs (`devdocs_en_point-cloud-library`, 2026-10)
@@ -290,7 +290,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Ruby / Rack Docs (`devdocs_en_rack`, 2026-10)
 * Ruby on Rails Docs (`devdocs_en_rails`, 2026-10)
 * Ramda Docs (`devdocs_en_ramda`, 2026-10)
-* React Docs (`devdocs_en_react`, 2026-05)
+* React Docs (`devdocs_en_react`, 2026-11)
 * React Bootstrap Docs (`devdocs_en_react-bootstrap`, 2026-10)
 * React Native Docs (`devdocs_en_react-native`, 2026-10)
 * React Router Docs (`devdocs_en_react-router`, 2026-10)
@@ -308,7 +308,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Sanctuary Docs (`devdocs_en_sanctuary`, 2026-10)
 * Sanctuary Def Docs (`devdocs_en_sanctuary-def`, 2026-10)
 * Sanctuary Type Classes Docs (`devdocs_en_sanctuary-type-classes`, 2026-05)
-* Sass Docs (`devdocs_en_sass`, 2026-05)
+* Sass Docs (`devdocs_en_sass`, 2026-11)
 * Scala Docs (`devdocs_en_scala`, 2026-10)
 * scikit-image Docs (`devdocs_en_scikit-image`, 2026-10)
 * scikit-learn Docs (`devdocs_en_scikit-learn`, 2026-10)
@@ -321,7 +321,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Svelte Docs (`devdocs_en_svelte`, 2026-10)
 * SVG Docs (`devdocs_en_svg`, 2026-10)
 * Symfony Docs (`devdocs_en_symfony`, 2026-10)
-* Tailwind CSS Docs (`devdocs_en_tailwindcss`, 2026-08)
+* Tailwind CSS Docs (`devdocs_en_tailwindcss`, 2026-11)
 * Tcl/Tk Docs (`devdocs_en_tcl-tk`, 2026-10)
 * Tcllib Docs (`devdocs_en_tcllib`, 2026-10)
 * TensorFlow Docs (`devdocs_en_tensorflow`, 2026-08)
@@ -339,14 +339,14 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Vert.x Docs (`devdocs_en_vertx`, 2026-10)
 * Vite Docs (`devdocs_en_vite`, 2026-10)
 * Vitest Docs (`devdocs_en_vitest`, 2026-10)
-* Vue Docs (`devdocs_en_vue`, 2026-08)
+* Vue Docs (`devdocs_en_vue`, 2026-11)
 * Vue Router Docs (`devdocs_en_vue-router`, 2026-10)
 * VueUse Docs (`devdocs_en_vueuse`, 2026-10)
 * Vuex Docs (`devdocs_en_vuex`, 2026-08)
 * Vulkan Docs (`devdocs_en_vulkan`, 2026-10)
 * Wagtail Docs (`devdocs_en_wagtail`, 2026-10)
 * Web Extensions Docs (`devdocs_en_web-extensions`, 2026-10)
-* webpack Docs (`devdocs_en_webpack`, 2026-05)
+* webpack Docs (`devdocs_en_webpack`, 2026-11)
 * Werkzeug Docs (`devdocs_en_werkzeug`, 2026-10)
 * WordPress Docs (`devdocs_en_wordpress`, 2026-10)
 * XSLT & XPath Docs (`devdocs_en_xslt-xpath`, 2026-10)
@@ -1229,7 +1229,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | 程序员做饭指南 HowToCook (a precise home cooking guide, in Chinese) | `howtocook_zh` | ark | 2585488 |  | Unlicense (public domain) |
 | 中华古诗词数据库 (classical Chinese poetry: 55,000 Tang and 260,000 Song poems) | `chinese_poetry` | eden | b8594f8 |  | MIT |
 
-<details><summary><b>gutenberg_every_language</b>: 99 items, 453.3 GB, tier ark</summary>
+<details><summary><b>gutenberg_every_language</b>: 98 items, 200.3 GB, tier ark</summary>
 
 * Projek Gutenberg-biblioteek (`gutenberg_af_all`, 2026-11-13)
 * Project Gutenberg Library (`gutenberg_ale_all`, 2026-11-13)
@@ -1310,7 +1310,6 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * 프로젝트 구텐베르크 도서관 (`gutenberg_ko_all`, 2026-11-13)
 * Bibliotheca Projecti Gutenberg (`gutenberg_la_all`, 2026-11-13)
 * Pukapuka Project Gutenberg (`gutenberg_mi_all`, 2026-11-13)
-* Project Gutenberg Library (`gutenberg_mul_all`, 2025-11)
 * Amoxcalli Project Gutenberg (`gutenberg_nah_all`, 2026-11-13)
 * Librarìa Project Gutenberg (`gutenberg_nap_all`, 2026-11-13)
 * Project Gutenberg Library (`gutenberg_nav_all`, 2026-11-13)
@@ -2967,11 +2966,11 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Uses of Plants by the Chippewa Indians (Frances Densmore, Smithsonian, 1928) | `chippewa_plant_uses` | seed | 2024-02-02 | 18.1 MB | US government work |
 | Forgotten Foods: Introduction to Wild Edible Plants (Mississippi State University Extension) | `wild_edible_plants_primer` | seed | 2026-02-04 | 116 KB | Free to copy unchanged for nonprofit teaching, with credit |
 | Edible and Poisonous Plants of the Caribbean Region (US Navy, 1944) | `edible_poisonous_plants_caribbean` | seed | 2024-07-08 | 12.9 MB | US government work |
-| Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919) | `plants_missouri_river_region` | seed | 2023-12-23 | 7.0 MB | US government work |
+| Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919) | `plants_missouri_river_region` | seed | 2023-12-23 (stale) | 7.0 MB | US government work |
 | Culturally Significant Plants (USDA NRCS Plant Materials Center, Manhattan, Kansas) | `culturally_significant_plants` | seed | 2019-05-30 | 3.2 MB | US government work, photos credited inside |
 | Preserving Food in Wyoming (University of Wyoming Extension, 2018) | `preserving_food_in_wyoming` | seed | 2024-02-01 | 7.0 MB | Free from the publisher |
 | Desert Foods for a Resilient Future (University of Arizona Desert Laboratory, 2021) | `desert_foods` | seed | 2022-08-15 | 22.1 MB | Free from the publisher |
-| The Ethno-Botany of the Coahuilla Indians of Southern California (David Prescott Barrows, 1900) | `cahuilla_desert_plants` | seed | 2023-11-10 | 6.4 MB | Public domain |
+| The Ethno-Botany of the Coahuilla Indians of Southern California (David Prescott Barrows, 1900) | `cahuilla_desert_plants` | seed | 2023-11-10 (stale) | 6.4 MB | Public domain |
 | Guide to Island Chumash Plant Usage (Channel Islands National Park) | `chumash_plant_uses` | seed | 2023-07-10 | 1.6 MB | US government work |
 | Special Forest Products: Species Information Guide for the Pacific Northwest (US Forest Service, 2001) | `northwest_forest_plants` | seed | 2025-12-31 | 19.1 MB | US government work |
 | Wildflowers of the National Forests in Alaska (US Forest Service) | `alaska_forest_wildflowers` | seed | 2019-05-30 | 1.1 MB | US government work |

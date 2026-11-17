@@ -5,7 +5,7 @@
   "code": 375,
   "isos": 25,
   "knowledge": 689,
-  "library": 248,
+  "library": 247,
   "maps": 6,
   "medical": 45,
   "radio": 33,
@@ -17,17 +17,17 @@
  "refreshed": "2026-11-17",
  "tiers": {
   "ark": {
-   "bytes": 720617533012,
-   "items": 656,
+   "bytes": 467559464090,
+   "items": 655,
    "unsized": 90
   },
   "eden": {
-   "bytes": 1980490040201,
-   "items": 848,
+   "bytes": 1727431971279,
+   "items": 847,
    "unsized": 109
   },
   "seed": {
-   "bytes": 23775535182,
+   "bytes": 23773081678,
    "items": 400,
    "unsized": 44
   }

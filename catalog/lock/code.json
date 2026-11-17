@@ -733,14 +733,14 @@
    "version": "2026-05"
   },
   "devdocs_en_axios": {
-   "date": "2026-05-20",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_axios_2026-05.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_axios_2026-05.zim.sha256",
-     "size": 347136,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_axios_2026-05.zim"
+     "filename": "devdocs_en_axios_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_axios_2026-11.zim.sha256",
+     "size": 348160,
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_axios_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -752,7 +752,7 @@
    ],
    "tier": "seed",
    "title": "Axios Docs",
-   "version": "2026-05"
+   "version": "2026-11"
   },
   "devdocs_en_babel": {
    "date": "2026-10-01",
@@ -1635,14 +1635,14 @@
    "version": "2026-10"
   },
   "devdocs_en_dom": {
-   "date": "2026-05-20",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_dom_2026-05.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_dom_2026-05.zim.sha256",
-     "size": 14163968,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_dom_2026-05.zim"
+     "filename": "devdocs_en_dom_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_dom_2026-11.zim.sha256",
+     "size": 11449344,
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_dom_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -1654,7 +1654,7 @@
    ],
    "tier": "seed",
    "title": "Web APIs Docs",
-   "version": "2026-05"
+   "version": "2026-11"
   },
   "devdocs_en_drupal": {
    "date": "2026-10-05",
@@ -1833,14 +1833,14 @@
    "version": "2026-10"
   },
   "devdocs_en_erlang": {
-   "date": "2026-08-18",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_erlang_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_erlang_2026-08.zim.sha256",
-     "size": 4125696,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_erlang_2026-08.zim"
+     "filename": "devdocs_en_erlang_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_erlang_2026-11.zim.sha256",
+     "size": 3931136,
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_erlang_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -1852,7 +1852,7 @@
    ],
    "tier": "seed",
    "title": "Erlang Docs",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "devdocs_en_es-toolkit": {
    "date": "2026-10-05",
@@ -1921,14 +1921,14 @@
    "version": "2026-10"
   },
   "devdocs_en_express": {
-   "date": "2026-05-20",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_express_2026-05.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_express_2026-05.zim.sha256",
+     "filename": "devdocs_en_express_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_express_2026-11.zim.sha256",
      "size": 444416,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_express_2026-05.zim"
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_express_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -1940,7 +1940,7 @@
    ],
    "tier": "seed",
    "title": "Express Docs",
-   "version": "2026-05"
+   "version": "2026-11"
   },
   "devdocs_en_falcon": {
    "date": "2026-10-05",
@@ -2911,14 +2911,14 @@
    "version": "2026-06"
   },
   "devdocs_en_knockout": {
-   "date": "2026-05-20",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_knockout_2026-05.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_knockout_2026-05.zim.sha256",
-     "size": 481280,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_knockout_2026-05.zim"
+     "filename": "devdocs_en_knockout_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_knockout_2026-11.zim.sha256",
+     "size": 482304,
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_knockout_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -2930,7 +2930,7 @@
    ],
    "tier": "seed",
    "title": "Knockout.js Docs",
-   "version": "2026-05"
+   "version": "2026-11"
   },
   "devdocs_en_koa": {
    "date": "2026-10-01",
@@ -3637,14 +3637,14 @@
    "version": "2026-10"
   },
   "devdocs_en_npm": {
-   "date": "2026-08-18",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_npm_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_npm_2026-08.zim.sha256",
+     "filename": "devdocs_en_npm_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_npm_2026-11.zim.sha256",
      "size": 664576,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_npm_2026-08.zim"
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_npm_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -3656,7 +3656,7 @@
    ],
    "tier": "seed",
    "title": "npm Docs",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "devdocs_en_numpy": {
    "date": "2026-10-01",
@@ -3681,14 +3681,14 @@
    "version": "2026-10"
   },
   "devdocs_en_nushell": {
-   "date": "2026-08-18",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_nushell_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_nushell_2026-08.zim.sha256",
+     "filename": "devdocs_en_nushell_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_nushell_2026-11.zim.sha256",
      "size": 866304,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_nushell_2026-08.zim"
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_nushell_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -3700,7 +3700,7 @@
    ],
    "tier": "seed",
    "title": "Nushell Docs",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "devdocs_en_ocaml": {
    "date": "2026-05-20",
@@ -4011,14 +4011,14 @@
    "version": "2026-10"
   },
   "devdocs_en_php": {
-   "date": "2026-08-18",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_php_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_php_2026-08.zim.sha256",
-     "size": 7142400,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_php_2026-08.zim"
+     "filename": "devdocs_en_php_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_php_2026-11.zim.sha256",
+     "size": 7593984,
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_php_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -4030,7 +4030,7 @@
    ],
    "tier": "seed",
    "title": "PHP Docs",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "devdocs_en_phpunit": {
    "date": "2026-10-31",
@@ -4517,14 +4517,14 @@
    "version": "2026-10"
   },
   "devdocs_en_react": {
-   "date": "2026-05-20",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_react_2026-05.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_react_2026-05.zim.sha256",
+     "filename": "devdocs_en_react_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_react_2026-11.zim.sha256",
      "size": 2700288,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_react_2026-05.zim"
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_react_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -4536,7 +4536,7 @@
    ],
    "tier": "seed",
    "title": "React Docs",
-   "version": "2026-05"
+   "version": "2026-11"
   },
   "devdocs_en_react-bootstrap": {
    "date": "2026-10-05",
@@ -4913,14 +4913,14 @@
    "version": "2026-05"
   },
   "devdocs_en_sass": {
-   "date": "2026-05-20",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_sass_2026-05.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_sass_2026-05.zim.sha256",
-     "size": 653312,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_sass_2026-05.zim"
+     "filename": "devdocs_en_sass_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_sass_2026-11.zim.sha256",
+     "size": 654336,
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_sass_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -4932,7 +4932,7 @@
    ],
    "tier": "seed",
    "title": "Sass Docs",
-   "version": "2026-05"
+   "version": "2026-11"
   },
   "devdocs_en_scala": {
    "date": "2026-10-06",
@@ -5199,14 +5199,14 @@
    "version": "2026-10"
   },
   "devdocs_en_tailwindcss": {
-   "date": "2026-08-18",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_tailwindcss_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_tailwindcss_2026-08.zim.sha256",
+     "filename": "devdocs_en_tailwindcss_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_tailwindcss_2026-11.zim.sha256",
      "size": 600064,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_tailwindcss_2026-08.zim"
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_tailwindcss_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -5218,7 +5218,7 @@
    ],
    "tier": "seed",
    "title": "Tailwind CSS Docs",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "devdocs_en_tcl-tk": {
    "date": "2026-10-01",
@@ -5595,14 +5595,14 @@
    "version": "2026-10"
   },
   "devdocs_en_vue": {
-   "date": "2026-08-18",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_vue_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_vue_2026-08.zim.sha256",
+     "filename": "devdocs_en_vue_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_vue_2026-11.zim.sha256",
      "size": 975872,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_vue_2026-08.zim"
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_vue_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -5614,7 +5614,7 @@
    ],
    "tier": "seed",
    "title": "Vue Docs",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "devdocs_en_vue-router": {
    "date": "2026-10-05",
@@ -5749,14 +5749,14 @@
    "version": "2026-10"
   },
   "devdocs_en_webpack": {
-   "date": "2026-05-20",
+   "date": "2026-11-16",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_webpack_2026-05.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_webpack_2026-05.zim.sha256",
-     "size": 787456,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_webpack_2026-05.zim"
+     "filename": "devdocs_en_webpack_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_webpack_2026-11.zim.sha256",
+     "size": 788480,
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_webpack_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -5768,7 +5768,7 @@
    ],
    "tier": "seed",
    "title": "webpack Docs",
-   "version": "2026-05"
+   "version": "2026-11"
   },
   "devdocs_en_werkzeug": {
    "date": "2026-10-05",
