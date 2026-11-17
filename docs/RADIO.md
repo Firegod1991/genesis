@@ -38,7 +38,7 @@ Browsers allow serial and Bluetooth access to radios only from secure pages. Fro
 
 ## Amateur radio
 
-`genesis fetch --pack radio --tier ark` brings the desktop programs for whatever platform you chose: SDR++, SDRangel, Gqrx, SatDump, SDRTrunk, WSJT-X, JS8Call, Fldigi, FreeDV, Pat for Winlink, Dire Wolf, and CHIRP for programming handhelds.
+`genesis fetch --pack radio --tier ark` brings the desktop programs for whatever platform you chose: SDR++, SDRangel, Gqrx, SatDump, SDRTrunk, WSJT-X, JS8Call, Fldigi, FreeDV, Pat for Winlink and Dire Wolf. CHIRP, for programming handhelds, comes as source code: its publisher hands the installers only to a browser, so get one from [chirpmyradio.com](https://chirpmyradio.com) while you still have a connection.
 
 Genesis is not a radio operating system. For a field station with rig control and everything configured, install [EmComm Tools OS](https://github.com/thetechprepper/emcomm-tools-os-community) and point it at the same vault.
 
