@@ -30,6 +30,31 @@ jobs:
           docker compose -f compose.yaml --profile '*' config -q
           docker compose -f compose.yaml -f compose.gpu.yaml --profile ai config -q
 
+  windows:
+    name: Unit tests, lint and a real fetch on Windows
+    runs-on: windows-latest
+    timeout-minutes: 15
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Catalog lint
+        run: python -m genesis lint
+      - name: Machine report
+        run: python -m genesis doctor
+      - name: Fetch and verify real content
+        env:
+          GENESIS_VAULT: ${{ runner.temp }}/vault
+        run: |
+          python -m genesis fetch --id theographic --id copyparty
+          python -m genesis verify
+          python -c "import os; v = os.environ['GENESIS_VAULT']; [os.stat(os.path.join(v, p)) for p in ('study/theographic/json/people.json', 'tools/copyparty.exe')]"
+
   live:
     name: End to end on small real data
     runs-on: ubuntu-latest

@@ -59,7 +59,16 @@ genesis timer                   # update everything once a month
 
 Put the vault on another drive with `export GENESIS_VAULT=/mnt/bigdrive/genesis`.
 
-Everything below works with nothing but Python 3 and curl, so the catalog and the vault tools also run on macOS and inside WSL on Windows.
+Everything below works with nothing but Python 3 and curl, so the catalog and the vault tools also run on macOS and straight on Windows, where the dashboard starts by itself and the other services wait for Docker:
+
+```powershell
+py -m genesis doctor
+py -m genesis fetch --tier seed --vault E:\genesis
+$env:GENESIS_VAULT = "E:\genesis"
+py dashboard\server.py          # dashboard at http://localhost:8080
+```
+
+Filling a drive on one machine for another? Name the machine it is for. `genesis fetch --tier seed --platform linux-arm64,android` loads a drive for a Raspberry Pi from any computer.
 
 ## Find water, care, fuel and power with no network
 
@@ -211,7 +220,7 @@ Full credits in [CREDITS.md](CREDITS.md).
 
 Genesis is new. This is what has and has not been proven.
 
-**Tested** in continuous integration and against live sources: the catalog resolvers, downloads with checksum verification, survival layer builds with osmium, map extraction from the live planet build, the dashboard in a headless browser, its API, the compose files, the core services started from a real vault, and the published world data fetched and queried on a clean machine.
+**Tested** in continuous integration and against live sources: the catalog resolvers, downloads with checksum verification, survival layer builds with osmium, map extraction from the live planet build, the dashboard in a headless browser, its API, the compose files, the core services started from a real vault, the published world data fetched and queried on a clean machine, and the catalog tools and the dashboard on Windows.
 
 **Not yet tested on real hardware:** the radio profiles with an actual SDR, the NVIDIA GPU path, a Raspberry Pi install, and long downloads in the hundreds of gigabytes. Reports are welcome.
 

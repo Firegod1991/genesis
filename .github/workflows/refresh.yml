@@ -25,6 +25,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: main   # a run that waited its turn starts from what the run before it committed
       - name: Resolve the newest version of everything
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -35,15 +37,19 @@ jobs:
         run: |
           git config user.name "Firegod1991"
           git config user.email "193648396+Firegod1991@users.noreply.github.com"
-          git add catalog/lock docs/CATALOG.md reports/latest.md
-          if git diff --cached --quiet; then
-            echo "Nothing changed."
-            exit 0
-          fi
-          git commit -m "catalog: refresh $(date -u +%Y-%m-%d)"
-          # Another workflow may push at the same moment: rebase and try again.
+          # These files are written from scratch by the step above, so they never need a merge. Put them
+          # on top of whatever main is by now, and do it again if someone pushes in the same moment.
           for _ in 1 2 3; do
-            git pull --rebase --autostash && git push && exit 0
+            if git fetch -q origin main; then
+              git reset -q FETCH_HEAD
+              git add catalog/lock docs/CATALOG.md reports/latest.md
+              if git diff --cached --quiet; then
+                echo "Nothing changed."
+                exit 0
+              fi
+              git commit -q -m "catalog: refresh $(date -u +%Y-%m-%d)"
+              git push origin HEAD:main && exit 0
+            fi
             sleep 10
           done
           exit 1
