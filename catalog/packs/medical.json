@@ -38,6 +38,12 @@
 
   {"zim": "librepathology_en_all", "flavour": "maxi", "tier": "eden", "tags": ["medical"]},
   {"zim": "skin-of-color-society_en_all", "tier": "eden", "tags": ["medical", "video"]},
-  {"zim": "genomicseducation_en_all", "tier": "eden", "tags": ["medical"]}
+  {"zim": "genomicseducation_en_all", "tier": "eden", "tags": ["medical"]},
+  {"id": "how_to_live_better_en", "title": "How to Live Better: an evidence based guide to emergencies, health and money (English translation)", "tier": "seed", "kind": "document", "dest": "documents/health", "license": "CC BY 4.0", "home": "https://github.com/eternity4719/HowToLiveBetter", "tags": ["health", "emergency"], "note": "Translated from a widely read Chinese guide. Every rule gives its cost, its benefit, an evidence grade and the study behind it. Start with chapter 13, Emergencies: what to do first. Laws, prices and phone numbers are those of China. A reader's translation, not reviewed by the authors: where they differ, the Chinese original is right.",
+   "source": {"type": "github", "repo": "dlgrv/HowToLiveBetter", "tag": "ebooks-latest", "asset": "^HowToLiveBetter-en\\.pdf$"}},
+  {"id": "how_to_live_better_en_page", "title": "How to Live Better (English translation, one searchable page)", "tier": "seed", "kind": "document", "dest": "documents/health", "license": "CC BY 4.0", "home": "https://github.com/eternity4719/HowToLiveBetter", "tags": ["health", "emergency"], "note": "The same book as a single page with its own search box. Opens in any browser with no connection.",
+   "source": {"type": "github", "repo": "dlgrv/HowToLiveBetter", "tag": "ebooks-latest", "asset": "^HowToLiveBetter-en\\.html$"}},
+  {"id": "how_to_live_better_zh", "title": "高性价比人生指南 (How to Live Better, the Chinese original)", "tier": "seed", "lang": "zho", "kind": "document", "dest": "documents/health", "license": "CC BY 4.0", "home": "https://github.com/eternity4719/HowToLiveBetter", "tags": ["health", "emergency"], "note": "Every rule gives its cost, its benefit, an evidence grade and the study behind it. Start with chapter 13, Emergencies: what to do first.",
+   "source": {"type": "github", "repo": "eternity4719/HowToLiveBetter", "tag": "epub-latest", "asset": "^HowToLiveBetter\\.pdf$"}}
  ]
 }

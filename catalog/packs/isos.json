@@ -57,6 +57,8 @@
    "source": {"type": "checksum_file", "url": "https://enterprise.proxmox.com/iso/SHA256SUMS", "pattern": "^proxmox-ve_[\\d.]+-\\d+-arm64\\.iso$"}},
   {"id": "home_assistant_os", "title": "Home Assistant OS (power and sensor monitoring)", "tier": "eden",
    "source": {"type": "github", "repo": "home-assistant/operating-system", "assets": {
-     "linux-x64": "^haos_generic-x86-64-[\\d.]+\\.img\\.xz$", "linux-arm64": "^haos_rpi5-64-[\\d.]+\\.img\\.xz$"}}}
+     "linux-x64": "^haos_generic-x86-64-[\\d.]+\\.img\\.xz$", "linux-arm64": "^haos_rpi5-64-[\\d.]+\\.img\\.xz$"}}},
+  {"id": "collapseos", "title": "Collapse OS (an operating system for machines built from scavenged parts)", "tier": "ark", "kind": "archive", "dest": "isos/collapseos", "license": "GPL 3.0", "tags": ["os"], "note": "A Forth system for Z80, 8086 and 6502 class processors, written for the day new computers stop being made.",
+   "source": {"type": "static", "url": "https://collapseos.org/files/collapseos-latest.tar.gz"}}
  ]
 }

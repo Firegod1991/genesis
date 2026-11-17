@@ -80,6 +80,16 @@
   {"id": "hackrf_tools", "title": "HackRF firmware and tools", "tier": "ark", "license": "GPL 2.0", "tags": ["sdr", "firmware"],
    "source": {"type": "github", "repo": "greatscottgadgets/hackrf", "asset": "^hackrf-[\\d.]+\\.(tar\\.xz|zip)$"}},
   {"id": "rtl_sdr_blog_drivers", "title": "RTL-SDR Blog drivers (source)", "tier": "ark", "license": "GPL 2.0", "tags": ["sdr"],
-   "source": {"type": "github", "repo": "rtlsdrblog/rtl-sdr-blog", "source": true}}
+   "source": {"type": "github", "repo": "rtlsdrblog/rtl-sdr-blog", "source": true}},
+  {"id": "rtl_433", "title": "rtl_433 (decode weather stations and other wireless sensors)", "tier": "seed", "license": "GPL 2.0", "tags": ["sdr", "sensors"], "note": "Reads the wireless thermometers, rain gauges and tank sensors already around you with a cheap SDR dongle.",
+   "source": {"type": "github", "repo": "merbanan/rtl_433", "assets": {"linux-x64": "^rtl_433-rtlsdr-openssl3-Linux-amd64-[\\d.]+\\.zip$", "linux-arm64": "^rtl_433-rtlsdr-openssl3-Linux-arm64-[\\d.]+\\.zip$", "windows-x64": "^rtl_433-win-x64-[\\d.]+\\.zip$", "macos-arm64": "^rtl_433-rtlsdr-MacOS-arm64-[\\d.]+\\.zip$"}}},
+  {"id": "ardopcf", "title": "ardopcf (ARDOP modem: Winlink email over HF with a sound card)", "tier": "seed", "license": "MIT", "tags": ["ham", "email"], "note": "The free modem that lets Pat send email over shortwave.",
+   "source": {"type": "github", "repo": "pflarue/ardop", "assets": {"linux-x64": "^ardopcf_amd64_Linux_64$", "linux-arm64": "^ardopcf_arm_Linux_64$", "windows-x64": "^ardopcf_amd64_Windows_64\\.exe$"}}},
+  {"id": "nanovna_saver", "title": "NanoVNA Saver (measure and tune antennas with a NanoVNA)", "tier": "ark", "license": "GPL 3.0", "tags": ["ham", "antenna"],
+   "source": {"type": "github", "repo": "NanoVNA-Saver/nanovna-saver", "assets": {"linux-arm64": "^nanovna-saver\\.raspi$", "windows-x64": "^NanoVNASaver\\.x64\\.zip$"}}},
+  {"id": "gpredict", "title": "Gpredict (predict satellite passes)", "tier": "ark", "license": "GPL 2.0", "tags": ["satellite"], "note": "Uses the orbit files in this pack to say when a weather or amateur satellite rises over you.",
+   "source": {"type": "github", "repo": "csete/gpredict", "source": true, "assets": {"windows-x64": "^gpredict_[\\d.]+-windows_amd64\\.zip$"}}},
+  {"id": "wireless_networking_developing_world", "title": "Wireless Networking in the Developing World (build long range WiFi links and mesh networks)", "tier": "seed", "kind": "document", "dest": "documents/networks", "license": "CC BY-SA 3.0", "tags": ["network", "mesh"],
+   "source": {"type": "static", "url": "https://wndw.net/pdf/wndw3-en/wndw3-ebook.pdf", "filename": "wireless_networking_in_the_developing_world.pdf"}}
  ]
 }
