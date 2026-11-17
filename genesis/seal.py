@@ -65,7 +65,7 @@ def seal(args):
             if rel == os.path.join("restore", "MANIFEST.json") or name.endswith(".part"):
                 continue
             size = os.path.getsize(path)
-            manifest[rel] = {"bytes": size, "sha256": file_hash(path)}
+            manifest[rel.replace(os.sep, "/")] = {"bytes": size, "sha256": file_hash(path)}
             total += size
     today = datetime.date.today().isoformat()
     write_json(os.path.join(out, "MANIFEST.json"), {"sealed": today, "genesis": __version__, "files": manifest})

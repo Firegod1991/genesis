@@ -104,6 +104,7 @@ def build_parser():
     _selection(p)
     p.add_argument("--yes", action="store_true", help="do not ask before large downloads")
     p.add_argument("--keep-going", action="store_true", help="continue past failed items")
+    p.add_argument("--jobs", type=int, default=4, help="downloads at once (default 4; 1 draws a progress bar per file)")
     p.set_defaults(fn=cmd_fetch)
 
     p = sub.add_parser("verify", help="re hash everything in the vault to catch bit rot")

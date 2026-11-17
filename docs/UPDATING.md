@@ -44,6 +44,16 @@ genesis update       # the same thing, right now
 
 `genesis update` pulls the newest catalog with git, fetches whatever changed for the tier, languages and packs you chose, verifies it, removes the superseded files, pulls newer service images and restarts the library so new books show up. With no connection it leaves everything exactly as it is.
 
+## Where the models go
+
+Models live inside the vault, in `models/ollama`, so the drive carries them like everything else. `genesis fetch` puts them there in one of three ways:
+
+* While the stack is up (`genesis up ai`), its own Ollama does the pulling.
+* Otherwise, if Ollama is installed on the machine doing the fetch, Genesis starts it for the length of the fetch with the vault as its store. Nothing lands in your own model library, and a drive filled on a laptop carries its models to the Raspberry Pi it is for.
+* With neither, models are skipped and the next fetch picks them up.
+
+`GENESIS_OLLAMA=host:port` pulls through another server instead, wherever that one keeps its models. To run the vault's models with no Docker, start Ollama with `OLLAMA_MODELS` set to `models/ollama/models` inside the vault.
+
 ## Checking and sealing
 
 ```sh
