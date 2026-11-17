@@ -168,14 +168,27 @@ def uptime():
     return None
 
 
+# One big file is read through at a time. On a single disk, several long reads at once only fight
+# each other and whatever is being written beside them: a USB drive was measured at a seventh of its speed.
+BIG_READ = 512 * 1024 * 1024
+_one_big_read = threading.Lock()
+
+
 def file_hash(path, algo="sha256", chunk=4 * 1024 * 1024):
     h = hashlib.new(algo)
-    with open(path, "rb") as f:
-        while True:
-            block = f.read(chunk)
-            if not block:
-                break
-            h.update(block)
+
+    def read():
+        with open(path, "rb") as f:
+            while True:
+                block = f.read(chunk)
+                if not block:
+                    break
+                h.update(block)
+    if os.path.getsize(path) >= BIG_READ:
+        with _one_big_read:
+            read()
+    else:
+        read()
     return h.hexdigest()
 
 

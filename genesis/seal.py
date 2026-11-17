@@ -62,8 +62,8 @@ def seal(args):
         for name in files:
             path = os.path.join(folder, name)
             rel = os.path.relpath(path, vault)
-            if rel == os.path.join("restore", "MANIFEST.json") or name.endswith(".part"):
-                continue
+            if rel == os.path.join("restore", "MANIFEST.json") or name.endswith((".part", ".part.aria2")) or name == ".directory":
+                continue  # the manifest itself, downloads still under way, and folder pictures each machine rewrites
             size = os.path.getsize(path)
             manifest[rel.replace(os.sep, "/")] = {"bytes": size, "sha256": file_hash(path)}
             total += size

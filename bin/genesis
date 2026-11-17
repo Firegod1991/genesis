@@ -7,6 +7,11 @@ while [ -L "$self" ]; do
   case "$target" in /*) self="$target" ;; *) self="$(dirname "$self")/$target" ;; esac
 done
 root=$(cd "$(dirname "$self")/.." && pwd)
+# On a drive the vault sits beside this folder: use it when nothing else is said.
+if [ -z "${GENESIS_VAULT:-}" ] && [ ! -d "$root/vault" ] && [ -d "$root/../vault/.genesis" ]; then
+  GENESIS_VAULT=$(cd "$root/../vault" && pwd)
+  export GENESIS_VAULT
+fi
 python=$(command -v python3 || true)
 if [ -z "$python" ]; then
   echo "genesis needs python3 (3.9 or newer). Install it and run again." >&2

@@ -76,6 +76,11 @@ def cmd_seal(args):
     return seal(args)
 
 
+def cmd_box(args):
+    from . import box
+    return {"ready": box.ready, "start": box.start, "stop": box.stop}[args.cmd](args)
+
+
 def _selection(p):
     p.add_argument("--tier", choices=catalog.TIERS, help="seed, ark or eden (cumulative)")
     p.add_argument("--pack", action="append", help="limit to a pack (repeatable)")
@@ -162,6 +167,17 @@ def build_parser():
     p = sub.add_parser("seal", help="write an offline restore kit (images, repo, checksums) into the vault")
     p.add_argument("--vault")
     p.set_defaults(fn=cmd_seal)
+
+    p = sub.add_parser("ready", help="unpack what the drive carries so it starts with no Docker and no internet")
+    p.add_argument("--vault")
+    p.set_defaults(fn=cmd_box)
+    p = sub.add_parser("start", help="start Genesis from the drive with no Docker: dashboard, library, assistant")
+    p.add_argument("--vault")
+    p.add_argument("--no-browser", action="store_true", help="do not open the dashboard in a browser")
+    p.set_defaults(fn=cmd_box)
+    p = sub.add_parser("stop", help="stop what `genesis start` started")
+    p.add_argument("--vault")
+    p.set_defaults(fn=cmd_box)
     return ap
 
 
