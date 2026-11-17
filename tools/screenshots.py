@@ -4,8 +4,8 @@
     python3 tools/screenshots.py http://127.0.0.1:8765 docs/img
 
 Needs: pip install playwright && python3 -m playwright install chromium
-Exits non zero if the page logs a script error or the map does not draw,
-so it doubles as a browser test of the dashboard.
+Exits non zero if a page logs a script error, the front door has no tiles or
+the map does not draw, so it doubles as a browser test of the dashboard.
 """
 
 import os
@@ -25,7 +25,13 @@ with sync_playwright() as p:
     page = browser.new_page(viewport={"width": 1320, "height": 900})
     page.on("pageerror", lambda e: errors.append(str(e)))
     page.on("console", lambda m: errors.append(m.text) if m.type == "error" and "WebGL" not in m.text else None)
-    page.goto(url)
+    page.goto(url)  # the front door: one question box and a tile for every section
+    page.wait_for_selector("#tiles a", timeout=30000)
+    page.wait_for_timeout(1500)
+    tiles = page.locator("#tiles a").count()
+    page.screenshot(path=os.path.join(out, "home.png"))
+    page.goto(url + "#map")
+    page.reload()  # the map view from a fresh load, as a person who bookmarks it gets it
     page.wait_for_function("() => window.genesisMap && window.genesisMap.loaded()", timeout=60000)
     page.fill("#pos", position)
     page.click("#where button")
@@ -39,8 +45,8 @@ with sync_playwright() as p:
     page.screenshot(path=os.path.join(out, "night.png"))
     browser.close()
 
-print("bearing rows: %d, places drawn on the map: %d" % (rows, drawn))
+print("tiles on the front door: %d, bearing rows: %d, places drawn on the map: %d" % (tiles, rows, drawn))
 for e in errors:
     print("PAGE ERROR " + e[:300])
-if errors or rows < 3 or drawn < 3:
+if errors or tiles < 8 or rows < 3 or drawn < 3:
     sys.exit(1)

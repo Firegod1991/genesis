@@ -50,7 +50,9 @@ class SpreadTests(unittest.TestCase):
                 mock.patch.object(fetch, "_download", side_effect=download):
             self.assertEqual(fetch.fetch(args), 0)
         self.assertEqual(len(read_json(os.path.join(self.vault, ".genesis", "state.json"))), 18)
-        self.assertLessEqual(max(slow for slow, quick in seen if quick < 6), 2,
+        # With three slow ones flying only one worker is left, and it can hold one quick item it has taken and
+        # not yet begun. So while two quick items have not begun, one of them is certainly still waiting its turn.
+        self.assertLessEqual(max(slow for slow, quick in seen if quick < 5), 2,
                              "half the slots at most while the quick source still has items waiting")
         self.assertGreater(max(slow for slow, quick in seen), 2, "and every slot once nothing else is left")
 

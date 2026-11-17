@@ -70,6 +70,22 @@ py dashboard\server.py          # dashboard at http://localhost:8080
 
 Filling a drive on one machine for another? Name the machine it is for. `genesis fetch --tier seed --platform linux-arm64,android` loads a drive for a Raspberry Pi from any computer. The AI models ride along when Ollama is installed on that computer: they go into the vault, never into your own model library.
 
+## No Docker, no internet: start it from the drive
+
+A drive filled with Genesis starts on a Raspberry Pi with nothing but the drive, a screen and a keyboard.
+
+```sh
+genesis ready                   # once, while you still have a connection
+genesis start                   # the front door at http://localhost:8080, the book reader and the assistant
+genesis stop
+```
+
+`genesis ready` unpacks the Kiwix server and Ollama the drive carries, for the Pi and for PCs, writes the list of books so the reader opens hundreds of them in a second, draws a cover for every manual and puts a **Start Genesis** icon at the top of the drive. `genesis start` needs only Python 3, which Raspberry Pi OS has: no Docker, no install, no network.
+
+![The front door: one question box and a tile for every section](docs/img/home.png)
+
+The page it opens asks one question, *What do you need?*, and searches the manuals, the books and the pages inside the books. Behind it are shelves of manuals with their covers, the plant guides region by region under the rules that keep you alive, the library, the map, scripture, a notebook kept on the drive, and an assistant that runs on the box and reads the library before it answers. See [docs/OFFLINE.md](docs/OFFLINE.md).
+
 ## Find water, care, fuel and power with no network
 
 Genesis builds **survival layers** from OpenStreetMap: drinking water, springs and wells, hospitals, clinics and pharmacies, fuel stations, power plants and substations, shelters, fire and police stations, supply stores, communications towers, airfields and harbors.
@@ -220,9 +236,9 @@ Full credits in [CREDITS.md](CREDITS.md).
 
 Genesis is new. This is what has and has not been proven.
 
-**Tested** in continuous integration and against live sources: the catalog resolvers, downloads with checksum verification, survival layer builds with osmium, map extraction from the live planet build, the dashboard in a headless browser, its API, the compose files, the core services started from a real vault, the published world data fetched and queried on a clean machine, and the catalog tools and the dashboard on Windows.
+**Tested** in continuous integration and against live sources: the catalog resolvers, downloads with checksum verification, survival layer builds with osmium, map extraction from the live planet build, the dashboard in a headless browser, its API, the compose files, the core services started from a real vault, the published world data fetched and queried on a clean machine, the catalog tools and the dashboard on Windows, a 643 GB fill of a real drive with every file checked, and the start with no Docker from that drive on a PC: the reader with 407 books, search inside them, and a local model answering.
 
-**Not yet tested on real hardware:** the radio profiles with an actual SDR, the NVIDIA GPU path, a Raspberry Pi install, and long downloads in the hundreds of gigabytes. Reports are welcome.
+**Not yet tested on real hardware:** the radio profiles with an actual SDR, the NVIDIA GPU path, and a Raspberry Pi itself. Its programs run under emulation; the first report from a real one is welcome.
 
 ## Read this before you rely on it
 
