@@ -1,23 +1,28 @@
 #!/usr/bin/env python3
-"""Genesis dashboard: one small read only web server, standard library only.
+"""Genesis dashboard: one small web server, standard library only.
 
-Serves the command center pages, the offline maps (with HTTP range requests,
-which PMTiles needs), the scripture library, phone apps, and a JSON API for
-services, system health, vault contents and the survival layers.
+Serves the pages, the offline maps (with HTTP range requests, which PMTiles
+needs), the manuals with their covers, the scripture library, phone apps and
+programs, and a JSON API: services, system health, what is on the drive, the
+survival layers, search across the library, and the local assistant. It reads
+the vault and writes one place only: the notes people keep on the box.
 """
 
+import http.client
 import json
 import mimetypes
 import os
+import re
 import shutil
 import socket
 import sys
 import threading
 import time
+import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from urllib.parse import parse_qs, unquote, urlsplit
+from urllib.parse import parse_qs, quote, unquote, urlencode, urlsplit
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -29,7 +34,26 @@ from genesis.util import memory, read_json, uptime  # noqa: E402
 STATIC = os.path.join(HERE, "static")
 VAULT = os.path.abspath(os.environ.get("GENESIS_VAULT") or os.path.join(ROOT, "vault"))
 # Folders of the vault that may be read over HTTP. Nothing else is reachable.
-MOUNTS = {"maps": "maps", "scripture": "scripture", "apps": "apps", "documents": "documents"}
+MOUNTS = {"maps": "maps", "scripture": "scripture", "apps": "apps", "documents": "documents", "tools": "tools",
+          "isos": "isos", "covers": os.path.join(".genesis", "covers")}
+NOTES = os.path.join(VAULT, "files", "notes")
+NOTE_NAME = re.compile(r"[\w][\w .()-]{0,80}\.(md|txt)")
+# Where the book reader and the model server answer: inside compose by name, on a bare box by port.
+# Started by `genesis start` there is no compose network, and a name is never looked up: with no
+# network behind it, looking one up can hang for seconds on every click.
+BARE = os.environ.get("GENESIS_BARE") == "1"
+KIWIX = [("127.0.0.1", 8081)] if BARE else [("kiwix", 8080), ("127.0.0.1", 8081)]
+OLLAMA = [("127.0.0.1", 11434)] if BARE else [("127.0.0.1", 11434), ("ollama", 11434)]
+# Full text search reads these books first: the ones a person in trouble needs an answer from.
+SEARCH_FIRST = ("survival", "medical")
+SEARCH_BOOKS, SEARCH_WAIT = 24, 12
+# What each kind of model on the drive is for, plainest first. The first match names it.
+MODELS = (("ocr", None), ("embed", None), ("coder", "writing code"), ("code", "writing code"),
+          ("translate", "translating"), ("medgemma", "medical questions"), ("deepseek-r1", "hard problems, slowly"))
+ASSISTANT = ("You are the Genesis assistant. You run on this box with no internet. Be practical, plain and brief. "
+             "When excerpts from the library are given, answer from them and name the book each fact came from. "
+             "If the library does not cover the question, say so, then answer from what you know and say that it is "
+             "from memory. Never guess about doses, wild plants or mushrooms: point to the manual instead.")
 ANCIENT = ["hbo", "arc", "grc", "lat", "cop", "syc", "got", "chu", "gez"]
 mimetypes.add_type("application/vnd.android.package-archive", ".apk")
 mimetypes.add_type("application/octet-stream", ".pmtiles")
@@ -65,7 +89,7 @@ def services():
 
     def check(s):
         # Inside compose the service name resolves; on a bare host fall back to the published port.
-        up = _port_open(s["host"], s["port"]) or _port_open("127.0.0.1", s["public"])
+        up = (not BARE and _port_open(s["host"], s["port"])) or _port_open("127.0.0.1", s["public"])
         return dict(s, up=up)
     with ThreadPoolExecutor(max_workers=16) as pool:
         return list(pool.map(check, reg))
@@ -128,13 +152,198 @@ def vault():
                           "kind": entry.get("kind"), "outdated": outdated})
     for p in packs.values():
         p["list"].sort(key=lambda x: x["title"].lower())
-    apps = sorted(f for f in os.listdir(os.path.join(VAULT, "apps"))) if os.path.isdir(os.path.join(VAULT, "apps")) else []
+    # Names that start with a dot are the folder pictures and other housekeeping, never content.
+    apps = sorted(f for f in os.listdir(os.path.join(VAULT, "apps")) if not f.startswith(".")) if os.path.isdir(os.path.join(VAULT, "apps")) else []
     docs = []
     for folder, _, files in os.walk(os.path.join(VAULT, "documents")):
         for name in sorted(files):
-            docs.append(os.path.relpath(os.path.join(folder, name), VAULT).replace(os.sep, "/"))
+            if not name.startswith("."):
+                docs.append(os.path.relpath(os.path.join(folder, name), VAULT).replace(os.sep, "/"))
     return {"catalog_refreshed": meta.get("refreshed"), "packs": packs, "apps": apps, "documents": docs,
             "config": read_json(os.path.join(VAULT, ".genesis", "config.json"), {})}
+
+
+def _notes_of_packs():
+    out = {}
+    for name in catalog.pack_names():
+        for item in catalog.load_pack(name)["items"]:
+            if item.get("note") and item.get("id"):
+                out[item["id"]] = item["note"]
+    return out
+
+
+def shelves():
+    """The manuals on the drive, shelf by shelf: title, what each one is, and its cover when one was drawn."""
+    known = {}
+    for _, iid, entry in catalog.all_locked():
+        if str(entry.get("dest", "")).startswith("documents"):
+            for f in entry.get("files", []):
+                known[entry["dest"] + "/" + f["filename"]] = (iid, entry)
+    notes, out = cached("packnotes", 600, _notes_of_packs), {}
+    for folder, _, files in os.walk(os.path.join(VAULT, "documents")):
+        for name in sorted(files):
+            if name.startswith(".") or name.endswith(".part"):
+                continue
+            path = os.path.join(folder, name)
+            rel = os.path.relpath(path, VAULT).replace(os.sep, "/")
+            iid, entry = known.get(rel, (None, {}))
+            cover = rel.rsplit(".", 1)[0] + ".jpg"
+            out.setdefault(rel.split("/")[1] if rel.count("/") > 1 else "other", []).append({
+                "id": iid, "file": name, "href": "/" + quote(rel), "title": entry.get("title") or name,
+                "note": notes.get(iid, ""), "license": entry.get("license"), "bytes": os.path.getsize(path),
+                "cover": "/covers/" + quote(cover) if os.path.isfile(
+                    os.path.join(VAULT, ".genesis", "covers", *cover.split("/"))) else None})
+    return out
+
+
+def _first_open(candidates):
+    for host, port in candidates:
+        if _port_open(host, port):
+            return host, port
+    return None
+
+
+def _get(where, path, timeout=8):
+    conn = http.client.HTTPConnection(where[0], where[1], timeout=timeout)
+    try:
+        conn.request("GET", path, headers={"Accept": "*/*"})
+        r = conn.getresponse()
+        return r.status, r.read()
+    finally:
+        conn.close()
+
+
+def _reader_catalog():
+    """What the book reader says about each book: its title, a line about it, its picture, and where it opens."""
+    where = _first_open(KIWIX)
+    if not where:
+        return None
+    try:
+        status, body = _get(where, "/catalog/v2/entries?count=-1", timeout=30)
+        root = ET.fromstring(body) if status == 200 else None
+    except (OSError, ET.ParseError, http.client.HTTPException):
+        return None
+    out, ns = {}, "{http://www.w3.org/2005/Atom}"
+    for e in root.iter(ns + "entry") if root is not None else []:
+        info = {"title": e.findtext(ns + "title"), "about": e.findtext(ns + "summary") or "",
+                "search": "_ftindex:yes" in (e.findtext(ns + "tags") or "")}
+        for link in e.iter(ns + "link"):
+            href = link.get("href", "")
+            if link.get("type") == "text/html":
+                info["path"] = href
+            elif "thumbnail" in link.get("rel", ""):
+                info["icon"] = href
+        if info.get("path"):
+            out[info["path"].rstrip("/").rsplit("/", 1)[-1]] = info
+    return out
+
+
+def books():
+    """Every book on the drive. With the reader running each one has a picture and opens with a click."""
+    locked = {}
+    for pack, iid, entry in catalog.all_locked():
+        if entry.get("kind") == "zim":
+            for f in entry.get("files", []):
+                locked[f["filename"]] = (pack, iid, entry)
+    live, out, folder = cached("reader", 60, _reader_catalog), [], os.path.join(VAULT, "zim")
+    for name in sorted(os.listdir(folder)) if os.path.isdir(folder) else []:
+        if not name.endswith(".zim"):
+            continue
+        stem = name[:-4]
+        pack, iid, entry = locked.get(name, ("other", stem, {}))
+        k = (live or {}).get(stem, {})
+        out.append({"id": iid, "name": stem, "pack": pack, "title": k.get("title") or entry.get("title") or stem,
+                    "about": k.get("about", ""), "icon": k.get("icon"), "path": k.get("path"), "search": k.get("search", False),
+                    "bytes": os.path.getsize(os.path.join(folder, name)), "tags": entry.get("tags", [])})
+    return {"reader": live is not None, "books": out}
+
+
+def software():
+    """Programs for other computers and apps for phones, with the names people know them by."""
+    known = {}
+    for pack, iid, entry in catalog.all_locked(["tools", "apps", "isos"]):
+        for f in entry.get("files", []):
+            known[f["filename"]] = (pack, iid, entry, f)
+    notes, out = cached("packnotes", 600, _notes_of_packs), {"tools": [], "apps": [], "isos": []}
+    for kind in out:
+        folder = os.path.join(VAULT, kind)
+        for name in sorted(os.listdir(folder)) if os.path.isdir(folder) else []:
+            path = os.path.join(folder, name)
+            if not os.path.isfile(path) or name.startswith(".") or name.endswith(".part"):
+                continue
+            _, iid, entry, f = known.get(name, (kind, None, {}, {}))
+            out[kind].append({"file": name, "href": "/%s/%s" % (kind, quote(name)), "title": entry.get("title") or name,
+                              "note": notes.get(iid, ""), "platform": f.get("platform"), "bytes": os.path.getsize(path)})
+    return out
+
+
+def _score(words, *texts):
+    text = " ".join(t for t in texts if t).lower()
+    return sum((3 if re.search(r"\b%s" % re.escape(w), text) else 1) for w in words if w in text)
+
+
+def _search_book(where, book, q):
+    try:
+        status, body = _get(where, "/search?" + urlencode({"pattern": q, "books.name": book["name"],
+                                                            "pageLength": 3, "format": "xml"}), timeout=SEARCH_WAIT)
+        root = ET.fromstring(body) if status == 200 else None
+    except (OSError, ET.ParseError, http.client.HTTPException):
+        return []
+    out = []
+    for item in root.iter("item") if root is not None else []:
+        about = item.find("description")  # the reader marks the words it found with <b>, as tags of its own
+        text = re.sub(r"<[^>]+>", "", "".join(about.itertext())) if about is not None else ""
+        out.append({"kind": "page", "title": item.findtext("title"), "path": item.findtext("link"),
+                    "text": " ".join(text.split()).strip(". ")[:320], "book": book["title"]})
+    return out
+
+
+def _inside_books(q, limit):
+    """Full text search inside the books, through the reader: the survival and medical shelves first, then the
+    encyclopedia. Quietly nothing when the reader is not running, and never a long wait on a slow disk."""
+    where = _first_open(KIWIX)
+    if not where:
+        return []
+    shelf = [b for b in books()["books"] if b["path"] and b["search"]]
+    first = [b for b in shelf if b["pack"] in SEARCH_FIRST] + [b for b in shelf if b["name"].startswith("wikipedia_en_all")]
+    pool, until, found = ThreadPoolExecutor(4), time.time() + SEARCH_WAIT, []
+    asked = [pool.submit(_search_book, where, b, q) for b in first[:SEARCH_BOOKS]]
+    for a in asked:
+        try:
+            found.append(a.result(timeout=max(0.05, until - time.time())))
+        except Exception:  # still reading when the wait ran out: go on with what the others found
+            found.append([])
+    pool.shutdown(wait=False, cancel_futures=True)
+    # The best page of every book before the second best of any.
+    return [hits[i] for i in range(3) for hits in found if i < len(hits)][:limit]
+
+
+def find(q):
+    """One question, every shelf: manuals and books by what they are called, then the pages inside the books."""
+    words = [w for w in re.findall(r"\w+", q.lower()) if len(w) > 2]
+    if not words:
+        return {"q": q, "hits": []}
+    hits = []
+    for shelf, items in cached("shelves", 30, shelves).items():
+        for d in items:
+            score = _score(words, d["title"], d["note"], shelf)
+            if score:
+                hits.append((score + 2, {"kind": "manual", "title": d["title"], "href": d["href"], "text": d["note"], "shelf": shelf}))
+    for b in books()["books"]:
+        score = _score(words, b["title"], b["about"], " ".join(b["tags"]))
+        if score:
+            hits.append((score, {"kind": "book", "title": b["title"], "path": b["path"], "text": b["about"], "icon": b["icon"]}))
+    hits.sort(key=lambda h: -h[0])
+    return {"q": q, "hits": [h for _, h in hits[:12]] + _inside_books(q, 10)}
+
+
+def notes_list():
+    out = []
+    for name in sorted(os.listdir(NOTES)) if os.path.isdir(NOTES) else []:
+        path = os.path.join(NOTES, name)
+        if NOTE_NAME.fullmatch(name) and os.path.isfile(path):
+            out.append({"name": name, "bytes": os.path.getsize(path), "changed": int(os.path.getmtime(path))})
+    return sorted(out, key=lambda n: -n["changed"])
 
 
 def scripture():
@@ -142,6 +351,8 @@ def scripture():
     base = os.path.join(VAULT, "scripture")
     if os.path.isdir(base):
         for tid in os.listdir(base):
+            if tid.startswith(".") or not os.path.isdir(os.path.join(base, tid)):
+                continue
             info = read_json(os.path.join(base, tid, "genesis.json"))
             if info and os.path.exists(os.path.join(base, tid, "index.htm")):
                 out.append({"id": tid, "title": info.get("name") or info.get("title"), "label": info.get("title"),
@@ -247,6 +458,40 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(cached("scripture", 30, scripture))
         if name == "maps":
             return self._json(cached("maps", 15, map_list))
+        if name == "shelves":
+            return self._json(cached("shelves", 30, shelves))
+        if name == "books":
+            return self._json(books())
+        if name == "software":
+            return self._json(cached("software", 30, software))
+        if name == "find":
+            return self._json(find((q.get("q") or [""])[0].strip()[:200]))
+        if name == "notes":
+            return self._json(notes_list())
+        if name.startswith("notes/"):
+            note = name[6:]
+            path = os.path.join(NOTES, note)
+            if not NOTE_NAME.fullmatch(note) or not os.path.isfile(path):
+                return self._json({"error": "no such note"}, 404)
+            with open(path, encoding="utf-8", errors="replace") as f:
+                return self._json({"name": note, "text": f.read()})
+        if name == "ai/models":
+            where = _first_open(OLLAMA)
+            if not where:
+                return self._json({"running": False, "models": []})
+            try:
+                status, body = _get(where, "/api/tags")
+                found = json.loads(body).get("models", []) if status == 200 else []
+            except (OSError, ValueError, http.client.HTTPException):
+                found = []
+            models = []
+            for m in found:
+                use = next((use for word, use in MODELS if word in m["name"]), "everyday questions")
+                if use:  # models that only read pictures or turn text into numbers cannot hold a conversation
+                    models.append({"name": m["name"], "bytes": m.get("size"), "use": use})
+            # The one a person starts on is the smallest that answers everyday questions: it is the quickest.
+            models.sort(key=lambda m: (m["use"] != "everyday questions", m["bytes"] or 0))
+            return self._json({"running": True, "models": models})
         if name == "poi/categories":
             return self._json(poi.categories())
         if name.startswith("poi/"):
@@ -295,6 +540,81 @@ class Handler(BaseHTTPRequestHandler):
             return self._json({"error": "%s: %s" % (type(e).__name__, e)}, 500)
 
     do_HEAD = do_GET
+
+    def _body(self, limit=4 * 1024 * 1024):
+        """The JSON a page sent. Only JSON is taken, so no other site can post here through a browser."""
+        if "application/json" not in self.headers.get("Content-Type", ""):
+            return None
+        try:
+            size = int(self.headers.get("Content-Length", "0"))
+            return json.loads(self.rfile.read(size)) if 0 < size <= limit else None
+        except ValueError:
+            return None
+
+    def _chat(self, ask):
+        """Pass a conversation to the local model and hand its words back as they come."""
+        where = _first_open(OLLAMA)
+        if not where:
+            return self._json({"error": "The assistant is not running. Start Genesis from the Start Genesis icon, "
+                                        "or run: genesis start"}, 503)
+        messages = [m for m in ask.get("messages", []) if m.get("role") in ("user", "assistant") and m.get("content")][-12:]
+        system = ASSISTANT
+        if ask.get("excerpts"):
+            system += "\n\nExcerpts from the library on this box:\n" + "\n".join(
+                "[%s] %s" % (str(e.get("book") or e.get("title"))[:120], str(e.get("text"))[:600]) for e in ask["excerpts"][:6])
+        model = str(ask.get("model") or "")
+        body = {"model": model, "stream": True, "messages": [{"role": "system", "content": system}] + messages}
+        # Reasoning out loud before answering costs minutes on a small computer: only the model kept for hard problems does it.
+        if not any(word in model for word, use in MODELS if use and use.startswith("hard")):
+            body["think"] = False
+        payload = json.dumps(body).encode("utf-8")
+        conn = http.client.HTTPConnection(where[0], where[1], timeout=600)
+        try:
+            conn.request("POST", "/api/chat", payload, {"Content-Type": "application/json"})
+            r = conn.getresponse()
+            if r.status != 200:
+                return self._json({"error": "The model server said: %s" % r.read(300).decode("utf-8", "replace")}, 502)
+            self.send_response(200)
+            self.send_header("Content-Type", "application/x-ndjson; charset=utf-8")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Transfer-Encoding", "chunked")
+            self.end_headers()
+            for line in r:
+                self.wfile.write(b"%x\r\n%s\r\n" % (len(line), line))
+                self.wfile.flush()
+            self.wfile.write(b"0\r\n\r\n")
+        except (BrokenPipeError, ConnectionResetError):
+            pass  # the person closed the page or pressed stop
+        finally:
+            conn.close()
+        return None
+
+    def do_POST(self):
+        path = unquote(urlsplit(self.path).path)
+        try:
+            data = self._body()
+            if data is None:
+                return self._json({"error": "send JSON"}, 400)
+            if path == "/api/ai/chat":
+                return self._chat(data)
+            if path.startswith("/api/notes/"):
+                note = path[len("/api/notes/"):]
+                if not NOTE_NAME.fullmatch(note) or not isinstance(data.get("text"), str):
+                    return self._json({"error": "a note needs a plain name ending in .md or .txt, and its text"}, 400)
+                try:
+                    os.makedirs(NOTES, exist_ok=True)
+                    with open(os.path.join(NOTES, note + ".tmp"), "w", encoding="utf-8", newline="\n") as f:
+                        f.write(data["text"])
+                    os.replace(os.path.join(NOTES, note + ".tmp"), os.path.join(NOTES, note))
+                except PermissionError:
+                    return self._json({"error": "this user may not write to the drive. In a terminal, once: "
+                                                "sudo chown -R $USER \"%s\"" % os.path.dirname(VAULT)}, 403)
+                return self._json({"saved": note})
+            return self._json({"error": "unknown endpoint"}, 404)
+        except (BrokenPipeError, ConnectionResetError):
+            return None
+        except Exception as e:  # never take the server down for one bad request
+            return self._json({"error": "%s: %s" % (type(e).__name__, e)}, 500)
 
 
 def main():
