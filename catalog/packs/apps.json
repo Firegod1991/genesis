@@ -40,6 +40,18 @@
    "source": {"type": "github", "repo": "aicodix/rattlegram", "assets": {"android": "\\.apk$"}}},
   {"id": "aprsdroid", "title": "APRSdroid", "tier": "ark", "license": "GPL 2.0", "tags": ["radio", "ham"],
    "note": "The publisher's own link to its current build.",
-   "source": {"type": "static", "url": "https://aprsdroid.org/download/APRSdroid-current.apk", "platform": "android"}}
+   "source": {"type": "static", "url": "https://aprsdroid.org/download/APRSdroid-current.apk", "platform": "android"}},
+  {"id": "localsend_android", "title": "LocalSend (send files between nearby devices)", "tier": "seed", "license": "Apache 2.0", "tags": ["sharing"],
+   "source": {"type": "fdroid", "package": "org.localsend.localsend_app"}},
+  {"id": "meshenger", "title": "Meshenger (voice and video calls on a local network, no server)", "tier": "seed", "license": "GPL 3.0", "tags": ["calls"],
+   "source": {"type": "fdroid", "package": "d.d.meshenger"}},
+  {"id": "koreader", "title": "KOReader (reads PDF, EPUB and DjVu)", "tier": "seed", "license": "AGPL 3.0", "tags": ["reader"],
+   "source": {"type": "fdroid", "package": "org.koreader.launcher.fdroid"}},
+  {"id": "ankidroid", "title": "AnkiDroid (flashcards)", "tier": "ark", "license": "GPL 3.0", "tags": ["learning"],
+   "source": {"type": "fdroid", "package": "com.ichi2.anki"}},
+  {"id": "wifi_analyzer", "title": "WiFi Analyzer (pick a clear channel for the hotspot)", "tier": "ark", "license": "GPL 3.0", "tags": ["network"],
+   "source": {"type": "fdroid", "package": "com.vrem.wifianalyzer"}},
+  {"id": "columba", "title": "Columba (Reticulum messenger over Bluetooth, WiFi and LoRa)", "tier": "ark", "license": "MPL 2.0", "tags": ["mesh", "messaging"], "note": "The build without crash reporting.",
+   "source": {"type": "github", "repo": "torlando-tech/columba", "assets": {"android": "^columba-[\\d.]+-official-rns-py-arm64-v8a-no-sentry\\.apk$"}}}
  ]
 }

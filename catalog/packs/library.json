@@ -17,6 +17,10 @@
   {"id": "wikisource_every_language", "tier": "eden", "tags": ["books"],
    "source": {"type": "kiwix_rule", "category": "wikisource", "regex": "^wikisource_[a-z-]+_all$", "flavours": ["maxi", "nopic"]}},
   {"id": "wikibooks_every_language", "tier": "eden", "tags": ["textbooks"],
-   "source": {"type": "kiwix_rule", "category": "wikibooks", "regex": "^wikibooks_[a-z-]+_all$", "flavours": ["maxi", "nopic"]}}
+   "source": {"type": "kiwix_rule", "category": "wikibooks", "regex": "^wikibooks_[a-z-]+_all$", "flavours": ["maxi", "nopic"]}},
+  {"id": "howtocook_zh", "title": "程序员做饭指南 HowToCook (a precise home cooking guide, in Chinese)", "tier": "ark", "lang": "zho", "kind": "data", "dest": "library/howtocook", "post": "untar", "license": "Unlicense (public domain)", "home": "https://github.com/Anduin2017/HowToCook", "tags": ["cooking"], "note": "374 recipes and 19 chapters on technique and food safety, written like engineering documents with exact amounts and steps. Chinese only: the offline translator on the box can read it.",
+   "source": {"type": "github_branch", "repo": "Anduin2017/HowToCook"}},
+  {"id": "chinese_poetry", "title": "中华古诗词数据库 (classical Chinese poetry: 55,000 Tang and 260,000 Song poems)", "tier": "eden", "lang": "zho", "kind": "data", "dest": "library/chinese-poetry", "post": "untar", "license": "MIT", "home": "https://github.com/chinese-poetry/chinese-poetry", "tags": ["poetry"],
+   "source": {"type": "github_branch", "repo": "chinese-poetry/chinese-poetry"}}
  ]
 }

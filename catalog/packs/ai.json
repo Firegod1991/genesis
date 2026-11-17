@@ -38,6 +38,10 @@
   {"id": "whisper_base", "title": "Whisper base (speech to text, 99 languages)", "tier": "seed", "kind": "file", "dest": "models/whisper", "license": "MIT", "tags": ["speech"],
    "source": {"type": "static", "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin"}},
   {"id": "whisper_small", "title": "Whisper small (speech to text, better accuracy)", "tier": "ark", "kind": "file", "dest": "models/whisper", "license": "MIT", "tags": ["speech"],
-   "source": {"type": "static", "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin"}}
+   "source": {"type": "static", "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin"}},
+  {"id": "deepseek_r1_8b", "title": "DeepSeek R1 8B (step by step reasoning)", "tier": "ark", "license": "MIT", "tags": ["chat", "reasoning"],
+   "source": {"type": "ollama", "model": "deepseek-r1:8b"}},
+  {"id": "glm_ocr", "title": "GLM-OCR (reads printed pages, tables and formulas from images)", "tier": "ark", "license": "MIT", "tags": ["vision", "ocr"], "note": "From Z.ai. Eight languages, Chinese, Japanese and Korean among them.",
+   "source": {"type": "ollama", "model": "glm-ocr"}}
  ]
 }
