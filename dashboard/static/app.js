@@ -8,6 +8,9 @@ const el = (tag, props = {}, ...kids) => {
   return node;
 };
 const api = (path) => fetch("api/" + path).then((r) => r.json());
+// One part of the box failing must not blank a page that shows many: fall back to nothing for that part.
+const count = (n, one, many = one + "s") => `${n} ${n === 1 ? one : many}`;
+const tryApi = (path, none) => api(path).then((v) => (v && !v.error ? v : none), () => none);
 const bytes = (n) => {
   if (!n && n !== 0) return "?";
   const units = ["B", "KB", "MB", "GB", "TB"];
@@ -21,6 +24,18 @@ const store = {
 };
 const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const serviceUrl = (s) => `${location.protocol}//${location.hostname}:${s.public}/`;
+const icon = (name) => {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "ic");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("aria-hidden", "true");
+  const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+  use.setAttribute("href", `icons/${name}.svg#g`);
+  svg.append(use);
+  return svg;
+};
+const post = (path, data, signal) => fetch("api/" + path, { method: "POST", signal,
+  headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
 
 // ---------------------------------------------------------------- position helpers
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWX";
@@ -201,28 +216,292 @@ $("#where").addEventListener("submit", (e) => {
   setPosition(p.lat, p.lon);
 });
 
-// ---------------------------------------------------------------- the other views
+// ---------------------------------------------------------------- shelves, cards and the reader
+let shelfData, readerBase = null;
+const shelfInfo = () => shelfData || (shelfData = fetch("shelves.json").then((r) => r.json()));
+const plain = (title) => title.replace(/\s*\(([^()]*)\)\s*$/, "");          // the title without its publisher
+const maker = (title) => (title.match(/\(([^()]*)\)\s*$/) || [])[1] || "";   // the publisher, for the cover
+const read = (url, title) => { location.hash = "read=" + encodeURIComponent(url) + "|" + encodeURIComponent(title || ""); };
+
+async function reader() {
+  if (readerBase === null) {
+    const kiwix = (await api("services")).find((s) => s.id === "kiwix");
+    readerBase = kiwix ? serviceUrl(kiwix).replace(/\/$/, "") : "";
+  }
+  return readerBase;
+}
+
+function cover(doc) {
+  if (doc.cover) return el("img", { className: "cover", src: doc.cover, alt: "", loading: "lazy" });
+  return el("span", { className: "cover drawn" }, el("b", { textContent: plain(doc.title) }), el("i", { textContent: maker(doc.title) }));
+}
+
+function manualCard(doc) {
+  const a = el("a", { className: "card", href: doc.href },
+    cover(doc),
+    el("span", { className: "card-text" },
+      el("strong", { textContent: plain(doc.title) }),
+      maker(doc.title) ? el("small", { textContent: maker(doc.title) }) : null,
+      doc.note ? el("span", { textContent: doc.note }) : null));
+  a.addEventListener("click", (e) => { e.preventDefault(); read(doc.href, plain(doc.title)); });
+  return a;
+}
+
+function shelf(name, about, iconName, docs, danger) {
+  return el("section", { className: "shelf" + (danger ? " danger" : "") },
+    el("h2", {}, icon(iconName), name),
+    about ? el("p", { className: "hint", textContent: about }) : null,
+    el("div", { className: "cards" }, docs.map(manualCard)));
+}
+
+function hitRow(h, base) {
+  const kind = { manual: ["manual", "Manual"], book: ["book", "Book"], page: ["search", h.book || "Page"] }[h.kind];
+  const url = h.href || (h.path && base ? base + h.path : null);
+  const row = el(url ? "a" : "div", { className: "hit" }, icon(kind[0]),
+    el("span", {}, el("strong", { textContent: h.kind === "manual" ? plain(h.title) : h.title }),
+      el("small", { textContent: kind[1] }), h.text ? el("span", { textContent: h.text }) : null));
+  if (url) { row.href = url; row.addEventListener("click", (e) => { e.preventDefault(); read(url, h.title); }); }
+  return row;
+}
+
+async function findIt(q) {
+  const box = $("#found");
+  box.hidden = false;
+  box.replaceChildren(el("p", { className: "hint", textContent: "Looking through the manuals and the books…" }));
+  const [res, base] = await Promise.all([api("find?q=" + encodeURIComponent(q)), reader()]);
+  const askIt = el("button", { type: "button", className: "act", textContent: "Ask the assistant about this" });
+  askIt.addEventListener("click", () => { store.set("genesis.ask", q); location.hash = "ask"; });
+  box.replaceChildren(...[
+    el("h2", { textContent: res.hits.length ? `Found for “${q}”` : `Nothing is called “${q}”` }),
+    ...res.hits.map((h) => hitRow(h, base)),
+    res.hits.some((h) => h.kind === "page") || !base ? null
+      : el("p", { className: "hint", textContent: "No page inside the books matched. Try one or two plain words." }),
+    base ? null : el("p", { className: "hint", textContent: "The book reader is not running, so only titles were searched. Start Genesis with the Start Genesis icon on the drive to search inside the books." }),
+    el("div", { className: "actions" }, askIt)].filter(Boolean));
+}
+
+// ---------------------------------------------------------------- the assistant
+const chat = { messages: [], stop: null };
+const unthink = (text) => text.replace(/<think>[\s\S]*?(<\/think>|$)/g, "").trimStart();
+
+function bubble(role, text) {
+  const node = el("div", { className: "say " + role }, el("b", { textContent: role === "user" ? "You" : "Genesis" }), el("div", { className: "words", textContent: text }));
+  $("#ask-log").append(node);
+  node.scrollIntoView({ block: "end" });
+  return node;
+}
+
+async function ask(text) {
+  if (chat.stop) return;
+  const model = $("#ask-model").value, go = $("#ask-go");
+  if (!model) { bubble("genesis", "No model is running on this box. Start Genesis with the Start Genesis icon on the drive, or run: genesis start"); return; }
+  chat.messages.push({ role: "user", content: text });
+  bubble("user", text);
+  const mine = bubble("genesis", "Reading…"), words = $(".words", mine);
+  const control = new AbortController();
+  chat.stop = () => control.abort();
+  go.textContent = "Stop";
+  let answer = "", excerpts = [], waiting = "Reading the library", began = Date.now();
+  // A model loads from a hard disk before its first word: say so, and count, so the wait is not taken for a fault.
+  const tick = setInterval(() => { if (!unthink(answer)) words.textContent = `${waiting}… ${Math.round((Date.now() - began) / 1000)} s`; }, 1000);
+  try {
+    if ($("#ask-library").checked) {
+      const [res, base] = await Promise.all([api("find?q=" + encodeURIComponent(text)), reader()]);
+      excerpts = res.hits.filter((h) => h.text).slice(0, 6);
+      if (excerpts.length) mine.append(el("div", { className: "sources" }, el("small", { textContent: "From the library" }), excerpts.map((h) => hitRow(h, base))));
+    }
+    waiting = "Waking the model. Its first answer can take a minute or two";
+    began = Date.now();
+    const res = await post("ai/chat", { model, messages: chat.messages, excerpts }, control.signal);
+    if (!res.ok) throw new Error((await res.json()).error || "The assistant could not answer.");
+    const stream = res.body.getReader(), decode = new TextDecoder();
+    let buffer = "";
+    for (;;) {
+      const { done, value } = await stream.read();
+      if (done) break;
+      buffer += decode.decode(value, { stream: true });
+      const lines = buffer.split("\n");
+      buffer = lines.pop();
+      for (const line of lines) {
+        if (!line.trim()) continue;
+        const part = JSON.parse(line);
+        if (part.error) throw new Error(part.error);
+        if (part.message?.thinking) waiting = "Thinking it through";
+        answer += part.message?.content || "";
+        if (unthink(answer)) words.textContent = unthink(answer);
+      }
+      mine.scrollIntoView({ block: "end" });
+    }
+  } catch (e) {
+    if (e.name !== "AbortError") words.textContent = (unthink(answer) ? unthink(answer) + "\n\n" : "") + e.message;
+  }
+  clearInterval(tick);
+  chat.stop = null;
+  go.textContent = "Ask";
+  answer = unthink(answer);
+  if (!answer) { chat.messages.pop(); return; }
+  chat.messages.push({ role: "assistant", content: answer });
+  const keep = el("button", { type: "button", className: "quiet", textContent: "Keep as a note" });
+  keep.addEventListener("click", async () => {
+    const name = text.replace(/[^\w ]+/g, " ").trim().slice(0, 50).trim() || "note";
+    const saved = await post(`notes/${encodeURIComponent(name + ".md")}`, { text: `# ${text}\n\n${answer}\n` });
+    keep.textContent = saved.ok ? "Kept in Notes" : "Could not keep it";
+    keep.disabled = true;
+  });
+  mine.append(keep);
+}
+
+$("#ask-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (chat.stop) { chat.stop(); return; }
+  const text = $("#ask-q").value.trim();
+  if (!text) return;
+  $("#ask-q").value = "";
+  ask(text);
+});
+$("#ask-q").addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("#ask-form").requestSubmit(); } });
+$("#ask-clear").addEventListener("click", () => { chat.stop?.(); chat.messages = []; $("#ask-log").replaceChildren(); });
+$("#need").addEventListener("submit", (e) => { e.preventDefault(); const q = $("#need-q").value.trim(); if (q) findIt(q); });
+
+// ---------------------------------------------------------------- notes
+let noteOpen = null;
+async function listNotes() {
+  const all = await api("notes");
+  $("#note-names").replaceChildren(...(all.length ? all.map((n) => {
+    const a = el("a", { href: "#notes", textContent: n.name.replace(/\.(md|txt)$/, "") });
+    a.addEventListener("click", (e) => { e.preventDefault(); openNote(n.name); });
+    return el("li", {}, a);
+  }) : [el("li", { className: "hint", textContent: "No notes yet." })]));
+}
+async function openNote(name) {
+  const form = $("#note-form");
+  form.hidden = false;
+  noteOpen = name;
+  $("#note-name").value = (name || "").replace(/\.(md|txt)$/, "");
+  $("#note-text").value = name ? (await api("notes/" + encodeURIComponent(name))).text || "" : "";
+  $("#note-state").textContent = "";
+  $(name ? "#note-text" : "#note-name").focus();
+}
+$("#note-new").addEventListener("click", () => openNote(null));
+$("#note-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const typed = $("#note-name").value.replace(/[^\w .()-]+/g, " ").trim().slice(0, 70);
+  if (!typed) { $("#note-state").textContent = "Give the note a name."; return; }
+  const name = noteOpen && noteOpen.replace(/\.(md|txt)$/, "") === typed ? noteOpen : typed + ".md";
+  const res = await post("notes/" + encodeURIComponent(name), { text: $("#note-text").value });
+  $("#note-state").textContent = res.ok ? "Saved on the drive." : "Could not save: " + ((await res.json()).error || res.status);
+  if (res.ok) { noteOpen = name; listNotes(); }
+});
+$("#note-ask").addEventListener("click", async () => {
+  const model = (await api("ai/models")).models[0]?.name, state = $("#note-state"), text = $("#note-text").value;
+  if (!model) { state.textContent = "The assistant is not running."; return; }
+  if (!text.trim()) return;
+  state.textContent = "The assistant is reading the note…";
+  const res = await post("ai/chat", { model, messages: [{ role: "user",
+    content: "Tidy this note. Fix the spelling and make it clear. Keep every fact and add none. Answer with the note only.\n\n" + text }] });
+  if (!res.ok) { state.textContent = (await res.json()).error || "The assistant could not answer."; return; }
+  let out = "";
+  for (const line of (await res.text()).split("\n")) if (line.trim()) out += JSON.parse(line).message?.content || "";
+  if (unthink(out).trim()) { $("#note-text").value = unthink(out).trim() + "\n"; state.textContent = "Tidied. Save to keep it, or open the note again to go back."; }
+});
+
+// ---------------------------------------------------------------- the views
 const loaders = {
+  async home() {
+    const [info, shelves, books, bible, ai, soft, maps, sys] = await Promise.all([shelfInfo(), tryApi("shelves", {}),
+      tryApi("books", { books: [] }), tryApi("scripture", []), tryApi("ai/models", { models: [] }),
+      tryApi("software", { tools: [], apps: [], isos: [] }), tryApi("maps", { maps: [] }), tryApi("system", {})]);
+    const have = new Set(Object.values(shelves).flat().map((d) => d.href));
+    $("#first").replaceChildren(...info.first.filter((f) => f.view || have.has(f.file)).map((f) => {
+      const a = el("a", { className: "tile strong", href: f.view ? "#" + f.view : f.file }, icon(f.icon), el("strong", { textContent: f.name }));
+      if (f.file) a.addEventListener("click", (e) => { e.preventDefault(); read(f.file, f.name); });
+      return a;
+    }));
+    const manuals = Object.entries(shelves).filter(([k]) => k !== "plants").reduce((n, [, v]) => n + v.length, 0);
+    const langs = new Set(bible.map((t) => t.language)).size;
+    const planet = maps.maps.some((m) => m.name === "planet");
+    const tiles = [
+      ["ask", "assistant", "Ask", ai.models.length ? `${count(ai.models.length, "model")} that run on this box` : "The assistant is not running"],
+      ["map", "map", "Map", planet ? "The whole planet, down to the street" : maps.maps.length ? `${count(maps.maps.length, "map")} on the drive` : "No map on the drive yet"],
+      ["manuals", "manual", "Manuals", `${count(manuals, "manual")}, with their pictures`],
+      ["plants", "leaf", "Plants", `${count((shelves.plants || []).length, "guide")}, region by region`],
+      ["library", "book", "Library", `${count(books.books.length, "book")}: encyclopedias, medicine, repair, classics`],
+      ["scripture", "scripture", "Scripture", bible.length ? `${count(bible.length, "translation")} in ${count(langs, "language")}` : "None on the drive yet"],
+      ["radio", "radio", "Radio", "Frequencies, Morse and calling for help"],
+      ["notes", "note", "Notes", "Your own pages, kept on the drive"],
+      ["programs", "tools", "Programs", `${soft.tools.length + soft.apps.length + soft.isos.length} programs, apps and systems for other machines`],
+      ["system", "gear", "System", `${bytes(sys.disk_free)} free of ${bytes(sys.disk_total)}`],
+    ];
+    $("#tiles").replaceChildren(...tiles.map(([view, pic, name, line]) =>
+      el("a", { className: "tile", href: "#" + view }, icon(pic), el("strong", { textContent: name }), el("span", { textContent: line }))));
+    $("#home-foot").textContent = "Everything here is on the drive. Nothing on this screen needs the internet.";
+    if ($("#found").hidden && matchMedia("(hover: hover)").matches) $("#need-q").focus({ preventScroll: true });
+  },
+
+  async ask() {
+    const ai = await api("ai/models"), pick = $("#ask-model"), last = store.get("genesis.model");
+    pick.replaceChildren(...ai.models.map((m) => el("option", { value: m.name, textContent: `${m.name}: ${m.use} (${bytes(m.bytes)})`, selected: m.name === last })));
+    pick.onchange = () => store.set("genesis.model", pick.value);
+    if (!ai.models.length) $("#ask-lede").textContent = ai.running
+      ? "The model server is running and has no models. Fetch them with: genesis fetch --pack ai"
+      : "The assistant is not running. Start Genesis with the Start Genesis icon on the drive, or run: genesis start";
+    const waiting = store.get("genesis.ask");
+    if (waiting) { store.set("genesis.ask", ""); ask(waiting); }
+    $("#ask-q").focus();
+  },
+
+  async manuals() {
+    const [info, shelves] = await Promise.all([shelfInfo(), api("shelves")]);
+    const named = new Set(info.shelves.map((s) => s.id).concat("plants"));
+    const rest = Object.keys(shelves).filter((k) => !named.has(k)).map((id) => ({ id, name: id.replaceAll("_", " "), icon: "manual", about: "" }));
+    const out = info.shelves.concat(rest).filter((s) => shelves[s.id]?.length).map((s) => shelf(s.name, s.about, s.icon, shelves[s.id]));
+    $("#manual-shelves").replaceChildren(...(out.length ? out : [el("p", { className: "hint", textContent: "No manuals on the drive yet. Run: genesis fetch --tag fieldcraft" })]));
+  },
+
+  async plants() {
+    const [info, shelves] = await Promise.all([shelfInfo(), api("shelves")]);
+    const byFile = new Map((shelves.plants || []).map((d) => [d.file, d]));
+    $("#plant-rules").replaceChildren(el("h2", {}, icon("hazard"), "Before you eat anything"), el("ol", {}, info.plants.rules.map((r) => el("li", { textContent: r }))));
+    const used = new Set(), out = [];
+    for (const region of info.plants.regions) {
+      const docs = region.files.map((f) => byFile.get(f)).filter(Boolean);
+      docs.forEach((d) => used.add(d.file));
+      if (docs.length) out.push(shelf(region.name, "", region.danger ? "hazard" : "leaf", docs, region.danger));
+    }
+    const others = [...byFile.values()].filter((d) => !used.has(d.file));
+    if (others.length) out.push(shelf("More guides", "", "leaf", others));
+    if (shelves.medical?.length) out.push(shelf("Plant medicine", "What each medicinal plant is used for, the evidence, the dose and the danger.", "medical", shelves.medical));
+    $("#plant-shelves").replaceChildren(...(out.length ? out : [el("p", { className: "hint", textContent: "No plant guides on the drive yet. Run: genesis fetch --tag plants" })]));
+  },
+
   async library() {
-    const [v, services] = await Promise.all([api("vault"), api("services")]);
-    const total = Object.values(v.packs).reduce((n, p) => n + p.items, 0);
-    $("#library-lede").textContent = total
-      ? `${total} items in the vault. Catalog refreshed ${v.catalog_refreshed || "never"}.`
-      : "The vault is empty. Run genesis fetch --tier seed to fill it.";
-    const open = $("#library-open");
-    open.replaceChildren();
-    for (const id of ["kiwix", "files", "calibre", "kolibri", "jellyfin"]) {
-      const s = services.find((x) => x.id === id);
-      if (s?.up) open.append(el("a", { href: serviceUrl(s), textContent: "Open " + s.name.toLowerCase() }));
-    }
-    const packs = $("#library-packs");
-    packs.replaceChildren();
-    for (const [name, p] of Object.entries(v.packs).sort()) {
-      const list = el("ul", { className: "plain" }, p.list.map((i) => el("li", { textContent: `${i.title} (${i.version || "installed"})${i.outdated ? ", update available" : ""}` })));
-      packs.append(el("details", { className: "pack" }, el("summary", {}, name, el("span", { textContent: `${p.items} items${p.outdated ? `, ${p.outdated} with updates` : ""}` })), list));
-    }
-    $("#library-docs").replaceChildren(...(v.documents.length ? v.documents.map((d) => el("li", {}, el("a", { href: "/" + d, textContent: d.replace(/^documents\//, "") }))) : [el("li", { textContent: "None yet." })]));
-    $("#library-apps").replaceChildren(...(v.apps.length ? v.apps.map((a) => el("li", {}, el("a", { href: "/apps/" + encodeURIComponent(a), textContent: a }))) : [el("li", { textContent: "None yet. Run genesis fetch --pack apps." })]));
+    const [info, data, base] = await Promise.all([shelfInfo(), api("books"), reader()]);
+    const total = data.books.reduce((n, b) => n + b.bytes, 0);
+    $("#library-lede").textContent = !data.books.length ? "No books on the drive yet. Run: genesis fetch --tier seed"
+      : data.reader ? `${data.books.length} books, ${bytes(total)}. Each opens here, with its pictures, and can be searched.`
+        : `${data.books.length} books, ${bytes(total)}, are on the drive, and the reader that opens them is not running. Start Genesis with the Start Genesis icon on the drive, or run: genesis start`;
+    const render = (needle) => {
+      const out = [];
+      for (const pack of info.packs) {
+        const list = data.books.filter((b) => (info.packs.some((p) => p.id === b.pack) ? b.pack : "other") === pack.id
+          && (!needle || `${b.title} ${b.about} ${b.name}`.toLowerCase().includes(needle)));
+        if (!list.length) continue;
+        const cards = el("div", { className: "books" }, list.map((b) => {
+          const url = b.path && base ? base + b.path : null;
+          const card = el(url ? "a" : "div", { className: "bookcard" + (url ? "" : " shut") },
+            b.icon && base ? el("img", { src: base + b.icon, alt: "", loading: "lazy", width: 48, height: 48 }) : icon("book"),
+            el("span", {}, el("strong", { textContent: b.title }), b.about ? el("span", { textContent: b.about }) : null, el("small", { textContent: bytes(b.bytes) })));
+          if (url) { card.href = url; card.addEventListener("click", (e) => { e.preventDefault(); read(url, b.title); }); }
+          return card;
+        }));
+        out.push(pack.id === "code" && !needle
+          ? el("details", { className: "pack" }, el("summary", {}, pack.name, el("span", { textContent: count(list.length, "book") })), cards)
+          : el("section", { className: "shelf" }, el("h2", {}, icon("book"), pack.name, el("small", { textContent: ` ${list.length}` })), cards));
+      }
+      $("#library-books").replaceChildren(...out);
+    };
+    render("");
+    $("#library-filter").oninput = (e) => render(e.target.value.trim().toLowerCase());
   },
 
   async scripture() {
@@ -266,35 +545,64 @@ const loaders = {
     $("#radio-signals tbody").replaceChildren(...ref.signals.map(([a, b]) => el("tr", {}, el("td", { className: "need", textContent: a }), el("td", { textContent: b }))));
   },
 
-  async services() {
-    const list = await api("services");
-    $("#services-table tbody").replaceChildren(...list.map((s) => el("tr", {},
-      el("td", { className: "need" }, s.up ? el("a", { href: serviceUrl(s), textContent: s.name }) : s.name),
-      el("td", { textContent: s.about }), el("td", {}, el("code", { textContent: s.profile })),
-      el("td", { className: s.up ? "state-up" : "state-down", textContent: s.up ? "Running" : "Not started" }))));
+  async notes() { await listNotes(); },
+
+  async programs() {
+    const soft = await api("software");
+    const rows = (list, pic, empty) => list.length ? list.map((p) => el("a", { className: "hit", href: p.href, download: p.file }, icon(pic),
+      el("span", {}, el("strong", { textContent: p.title }), el("small", { textContent: `${p.file}, ${bytes(p.bytes)}` }), p.note ? el("span", { textContent: p.note }) : null)))
+      : [el("p", { className: "hint", textContent: empty })];
+    $("#programs-apps").replaceChildren(...rows(soft.apps, "phone", "None on the drive yet. Run: genesis fetch --pack apps"));
+    $("#programs-tools").replaceChildren(...rows(soft.tools, "tools", "None on the drive yet. Run: genesis fetch --pack tools"));
+    $("#programs-isos").replaceChildren(...rows(soft.isos, "disc", "None on the drive yet. Run: genesis fetch --pack isos"));
   },
 
   async system() {
-    const [s, p] = await Promise.all([api("system"), api("poi/stats")]);
+    const [s, p, v, list] = await Promise.all([api("system"), api("poi/stats"), api("vault"), api("services")]);
     const up = s.uptime ? `${Math.floor(s.uptime / 86400)} d ${Math.floor((s.uptime % 86400) / 3600)} h` : "?";
     const facts = [["Genesis", s.genesis], ["Up for", up], ["Load", `${s.load ?? "?"} on ${s.cpus} CPUs`],
-      ["Memory free", `${bytes(s.ram_free)} of ${bytes(s.ram_total)}`], ["Vault drive free", `${bytes(s.disk_free)} of ${bytes(s.disk_total)}`]];
+      ["Memory free", `${bytes(s.ram_free)} of ${bytes(s.ram_total)}`], ["Vault drive free", `${bytes(s.disk_free)} of ${bytes(s.disk_total)}`],
+      ["Catalog refreshed", v.catalog_refreshed || "never"]];
     if (s.temp_c != null) facts.push(["Temperature", `${s.temp_c} °C`]);
     if (s.battery != null) facts.push(["Battery", `${s.battery}% (${s.battery_status || "unknown"})`]);
-    $("#system-list").replaceChildren(...facts.flatMap(([k, v]) => [el("dt", { textContent: k }), el("dd", { textContent: v })]));
+    $("#system-list").replaceChildren(...facts.flatMap(([k, val]) => [el("dt", { textContent: k }), el("dd", { textContent: val })]));
     const rows = p.error ? [["Installed", "None yet"]] : [["Places", p.total.toLocaleString()],
-      ...Object.entries(p.categories).map(([c, v]) => [categories[c]?.label || c, v.total.toLocaleString()])];
-    $("#poi-stats").replaceChildren(...rows.flatMap(([k, v]) => [el("dt", { textContent: k }), el("dd", { textContent: v })]));
+      ...Object.entries(p.categories).map(([c, val]) => [categories[c]?.label || c, val.total.toLocaleString()])];
+    $("#poi-stats").replaceChildren(...rows.flatMap(([k, val]) => [el("dt", { textContent: k }), el("dd", { textContent: val })]));
+    $("#library-packs").replaceChildren(...Object.entries(v.packs).sort().map(([name, pack]) => el("details", { className: "pack" },
+      el("summary", {}, name, el("span", { textContent: `${pack.items} items${pack.outdated ? `, ${pack.outdated} with updates` : ""}` })),
+      el("ul", { className: "plain" }, pack.list.map((i) => el("li", { textContent: `${i.title} (${i.version || "installed"})${i.outdated ? ", update available" : ""}` }))))));
+    $("#services-table tbody").replaceChildren(...list.map((svc) => el("tr", {},
+      el("td", { className: "need" }, svc.up ? el("a", { href: serviceUrl(svc), textContent: svc.name }) : svc.name),
+      el("td", { textContent: svc.about }), el("td", {}, el("code", { textContent: svc.profile })),
+      el("td", { className: svc.up ? "state-up" : "state-down", textContent: svc.up ? "Running" : "Not started" }))));
+  },
+
+  async read() {
+    const [url, title] = location.hash.slice(6).split("|").map(decodeURIComponent);
+    // Only this box: its own pages, and its book reader on the next port.
+    const base = await reader();
+    if (!url || !(/^\/[^/\\]/.test(url) || (base && url.startsWith(base + "/")))) { location.hash = "home"; return; }
+    $("#read-title").textContent = title || "";
+    $("#read-out").href = url;
+    if ($("#read-frame").getAttribute("src") !== url) $("#read-frame").src = url;
   },
 };
 
+let before = "home";
+$("#read-back").addEventListener("click", (e) => { e.preventDefault(); location.hash = before; });
+
 function show() {
-  const view = (location.hash || "#map").slice(1);
-  const name = document.getElementById("view-" + view) ? view : "map";
+  const view = (location.hash || "#home").slice(1).split("=")[0];
+  const name = document.getElementById("view-" + view) ? view : "home";
+  if (name !== "read") before = name;
+  else if (!$("#read-frame").getAttribute("src")) before = before || "home";
+  document.body.classList.toggle("reading", name === "read");
   for (const s of document.querySelectorAll(".view")) s.hidden = s.id !== "view-" + name;
   for (const a of document.querySelectorAll(".rail a[data-view]")) a.dataset.view === name ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current");
   loaders[name]?.().catch((e) => console.error(e));
   if (name === "map") map?.resize();
+  if (name !== "read") $("#read-frame").removeAttribute("src");
 }
 
 const nightButton = $("#night");
@@ -306,4 +614,6 @@ function setNight(on) {
 setNight(store.get("genesis.night") === "1");
 nightButton.addEventListener("click", () => setNight(!document.documentElement.classList.contains("night")));
 addEventListener("hashchange", show);
-initMap().catch((e) => { console.error(e); hint("The map could not start: " + e.message); }).finally(show);
+show();  // the home screen first: the map loads behind it
+initMap().catch((e) => { console.error(e); hint("The map could not start: " + e.message); })
+  .finally(() => { if (location.hash.startsWith("#map")) map?.resize(); });
