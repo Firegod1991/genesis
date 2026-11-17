@@ -23,6 +23,7 @@ from . import catalog
 from .util import ROOT, log, read_json, write_json
 
 DASHBOARD_PORT, KIWIX_PORT, OLLAMA_PORT = 8080, 8081, 11434
+LIBRARY = os.path.join(".genesis", "library.xml")
 # How the archives in <vault>/tools name each machine, and what Genesis calls it.
 KIWIX = re.compile(r"^kiwix-tools_(linux-aarch64|linux-x86_64)-[\w.]+\.tar\.gz$")
 OLLAMA = re.compile(r"^ollama-linux-(arm64|amd64)\.tar\.zst$")
@@ -32,14 +33,14 @@ DESKTOP = """[Desktop Entry]
 Type=Application
 Name=Start Genesis
 Comment=Maps, manuals, the library and the assistant, with no internet
-Exec=sh -c 'exec "$(dirname "%%k")/genesis/bin/genesis" start'
+Exec=sh -c 'exec sh "$(dirname "$1")/genesis/bin/genesis" start' genesis %%k
 Icon=%s
 Terminal=false
 Categories=Education;
 """
 START = """#!/bin/sh
 # Start Genesis from this drive. Needs nothing but the drive and Python 3, which Raspberry Pi OS has.
-exec "$(dirname "$0")/genesis/bin/genesis" start "$@"
+exec sh "$(dirname "$0")/genesis/bin/genesis" start "$@"
 """
 FOLDERS = {"zim": "book", "documents": "manual", "maps": "map", "scripture": "scripture", "models": "assistant",
            "tools": "tools", "apps": "phone", "isos": "disc", "radio": "radio", "poi": "pin", "code": "code",
@@ -148,6 +149,52 @@ def books(vault):
     return sorted(os.path.join(folder, n) for n in os.listdir(folder) if n.endswith(".zim")) if os.path.isdir(folder) else []
 
 
+def _shelf_mark(shelf):
+    return [[os.path.basename(path), os.path.getsize(path)] for path in shelf]
+
+
+def library(vault, shelf):
+    """The list of books for the Kiwix server, when it still matches what is on the shelf."""
+    path = os.path.join(vault, LIBRARY)
+    made = read_json(path + ".json") if os.path.isfile(path) else None
+    return path if isinstance(made, dict) and made.get("shelf") == _shelf_mark(shelf) else None
+
+
+def list_books(vault):
+    """Write the list of books the Kiwix server reads when it starts. Given hundreds of books by name it
+    opens every one before it answers, which takes minutes on a hard disk; given the list it answers at once.
+    The list names each book by a path beside itself, so it holds wherever the drive is plugged in.
+    Returns how many books are listed, or None where no Kiwix program runs on this machine."""
+    manage, shelf = program(vault, "kiwix", "kiwix-manage"), books(vault)
+    if not manage or not shelf:
+        return None
+    path = os.path.join(vault, LIBRARY)
+    if library(vault, shelf):
+        return read_json(path + ".json")["listed"]
+    tmp, listed = path + ".tmp", 0
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    if os.path.exists(tmp):
+        os.remove(tmp)
+
+    def add(some):
+        return subprocess.call([manage, tmp, "add"] + some, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0
+    for i in range(0, len(shelf), 25):
+        some = shelf[i:i + 25]
+        if add(some):
+            listed += len(some)
+            continue
+        for book in some:  # one of these is damaged: list the rest, and say which
+            if add([book]):
+                listed += 1
+            else:
+                log("  the Kiwix server cannot read %s, so it is left off the list" % os.path.basename(book))
+    if not listed:
+        return None
+    os.replace(tmp, path)
+    write_json(path + ".json", {"listed": listed, "shelf": _shelf_mark(shelf)})
+    return listed
+
+
 def draw_covers(vault):
     """The first page of every manual as a picture, so the shelves show covers. Needs pdftoppm."""
     tool = shutil.which("pdftoppm")
@@ -207,6 +254,9 @@ def ready(args):
     os.makedirs(os.path.join(vault, ".genesis"), exist_ok=True)
     for what in unpack_programs(vault):
         log("unpacked " + what)
+    listed = list_books(vault)
+    if listed is not None:
+        log("book list for the reader: %d books" % listed)
     covers = draw_covers(vault)
     log("covers: pdftoppm is not installed, so the shelves show titles" if covers is None else "covers drawn: %d new" % covers)
     log("folder pictures: %d" % dress(vault))
@@ -241,14 +291,18 @@ def _spawn(cmd, env, logname):
 def plan(vault):
     """What to start, as (name, port, command, extra environment). Only what this machine can run."""
     out = [("dashboard", int(os.environ.get("GENESIS_PORT", DASHBOARD_PORT)),
-            [sys.executable, os.path.join(ROOT, "dashboard", "server.py")], {})]
+            [sys.executable, os.path.join(ROOT, "dashboard", "server.py")], {"GENESIS_BARE": "1"})]
     kiwix, shelf = program(vault, "kiwix", "kiwix-serve"), books(vault)
     if kiwix and shelf:
-        out.append(("library", KIWIX_PORT, [kiwix, "--port", str(KIWIX_PORT)] + shelf, {}))
+        listed = library(vault, shelf)
+        out.append(("library", KIWIX_PORT, [kiwix, "--port", str(KIWIX_PORT)] + (["--library", listed] if listed else shelf), {}))
     ollama, models = program(vault, "ollama", "ollama"), os.path.join(vault, "models", "ollama", "models")
     if ollama and os.path.isdir(models):
+        # Nothing on the drive is ever deleted by the model server, one model is in memory at a time,
+        # and it stays there half an hour, because loading one from a hard disk takes a minute.
         out.append(("assistant", OLLAMA_PORT, [ollama, "serve"],
-                    {"OLLAMA_MODELS": models, "OLLAMA_HOST": "127.0.0.1:%d" % OLLAMA_PORT}))
+                    {"OLLAMA_MODELS": models, "OLLAMA_HOST": "127.0.0.1:%d" % OLLAMA_PORT, "OLLAMA_NOPRUNE": "1",
+                     "OLLAMA_MAX_LOADED_MODELS": "1", "OLLAMA_KEEP_ALIVE": "30m"}))
     return out
 
 
@@ -262,6 +316,12 @@ def start(args):
             unpack_programs(vault)
         except OSError as e:
             log("could not unpack the programs on the drive: %s" % e)
+    try:  # the reader holds many books open at once
+        import resource
+        soft, hard = resource.getrlimit(resource.RLIMIT_NOFILE)
+        resource.setrlimit(resource.RLIMIT_NOFILE, (hard if hard != resource.RLIM_INFINITY else max(soft, 65536), hard))
+    except (ImportError, ValueError, OSError):
+        pass
     state, missing = read_json(os.path.join(_run_dir(), "box.json"), {}), []
     for name, port, cmd, extra in plan(vault):
         if _listening(port):
@@ -272,6 +332,9 @@ def start(args):
         log("started %s on port %d" % (name, port))
     write_json(os.path.join(_run_dir(), "box.json"), state)
     started = {name for name, _, _, _ in plan(vault)}
+    if "library" in started and not library(vault, books(vault)):
+        log("the book list is out of date, so the reader opens every book before it answers, which takes minutes. "
+            "Run `genesis ready` once and it starts at once.")
     if "library" not in started:
         missing.append("the book reader (no Kiwix server for this machine on the drive)")
     if "assistant" not in started:

@@ -79,7 +79,7 @@ class BoxTests(unittest.TestCase):
 
     def test_only_what_the_drive_can_run_here_is_started(self):
         with mock.patch.object(box.shutil, "which", return_value=None):
-            self.assertEqual([name for name, _, _, _ in box.plan(self.vault)], ["dashboard"])
+            self.assertEqual([(name, env) for name, _, _, env in box.plan(self.vault)], [("dashboard", {"GENESIS_BARE": "1"})])
             reader, book = self.program("kiwix", "kiwix-serve"), os.path.join(self.vault, "zim", "wikipedia.zim")
             open(book, "w").close()
             open(book + ".part", "w").close()
@@ -88,6 +88,40 @@ class BoxTests(unittest.TestCase):
         self.assertEqual(plan["library"][1], [reader, "--port", "8081", book], "whole books only")
         self.assertEqual(plan["assistant"][1], [ollama, "serve"])
         self.assertEqual(plan["assistant"][2]["OLLAMA_MODELS"], os.path.join(self.vault, "models", "ollama", "models"))
+        self.assertEqual(plan["assistant"][2]["OLLAMA_NOPRUNE"], "1", "the model server deletes nothing from the drive")
+
+    def test_the_reader_starts_from_a_list_of_the_books_once_one_is_written(self):
+        reader, manage = self.program("kiwix", "kiwix-serve"), self.program("kiwix", "kiwix-manage")
+        shelf = [os.path.join(self.vault, "zim", name) for name in ("a.zim", "b.zim", "bad.zim")]
+        for book in shelf:
+            open(book, "w").close()
+        asked = []
+
+        def kiwix_manage(cmd, **kw):
+            asked.append(cmd)
+            if any(path.endswith("bad.zim") for path in cmd[3:]):
+                return 1
+            with open(cmd[1], "a") as f:
+                f.write("".join(os.path.basename(path) + " " for path in cmd[3:]))
+            return 0
+
+        listed = os.path.join(self.vault, ".genesis", "library.xml")
+        with mock.patch.object(box.shutil, "which", return_value=None), mock.patch.object(box, "log") as said, \
+                mock.patch.object(box.subprocess, "call", side_effect=kiwix_manage):
+            self.assertEqual(box.list_books(self.vault), 2)
+            self.assertEqual(asked[0], [manage, listed + ".tmp", "add"] + shelf)
+            with open(listed) as f:
+                self.assertEqual(f.read(), "a.zim b.zim ", "a damaged book does not keep the others off the list")
+            self.assertIn("bad.zim", said.call_args[0][0])
+            plan = {name: cmd for name, _, cmd, _ in box.plan(self.vault)}
+            self.assertEqual(plan["library"], [reader, "--port", "8081", "--library", listed])
+            before = len(asked)
+            self.assertEqual(box.list_books(self.vault), 2)
+            self.assertEqual(len(asked), before, "written once, not on every start")
+            new = os.path.join(self.vault, "zim", "c.zim")
+            open(new, "w").close()
+            plan = {name: cmd for name, _, cmd, _ in box.plan(self.vault)}
+        self.assertEqual(plan["library"], [reader, "--port", "8081"] + shelf[:2] + [shelf[2], new], "a new book is not left out")
 
     def test_start_brings_up_what_is_not_running_and_says_what_is_missing(self):
         self.program("kiwix", "kiwix-serve")
@@ -123,7 +157,8 @@ class BoxTests(unittest.TestCase):
         with open(os.path.join(self.drive, "Start Genesis.desktop")) as f:
             door = f.read()
         self.assertIn("Icon=%s\n" % os.path.join(icons, "genesis.svg"), door)
-        self.assertIn('Exec=sh -c \'exec "$(dirname "%k")/genesis/bin/genesis" start\'', door)
+        # The launcher's own path comes as an argument of its own, so a space in it, as in its name, breaks nothing.
+        self.assertIn('Exec=sh -c \'exec sh "$(dirname "$1")/genesis/bin/genesis" start\' genesis %k\n', door)
         self.assertTrue(os.path.isfile(os.path.join(self.drive, "Start Genesis.sh")))
 
     def test_the_seal_leaves_out_what_is_not_finished_and_what_each_machine_rewrites(self):
