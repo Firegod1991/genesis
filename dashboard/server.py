@@ -5,7 +5,8 @@ Serves the pages, the offline maps (with HTTP range requests, which PMTiles
 needs), the manuals with their covers, the scripture library, phone apps and
 programs, and a JSON API: services, system health, what is on the drive, the
 survival layers, search across the library, and the local assistant. It reads
-the vault and writes one place only: the notes people keep on the box.
+the vault and writes one place only: the notes people keep on the box. The safe
+is never opened from here: this server says whether one exists, and nothing more.
 """
 
 import http.client
@@ -28,7 +29,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
 
-from genesis import __version__, catalog, maps, poi  # noqa: E402
+from genesis import __version__, catalog, maps, poi, safe  # noqa: E402
 from genesis.util import memory, read_json, uptime  # noqa: E402
 
 STATIC = os.path.join(HERE, "static")
@@ -142,6 +143,8 @@ def vault():
     locked = {iid: (pack, entry) for pack, iid, entry in catalog.all_locked()}
     packs = {}
     for iid, st in state.items():
+        if not st.get("files") and not st.get("model"):
+            continue  # a record an older Genesis left for an item that put nothing on the drive
         pack, entry = locked.get(iid, (st.get("pack", "other"), {}))
         p = packs.setdefault(pack, {"items": 0, "outdated": 0, "list": []})
         p["items"] += 1
@@ -468,6 +471,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(find((q.get("q") or [""])[0].strip()[:200]))
         if name == "notes":
             return self._json(notes_list())
+        if name == "safe":
+            return self._json(cached("safe", 5, lambda: safe.status(VAULT)))
         if name.startswith("notes/"):
             note = name[6:]
             path = os.path.join(NOTES, note)
