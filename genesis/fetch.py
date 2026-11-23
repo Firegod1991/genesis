@@ -68,11 +68,23 @@ def _inside(vault, rel):
 
 
 def _state(vault):
-    """What is installed. Records written by an older Genesis on Windows are read with their slashes turned."""
+    """What is installed. Records written by an older Genesis on Windows are read with their slashes turned.
+
+    A record with no file and no model says nothing is on the drive. An older Genesis wrote those for
+    items that had no file for the machines chosen, and they are passed over, so the next fetch looks at
+    those items again and brings what it can.
+    """
     state = read_json(_meta(vault, "state.json"), {})
     for st in state.values():
         st["files"] = [f.replace("\\", "/") for f in st.get("files", [])]
-    return state
+    return {iid: st for iid, st in state.items() if st["files"] or st.get("model")}
+
+
+def _carried(entry, files):
+    """True when a fetch has something to bring for this item: a model, or a file for the machines
+    chosen. Service images come with `genesis up`, and a program published only for another system
+    has nothing for this drive."""
+    return entry.get("kind") == "model" or (entry.get("kind") != "image" and bool(files))
 
 
 def load_config(vault):
@@ -140,6 +152,8 @@ def plan(args):
     state = _state(vault)
     per, need, unsized = {}, 0, 0
     for pack, iid, entry, files in sel:
+        if not _carried(entry, files) and entry.get("kind") != "image":
+            continue  # published only for other systems: nothing for this drive
         size = catalog.entry_size(entry, files)
         have = state.get(iid, {}).get("version") == entry.get("version")
         p = per.setdefault(pack, [0, 0, 0])
@@ -409,6 +423,11 @@ def _expected(f, net):
     return None, None
 
 
+# The SHA 256 of every file this run has read through and found right, with the size and time it had
+# then. The record of an item keeps them, so a seal does not have to read a big download a second time.
+_sums = {}
+
+
 def _check(path, f, net):
     """Verify a downloaded file. Returns a short description of what was checked."""
     algo, want = _expected(f, net)
@@ -416,6 +435,9 @@ def _check(path, f, net):
         got = file_hash(path, algo)
         if got != want:
             raise FetchError("%s mismatch for %s: expected %s, got %s" % (algo, os.path.basename(path), want, got))
+        if algo == "sha256":
+            st = os.stat(path)
+            _sums[os.path.abspath(path)] = {"bytes": st.st_size, "mtime": int(st.st_mtime), "sha256": got}
         return algo
     if path.endswith(".zip"):
         with zipfile.ZipFile(path) as z:
@@ -593,6 +615,8 @@ def _fetch_item(vault, iid, entry, files, net, state, models):
         if not models.pull(entry["model"]):
             return None
         return {"version": entry.get("version"), "files": [], "model": entry["model"]}
+    if not files:
+        return None  # nothing published for the machines chosen: no record, so a later fetch looks again
     folder = _folder(vault, iid, entry)
     written = []
     for f in files:
@@ -635,7 +659,12 @@ def _fetch_item(vault, iid, entry, files, net, state, models):
     for old in state.get(iid, {}).get("files", []):
         if old not in written and os.path.isfile(_inside(vault, old)):
             os.remove(_inside(vault, old))
-    return {"version": entry.get("version"), "files": written}
+    record = {"version": entry.get("version"), "files": written}
+    sums = {rel: _sums[os.path.abspath(_inside(vault, rel))] for rel in written
+            if os.path.abspath(_inside(vault, rel)) in _sums and os.path.isfile(_inside(vault, rel))}
+    if sums:
+        record["sums"] = sums
+    return record
 
 
 def fetch(args):
@@ -644,7 +673,10 @@ def fetch(args):
     state = _state(vault)
     _tidy(vault, sel, state)
     todo = [(p, i, e, f) for p, i, e, f in sel
-            if state.get(i, {}).get("version") != e.get("version") and e.get("kind") != "image"]
+            if state.get(i, {}).get("version") != e.get("version") and _carried(e, f)]
+    for _, i, e, f in sel:  # asked for by name, and there is nothing to bring: say so, do not pass it over in silence
+        if i in (getattr(args, "id", None) or []) and not _carried(e, f) and e.get("kind") != "image":
+            log("%s: nothing published for %s" % (e.get("title") or i, ", ".join(cfg.get("platforms") or ["these machines"])))
     need = sum(catalog.entry_size(e, f) or 0 for _, _, e, f in todo)
     free = _free(vault)
     log("vault %s: %d items selected, %d to fetch, %s to download, %s free"
@@ -731,9 +763,9 @@ def status(args):
     state = _state(vault)
     meta = read_json(os.path.join(catalog.LOCK_DIR, "_meta.json"), {})
     rows = {}
-    for pack, iid, entry, _ in sel:
-        if entry.get("kind") == "image":
-            continue
+    for pack, iid, entry, files in sel:
+        if not _carried(entry, files):
+            continue  # service images, and programs published only for other systems
         r = rows.setdefault(pack, {"current": 0, "outdated": 0, "missing": 0})
         have = state.get(iid)
         r["missing" if not have else "current" if have.get("version") == entry.get("version") else "outdated"] += 1
