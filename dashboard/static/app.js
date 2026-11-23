@@ -408,9 +408,9 @@ $("#note-ask").addEventListener("click", async () => {
 // ---------------------------------------------------------------- the views
 const loaders = {
   async home() {
-    const [info, shelves, books, bible, ai, soft, maps, sys] = await Promise.all([shelfInfo(), tryApi("shelves", {}),
+    const [info, shelves, books, bible, ai, soft, maps, sys, safe] = await Promise.all([shelfInfo(), tryApi("shelves", {}),
       tryApi("books", { books: [] }), tryApi("scripture", []), tryApi("ai/models", { models: [] }),
-      tryApi("software", { tools: [], apps: [], isos: [] }), tryApi("maps", { maps: [] }), tryApi("system", {})]);
+      tryApi("software", { tools: [], apps: [], isos: [] }), tryApi("maps", { maps: [] }), tryApi("system", {}), tryApi("safe", {})]);
     const have = new Set(Object.values(shelves).flat().map((d) => d.href));
     $("#first").replaceChildren(...info.first.filter((f) => f.view || have.has(f.file)).map((f) => {
       const a = el("a", { className: "tile strong", href: f.view ? "#" + f.view : f.file }, icon(f.icon), el("strong", { textContent: f.name }));
@@ -429,6 +429,7 @@ const loaders = {
       ["scripture", "scripture", "Scripture", bible.length ? `${count(bible.length, "translation")} in ${count(langs, "language")}` : "None on the drive yet"],
       ["radio", "radio", "Radio", "Frequencies, Morse and calling for help"],
       ["notes", "note", "Notes", "Your own pages, kept on the drive"],
+      ["safe", "lock", "Safe", safe.open ? "Open now. Lock it when you are done" : safe.exists ? "Your papers, locked behind a passphrase" : "A locked place for your own papers"],
       ["programs", "tools", "Programs", `${soft.tools.length + soft.apps.length + soft.isos.length} programs, apps and systems for other machines`],
       ["system", "gear", "System", `${bytes(sys.disk_free)} free of ${bytes(sys.disk_total)}`],
     ];
@@ -546,6 +547,25 @@ const loaders = {
   },
 
   async notes() { await listNotes(); },
+
+  async safe() {
+    const s = await tryApi("safe", {});
+    const when = s.locked ? new Date(s.locked * 1000).toLocaleString() : "";
+    $("#safe-state").textContent = s.open ? "The safe is open on this box right now. Lock it when you are done."
+      : s.exists ? `The safe is locked: ${bytes(s.bytes)}, last locked ${when}.`
+        : s.program === false ? "No safe yet, and 7-Zip is not unpacked on this drive. Run: genesis fetch --id sevenzip, then genesis ready"
+          : "No safe has been made on this drive yet.";
+    const steps = s.exists
+      ? ["Double click Genesis Safe at the top of the drive. In a terminal that is: genesis safe",
+        "Type your passphrase. Your papers open as a folder.",
+        "Add, change or remove what you need.",
+        "Double click Genesis Safe again and answer yes to lock it."]
+      : ["Double click Genesis Safe at the top of the drive. In a terminal that is: genesis safe",
+        "A folder opens. Put your papers in it.",
+        "Double click Genesis Safe again to lock it. You choose the passphrase then: a few words you will not forget.",
+        "Write the passphrase down and keep it somewhere that is not this drive."];
+    $("#safe-steps").replaceChildren(...steps.map((t) => el("li", { textContent: t })));
+  },
 
   async programs() {
     const soft = await api("software");
