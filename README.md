@@ -68,7 +68,7 @@ $env:GENESIS_VAULT = "E:\genesis"
 py dashboard\server.py          # dashboard at http://localhost:8080
 ```
 
-Filling a drive on one machine for another? Name the machine it is for. `genesis fetch --tier seed --platform linux-arm64,android` loads a drive for a Raspberry Pi from any computer. The AI models ride along when Ollama is installed on that computer: they go into the vault, never into your own model library.
+Filling a drive on one machine for another? Name the machine it is for. `genesis fetch --tier seed --platform linux-arm64,android` loads a drive for a Raspberry Pi from any computer. A program that has no build for the machines you name comes as its source, so nothing in the tier is left behind, and a program published only for another system is passed over and never counted as installed. The AI models ride along when Ollama is installed on that computer: they go into the vault, never into your own model library.
 
 ## No Docker, no internet: start it from the drive
 
@@ -80,11 +80,19 @@ genesis start                   # the front door at http://localhost:8080, the b
 genesis stop
 ```
 
-`genesis ready` unpacks the Kiwix server and Ollama the drive carries, for the Pi and for PCs, writes the list of books so the reader opens hundreds of them in a second, draws a cover for every manual and puts a **Start Genesis** icon at the top of the drive. `genesis start` needs only Python 3, which Raspberry Pi OS has: no Docker, no install, no network.
+`genesis ready` unpacks the Kiwix server, Ollama and 7-Zip the drive carries, for the Pi and for PCs, writes the list of books so the reader opens hundreds of them in a second, draws a cover for every manual and puts a **Start Genesis** icon and a page that says how to use the drive at the top of it. `genesis start` needs only Python 3, which Raspberry Pi OS has: no Docker, no install, no network.
 
 ![The front door: one question box and a tile for every section](docs/img/home.png)
 
 The page it opens asks one question, *What do you need?*, and searches the manuals, the books and the pages inside the books. Behind it are shelves of manuals with their covers, the plant guides region by region under the rules that keep you alive, the library, the map, scripture, a notebook kept on the drive, and an assistant that runs on the box and reads the library before it answers. See [docs/OFFLINE.md](docs/OFFLINE.md).
+
+## Your own papers, and a way back in
+
+A drive like this needs two things a library does not give it.
+
+**A safe.** `genesis safe` keeps a family's own papers on the drive behind one passphrase: identity papers, deeds, medical records, pictures of what cannot be replaced. Locked, it is one encrypted 7-Zip file (AES 256, the names of the files hidden with the rest) that any computer with 7-Zip can open with the same passphrase. Open, it is an ordinary folder that lives in memory and never on a disk. `genesis ready` puts a **Genesis Safe** icon at the top of the drive: double click it to open the safe, and again to lock it. Nobody can recover a forgotten passphrase. See [docs/SAFE.md](docs/SAFE.md).
+
+**A boot stick.** The drive opens on Linux. For a computer whose own system is dead, or one that runs only Windows, `sudo genesis bootstick` turns a USB stick into one that starts any PC, with Ventoy and the live systems the drive already carries. Start the PC from the stick, plug in the drive, and Start Genesis runs as it does anywhere. `sudo genesis bootstick --pi` writes Raspberry Pi OS to a spare card and reads it back, for the day the card in the Pi wears out. Both refuse to touch anything but a stick or a card. See [docs/BOOTSTICK.md](docs/BOOTSTICK.md).
 
 ## Find water, care, fuel and power with no network
 
@@ -211,7 +219,7 @@ The dashboard has a night vision mode that switches the whole screen to red ligh
 
 * **On GitHub:** a workflow runs on the first of every month. It resolves the newest release of every item from the upstream source (Kiwix, eBible, GitHub releases, distribution checksum files, model and container registries), rewrites the lock files, regenerates the catalog page and publishes a dated release with what changed. A line that fails keeps its last known good version and is listed in [reports/latest.md](reports/latest.md).
 * **On your box:** `genesis timer` installs a monthly timer. When there is a connection it pulls the new catalog, downloads what changed, verifies checksums and removes the versions it replaced. When there is no connection it does nothing and everything keeps working.
-* **Sealed:** `genesis seal` writes the container images, the code and a SHA 256 manifest of every file into the vault, so the drive alone can rebuild the whole system on a new machine with no internet. `genesis verify` re checks the drive for bit rot any time.
+* **Sealed:** `genesis seal` writes the container images, the code and a SHA 256 manifest of everything Genesis put on the drive into the vault, so the drive alone can rebuild the whole system on a new machine with no internet. `genesis verify` re checks the drive for bit rot any time.
 
 More in [docs/UPDATING.md](docs/UPDATING.md).
 
@@ -236,9 +244,9 @@ Full credits in [CREDITS.md](CREDITS.md).
 
 Genesis is new. This is what has and has not been proven.
 
-**Tested** in continuous integration and against live sources: the catalog resolvers, downloads with checksum verification, survival layer builds with osmium, map extraction from the live planet build, the dashboard in a headless browser, its API, the compose files, the core services started from a real vault, the published world data fetched and queried on a clean machine, the catalog tools and the dashboard on Windows, a 643 GB fill of a real drive with every file checked, and the start with no Docker from that drive on a PC: the reader with 407 books, search inside them, and a local model answering.
+**Tested** in continuous integration and against live sources: the catalog resolvers, downloads with checksum verification, survival layer builds with osmium, map extraction from the live planet build, the dashboard in a headless browser, its API, the compose files, the core services started from a real vault, the published world data fetched and queried on a clean machine, the catalog tools and the dashboard on Windows, a 643 GB fill of a real drive with every file checked, the start with no Docker from that drive on a PC: the reader with 407 books, search inside them, and a local model answering, the safe with the real 7-Zip on Linux and on Windows, and the boot stick and the spare card on disk images: Ventoy installed by its own installer with a live system copied and compared, and Raspberry Pi OS written, read back and its boot files found in place.
 
-**Not yet tested on real hardware:** the radio profiles with an actual SDR, the NVIDIA GPU path, and a Raspberry Pi itself. Its programs run under emulation; the first report from a real one is welcome.
+**Not yet tested on real hardware:** the radio profiles with an actual SDR, the NVIDIA GPU path, a Raspberry Pi itself, and a boot stick or a spare card made on a physical stick or card and started on a real machine. The programs for the Pi run under emulation; the first report from a real one is welcome.
 
 ## Read this before you rely on it
 
