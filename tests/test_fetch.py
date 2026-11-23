@@ -130,6 +130,97 @@ class ParallelFetchTests(unittest.TestCase):
         self.assertEqual((code, state), (1, {}))
 
 
+class CarriedTests(unittest.TestCase):
+    """What a drive carries of each item: a build for its machines, or the source where there is none."""
+    LINUX = ["linux-arm64", "linux-x64", "android"]
+    FLDIGI = {"kind": "archive", "dest": "radio", "version": "4.2", "title": "Fldigi", "files": [
+        {"filename": "fldigi_setup.exe", "platform": "windows-x64", "url": "https://example.invalid/fldigi_setup.exe"},
+        {"filename": "fldigi.dmg", "platform": "macos-arm64", "url": "https://example.invalid/fldigi.dmg"},
+        {"filename": "fldigi.tar.gz", "platform": "source", "url": "https://example.invalid/fldigi.tar.gz"}]}
+    RUFUS = {"kind": "tool", "dest": "tools", "version": "4.15", "title": "Rufus", "files": [
+        {"filename": "rufus.exe", "platform": "windows-x64", "url": "https://example.invalid/rufus.exe"}]}
+
+    def setUp(self):
+        self.vault = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.vault, ignore_errors=True)
+        self.args = argparse.Namespace(vault=self.vault, yes=True, keep_going=True, jobs=2)
+
+    def names(self, entry, platforms):
+        return [f["filename"] for f in fetch.catalog.wanted_files(entry, platforms)]
+
+    def selection(self, platforms):
+        return [("radio", "fldigi", self.FLDIGI, fetch.catalog.wanted_files(self.FLDIGI, platforms)),
+                ("tools", "rufus", self.RUFUS, fetch.catalog.wanted_files(self.RUFUS, platforms))]
+
+    def run_fetch(self, sel):
+        def download(url, dest, size=None):
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            with open(dest, "w") as f:
+                f.write("hello")
+        with mock.patch.object(fetch, "_selection", return_value=({}, sel)), \
+                mock.patch.object(fetch, "_download", side_effect=download):
+            code = fetch.fetch(self.args)
+        return code, read_json(os.path.join(self.vault, ".genesis", "state.json"), {})
+
+    def test_a_program_with_no_build_for_the_drive_comes_as_its_source(self):
+        self.assertEqual(self.names(self.FLDIGI, self.LINUX), ["fldigi.tar.gz"])
+        self.assertEqual(self.names(self.FLDIGI, ["windows-x64"]), ["fldigi_setup.exe"], "a build is enough")
+        self.assertEqual(self.names(self.RUFUS, self.LINUX), [], "no source listed: nothing to bring")
+        both = {"files": [{"filename": "tool-linux-arm64", "platform": "linux-arm64"},
+                          {"filename": "manual.pdf"}, {"filename": "tool.tar.gz", "platform": "source"}]}
+        self.assertEqual(self.names(both, self.LINUX), ["tool-linux-arm64", "manual.pdf"])
+        self.assertEqual(self.names(both, ["windows-x64"]), ["manual.pdf", "tool.tar.gz"])
+        self.assertEqual(self.names(both, self.LINUX + ["source"]), ["tool-linux-arm64", "manual.pdf", "tool.tar.gz"],
+                         "asked for by name, the source comes beside the build, once")
+
+    def test_only_what_landed_on_the_drive_is_recorded(self):
+        code, state = self.run_fetch(self.selection(self.LINUX))
+        self.assertEqual(code, 0)
+        self.assertEqual(state["fldigi"]["files"], ["radio/fldigi.tar.gz"])
+        self.assertNotIn("rufus", state, "a program for another system leaves no record")
+        self.assertEqual(os.listdir(os.path.join(self.vault, "radio")), ["fldigi.tar.gz"])
+
+    def test_empty_records_from_an_older_genesis_are_looked_at_again(self):
+        write_json(os.path.join(self.vault, ".genesis", "state.json"), {
+            "fldigi": {"version": "4.2", "files": [], "pack": "radio"},
+            "rufus": {"version": "4.15", "files": [], "pack": "tools"},
+            "tiny": {"version": "abc", "files": [], "model": "tiny:1", "pack": "ai"}})
+        self.assertEqual(sorted(fetch._state(self.vault)), ["tiny"], "a model keeps its record: it lives in the model store")
+        code, state = self.run_fetch(self.selection(self.LINUX))
+        self.assertEqual(code, 0)
+        self.assertEqual(state["fldigi"]["files"], ["radio/fldigi.tar.gz"], "fetched now that the source counts")
+        self.assertEqual(sorted(state), ["fldigi", "tiny"])
+
+    def test_plan_and_status_leave_out_what_this_drive_cannot_carry(self):
+        sel, out = self.selection(self.LINUX), []
+        with mock.patch.object(fetch, "_selection", return_value=({"tier": "ark", "langs": ["eng"], "platforms": self.LINUX}, sel)), \
+                mock.patch("builtins.print", lambda *a: out.append(" ".join(map(str, a)))):
+            fetch.status(self.args)
+            fetch.plan(self.args)
+        said = "\n".join(out)
+        self.assertRegex(said, r"radio\s+0\s+0\s+1\b", "the source is still to fetch")
+        self.assertNotIn("tools", said, "Rufus is for Windows: neither missing nor planned")
+
+    def test_the_checksum_of_a_download_is_kept_in_its_record(self):
+        body = b"a book"
+        want = __import__("hashlib").sha256(body).hexdigest()
+        entry = {"kind": "zim", "dest": "zim", "version": "1"}
+        files = [{"filename": "book.zim", "url": "https://example.invalid/book.zim", "sha256": want, "size": len(body)}]
+
+        def download(url, dest, size=None):
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            with open(dest, "wb") as f:
+                f.write(body)
+        with mock.patch.object(fetch, "_download", side_effect=download):
+            got = fetch._fetch_item(self.vault, "book", entry, files, None, {}, None)
+        path = os.path.join(self.vault, "zim", "book.zim")
+        self.assertEqual(got["sums"], {"zim/book.zim": {"bytes": len(body), "mtime": int(os.path.getmtime(path)), "sha256": want}})
+        plain = [{"filename": "note.txt", "url": "https://example.invalid/note.txt", "size": len(body)}]
+        with mock.patch.object(fetch, "_download", side_effect=download):
+            got = fetch._fetch_item(self.vault, "note", dict(entry, dest="docs"), plain, None, {}, None)
+        self.assertNotIn("sums", got, "nothing is kept for a file that was only checked by its size")
+
+
 class VerifyTests(unittest.TestCase):
     def setUp(self):
         self.vault = tempfile.mkdtemp()
@@ -272,6 +363,76 @@ class SealTests(unittest.TestCase):
         self.assertEqual(seal.check(args), 1, "a changed file is caught by its hash")
         os.remove(os.path.join(vault, "c.txt"))
         self.assertEqual(seal.check(args), 1, "and so is a missing one")
+
+    def vault(self):
+        vault = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, vault, ignore_errors=True)
+        return vault
+
+    def put(self, vault, rel, text, when=None):
+        path = os.path.join(vault, *rel.split("/"))
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w") as f:
+            f.write(text)
+        if when:
+            os.utime(path, (when, when))
+        return path
+
+    def sealed(self, vault, quick=False):
+        """Seal, and say which files were read through to do it."""
+        read, real = [], seal.file_hash
+
+        def through(path, *a):
+            read.append(os.path.relpath(path, vault).replace(os.sep, "/"))
+            return real(path, *a)
+        with mock.patch.object(seal, "log"), mock.patch.object(seal.shutil, "which", return_value=None), \
+                mock.patch.object(seal.shutil, "make_archive"), mock.patch.object(seal, "file_hash", side_effect=through):
+            seal.seal(argparse.Namespace(vault=vault, quick=quick))
+        return read_json(os.path.join(vault, "restore", "MANIFEST.json"))["files"], sorted(r for r in read if not r.startswith("restore/"))
+
+    def test_a_quick_seal_reads_only_what_is_new_or_changed(self):
+        vault = self.vault()
+        self.put(vault, "zim/old.zim", "an old book", when=1000000000)
+        self.put(vault, "zim/changed.zim", "first words", when=1000000000)
+        first, read = self.sealed(vault)
+        self.assertEqual(read, ["zim/changed.zim", "zim/old.zim"], "a full seal reads everything")
+        self.assertEqual(first["zim/old.zim"]["mtime"], 1000000000)
+        self.put(vault, "zim/changed.zim", "other words")
+        got = self.put(vault, "zim/downloaded.zim", "proved when it was downloaded")
+        self.put(vault, "zim/stranger.zim", "nobody vouches for this one")
+        write_json(os.path.join(vault, ".genesis", "state.json"), {"book": {"version": "1", "files": ["zim/downloaded.zim"], "sums": {
+            "zim/downloaded.zim": {"bytes": os.path.getsize(got), "mtime": int(os.path.getmtime(got)), "sha256": file_hash(got)}}}})
+        second, read = self.sealed(vault, quick=True)
+        self.assertEqual(read, ["zim/changed.zim", "zim/stranger.zim"])
+        full, read = self.sealed(vault)
+        self.assertEqual(len(read), 4)
+        self.assertEqual({k: v["sha256"] for k, v in second.items() if k.startswith("zim/")},
+                         {k: v["sha256"] for k, v in full.items() if k.startswith("zim/")}, "and arrives at the same seal")
+        self.assertEqual(seal.check(argparse.Namespace(vault=vault)), 0)
+
+    def test_a_quick_seal_never_hides_damage_from_the_full_check(self):
+        vault = self.vault()
+        path = self.put(vault, "zim/book.zim", "every word in place", when=1000000000)
+        self.sealed(vault)
+        self.put(vault, "zim/book.zim", "every word in plaze", when=1000000000)  # the same size and time: bit rot
+        again, read = self.sealed(vault, quick=True)
+        self.assertEqual(read, [], "a quick seal takes an untouched file at its word")
+        self.assertNotEqual(again["zim/book.zim"]["sha256"], file_hash(path))
+        with mock.patch("builtins.print"):
+            self.assertEqual(seal.check(argparse.Namespace(vault=vault)), 1, "the check reads every file and finds it")
+
+    def test_a_seal_from_before_times_were_kept_still_vouches_for_untouched_files(self):
+        vault = self.vault()
+        old = self.put(vault, "zim/old.zim", "an old book", when=1000000000)
+        new = self.put(vault, "zim/new.zim", "came later")
+        last = os.path.join(vault, "restore", "MANIFEST.json")
+        write_json(last, {"sealed": "2026-11-17", "files": {"zim/old.zim": {"bytes": os.path.getsize(old), "sha256": file_hash(old)},
+                                                            "zim/new.zim": {"bytes": os.path.getsize(new), "sha256": "0" * 64}}})
+        os.utime(last, (1500000000, 1500000000))
+        again, read = self.sealed(vault, quick=True)
+        self.assertEqual(read, ["zim/new.zim"], "touched after that seal, so it is read again")
+        self.assertEqual(again["zim/new.zim"]["sha256"], file_hash(new))
+        self.assertEqual(again["zim/old.zim"], {"bytes": os.path.getsize(old), "mtime": 1000000000, "sha256": file_hash(old)})
 
 
 if __name__ == "__main__":
