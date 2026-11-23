@@ -310,9 +310,11 @@ class SafeOnTheDriveTests(unittest.TestCase):
             self.assertIn('genesis/bin/genesis" safe', f.read())
         with open(os.path.join(self.drive, "READ ME FIRST.txt"), encoding="utf-8") as f:
             guide = f.read()
-        self.assertIn('sh "%s/Start Genesis.sh"' % self.drive, guide, "the lines to type carry this machine's path to the drive")
+        self.assertIn('      sh "Start Genesis.sh"\n', guide)
+        self.assertIn("      sudo sh genesis/bin/genesis bootstick --pi\n", guide)
+        self.assertNotIn(self.drive, guide, "made ready on one machine, read on another: no path of this machine in it")
         self.assertIn("will offer to format it. Always answer no.", guide)
-        self.assertNotIn("%(", guide)
+        self.assertNotIn("%", guide)
         self.assertTrue(os.path.isfile(os.path.join(ROOT, "dashboard", "static", "icons", "lock.svg")))
 
     def test_what_people_keep_on_the_drive_is_left_out_of_the_seal(self):
