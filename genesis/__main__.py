@@ -81,12 +81,23 @@ def cmd_box(args):
     return {"ready": box.ready, "start": box.start, "stop": box.stop}[args.cmd](args)
 
 
+def cmd_safe(args):
+    from . import safe
+    return safe.main(args)
+
+
+def cmd_bootstick(args):
+    from . import bootstick
+    return bootstick.main(args)
+
+
 def _selection(p):
     p.add_argument("--tier", choices=catalog.TIERS, help="seed, ark or eden (cumulative)")
     p.add_argument("--pack", action="append", help="limit to a pack (repeatable)")
     p.add_argument("--id", action="append", help="fetch exact item ids (repeatable)")
     p.add_argument("--lang", help="comma separated ISO 639-3 codes, or * for every language")
-    p.add_argument("--platform", help="comma separated: " + ", ".join(catalog.PLATFORMS))
+    p.add_argument("--platform", help="comma separated: " + ", ".join(catalog.PLATFORMS)
+                   + ". What has no build for them comes as its source")
     p.add_argument("--tag", action="append", help="only items carrying this tag (repeatable)")
     p.add_argument("--also", action="append", help="an item to keep on top of the tier, by id (repeatable, remembered)")
     p.add_argument("--vault", help="where content lives (default: $GENESIS_VAULT or ./vault)")
@@ -166,6 +177,8 @@ def build_parser():
 
     p = sub.add_parser("seal", help="write an offline restore kit (images, repo, checksums) into the vault")
     p.add_argument("--vault")
+    p.add_argument("--quick", action="store_true",
+                   help="read only what is new: a file whose size and time have not changed keeps its checksum")
     p.set_defaults(fn=cmd_seal)
 
     p = sub.add_parser("ready", help="unpack what the drive carries so it starts with no Docker and no internet")
@@ -178,6 +191,25 @@ def build_parser():
     p = sub.add_parser("stop", help="stop what `genesis start` started")
     p.add_argument("--vault")
     p.set_defaults(fn=cmd_box)
+
+    p = sub.add_parser("safe", help="your own papers on the drive, locked behind a passphrase")
+    p.add_argument("action", nargs="?", choices=["open", "lock", "status"],
+                   help="with none: open the safe, or lock it when it is open")
+    p.add_argument("--empty", action="store_true", help="with lock: close an emptied folder and keep the safe as it was")
+    p.add_argument("--new-passphrase", action="store_true",
+                   help="with lock: lock it under a new passphrase (the old one is asked for first)")
+    p.add_argument("--vault")
+    p.set_defaults(fn=cmd_safe)
+
+    p = sub.add_parser("bootstick", help="make a USB stick that starts a PC, or a card that starts a Raspberry Pi")
+    p.add_argument("--device", help="the stick or card to erase, such as /dev/sdb. With none, the candidates are listed")
+    p.add_argument("--pi", action="store_true", help="write Raspberry Pi OS to a card instead of making a stick for a PC")
+    p.add_argument("--lite", action="store_true", help="with --pi: the system without a desktop")
+    p.add_argument("--iso", action="append", help="a system to put on the stick, by part of its file name (repeatable)")
+    p.add_argument("--yes", action="store_true", help="do not ask before erasing")
+    p.add_argument("--force", action="store_true", help="allow a disk that does not look like a stick or a card")
+    p.add_argument("--vault")
+    p.set_defaults(fn=cmd_bootstick)
     return ap
 
 
