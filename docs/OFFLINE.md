@@ -12,12 +12,14 @@ genesis seal        # optional: the SHA 256 of every file, so the drive can prov
 
 `genesis ready` does four things, all of them on the drive:
 
-* It unpacks the Kiwix server and Ollama for every machine the drive carries them for, into `vault/runtime/`.
+* It unpacks the Kiwix server, Ollama and 7-Zip for every machine the drive carries them for, into `vault/runtime/`.
 * It writes the list of books the Kiwix server reads when it starts. Given hundreds of books by name the server opens every one before it answers, which takes minutes on a hard disk. Given the list it answers in a second.
 * It draws the first page of every manual as its cover. This needs `pdftoppm`, from poppler.
-* It puts **Start Genesis** at the top of the drive and gives the folders their pictures.
+* It puts **Start Genesis** and **Genesis Safe** at the top of the drive, with `READ ME FIRST.txt`, one page that says how to use the drive, and gives the folders their pictures.
 
-Run it again after you add books.
+Run it again after you add books. After adding to a sealed drive, `genesis seal --quick` brings the seal up to date by reading only what is new: a file whose size and time have not changed keeps the checksum it had, and a download keeps the one it was proved with. `genesis verify --sealed` still reads every file.
+
+Two more things live on the drive beside the library: a locked safe for your own papers ([SAFE.md](SAFE.md)), and the means to make a USB stick that starts a PC or a spare card for the Pi ([BOOTSTICK.md](BOOTSTICK.md)).
 
 ## Every time after that
 
