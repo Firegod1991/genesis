@@ -98,9 +98,18 @@ def tier_includes(selected, item_tier):
 
 
 def wanted_files(entry, platforms):
-    """Files of an entry that apply to the chosen platforms."""
-    return [f for f in entry.get("files", [])
-            if f.get("platform") in (None, "any") or f.get("platform") in platforms]
+    """Files of an entry that apply to the chosen platforms.
+
+    A program with no build for any of the machines chosen still comes along as its source, when the
+    catalog lists one: a drive filled for Linux carries the source of what is published only for
+    Windows, for macOS or as source alone, and what has a build for the drive's machines carries only that.
+    """
+    files = entry.get("files", [])
+    wanted = [f for f in files if f.get("platform") in (None, "any") or f.get("platform") in platforms]
+    built = any(f.get("platform") in platforms for f in files if f.get("platform") not in (None, "any", "source"))
+    if not built:
+        wanted += [f for f in files if f.get("platform") == "source" and f not in wanted]
+    return wanted
 
 
 def select(tier="seed", packs=None, ids=None, langs=None, platforms=None, tags=None):
