@@ -27,7 +27,9 @@ LIBRARY = os.path.join(".genesis", "library.xml")
 # How the archives in <vault>/tools name each machine, and what Genesis calls it.
 KIWIX = re.compile(r"^kiwix-tools_(linux-aarch64|linux-x86_64)-[\w.]+\.tar\.gz$")
 OLLAMA = re.compile(r"^ollama-linux-(arm64|amd64)\.tar\.zst$")
-MACHINE = {"linux-aarch64": "linux-arm64", "linux-x86_64": "linux-x64", "arm64": "linux-arm64", "amd64": "linux-x64"}
+SEVEN = re.compile(r"^7z\d+-linux-(arm64|x64)\.tar\.xz$")
+MACHINE = {"linux-aarch64": "linux-arm64", "linux-x86_64": "linux-x64", "arm64": "linux-arm64", "amd64": "linux-x64",
+           "x64": "linux-x64"}
 
 DESKTOP = """[Desktop Entry]
 Type=Application
@@ -41,6 +43,73 @@ Categories=Education;
 START = """#!/bin/sh
 # Start Genesis from this drive. Needs nothing but the drive and Python 3, which Raspberry Pi OS has.
 exec sh "$(dirname "$0")/genesis/bin/genesis" start "$@"
+"""
+SAFE_DESKTOP = """[Desktop Entry]
+Type=Application
+Name=Genesis Safe
+Comment=Your own papers, locked behind a passphrase
+Exec=sh -c 'exec sh "$(dirname "$1")/Genesis Safe.sh"' genesis %%k
+Icon=%s
+Terminal=true
+Categories=Utility;
+"""
+SAFE = """#!/bin/sh
+# Open the safe on this drive, or lock it when it is open: your own papers, kept behind a passphrase.
+sh "$(dirname "$0")/genesis/bin/genesis" safe "$@"
+printf '\\nPress Enter to close this window. '
+read _
+"""
+GUIDE = """GENESIS: start here
+===================
+
+This drive is a library, a map of the planet, manuals, scripture, radio tools and an assistant
+that runs on your own machine. None of it needs the internet. It runs on a Raspberry Pi or on
+any Linux PC that has Python 3.
+
+START IT
+  Double click "Start Genesis" on this drive. If it asks, choose Execute.
+  Or in a terminal:
+
+      sh "%(drive)s/Start Genesis.sh"
+
+  The browser opens http://localhost:8080  That page is Genesis. Type what you need.
+  The page is up in a few seconds. The book reader and the assistant follow within a minute.
+  Phones and laptops on the same network can open port 8080 of this machine.
+
+STOP IT
+      sh "%(drive)s/genesis/bin/genesis" stop
+
+ON A RASPBERRY PI 5
+  Use the official 27 W power supply. With a weaker one the Pi limits USB power and a hard
+  disk may not spin up. A powered USB hub also works. Plug the drive into a blue USB port.
+
+YOUR OWN PAPERS
+  Double click "Genesis Safe" to keep identity papers, deeds and medical records on this
+  drive behind a passphrase. Nobody can recover a forgotten passphrase.
+
+IF THIS DRIVE IS ALL YOU HAVE LEFT
+  It opens on Linux. A computer that runs Windows, or one whose own system is dead, has to be
+  started from a boot stick first. Make one now, while you can, from any USB stick:
+
+      sudo sh "%(drive)s/genesis/bin/genesis" bootstick
+
+  And a spare card for the Pi:
+
+      sudo sh "%(drive)s/genesis/bin/genesis" bootstick --pi
+
+  Windows cannot read this drive and will offer to format it. Always answer no.
+
+IF SOMETHING GOES WRONG
+  Notes will not save: the drive belongs to another user. Run once:
+      sudo chown -R $USER "%(drive)s"
+  The double click does nothing: use the terminal line under START IT.
+  To check every file on the drive against its seal:
+      sh "%(drive)s/genesis/bin/genesis" verify --sealed
+
+WHAT IS WHERE
+  vault/     everything: books, maps, manuals, models, scripture, programs, systems
+  genesis/   the program itself. Nothing in it needs the internet.
+  More: genesis/README.md and genesis/docs/
 """
 FOLDERS = {"zim": "book", "documents": "manual", "maps": "map", "scripture": "scripture", "models": "assistant",
            "tools": "tools", "apps": "phone", "isos": "disc", "radio": "radio", "poi": "pin", "code": "code",
@@ -97,7 +166,7 @@ def _mark(folder, archive):
 
 
 def unpack_programs(vault):
-    """Unpack the Kiwix server and Ollama the drive carries, for every machine it carries them for."""
+    """Unpack the Kiwix server, Ollama and 7-Zip the drive carries, for every machine it carries them for."""
     tools, done = os.path.join(vault, "tools"), []
     for name in sorted(os.listdir(tools)) if os.path.isdir(tools) else []:
         path = os.path.join(tools, name)
@@ -132,6 +201,22 @@ def unpack_programs(vault):
                     raise OSError("zstd could not read %s" % name)
             _mark(into, path)
             done.append("Ollama for %s" % MACHINE[ollama.group(1)])
+        elif SEVEN.match(name):
+            machine = MACHINE[SEVEN.match(name).group(1)]
+            into = os.path.join(runtime(vault, machine), "7zip")
+            if _fresh(into, path):
+                continue
+            try:
+                import lzma  # noqa: F401 - tarfile reads .xz through it, and a few small systems ship Python without it
+            except ImportError:
+                log("  this Python cannot read .xz, so %s stays packed" % name)
+                continue
+            shutil.rmtree(into, ignore_errors=True)
+            os.makedirs(into)
+            with tarfile.open(path) as t:  # the program in its two builds and its license: the manual stays packed
+                _unpack(((m, t.extractfile) for m in t if m.name in ("7zz", "7zzs", "License.txt")), into)
+            _mark(into, path)
+            done.append("7-Zip for %s" % machine)
     return done
 
 
@@ -223,8 +308,8 @@ def drive_root(vault):
 
 
 def dress(vault):
-    """Give the drive a front door and its folders their pictures. File managers on the Raspberry Pi
-    read a folder's picture from a `.directory` file inside it, and want the full path."""
+    """Give the drive a front door, a page that says how to use it, and its folders their pictures. File
+    managers on the Raspberry Pi read a folder's picture from a `.directory` file inside it, and want the full path."""
     icons = os.path.join(ROOT, "dashboard", "static", "icons")
     made = 0
     for name, icon in FOLDERS.items():
@@ -239,8 +324,14 @@ def dress(vault):
             f.write(START)
         with open(os.path.join(root, "Start Genesis.desktop"), "w", encoding="utf-8", newline="\n") as f:
             f.write(DESKTOP % os.path.join(icons, "genesis.svg"))
-        for name in ("Start Genesis.sh", "Start Genesis.desktop"):
+        with open(os.path.join(root, "Genesis Safe.sh"), "w", encoding="utf-8", newline="\n") as f:
+            f.write(SAFE)
+        with open(os.path.join(root, "Genesis Safe.desktop"), "w", encoding="utf-8", newline="\n") as f:
+            f.write(SAFE_DESKTOP % os.path.join(icons, "lock.svg"))
+        for name in ("Start Genesis.sh", "Start Genesis.desktop", "Genesis Safe.sh", "Genesis Safe.desktop"):
             os.chmod(os.path.join(root, name), 0o755)
+        with open(os.path.join(root, "READ ME FIRST.txt"), "w", encoding="utf-8", newline="\n") as f:
+            f.write(GUIDE % {"drive": root})  # the lines to type carry this machine's own path to the drive
         for name, icon in (("vault", "seal"), ("genesis", "gear")):
             if os.path.isdir(os.path.join(root, name)) and os.path.isfile(os.path.join(icons, icon + ".svg")):
                 with open(os.path.join(root, name, ".directory"), "w", encoding="utf-8") as f:
