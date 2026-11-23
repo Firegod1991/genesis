@@ -68,16 +68,19 @@ any Linux PC that has Python 3.
 
 START IT
   Double click "Start Genesis" on this drive. If it asks, choose Execute.
-  Or in a terminal:
+  Or open a terminal in this folder, the top of the drive, and type:
 
-      sh "%(drive)s/Start Genesis.sh"
+      sh "Start Genesis.sh"
+
+  In the file manager, a right click in this folder offers to open a terminal here.
+  Every line on this page is typed in that terminal.
 
   The browser opens http://localhost:8080  That page is Genesis. Type what you need.
   The page is up in a few seconds. The book reader and the assistant follow within a minute.
   Phones and laptops on the same network can open port 8080 of this machine.
 
 STOP IT
-      sh "%(drive)s/genesis/bin/genesis" stop
+      sh genesis/bin/genesis stop
 
 ON A RASPBERRY PI 5
   Use the official 27 W power supply. With a weaker one the Pi limits USB power and a hard
@@ -91,20 +94,20 @@ IF THIS DRIVE IS ALL YOU HAVE LEFT
   It opens on Linux. A computer that runs Windows, or one whose own system is dead, has to be
   started from a boot stick first. Make one now, while you can, from any USB stick:
 
-      sudo sh "%(drive)s/genesis/bin/genesis" bootstick
+      sudo sh genesis/bin/genesis bootstick
 
   And a spare card for the Pi:
 
-      sudo sh "%(drive)s/genesis/bin/genesis" bootstick --pi
+      sudo sh genesis/bin/genesis bootstick --pi
 
   Windows cannot read this drive and will offer to format it. Always answer no.
 
 IF SOMETHING GOES WRONG
   Notes will not save: the drive belongs to another user. Run once:
-      sudo chown -R $USER "%(drive)s"
+      sudo chown -R $USER .
   The double click does nothing: use the terminal line under START IT.
   To check every file on the drive against its seal:
-      sh "%(drive)s/genesis/bin/genesis" verify --sealed
+      sh genesis/bin/genesis verify --sealed
 
 WHAT IS WHERE
   vault/     everything: books, maps, manuals, models, scripture, programs, systems
@@ -331,7 +334,7 @@ def dress(vault):
         for name in ("Start Genesis.sh", "Start Genesis.desktop", "Genesis Safe.sh", "Genesis Safe.desktop"):
             os.chmod(os.path.join(root, name), 0o755)
         with open(os.path.join(root, "READ ME FIRST.txt"), "w", encoding="utf-8", newline="\n") as f:
-            f.write(GUIDE % {"drive": root})  # the lines to type carry this machine's own path to the drive
+            f.write(GUIDE)  # no path of this machine in it: the drive is made ready on one machine and read on another
         for name, icon in (("vault", "seal"), ("genesis", "gear")):
             if os.path.isdir(os.path.join(root, name)) and os.path.isfile(os.path.join(icons, icon + ".svg")):
                 with open(os.path.join(root, name, ".directory"), "w", encoding="utf-8") as f:
