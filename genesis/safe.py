@@ -13,6 +13,7 @@ with 7-Zip opens it with the same passphrase, with or without Genesis.
 
 import getpass
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -61,18 +62,37 @@ def workdir():
     return os.path.join(tempfile.gettempdir(), "genesis-safe-%s" % who), False
 
 
+_known = {}  # whether each 7-Zip found on this machine can be used, by its path
+
+
+def takes_stdin(exe):
+    """True for a 7-Zip that can be handed a passphrase on its standard input. The old p7zip that many
+    Linux systems still install as `7z` asks the terminal itself instead, and with nothing on the screen
+    to say so it would look as if Genesis had stopped."""
+    if exe not in _known:
+        try:
+            said = subprocess.run([exe], stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                  timeout=30).stdout.decode("utf-8", "replace")
+        except (OSError, subprocess.SubprocessError):
+            said = ""
+        version = re.search(r"7-Zip[^\n]*?\b(\d+)\.\d+", said)
+        _known[exe] = bool(version) and int(version.group(1)) >= 16 and "p7zip" not in said.lower()
+    return _known[exe]
+
+
 def seven_zip(vault, unpack=True):
-    """The 7-Zip program for this machine: the one the drive carries, or one already installed."""
+    """The 7-Zip program for this machine: the one the drive carries, or one already installed that can
+    be handed a passphrase."""
     own = os.path.join(box.runtime(vault), "7zip")
-    places = [os.path.join(own, name) for name in ("7zzs", "7zz", "7zz.exe", "7z.exe")]
-    places += [os.path.join(os.environ.get(var, ""), "7-Zip", "7z.exe") for var in ("ProgramFiles", "ProgramFiles(x86)")]
-    for path in places:
-        if os.path.isfile(path):
+    for name in ("7zzs", "7zz", "7zz.exe", "7z.exe"):
+        if os.path.isfile(os.path.join(own, name)):
+            return os.path.join(own, name)
+    installed = [os.path.join(os.environ[var], "7-Zip", "7z.exe") for var in ("ProgramFiles", "ProgramFiles(x86)")
+                 if os.environ.get(var)]
+    installed = [p for p in installed if os.path.isfile(p)] + [shutil.which(name) for name in ("7zz", "7z", "7za")]
+    for path in installed:
+        if path and takes_stdin(path):
             return path
-    for name in ("7zz", "7z", "7za"):
-        found = shutil.which(name)
-        if found:
-            return found
     if unpack and os.path.isdir(os.path.join(vault, "tools")):
         try:  # a drive that carries 7-Zip and has not been made ready: unpacking it needs nothing but Python
             box.unpack_programs(vault)
@@ -82,16 +102,19 @@ def seven_zip(vault, unpack=True):
     return None
 
 
-def _seven(exe, args, secret, cwd=None):
-    """Run 7-Zip with the passphrase on its standard input. Returns its exit code and what it said."""
-    done = subprocess.run((exe if isinstance(exe, list) else [exe]) + args, input=(secret + "\n").encode("utf-8"),
-                          stdout=subprocess.PIPE, stderr=subprocess.STDOUT, cwd=cwd)
+def _seven(exe, command, args, secret, cwd=None):
+    """Run 7-Zip with the passphrase on its standard input. Returns its exit code and what it said.
+
+    -scc says the passphrase arrives as UTF 8. Left to itself on Windows, 7-Zip reads it in the code page
+    of the console, and a passphrase with letters beyond ASCII would then open on that one machine only."""
+    done = subprocess.run((exe if isinstance(exe, list) else [exe]) + [command, "-sccUTF-8", "-bso0", "-bsp0"] + args,
+                          input=(secret + "\n").encode("utf-8"), stdout=subprocess.PIPE, stderr=subprocess.STDOUT, cwd=cwd)
     return done.returncode, done.stdout.decode("utf-8", "replace").strip()
 
 
 def _opens(exe, path, secret):
     # No -p here: given a bare -p, 7-Zip takes the passphrase to be empty when it opens an archive.
-    return _seven(exe, ["t", "-bso0", "-bsp0", path], secret)[0] == 0
+    return _seven(exe, "t", [path], secret)[0] == 0
 
 
 def _ask(prompt):
@@ -181,8 +204,14 @@ def status(vault):
 
 
 def _no_program():
-    log("7-Zip is needed for the safe and was not found. The tools pack carries it: run `genesis fetch --id sevenzip`, "
-        "then `genesis ready`. Or install 7-Zip on this machine.")
+    old = sorted(path for path, usable in _known.items() if not usable)
+    if old:
+        log("The 7-Zip on this machine (%s) is the old p7zip, or older than version 16, and cannot be handed a passphrase. "
+            "The tools pack carries a current one: run `genesis fetch --id sevenzip`, then `genesis ready`. Or install "
+            "a current 7-Zip: on Debian and Raspberry Pi OS the package is called 7zip." % old[0])
+    else:
+        log("7-Zip is needed for the safe and was not found. The tools pack carries it: run `genesis fetch --id sevenzip`, "
+            "then `genesis ready`. Or install 7-Zip on this machine.")
     return 1
 
 
@@ -205,7 +234,7 @@ def open_safe(vault):
         for _ in range(3):
             secret = _ask("Passphrase for the safe: ")
             os.makedirs(work, mode=0o700)
-            code, said = _seven(exe, ["x", "-y", "-bso0", "-bsp0", "-o" + work, path], secret)
+            code, said = _seven(exe, "x", ["-y", "-o" + work, path], secret)
             if code == 0:
                 break
             _wipe(work, memory)
@@ -271,7 +300,7 @@ def lock_safe(vault, empty=False, renew=False):
     new = os.path.join(folder(vault), NEW)
     if os.path.exists(new):
         os.remove(new)
-    code, said = _seven(exe, ["a", "-t7z", "-mhe=on", "-mx=3", "-bso0", "-bsp0", "-p", new, "."], secret, cwd=work)
+    code, said = _seven(exe, "a", ["-t7z", "-mhe=on", "-mx=3", "-p", new, "."], secret, cwd=work)
     if code != 0 or not os.path.isfile(new) or not _opens(exe, new, secret):
         if os.path.exists(new):
             os.remove(new)
