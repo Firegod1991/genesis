@@ -20,6 +20,7 @@
   <a href="#scripture" data-view="scripture"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/scripture.svg#g"/></svg>Scripture</a>
   <a href="#radio" data-view="radio"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/radio.svg#g"/></svg>Radio</a>
   <a href="#notes" data-view="notes"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/note.svg#g"/></svg>Notes</a>
+  <a href="#safe" data-view="safe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/lock.svg#g"/></svg>Safe</a>
   <a href="#programs" data-view="programs"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/tools.svg#g"/></svg>Programs</a>
   <a href="#system" data-view="system"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/gear.svg#g"/></svg>System</a>
   <button id="night" type="button" aria-pressed="false" title="Red light keeps your eyes adjusted to the dark">Night vision</button>
@@ -130,6 +131,14 @@
     </div>
   </section>
 
+  <section id="view-safe" class="view" hidden>
+    <h1>Safe</h1>
+    <p class="lede">A locked place on the drive for your own papers: identity papers, deeds, medical records, pictures of what cannot be replaced. One passphrase opens it, and nobody can recover that passphrase for you.</p>
+    <p id="safe-state" class="hint"></p>
+    <ol id="safe-steps"></ol>
+    <p class="hint">The safe opens on the box itself and never through this page, so its passphrase is typed on the box and nowhere else. Open, your papers are an ordinary folder kept in memory. Lock the safe before you switch off, or what you changed is lost. On the drive it is one file, <code>files/safe/safe.7z</code>, which any computer with 7-Zip opens with the same passphrase.</p>
+  </section>
+
   <section id="view-programs" class="view" hidden>
     <h1>Programs</h1>
     <p class="lede">For the other computers and phones you may still have. Open this page from one of them while it is joined to the box, and take what it needs.</p>
@@ -139,7 +148,7 @@
     <h2>Desktop programs</h2>
     <div id="programs-tools" class="rows"></div>
     <h2>Systems to install</h2>
-    <p class="hint">Whole operating systems. Write one to a USB stick to bring a dead computer back.</p>
+    <p class="hint">Whole operating systems. Write one to a USB stick to bring a dead computer back. On the box, <code>sudo genesis bootstick</code> makes a stick that starts a PC from these, and <code>sudo genesis bootstick --pi</code> writes a spare card for a Raspberry Pi.</p>
     <div id="programs-isos" class="rows"></div>
   </section>
 
