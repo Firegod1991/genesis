@@ -7,6 +7,7 @@ programs the drive carries, lists the library and draws the covers. `genesis sta
 nothing but Python and the drive.
 """
 
+import http.client
 import os
 import re
 import shutil
@@ -17,6 +18,7 @@ import sys
 import tarfile
 import tempfile
 import time
+import urllib.request
 import webbrowser
 import zipfile
 
@@ -24,6 +26,7 @@ from . import catalog
 from .util import ROOT, log, read_json, write_json
 
 DASHBOARD_PORT, KIWIX_PORT, OLLAMA_PORT = 8080, 8081, 11434
+SPARE_PORTS = (8090, 8765, 8780)  # for the dashboard, when another program on the machine holds its usual port
 LIBRARY = os.path.join(".genesis", "library.xml")
 # How the archives in <vault>/tools name each machine, and what Genesis calls it.
 KIWIX = re.compile(r"^kiwix-tools_(linux-aarch64|linux-x86_64|macos-arm64|macos-x86_64|win-x86_64)"
@@ -418,6 +421,24 @@ def _listening(port):
         return False
 
 
+def _ours(port):
+    """True when what answers on this port is the Genesis dashboard, not another program that took the port."""
+    try:
+        with urllib.request.urlopen("http://127.0.0.1:%d/" % port, timeout=3) as answer:
+            return b"<title>genesis</title>" in answer.read(4096).lower()
+    except (OSError, ValueError, http.client.HTTPException):
+        return False
+
+
+def door(wanted):
+    """The port the dashboard answers on: the usual one, unless another program on this machine holds it.
+    Then the first spare port that is free, or where Genesis is already answering."""
+    for port in (wanted,) + tuple(p for p in SPARE_PORTS if p != wanted):
+        if not _listening(port) or _ours(port):
+            return port
+    return wanted
+
+
 def _spawn(cmd, env, logname):
     out = open(os.path.join(_run_dir(), logname), "ab")
     kw = {"creationflags": getattr(subprocess, "CREATE_NO_WINDOW", 0)} if os.name == "nt" else {"start_new_session": True}
@@ -518,6 +539,11 @@ def start(args):
         except OSError as e:
             log("could not unpack the programs on the drive: %s" % e)
     many_files()
+    usual = int(os.environ.get("GENESIS_PORT", DASHBOARD_PORT))
+    port = door(usual)
+    if port != usual:
+        log("another program on this machine is using port %d, so Genesis answers on port %d" % (usual, port))
+        os.environ["GENESIS_PORT"] = str(port)
     state, missing = read_json(os.path.join(_run_dir(), "box.json"), {}), []
     for name, port, cmd, extra in plan(vault):
         if _listening(port):
