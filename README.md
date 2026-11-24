@@ -12,6 +12,36 @@ Genesis turns any computer into a self contained command center that keeps worki
 
 The repository holds the brain: the catalog and the tools. Your drive holds the vault: the content itself, from 24 GB to more than 2 TB depending on the tier you pick.
 
+## See it
+
+A robot takes every picture on this page from a small test vault, each time the dashboard changes. What you see is what runs. Click a picture to see it full size.
+
+<table>
+<tr>
+<td width="50%" valign="top"><a href="docs/img/home.png"><img src="docs/img/home.png" alt="The front door: one question box and a tile for every section"></a><br><b>The front door.</b> One box. Type what you need.</td>
+<td width="50%" valign="top"><a href="docs/img/search.png"><img src="docs/img/search.png" alt="Results for clean water from the manuals, the books and the pages inside the books"></a><br><b>One question, every shelf.</b> Manuals, books and the pages inside the books.</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><a href="docs/img/manuals.png"><img src="docs/img/manuals.png" alt="Shelves of manuals, each with its cover"></a><br><b>Manuals with their covers.</b> Written by the agencies that teach these skills.</td>
+<td width="50%" valign="top"><a href="docs/img/plants.png"><img src="docs/img/plants.png" alt="The plant guides, with the rules to read before eating anything"></a><br><b>Plants, region by region.</b> The rules that keep you alive come first.</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><a href="docs/img/library.png"><img src="docs/img/library.png" alt="The library: books for survival, repair and medicine"></a><br><b>The library.</b> Every book opens with one click.</td>
+<td width="50%" valign="top"><a href="docs/img/reader.png"><img src="docs/img/reader.png" alt="A book open inside the dashboard"></a><br><b>Read it right there.</b> With its pictures and its own search.</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><a href="docs/img/scripture.png"><img src="docs/img/scripture.png" alt="Scripture from the Hebrew, Greek and Latin sources to English"></a><br><b>Scripture.</b> From the Hebrew, Greek and Latin sources to today.</td>
+<td width="50%" valign="top"><a href="docs/img/radio.png"><img src="docs/img/radio.png" alt="Distress and calling frequencies"></a><br><b>Radio.</b> Who to call, on what frequency, and how.</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="74%" valign="top"><a href="docs/img/night.png"><img src="docs/img/night.png" alt="Night vision mode: the whole screen in red light"></a><br><b>Night vision.</b> Red light, so reading a map in the dark does not cost you your night eyes.</td>
+<td width="26%" valign="top"><a href="docs/img/phone.png"><img src="docs/img/phone.png" alt="The front door on a phone"></a><br><b>On any phone.</b> Every phone on the same network opens the same pages.</td>
+</tr>
+</table>
+
 ## What is in the catalog
 
 2,824 items at launch (November 2026). The full list with versions and sizes is generated into [docs/CATALOG.md](docs/CATALOG.md) on every refresh.
@@ -81,8 +111,6 @@ genesis stop
 ```
 
 `genesis ready` unpacks the Kiwix server, Ollama and 7-Zip the drive carries, for the Pi and for PCs, writes the list of books so the reader opens hundreds of them in a second, draws a cover for every manual and puts a **Start Genesis** icon and a page that says how to use the drive at the top of it. `genesis start` needs only Python 3, which Raspberry Pi OS has: no Docker, no install, no network.
-
-![The front door: one question box and a tile for every section](docs/img/home.png)
 
 The page it opens asks one question, *What do you need?*, and searches the manuals, the books and the pages inside the books. Behind it are shelves of manuals with their covers, the plant guides region by region under the rules that keep you alive, the library, the map, scripture, a notebook kept on the drive, and an assistant that runs on the box and reads the library before it answers. See [docs/OFFLINE.md](docs/OFFLINE.md).
 
@@ -212,8 +240,6 @@ Start with chapter 13 of the guide, Emergencies: what to do first. Its laws, pri
 | `routing` | Offline turn by turn routing engine |
 
 The dashboard has a night vision mode that switches the whole screen to red light, so reading a map at night does not cost you your dark adapted eyes.
-
-![Night vision mode](docs/img/night.png)
 
 ## It stays current by itself
 
