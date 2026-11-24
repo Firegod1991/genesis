@@ -5,6 +5,7 @@
 [![CI](https://github.com/Firegod1991/genesis/actions/workflows/ci.yml/badge.svg)](https://github.com/Firegod1991/genesis/actions/workflows/ci.yml)
 [![Monthly refresh](https://github.com/Firegod1991/genesis/actions/workflows/refresh.yml/badge.svg)](https://github.com/Firegod1991/genesis/actions/workflows/refresh.yml)
 [![Dashboard assets](https://github.com/Firegod1991/genesis/actions/workflows/assets.yml/badge.svg)](https://github.com/Firegod1991/genesis/actions/workflows/assets.yml)
+[![Starts on every machine](https://github.com/Firegod1991/genesis/actions/workflows/start.yml/badge.svg)](https://github.com/Firegod1991/genesis/actions/workflows/start.yml)
 
 Genesis turns any computer into a self contained command center that keeps working when the internet, the power grid and the phone network do not. One catalog tracks the newest version of everything worth keeping: the world's knowledge, maps of the whole planet, where the water, hospitals, fuel and power are, the Bible from its ancient source languages to today, radio and mesh communications, local AI, programming toolchains and bootable operating systems. One command downloads and verifies it. A robot refreshes the catalog every month.
 
@@ -64,38 +65,78 @@ A robot takes every picture on this page from a small test vault, each time the 
 
 ## Tiers
 
-Tiers are cumulative. Sizes are for English content on Linux; more languages add more.
+Tiers are cumulative, and the starter is a part of seed. Sizes are for English content on Linux; more languages add more.
 
 | Tier | Size | For |
 |---|---|---|
+| **starter** | about 1.1 GB | A first look. Every manual of seed, ten books, a world map and the Bible. |
 | **seed** | about 24 GB | A USB stick or a Raspberry Pi. The essentials in every pack. |
 | **ark** | about 780 GB | A 1 TB drive. Full Wikipedia with images, field manuals, every toolchain. |
 | **eden** | about 2 TB | Everything, including the full detail planet map and the largest libraries. |
 
-## Quick start
+## Start it
 
-On Debian, Ubuntu or Raspberry Pi OS:
+Two lines on a Raspberry Pi, a Linux PC or a Mac. A double click on Windows. No Docker, and nothing to install but Python 3.9 or newer, which a Raspberry Pi already has.
+
+The first start asks one question: bring down the **starter** (about 1.1 GB: every manual and plant guide, ten books with the best of Wikipedia, a map of the world and the Bible), the **seed** tier (about 24 GB), or nothing yet. Then Genesis opens in your browser. Everything it downloads lands in a `vault` folder inside the copy you made.
+
+**Raspberry Pi or any Linux PC**
+
+```sh
+git clone https://github.com/Firegod1991/genesis
+sh genesis/bin/genesis start
+```
+
+**Mac**, with Intel or Apple silicon. Open Terminal and type the same two lines:
+
+```sh
+git clone https://github.com/Firegod1991/genesis
+sh genesis/bin/genesis start
+```
+
+A Mac offers to install Apple's command line tools the first time you type `git`. Say yes: they bring git and Python. The book reader is built for macOS 12 and newer.
+
+**Windows 10 or 11**
+
+1. Install Python from the Microsoft Store or from [python.org](https://www.python.org/downloads/).
+2. Press the green **Code** button at the top of this page, choose **Download ZIP** and unpack it.
+3. Double click **Start Genesis** in the unpacked folder.
+
+Windows may ask whether to let Python and the book reader through its firewall. Yes lets the phones on your network open Genesis. No keeps it to this PC.
+
+Stop it with `sh genesis/bin/genesis stop`, or with **Stop Genesis** on Windows. If another program already uses port 8080, Genesis takes the next free port and tells you which.
+
+| Machine | What runs | How it was proven |
+|---|---|---|
+| Raspberry Pi 5, and Linux on ARM | The front door, manuals, maps, scripture, the book reader and the assistant | Started on every change on an ARM machine at GitHub, the kind of processor a Pi 5 has. The assistant for ARM has only run under emulation. Not yet on a Pi itself |
+| Linux PC | The same | Started on every change, and by hand from a real drive of more than 400 books |
+| Mac, Intel or Apple silicon | The front door, manuals, maps, scripture and the book reader | Started on every change on an Intel Mac (macOS 15) and an Apple silicon Mac (macOS 26), with the Python 3.9 that Apple's tools install |
+| Windows | The same as a Mac | Started on every change by its launcher, and by hand on Windows 11 from the ZIP |
+
+On Windows the assistant answers through an [Ollama](https://ollama.com) already running on the PC, with that PC's own models. That was tried on Windows 11. A Mac should do the same and has not been tried.
+
+### More than the starter
+
+```sh
+genesis fetch --tier seed       # the essentials of every pack, about 24 GB
+genesis plan --tier ark         # what a tier costs in disk space before you commit
+genesis doctor                  # what this machine can carry
+genesis update                  # newer versions of what you have
+```
+
+`genesis` here is `sh genesis/bin/genesis` on a Pi, a Linux PC or a Mac, and `genesis` typed in the unpacked folder on Windows. Put the vault on another drive with `--vault /path/to/folder` or `export GENESIS_VAULT=/path/to/folder`.
+
+### The full station, with Docker
+
+On Debian, Ubuntu or Raspberry Pi OS, `install.sh` adds the `genesis` command, Docker if you agree, and the services behind the dashboard: chat, notes, file sharing, radio receivers and more.
 
 ```sh
 git clone https://github.com/Firegod1991/genesis
 cd genesis
 bash install.sh                 # base packages, Docker if you agree, the genesis command
-genesis doctor                  # what this machine can carry
-genesis plan --tier seed        # what it costs in disk space
 genesis fetch --tier seed       # download and verify, four files at a time
 genesis up core                 # dashboard at http://localhost:8080
 genesis timer                   # update everything once a month
-```
-
-Put the vault on another drive with `export GENESIS_VAULT=/mnt/bigdrive/genesis`.
-
-Everything below works with nothing but Python 3 and curl, so the catalog and the vault tools also run on macOS and straight on Windows, where the dashboard starts by itself and the other services wait for Docker:
-
-```powershell
-py -m genesis doctor
-py -m genesis fetch --tier seed --vault E:\genesis
-$env:GENESIS_VAULT = "E:\genesis"
-py dashboard\server.py          # dashboard at http://localhost:8080
 ```
 
 Filling a drive on one machine for another? Name the machine it is for. `genesis fetch --tier seed --platform linux-arm64,android` loads a drive for a Raspberry Pi from any computer. A program that has no build for the machines you name comes as its source, so nothing in the tier is left behind, and a program published only for another system is passed over and never counted as installed. The AI models ride along when Ollama is installed on that computer: they go into the vault, never into your own model library.
@@ -270,9 +311,24 @@ Full credits in [CREDITS.md](CREDITS.md).
 
 Genesis is new. This is what has and has not been proven.
 
-**Tested** in continuous integration and against live sources: the catalog resolvers, downloads with checksum verification, survival layer builds with osmium, map extraction from the live planet build, the dashboard in a headless browser, its API, the compose files, the core services started from a real vault, the published world data fetched and queried on a clean machine, the catalog tools and the dashboard on Windows, a 643 GB fill of a real drive with every file checked, the start with no Docker from that drive on a PC: the reader with 407 books, search inside them, and a local model answering, the safe with the real 7-Zip on Linux and on Windows, and the boot stick and the spare card on disk images: Ventoy installed by its own installer with a live system copied and compared, and Raspberry Pi OS written, read back and its boot files found in place.
+**Tested on every change**, in continuous integration and against live sources:
 
-**Not yet tested on real hardware:** the radio profiles with an actual SDR, the NVIDIA GPU path, a Raspberry Pi itself, and a boot stick or a spare card made on a physical stick or card and started on a real machine. The programs for the Pi run under emulation; the first report from a real one is welcome.
+* the catalog resolvers, downloads with checksum verification, survival layer builds with osmium and map extraction from the live planet build
+* the dashboard in a headless browser, page by page, and its API
+* the start with no Docker on a Linux PC, on Linux on ARM, on Windows, on an Intel Mac and on an Apple silicon Mac: the front door, the book reader, search inside the books, a manual and scripture each answering, with the Python each machine came with, from 3.9 to 3.14
+* a first start on a fresh copy that brings down the starter
+* the compose files, and the core services started from a real vault
+* the published world data fetched and queried on a clean machine
+
+**Tested by hand:**
+
+* a full `ark` fill on a 2 TB drive: 644 items and 409 books in 1.04 TB, each checked against its publisher's checksum, then made ready and sealed
+* the start with no Docker from that drive on a PC: every one of the 409 books opening in the reader, and search answering from the pages inside them
+* the Windows launchers on Windows 11 from the ZIP, with the assistant answering through the PC's own Ollama
+* the safe with the real 7-Zip on Linux and on Windows
+* the boot stick and the spare card on disk images: Ventoy installed by its own installer with a live system copied and compared, and Raspberry Pi OS written, read back and its boot files found in place
+
+**Not yet tested on real hardware:** the radio profiles with an actual SDR, the NVIDIA GPU path, a Raspberry Pi itself, and a boot stick or a spare card made on a physical stick or card and started on a real machine. The first report from a real Pi is welcome.
 
 ## Read this before you rely on it
 
