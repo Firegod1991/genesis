@@ -1,11 +1,12 @@
 """Genesis command line. Run `genesis help` for the list."""
 
 import argparse
+import os
 import subprocess
 import sys
 
 from . import __version__, catalog
-from .util import FetchError, human
+from .util import ROOT, FetchError, human
 
 
 def cmd_lint(args):
@@ -92,7 +93,8 @@ def cmd_bootstick(args):
 
 
 def _selection(p):
-    p.add_argument("--tier", choices=catalog.TIERS, help="seed, ark or eden (cumulative)")
+    p.add_argument("--tier", choices=[catalog.STARTER] + catalog.TIERS,
+                   help="seed, ark or eden (cumulative), or starter: a first gigabyte out of seed")
     p.add_argument("--pack", action="append", help="limit to a pack (repeatable)")
     p.add_argument("--id", action="append", help="fetch exact item ids (repeatable)")
     p.add_argument("--lang", help="comma separated ISO 639-3 codes, or * for every language")
@@ -187,6 +189,7 @@ def build_parser():
     p = sub.add_parser("start", help="start Genesis from the drive with no Docker: dashboard, library, assistant")
     p.add_argument("--vault")
     p.add_argument("--no-browser", action="store_true", help="do not open the dashboard in a browser")
+    p.add_argument("--no-ask", action="store_true", help="on a first start, do not offer to download anything")
     p.set_defaults(fn=cmd_box)
     p = sub.add_parser("stop", help="stop what `genesis start` started")
     p.add_argument("--vault")
@@ -213,9 +216,21 @@ def build_parser():
     return ap
 
 
+def vault_beside():
+    """On a drive the vault sits beside this folder, not inside it. Use that one when nothing else is said,
+    so the drive starts the same way from every system's launcher and from `python -m genesis`."""
+    beside = os.path.join(os.path.dirname(ROOT), "vault")
+    if (not os.environ.get("GENESIS_VAULT") and not os.path.isdir(os.path.join(ROOT, "vault"))
+            and os.path.isdir(os.path.join(beside, ".genesis"))):
+        os.environ["GENESIS_VAULT"] = beside
+        return beside
+    return None
+
+
 def main(argv=None):
     ap = build_parser()
     args = ap.parse_args(argv)
+    vault_beside()
     if not getattr(args, "fn", None):
         ap.print_help()
         return 0
