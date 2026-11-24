@@ -124,7 +124,7 @@ def place(vault, root=GUIDES):
 
 
 def heading(path):
-    """The title and the first line of a page on a shelf, read from its head: (\"\", \"\") when it has none."""
+    """The title and the first line of a page on a shelf, read from its head: ("", "") when it has none."""
     try:
         with open(path, encoding="utf-8", errors="replace") as f:
             head = f.read(4096)

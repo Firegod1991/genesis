@@ -5,7 +5,8 @@ Serves the pages, the offline maps (with HTTP range requests, which PMTiles
 needs), the manuals with their covers, the scripture library, phone apps and
 programs, and a JSON API: services, system health, what is on the drive, the
 survival layers, search across the library, and the local assistant. It reads
-the vault and writes one place only: the notes people keep on the box. The safe
+the vault and writes two places only: the notes people keep on the box, and
+Genesis's own guides, put on the shelves when it starts. The safe
 is never opened from here: this server says whether one exists, and nothing more.
 """
 
@@ -29,7 +30,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
 
-from genesis import __version__, catalog, maps, poi, safe  # noqa: E402
+from genesis import __version__, catalog, guides, maps, poi, safe  # noqa: E402
 from genesis.util import memory, read_json, uptime  # noqa: E402
 
 STATIC = os.path.join(HERE, "static")
@@ -190,10 +191,13 @@ def shelves():
             path = os.path.join(folder, name)
             rel = os.path.relpath(path, VAULT).replace(os.sep, "/")
             iid, entry = known.get(rel, (None, {}))
+            title, note = entry.get("title"), notes.get(iid, "")
+            if not title and name.endswith(".html"):  # a guide Genesis wrote itself: its page says what it is
+                title, note = guides.heading(path)
             cover = rel.rsplit(".", 1)[0] + ".jpg"
             out.setdefault(rel.split("/")[1] if rel.count("/") > 1 else "other", []).append({
-                "id": iid, "file": name, "href": "/" + quote(rel), "title": entry.get("title") or name,
-                "note": notes.get(iid, ""), "license": entry.get("license"), "bytes": os.path.getsize(path),
+                "id": iid, "file": name, "href": "/" + quote(rel), "title": title or name,
+                "note": note, "license": entry.get("license"), "bytes": os.path.getsize(path),
                 "cover": "/covers/" + quote(cover) if os.path.isfile(
                     os.path.join(VAULT, ".genesis", "covers", *cover.split("/"))) else None})
     return out
@@ -626,6 +630,10 @@ def main():
     port = int(os.environ.get("GENESIS_PORT_INTERNAL", os.environ.get("PORT", "8080")))
     server = ThreadingHTTPServer(("0.0.0.0", port), Handler)
     server.daemon_threads = True
+    try:  # Genesis's own guides go on the shelves, brought up to date with the code; a read only drive keeps what it has
+        guides.place(VAULT)
+    except OSError:
+        pass
     print("Genesis dashboard on port %d, vault %s" % (port, VAULT), flush=True)
     try:
         server.serve_forever()
