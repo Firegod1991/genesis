@@ -192,7 +192,8 @@ The seed tier carries a shelf of manuals from the agencies that wrote them, as p
 | Game and fish | The North American trapper education manual, field dressing and storing meat, basic fishing |
 | Water | WHO technical notes on making water safe, cleaning wells and tanks, and sanitation |
 | Finding your way | Basic Land Navigation from the National Wildfire Coordinating Group: maps, compass, GPS |
-| Lost | [Lost: find your way with a compass, the sun and the stars](guides/navigation/lost.md), Genesis's own pocket guide: what to do first, using a compass, map and compass together, pace counts, the shadow stick, the North Star and the Southern Cross, and how to get found |
+| Pocket guides | Genesis's own short guides, written plain to read in a hurry: [first aid](guides/health/first_aid.md), [water](guides/water/water.md), [fire and shelter](guides/fieldcraft/fire_and_shelter.md), [finding your way when lost](guides/navigation/lost.md), [reading the weather](guides/fieldcraft/weather.md), [eight knots](guides/fieldcraft/knots.md), [the radio card](guides/disaster/radio_card.md) and a [family emergency plan](guides/disaster/family_plan.md) to fill in. The dashboard also prints all of them as one booklet for the go bag |
+| The rifle | The Marine Corps Rifle Marksmanship manual: safe handling, and cleaning and care in heat, cold, wet and desert |
 | The sky as clock and calendar | Printable star wheels for seven latitudes, Stellarium for the desktop, Sky Map for the phone |
 
 ```sh
