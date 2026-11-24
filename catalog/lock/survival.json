@@ -1,14 +1,14 @@
 {
  "items": {
   "100r.co_en_all": {
-   "date": "2026-08-31",
+   "date": "2026-11-24",
    "dest": "zim",
    "files": [
     {
-     "filename": "100r.co_en_all_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/zimit/100r.co_en_all_2026-08.zim.sha256",
-     "size": 177187840,
-     "url": "https://download.kiwix.org/zim/zimit/100r.co_en_all_2026-08.zim"
+     "filename": "100r.co_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/100r.co_en_all_2026-11.zim.sha256",
+     "size": 177613824,
+     "url": "https://download.kiwix.org/zim/zimit/100r.co_en_all_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -19,7 +19,7 @@
    ],
    "tier": "ark",
    "title": "Hundred Rabbits",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "alaska_forest_wildflowers": {
    "date": "2019-05-30",
@@ -570,7 +570,6 @@
    "kind": "document",
    "license": "US government work",
    "note": "A list of 1,112 plants eaten across the United States and Canada: which part, how it was prepared and where. No pictures. Use it to learn what grows in your region, then identify each plant with a picture guide before you trust it.",
-   "stale": true,
    "tags": [
     "fieldcraft",
     "plants",
@@ -1178,7 +1177,6 @@
    "kind": "document",
    "license": "US government work",
    "note": "Great Plains. Plants the Dakota, Omaha, Ponca and Pawnee used for food and medicine, with photographs.",
-   "stale": true,
    "tags": [
     "fieldcraft",
     "plants",
@@ -1271,6 +1269,13 @@
    "tier": "seed",
    "title": "Ready.gov",
    "version": "2026-10"
+  },
+  "rifle_marksmanship_mcrp_3_01a": {
+   "error": "FetchError: <urlopen error _ssl.c:1063: The handshake operation timed out> for https://archive.org/download/MCRP3-01A/MCRP3-01A.pdf",
+   "kind": "document",
+   "status": "error",
+   "tier": "seed",
+   "title": "Rifle Marksmanship (US Marine Corps MCRP 3-01A, 2001): safe handling, care and cleaning in every climate, and marksmanship"
   },
   "s2underground_en_all": {
    "date": "2026-10-12",

@@ -32,14 +32,14 @@
    "version": "current"
   },
   "planet_basemap": {
-   "date": "2026-11-23",
+   "date": "2026-11-24",
    "dest": "maps",
    "files": [
     {
      "filename": "planet.pmtiles",
-     "md5": "469ce74de5580e551f6e04d978b9a649",
-     "size": 139721338415,
-     "url": "https://build.protomaps.com/20261123.pmtiles"
+     "md5": "adeba1dbfc2259a4c70c749d1f8bb453",
+     "size": 139733387110,
+     "url": "https://build.protomaps.com/20261124.pmtiles"
     }
    ],
    "kind": "map",
@@ -50,7 +50,7 @@
    "note": "Every street on Earth in one file. You do not need it to map your own region: `genesis maps region` cuts any area straight from this build.",
    "tier": "eden",
    "title": "Planet basemap, full detail (Protomaps daily build)",
-   "version": "20261123"
+   "version": "20261124"
   },
   "planet_osm": {
    "date": "2026-11-19",

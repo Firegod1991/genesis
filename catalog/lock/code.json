@@ -3197,14 +3197,14 @@
    "version": "2026-10"
   },
   "devdocs_en_lua": {
-   "date": "2026-08-26",
+   "date": "2026-11-24",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_lua_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_lua_2026-08.zim.sha256",
-     "size": 428032,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_lua_2026-08.zim"
+     "filename": "devdocs_en_lua_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_lua_2026-11.zim.sha256",
+     "size": 429056,
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_lua_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -3216,7 +3216,7 @@
    ],
    "tier": "seed",
    "title": "Lua Docs",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "devdocs_en_man": {
    "date": "2026-10-01",
@@ -5111,14 +5111,14 @@
    "version": "2026-10"
   },
   "devdocs_en_statsmodels": {
-   "date": "2026-05-28",
+   "date": "2026-11-24",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_statsmodels_2026-05.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_statsmodels_2026-05.zim.sha256",
-     "size": 8358912,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_statsmodels_2026-05.zim"
+     "filename": "devdocs_en_statsmodels_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_statsmodels_2026-11.zim.sha256",
+     "size": 8359936,
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_statsmodels_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -5130,7 +5130,7 @@
    ],
    "tier": "seed",
    "title": "Statsmodels Docs",
-   "version": "2026-05"
+   "version": "2026-11"
   },
   "devdocs_en_svelte": {
    "date": "2026-10-05",
@@ -5881,14 +5881,14 @@
    "version": "2026-10"
   },
   "devdocs_en_zig": {
-   "date": "2026-08-26",
+   "date": "2026-11-24",
    "dest": "zim",
    "files": [
     {
-     "filename": "devdocs_en_zig_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_zig_2026-08.zim.sha256",
-     "size": 491520,
-     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_zig_2026-08.zim"
+     "filename": "devdocs_en_zig_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/devdocs/devdocs_en_zig_2026-11.zim.sha256",
+     "size": 490496,
+     "url": "https://download.kiwix.org/zim/devdocs/devdocs_en_zig_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -5900,7 +5900,7 @@
    ],
    "tier": "seed",
    "title": "Zig Docs",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "devdocs_en_zsh": {
    "date": "2026-10-05",
@@ -8008,43 +8008,43 @@
    "version": "3.14"
   },
   "python": {
-   "date": "2026-11-23",
+   "date": "2026-11-24",
    "dest": "code",
    "files": [
     {
-     "filename": "cpython-3.15.2+20261123-x86_64-unknown-linux-gnu-install_only.tar.gz",
+     "filename": "cpython-3.15.2+20261124-x86_64-unknown-linux-gnu-install_only.tar.gz",
      "platform": "linux-x64",
-     "sha256": "c13943cea39c918690c07067d30a44d7525fc630525e618548f2262b712511bf",
-     "size": 83291241,
-     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261123/cpython-3.15.2%2B20261123-x86_64-unknown-linux-gnu-install_only.tar.gz"
+     "sha256": "9fbcb18c390909c3f30542d097a14443bee7a5c678d4b06b5b63cc7a9af624d3",
+     "size": 83225257,
+     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261124/cpython-3.15.2%2B20261124-x86_64-unknown-linux-gnu-install_only.tar.gz"
     },
     {
-     "filename": "cpython-3.15.2+20261123-aarch64-unknown-linux-gnu-install_only.tar.gz",
+     "filename": "cpython-3.15.2+20261124-aarch64-unknown-linux-gnu-install_only.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "f339b2cb77aa281391329581037f9fb103fcc1491793c14f9b472fdf28e5bfdf",
-     "size": 63679250,
-     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261123/cpython-3.15.2%2B20261123-aarch64-unknown-linux-gnu-install_only.tar.gz"
+     "sha256": "f0d81c7a7490c51676e44462c9630ceb9bed6298af6cfcdb0c05c1c798c971e6",
+     "size": 63744582,
+     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261124/cpython-3.15.2%2B20261124-aarch64-unknown-linux-gnu-install_only.tar.gz"
     },
     {
-     "filename": "cpython-3.15.2+20261123-x86_64-pc-windows-msvc-install_only.tar.gz",
+     "filename": "cpython-3.15.2+20261124-x86_64-pc-windows-msvc-install_only.tar.gz",
      "platform": "windows-x64",
-     "sha256": "dee916c762cdaea9f4f6ec67ec5cbad1d782a1eac139deffd80d02a03a7e6b0e",
-     "size": 53737308,
-     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261123/cpython-3.15.2%2B20261123-x86_64-pc-windows-msvc-install_only.tar.gz"
+     "sha256": "7e46b25f73bda26d6e9f4b711e2a51bb7fcd0f6798d76ba07d37655e308c3346",
+     "size": 53873053,
+     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261124/cpython-3.15.2%2B20261124-x86_64-pc-windows-msvc-install_only.tar.gz"
     },
     {
-     "filename": "cpython-3.15.2+20261123-aarch64-apple-darwin-install_only.tar.gz",
+     "filename": "cpython-3.15.2+20261124-aarch64-apple-darwin-install_only.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "9fd4fb8381a14289edfac593647dd4ae3f679053a2c69511f0133348e24b5a02",
-     "size": 28130651,
-     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261123/cpython-3.15.2%2B20261123-aarch64-apple-darwin-install_only.tar.gz"
+     "sha256": "ca5a25ce351817d7c6fcc7c2f2c327ec28c540f728d2a5c8b4e380ed92c68936",
+     "size": 28078358,
+     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261124/cpython-3.15.2%2B20261124-aarch64-apple-darwin-install_only.tar.gz"
     }
    ],
    "kind": "archive",
    "license": "PSF License",
    "tier": "ark",
    "title": "Python (standalone builds)",
-   "version": "20261123"
+   "version": "20261124"
   },
   "raspberrypi.stackexchange.com_en_all": {
    "date": "2026-10-20",
@@ -8472,43 +8472,43 @@
    "version": "2026-10"
   },
   "uv": {
-   "date": "2026-11-17",
+   "date": "2026-11-24",
    "dest": "code",
    "files": [
     {
      "filename": "uv-x86_64-unknown-linux-gnu.tar.gz",
      "platform": "linux-x64",
-     "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
-     "size": 17068176,
-     "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-x86_64-unknown-linux-gnu.tar.gz"
+     "sha256": "bf65ac1a0af10f92c522d91ac096c7c0a39657647b155577e7836c2cbbb4526c",
+     "size": 17113138,
+     "url": "https://github.com/astral-sh/uv/releases/download/0.13.10/uv-x86_64-unknown-linux-gnu.tar.gz"
     },
     {
      "filename": "uv-aarch64-unknown-linux-gnu.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "0797542018e541a9288855df555c8077eed06f7a47d206362030480e8ecc9f3d",
-     "size": 16120245,
-     "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-aarch64-unknown-linux-gnu.tar.gz"
+     "sha256": "14590f644805a6234ffe071154340669e38137f38e60aa9629690119704107d2",
+     "size": 16275135,
+     "url": "https://github.com/astral-sh/uv/releases/download/0.13.10/uv-aarch64-unknown-linux-gnu.tar.gz"
     },
     {
      "filename": "uv-x86_64-pc-windows-msvc.zip",
      "platform": "windows-x64",
-     "sha256": "edd61f7f5728a56cc62455386661860bdfc7bab65872f39b0c25bdcc1d8e1beb",
-     "size": 15567875,
-     "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-x86_64-pc-windows-msvc.zip"
+     "sha256": "297b3881fe1adfb922becc2c1613202abb41dc83ea5ff43d472aa087ca1f8683",
+     "size": 15641577,
+     "url": "https://github.com/astral-sh/uv/releases/download/0.13.10/uv-x86_64-pc-windows-msvc.zip"
     },
     {
      "filename": "uv-aarch64-apple-darwin.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "5aeca67f2283f75235de40d0bd9c0a5bbc5fce23b6d48b3bf9fa1b2db08382ca",
-     "size": 14554974,
-     "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-aarch64-apple-darwin.tar.gz"
+     "sha256": "e419bf07533bdbf48795fc793601c834dd79db57a8c49ce8e25cfe3a8639958d",
+     "size": 14700626,
+     "url": "https://github.com/astral-sh/uv/releases/download/0.13.10/uv-aarch64-apple-darwin.tar.gz"
     }
    ],
    "kind": "archive",
    "license": "MIT or Apache 2.0",
    "tier": "ark",
    "title": "uv (Python package manager)",
-   "version": "0.13.9"
+   "version": "0.13.10"
   },
   "vlang": {
    "date": "2026-07-12",

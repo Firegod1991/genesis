@@ -79,8 +79,8 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | .NET SDK LTS (C#, F#) | `dotnet` | ark | 10.0.404 | 1.0 GB | MIT |
 | Julia | `julia` | ark | 1.13.4 | 1.1 GB | MIT |
 | Dart SDK | `dart` | ark | 3.14.1 | 1.0 GB | BSD 3 Clause |
-| Python (standalone builds) | `python` | ark | 20261123 | 228.8 MB | PSF License |
-| uv (Python package manager) | `uv` | ark | 0.13.9 | 63.3 MB | MIT or Apache 2.0 |
+| Python (standalone builds) | `python` | ark | 20261124 | 228.9 MB | PSF License |
+| uv (Python package manager) | `uv` | ark | 0.13.10 | 63.7 MB | MIT or Apache 2.0 |
 | Deno (JavaScript and TypeScript runtime) | `deno` | ark | 2.9.8 | 163.8 MB | MIT |
 | Bun (JavaScript runtime) | `bun` | ark | 1.4.5 | 196.7 MB | MIT |
 | Kotlin compiler | `kotlin` | ark | 2.4.21 | 89.7 MB | Apache 2.0 |
@@ -230,7 +230,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Lit Docs (`devdocs_en_lit`, 2026-10)
 * lodash Docs (`devdocs_en_lodash`, 2026-10)
 * LÖVE Docs (`devdocs_en_love`, 2026-10)
-* Lua Docs (`devdocs_en_lua`, 2026-08)
+* Lua Docs (`devdocs_en_lua`, 2026-11)
 * Linux man pages Docs (`devdocs_en_man`, 2026-10)
 * MariaDB Docs (`devdocs_en_mariadb`, 2026-10)
 * Marionette.js Docs (`devdocs_en_marionette`, 2026-10)
@@ -317,7 +317,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Socket.IO Docs (`devdocs_en_socketio`, 2026-10)
 * Spring Boot Docs (`devdocs_en_spring-boot`, 2026-10)
 * SQLite Docs (`devdocs_en_sqlite`, 2026-10)
-* Statsmodels Docs (`devdocs_en_statsmodels`, 2026-05)
+* Statsmodels Docs (`devdocs_en_statsmodels`, 2026-11)
 * Svelte Docs (`devdocs_en_svelte`, 2026-10)
 * SVG Docs (`devdocs_en_svg`, 2026-10)
 * Symfony Docs (`devdocs_en_symfony`, 2026-10)
@@ -352,7 +352,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * XSLT & XPath Docs (`devdocs_en_xslt-xpath`, 2026-10)
 * Yarn Docs (`devdocs_en_yarn`, 2026-10)
 * Yii Docs (`devdocs_en_yii`, 2026-10)
-* Zig Docs (`devdocs_en_zig`, 2026-08)
+* Zig Docs (`devdocs_en_zig`, 2026-11)
 * Zsh Docs (`devdocs_en_zsh`, 2026-10)
 
 </details>
@@ -477,7 +477,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Debian stable Live (Xfce) | `debian_live` | ark | 13.8.0 | 3.8 GB |  |
 | Linux Mint (Cinnamon) | `linux_mint` | ark | 22.3 | 3.1 GB |  |
 | Kali Linux installer | `kali_installer` | ark | 2026.3 | 5.0 GB |  |
-| Tails (amnesic live system, USB image) | `tails` | ark | 7.17.1 | 1.9 GB |  |
+| Tails (amnesic live system, USB image) | `tails` | ark | 7.18 | 1.9 GB |  |
 | Proxmox VE (hypervisor) | `proxmox_ve` | ark | 9.2-1 | 1.7 GB |  |
 | Arch Linux | `arch` | ark | 2026.11.01 | 1.3 GB |  |
 | Raspberry Pi OS with desktop (64 bit) | `raspios_desktop` | ark | 2026-10-06 | 1.4 GB |  |
@@ -489,7 +489,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Alpine Linux (extended) | `alpine_extended` | eden | 3.24.4 | 1.5 GB |  |
 | Proxmox VE (arm64) | `proxmox_ve_arm64` | eden | 9.2-1 | 1.6 GB |  |
 | Home Assistant OS (power and sensor monitoring) | `home_assistant_os` | eden | 18.5 | 881.1 MB |  |
-| Collapse OS (an operating system for machines built from scavenged parts) | `collapseos` | ark | 2025-12-03 | 2.5 MB | GPL 3.0 |
+| Collapse OS (an operating system for machines built from scavenged parts) | `collapseos` | ark | 2025-12-03 (stale) | 2.5 MB | GPL 3.0 |
 
 ## Knowledge
 
@@ -1491,7 +1491,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Survival layers for the whole world (water, medical, fuel, power, shelter and more) | `survival_layers_world` | seed | 2026.11 | 757.1 MB | ODbL (OpenStreetMap contributors) |
 | Map fonts and icons (Protomaps basemap assets) | `map_assets` | seed | current |  | SIL OFL (fonts), CC0 (icons) |
 | Global Power Plant Database (World Resources Institute) | `global_power_plants` | seed | current | 12.0 MB | CC BY 4.0 |
-| Planet basemap, full detail (Protomaps daily build) | `planet_basemap` | eden | 20261123 | 139.7 GB | ODbL (OpenStreetMap contributors) |
+| Planet basemap, full detail (Protomaps daily build) | `planet_basemap` | eden | 20261124 | 139.7 GB | ODbL (OpenStreetMap contributors) |
 | OpenStreetMap planet (raw data) | `planet_osm` | eden | 2026-11-19 | 95.9 GB | ODbL (OpenStreetMap contributors) |
 
 ## Medical
@@ -1591,7 +1591,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 
 | Item | Id | Tier | Version | Size | License |
 |---|---|---|---|---|---|
-| Theographic Bible Metadata: the people, places and events of the Bible, linked verse by verse | `theographic` | seed | b75c268 |  | CC BY-SA 4.0 |
+| Theographic Bible Metadata: the people, places and events of the Bible, linked verse by verse | `theographic` | seed | c168673 |  | CC BY-SA 4.0 |
 | Biblical Hermeneutics Q&A | `hermeneutics.stackexchange.com_en_all` | ark | 2026-10 | 199.9 MB |  |
 | Christianity Q&A | `christianity.stackexchange.com_en_all` | ark | 2026-10 | 193.6 MB |  |
 | Mi Yodeya Q&A | `judaism.stackexchange.com_en_all` | ark | 2026-10 | 304.4 MB |  |
@@ -1668,7 +1668,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * English: KJV Cambridge Paragraph (`bible_engkjvcpb`, 2026-11-09)
 * English: Leeser Tanakh (`bible_englee`, 2020-10-14)
 * English: LXX2012 U. S. English (`bible_eng-lxx2012`, 2026-03-12)
-* English: Updated Brenton English Septuagint (`bible_englxxup`, 2026-11-20)
+* English: Updated Brenton English Septuagint (`bible_englxxup`, 2026-11-23)
 * English: Masoretic English Tanakh (`bible_engmet`, 2026-11-06)
 * English: Majority Standard BIble (`bible_engmsb`, 2026-10-30)
 * English: Noyes Bible (`bible_engnoy`, 2019-10-24)
@@ -1714,7 +1714,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Swahili: Swahili Bible (`bible_swh1850`, 2014-08-25)
 * Tongan: Revised West Version (`bible_ton`, 2025-10-25)
 * Tswana: Tswana Freedom Bible (`bible_tsnfb`, 2026-11-19)
-* Tswana: South African Tswana Bible (`bible_tsnsa`, 2026-11-23)
+* Tswana: South African Tswana Bible (`bible_tsnsa`, 2026-11-24)
 * Ukrainian: Ukrainian Freedom Bible (`bible_ukrfb`, 2025-02-05)
 * Meriam: Meriam Mir Bible (`bible_ulk1902`, 2023-04-03)
 * Worrorra: Worrorra Mark and Luke (`bible_wro`, 2019-05-16)
@@ -2102,7 +2102,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Guanano: Guanano NT (`bible_gvc`, 2014-08-06)
 * Golin: Golin NT (`bible_gvf`, 2012-01-17)
 * Kuku-Yalanji: Kuku-Yalanji Bible (`bible_gvn`, 2019-05-14)
-* Gumawana: Gumawana Bible (`bible_gvs`, 2026-11-21)
+* Gumawana: Gumawana Bible (`bible_gvs`, 2026-11-24)
 * Gwich'in: Gwich'in NT (`bible_gwiNT`, 2014-04-25)
 * Gayil: Goyil NT (`bible_gyl`, 2025-05-03)
 * Ngäbere: Ngäbere NT (`bible_gymNT`, 2014-04-30)
@@ -2352,7 +2352,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Mixtec, Southern Puebla: New Testament in Mixtec, Southern Puebla (MX:mit:Mixtec, Southern Puebla) (`bible_mitNT`, 2023-04-21)
 * Mixtec, Coatzospan: Coatzospan Mixtec NT (`bible_mizNT`, 2014-04-30)
 * Mixtec, San Juan Colorado: San Juan Colorado Mixtec NT (`bible_mjcNT`, 2014-04-30)
-* Mokilese: Mokilese Bible (`bible_mkj`, 2026-11-20)
+* Mokilese: Mokilese Bible (`bible_mkj`, 2026-11-24)
 * Mokole: Monkole NT (`bible_mkl`, 2014-10-02)
 * Kupang Malay: Kupang Malay Bible (`bible_mkn`, 2022-03-11)
 * Mixtec, Silacayoapan: Silacayoapan Mixtec NT (`bible_mksNT`, 2014-04-30)
@@ -2461,7 +2461,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Nahuatl, Southeastern Puebla: Southeastern Puebla Nahuatl NT (`bible_nplNT`, 2014-04-30)
 * Lala: Nara NT (`bible_nrz`, 2026-11-19)
 * Nehan: Nehan NT (`bible_nsn`, 2012-01-19)
-* Nali: Nali Bible (`bible_nss`, 2026-11-20)
+* Nali: Nali Bible (`bible_nss`, 2026-11-23)
 * Ngaanyatjarra: Ngaanyatjarra Shorter Bible (`bible_ntj`, 2021-11-12)
 * Tepehuan, Northern: Northern Tepehuan NT (`bible_ntpNT`, 2014-04-30)
 * Natügu: Natqgu NT+Ruth and Psalms (`bible_ntu`, 2017-11-17)
@@ -2567,13 +2567,13 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Romani, Carpathian: Carpathian Romani Luke (`bible_rmczrb`, 2023-04-13)
 * Romani, Balkan: Balkan Romani Bible portions (`bible_rmn`, 2025-06-27)
 * Romani: Balkans Arli Bible (`bible_rmna`, 2025-06-27)
-* Romani, Vlax: Arli Luke (`bible_rmyArli`, 2026-11-20)
+* Romani, Vlax: Arli Luke (`bible_rmyArli`, 2026-11-24)
 * Romani, Vlax: Chergash NT (`bible_rmyChergash`, 2025-06-28)
 * Romani, Vlax: Gurbet NT (`bible_rmyGurbet`, 2025-06-28)
 * Romani: Lovari Vlax Romani Bible (`bible_rmylovari`, 2025-06-28)
 * Romani, Vlax: Servi Romani Bible portions (`bible_rmyservi`, 2025-06-27)
 * Romani: Eastern Vlakh Romani (`bible_rmyvlakh`, 2025-06-28)
-* Romanian: Bayash Bible (`bible_ronBayash`, 2026-11-20)
+* Romanian: Bayash Bible (`bible_ronBayash`, 2026-11-23)
 * Romanian: Ludari Luke (`bible_ronludari`, 2026-07-15)
 * Rotokas: Rotokas NT (`bible_roo`, 2016-09-20)
 * Kriol: Kriol Bible (`bible_rop`, 2026-01-11)
@@ -2691,8 +2691,8 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 * Ticuna: Ticuna NT (`bible_tcaNT`, 2014-04-30)
 * Tichurong: Tichurong: तिचुरोङ क्येला सारबा करारयि किताबतेबा (Bible with Deuterocanon) (`bible_tcn`, 2025-07-08)
 * Torres Strait Creole: Yumplatok Bible (`bible_tcs`, 2024-04-12)
-* Chin, Thado: Chongthu Bible (`bible_tczchongthu`, 2026-11-13)
-* Tetun Dili: Tetun Dili NT (`bible_tdt`, 2026-11-20)
+* Chin, Thado: Chongthu Bible (`bible_tczchongthu`, 2026-11-23)
+* Tetun Dili: Tetun Dili NT (`bible_tdt`, 2026-11-24)
 * Malagasy, Tandroy-Mahafaly: Tandroy Bible (`bible_tdx`, 2024-12-05)
 * Tepehua, Huehuetla: Huehuetla Tepehua NT (`bible_teeNT`, 2014-04-30)
 * Telugu: Telugu Indian Revised Version Bible (`bible_tel2017`, 2020-02-11)
@@ -2936,7 +2936,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Ergo (local chat server) | `img_irc` | ark | 72db5b93b437 |  |  |
 | The Lounge (web chat client) | `img_chat` | ark | 5c3776545c24 |  |  |
 | Mumble server (voice on the local network) | `img_voice` | ark | 018ad3515932 |  |  |
-| ADS-B aircraft tracker (readsb and tar1090) | `img_adsb` | ark | 855a12d6681f |  |  |
+| ADS-B aircraft tracker (readsb and tar1090) | `img_adsb` | ark | 6d77e136db65 |  |  |
 | AIS-catcher (ship tracking) | `img_ais` | ark | 124f510731c9 |  |  |
 | Valhalla (offline turn by turn routing) | `img_routing` | ark | 89f33b5fb630 |  |  |
 
@@ -2962,13 +2962,13 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Survival (US Army ATP 3-50.21): water, food, fire, shelter, medicine, navigation | `army_survival_manual` | seed | 2020-07-07 | 23.8 MB | US government work |
 | Wild Edibles of Missouri (Jan Phillips, Missouri Department of Conservation) | `wild_edibles_of_missouri` | seed | 2025-02-21 | 3.9 MB | Free from the publisher |
 | Useful Wild Plants of the United States and Canada (Charles Francis Saunders, 1920) | `useful_wild_plants_us` | seed | 2023-12-23 | 19.1 MB | Public domain |
-| Food Plants of the North American Indians (Elias Yanovsky, USDA, 1936) | `food_plants_north_american_indians` | seed | 2023-11-11 (stale) | 8.2 MB | US government work |
+| Food Plants of the North American Indians (Elias Yanovsky, USDA, 1936) | `food_plants_north_american_indians` | seed | 2023-11-11 | 8.2 MB | US government work |
 | Facts on Edible Wild Greens in Maine (University of Maine Cooperative Extension) | `edible_wild_greens_maine` | seed | 2022-06-09 | 170 KB | Free from the publisher |
 | Iroquois Uses of Maize and Other Food Plants (Arthur C. Parker, New York State Museum, 1910) | `iroquois_food_plants` | seed | 2023-11-13 | 28.0 MB | Public domain |
 | Uses of Plants by the Chippewa Indians (Frances Densmore, Smithsonian, 1928) | `chippewa_plant_uses` | seed | 2024-02-02 | 18.1 MB | US government work |
 | Forgotten Foods: Introduction to Wild Edible Plants (Mississippi State University Extension) | `wild_edible_plants_primer` | seed | 2026-02-04 | 116 KB | Free to copy unchanged for nonprofit teaching, with credit |
 | Edible and Poisonous Plants of the Caribbean Region (US Navy, 1944) | `edible_poisonous_plants_caribbean` | seed | 2024-07-08 | 12.9 MB | US government work |
-| Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919) | `plants_missouri_river_region` | seed | 2023-12-23 (stale) | 7.0 MB | US government work |
+| Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919) | `plants_missouri_river_region` | seed | 2023-12-23 | 7.0 MB | US government work |
 | Culturally Significant Plants (USDA NRCS Plant Materials Center, Manhattan, Kansas) | `culturally_significant_plants` | seed | 2019-05-30 | 3.2 MB | US government work, photos credited inside |
 | Preserving Food in Wyoming (University of Wyoming Extension, 2018) | `preserving_food_in_wyoming` | seed | 2024-02-01 | 7.0 MB | Free from the publisher |
 | Desert Foods for a Resilient Future (University of Arizona Desert Laboratory, 2021) | `desert_foods` | seed | 2022-08-15 | 22.1 MB | Free from the publisher |
@@ -3000,7 +3000,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Gardenology | `gardenology_en_all` | ark | 2026-09 | 112.5 MB |  |
 | FOSS cooking | `foss.cooking_en_all` | ark | 2026-11 | 30.4 MB |  |
 | Permacomputing | `permacomputing.net_en_all` | ark | 2026-09 | 1.0 MB |  |
-| Hundred Rabbits | `100r.co_en_all` | ark | 2026-08 | 177.2 MB |  |
+| Hundred Rabbits | `100r.co_en_all` | ark | 2026-11 | 177.6 MB |  |
 | FAA Pilot's Handbook of Aeronautical Knowledge | `faa_pilots_handbook` | ark | 2022-03-29 | 56.1 MB | US government work |
 | Survivor Library | `survivorlibrary.com_en_all` | eden | 2026-09 | 220.3 GB |  |
 | Urban Prepper | `urban-prepper_en_all` | eden | 2026-08 | 2.2 GB |  |
@@ -3047,11 +3047,11 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Syncthing (sync folders between machines, no cloud) | `syncthing` | ark | 2.1.7 | 54.6 MB | MPL 2.0 |
 | restic (encrypted backups) | `restic` | ark | 0.20.0 | 50.0 MB | BSD 2 Clause |
 | Ollama (run models without Docker) | `ollama_runtime` | ark | 0.40.18 | 5.5 GB | MIT |
-| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12674 | 84.3 MB | MIT |
+| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12686 | 84.3 MB | MIT |
 | yt-dlp (save video while the internet lasts) | `yt_dlp` | ark | 2026.11.23 | 143.1 MB | Unlicense |
-| FFmpeg (static builds) | `ffmpeg` | ark | 2026-11-23 | 499.5 MB | GPL 3.0 |
+| FFmpeg (static builds) | `ffmpeg` | ark | 2026-11-24 | 499.2 MB | GPL 3.0 |
 | VLC for Windows | `vlc_windows` | ark | 3.0.24 | 46.3 MB | GPL 2.0 |
-| LocalSend (send files between nearby devices, no internet) | `localsend` | seed | 1.18.2 | 177.6 MB | Apache 2.0 |
+| LocalSend (send files between nearby devices, no internet) | `localsend` | seed | 1.19.0 | 173.0 MB | Apache 2.0 |
 | copyparty (turn any computer into a file server with one file) | `copyparty` | seed | 1.20.28 | 14.4 MB | MIT |
 | VeraCrypt (encrypted drives and containers) | `veracrypt` | ark | 1.26.31 | 92.4 MB | Apache 2.0 and TrueCrypt 3.0 |
 | Umi-OCR (read text out of photos and scans, offline) | `umi_ocr` | ark | 2.1.5 | 380.7 MB | MIT |

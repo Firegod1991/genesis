@@ -76,6 +76,7 @@
    "kind": "archive",
    "license": "GPL 3.0",
    "note": "A Forth system for Z80, 8086 and 6502 class processors, written for the day new computers stop being made.",
+   "stale": true,
    "tags": [
     "os"
    ],
@@ -313,16 +314,16 @@
    "dest": "isos",
    "files": [
     {
-     "filename": "tails-amd64-7.17.1.img",
-     "sha256": "2dc53d11973626533379680d3cfedca91d0bbd66fe244eb1d9ee667a5ee2637a",
+     "filename": "tails-amd64-7.18.img",
+     "sha256": "643155832bee9748f4179ebecb5db4407ab4f9ce6b29c6ab5af1305009d4ddf5",
      "size": 1904214016,
-     "url": "https://download.tails.net/tails/stable/tails-amd64-7.17.1/tails-amd64-7.17.1.img"
+     "url": "https://download.tails.net/tails/stable/tails-amd64-7.18/tails-amd64-7.18.img"
     }
    ],
    "kind": "iso",
    "tier": "ark",
    "title": "Tails (amnesic live system, USB image)",
-   "version": "7.17.1"
+   "version": "7.18"
   },
   "ubuntu_desktop": {
    "dest": "isos",
