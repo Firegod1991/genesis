@@ -1,7 +1,8 @@
 name: Dashboard assets
 
 # Rebuilds the vendored map library, typeface and map styles from pinned packages,
-# then proves the dashboard in a real browser and saves the README screenshots.
+# then starts Genesis with no Docker from a small real vault, proves the dashboard in a real browser
+# and saves the README screenshots.
 
 on:
   workflow_dispatch:
@@ -55,7 +56,7 @@ jobs:
           ref: main
       - name: Install osmium and a headless browser
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool poppler-utils
           echo "GENESIS_VAULT=$RUNNER_TEMP/vault" >> "$GITHUB_ENV"
           python3 -m venv "$RUNNER_TEMP/venv"
           "$RUNNER_TEMP/venv/bin/pip" install --quiet playwright
@@ -70,11 +71,26 @@ jobs:
             sleep 30
           done
           exit 1
-      - name: Drive the dashboard in a browser
+      - name: Stock the shelves the pictures show
         run: |
-          PORT=8765 python3 dashboard/server.py &
-          sleep 2
-          "$RUNNER_TEMP/venv/bin/python" tools/screenshots.py http://127.0.0.1:8765 docs/img
+          # Real books, manuals, plant guides and the Kiwix server, so every page in the README is pictured
+          # with something on it. One source being down must not stop the pictures: a page needs only one of these.
+          python3 -m genesis fetch --yes --keep-going --jobs 4 --id kiwix_tools \
+            --id zimgit-water_en --id usda-2015_en --id zimgit-knots_en --id irp.fas.org_en_military-medicine \
+            --id zimgit-medicine_en --id nhs.uk_en_medicines --id scoutwiki.org_en_all.maxi --id publicdomainrecipes.com_en_all \
+            --id army_survival_manual --id basic_land_navigation --id water_sanitation_in_emergencies --id basic_fishing \
+            --id care_of_game --id trapper_education_manual --id who_medicinal_plants_1 --id who_medicinal_plants_2 \
+            --id wild_edibles_of_missouri --id edible_and_poisonous_mushrooms --id useful_wild_plants_us --id desert_foods \
+            --id northwest_forest_plants --id alaska_forest_wildflowers \
+            || echo "Some of the shelf did not come down. The pictures are taken from what did."
+          python3 -m genesis ready
+      - name: Start Genesis with no Docker and drive it in a browser
+        run: |
+          GENESIS_PORT=8765 python3 -m genesis start --no-browser
+          for _ in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:8081/ && break; sleep 1; done
+          "$RUNNER_TEMP/venv/bin/python" tools/screenshots.py http://127.0.0.1:8765 docs/img \
+            --expect search,manuals,plants,library,reader,scripture,radio,phone
+          python3 -m genesis stop
       - name: Commit screenshots
         run: |
           git config user.name "Firegod1991"
