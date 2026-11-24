@@ -1,0 +1,120 @@
+name: Starts on every machine
+
+# Starts Genesis for real, with no Docker, on each kind of machine people bring: a Linux PC, Linux on ARM as a
+# Raspberry Pi 5 is, Windows, a Mac with Apple silicon and a Mac with Intel. Then a first start on a fresh copy
+# that brings down the starter, and the unit tests on the oldest Python Genesis runs on.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["catalog/lock/**", "docs/**", "reports/**", "README.md"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  oldest:
+    name: Unit tests on the oldest Python Genesis runs on
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.9"
+      - name: Unit tests
+        run: |
+          python --version
+          python -m unittest discover -s tests
+
+  start:
+    name: "Starts with no Docker: ${{ matrix.name }}"
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {name: "a Linux PC", os: ubuntu-latest, python: python3}
+          - {name: "Linux on ARM, as a Raspberry Pi 5 is", os: ubuntu-24.04-arm, python: python3}
+          - {name: "Windows", os: windows-latest, python: python}
+          - {name: "a Mac with Apple silicon", os: macos-latest, python: python3}
+          - {name: "a Mac with Intel", os: macos-15-intel, python: python3}
+    defaults:
+      run:
+        shell: bash
+    env:
+      PY: ${{ matrix.python }}
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Use the Python the machine came with
+        run: |
+          # On a Mac that is the one Apple's own tools install, the oldest Python Genesis runs on.
+          if [ "$RUNNER_OS" = "macOS" ]; then echo "/usr/bin" >> "$GITHUB_PATH"; export PATH="/usr/bin:$PATH"; fi
+          echo "GENESIS_VAULT=$RUNNER_TEMP/vault" >> "$GITHUB_ENV"
+          command -v "$PY" && "$PY" --version && uname -sm
+      - name: Resolve the tools pack, when this kind of machine was added after the last refresh
+        run: |
+          if ! "$PY" -c "import sys; from genesis import catalog; reader = dict((i, e) for _, i, e in catalog.all_locked(['tools']))['kiwix_tools']; sys.exit(0 if catalog.wanted_files(reader, [catalog.host_platform()]) else 1)"; then
+            "$PY" -m genesis refresh --pack tools
+          fi
+      - name: Fetch a small real vault and make it ready
+        run: |
+          "$PY" -m genesis fetch --yes --id kiwix_tools --id zimgit-water_en --id usda-2015_en \
+            --id basic_fishing --id epa_emergency_water_disinfection --id bible_eng-kjv
+          "$PY" -m genesis ready
+      - name: Start it the way a person does
+        if: runner.os != 'Windows'
+        run: sh bin/genesis start --no-browser
+      - name: Ask it real questions
+        if: runner.os != 'Windows'
+        run: |
+          "$PY" tools/start_check.py --books 2 --manuals 2 --bibles 1
+          "$PY" -c "from genesis import box; print('open files allowed:', box.many_files())"
+      - name: Stop it
+        if: runner.os != 'Windows'
+        run: sh bin/genesis stop
+      - name: On Windows, start it the way a double click does, ask it real questions and stop it
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: |
+          call genesis.cmd --version || exit /b 1
+          call "Start Genesis.cmd" --no-browser < nul || exit /b 1
+          python tools/start_check.py --books 2 --manuals 2 --bibles 1 || exit /b 1
+          call "Stop Genesis.cmd" < nul
+      - name: Nothing is left running
+        run: |
+          sleep 3
+          "$PY" -c "import socket, sys; left = [p for p in (8080, 8081) if socket.socket().connect_ex(('127.0.0.1', p)) == 0]; print('still answering:', left); sys.exit(1 if left else 0)"
+      - name: What the programs wrote, when something failed
+        if: failure()
+        run: |
+          "$PY" -c "import glob, os; from genesis import box; [print('==', p) or print(open(p, errors='replace').read()[-4000:]) for p in glob.glob(os.path.join(box._run_dir(), '*.log'))]"
+
+  first:
+    name: A first start that brings down the starter
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - name: Start a fresh copy and choose the starter at the prompt
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          # `script` gives the start a terminal, as a person has: the answer typed at the prompt is 1.
+          printf '1\n' | script -qec "sh bin/genesis start --no-browser" /dev/null | tee "$RUNNER_TEMP/first.log"
+          grep -q "Genesis has nothing on this machine yet" "$RUNNER_TEMP/first.log"
+          grep -q "Genesis is up" "$RUNNER_TEMP/first.log"
+          test -d vault/.genesis
+      - name: Ask it real questions
+        run: python3 tools/start_check.py --books 8 --manuals 30 --bibles 4
+      - name: A second start asks nothing
+        run: |
+          sh bin/genesis stop
+          printf '' | script -qec "sh bin/genesis start --no-browser" /dev/null | tee "$RUNNER_TEMP/second.log"
+          if grep -q "Genesis has nothing on this machine yet" "$RUNNER_TEMP/second.log"; then echo "It asked again."; exit 1; fi
+          python3 tools/start_check.py --books 8 --manuals 30 --bibles 4
+          sh bin/genesis status
+          sh bin/genesis stop

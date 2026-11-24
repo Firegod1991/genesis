@@ -1,5 +1,7 @@
 # One line ending everywhere, so a copy cloned on Windows still runs on a Raspberry Pi.
 * text=auto eol=lf
+# Except the launchers for Windows, which its command processor wants its own way.
+*.cmd text eol=crlf
 *.png binary
 *.jpg binary
 *.woff2 binary
