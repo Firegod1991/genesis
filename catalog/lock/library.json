@@ -498,8 +498,7 @@
    "replaces": [
     "gutenberg_en_lcc-c",
     "gutenberg_en_lcc-d",
-    "gutenberg_en_lcc-e",
-    "gutenberg_en_lcc-f"
+    "gutenberg_en_lcc-e"
    ],
    "rule": "gutenberg_every_language",
    "tags": [
@@ -508,6 +507,28 @@
    "tier": "ark",
    "title": "Project Gutenberg Library",
    "version": "2026-11-13"
+  },
+  "gutenberg_en_lcc-f": {
+   "date": "2026-03-05",
+   "dest": "zim",
+   "files": [
+    {
+     "filename": "gutenberg_en_lcc-f_2026-03.zim",
+     "sha256_url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-f_2026-03.zim.sha256",
+     "size": 9888134144,
+     "url": "https://download.kiwix.org/zim/gutenberg/gutenberg_en_lcc-f_2026-03.zim"
+    }
+   ],
+   "kind": "zim",
+   "lang": "eng",
+   "note": "Project Gutenberg, one library per language (about one hundred languages), with the English library shelf by shelf. The two single file editions are left out of this line because they repeat all of it: the one with every language (over 250 GB), and the English one (over 200 GB), which sits in eden.",
+   "rule": "gutenberg_every_language",
+   "tags": [
+    "books"
+   ],
+   "tier": "ark",
+   "title": "Project Gutenberg Library",
+   "version": "2026-03"
   },
   "gutenberg_en_lcc-g": {
    "date": "2026-11-13",
@@ -2226,12 +2247,12 @@
    "version": "2026-11-13"
   },
   "howtocook_zh": {
-   "date": "2026-11-14",
+   "date": "2026-11-17",
    "dest": "library/howtocook",
    "files": [
     {
-     "filename": "HowToCook-2585488.tar.gz",
-     "url": "https://github.com/Anduin2017/HowToCook/archive/25854882a423d7dbd6f6146b6554e2fa3b8f9804.tar.gz"
+     "filename": "HowToCook-58c1b9a.tar.gz",
+     "url": "https://github.com/Anduin2017/HowToCook/archive/58c1b9af7900a9489c340bca39ef94a9a62314b1.tar.gz"
     }
    ],
    "home": "https://github.com/Anduin2017/HowToCook",
@@ -2245,7 +2266,7 @@
    ],
    "tier": "ark",
    "title": "程序员做饭指南 HowToCook (a precise home cooking guide, in Chinese)",
-   "version": "2585488"
+   "version": "58c1b9a"
   },
   "mutopiaproject.org_en_all": {
    "date": "2026-11-02",

@@ -35,12 +35,12 @@
    "version": "1.0.4.1.3"
   },
   "chirp": {
-   "date": "2026-11-17",
+   "date": "2026-11-24",
    "dest": "radio/chirp",
    "files": [
     {
-     "filename": "chirp-ae35e89.tar.gz",
-     "url": "https://github.com/kk7ds/chirp/archive/ae35e8998da98bfc322d721e276d1d3aa6799ef4.tar.gz"
+     "filename": "chirp-0ad6519.tar.gz",
+     "url": "https://github.com/kk7ds/chirp/archive/0ad6519cd7331d536a7c484729fe380005283588.tar.gz"
     }
    ],
    "home": "https://chirpmyradio.com",
@@ -54,7 +54,7 @@
    ],
    "tier": "seed",
    "title": "CHIRP (radio programming, source code)",
-   "version": "ae35e89"
+   "version": "0ad6519"
   },
   "direwolf": {
    "date": "2025-11-13",
@@ -98,12 +98,12 @@
    "version": "2026-10-31"
   },
   "fcc_amateur_licenses": {
-   "date": "2026-11-15",
+   "date": "2026-11-22",
    "dest": "radio/data",
    "files": [
     {
      "filename": "l_amat.zip",
-     "size": 198401544,
+     "size": 192801055,
      "url": "https://data.fcc.gov/download/pub/uls/complete/l_amat.zip"
     }
    ],
@@ -115,7 +115,7 @@
    ],
    "tier": "seed",
    "title": "FCC amateur license database (offline callsign lookup)",
-   "version": "2026-11-15"
+   "version": "2026-11-22"
   },
   "fldigi": {
    "date": "2026-08-03",
@@ -439,14 +439,14 @@
    "version": "0.7.3"
   },
   "nomadnet": {
-   "date": "2026-11-07",
+   "date": "2026-11-18",
    "dest": "radio",
    "files": [
     {
-     "filename": "nomadnet-1.5.0-py3-none-any.whl",
-     "sha256": "deb9d34d8b514c26cf6f15b43d01b058f2cb04ff1892900d8d44b4a584400b6d",
-     "size": 336808,
-     "url": "https://github.com/markqvist/NomadNet/releases/download/1.5.0/nomadnet-1.5.0-py3-none-any.whl"
+     "filename": "nomadnet-1.5.1-py3-none-any.whl",
+     "sha256": "bb075315d310951d3cc894f7c21cc7fab3c5b8c802af3ffad4d1fa4e54093329",
+     "size": 337351,
+     "url": "https://github.com/markqvist/NomadNet/releases/download/1.5.1/nomadnet-1.5.1-py3-none-any.whl"
     }
    ],
    "kind": "archive",
@@ -456,7 +456,7 @@
    ],
    "tier": "ark",
    "title": "Nomad Network (messaging over Reticulum)",
-   "version": "1.5.0"
+   "version": "1.5.1"
   },
   "pat_winlink": {
    "date": "2026-11-01",
@@ -502,14 +502,14 @@
    "version": "1.0.1"
   },
   "reticulum": {
-   "date": "2026-11-07",
+   "date": "2026-11-18",
    "dest": "radio",
    "files": [
     {
-     "filename": "rns-1.6.0-py3-none-any.whl",
-     "sha256": "fcf2d07eebafea7e56a94542bd74646e451b0f33bb3efb5f914bbbba38b39f36",
-     "size": 681475,
-     "url": "https://github.com/markqvist/Reticulum/releases/download/1.6.0/rns-1.6.0-py3-none-any.whl"
+     "filename": "rns-1.6.1-py3-none-any.whl",
+     "sha256": "f276cb7d818df5cfd6ecc59a8a4f3344e47d46acdfdb48e75537400309547959",
+     "size": 695348,
+     "url": "https://github.com/markqvist/Reticulum/releases/download/1.6.1/rns-1.6.1-py3-none-any.whl"
     }
    ],
    "kind": "archive",
@@ -519,7 +519,7 @@
    ],
    "tier": "ark",
    "title": "Reticulum network stack",
-   "version": "1.6.0"
+   "version": "1.6.1"
   },
   "rnode_firmware": {
    "date": "2026-04-24",
@@ -666,42 +666,42 @@
    "version": "8.2.0"
   },
   "sdrpp": {
-   "date": "2026-11-07",
+   "date": "2026-11-18",
    "dest": "radio",
    "files": [
     {
      "filename": "sdrpp_debian_bookworm_amd64.deb",
      "platform": "linux-x64",
-     "sha256": "45a7d350e3a2b893f88c6d3e195a3854845e9a775d9818b8a343056750bad5f0",
-     "size": 2158344,
+     "sha256": "6a6b1cea9b25d1e0af342737a40291cefe533e20356de7d2516053ebdf4b269a",
+     "size": 2159452,
      "url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp_debian_bookworm_amd64.deb"
     },
     {
      "filename": "sdrpp_debian_bookworm_aarch64.deb",
      "platform": "linux-arm64",
-     "sha256": "35abbf5316de2123c1d069b2d06f503559742cf229d076d15a90120212efbcc6",
-     "size": 1986084,
+     "sha256": "29c7b5584d63b6558034f271e4b56d033daff532d4f2f723c8737bcada8d9e36",
+     "size": 1985676,
      "url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp_debian_bookworm_aarch64.deb"
     },
     {
      "filename": "sdrpp_windows_x64.zip",
      "platform": "windows-x64",
-     "sha256": "c0458e74e7dff6787d6e927b627022f37d2e93a821b4484532e26dd5cf2bed72",
-     "size": 8524098,
+     "sha256": "19d846960e5da2f499c717cea868bafd4d4435cdf5e74f2d9eb89b64220068cb",
+     "size": 8506930,
      "url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp_windows_x64.zip"
     },
     {
      "filename": "sdrpp_macos_arm.zip",
      "platform": "macos-arm64",
-     "sha256": "7731d91ca4784363ea7ffb908925a77d8863720f2daab315c2d5883626661062",
-     "size": 4239544,
+     "sha256": "7b5147c3ffc693493d894ec0bc9a63b94757ff6384e79bc28bd342be58a2d37b",
+     "size": 4240175,
      "url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp_macos_arm.zip"
     },
     {
      "filename": "sdrpp.apk",
      "platform": "android",
-     "sha256": "f91ef5199d4a0fd8e213b3d802d24f4245a35723fa0cc5a19c48cd6d1f2d1d2f",
-     "size": 63853572,
+     "sha256": "8836566befe0213913d2c583b15e73b5e1f4a80f6314dc287d8a98b2f6c55b72",
+     "size": 63768268,
      "url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp.apk"
     }
    ],
@@ -712,7 +712,7 @@
    ],
    "tier": "seed",
    "title": "SDR++ (SDR receiver)",
-   "version": "2026-11-07"
+   "version": "2026-11-18"
   },
   "sdrtrunk": {
    "date": "2026-11-13",
@@ -758,21 +758,21 @@
    "version": "1.0.0"
   },
   "sideband": {
-   "date": "2026-11-08",
+   "date": "2026-11-20",
    "dest": "radio",
    "files": [
     {
-     "filename": "Sideband_2.3.0.apk",
+     "filename": "Sideband_2.3.1.apk",
      "platform": "android",
-     "sha256": "58887dd3fef73b5ae56b1f1dc50e0877f9b50308e5a0ddb52d49ddc8d682c3fe",
-     "size": 124383940,
-     "url": "https://github.com/markqvist/Sideband/releases/download/2.3.0/Sideband_2.3.0.apk"
+     "sha256": "15c43ef69b81bc3f409b4e62793542e9ebfa25c687246e8cd19448648ab6ffbb",
+     "size": 125462118,
+     "url": "https://github.com/markqvist/Sideband/releases/download/2.3.1/Sideband_2.3.1.apk"
     },
     {
-     "filename": "sbapp-2.3.0-py3-none-any.whl",
-     "sha256": "918e20217083e893c3b7be2f86b37df90e294b91477cf42e60d06a5dd181de39",
-     "size": 68809330,
-     "url": "https://github.com/markqvist/Sideband/releases/download/2.3.0/sbapp-2.3.0-py3-none-any.whl"
+     "filename": "sbapp-2.3.1-py3-none-any.whl",
+     "sha256": "b30477d2d9a7a8c40f7eb3c81733989d3ea339e8a9f360dd626e210f65ae7bec",
+     "size": 68850774,
+     "url": "https://github.com/markqvist/Sideband/releases/download/2.3.1/sbapp-2.3.1-py3-none-any.whl"
     }
    ],
    "kind": "archive",
@@ -782,7 +782,7 @@
    ],
    "tier": "ark",
    "title": "Sideband (Reticulum messenger)",
-   "version": "2.3.0"
+   "version": "2.3.1"
   },
   "tle_amateur": {
    "dest": "radio/data",

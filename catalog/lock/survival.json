@@ -570,6 +570,7 @@
    "kind": "document",
    "license": "US government work",
    "note": "A list of 1,112 plants eaten across the United States and Canada: which part, how it was prepared and where. No pictures. Use it to learn what grows in your region, then identify each plant with a picture guide before you trust it.",
+   "stale": true,
    "tags": [
     "fieldcraft",
     "plants",
@@ -1177,6 +1178,7 @@
    "kind": "document",
    "license": "US government work",
    "note": "Great Plains. Plants the Dakota, Omaha, Ponca and Pawnee used for food and medicine, with photographs.",
+   "stale": true,
    "tags": [
     "fieldcraft",
     "plants",

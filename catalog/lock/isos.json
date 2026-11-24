@@ -87,46 +87,46 @@
    "dest": "isos",
    "files": [
     {
-     "filename": "debian-13.7.0-amd64-DVD-1.iso",
-     "sha256": "347b6c67a3cc0b7ddb60b178f683470c4e2b7ac426c996d9337a2ff36c1a32d2",
-     "size": 3992977408,
-     "url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-13.7.0-amd64-DVD-1.iso"
+     "filename": "debian-13.8.0-amd64-DVD-1.iso",
+     "sha256": "971a58f2dc7468bbefda667074d18703f7437e92ac375e5f2047d2fbed1c41a0",
+     "size": 3964551168,
+     "url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-13.8.0-amd64-DVD-1.iso"
     }
    ],
    "kind": "iso",
    "tier": "eden",
    "title": "Debian stable DVD 1 (installs with no network)",
-   "version": "13.7.0"
+   "version": "13.8.0"
   },
   "debian_live": {
    "dest": "isos",
    "files": [
     {
-     "filename": "debian-live-13.7.0-amd64-xfce.iso",
-     "sha256": "379fcf159fa72a2ed8e3b74f4047df6061bc65adf5217e3d194e41a26fdb85e4",
-     "size": 3826974720,
-     "url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-xfce.iso"
+     "filename": "debian-live-13.8.0-amd64-xfce.iso",
+     "sha256": "99e40aa5a1602454f28042a1199852e90c283182f29ba3736cb4f3f0fe174dae",
+     "size": 3847454720,
+     "url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.8.0-amd64-xfce.iso"
     }
    ],
    "kind": "iso",
    "tier": "ark",
    "title": "Debian stable Live (Xfce)",
-   "version": "13.7.0"
+   "version": "13.8.0"
   },
   "debian_netinst": {
    "dest": "isos",
    "files": [
     {
-     "filename": "debian-13.7.0-amd64-netinst.iso",
-     "sha256": "a7ef94ac2fb9a7fec454552abd629b7cc9d5155c886165a45649f5ce6167e355",
-     "size": 792723456,
-     "url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.7.0-amd64-netinst.iso"
+     "filename": "debian-13.8.0-amd64-netinst.iso",
+     "sha256": "3770c7a54890f7574a68a8b402e553806a81d6bccfb379554caad3a9a857931e",
+     "size": 794820608,
+     "url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.8.0-amd64-netinst.iso"
     }
    ],
    "kind": "iso",
    "tier": "ark",
    "title": "Debian stable (network installer)",
-   "version": "13.7.0"
+   "version": "13.8.0"
   },
   "fedora_workstation": {
    "dest": "isos",
@@ -194,22 +194,9 @@
     }
    ],
    "kind": "iso",
-   "tier": "eden",
-   "title": "Kali Linux installer",
-   "version": "2026.3"
-  },
-  "kali_live": {
-   "dest": "isos",
-   "files": [
-    {
-     "filename": "kali-linux-2026.3-live-amd64.iso",
-     "sha256": "93a40ef53936719119824c3f0f0742ab50a045e2e082b95e382cf9f2f1f8acbb",
-     "url": "https://cdimage.kali.org/current/kali-linux-2026.3-live-amd64.iso"
-    }
-   ],
-   "kind": "iso",
+   "note": "The installer, since Kali hands out its live image by torrent only.",
    "tier": "ark",
-   "title": "Kali Linux Live",
+   "title": "Kali Linux installer",
    "version": "2026.3"
   },
   "linux_mint": {
@@ -326,16 +313,16 @@
    "dest": "isos",
    "files": [
     {
-     "filename": "tails-amd64-7.17.img",
-     "sha256": "1b2b7f345f9ee753791b9526ef620287dae82e00c4d326223dc7ccbfa66abaf2",
-     "size": 1901068288,
-     "url": "https://download.tails.net/tails/stable/tails-amd64-7.17/tails-amd64-7.17.img"
+     "filename": "tails-amd64-7.17.1.img",
+     "sha256": "2dc53d11973626533379680d3cfedca91d0bbd66fe244eb1d9ee667a5ee2637a",
+     "size": 1904214016,
+     "url": "https://download.tails.net/tails/stable/tails-amd64-7.17.1/tails-amd64-7.17.1.img"
     }
    ],
    "kind": "iso",
    "tier": "ark",
    "title": "Tails (amnesic live system, USB image)",
-   "version": "7.17"
+   "version": "7.17.1"
   },
   "ubuntu_desktop": {
    "dest": "isos",

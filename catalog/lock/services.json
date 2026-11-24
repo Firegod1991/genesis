@@ -2,12 +2,12 @@
  "items": {
   "img_adsb": {
    "dest": "images",
-   "digest": "sha256:a0a6c252492e7f3a1a1f3800307cb1b2ec2989ce4bf543888c48466ad738825d",
+   "digest": "sha256:855a12d6681f9413e238b97839398a52f95aa9d8af9d50b5c351566c2323af4e",
    "image": "ghcr.io/sdr-enthusiasts/docker-adsb-ultrafeeder:latest",
    "kind": "image",
    "tier": "ark",
    "title": "ADS-B aircraft tracker (readsb and tar1090)",
-   "version": "a0a6c252492e"
+   "version": "855a12d6681f"
   },
   "img_ais": {
    "dest": "images",
@@ -20,39 +20,39 @@
   },
   "img_calibre": {
    "dest": "images",
-   "digest": "sha256:adb69d75b9c252e580fc691096f858833b901b5d106ae4080fb476bab104d946",
+   "digest": "sha256:18b65a754ec18f119af36ad672b5f1e64543c89648febd6df6edf64f5ec4c5b8",
    "image": "linuxserver/calibre-web:latest",
    "kind": "image",
    "tier": "ark",
    "title": "Calibre Web (ebook library)",
-   "version": "adb69d75b9c2"
+   "version": "18b65a754ec1"
   },
   "img_chat": {
    "dest": "images",
-   "digest": "sha256:b19c2ef06efce2a494a7f142e5acba2db3086a591453f25916e204d342e3d194",
+   "digest": "sha256:5c3776545c24c8e04ce9520d8aab7320209043aad246ac710dc3339bfda4c772",
    "image": "ghcr.io/thelounge/thelounge:latest",
    "kind": "image",
    "tier": "ark",
    "title": "The Lounge (web chat client)",
-   "version": "b19c2ef06efc"
+   "version": "5c3776545c24"
   },
   "img_code": {
    "dest": "images",
-   "digest": "sha256:09565f9e07f5624554e295e8bab0e2fec4a7c533eb3cff459ed6596a4d3d7c1c",
+   "digest": "sha256:fc708b18f6c613b5a9d00f1d1801e58376d3df9c5b5de77f5c02d67b711f99c9",
    "image": "codercom/code-server:latest",
    "kind": "image",
    "tier": "ark",
    "title": "code-server (VS Code in the browser)",
-   "version": "09565f9e07f5"
+   "version": "fc708b18f6c6"
   },
   "img_cyberchef": {
    "dest": "images",
-   "digest": "sha256:f04a39926344faf8e4cbbc8c92fb125d2b466f9be62db09aff23c7c406101a51",
+   "digest": "sha256:847b3a20804815014babe9cfa628a1fd1980d92f98240f48cfc6c8e2f5ff7a14",
    "image": "ghcr.io/gchq/cyberchef:latest",
    "kind": "image",
    "tier": "seed",
    "title": "CyberChef",
-   "version": "f04a39926344"
+   "version": "847b3a208048"
   },
   "img_dashboard": {
    "dest": "images",
@@ -164,57 +164,57 @@
   },
   "img_ollama": {
    "dest": "images",
-   "digest": "sha256:910d0d8107b538fb0894e63163eb195de0cc7aefcbc666dc62d3b18f71124592",
+   "digest": "sha256:1cabd20e1762a7a8444bf4a7110b346d923cd77ab6c97c984434140638c913ec",
    "image": "ollama/ollama:latest",
    "kind": "image",
    "tier": "seed",
    "title": "Ollama",
-   "version": "910d0d8107b5"
+   "version": "1cabd20e1762"
   },
   "img_openwebrx": {
    "dest": "images",
-   "digest": "sha256:c527062bdc85203c6050bbb2ed6f2e1750bb9eca2d75b03538779d7b20c4cded",
+   "digest": "sha256:5968bf3a4154f86b1dbf2b2148a53ee035fdee99d393fe9b7252e0d4d90e57a5",
    "image": "slechev/openwebrxplus:latest",
    "kind": "image",
    "tier": "seed",
    "title": "OpenWebRX+ (web SDR receiver)",
-   "version": "c527062bdc85"
+   "version": "5968bf3a4154"
   },
   "img_openwebui": {
    "dest": "images",
-   "digest": "sha256:59b912d4246103c7285de0e9a5f2f6586614c06b4c4e46edc51a8f29e7b099a5",
+   "digest": "sha256:d6c085678f7e3f474aa2a92ac9831cb68759dcfd951de250ebbb37dac5cd0255",
    "image": "ghcr.io/open-webui/open-webui:main",
    "kind": "image",
    "tier": "seed",
    "title": "Open WebUI (chat with documents)",
-   "version": "59b912d42461"
+   "version": "d6c085678f7e"
   },
   "img_pdf": {
    "dest": "images",
-   "digest": "sha256:ed7b1775c6706b5e5ea24fa6155f078eff1027bd35a17d21834e4407036025e6",
+   "digest": "sha256:f5a38801f2dd551c26d0089ee3ea48d86a565e3adb414cb31e974bc9562cb48a",
    "image": "ghcr.io/stirling-tools/s-pdf:latest",
    "kind": "image",
    "tier": "ark",
    "title": "Stirling PDF",
-   "version": "ed7b1775c670"
+   "version": "f5a38801f2dd"
   },
   "img_routing": {
    "dest": "images",
-   "digest": "sha256:693617873d42f24d9023eaa9aa002dccd832c9629c9ce8b60eb4ff30547215e1",
+   "digest": "sha256:89f33b5fb6304cdf9d919c21ee9164e5be16e46e5c4522cc2552e4ede7f9e311",
    "image": "ghcr.io/valhalla/valhalla-scripted:latest",
    "kind": "image",
    "tier": "ark",
    "title": "Valhalla (offline turn by turn routing)",
-   "version": "693617873d42"
+   "version": "89f33b5fb630"
   },
   "img_translate": {
    "dest": "images",
-   "digest": "sha256:6f03f063a10d120cdb5986e8995d4524729d14125269bc6c49f791e49789aec8",
+   "digest": "sha256:e8e858a1f1db7bef3b80531d2bbef0762aa1ed7143f4565f5f5254585e69912a",
    "image": "libretranslate/libretranslate:latest",
    "kind": "image",
    "tier": "ark",
    "title": "LibreTranslate (offline translation)",
-   "version": "6f03f063a10d"
+   "version": "e8e858a1f1db"
   },
   "img_voice": {
    "dest": "images",

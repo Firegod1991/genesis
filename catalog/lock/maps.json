@@ -32,14 +32,14 @@
    "version": "current"
   },
   "planet_basemap": {
-   "date": "2026-11-16",
+   "date": "2026-11-23",
    "dest": "maps",
    "files": [
     {
      "filename": "planet.pmtiles",
-     "md5": "6331da36b986817b58a5b467b90df8a7",
-     "size": 139535414652,
-     "url": "https://build.protomaps.com/20261116.pmtiles"
+     "md5": "469ce74de5580e551f6e04d978b9a649",
+     "size": 139721338415,
+     "url": "https://build.protomaps.com/20261123.pmtiles"
     }
    ],
    "kind": "map",
@@ -50,16 +50,16 @@
    "note": "Every street on Earth in one file. You do not need it to map your own region: `genesis maps region` cuts any area straight from this build.",
    "tier": "eden",
    "title": "Planet basemap, full detail (Protomaps daily build)",
-   "version": "20261116"
+   "version": "20261123"
   },
   "planet_osm": {
-   "date": "2026-11-12",
+   "date": "2026-11-19",
    "dest": "osm",
    "files": [
     {
      "filename": "planet-latest.osm.pbf",
      "md5_url": "https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf.md5",
-     "size": 95827888806,
+     "size": 95941737359,
      "url": "https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf"
     }
    ],
@@ -68,7 +68,7 @@
    "note": "Input for building survival layers and routing for the entire world yourself.",
    "tier": "eden",
    "title": "OpenStreetMap planet (raw data)",
-   "version": "2026-11-12"
+   "version": "2026-11-19"
   },
   "survival_layers_world": {
    "date": "2026-11-15",

@@ -124,82 +124,82 @@
    "version": "2026-10"
   },
   "bun": {
-   "date": "2026-10-22",
+   "date": "2026-11-19",
    "dest": "code",
    "files": [
     {
      "filename": "bun-linux-x64.zip",
      "platform": "linux-x64",
-     "sha256": "bf8ccbfb2b0b80159e0f9a6d15c55317add8077534dbc6130a3edb52fccb395c",
-     "size": 51794595,
-     "url": "https://github.com/oven-sh/bun/releases/download/bun-v1.4.4/bun-linux-x64.zip"
+     "sha256": "94559b3b528995a49452f9f2404cec74f2efd7d06e0a000a8cd214b02c3666eb",
+     "size": 51336055,
+     "url": "https://github.com/oven-sh/bun/releases/download/bun-v1.4.5/bun-linux-x64.zip"
     },
     {
      "filename": "bun-linux-aarch64.zip",
      "platform": "linux-arm64",
-     "sha256": "baa6bb36f51d6e58561e02bbea825038a9df454f673d6d776e8bbf86f8c7850e",
-     "size": 51644673,
-     "url": "https://github.com/oven-sh/bun/releases/download/bun-v1.4.4/bun-linux-aarch64.zip"
+     "sha256": "18656a3bf0ea5641f5796ae4213b75255579a70a0fded2f337933785568cdf84",
+     "size": 51133631,
+     "url": "https://github.com/oven-sh/bun/releases/download/bun-v1.4.5/bun-linux-aarch64.zip"
     },
     {
      "filename": "bun-windows-x64.zip",
      "platform": "windows-x64",
-     "sha256": "cd2c0fccc78f3ede1f50ca827a15f063eda13d4d150a3d0674f4f6e323d864a5",
-     "size": 54731706,
-     "url": "https://github.com/oven-sh/bun/releases/download/bun-v1.4.4/bun-windows-x64.zip"
+     "sha256": "815ab45ec7f549abf87e6869584b506eab088e24225683957b7e150b47d6de30",
+     "size": 54437990,
+     "url": "https://github.com/oven-sh/bun/releases/download/bun-v1.4.5/bun-windows-x64.zip"
     },
     {
      "filename": "bun-darwin-aarch64.zip",
      "platform": "macos-arm64",
-     "sha256": "c240d7f0ccb90c263a849fcdb09b7ee62630d921348ed6aafda86b9d577bc510",
-     "size": 40323673,
-     "url": "https://github.com/oven-sh/bun/releases/download/bun-v1.4.4/bun-darwin-aarch64.zip"
+     "sha256": "b5d6bc2e13caf14e57c89661e89efd073ff16165b41bfe43882616410609cd10",
+     "size": 39827261,
+     "url": "https://github.com/oven-sh/bun/releases/download/bun-v1.4.5/bun-darwin-aarch64.zip"
     }
    ],
    "kind": "archive",
    "license": "MIT",
    "tier": "ark",
    "title": "Bun (JavaScript runtime)",
-   "version": "1.4.4"
+   "version": "1.4.5"
   },
   "cmake": {
-   "date": "2026-11-12",
+   "date": "2026-11-19",
    "dest": "code",
    "files": [
     {
-     "filename": "cmake-4.5.0-linux-x86_64.tar.gz",
+     "filename": "cmake-4.5.1-linux-x86_64.tar.gz",
      "platform": "linux-x64",
-     "sha256": "81f0d5b0960fb6adc8197030ffc827fba937640d51e73e39e0e9e40d88c66f6f",
-     "size": 67002501,
-     "url": "https://github.com/Kitware/CMake/releases/download/v4.5.0/cmake-4.5.0-linux-x86_64.tar.gz"
+     "sha256": "83b71181fb62b4fe8f26067a9321448572e7a43bd04ff6c7f54a24c33698f16d",
+     "size": 67009694,
+     "url": "https://github.com/Kitware/CMake/releases/download/v4.5.1/cmake-4.5.1-linux-x86_64.tar.gz"
     },
     {
-     "filename": "cmake-4.5.0-linux-aarch64.tar.gz",
+     "filename": "cmake-4.5.1-linux-aarch64.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "0c8447e7bba9701467b5ac6155d157aa9e309e71af4981f78bd4b9176107f553",
-     "size": 53719606,
-     "url": "https://github.com/Kitware/CMake/releases/download/v4.5.0/cmake-4.5.0-linux-aarch64.tar.gz"
+     "sha256": "3bec208f11ed96c173032eeaf97937c54dd246acefee22acd7794a6b4e70d536",
+     "size": 53729621,
+     "url": "https://github.com/Kitware/CMake/releases/download/v4.5.1/cmake-4.5.1-linux-aarch64.tar.gz"
     },
     {
-     "filename": "cmake-4.5.0-windows-x86_64.zip",
+     "filename": "cmake-4.5.1-windows-x86_64.zip",
      "platform": "windows-x64",
-     "sha256": "301b1728317ccd84e984b02e366a8293735bc5ac618757d3d8f58b578f062411",
-     "size": 56341654,
-     "url": "https://github.com/Kitware/CMake/releases/download/v4.5.0/cmake-4.5.0-windows-x86_64.zip"
+     "sha256": "bfe6eadb245dc8213e0d3feea316b520cb2aae92f5667ffd76059ba6b05c430c",
+     "size": 56581138,
+     "url": "https://github.com/Kitware/CMake/releases/download/v4.5.1/cmake-4.5.1-windows-x86_64.zip"
     },
     {
-     "filename": "cmake-4.5.0-macos-universal.tar.gz",
+     "filename": "cmake-4.5.1-macos-universal.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "a645d69fd21e521759cc0c64e7c60462d43faf0c7214ac05f75c80f7c5037dde",
-     "size": 92795915,
-     "url": "https://github.com/Kitware/CMake/releases/download/v4.5.0/cmake-4.5.0-macos-universal.tar.gz"
+     "sha256": "e1fb288543e4eb2a410e385ecebc64323bda51f0205782f2b094ccd5d572ca2d",
+     "size": 92792874,
+     "url": "https://github.com/Kitware/CMake/releases/download/v4.5.1/cmake-4.5.1-macos-universal.tar.gz"
     }
    ],
    "kind": "archive",
    "license": "BSD 3 Clause",
    "tier": "ark",
    "title": "CMake",
-   "version": "4.5.0"
+   "version": "4.5.1"
   },
   "codereview.stackexchange.com_en_all": {
    "date": "2026-10-20",
@@ -459,43 +459,43 @@
    "version": "2026-10"
   },
   "dart": {
-   "date": "2026-11-04",
+   "date": "2026-11-17",
    "dest": "code",
    "files": [
     {
-     "filename": "dartsdk-3.14.0-linux-x64.zip",
+     "filename": "dartsdk-3.14.1-linux-x64.zip",
      "platform": "linux-x64",
-     "sha256_url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.0/sdk/dartsdk-linux-x64-release.zip.sha256sum",
-     "size": 267306640,
-     "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.0/sdk/dartsdk-linux-x64-release.zip"
+     "sha256_url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.1/sdk/dartsdk-linux-x64-release.zip.sha256sum",
+     "size": 267277716,
+     "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.1/sdk/dartsdk-linux-x64-release.zip"
     },
     {
-     "filename": "dartsdk-3.14.0-linux-arm64.zip",
+     "filename": "dartsdk-3.14.1-linux-arm64.zip",
      "platform": "linux-arm64",
-     "sha256_url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.0/sdk/dartsdk-linux-arm64-release.zip.sha256sum",
-     "size": 263877815,
-     "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.0/sdk/dartsdk-linux-arm64-release.zip"
+     "sha256_url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.1/sdk/dartsdk-linux-arm64-release.zip.sha256sum",
+     "size": 263878366,
+     "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.1/sdk/dartsdk-linux-arm64-release.zip"
     },
     {
-     "filename": "dartsdk-3.14.0-windows-x64.zip",
+     "filename": "dartsdk-3.14.1-windows-x64.zip",
      "platform": "windows-x64",
-     "sha256_url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.0/sdk/dartsdk-windows-x64-release.zip.sha256sum",
-     "size": 231471464,
-     "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.0/sdk/dartsdk-windows-x64-release.zip"
+     "sha256_url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.1/sdk/dartsdk-windows-x64-release.zip.sha256sum",
+     "size": 231469245,
+     "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.1/sdk/dartsdk-windows-x64-release.zip"
     },
     {
-     "filename": "dartsdk-3.14.0-macos-arm64.zip",
+     "filename": "dartsdk-3.14.1-macos-arm64.zip",
      "platform": "macos-arm64",
-     "sha256_url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.0/sdk/dartsdk-macos-arm64-release.zip.sha256sum",
-     "size": 237639591,
-     "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.0/sdk/dartsdk-macos-arm64-release.zip"
+     "sha256_url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.1/sdk/dartsdk-macos-arm64-release.zip.sha256sum",
+     "size": 237655684,
+     "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.14.1/sdk/dartsdk-macos-arm64-release.zip"
     }
    ],
    "kind": "archive",
    "license": "BSD 3 Clause",
    "tier": "ark",
    "title": "Dart SDK",
-   "version": "3.14.0"
+   "version": "3.14.1"
   },
   "datascience.stackexchange.com_en_all": {
    "date": "2026-10-20",
@@ -5966,14 +5966,14 @@
    "version": "2026-10"
   },
   "docs.python.org_en_all": {
-   "date": "2026-08-28",
+   "date": "2026-11-18",
    "dest": "zim",
    "files": [
     {
-     "filename": "docs.python.org_en_all_2026-08a.zim",
-     "sha256_url": "https://download.kiwix.org/zim/zimit/docs.python.org_en_all_2026-08a.zim.sha256",
-     "size": 3959219200,
-     "url": "https://download.kiwix.org/zim/zimit/docs.python.org_en_all_2026-08a.zim"
+     "filename": "docs.python.org_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/docs.python.org_en_all_2026-11.zim.sha256",
+     "size": 3834753024,
+     "url": "https://download.kiwix.org/zim/zimit/docs.python.org_en_all_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -5983,7 +5983,7 @@
    ],
    "tier": "ark",
    "title": "Python Documentation",
-   "version": "2026-08-28"
+   "version": "2026-11"
   },
   "dotnet": {
    "date": "2026-11-10",
@@ -6046,43 +6046,43 @@
    "version": "2026-10"
   },
   "duckdb": {
-   "date": "2026-10-21",
+   "date": "2026-11-20",
    "dest": "code",
    "files": [
     {
      "filename": "duckdb-cli-linux-amd64.tar.gz",
      "platform": "linux-x64",
-     "sha256": "c6507206baf7793c6013dbd82368469a45f20dc0e17a6f92f204602f652ed2bc",
-     "size": 24424037,
-     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.0/duckdb-cli-linux-amd64.tar.gz"
+     "sha256": "b676268be4d39e4e41a904442c9796c9914e645cc085c7505f048f2c992b5eca",
+     "size": 24797496,
+     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.1/duckdb-cli-linux-amd64.tar.gz"
     },
     {
      "filename": "duckdb-cli-linux-arm64.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "859e1875d2a9515fbb4bf8871061437a14af82320da68c753f094c4b776348fe",
-     "size": 22306407,
-     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.0/duckdb-cli-linux-arm64.tar.gz"
+     "sha256": "84e37891fcc45c887e30220f51a4914995cd8174139e87f8efd311ac83c956a7",
+     "size": 22648356,
+     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.1/duckdb-cli-linux-arm64.tar.gz"
     },
     {
      "filename": "duckdb-cli-windows-amd64.tar.gz",
      "platform": "windows-x64",
-     "sha256": "91663c2f36c2a334b0e5e639006d8c29c29e013af0c477d80bb931df68870312",
-     "size": 19663611,
-     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.0/duckdb-cli-windows-amd64.tar.gz"
+     "sha256": "8e40d1e9c53dfd70dd671c1f886506211bd054272e7eed35e8aa979ad7bcc9b7",
+     "size": 19951699,
+     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.1/duckdb-cli-windows-amd64.tar.gz"
     },
     {
      "filename": "duckdb-cli-osx-universal.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "8a8f67e7c7f7d1392fa63ba3971948391392fe2a25fca63e7008e33c50beb4c2",
-     "size": 40639690,
-     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.0/duckdb-cli-osx-universal.tar.gz"
+     "sha256": "9d6ea079e8c3b5698f559fc64e7e5e43dd21a51e8a618b29b18de4716299ca40",
+     "size": 41037027,
+     "url": "https://github.com/duckdb/duckdb/releases/download/v2.0.1/duckdb-cli-osx-universal.tar.gz"
     }
    ],
    "kind": "archive",
    "license": "MIT",
    "tier": "ark",
    "title": "DuckDB",
-   "version": "2.0.0"
+   "version": "2.0.1"
   },
   "elixir": {
    "date": "2026-10-29",
@@ -6322,14 +6322,14 @@
    "version": "2026-10"
   },
   "freecodecamp_en_all": {
-   "date": "2026-08-21",
+   "date": "2026-11-19",
    "dest": "zim",
    "files": [
     {
-     "filename": "freecodecamp_en_all_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/freecodecamp/freecodecamp_en_all_2026-08.zim.sha256",
-     "size": 7894016,
-     "url": "https://download.kiwix.org/zim/freecodecamp/freecodecamp_en_all_2026-08.zim"
+     "filename": "freecodecamp_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/freecodecamp/freecodecamp_en_all_2026-11.zim.sha256",
+     "size": 11702272,
+     "url": "https://download.kiwix.org/zim/freecodecamp/freecodecamp_en_all_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -6341,7 +6341,7 @@
    ],
    "tier": "seed",
    "title": "FreeCodeCamp",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "freecodecamp_en_coding-interview-prep": {
    "date": "2026-11-09",
@@ -7600,39 +7600,39 @@
    "dest": "code",
    "files": [
     {
-     "filename": "OpenJDK25U-jdk_x64_linux_hotspot_25.0.5_8.tar.gz",
+     "filename": "OpenJDK25U-jdk_x64_linux_hotspot_25.0.5.1_2.tar.gz",
      "platform": "linux-x64",
-     "sha256": "68982529869257d0ee6b824ec5aa270ff8b118bb438670da0b97ebdab178d7fb",
-     "size": 141341188,
-     "url": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.5%2B8/OpenJDK25U-jdk_x64_linux_hotspot_25.0.5_8.tar.gz"
+     "sha256": "760f91b22c3efc9bd1b64ff950598231be82928cc807e30691a0e7a2995a62c0",
+     "size": 141362230,
+     "url": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.5.1%2B2/OpenJDK25U-jdk_x64_linux_hotspot_25.0.5.1_2.tar.gz"
     },
     {
-     "filename": "OpenJDK25U-jdk_aarch64_linux_hotspot_25.0.5_8.tar.gz",
+     "filename": "OpenJDK25U-jdk_aarch64_linux_hotspot_25.0.5.1_2.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "bb5b2ded252f21c6090cf780b0a408ad0d83bbb557e702955643557f13231880",
-     "size": 140178170,
-     "url": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.5%2B8/OpenJDK25U-jdk_aarch64_linux_hotspot_25.0.5_8.tar.gz"
+     "sha256": "c37879e0d08eeb1baa69fcbb7758cd455b7b1c0ceab1e2a136ccb1713c530984",
+     "size": 140197557,
+     "url": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.5.1%2B2/OpenJDK25U-jdk_aarch64_linux_hotspot_25.0.5.1_2.tar.gz"
     },
     {
-     "filename": "OpenJDK25U-jdk_x64_windows_hotspot_25.0.5_8.zip",
+     "filename": "OpenJDK25U-jdk_x64_windows_hotspot_25.0.5.1_2.zip",
      "platform": "windows-x64",
-     "sha256": "636bdc13dc649ddc7d5921c5c7d23cca6e44fd19d662b45cc9c02135a6c96c42",
-     "size": 141285173,
-     "url": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.5%2B8/OpenJDK25U-jdk_x64_windows_hotspot_25.0.5_8.zip"
+     "sha256": "849d380ab0a64d9098e7d3a2de28beb73841c3b255c8284f019ccd8748c5eb5b",
+     "size": 141295462,
+     "url": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.5.1%2B2/OpenJDK25U-jdk_x64_windows_hotspot_25.0.5.1_2.zip"
     },
     {
-     "filename": "OpenJDK25U-jdk_aarch64_mac_hotspot_25.0.5_8.tar.gz",
+     "filename": "OpenJDK25U-jdk_aarch64_mac_hotspot_25.0.5.1_2.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "36dc14d797aaff6d89aab302cd053fdba6207dfdcf772052fa7b023a94b0e857",
-     "size": 136446056,
-     "url": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.5%2B8/OpenJDK25U-jdk_aarch64_mac_hotspot_25.0.5_8.tar.gz"
+     "sha256": "248353ea41be39d5d2c1c67c7ce0ae4d1668966aacd0c5308464bc1be42f677b",
+     "size": 136452381,
+     "url": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.5.1%2B2/OpenJDK25U-jdk_aarch64_mac_hotspot_25.0.5.1_2.tar.gz"
     }
    ],
    "kind": "archive",
    "license": "GPL 2.0 with Classpath Exception",
    "tier": "ark",
    "title": "Java JDK (Eclipse Temurin LTS)",
-   "version": "25.0.5+8.0.LTS"
+   "version": "25.0.5+100000002.0.LTS"
   },
   "jeffe.cs.illinois.edu_en_all": {
    "date": "2026-09-04",
@@ -7750,29 +7750,29 @@
    "version": "2.4.21"
   },
   "llvm": {
-   "date": "2026-11-03",
+   "date": "2026-11-17",
    "dest": "code",
    "files": [
     {
-     "filename": "LLVM-23.1.5-Linux-X64.tar.xz",
+     "filename": "LLVM-23.1.6-Linux-X64.tar.xz",
      "platform": "linux-x64",
-     "sha256": "f72edb0b36580ece7f52e23858f00c18fad4e87395ea7ad05d7e55c39f8fc78a",
-     "size": 2014093084,
-     "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/LLVM-23.1.5-Linux-X64.tar.xz"
+     "sha256": "bd4d1c434ff69ef06d19e7934c04708da677e5f2eb51f5bcf052ab91818f0094",
+     "size": 2014723508,
+     "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.6/LLVM-23.1.6-Linux-X64.tar.xz"
     },
     {
-     "filename": "LLVM-23.1.5-Linux-ARM64.tar.xz",
+     "filename": "LLVM-23.1.6-Linux-ARM64.tar.xz",
      "platform": "linux-arm64",
-     "sha256": "44f1e4b7a125b2763d56386a199928dd57ec32e151cc6042dce2f7b0da7bb651",
-     "size": 1828141344,
-     "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/LLVM-23.1.5-Linux-ARM64.tar.xz"
+     "sha256": "e9daa167da28b9e31d30046f05f98e3e7da3647cdbe1c1863e8b223c07ccf291",
+     "size": 1828682280,
+     "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.6/LLVM-23.1.6-Linux-ARM64.tar.xz"
     },
     {
-     "filename": "clang+llvm-23.1.5-x86_64-pc-windows-msvc.tar.xz",
+     "filename": "clang+llvm-23.1.6-x86_64-pc-windows-msvc.tar.xz",
      "platform": "windows-x64",
-     "sha256": "62fdada7f6fa2b73856486dfbbdba3d2c1882991621615bcb55c60207611c6d4",
-     "size": 901309624,
-     "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/clang%2Bllvm-23.1.5-x86_64-pc-windows-msvc.tar.xz"
+     "sha256": "16af05919cf36958dfb4ddaa4fc4d9d4ff577f5daeb76bc112ea49cd8ced82b2",
+     "size": 901284676,
+     "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.6/clang%2Bllvm-23.1.6-x86_64-pc-windows-msvc.tar.xz"
     },
     {
      "filename": "LLVM-23.1.5-macOS-ARM64.tar.xz",
@@ -7786,7 +7786,7 @@
    "license": "Apache 2.0 with LLVM exceptions",
    "tier": "eden",
    "title": "LLVM and Clang",
-   "version": "23.1.5"
+   "version": "23.1.6"
   },
   "neovim": {
    "date": "2026-10-09",
@@ -8008,43 +8008,43 @@
    "version": "3.14"
   },
   "python": {
-   "date": "2026-11-11",
+   "date": "2026-11-23",
    "dest": "code",
    "files": [
     {
-     "filename": "cpython-3.15.2+20261110-x86_64-unknown-linux-gnu-install_only.tar.gz",
+     "filename": "cpython-3.15.2+20261123-x86_64-unknown-linux-gnu-install_only.tar.gz",
      "platform": "linux-x64",
-     "sha256": "182e7adf7e4f0e32dafac5143f00d466afd20eef45918ea170f78884e503ac18",
-     "size": 83276502,
-     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.15.2%2B20261110-x86_64-unknown-linux-gnu-install_only.tar.gz"
+     "sha256": "c13943cea39c918690c07067d30a44d7525fc630525e618548f2262b712511bf",
+     "size": 83291241,
+     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261123/cpython-3.15.2%2B20261123-x86_64-unknown-linux-gnu-install_only.tar.gz"
     },
     {
-     "filename": "cpython-3.15.2+20261110-aarch64-unknown-linux-gnu-install_only.tar.gz",
+     "filename": "cpython-3.15.2+20261123-aarch64-unknown-linux-gnu-install_only.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "362378c07e01f1d7b18406760ace75e794c21dfff3693535b1bbffe88eec2e52",
-     "size": 63751609,
-     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.15.2%2B20261110-aarch64-unknown-linux-gnu-install_only.tar.gz"
+     "sha256": "f339b2cb77aa281391329581037f9fb103fcc1491793c14f9b472fdf28e5bfdf",
+     "size": 63679250,
+     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261123/cpython-3.15.2%2B20261123-aarch64-unknown-linux-gnu-install_only.tar.gz"
     },
     {
-     "filename": "cpython-3.15.2+20261110-x86_64-pc-windows-msvc-install_only.tar.gz",
+     "filename": "cpython-3.15.2+20261123-x86_64-pc-windows-msvc-install_only.tar.gz",
      "platform": "windows-x64",
-     "sha256": "a0e4e14d152efbd2a66e4873efe0b4ab42e1ee759441dbc23af034236d7a09cd",
-     "size": 53728052,
-     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.15.2%2B20261110-x86_64-pc-windows-msvc-install_only.tar.gz"
+     "sha256": "dee916c762cdaea9f4f6ec67ec5cbad1d782a1eac139deffd80d02a03a7e6b0e",
+     "size": 53737308,
+     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261123/cpython-3.15.2%2B20261123-x86_64-pc-windows-msvc-install_only.tar.gz"
     },
     {
-     "filename": "cpython-3.15.2+20261110-aarch64-apple-darwin-install_only.tar.gz",
+     "filename": "cpython-3.15.2+20261123-aarch64-apple-darwin-install_only.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "6767ca67fdcfa3a966b6fb77fc3d4dd4020063fce27ac1e9425fab653195cbab",
-     "size": 28102474,
-     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.15.2%2B20261110-aarch64-apple-darwin-install_only.tar.gz"
+     "sha256": "9fd4fb8381a14289edfac593647dd4ae3f679053a2c69511f0133348e24b5a02",
+     "size": 28130651,
+     "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261123/cpython-3.15.2%2B20261123-aarch64-apple-darwin-install_only.tar.gz"
     }
    ],
    "kind": "archive",
    "license": "PSF License",
    "tier": "ark",
    "title": "Python (standalone builds)",
-   "version": "20261110"
+   "version": "20261123"
   },
   "raspberrypi.stackexchange.com_en_all": {
    "date": "2026-10-20",
@@ -8110,43 +8110,43 @@
    "version": "2026-10"
   },
   "ripgrep": {
-   "date": "2026-07-15",
+   "date": "2026-11-22",
    "dest": "code",
    "files": [
     {
-     "filename": "ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz",
+     "filename": "ripgrep-16.0.0-x86_64-unknown-linux-musl.tar.gz",
      "platform": "linux-x64",
-     "sha256": "33e15bcf1624b25cdd2a55813a47a2f95dbe126268203e76aa6a585d1e7b149c",
-     "size": 2265718,
-     "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz"
+     "sha256": "54268ab4643c00a290a29b0086066d64b3f56236dd805ec64629a86f9bd29fd0",
+     "size": 2230229,
+     "url": "https://github.com/BurntSushi/ripgrep/releases/download/16.0.0/ripgrep-16.0.0-x86_64-unknown-linux-musl.tar.gz"
     },
     {
-     "filename": "ripgrep-15.2.0-aarch64-unknown-linux-gnu.tar.gz",
+     "filename": "ripgrep-16.0.0-aarch64-unknown-linux-gnu.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "a740b91c82eaf9914cfedd353572f2791cbe0162c84101ee0951058f4dcbc90d",
-     "size": 1854661,
-     "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-aarch64-unknown-linux-gnu.tar.gz"
+     "sha256": "0b0bddcfaf42be1f3c56bf929d70defd1a2d96f2577aecbd7029a3734ddb4740",
+     "size": 1857628,
+     "url": "https://github.com/BurntSushi/ripgrep/releases/download/16.0.0/ripgrep-16.0.0-aarch64-unknown-linux-gnu.tar.gz"
     },
     {
-     "filename": "ripgrep-15.2.0-x86_64-pc-windows-msvc.zip",
+     "filename": "ripgrep-16.0.0-x86_64-pc-windows-msvc.zip",
      "platform": "windows-x64",
-     "sha256": "71b2fef860abe467217a538ff31de02f5258807c0129f771846f87bd029aafc5",
-     "size": 1789611,
-     "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-pc-windows-msvc.zip"
+     "sha256": "f418ae83e63046a94a7b5f3a44bf3a169f66e689164856ecee02547131c73931",
+     "size": 1782487,
+     "url": "https://github.com/BurntSushi/ripgrep/releases/download/16.0.0/ripgrep-16.0.0-x86_64-pc-windows-msvc.zip"
     },
     {
-     "filename": "ripgrep-15.2.0-aarch64-apple-darwin.tar.gz",
+     "filename": "ripgrep-16.0.0-aarch64-apple-darwin.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "3750b2e93f37e0c692657da574d7019a101c0084da05a790c83fd335bad973e4",
-     "size": 1764284,
-     "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-aarch64-apple-darwin.tar.gz"
+     "sha256": "5a145656d5067144001bfce6648767fd3254599aa736f1ffdb7fb907760b8ca1",
+     "size": 1750703,
+     "url": "https://github.com/BurntSushi/ripgrep/releases/download/16.0.0/ripgrep-16.0.0-aarch64-apple-darwin.tar.gz"
     }
    ],
    "kind": "archive",
    "license": "MIT or Unlicense",
    "tier": "ark",
    "title": "ripgrep",
-   "version": "15.2.0"
+   "version": "16.0.0"
   },
   "robotics.stackexchange.com_en_all": {
    "date": "2026-10-20",
@@ -8472,43 +8472,43 @@
    "version": "2026-10"
   },
   "uv": {
-   "date": "2026-11-12",
+   "date": "2026-11-17",
    "dest": "code",
    "files": [
     {
      "filename": "uv-x86_64-unknown-linux-gnu.tar.gz",
      "platform": "linux-x64",
-     "sha256": "5acfd9177cfecf0bf87578f059728215ccc884388988f55f7a65041b57387d91",
-     "size": 16855069,
-     "url": "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-x86_64-unknown-linux-gnu.tar.gz"
+     "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+     "size": 17068176,
+     "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-x86_64-unknown-linux-gnu.tar.gz"
     },
     {
      "filename": "uv-aarch64-unknown-linux-gnu.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "74f2f5c6024d397481db228db8fc25eed420db192243f88438c118e7e013e585",
-     "size": 16065638,
-     "url": "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-aarch64-unknown-linux-gnu.tar.gz"
+     "sha256": "0797542018e541a9288855df555c8077eed06f7a47d206362030480e8ecc9f3d",
+     "size": 16120245,
+     "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-aarch64-unknown-linux-gnu.tar.gz"
     },
     {
      "filename": "uv-x86_64-pc-windows-msvc.zip",
      "platform": "windows-x64",
-     "sha256": "529e78a9cec6cd7e3e014f7ecd8bda0c113969d4ed0f2efeedb85c30943325b8",
-     "size": 15529884,
-     "url": "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-x86_64-pc-windows-msvc.zip"
+     "sha256": "edd61f7f5728a56cc62455386661860bdfc7bab65872f39b0c25bdcc1d8e1beb",
+     "size": 15567875,
+     "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-x86_64-pc-windows-msvc.zip"
     },
     {
      "filename": "uv-aarch64-apple-darwin.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "6b71028a6b904f2ae3340ef52e595512de807d06c0a20eaef2f692581b246558",
-     "size": 14375545,
-     "url": "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-aarch64-apple-darwin.tar.gz"
+     "sha256": "5aeca67f2283f75235de40d0bd9c0a5bbc5fce23b6d48b3bf9fa1b2db08382ca",
+     "size": 14554974,
+     "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-aarch64-apple-darwin.tar.gz"
     }
    ],
    "kind": "archive",
    "license": "MIT or Apache 2.0",
    "tier": "ark",
    "title": "uv (Python package manager)",
-   "version": "0.13.8"
+   "version": "0.13.9"
   },
   "vlang": {
    "date": "2026-07-12",

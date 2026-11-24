@@ -109,10 +109,10 @@
    "dest": "apps",
    "files": [
     {
-     "filename": "app.comaps.fdroid_26100519.apk",
+     "filename": "app.comaps.fdroid_26110716.apk",
      "platform": "android",
-     "size": 70478884,
-     "url": "https://f-droid.org/repo/app.comaps.fdroid_26100519.apk"
+     "size": 72105446,
+     "url": "https://f-droid.org/repo/app.comaps.fdroid_26110716.apk"
     }
    ],
    "kind": "app",
@@ -122,7 +122,7 @@
    ],
    "tier": "ark",
    "title": "CoMaps (community offline maps)",
-   "version": "2026.10.05-19-FDroid"
+   "version": "2026.11.07-16-FDroid"
   },
   "fdroid": {
    "date": "2026-11-06",
@@ -161,15 +161,15 @@
    "version": "4.5.8"
   },
   "kiwix_android": {
-   "date": "2026-05-14",
+   "date": "2026-11-18",
    "dest": "apps",
    "files": [
     {
-     "filename": "v3.14.1-arm64-v8a-standalone.apk",
+     "filename": "app-arm64-v8a-standalone.apk",
      "platform": "android",
-     "sha256": "62a9910be260030e642465c17d642537e6ee4ee5f2d4596c248267c2766a88b8",
-     "size": 70366062,
-     "url": "https://github.com/kiwix/kiwix-android/releases/download/v3.14.1/v3.14.1-arm64-v8a-standalone.apk"
+     "sha256": "aaf9ed22d7f57fb71c38d12ed22ae5bad43ca8f70c50f68a1a7764feac4635c2",
+     "size": 33112485,
+     "url": "https://github.com/kiwix/kiwix-android/releases/download/4.0.1/app-arm64-v8a-standalone.apk"
     }
    ],
    "kind": "app",
@@ -180,7 +180,7 @@
    ],
    "tier": "seed",
    "title": "Kiwix (offline Wikipedia reader)",
-   "version": "3.14.1"
+   "version": "4.0.1"
   },
   "koreader": {
    "dest": "apps",
@@ -281,10 +281,10 @@
    "dest": "apps",
    "files": [
     {
-     "filename": "app.organicmaps_26092932.apk",
+     "filename": "app.organicmaps_26111139.apk",
      "platform": "android",
-     "size": 63797784,
-     "url": "https://f-droid.org/repo/app.organicmaps_26092932.apk"
+     "size": 65658285,
+     "url": "https://f-droid.org/repo/app.organicmaps_26111139.apk"
     }
    ],
    "kind": "app",
@@ -294,16 +294,16 @@
    ],
    "tier": "seed",
    "title": "Organic Maps (offline maps and navigation)",
-   "version": "2026.09.29-32-FDroid"
+   "version": "2026.11.11-39-FDroid"
   },
   "osmand": {
    "dest": "apps",
    "files": [
     {
-     "filename": "net.osmand.plus_541003.apk",
+     "filename": "net.osmand.plus_541103.apk",
      "platform": "android",
-     "size": 161855613,
-     "url": "https://f-droid.org/repo/net.osmand.plus_541003.apk"
+     "size": 161859709,
+     "url": "https://f-droid.org/repo/net.osmand.plus_541103.apk"
     }
    ],
    "kind": "app",
@@ -313,7 +313,7 @@
    ],
    "tier": "ark",
    "title": "OsmAnd (offline maps, contour lines, routing)",
-   "version": "5.4.10"
+   "version": "5.4.11"
   },
   "rattlegram": {
    "date": "2026-09-15",
@@ -341,10 +341,10 @@
    "dest": "apps",
    "files": [
     {
-     "filename": "com.google.android.stardroid_1791.apk",
+     "filename": "com.google.android.stardroid_1794.apk",
      "platform": "android",
      "size": 23506689,
-     "url": "https://f-droid.org/repo/com.google.android.stardroid_1791.apk"
+     "url": "https://f-droid.org/repo/com.google.android.stardroid_1794.apk"
     }
    ],
    "kind": "app",
@@ -356,7 +356,7 @@
    ],
    "tier": "seed",
    "title": "Sky Map (point the phone at the sky to name stars and constellations)",
-   "version": "2.3.1:Cassini"
+   "version": "2.3.2:Cassini"
   },
   "survival_manual": {
    "dest": "apps",

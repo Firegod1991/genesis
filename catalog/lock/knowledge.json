@@ -1719,14 +1719,14 @@
    "version": "2026-10"
   },
   "internet-encyclopedia-philosophy_en_all": {
-   "date": "2026-05-28",
+   "date": "2026-11-24",
    "dest": "zim",
    "files": [
     {
-     "filename": "internet-encyclopedia-philosophy_en_all_2026-05.zim",
-     "sha256_url": "https://download.kiwix.org/zim/zimit/internet-encyclopedia-philosophy_en_all_2026-05.zim.sha256",
-     "size": 125831168,
-     "url": "https://download.kiwix.org/zim/zimit/internet-encyclopedia-philosophy_en_all_2026-05.zim"
+     "filename": "internet-encyclopedia-philosophy_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/zimit/internet-encyclopedia-philosophy_en_all_2026-11.zim.sha256",
+     "size": 123599872,
+     "url": "https://download.kiwix.org/zim/zimit/internet-encyclopedia-philosophy_en_all_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -1736,7 +1736,7 @@
    ],
    "tier": "ark",
    "title": "Encyclopedia of Philosophy",
-   "version": "2026-05"
+   "version": "2026-11"
   },
   "interpersonal.stackexchange.com_en_all": {
    "date": "2026-10-20",
@@ -2880,14 +2880,14 @@
    "version": "2026-10"
   },
   "phet_en_all": {
-   "date": "2026-08-25",
+   "date": "2026-11-23",
    "dest": "zim",
    "files": [
     {
-     "filename": "phet_en_all_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/phet/phet_en_all_2026-08.zim.sha256",
-     "size": 108981248,
-     "url": "https://download.kiwix.org/zim/phet/phet_en_all_2026-08.zim"
+     "filename": "phet_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/phet/phet_en_all_2026-11.zim.sha256",
+     "size": 114909184,
+     "url": "https://download.kiwix.org/zim/phet/phet_en_all_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -2898,7 +2898,7 @@
    ],
    "tier": "ark",
    "title": "PhET Interactive Simulations",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "philosophy.stackexchange.com_en_all": {
    "date": "2026-10-20",
@@ -6942,14 +6942,14 @@
    "version": "2026-10"
   },
   "wikipedia_it_all.maxi": {
-   "date": "2026-08-07",
+   "date": "2026-11-15",
    "dest": "zim",
    "files": [
     {
-     "filename": "wikipedia_it_all_maxi_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_it_all_maxi_2026-08.zim.sha256",
-     "size": 31788252160,
-     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_it_all_maxi_2026-08.zim"
+     "filename": "wikipedia_it_all_maxi_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wikipedia/wikipedia_it_all_maxi_2026-11.zim.sha256",
+     "size": 26679401472,
+     "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_it_all_maxi_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -6961,7 +6961,7 @@
    ],
    "tier": "ark",
    "title": "Wikipedia",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "wikipedia_iu_all.maxi": {
    "date": "2026-11-02",
@@ -12951,14 +12951,14 @@
    "version": "2026-10"
   },
   "wiktionary_it_all.nopic": {
-   "date": "2026-08-20",
+   "date": "2026-11-18",
    "dest": "zim",
    "files": [
     {
-     "filename": "wiktionary_it_all_nopic_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/wiktionary/wiktionary_it_all_nopic_2026-08.zim.sha256",
-     "size": 402951168,
-     "url": "https://download.kiwix.org/zim/wiktionary/wiktionary_it_all_nopic_2026-08.zim"
+     "filename": "wiktionary_it_all_nopic_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wiktionary/wiktionary_it_all_nopic_2026-11.zim.sha256",
+     "size": 503319552,
+     "url": "https://download.kiwix.org/zim/wiktionary/wiktionary_it_all_nopic_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -12969,7 +12969,7 @@
    ],
    "tier": "eden",
    "title": "Wikizionario:Offline",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "wiktionary_iu_all.nopic": {
    "date": "2026-10-16",
@@ -13203,14 +13203,14 @@
    "version": "2026-10"
   },
   "wiktionary_ku_all.maxi": {
-   "date": "2026-08-25",
+   "date": "2026-11-23",
    "dest": "zim",
    "files": [
     {
-     "filename": "wiktionary_ku_all_maxi_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/wiktionary/wiktionary_ku_all_maxi_2026-08.zim.sha256",
-     "size": 572436480,
-     "url": "https://download.kiwix.org/zim/wiktionary/wiktionary_ku_all_maxi_2026-08.zim"
+     "filename": "wiktionary_ku_all_maxi_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/wiktionary/wiktionary_ku_all_maxi_2026-11.zim.sha256",
+     "size": 917705728,
+     "url": "https://download.kiwix.org/zim/wiktionary/wiktionary_ku_all_maxi_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -13221,7 +13221,7 @@
    ],
    "tier": "eden",
    "title": "Wîkîferheng",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "wiktionary_kw_all.nopic": {
    "date": "2026-10-16",

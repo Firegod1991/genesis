@@ -571,7 +571,7 @@
    "version": "2021-11-23"
   },
   "bible_adz": {
-   "date": "2026-11-16",
+   "date": "2026-11-20",
    "dest": "scripture",
    "files": [
     {
@@ -606,7 +606,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Adzera: Adzera Bible",
-   "version": "2026-11-16"
+   "version": "2026-11-20"
   },
   "bible_aeb": {
    "date": "2025-04-26",
@@ -12733,7 +12733,7 @@
    "version": "2026-10-30"
   },
   "bible_englxxup": {
-   "date": "2026-11-04",
+   "date": "2026-11-20",
    "dest": "scripture",
    "files": [
     {
@@ -12767,7 +12767,7 @@
    "rule": "bible_public_domain",
    "tier": "ark",
    "title": "English: Updated Brenton English Septuagint",
-   "version": "2026-11-04"
+   "version": "2026-11-20"
   },
   "bible_engmet": {
    "date": "2026-11-06",
@@ -14196,7 +14196,7 @@
    "version": "2025-05-02"
   },
   "bible_francl": {
-   "date": "2026-10-30",
+   "date": "2026-11-20",
    "dest": "scripture",
    "files": [
     {
@@ -14231,7 +14231,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "French: French néo-Crampon Libre",
-   "version": "2026-10-30"
+   "version": "2026-11-20"
   },
   "bible_frasbl": {
    "date": "2026-10-30",
@@ -16854,7 +16854,7 @@
    "version": "2019-05-14"
   },
   "bible_gvs": {
-   "date": "2026-11-16",
+   "date": "2026-11-21",
    "dest": "scripture",
    "files": [
     {
@@ -16889,7 +16889,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Gumawana: Gumawana Bible",
-   "version": "2026-11-16"
+   "version": "2026-11-21"
   },
   "bible_gwiNT": {
    "date": "2014-04-25",
@@ -27060,7 +27060,7 @@
    "version": "2014-04-30"
   },
   "bible_mkj": {
-   "date": "2026-11-17",
+   "date": "2026-11-20",
    "dest": "scripture",
    "files": [
     {
@@ -27095,7 +27095,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Mokilese: Mokilese Bible",
-   "version": "2026-11-17"
+   "version": "2026-11-20"
   },
   "bible_mkl": {
    "date": "2014-10-02",
@@ -31311,7 +31311,7 @@
    "version": "2014-04-30"
   },
   "bible_nrz": {
-   "date": "2026-11-15",
+   "date": "2026-11-19",
    "dest": "scripture",
    "files": [
     {
@@ -31346,7 +31346,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Lala: Nara NT",
-   "version": "2026-11-15"
+   "version": "2026-11-19"
   },
   "bible_nsn": {
    "date": "2012-01-19",
@@ -31387,7 +31387,7 @@
    "version": "2012-01-19"
   },
   "bible_nss": {
-   "date": "2026-11-10",
+   "date": "2026-11-20",
    "dest": "scripture",
    "files": [
     {
@@ -31422,7 +31422,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Nali: Nali Bible",
-   "version": "2026-11-10"
+   "version": "2026-11-20"
   },
   "bible_ntj": {
    "date": "2021-11-12",
@@ -35563,7 +35563,7 @@
    "version": "2025-06-27"
   },
   "bible_rmyArli": {
-   "date": "2026-11-16",
+   "date": "2026-11-20",
    "dest": "scripture",
    "files": [
     {
@@ -35598,7 +35598,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Romani, Vlax: Arli Luke",
-   "version": "2026-11-16"
+   "version": "2026-11-20"
   },
   "bible_rmyChergash": {
    "date": "2025-06-28",
@@ -35828,7 +35828,7 @@
    "version": "2022-01-13"
   },
   "bible_ronBayash": {
-   "date": "2026-11-17",
+   "date": "2026-11-20",
    "dest": "scripture",
    "files": [
     {
@@ -35863,7 +35863,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Romanian: Bayash Bible",
-   "version": "2026-11-17"
+   "version": "2026-11-20"
   },
   "bible_ronbl": {
    "date": "2026-10-28",
@@ -40720,7 +40720,7 @@
    "version": "2026-11-13"
   },
   "bible_tdt": {
-   "date": "2026-11-17",
+   "date": "2026-11-20",
    "dest": "scripture",
    "files": [
     {
@@ -40755,7 +40755,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Tetun Dili: Tetun Dili NT",
-   "version": "2026-11-17"
+   "version": "2026-11-20"
   },
   "bible_tdx": {
    "date": "2024-12-05",
@@ -42540,6 +42540,80 @@
    "tier": "eden",
    "title": "Setswana: Open Tswana Living NT",
    "version": "2025-05-21"
+  },
+  "bible_tsnfb": {
+   "date": "2026-11-19",
+   "dest": "scripture",
+   "files": [
+    {
+     "filename": "tsnfb_html.zip",
+     "role": "html",
+     "url": "https://ebible.org/Scriptures/tsnfb_html.zip"
+    },
+    {
+     "filename": "tsnfb_usfm.zip",
+     "role": "usfm",
+     "url": "https://ebible.org/Scriptures/tsnfb_usfm.zip"
+    }
+   ],
+   "home": "https://ebible.org",
+   "kind": "bible",
+   "lang": "tsn",
+   "license": "Public domain",
+   "meta": {
+    "dc": 0,
+    "direction": "ltr",
+    "language": "Tswana",
+    "name": "Baebele ya Kgololesego",
+    "native": "Setswana",
+    "nt": 4,
+    "ot": 0,
+    "public_domain": true,
+    "script": "Latin",
+    "translation": "tsnfb"
+   },
+   "post": "unzip",
+   "rule": "bible_public_domain",
+   "tier": "ark",
+   "title": "Tswana: Tswana Freedom Bible",
+   "version": "2026-11-19"
+  },
+  "bible_tsnsa": {
+   "date": "2026-11-23",
+   "dest": "scripture",
+   "files": [
+    {
+     "filename": "tsnsa_html.zip",
+     "role": "html",
+     "url": "https://ebible.org/Scriptures/tsnsa_html.zip"
+    },
+    {
+     "filename": "tsnsa_usfm.zip",
+     "role": "usfm",
+     "url": "https://ebible.org/Scriptures/tsnsa_usfm.zip"
+    }
+   ],
+   "home": "https://ebible.org",
+   "kind": "bible",
+   "lang": "tsn",
+   "license": "Public domain",
+   "meta": {
+    "dc": 0,
+    "direction": "ltr",
+    "language": "Tswana",
+    "name": "Baebele ya Setswana sa Aforika Borwa",
+    "native": "Setswana",
+    "nt": 1,
+    "ot": 0,
+    "public_domain": true,
+    "script": "Latin",
+    "translation": "tsnsa"
+   },
+   "post": "unzip",
+   "rule": "bible_public_domain",
+   "tier": "ark",
+   "title": "Tswana: South African Tswana Bible",
+   "version": "2026-11-23"
   },
   "bible_tsw": {
    "date": "2025-07-09",
@@ -49233,12 +49307,12 @@
    "version": "2026-10"
   },
   "theographic": {
-   "date": "2026-11-17",
+   "date": "2026-11-23",
    "dest": "study/theographic",
    "files": [
     {
-     "filename": "theographic-bible-metadata-ac9ca92.tar.gz",
-     "url": "https://github.com/robertrouse/theographic-bible-metadata/archive/ac9ca923c4d53df874ffb26aebb4d9812d0fbdef.tar.gz"
+     "filename": "theographic-bible-metadata-b75c268.tar.gz",
+     "url": "https://github.com/robertrouse/theographic-bible-metadata/archive/b75c2689bbc396def2b22b4abf4e756ad2732742.tar.gz"
     }
    ],
    "home": "https://github.com/robertrouse/theographic-bible-metadata",
@@ -49252,7 +49326,7 @@
    ],
    "tier": "seed",
    "title": "Theographic Bible Metadata: the people, places and events of the Bible, linked verse by verse",
-   "version": "ac9ca92"
+   "version": "b75c268"
   }
  },
  "pack": "scripture"

@@ -44,21 +44,21 @@
    "version": "26.09.4"
   },
   "copyparty": {
-   "date": "2026-10-14",
+   "date": "2026-11-24",
    "dest": "tools",
    "files": [
     {
      "filename": "copyparty-sfx.py",
-     "sha256": "8f9a0def8a9c15252a06395781ec083372043b60caa80fb33c3d6dafa7f1b40a",
-     "size": 1206486,
-     "url": "https://github.com/9001/copyparty/releases/download/v1.20.26/copyparty-sfx.py"
+     "sha256": "ccb2945d76553bdac39a3f47665e5538b4f86c97913b0e125ac77062a82a4834",
+     "size": 1208305,
+     "url": "https://github.com/9001/copyparty/releases/download/v1.20.28/copyparty-sfx.py"
     },
     {
      "filename": "copyparty.exe",
      "platform": "windows-x64",
-     "sha256": "6c51a154d0a173fec6e2ca0dfd5ffbc10a0c81f184bae8f920e79cafc12ae0c1",
-     "size": 13207240,
-     "url": "https://github.com/9001/copyparty/releases/download/v1.20.26/copyparty.exe"
+     "sha256": "e75799c29d51eb1872a0e9e05f5616cfc26a9f686ba4f649eabca799f4836932",
+     "size": 13229474,
+     "url": "https://github.com/9001/copyparty/releases/download/v1.20.28/copyparty.exe"
     }
    ],
    "kind": "tool",
@@ -69,31 +69,31 @@
    ],
    "tier": "seed",
    "title": "copyparty (turn any computer into a file server with one file)",
-   "version": "1.20.26"
+   "version": "1.20.28"
   },
   "ffmpeg": {
-   "date": "2026-11-16",
+   "date": "2026-11-23",
    "dest": "tools",
    "files": [
     {
      "filename": "ffmpeg-master-latest-linux64-gpl.tar.xz",
      "platform": "linux-x64",
-     "sha256": "c68c5d5cec21b81dc76cab9fa08eb43a8955a334e9337b4a142fdd1e187a6e32",
-     "size": 157195428,
+     "sha256": "e53cb8c7f81d68615957c0dac4e566d19bd8498e6b218fcb40e0d651f0d43df7",
+     "size": 159378424,
      "url": "https://github.com/FFmpeg-Builds/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz"
     },
     {
      "filename": "ffmpeg-master-latest-linuxarm64-gpl.tar.xz",
      "platform": "linux-arm64",
-     "sha256": "3e6d0606b96d2fe949a703a508c4cd535920e8e0b77714c7f1bdd37543ca7e95",
-     "size": 132809016,
+     "sha256": "ca2f2041c44d5d3f6aab8a1934aeac1ed4500a3a8d58203c7ec91832b2044f2a",
+     "size": 134639732,
      "url": "https://github.com/FFmpeg-Builds/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linuxarm64-gpl.tar.xz"
     },
     {
      "filename": "ffmpeg-master-latest-win64-gpl.zip",
      "platform": "windows-x64",
-     "sha256": "339ea3c11b8a0665a790a8b91ad11e099ae2421e8a9343b78f14942565eb4fbd",
-     "size": 201891769,
+     "sha256": "9aa3db968529a603d43f51a01cda9072c6a8db1b2c68cc5809032864e31ffdd0",
+     "size": 205480402,
      "url": "https://github.com/FFmpeg-Builds/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip"
     }
    ],
@@ -104,7 +104,7 @@
    ],
    "tier": "ark",
    "title": "FFmpeg (static builds)",
-   "version": "2026-11-16"
+   "version": "2026-11-23"
   },
   "freecad": {
    "date": "2026-09-28",
@@ -265,6 +265,12 @@
      "platform": "macos-arm64",
      "size": 10283222,
      "url": "https://download.kiwix.org/release/kiwix-tools/kiwix-tools_macos-arm64-3.8.2.tar.gz"
+    },
+    {
+     "filename": "kiwix-tools_macos-x86_64-3.8.2.tar.gz",
+     "platform": "macos-x64",
+     "size": 10817537,
+     "url": "https://download.kiwix.org/release/kiwix-tools/kiwix-tools_macos-x86_64-3.8.2.tar.gz"
     }
    ],
    "kind": "tool",
@@ -277,36 +283,36 @@
    "version": "3.8.2"
   },
   "llama_cpp": {
-   "date": "2026-11-17",
+   "date": "2026-11-24",
    "dest": "tools",
    "files": [
     {
-     "filename": "llama-b12465-bin-ubuntu-x64.tar.gz",
+     "filename": "llama-b12674-bin-ubuntu-x64.tar.gz",
      "platform": "linux-x64",
-     "sha256": "1925269f6d3362a3e6d75e9f1e290877a6fabcd73a80f0278102216708959e48",
-     "size": 23536654,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12465/llama-b12465-bin-ubuntu-x64.tar.gz"
+     "sha256": "e777a38bb3e32e41046f4b998607e9d53a1e56dcbe385713f245e05fcdbac621",
+     "size": 23358471,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12674/llama-b12674-bin-ubuntu-x64.tar.gz"
     },
     {
-     "filename": "llama-b12465-bin-ubuntu-arm64.tar.gz",
+     "filename": "llama-b12674-bin-ubuntu-arm64.tar.gz",
      "platform": "linux-arm64",
-     "sha256": "a98f8b5f96b1599f50d34ef355de3b1a9b6534082308830631185c7c32c7b9c5",
-     "size": 19163714,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12465/llama-b12465-bin-ubuntu-arm64.tar.gz"
+     "sha256": "d4047bf91ca53ae1c518f1c421d771d02702f1bbab792bb9f908337845ca678e",
+     "size": 18912675,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12674/llama-b12674-bin-ubuntu-arm64.tar.gz"
     },
     {
-     "filename": "llama-b12465-bin-win-cpu-x64.zip",
+     "filename": "llama-b12674-bin-win-cpu-x64.zip",
      "platform": "windows-x64",
-     "sha256": "d0f60f97221375779ae590da874e8e8bde7fd5f0b973b2e82fc9237af8253446",
-     "size": 25272129,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12465/llama-b12465-bin-win-cpu-x64.zip"
+     "sha256": "c19d7f1bfeba62fcfb8aded71298268c47672e8761855af8745d3c821d5b7aed",
+     "size": 25195805,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12674/llama-b12674-bin-win-cpu-x64.zip"
     },
     {
-     "filename": "llama-b12465-bin-macos-arm64.tar.gz",
+     "filename": "llama-b12674-bin-macos-arm64.tar.gz",
      "platform": "macos-arm64",
-     "sha256": "15fc973c7e33253d01a3ea6ee23cde8955dbdb934ae7f71076d0fb18292495c2",
-     "size": 17065530,
-     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12465/llama-b12465-bin-macos-arm64.tar.gz"
+     "sha256": "7b985d0add21d93ca915a4abf5d4f25668d6ae9643975e781c54808188fcdd8b",
+     "size": 16804175,
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12674/llama-b12674-bin-macos-arm64.tar.gz"
     }
    ],
    "kind": "tool",
@@ -317,7 +323,7 @@
    ],
    "tier": "ark",
    "title": "llama.cpp (run GGUF models directly)",
-   "version": "b12465"
+   "version": "b12674"
   },
   "localsend": {
    "date": "2026-08-21",
@@ -363,36 +369,36 @@
    "version": "1.18.2"
   },
   "ollama_runtime": {
-   "date": "2026-11-09",
+   "date": "2026-11-24",
    "dest": "tools",
    "files": [
     {
      "filename": "ollama-linux-amd64.tar.zst",
      "platform": "linux-x64",
-     "sha256": "87bfafb2acbc89b2e6a1be0a9043de6aa75fb450696f86bc426e65fc448f788d",
-     "size": 1545767640,
-     "url": "https://github.com/ollama/ollama/releases/download/v0.40.16/ollama-linux-amd64.tar.zst"
+     "sha256": "b82649006cb5b54ed1237fa2d1a26a7f939a4fd03150033759acbff7ff315adf",
+     "size": 1648243083,
+     "url": "https://github.com/ollama/ollama/releases/download/v0.40.18/ollama-linux-amd64.tar.zst"
     },
     {
      "filename": "ollama-linux-arm64.tar.zst",
      "platform": "linux-arm64",
-     "sha256": "e45b8e6dcb86cb9f3057396351655079c9a4879b4ced2678c9350d375dcbc224",
-     "size": 1600610073,
-     "url": "https://github.com/ollama/ollama/releases/download/v0.40.16/ollama-linux-arm64.tar.zst"
+     "sha256": "63f01dae3b65641866991e75e2aecb7aed8a4041f4c2c3c7d92862c5a47ebed6",
+     "size": 1704011634,
+     "url": "https://github.com/ollama/ollama/releases/download/v0.40.18/ollama-linux-arm64.tar.zst"
     },
     {
      "filename": "OllamaSetup.exe",
      "platform": "windows-x64",
-     "sha256": "84db4f756ddc9e091142a85cdc0f7ae5db68bc9b3e075f114388b326f8ed912d",
-     "size": 1857663944,
-     "url": "https://github.com/ollama/ollama/releases/download/v0.40.16/OllamaSetup.exe"
+     "sha256": "ad2bb47aa969b21cf8dd81b2d9f9a6d5030270ed242ef55087118c37c510acc2",
+     "size": 1953587080,
+     "url": "https://github.com/ollama/ollama/releases/download/v0.40.18/OllamaSetup.exe"
     },
     {
      "filename": "Ollama-darwin.zip",
      "platform": "macos-arm64",
-     "sha256": "4715531bc49d21337381b193765041e535a9fb4716f84e5d6eccc3a9af1b5303",
-     "size": 229245253,
-     "url": "https://github.com/ollama/ollama/releases/download/v0.40.16/Ollama-darwin.zip"
+     "sha256": "1d990f4a8a76985c9defaa9a6ddd007556d117fd8ed586d7e9cbf25a6e9a4a23",
+     "size": 231986751,
+     "url": "https://github.com/ollama/ollama/releases/download/v0.40.18/Ollama-darwin.zip"
     }
    ],
    "kind": "tool",
@@ -402,7 +408,7 @@
    ],
    "tier": "ark",
    "title": "Ollama (run models without Docker)",
-   "version": "0.40.16"
+   "version": "0.40.18"
   },
   "openscad": {
    "date": "2021-02-07",
@@ -438,36 +444,36 @@
    "version": "2021.01"
   },
   "orcaslicer": {
-   "date": "2026-11-14",
+   "date": "2026-11-21",
    "dest": "tools",
    "files": [
     {
-     "filename": "OrcaSlicer_Linux_AppImage_Ubuntu2404_V2.5.1.AppImage",
+     "filename": "OrcaSlicer_Linux_AppImage_Ubuntu2404_V2.5.2.AppImage",
      "platform": "linux-x64",
-     "sha256": "073b8105c928356141db0ddbce88b81d52c7a9e2442f9baae0a9089c89ff04eb",
-     "size": 201116152,
-     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.1/OrcaSlicer_Linux_AppImage_Ubuntu2404_V2.5.1.AppImage"
+     "sha256": "22fa88884dec3fdbd29e90cba9912fcff6fb57a60b1bdc1a6c189c61a6b0a870",
+     "size": 201034232,
+     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.2/OrcaSlicer_Linux_AppImage_Ubuntu2404_V2.5.2.AppImage"
     },
     {
-     "filename": "OrcaSlicer_Linux_AppImage_Ubuntu2404_aarch64_V2.5.1.AppImage",
+     "filename": "OrcaSlicer_Linux_AppImage_Ubuntu2404_aarch64_V2.5.2.AppImage",
      "platform": "linux-arm64",
-     "sha256": "1336bbae0359466632066697780f314a8564542f8278e9ea4cdf18ec61383fc0",
-     "size": 196819464,
-     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.1/OrcaSlicer_Linux_AppImage_Ubuntu2404_aarch64_V2.5.1.AppImage"
+     "sha256": "297aa2d8a83e8ea0a26b39e383a00f992bc0e3c1076368cad79b35704502a254",
+     "size": 196807176,
+     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.2/OrcaSlicer_Linux_AppImage_Ubuntu2404_aarch64_V2.5.2.AppImage"
     },
     {
-     "filename": "OrcaSlicer_Windows_V2.5.1_x64_portable.zip",
+     "filename": "OrcaSlicer_Windows_V2.5.2_x64_portable.zip",
      "platform": "windows-x64",
-     "sha256": "f73194789c9a114974e3587f646bb627fa69c7686d949bf040fdb710c41515e8",
-     "size": 201859696,
-     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.1/OrcaSlicer_Windows_V2.5.1_x64_portable.zip"
+     "sha256": "730892ef174b0197e896234b8ade9df184966d2bec80cc83c8522715a25df54f",
+     "size": 201919243,
+     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.2/OrcaSlicer_Windows_V2.5.2_x64_portable.zip"
     },
     {
-     "filename": "OrcaSlicer_Mac_universal_V2.5.1.dmg",
+     "filename": "OrcaSlicer_Mac_universal_V2.5.2.dmg",
      "platform": "macos-arm64",
-     "sha256": "ddf48a7f34785a4d5b4313e4dc4d7ad01769d48bc4c8d825f809da96593e6f46",
-     "size": 364654009,
-     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.1/OrcaSlicer_Mac_universal_V2.5.1.dmg"
+     "sha256": "6ea1afcdffb7e9ab011e2d6f6db665cb18463d1c4774591cd5db7ee0225479d9",
+     "size": 359667480,
+     "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.5.2/OrcaSlicer_Mac_universal_V2.5.2.dmg"
     }
    ],
    "kind": "tool",
@@ -479,7 +485,7 @@
    ],
    "tier": "ark",
    "title": "OrcaSlicer (prepare 3D prints for almost any printer)",
-   "version": "2.5.1"
+   "version": "2.5.2"
   },
   "pmtiles": {
    "date": "2026-07-22",
@@ -580,36 +586,36 @@
    "version": "3.1.1"
   },
   "restic": {
-   "date": "2026-07-05",
+   "date": "2026-11-19",
    "dest": "tools",
    "files": [
     {
-     "filename": "restic_0.19.1_linux_amd64.bz2",
+     "filename": "restic_0.20.0_linux_amd64.bz2",
      "platform": "linux-x64",
-     "sha256": "f415415624dcc452f2a02b8c33641791a8c6d6d3b65bbb3543fcf9a25151585c",
-     "size": 10107515,
-     "url": "https://github.com/restic/restic/releases/download/v0.19.1/restic_0.19.1_linux_amd64.bz2"
+     "sha256": "0ccd9fa7885074a24603b051e01bf9bd8b5e45d6a1791e9d9887e9e9372107f7",
+     "size": 12639573,
+     "url": "https://github.com/restic/restic/releases/download/v0.20.0/restic_0.20.0_linux_amd64.bz2"
     },
     {
-     "filename": "restic_0.19.1_linux_arm64.bz2",
+     "filename": "restic_0.20.0_linux_arm64.bz2",
      "platform": "linux-arm64",
-     "sha256": "a5f64aaab53d51e311fa3829124c5b703f2d14cf187d8640b6be3b2b49376465",
-     "size": 9044264,
-     "url": "https://github.com/restic/restic/releases/download/v0.19.1/restic_0.19.1_linux_arm64.bz2"
+     "sha256": "1188daded239bccb5952a01d2ad33e77a0d3dc34f9d9fc1e7fdda618d44938ef",
+     "size": 11274882,
+     "url": "https://github.com/restic/restic/releases/download/v0.20.0/restic_0.20.0_linux_arm64.bz2"
     },
     {
-     "filename": "restic_0.19.1_windows_amd64.zip",
+     "filename": "restic_0.20.0_windows_amd64.zip",
      "platform": "windows-x64",
-     "sha256": "da948ad707ed690426473aaba2046cd61f8f90f6f0e7dab6be0d5796531de67d",
-     "size": 11237567,
-     "url": "https://github.com/restic/restic/releases/download/v0.19.1/restic_0.19.1_windows_amd64.zip"
+     "sha256": "bba9061c3dce081701ab353ec8cb73a78be73b71a538aad560f2d1067602b7fe",
+     "size": 13944434,
+     "url": "https://github.com/restic/restic/releases/download/v0.20.0/restic_0.20.0_windows_amd64.zip"
     },
     {
-     "filename": "restic_0.19.1_darwin_arm64.bz2",
+     "filename": "restic_0.20.0_darwin_arm64.bz2",
      "platform": "macos-arm64",
-     "sha256": "7be0a144ccc377880f294204aa271d76e4b79554b42a751151d425ce6ebac143",
-     "size": 9733199,
-     "url": "https://github.com/restic/restic/releases/download/v0.19.1/restic_0.19.1_darwin_arm64.bz2"
+     "sha256": "0962c515acd9fb6937a658e9d8505200f72a6a0c6a2d334c0290b8002377dfb7",
+     "size": 12147949,
+     "url": "https://github.com/restic/restic/releases/download/v0.20.0/restic_0.20.0_darwin_arm64.bz2"
     }
    ],
    "kind": "tool",
@@ -619,7 +625,7 @@
    ],
    "tier": "ark",
    "title": "restic (encrypted backups)",
-   "version": "0.19.1"
+   "version": "0.20.0"
   },
   "rpi_imager": {
    "date": "2026-10-08",
@@ -664,15 +670,15 @@
    "version": "2.0.12"
   },
   "rufus": {
-   "date": "2026-06-30",
+   "date": "2026-11-17",
    "dest": "tools",
    "files": [
     {
-     "filename": "rufus-4.15.exe",
+     "filename": "rufus-4.16.exe",
      "platform": "windows-x64",
-     "sha256": "84c8a437f8af89257524478489e5c85f1edf25f761d299e2bcde46ac0afbe106",
-     "size": 1989992,
-     "url": "https://github.com/pbatard/rufus/releases/download/v4.15/rufus-4.15.exe"
+     "sha256": "8351a56c134aa6dd26a930d702cc3fd57f11ef90b17e55a8de960d5a73d46cfc",
+     "size": 1985016,
+     "url": "https://github.com/pbatard/rufus/releases/download/v4.16/rufus-4.16.exe"
     }
    ],
    "kind": "tool",
@@ -682,7 +688,7 @@
    ],
    "tier": "ark",
    "title": "Rufus (bootable USB writer for Windows)",
-   "version": "4.15"
+   "version": "4.16"
   },
   "rustdesk": {
    "date": "2026-11-09",
@@ -1010,13 +1016,13 @@
    "version": "3.0.24"
   },
   "whisper_cpp": {
-   "date": "2026-10-06",
+   "date": "2026-11-23",
    "dest": "tools",
    "files": [
     {
-     "filename": "whisper.cpp-v1.9.5.tar.gz",
+     "filename": "whisper.cpp-v1.9.6.tar.gz",
      "platform": "source",
-     "url": "https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.9.5.tar.gz"
+     "url": "https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.9.6.tar.gz"
     }
    ],
    "kind": "tool",
@@ -1028,39 +1034,39 @@
    ],
    "tier": "ark",
    "title": "whisper.cpp (speech to text engine, source)",
-   "version": "1.9.5"
+   "version": "1.9.6"
   },
   "yt_dlp": {
-   "date": "2026-10-26",
+   "date": "2026-11-23",
    "dest": "tools",
    "files": [
     {
      "filename": "yt-dlp_linux",
      "platform": "linux-x64",
-     "sha256": "767ba9dce7052aa196f8b12652f433d76de128ba168966fa84b6394d5e6c6795",
-     "size": 41166968,
-     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_linux"
+     "sha256": "249ddb058234276bc449b9cd9492aad9f133bda5923c61a9e39983ae114ef17d",
+     "size": 41184064,
+     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.11.23/yt-dlp_linux"
     },
     {
      "filename": "yt-dlp_linux_aarch64",
      "platform": "linux-arm64",
-     "sha256": "e87e9533e89fe5889abaa21f5114dfe7756d6aa6219b83551add04d48b18e483",
-     "size": 40789792,
-     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_linux_aarch64"
+     "sha256": "fb847a2e4a9ddc8cf5fcfb4bb7f42ba8969ecf72068def0278074f9d300bd13c",
+     "size": 40807480,
+     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.11.23/yt-dlp_linux_aarch64"
     },
     {
      "filename": "yt-dlp.exe",
      "platform": "windows-x64",
-     "sha256": "f5389d3698ecde4ef06f4e6b1ce0294fe9ac1396228c8990b8d3416d6d177a7d",
-     "size": 23575744,
-     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp.exe"
+     "sha256": "622ed48023cac1daa52a3bf3a6ac38f03514de214b5f0fa069389fd0f6d17e5c",
+     "size": 23627865,
+     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.11.23/yt-dlp.exe"
     },
     {
      "filename": "yt-dlp_macos",
      "platform": "macos-arm64",
-     "sha256": "0f922c15ccc0b83eefa1c8bc9104e434318c4bf16e408e1ee93b7745a6efe0aa",
-     "size": 37466304,
-     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_macos"
+     "sha256": "57654854886d0398a798895aadf5173e2749fbb5e249b9f3728022ab376e11fb",
+     "size": 37478576,
+     "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.11.23/yt-dlp_macos"
     }
    ],
    "kind": "tool",
@@ -1070,7 +1076,7 @@
    ],
    "tier": "ark",
    "title": "yt-dlp (save video while the internet lasts)",
-   "version": "2026.10.26"
+   "version": "2026.11.23"
   }
  },
  "pack": "tools"
