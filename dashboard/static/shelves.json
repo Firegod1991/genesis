@@ -1,16 +1,18 @@
 {
  "shelves": [
-  {"id": "fieldcraft", "name": "Staying alive", "icon": "flame", "about": "Water, food, fire, shelter, medicine and movement. Start with the Army manual."},
+  {"id": "pocket", "name": "Pocket guides", "icon": "manual", "about": "Every Genesis pocket guide in one booklet. Print it now and keep it in the go bag."},
+  {"id": "fieldcraft", "name": "Staying alive", "icon": "flame", "about": "Water, food, fire, shelter, medicine and movement, the weather and knots. Start with the Army manual."},
   {"id": "water", "name": "Water", "icon": "drop", "about": "Making water safe to drink, cleaning wells and tanks, and sanitation."},
   {"id": "medical", "name": "Plant medicine", "icon": "medical", "about": "Medicinal plants one by one: what each is used for, the evidence, the dose and the danger."},
   {"id": "health", "name": "Health", "icon": "health", "about": "Everyday rules for emergencies, health and money, each with the evidence behind it."},
   {"id": "game_and_fish", "name": "Game and fish", "icon": "fish", "about": "Trapping, fishing, field dressing and storing meat."},
   {"id": "navigation", "name": "Finding your way", "icon": "compass", "about": "Map, compass and GPS on the ground, and the pilot's handbook for the air."},
   {"id": "sky", "name": "The sky as clock and calendar", "icon": "star", "about": "Star wheels to print and pin together. Take the one nearest your latitude."},
-  {"id": "disaster", "name": "Disaster", "icon": "hazard", "about": "What to do before, during and after."},
+  {"id": "disaster", "name": "Disaster", "icon": "hazard", "about": "What to do before, during and after, the family plan to fill in, and the radio card."},
   {"id": "networks", "name": "Networks", "icon": "network", "about": "Building long range wireless links and mesh networks."}
  ],
  "first": [
+  {"name": "Stop the bleeding", "icon": "health", "file": "/documents/health/first_aid.html"},
   {"name": "Make water safe", "icon": "drop", "file": "/documents/water/emergency_disinfection_of_drinking_water_sept2017.pdf"},
   {"name": "Stay alive", "icon": "flame", "file": "/documents/fieldcraft/army_survival_atp_3-50-21.pdf"},
   {"name": "Find where you are", "icon": "compass", "view": "map"},
