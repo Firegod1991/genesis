@@ -72,9 +72,16 @@ try:
 
     manuals = [m for shelf_ in api("shelves").values() if isinstance(shelf_, list) for m in shelf_ if m.get("href")]
     check("the shelves list their manuals", len(manuals) >= want["manuals"], "%d listed, %d expected" % (len(manuals), want["manuals"]))
+    def opens(href):  # a manual is a PDF or a page: a PDF has to start the way a PDF starts
+        status, head = get(base + urllib.parse.quote(href), 5)
+        return status == 200 and (head.startswith(b"%PDF") if href.lower().endswith(".pdf") else bool(head))
+
     if manuals:
-        status, head = get(base + urllib.parse.quote(manuals[0]["href"]), 5)
-        check("a manual opens", status == 200 and head.startswith(b"%PDF"), manuals[0]["href"])
+        first = manuals[0]["href"]
+        check("a manual opens", opens(first), first)
+        pdfs = [m["href"] for m in manuals if m["href"].lower().endswith(".pdf")]
+        if pdfs and pdfs[0] != first:
+            check("a PDF manual opens", opens(pdfs[0]), pdfs[0])
 
     bibles = api("scripture")
     check("scripture is listed", len(bibles) >= want["bibles"], "%d listed, %d expected" % (len(bibles), want["bibles"]))
