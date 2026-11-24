@@ -18,6 +18,7 @@ import tarfile
 import tempfile
 import time
 import webbrowser
+import zipfile
 
 from . import catalog
 from .util import ROOT, log, read_json, write_json
@@ -25,11 +26,12 @@ from .util import ROOT, log, read_json, write_json
 DASHBOARD_PORT, KIWIX_PORT, OLLAMA_PORT = 8080, 8081, 11434
 LIBRARY = os.path.join(".genesis", "library.xml")
 # How the archives in <vault>/tools name each machine, and what Genesis calls it.
-KIWIX = re.compile(r"^kiwix-tools_(linux-aarch64|linux-x86_64)-[\w.]+\.tar\.gz$")
+KIWIX = re.compile(r"^kiwix-tools_(linux-aarch64|linux-x86_64|macos-arm64|macos-x86_64|win-x86_64)"
+                   r"-[\d.]+(?:-\d+)?\.(?:tar\.gz|zip)$")
 OLLAMA = re.compile(r"^ollama-linux-(arm64|amd64)\.tar\.zst$")
 SEVEN = re.compile(r"^7z\d+-linux-(arm64|x64)\.tar\.xz$")
 MACHINE = {"linux-aarch64": "linux-arm64", "linux-x86_64": "linux-x64", "arm64": "linux-arm64", "amd64": "linux-x64",
-           "x64": "linux-x64"}
+           "x64": "linux-x64", "macos-arm64": "macos-arm64", "macos-x86_64": "macos-x64", "win-x86_64": "windows-x64"}
 
 DESKTOP = """[Desktop Entry]
 Type=Application
@@ -154,6 +156,24 @@ def _unpack(members, into, strip=0):
     return count
 
 
+def _unzip(path, into):
+    """Write the files of a zip archive under `into`. The Kiwix server for Windows comes this way, with its
+    libraries beside it and no folder around them."""
+    count = 0
+    with zipfile.ZipFile(path) as z:
+        for info in z.infolist():
+            if info.is_dir():
+                continue
+            target = _safe(into, info.filename)
+            os.makedirs(os.path.dirname(target), exist_ok=True)
+            with z.open(info) as src, open(target + ".tmp", "wb") as dst:
+                shutil.copyfileobj(src, dst, 1024 * 1024)
+            os.chmod(target + ".tmp", 0o755)
+            os.replace(target + ".tmp", target)
+            count += 1
+    return count
+
+
 def _fresh(folder, archive):
     """True when `folder` already holds what this archive unpacks to."""
     try:
@@ -179,8 +199,11 @@ def unpack_programs(vault):
             if not _fresh(into, path):
                 shutil.rmtree(into, ignore_errors=True)
                 os.makedirs(into)
-                with tarfile.open(path) as t:
-                    _unpack(((m, t.extractfile) for m in t), into, strip=1)
+                if name.endswith(".zip"):
+                    _unzip(path, into)
+                else:
+                    with tarfile.open(path) as t:
+                        _unpack(((m, t.extractfile) for m in t), into, strip=1)
                 _mark(into, path)
                 done.append("%s for %s" % ("the Kiwix server", MACHINE[kiwix.group(1)]))
         elif ollama:
@@ -232,6 +255,24 @@ def program(vault, kind, name):
     return shutil.which(name)
 
 
+REDIST = "https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist"
+
+
+def reader_runs():
+    """On Windows the Kiwix server needs Microsoft's Visual C++ runtime. Most PCs have it, because other
+    programs brought it, and a freshly installed one may not. Asking first keeps Windows from putting up
+    an error box for every book. Everywhere else the answer is yes."""
+    if os.name != "nt":
+        return True
+    try:
+        import ctypes
+        ctypes.WinDLL("msvcp140.dll")
+        ctypes.WinDLL("vcruntime140_1.dll")
+    except (ImportError, OSError):
+        return False
+    return True
+
+
 def books(vault):
     folder = os.path.join(vault, "zim")
     return sorted(os.path.join(folder, n) for n in os.listdir(folder) if n.endswith(".zim")) if os.path.isdir(folder) else []
@@ -254,7 +295,7 @@ def list_books(vault):
     The list names each book by a path beside itself, so it holds wherever the drive is plugged in.
     Returns how many books are listed, or None where no Kiwix program runs on this machine."""
     manage, shelf = program(vault, "kiwix", "kiwix-manage"), books(vault)
-    if not manage or not shelf:
+    if not manage or not shelf or not reader_runs():
         return None
     path = os.path.join(vault, LIBRARY)
     if library(vault, shelf):
@@ -354,7 +395,8 @@ def ready(args):
     covers = draw_covers(vault)
     log("covers: pdftoppm is not installed, so the shelves show titles" if covers is None else "covers drawn: %d new" % covers)
     log("folder pictures: %d" % dress(vault))
-    have = [m for m in sorted(set(MACHINE.values())) if os.path.isfile(os.path.join(runtime(vault, m), "kiwix", "kiwix-serve"))]
+    have = [m for m in sorted(set(MACHINE.values()))
+            if any(os.path.isfile(os.path.join(runtime(vault, m), "kiwix", "kiwix-serve" + ext)) for ext in ("", ".exe"))]
     log("%d books for the reader. Starts with no Docker on: %s" % (len(books(vault)), ", ".join(have) or "no machine yet"))
     return 0
 
@@ -387,7 +429,7 @@ def plan(vault):
     out = [("dashboard", int(os.environ.get("GENESIS_PORT", DASHBOARD_PORT)),
             [sys.executable, os.path.join(ROOT, "dashboard", "server.py")], {"GENESIS_BARE": "1"})]
     kiwix, shelf = program(vault, "kiwix", "kiwix-serve"), books(vault)
-    if kiwix and shelf:
+    if kiwix and shelf and reader_runs():
         listed = library(vault, shelf)
         out.append(("library", KIWIX_PORT, [kiwix, "--port", str(KIWIX_PORT)] + (["--library", listed] if listed else shelf), {}))
     ollama, models = program(vault, "ollama", "ollama"), os.path.join(vault, "models", "ollama", "models")
@@ -400,22 +442,82 @@ def plan(vault):
     return out
 
 
+def many_files():
+    """Let the reader hold hundreds of books open at once. A Mac starts every program with room for 256
+    open files and refuses a limit above what its kernel allows, so ask for less until one is granted.
+    Returns the limit in force, or None on Windows, which has none to raise."""
+    try:
+        import resource
+    except ImportError:
+        return None
+    soft, hard = resource.getrlimit(resource.RLIMIT_NOFILE)
+    for want in (65536, 10240, 4096):
+        if hard != resource.RLIM_INFINITY:
+            want = min(want, hard)
+        if soft != resource.RLIM_INFINITY and want <= soft:
+            break
+        try:
+            resource.setrlimit(resource.RLIMIT_NOFILE, (want, hard))
+            return want
+        except (ValueError, OSError):
+            continue
+    return soft
+
+
+def nothing_yet(vault):
+    """True when Genesis has never put anything in this vault: no record, no book, no manual."""
+    return not (os.path.isfile(os.path.join(vault, ".genesis", "state.json")) or books(vault)
+                or os.path.isdir(os.path.join(vault, "documents")))
+
+
+def first(args, vault, ask=input):
+    """The first start on a machine: offer to bring something down, so the shelves are not empty.
+    Returns what was chosen: a tier, or None for empty shelves."""
+    from .fetch import _free, fetch, load_config
+    from .util import human
+    cfg = load_config(vault)
+    size = {tier: sum(catalog.entry_size(e, f) or 0 for _, _, e, f in
+                      catalog.select(tier=tier, langs=cfg["langs"], platforms=cfg["platforms"]))
+            for tier in (catalog.STARTER, "seed")}
+    print("\nGenesis has nothing on this machine yet. What it brings down goes to\n  %s  (%s free)\n" % (vault, human(_free(vault))))
+    print("  1  Starter  about %s. Every manual and plant guide, ten books with the best of Wikipedia," % human(size[catalog.STARTER]))
+    print("              a map of the world and the Bible. Minutes on a fast line.")
+    print("  2  Seed     about %s. The essentials of every pack. Hours." % human(size["seed"]))
+    print("  3  Nothing now. Open Genesis with empty shelves.\n")
+    print("For another drive, press Ctrl C, make a folder on it and run this again with --vault and that folder.")
+    try:
+        answer = ask("Type 1, 2 or 3 and press Enter [1]: ").strip() or "1"
+    except EOFError:
+        answer = "3"
+    tier = {"1": catalog.STARTER, "2": "seed"}.get(answer)
+    if not tier:
+        return None
+    args.tier, args.lang, args.platform, args.pack, args.id, args.tag, args.also = tier, None, None, None, None, None, None
+    args.yes, args.keep_going, args.jobs = True, True, 4
+    if fetch(args):
+        log("Some of it did not come down. What is here stays. To get the rest, run: genesis fetch")
+    ready(args)
+    return tier
+
+
 def start(args):
     from .fetch import vault_path
     vault = vault_path(args)
+    # A folder named by hand that is not there is a drive that is not plugged in, never a place to fill.
+    named = bool(getattr(args, "vault", None) or os.environ.get("GENESIS_VAULT"))
+    fresh = nothing_yet(vault) and (os.path.isdir(vault) or not named)
+    if fresh and sys.stdin and sys.stdin.isatty() and not getattr(args, "no_ask", False):
+        first(args, vault)
+    if fresh and not named:
+        os.makedirs(os.path.join(vault, ".genesis"), exist_ok=True)  # nobody to ask, or nothing wanted: empty shelves
     if not os.path.isdir(vault):
-        raise SystemExit("no vault at %s: set GENESIS_VAULT to the drive's vault folder" % vault)
+        raise SystemExit("no vault at %s: plug in the drive, or make that folder first if Genesis should live there" % vault)
     if not program(vault, "kiwix", "kiwix-serve") and os.path.isdir(os.path.join(vault, "tools")):
         try:  # a drive filled without `genesis ready`: the Kiwix server unpacks with nothing but Python
             unpack_programs(vault)
         except OSError as e:
             log("could not unpack the programs on the drive: %s" % e)
-    try:  # the reader holds many books open at once
-        import resource
-        soft, hard = resource.getrlimit(resource.RLIMIT_NOFILE)
-        resource.setrlimit(resource.RLIMIT_NOFILE, (hard if hard != resource.RLIM_INFINITY else max(soft, 65536), hard))
-    except (ImportError, ValueError, OSError):
-        pass
+    many_files()
     state, missing = read_json(os.path.join(_run_dir(), "box.json"), {}), []
     for name, port, cmd, extra in plan(vault):
         if _listening(port):
@@ -429,7 +531,10 @@ def start(args):
     if "library" in started and not library(vault, books(vault)):
         log("the book list is out of date, so the reader opens every book before it answers, which takes minutes. "
             "Run `genesis ready` once and it starts at once.")
-    if "library" not in started:
+    if "library" not in started and program(vault, "kiwix", "kiwix-serve") and books(vault):
+        missing.append("the book reader (this PC lacks Microsoft's Visual C++ runtime, which the reader needs. "
+                       "It is free from Microsoft: %s  Install it and start Genesis again)" % REDIST)
+    elif "library" not in started:
         missing.append("the book reader (no Kiwix server for this machine on the drive)")
     if "assistant" not in started:
         missing.append("the assistant (no Ollama for this machine, or no models, on the drive)")
