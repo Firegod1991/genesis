@@ -42,7 +42,10 @@ jobs:
           # On a Mac that is the one Apple's own tools install, the oldest Python Genesis runs on.
           if [ "$RUNNER_OS" = "macOS" ]; then echo "/usr/bin" >> "$GITHUB_PATH"; export PATH="/usr/bin:$PATH"; fi
           echo "GENESIS_VAULT=$RUNNER_TEMP/vault" >> "$GITHUB_ENV"
-          command -v "$PY" && "$PY" --version && uname -sm
+          # Said as a notice, so the run's own page shows which system and which Python each start was proven on.
+          system="$(uname -sm)"
+          if [ "$RUNNER_OS" = "macOS" ]; then system="macOS $(sw_vers -productVersion), $(uname -m)"; fi
+          echo "::notice title=This machine::$system, $("$PY" --version 2>&1) at $(command -v "$PY")"
       - name: Unit tests with this machine's own Python
         run: env -u GENESIS_VAULT "$PY" -m unittest discover -s tests
       - name: Resolve the tools pack, when this kind of machine was added after the last refresh

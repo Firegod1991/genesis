@@ -39,6 +39,19 @@ That is `genesis start`. It needs Python 3 and nothing else. It starts three thi
 
 `genesis stop` stops them. Phones and laptops on the same network can open port 8080 of the box.
 
+## On a Mac or a Windows PC
+
+The same start works there, with the book reader. A copy of Genesis keeps its vault in a `vault` folder inside itself, and a first start offers to fill it: a starter of about 1.1 GB, the seed tier, or nothing yet.
+
+* **Mac**, Intel or Apple silicon. In Terminal: `sh genesis/bin/genesis start`. The book reader is built for macOS 12 and newer.
+* **Windows 10 or 11.** Double click **Start Genesis** in the folder, and **Stop Genesis** to stop it. It needs Python, from the Microsoft Store or python.org. The book reader also needs Microsoft's Visual C++ runtime, which most PCs already have. Genesis says so when it is missing.
+
+On these two systems the assistant is the Ollama installed on the machine, when there is one. The drive's own Ollama and 7-Zip are unpacked for Linux only.
+
+A drive formatted for Linux, as a drive filled for a Raspberry Pi usually is, cannot be read by Windows or by a Mac. Start that computer from the boot stick instead ([BOOTSTICK.md](BOOTSTICK.md)).
+
+If another program already holds port 8080, Genesis answers on the next free port (8090, 8765 or 8780) and says which.
+
 ## The assistant
 
 It runs on the box. It searches the library first, is handed what it found, and names the book it used. The smallest everyday model is offered first because it answers soonest. Small models make mistakes: for anything that can hurt you, pick the largest model the box can hold and open the manual it points to.
