@@ -11,7 +11,8 @@
   {"id": "kiwix_tools", "title": "Kiwix tools (kiwix-serve without Docker)", "tier": "seed", "license": "GPL 3.0", "tags": ["reader"],
    "source": {"type": "http_index", "url": "https://download.kiwix.org/release/kiwix-tools/", "files": {
      "linux-x64": "kiwix-tools_linux-x86_64-[\\d.]+(?:-\\d+)?\\.tar\\.gz", "linux-arm64": "kiwix-tools_linux-aarch64-[\\d.]+(?:-\\d+)?\\.tar\\.gz",
-     "windows-x64": "kiwix-tools_win-x86_64-[\\d.]+(?:-\\d+)?\\.zip", "macos-arm64": "kiwix-tools_macos-arm64-[\\d.]+(?:-\\d+)?\\.tar\\.gz"}}},
+     "windows-x64": "kiwix-tools_win-x86_64-[\\d.]+(?:-\\d+)?\\.zip", "macos-arm64": "kiwix-tools_macos-arm64-[\\d.]+(?:-\\d+)?\\.tar\\.gz",
+     "macos-x64": "kiwix-tools_macos-x86_64-[\\d.]+(?:-\\d+)?\\.tar\\.gz"}}},
   {"id": "kiwix_desktop", "title": "Kiwix Desktop (offline reader)", "tier": "seed", "license": "GPL 3.0", "tags": ["reader"],
    "source": {"type": "http_index", "url": "https://download.kiwix.org/release/kiwix-desktop/", "files": {
      "linux-x64": "kiwix-desktop_x86_64_[\\d.]+(?:-\\d+)?\\.appimage", "windows-x64": "kiwix-desktop_windows_x64_[\\d.]+(?:-\\d+)?\\.zip"}}},

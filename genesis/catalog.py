@@ -8,7 +8,19 @@ from .resolvers import EXPANDERS, RESOLVERS, kiwix_id
 from .util import ROOT, read_json, write_json
 
 TIERS = ["seed", "ark", "eden"]
-PLATFORMS = ["linux-x64", "linux-arm64", "windows-x64", "macos-arm64", "android"]
+PLATFORMS = ["linux-x64", "linux-arm64", "windows-x64", "macos-arm64", "macos-x64", "android"]
+# The starter: a first download of about a gigabyte that puts something on every shelf, for the person who
+# wants to see Genesis run before giving it a drive. It is a part of seed, chosen with --tier starter: every
+# manual seed carries, and the items named here: the book reader, 7-Zip, a map of the world, ten books and
+# the Bible in its source languages and in English.
+STARTER = "starter"
+STARTER_ITEMS = (
+    "kiwix_tools", "sevenzip", "map_assets", "world_overview",
+    "wikipedia_en_top.mini", "zimgit-water_en", "zimgit-food-preparation_en", "usda-2015_en", "zimgit-knots_en",
+    "zimgit-medicine_en", "irp.fas.org_en_military-medicine", "nhs.uk_en_medicines", "scoutwiki.org_en_all.maxi",
+    "publicdomainrecipes.com_en_all",
+    "bible_hboWLC", "bible_grctr", "bible_latVUC", "bible_eng-kjv", "bible_engwebp",
+)
 PACK_DIR = os.path.join(ROOT, "catalog", "packs")
 LOCK_DIR = os.path.join(ROOT, "catalog", "lock")
 ANY_LANG = (None, "", "mul", "zxx")
@@ -94,7 +106,12 @@ def all_locked(packs=None):
 
 
 def tier_includes(selected, item_tier):
-    return TIERS.index(item_tier) <= TIERS.index(selected)
+    return TIERS.index(item_tier) <= TIERS.index("seed" if selected == STARTER else selected)
+
+
+def in_starter(iid, entry):
+    """True for what the starter carries: the items it names and every manual of the seed tier."""
+    return iid in STARTER_ITEMS or (entry.get("tier") == "seed" and (entry.get("dest") or "").startswith("documents"))
 
 
 def wanted_files(entry, platforms):
@@ -129,7 +146,7 @@ def select(tier="seed", packs=None, ids=None, langs=None, platforms=None, tags=N
             if iid not in ids:
                 continue
         else:
-            if not tier_includes(tier, entry.get("tier", "eden")):
+            if not tier_includes(tier, entry.get("tier", "eden")) or (tier == STARTER and not in_starter(iid, entry)):
                 continue
             if ("*" not in langs and not entry.get("any_lang") and entry.get("lang") not in ANY_LANG
                     and entry["lang"] not in langs):

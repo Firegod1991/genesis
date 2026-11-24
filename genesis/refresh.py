@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 from . import catalog
 from .resolvers import ResolveError, resolve
-from .util import ROOT, Net, human, log, write_json
+from .util import ROOT, FetchError, Net, http_open, human, log, write_json
 
 KEEP = ("title", "tier", "kind", "dest", "lang", "license", "tags", "post", "note", "rule", "home", "any_lang")
 EMPTY = (None, "", [], {})
@@ -27,19 +27,52 @@ def _entry(item, res):
     return e
 
 
+def _says_gone(error):
+    return getattr(error.__cause__, "code", None) in (404, 410)
+
+
+def _gone(url):
+    """A HEAD came back 404. A few servers only answer GET, so ask for the first byte before believing it."""
+    try:
+        http_open(url, headers={"Range": "bytes=0-0"}, retries=1).close()
+    except FetchError as e:
+        return _says_gone(e)
+    return False
+
+
 def _fill_sizes(entry, net):
-    """Ask the server for sizes the source did not publish, so `genesis plan` can add them up."""
-    files = entry.get("files") or []
+    """Ask the server for sizes the source did not publish, so `genesis plan` can add them up.
+
+    Returns the links the server says it does not have. A checksum list can name a file its publisher hands
+    out some other way, by torrent say, and that has to show in the report, not in somebody's failed download."""
+    files, gone = entry.get("files") or [], []
     if entry.get("kind") == "bible" or len(files) > 8:
-        return
+        return gone
     for f in files:
         if not f.get("size"):
             try:
                 _, h = net.head(f["url"])
                 if h.get("content-length", "").isdigit() and int(h["content-length"]) > 0:
                     f["size"] = int(h["content-length"])
-            except Exception:
-                pass
+            except Exception as e:
+                if _says_gone(e) and _gone(f["url"]):
+                    gone.append(f["url"])
+    return gone
+
+
+def _drop_gone(new, gone, failures, warnings):
+    """Take out the files a server does not have. A line left with nothing to fetch is offered to nobody."""
+    for iid, urls in gone.items():
+        entry = new[iid]
+        said = "the server does not have " + ", ".join(urls)
+        left = [f for f in entry["files"] if f["url"] not in urls]
+        if left:
+            entry["files"] = left
+            warnings.append((iid, said))
+            continue
+        failures.append((iid, said))
+        new[iid] = {"title": entry.get("title", iid), "tier": entry["tier"], "kind": entry["kind"],
+                    "status": "error", "error": said}
 
 
 def _days(earlier, later):
@@ -119,7 +152,8 @@ def refresh_pack(name, net, jobs=8):
                                "kind": item["kind"], "status": "error", "error": result}
 
     with ThreadPoolExecutor(max_workers=jobs) as pool:
-        list(pool.map(lambda e: _fill_sizes(e, net), new.values()))
+        asked = list(pool.map(lambda e: _fill_sizes(e, net), list(new.values())))
+    _drop_gone(new, {iid: urls for iid, urls in zip(list(new), asked) if urls}, failures, warnings)
     _fold(new, old)
 
     def ver(e):
