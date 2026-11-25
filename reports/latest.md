@@ -14,11 +14,7 @@
 | scripture | 1303 | 0 | 0 | 0 | 0 |
 | services | 25 | 0 | 0 | 0 | 0 |
 | survival | 77 | 0 | 0 | 0 | 0 |
-| tools | 30 | 0 | 1 | 0 | 0 |
-
-## Updated in tools
-
-* `llama_cpp`: b12728 to b12732
+| tools | 30 | 0 | 0 | 0 | 0 |
 
 ## Failed
 
