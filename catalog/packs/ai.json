@@ -20,6 +20,12 @@
    "source": {"type": "ollama", "model": "medgemma1.5:4b"}},
   {"id": "translategemma_4b", "title": "TranslateGemma 4B (translation across 55 languages)", "tier": "ark", "license": "Gemma Terms of Use", "tags": ["translation"],
    "source": {"type": "ollama", "model": "translategemma:4b"}},
+  {"id": "qwen35_9b_abliterated", "title": "Qwen 3.5 9B abliterated (huihui_ai: Qwen 3.5 9B with its refusals removed)", "tier": "ark", "license": "Apache 2.0", "tags": ["chat", "vision", "uncensored"],
+   "note": "The same kind of model as the 35B abliterated, small enough for a Raspberry Pi 5 with 8 or 16 GB: slow there, a few words a second. Answers without the usual refusals, so it also answers wrongly or dangerously without a warning. Check what it says.",
+   "source": {"type": "ollama", "model": "huihui_ai/qwen3.5-abliterated:9b"}},
+  {"id": "qwen35_4b_abliterated", "title": "Qwen 3.5 4B abliterated (huihui_ai: Qwen 3.5 4B with its refusals removed)", "tier": "ark", "license": "Apache 2.0", "tags": ["chat", "vision", "uncensored"],
+   "note": "The quick one for a Raspberry Pi 5. Answers without the usual refusals, so it also answers wrongly or dangerously without a warning. Check what it says.",
+   "source": {"type": "ollama", "model": "huihui_ai/qwen3.5-abliterated:4b"}},
   {"id": "qwen25_coder_7b", "title": "Qwen 2.5 Coder 7B (code completion)", "tier": "ark", "license": "Apache 2.0", "tags": ["code"],
    "source": {"type": "ollama", "model": "qwen2.5-coder:7b"}},
 
