@@ -46,10 +46,12 @@
    "source": {"type": "github", "repo": "restic/restic", "assets": {
      "linux-x64": "_linux_amd64\\.bz2$", "linux-arm64": "_linux_arm64\\.bz2$",
      "windows-x64": "_windows_amd64\\.zip$", "macos-arm64": "_darwin_arm64\\.bz2$"}}},
-  {"id": "ollama_runtime", "title": "Ollama (run models without Docker)", "tier": "ark", "license": "MIT", "tags": ["ai"],
+  {"id": "ollama_runtime", "title": "Ollama (run models without Docker)", "tier": "ark",
+   "note": "The builds that run with no install: unpacked by genesis ready, or by the first start on that machine.", "license": "MIT", "tags": ["ai"],
    "source": {"type": "github", "repo": "ollama/ollama", "assets": {
      "linux-x64": "^ollama-linux-amd64\\.(tgz|tar\\.zst)$", "linux-arm64": "^ollama-linux-arm64\\.(tgz|tar\\.zst)$",
-     "windows-x64": "^OllamaSetup\\.exe$", "macos-arm64": "^Ollama(-darwin)?\\.(dmg|zip)$"}}},
+     "windows-x64": "^ollama-windows-amd64\\.zip$",
+     "macos-arm64": "^ollama-darwin\\.tgz$", "macos-x64": "^ollama-darwin\\.tgz$"}}},
   {"id": "llama_cpp", "title": "llama.cpp (run GGUF models directly)", "tier": "ark", "license": "MIT", "tags": ["ai"],
    "note": "Builds are published as numbered releases; the one marked latest carries none.",
    "source": {"type": "github", "repo": "ggml-org/llama.cpp", "scan": true, "assets": {
