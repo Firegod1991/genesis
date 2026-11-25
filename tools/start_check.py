@@ -64,11 +64,12 @@ try:
             pass
     check("every book opens in the reader", shelf and opened == len(shelf), "%d of %d" % (opened, len(shelf)))
 
-    inside = [h for h in api("find", q="water").get("hits", []) if h.get("kind") == "page"]
-    check("a question is answered from the pages inside the books", bool(inside),
-          inside[0]["title"] if inside else "no page found for: water")
-    if inside:
-        check("that page opens", get(reader + inside[0]["path"], 4096)[0] == 200)
+    if any(book.get("search") for book in shelf):  # a book made without a search index has no pages to find
+        inside = [h for h in api("find", q="water").get("hits", []) if h.get("kind") == "page"]
+        check("a question is answered from the pages inside the books", bool(inside),
+              inside[0]["title"] if inside else "no page found for: water")
+        if inside:
+            check("that page opens", get(reader + inside[0]["path"], 4096)[0] == 200)
 
     manuals = [m for shelf_ in api("shelves").values() if isinstance(shelf_, list) for m in shelf_ if m.get("href")]
     check("the shelves list their manuals", len(manuals) >= want["manuals"], "%d listed, %d expected" % (len(manuals), want["manuals"]))

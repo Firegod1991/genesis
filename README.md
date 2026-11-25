@@ -76,44 +76,59 @@ Tiers are cumulative, and the starter is a part of seed. Sizes are for English c
 
 ## Start it
 
-Two lines on a Raspberry Pi, a Linux PC or a Mac. A double click on Windows. No Docker, and nothing to install but Python 3.9 or newer, which a Raspberry Pi already has.
+Download it, unpack it, double click **Start Genesis**. No Docker, no account, and nothing to install.
 
-The first start asks one question: bring down the **starter** (about 1.1 GB: every manual and plant guide, ten books with the best of Wikipedia, a map of the world and the Bible), the **seed** tier (about 24 GB), or nothing yet. Then Genesis opens in your browser. Everything it downloads lands in a `vault` folder inside the copy you made.
+| Your machine | Download | Then |
+|---|---|---|
+| **Windows** 10 or 11 | [Genesis-Windows.zip](https://github.com/Firegod1991/genesis/releases/latest/download/Genesis-Windows.zip) | Unpack it, open the Genesis folder and double click **Start Genesis**. Python is inside the download. |
+| **Mac**, Apple silicon or Intel | [Genesis-Mac.zip](https://github.com/Firegod1991/genesis/releases/latest/download/Genesis-Mac.zip) | Open the Genesis folder, right click **Start Genesis.command** and choose **Open**. After that a double click is enough. |
+| **Linux PC or Raspberry Pi** | [Genesis-Linux.tar.gz](https://github.com/Firegod1991/genesis/releases/latest/download/Genesis-Linux.tar.gz) | Unpack it, open the Genesis folder and double click **Start Genesis**. If the desktop asks, allow it to launch. |
 
-**Raspberry Pi or any Linux PC**
+Each download carries a **HOW TO START** page for its system. The [releases page](https://github.com/Firegod1991/genesis/releases/latest) has all three and their SHA 256 sums. They are rebuilt from every change, and each one is unpacked and started on its own kind of machine before it goes up.
+
+The first start asks one question. Press Enter for the second answer:
+
+1. **Starter**, about 1.1 GB: every manual and plant guide, ten books with the best of Wikipedia, a map of the world and the Bible.
+2. **Starter and the assistant**: the starter, and a local AI sized to the machine. Qwen 3.5 4B on a laptop or a Raspberry Pi 5, Qwen 3.5 9B on a PC with 24 GB of memory or more, with the Ollama that runs it. It answers with no internet and without the usual refusals. With the 4B that is about 3.5 GB more on a Mac and 5 GB more on Windows, Linux or a Pi.
+3. **Seed**, about 24 GB: the essentials of every pack, and the assistant.
+4. Nothing yet.
+
+Then Genesis opens in your browser. Everything it brings down lands in a `vault` folder inside the Genesis folder.
+
+**On a Mac**, the first open of a download from the internet is stopped until you say so: right click, **Open**, **Open**. On macOS 15 and newer, if there is no Open button, go to System Settings, Privacy and Security, and choose **Open Anyway**. If the Mac offers to install the command line developer tools, say **Install**: they bring Python.
+
+**On Windows**, if SmartScreen says it protected your PC, choose **More info**, then **Run anyway**. Windows may ask whether to let Python and the book reader through its firewall. Yes lets the phones on your network open Genesis. No keeps it to this PC.
+
+Stop it with **Stop Genesis**. If another program already uses port 8080, Genesis takes the next free port and tells you which.
+
+### On a phone
+
+Genesis runs on a computer, and every phone on the same network uses it: the maps, the manuals, the library, scripture and the assistant, all in the phone's browser with nothing installed.
+
+1. Start Genesis on the computer or the Pi.
+2. Join the phone to the same WiFi, or to the computer's hotspot when there is no WiFi at all.
+3. Point the phone's camera at the code on the Genesis home page.
+4. To keep it, choose **Add to Home Screen** (Safari's Share button on an iPhone, the browser menu on Android). Genesis then opens from its own icon whenever the phone is on that network.
+
+The Android apps in the catalog (offline maps, mesh messaging, readers) come down to the vault and install from the **Programs** page. A Genesis app of its own for the phone, one that keeps a chosen part of the library on the phone itself, is in development.
+
+### With git
+
+On a Raspberry Pi, a Linux PC or a Mac with Apple's command line tools, two lines do the same as the download:
 
 ```sh
 git clone https://github.com/Firegod1991/genesis
 sh genesis/bin/genesis start
 ```
-
-**Mac**, with Intel or Apple silicon. Open Terminal and type the same two lines:
-
-```sh
-git clone https://github.com/Firegod1991/genesis
-sh genesis/bin/genesis start
-```
-
-A Mac offers to install Apple's command line tools the first time you type `git`. Say yes: they bring git and Python. The book reader is built for macOS 12 and newer.
-
-**Windows 10 or 11**
-
-1. Install Python from the Microsoft Store or from [python.org](https://www.python.org/downloads/).
-2. Press the green **Code** button at the top of this page, choose **Download ZIP** and unpack it.
-3. Double click **Start Genesis** in the unpacked folder.
-
-Windows may ask whether to let Python and the book reader through its firewall. Yes lets the phones on your network open Genesis. No keeps it to this PC.
-
-Stop it with `sh genesis/bin/genesis stop`, or with **Stop Genesis** on Windows. If another program already uses port 8080, Genesis takes the next free port and tells you which.
 
 | Machine | What runs | How it was proven |
 |---|---|---|
-| Raspberry Pi 5, and Linux on ARM | The front door, manuals, maps, scripture, the book reader and the assistant | Started on every change on an ARM machine at GitHub, the kind of processor a Pi 5 has. The assistant for ARM has only run under emulation. Not yet on a Pi itself |
+| Raspberry Pi 5, and Linux on ARM | The front door, manuals, maps, scripture, the book reader and the assistant | Started on every change on an ARM machine at GitHub, the kind of processor a Pi 5 has, and the assistant from the vault asked a question there. The 4B on a real drive filled for a Pi 5 answered from that drive on a Linux PC. Not yet on a Pi itself |
 | Linux PC | The same | Started on every change, and by hand from a real drive of more than 400 books |
-| Mac, Intel or Apple silicon | The front door, manuals, maps, scripture and the book reader | Started on every change on an Intel Mac (macOS 15) and an Apple silicon Mac (macOS 26), with the Python 3.9 that Apple's tools install |
-| Windows | The same as a Mac | Started on every change by its launcher, and by hand on Windows 11 from the ZIP |
+| Mac, Intel or Apple silicon | The same | Started on every change on an Intel Mac and an Apple silicon Mac, with the Python 3.9 that Apple's tools install, and the assistant from the vault asked a question on each |
+| Windows | The same | Started on every change by its launcher, the download started with no Python installed on the PC, and the assistant from the vault asked a question |
 
-On Windows the assistant answers through an [Ollama](https://ollama.com) already running on the PC, with that PC's own models. That was tried on Windows 11. A Mac should do the same and has not been tried.
+The assistant runs from the vault on every one of them: Genesis brings down the Ollama that Ollama publishes to run with no install, and the models come straight from the Ollama registry, each file checked against its SHA 256. An Ollama already installed on the machine keeps running beside it, with its own models.
 
 ### More than the starter
 
@@ -124,7 +139,7 @@ genesis doctor                  # what this machine can carry
 genesis update                  # newer versions of what you have
 ```
 
-`genesis` here is `sh genesis/bin/genesis` on a Pi, a Linux PC or a Mac, and `genesis` typed in the unpacked folder on Windows. Put the vault on another drive with `--vault /path/to/folder` or `export GENESIS_VAULT=/path/to/folder`.
+`genesis` here is `sh bin/genesis` in the Genesis folder on a Pi, a Linux PC or a Mac, and `genesis` typed in the Genesis folder on Windows. Put the vault on another drive with `--vault /path/to/folder` or `export GENESIS_VAULT=/path/to/folder`.
 
 ### The full station, with Docker
 
@@ -139,7 +154,7 @@ genesis up core                 # dashboard at http://localhost:8080
 genesis timer                   # update everything once a month
 ```
 
-Filling a drive on one machine for another? Name the machine it is for. `genesis fetch --tier seed --platform linux-arm64,android` loads a drive for a Raspberry Pi from any computer. A program that has no build for the machines you name comes as its source, so nothing in the tier is left behind, and a program published only for another system is passed over and never counted as installed. The AI models ride along when Ollama is installed on that computer: they go into the vault, never into your own model library.
+Filling a drive on one machine for another? Name the machine it is for. `genesis fetch --tier seed --platform linux-arm64,android` loads a drive for a Raspberry Pi from any computer. A program that has no build for the machines you name comes as its source, so nothing in the tier is left behind, and a program published only for another system is passed over and never counted as installed. The AI models come straight from the Ollama registry into the vault, with no Ollama needed on that computer and never into your own model library.
 
 ## No Docker, no internet: start it from the drive
 
@@ -327,6 +342,7 @@ Genesis is new. This is what has and has not been proven.
 * a full `ark` fill on a 2 TB drive: 644 items and 409 books in 1.04 TB, each checked against its publisher's checksum, then made ready and sealed
 * the start with no Docker from that drive on a PC: every one of the 409 books opening in the reader, and search answering from the pages inside them
 * the Windows launchers on Windows 11 from the ZIP, with the assistant answering through the PC's own Ollama
+* the Windows download on Windows 11 with every installed Python out of reach: the assistant and its model brought down straight from the Ollama registry, Ollama run from the vault beside the PC's own on a port of its own, and Qwen 3.5 2B answering at about 16 tokens a second on the processor alone; Genesis moved itself to another port when 8080 was taken, offered a phone its address, and stopped everything it started
 * the safe with the real 7-Zip on Linux and on Windows
 * the boot stick and the spare card on disk images: Ventoy installed by its own installer with a live system copied and compared, and Raspberry Pi OS written, read back and its boot files found in place
 
