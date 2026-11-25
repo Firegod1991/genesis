@@ -125,7 +125,7 @@ sh genesis/bin/genesis start
 |---|---|---|
 | Raspberry Pi 5, and Linux on ARM | The front door, manuals, maps, scripture, the book reader and the assistant | Started on every change on an ARM machine at GitHub, the kind of processor a Pi 5 has, and the assistant from the vault asked a question there. The 4B on a real drive filled for a Pi 5 answered from that drive on a Linux PC. Not yet on a Pi itself |
 | Linux PC | The same | Started on every change, and by hand from a real drive of more than 400 books |
-| Mac, Intel or Apple silicon | The same | Started on every change on an Intel Mac and an Apple silicon Mac, with the Python 3.9 that Apple's tools install, and the assistant from the vault asked a question on each |
+| Mac, Intel or Apple silicon | The same | Started on every change on an Intel Mac and an Apple silicon Mac, with the Python 3.9 that Apple's tools install. The assistant from the vault is asked a question on the Intel Mac. The Apple silicon Macs GitHub rents are virtual, and their virtual GPU cannot run the model, so the assistant on Apple silicon waits for a report from a real Mac |
 | Windows | The same | Started on every change by its launcher, the download started with no Python installed on the PC, and the assistant from the vault asked a question |
 
 The assistant runs from the vault on every one of them: Genesis brings down the Ollama that Ollama publishes to run with no install, and the models come straight from the Ollama registry, each file checked against its SHA 256. An Ollama already installed on the machine keeps running beside it, with its own models.

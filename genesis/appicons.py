@@ -47,16 +47,24 @@ def _lit(x, y):
 
 
 def draw(size, samples=3):
-    """The icon as PNG bytes, size pixels square, its edges smoothed by sampling each pixel samples² times."""
+    """The icon as PNG bytes, size pixels square, its edges smoothed by sampling each pixel samples² times.
+
+    Only a pixel whose corners disagree sits on an edge, so only those are sampled finely: a Raspberry Pi
+    or an old Mac draws the largest size in a moment."""
     step, rows = 24.0 / size, []
     offsets = [(k + 0.5) / samples for k in range(samples)]
+    full = samples * samples
+    shade = [bytes(int(round(INK[c] + (PAPER[c] - INK[c]) * hit / float(full))) for c in range(3)) for hit in range(full + 1)]
+    corners = [[_lit(px * step, py * step) for px in range(size + 1)] for py in range(size + 1)]
     for py in range(size):
-        row = bytearray(b"\x00")  # filter type: none
+        row, above, below = [b"\x00"], corners[py], corners[py + 1]  # filter type: none
         for px in range(size):
-            hit = sum(_lit((px + ox) * step, (py + oy) * step) for oy in offsets for ox in offsets)
-            t = hit / float(samples * samples)
-            row += bytes(int(round(INK[c] + (PAPER[c] - INK[c]) * t)) for c in range(3))
-        rows.append(bytes(row))
+            c = above[px]
+            if c == above[px + 1] == below[px] == below[px + 1]:
+                row.append(shade[full if c else 0])
+            else:
+                row.append(shade[sum(_lit((px + ox) * step, (py + oy) * step) for oy in offsets for ox in offsets)])
+        rows.append(b"".join(row))
 
     def chunk(kind, data):
         return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data) & 0xFFFFFFFF)
@@ -76,6 +84,8 @@ def png(name):
         return _cache[name]
 
 
-def warm():
-    """Draw every size in the background, so the first phone to ask is not kept waiting."""
-    threading.Thread(target=lambda: [png(n) for n in SIZES], daemon=True).start()
+def warm(delay=5.0):
+    """Draw every size in the background once the server is up, so the first phone to ask is not kept waiting."""
+    timer = threading.Timer(delay, lambda: [png(n) for n in SIZES])
+    timer.daemon = True
+    timer.start()

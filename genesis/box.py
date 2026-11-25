@@ -630,7 +630,7 @@ def start(args):
     for what in missing:
         log("not started: " + what)
     port = int(os.environ.get("GENESIS_PORT", DASHBOARD_PORT))
-    for _ in range(40):
+    for _ in range(120):  # a first start on a slow machine compiles every module once, beside a model server starting
         if _listening(port):
             break
         time.sleep(0.25)
