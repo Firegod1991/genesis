@@ -405,6 +405,34 @@ $("#note-ask").addEventListener("click", async () => {
   if (unthink(out).trim()) { $("#note-text").value = unthink(out).trim() + "\n"; state.textContent = "Tidied. Save to keep it, or open the note again to go back."; }
 });
 
+// ---------------------------------------------------------------- phones
+// On the box itself: the code a phone's camera opens Genesis with. On a phone: how to keep it on the home screen.
+const onThisBox = ["localhost", "127.0.0.1", "[::1]", "::1"].includes(location.hostname);
+const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+function phoneCard(ph) {
+  const card = $("#phone");
+  if (onThisBox && ph.links.length && ph.qr) {
+    const svg = new DOMParser().parseFromString(ph.qr, "image/svg+xml").documentElement;
+    svg.setAttribute("class", "qr");
+    card.replaceChildren(svg, el("div", {},
+      el("h2", {}, icon("phone"), "On your phone"),
+      el("p", { textContent: "Join the same WiFi as this computer, or its hotspot, then point the phone's camera at this code. Every page works there, the assistant too." }),
+      el("p", {}, "Or type ", el("code", { textContent: ph.links[0] }), ph.links.length > 1 ? ` (or ${ph.links.slice(1, 3).join(", ")})` : ""),
+      el("p", { className: "hint", textContent: "On Windows, say yes when it asks to let Python through the firewall, or phones cannot reach it." })));
+    card.hidden = false;
+  } else if (!onThisBox && !standalone) {
+    const iphone = /iPhone|iPad|iPod/.test(navigator.userAgent);
+    card.replaceChildren(el("div", {},
+      el("h2", {}, icon("phone"), "Keep Genesis on this phone"),
+      el("p", { textContent: iphone
+        ? "In Safari tap Share, then Add to Home Screen. Genesis opens from its own icon whenever this phone is on the box's network."
+        : "Open the browser menu and choose Add to Home screen or Install app. Genesis opens from its own icon whenever this phone is on the box's network." })));
+    card.hidden = false;
+  } else {
+    card.hidden = true;
+  }
+}
+
 // ---------------------------------------------------------------- the views
 const loaders = {
   async home() {
@@ -435,6 +463,7 @@ const loaders = {
     ];
     $("#tiles").replaceChildren(...tiles.map(([view, pic, name, line]) =>
       el("a", { className: "tile", href: "#" + view }, icon(pic), el("strong", { textContent: name }), el("span", { textContent: line }))));
+    phoneCard(await tryApi("phone", { links: [] }));
     $("#home-foot").textContent = "Everything here is on the drive. Nothing on this screen needs the internet.";
     if ($("#found").hidden && matchMedia("(hover: hover)").matches) $("#need-q").focus({ preventScroll: true });
   },
