@@ -7,8 +7,8 @@ Tiers are cumulative: **seed** is the essentials, **ark** adds the full working 
 | Tier | Items | Known size | Items without a published size |
 |---|---|---|---|
 | seed | 401 | 23.7 GB | 44 |
-| ark | 658 | 482.6 GB | 88 |
-| eden | 850 | 1.8 TB | 107 |
+| ark | 660 | 492.5 GB | 88 |
+| eden | 852 | 1.8 TB | 107 |
 
 Sizes count English content for Linux x64 plus Android apps. Other languages and platforms add to it.
 
@@ -23,6 +23,8 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Qwen 3.5 9B (general assistant, tools) | `qwen35_9b` | ark | 08f9698c1116 | 6.6 GB | Apache 2.0 |
 | MedGemma 1.5 4B (medical text and images) | `medgemma15_4b` | ark | b785fcc637b2 | 3.3 GB | Health AI Developer Foundations terms |
 | TranslateGemma 4B (translation across 55 languages) | `translategemma_4b` | ark | 37490ee3c3a4 | 3.3 GB | Gemma Terms of Use |
+| Qwen 3.5 9B abliterated (huihui_ai: Qwen 3.5 9B with its refusals removed) | `qwen35_9b_abliterated` | ark | 62387fdc497b | 6.6 GB | Apache 2.0 |
+| Qwen 3.5 4B abliterated (huihui_ai: Qwen 3.5 4B with its refusals removed) | `qwen35_4b_abliterated` | ark | f4e010fbb0d7 | 3.3 GB | Apache 2.0 |
 | Qwen 2.5 Coder 7B (code completion) | `qwen25_coder_7b` | ark | d9bb33f27869 | 4.7 GB | Apache 2.0 |
 | Gemma 4 31B (strongest Gemma) | `gemma4_31b` | eden | 094d707563aa | 20.4 GB | Gemma Terms of Use |
 | Qwen 3.5 35B | `qwen35_35b` | eden | 6d2a5ac892aa | 22.1 GB | Apache 2.0 |
@@ -2969,7 +2971,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Uses of Plants by the Chippewa Indians (Frances Densmore, Smithsonian, 1928) | `chippewa_plant_uses` | seed | 2024-02-02 | 18.1 MB | US government work |
 | Forgotten Foods: Introduction to Wild Edible Plants (Mississippi State University Extension) | `wild_edible_plants_primer` | seed | 2026-02-04 | 116 KB | Free to copy unchanged for nonprofit teaching, with credit |
 | Edible and Poisonous Plants of the Caribbean Region (US Navy, 1944) | `edible_poisonous_plants_caribbean` | seed | 2024-07-08 | 12.9 MB | US government work |
-| Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919) | `plants_missouri_river_region` | seed | 2023-12-23 | 7.0 MB | US government work |
+| Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919) | `plants_missouri_river_region` | seed | 2023-12-23 (stale) | 7.0 MB | US government work |
 | Culturally Significant Plants (USDA NRCS Plant Materials Center, Manhattan, Kansas) | `culturally_significant_plants` | seed | 2019-05-30 | 3.2 MB | US government work, photos credited inside |
 | Preserving Food in Wyoming (University of Wyoming Extension, 2018) | `preserving_food_in_wyoming` | seed | 2024-02-01 | 7.0 MB | Free from the publisher |
 | Desert Foods for a Resilient Future (University of Arizona Desert Laboratory, 2021) | `desert_foods` | seed | 2022-08-15 | 22.1 MB | Free from the publisher |

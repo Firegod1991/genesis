@@ -1177,6 +1177,7 @@
    "kind": "document",
    "license": "US government work",
    "note": "Great Plains. Plants the Dakota, Omaha, Ponca and Pawnee used for food and medicine, with photographs.",
+   "stale": true,
    "tags": [
     "fieldcraft",
     "plants",

@@ -1,6 +1,6 @@
 {
  "packs": {
-  "ai": 18,
+  "ai": 20,
   "apps": 23,
   "code": 375,
   "isos": 24,
@@ -17,13 +17,13 @@
  "refreshed": "2026-11-25",
  "tiers": {
   "ark": {
-   "bytes": 482616809805,
-   "items": 658,
+   "bytes": 492526616977,
+   "items": 660,
    "unsized": 88
   },
   "eden": {
-   "bytes": 1762068026491,
-   "items": 850,
+   "bytes": 1771977833663,
+   "items": 852,
    "unsized": 107
   },
   "seed": {
