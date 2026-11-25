@@ -180,6 +180,22 @@
    "title": "Qwen 3.5 9B (general assistant, tools)",
    "version": "08f9698c1116"
   },
+  "qwen36_35b_abliterated": {
+   "dest": "models",
+   "kind": "model",
+   "license": "Apache 2.0",
+   "model": "huihui_ai/qwen3.6-abliterated:35b",
+   "note": "Answers without the refusals the original was trained with, so it also answers wrongly or dangerously without a warning. Check what it says. About 24 GB: it wants a PC with 32 GB of memory or a GPU with 24 GB, and does not fit in a Raspberry Pi 5.",
+   "size": 23938333107,
+   "tags": [
+    "chat",
+    "vision",
+    "uncensored"
+   ],
+   "tier": "eden",
+   "title": "Qwen 3.6 35B abliterated (huihui_ai: Qwen 3.6 35B A3B with its refusals removed)",
+   "version": "80cc324ed26c"
+  },
   "qwen3_coder_30b": {
    "dest": "models",
    "kind": "model",
