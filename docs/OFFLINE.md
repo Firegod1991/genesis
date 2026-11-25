@@ -35,18 +35,18 @@ That is `genesis start`. It needs Python 3 and nothing else. It starts three thi
 |---|---|---|
 | Front door | 8080 | One question box, then manuals, plants, library, map, scripture, radio, notes and programs |
 | Book reader | 8081 | Kiwix, serving every book on the drive |
-| Assistant | 11434, this machine only | Ollama with the models on the drive |
+| Assistant | 11435, this machine only | Ollama with the models on the drive, beside any Ollama installed on the machine (11434) |
 
 `genesis stop` stops them. Phones and laptops on the same network can open port 8080 of the box.
 
 ## On a Mac or a Windows PC
 
-The same start works there, with the book reader. A copy of Genesis keeps its vault in a `vault` folder inside itself, and a first start offers to fill it: a starter of about 1.1 GB, the seed tier, or nothing yet.
+The same start works there, with the book reader and the assistant. A copy of Genesis keeps its vault in a `vault` folder inside itself, and a first start offers to fill it: a starter of about 1.1 GB, the starter with the assistant, the seed tier, or nothing yet.
 
-* **Mac**, Intel or Apple silicon. In Terminal: `sh genesis/bin/genesis start`. The book reader is built for macOS 12 and newer.
-* **Windows 10 or 11.** Double click **Start Genesis** in the folder, and **Stop Genesis** to stop it. It needs Python, from the Microsoft Store or python.org. The book reader also needs Microsoft's Visual C++ runtime, which most PCs already have. Genesis says so when it is missing.
+* **Mac**, Intel or Apple silicon. Open **Start Genesis.command** in the Mac download, or in Terminal: `sh genesis/bin/genesis start`. The book reader is built for macOS 12 and newer, the assistant for macOS 14 and newer.
+* **Windows 10 or 11.** Double click **Start Genesis** in the folder, and **Stop Genesis** to stop it. The Windows download carries Python. A copy from git needs it, from the Microsoft Store or python.org. The book reader also needs Microsoft's Visual C++ runtime, which most PCs already have. Genesis says so when it is missing.
 
-On these two systems the assistant is the Ollama installed on the machine, when there is one. The drive's own Ollama and 7-Zip are unpacked for Linux only.
+The drive's own Ollama runs on these two as well: `genesis ready`, or the first start on that machine, unpacks the build for Windows or the one for every Mac when the drive carries it. An Ollama installed on the machine keeps running beside it, with its own models. 7-Zip is unpacked for Linux only.
 
 A drive formatted for Linux, as a drive filled for a Raspberry Pi usually is, cannot be read by Windows or by a Mac. Start that computer from the boot stick instead ([BOOTSTICK.md](BOOTSTICK.md)).
 

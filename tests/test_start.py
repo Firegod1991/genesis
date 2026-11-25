@@ -135,17 +135,32 @@ class FirstStartTests(unittest.TestCase):
         self.vault = os.path.join(self.top, "vault")
 
     def test_a_first_start_offers_a_starter_and_brings_down_what_was_chosen(self):
-        for answer, tier in (("", "starter"), ("1", "starter"), ("2", "seed"), ("3", None), ("no", None)):
+        ai = ["ollama_runtime", "qwen35_4b_abliterated"]
+        for answer, tier, also in (("", "starter", ai), ("1", "starter", None), ("2", "starter", ai), ("3", "seed", ai),
+                                   ("4", None, None), ("no", None, None)):
             asked, args = [], argparse.Namespace(vault=self.vault)
-            with mock.patch.object(fetch, "fetch", side_effect=lambda a: asked.append((a.tier, a.yes, a.keep_going)) or 0), \
-                    mock.patch.object(box, "ready") as made_ready, mock.patch("builtins.print") as shown:
+            with mock.patch.object(fetch, "fetch", side_effect=lambda a: asked.append((a.tier, a.also, a.yes, a.keep_going)) or 0), \
+                    mock.patch.object(box, "ready") as made_ready, mock.patch("builtins.print") as shown, \
+                    mock.patch("genesis.util.memory", return_value=(16e9, None)):
                 self.assertEqual(box.first(args, self.vault, ask=lambda prompt: answer), tier, answer)
-            self.assertEqual(asked, [(tier, True, True)] if tier else [], answer)
+            self.assertEqual(asked, [(tier, also, True, True)] if tier else [], answer)
             self.assertEqual(made_ready.call_count, 1 if tier else 0, answer)
             page = "\n".join(str(call[0][0]) for call in shown.call_args_list)
             self.assertIn(self.vault, page, "it says where the downloads go")
             self.assertRegex(page, r"1  Starter  about \d+(\.\d+)? [MG]B\.")
-            self.assertRegex(page, r"2  Seed     about \d+(\.\d+)? GB\.")
+            self.assertRegex(page, r"2  Starter and the assistant  about \d+(\.\d+)? GB\. The starter, and Qwen 3\.5 4B")
+            self.assertIn("16.0 GB of memory", page)
+            self.assertRegex(page, r"3  Seed     about \d+(\.\d+)? GB\.")
+
+    def test_the_assistant_offered_fits_the_memory(self):
+        self.assertEqual(box.assistant_for(4e9), ("qwen35_2b", "Qwen 3.5 2B"))
+        self.assertEqual(box.assistant_for(8e9)[0], "qwen35_4b_abliterated")
+        self.assertEqual(box.assistant_for(16.6e9)[0], "qwen35_4b_abliterated", "a Raspberry Pi 5 with 16 GB")
+        self.assertEqual(box.assistant_for(32e9)[0], "qwen35_9b_abliterated")
+        self.assertEqual(box.assistant_for(None)[0], "qwen35_4b_abliterated", "a machine that will not say")
+        locked = {iid for _, iid, _ in catalog.all_locked(["ai", "tools"])}
+        for _, iid, _ in box.ASSISTANTS:
+            self.assertIn(iid, locked)
 
     def test_a_vault_with_anything_in_it_is_not_a_first_start(self):
         self.assertTrue(box.nothing_yet(self.vault))

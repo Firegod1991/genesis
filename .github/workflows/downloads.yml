@@ -1,0 +1,144 @@
+name: Downloads
+
+# Builds the three downloads on the releases page, one for Windows with Python inside, one for a Mac and one for
+# Linux and the Raspberry Pi. Each is unpacked and started on its own kind of machine the way a person does,
+# with nothing but what the download carries, before the release named "downloads" is replaced with them.
+# The links in the README always give the newest:
+#   https://github.com/Firegod1991/genesis/releases/latest/download/Genesis-Windows.zip
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: downloads
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build the downloads
+        run: python3 tools/package.py --out dist
+      - uses: actions/upload-artifact@v7
+        with:
+          name: downloads
+          path: |
+            dist/Genesis-Windows.zip
+            dist/Genesis-Mac.zip
+            dist/Genesis-Linux.tar.gz
+            dist/SHA256SUMS
+
+  try:
+    name: "Unpacked and started: ${{ matrix.name }}"
+    needs: build
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {name: "Windows, with no Python installed", os: windows-latest, file: Genesis-Windows.zip}
+          - {name: "a Mac with Apple silicon", os: macos-latest, file: Genesis-Mac.zip}
+          - {name: "a Mac with Intel", os: macos-15-intel, file: Genesis-Mac.zip}
+          - {name: "a Linux PC", os: ubuntu-latest, file: Genesis-Linux.tar.gz}
+          - {name: "Linux on ARM, as a Raspberry Pi 5 is", os: ubuntu-24.04-arm, file: Genesis-Linux.tar.gz}
+    defaults:
+      run:
+        shell: bash
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: downloads
+          path: ${{ runner.temp }}/downloads
+      - name: Unpack it as a person's own system does
+        run: |
+          cd "$RUNNER_TEMP"
+          case "${{ matrix.file }}" in
+            *.tar.gz) tar xzf "downloads/${{ matrix.file }}" ;;
+            *) if [ "$RUNNER_OS" = macOS ]; then ditto -x -k "downloads/${{ matrix.file }}" .; else unzip -q "downloads/${{ matrix.file }}"; fi ;;
+          esac
+          ls -la Genesis
+          if [ "$RUNNER_OS" != Windows ]; then
+            for f in bin/genesis "Start Genesis.${{ runner.os == 'macOS' && 'command' || 'desktop' }}"; do
+              test -x "Genesis/$f" || { echo "$f lost its executable bit"; exit 1; }
+            done
+          fi
+      - name: On a Mac, the Python that Apple's own tools bring
+        if: runner.os == 'macOS'
+        run: echo "/usr/bin" >> "$GITHUB_PATH"
+      - name: On Linux, the launcher a double click runs is a valid one
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get install -y -qq desktop-file-utils >/dev/null
+          desktop-file-validate "$RUNNER_TEMP/Genesis/Start Genesis.desktop" "$RUNNER_TEMP/Genesis/Stop Genesis.desktop"
+      - name: On Windows, with every installed Python out of reach, bring down a few things and start it with a double click
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: |
+          cd /d "%RUNNER_TEMP%\Genesis"
+          set "PATH=%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem"
+          where python 2>nul && (echo A Python is still on the PATH & exit /b 1)
+          call genesis.cmd --version || exit /b 1
+          call genesis.cmd fetch --yes --id kiwix_tools --id zimgit-water_en --id basic_fishing --id epa_emergency_water_disinfection --id bible_eng-kjv || exit /b 1
+          call genesis.cmd ready || exit /b 1
+          call "Start Genesis.cmd" --no-browser < nul || exit /b 1
+          python\python.exe tools\start_check.py --books 1 --manuals 1 --bibles 1 || exit /b 1
+          curl -sf http://127.0.0.1:8080/api/phone || exit /b 1
+          call "Stop Genesis.cmd" < nul
+      - name: On a Mac or Linux, bring down a few things and start it the way the launcher does
+        if: runner.os != 'Windows'
+        run: |
+          cd "$RUNNER_TEMP/Genesis"
+          sh bin/genesis fetch --yes --id kiwix_tools --id zimgit-water_en --id basic_fishing --id epa_emergency_water_disinfection --id bible_eng-kjv
+          sh bin/genesis ready
+          if [ "$RUNNER_OS" = macOS ]; then ./"Start Genesis.command" --no-browser < /dev/null; else sh bin/genesis-desktop start --no-browser < /dev/null; fi
+          python3 tools/start_check.py --books 1 --manuals 1 --bibles 1
+          curl -sf http://127.0.0.1:8080/manifest.webmanifest | grep -q standalone
+          curl -sf http://127.0.0.1:8080/api/phone
+          if [ "$RUNNER_OS" = macOS ]; then ./"Stop Genesis.command" < /dev/null; else sh bin/genesis-desktop stop < /dev/null; fi
+
+  publish:
+    needs: try
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
+        with:
+          name: downloads
+          path: dist
+      - name: Replace the downloads on the releases page
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat > notes.md <<NOTES
+          Genesis, ready to start with a double click. Built from ${GITHUB_SHA::7} on $(date -u +%Y-%m-%d).
+
+          | Your machine | Download | Then |
+          |---|---|---|
+          | Windows 10 or 11 | **Genesis-Windows.zip** | Unpack it, open the Genesis folder, double click **Start Genesis**. Python is inside: nothing to install. |
+          | Mac, Apple silicon or Intel | **Genesis-Mac.zip** | Open the Genesis folder, right click **Start Genesis.command**, choose Open. |
+          | Linux PC or Raspberry Pi | **Genesis-Linux.tar.gz** | Unpack it, open the Genesis folder, double click **Start Genesis**. |
+
+          The first start asks what to bring down: the starter, the starter with the assistant, the seed tier or nothing yet.
+          Phones on the same network open Genesis by pointing the camera at the code on its home page.
+          Each download is checked against SHA256SUMS.
+          NOTES
+          git tag -f downloads "$GITHUB_SHA"
+          git push -f origin refs/tags/downloads
+          if gh release view downloads >/dev/null 2>&1; then
+            gh release upload downloads dist/Genesis-Windows.zip dist/Genesis-Mac.zip dist/Genesis-Linux.tar.gz dist/SHA256SUMS --clobber
+            gh release edit downloads --title "Genesis downloads" --notes-file notes.md --latest
+          else
+            gh release create downloads dist/Genesis-Windows.zip dist/Genesis-Mac.zip dist/Genesis-Linux.tar.gz dist/SHA256SUMS \
+              --title "Genesis downloads" --notes-file notes.md --latest
+          fi

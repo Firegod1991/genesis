@@ -16,8 +16,7 @@ What is planned, roughly in order. Issues and pull requests against any of it ar
 
 * Terrain and contour lines for the maps.
 * Voice: speech to text and text to speech through the Whisper models already in the catalog.
-* A phone app, in its own repository: choose what to keep on the phone, offline maps that follow your GPS, and the radio pages.
-* The assistant from the drive on Windows and on a Mac, as it already runs on Linux. Today those two use the Ollama installed on the machine.
+* A phone app, in its own repository and in development: choose what to keep on the phone, offline maps that follow your GPS, and the radio pages. Until then every phone on the box's network uses Genesis in its browser, from a code on the home page, and keeps it on the home screen.
 * Package mirrors (apt, PyPI, npm) so software can still be installed and built.
 * Printable field cards generated from the survival layers for a chosen area.
 * More scripture study tools: parallel reading across translations, and original language lexicons where the license allows.

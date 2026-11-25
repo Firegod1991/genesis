@@ -6,7 +6,6 @@ import json
 import os
 import re
 import shutil
-import socket
 import subprocess
 import sys
 import tarfile
@@ -501,11 +500,6 @@ def _untar(path, into):
                     shutil.copyfileobj(src, dst)
 
 
-def _ollama_command():
-    exe = shutil.which("ollama")
-    return [exe, "serve"] if exe else None
-
-
 def _stack_ollama_running():
     """True when the Ollama that `genesis up ai` starts is running. It keeps its models in the vault."""
     if not shutil.which("docker"):
@@ -521,59 +515,39 @@ def _stack_ollama_running():
 class Models:
     """Pulls models so that they land inside the vault, whichever machine fills it.
 
-    The stack keeps its models in <vault>/models/ollama. When the stack's own Ollama is running, it
-    does the pulling. Otherwise an Ollama installed on this machine is started for the length of the
-    fetch with that folder as its store, so nothing lands in the owner's own model library.
-    GENESIS_OLLAMA names another server to pull through, wherever that one keeps its models.
+    The stack keeps its models in <vault>/models/ollama/models, laid out the way Ollama lays out its own.
+    With no server named, each file of a model comes straight from the Ollama registry into that folder
+    and is checked against the SHA 256 the registry gives it, so a machine needs no Ollama to fill a vault
+    and the owner's own model library is never touched. When the stack's own Ollama is running, it does
+    the pulling. GENESIS_OLLAMA names another server to pull through, wherever that one keeps its models.
     """
+
+    REGISTRY = "https://registry.ollama.ai"
+    ACCEPT = "application/vnd.docker.distribution.manifest.v2+json"
 
     def __init__(self, vault):
         self.vault, self.host, self.proc, self.why = vault, None, None, None
-        self.lock = threading.Lock()
+        self.lock, self.blob_locks, self.decided = threading.Lock(), {}, False
+
+    @property
+    def store(self):
+        return os.path.join(self.vault, "models", "ollama", "models")
 
     def start(self):
+        """The server to pull through, or None to pull from the registry directly."""
         explicit = os.environ.get("GENESIS_OLLAMA")
         if explicit:
             return (explicit if explicit.startswith("http") else "http://" + explicit).rstrip("/")
         if _stack_ollama_running():
             return STACK_OLLAMA
-        cmd = _ollama_command()
-        if not cmd:
-            self.why = "no Ollama to pull with. Start the stack with `genesis up ai` or install Ollama, then fetch again."
-            return None
-        store = os.path.join(self.vault, "models", "ollama", "models")
-        os.makedirs(store, exist_ok=True)
-        with socket.socket() as s:
-            s.bind(("127.0.0.1", 0))
-            port = s.getsockname()[1]
-        host = "http://127.0.0.1:%d" % port
-        env = dict(os.environ, OLLAMA_MODELS=store, OLLAMA_HOST="127.0.0.1:%d" % port)
-        try:
-            self.proc = subprocess.Popen(cmd, env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-                                         creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
-        except OSError as e:
-            self.why = "Ollama would not start (%s)." % e
-            return None
-        for _ in range(60):
-            try:
-                with _DIRECT.open(host + "/api/version", timeout=2):
-                    log("  models go into %s" % store)
-                    return host
-            except (OSError, ValueError):
-                if self.proc.poll() is not None:
-                    break
-                time.sleep(0.5)
-        self.close()
-        self.why = "Ollama started and did not answer."
         return None
 
     def pull(self, model):
         with self.lock:
-            if self.host is None and self.why is None:
-                self.host = self.start()
+            if not self.decided:
+                self.host, self.decided = self.start(), True
         if self.host is None:
-            log("  skipped: " + self.why)
-            return False
+            return self.direct(model)
         req = urllib.request.Request(self.host + "/api/pull", data=json.dumps({"model": model}).encode(),
                                      headers={"Content-Type": "application/json"})
         try:
@@ -586,6 +560,49 @@ class Models:
         except (OSError, ValueError) as e:
             log("  skipped: Ollama is not reachable at %s (%s)." % (self.host, e))
             return False
+
+    def _blob_lock(self, digest):
+        with self.lock:  # two models can share a file: one download of it at a time
+            return self.blob_locks.setdefault(digest, threading.Lock())
+
+    def direct(self, model):
+        """Bring a model down from the registry with no Ollama: every file checked, the manifest last,
+        so Ollama never sees a model whose files are not all there."""
+        name, _, tag = model.partition(":")
+        tag = tag or "latest"
+        lib = name if "/" in name else "library/" + name
+        base = os.environ.get("GENESIS_REGISTRY", self.REGISTRY).rstrip("/")
+        try:
+            with http_open("%s/v2/%s/manifests/%s" % (base, lib, tag), headers={"Accept": self.ACCEPT}) as r:
+                raw = r.read()
+            manifest = json.loads(raw)
+        except (FetchError, OSError, ValueError) as e:
+            raise FetchError("the Ollama registry has no model %s (%s)" % (model, e))
+        blobs = [manifest.get("config")] + list(manifest.get("layers") or [])
+        if not manifest.get("layers") or not all(b and str(b.get("digest", "")).startswith("sha256:") for b in blobs):
+            raise FetchError("the Ollama registry gave no usable manifest for %s" % model)
+        log("  models go into %s" % self.store)
+        for blob in blobs:
+            digest = blob["digest"]
+            hexdigest = digest.split(":", 1)[1]
+            if not re.match(r"^[0-9a-f]{64}$", hexdigest):
+                raise FetchError("a file of %s has no proper SHA 256: %s" % (model, digest))
+            dest = os.path.join(self.store, "blobs", "sha256-" + hexdigest)
+            want = {"sha256": hexdigest, "size": blob.get("size")}
+            with self._blob_lock(digest):
+                if _whole(dest, want, None):
+                    continue
+                if blob.get("size", 0) > 100e6:
+                    log("  get %s of %s (%s)" % (hexdigest[:12], model, human(blob.get("size"))))
+                _download("%s/v2/%s/blobs/%s" % (base, lib, digest), dest, blob.get("size"))
+                _check(dest, want, None)
+        path = os.path.join(self.store, "manifests", "registry.ollama.ai", *(lib.split("/") + [tag]))
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path + ".part", "wb") as f:
+            f.write(raw)
+        os.replace(path + ".part", path)
+        log("  ok %s (%d files, sha256)" % (model, len(blobs)))
+        return True
 
     def close(self):
         if self.proc and self.proc.poll() is None:

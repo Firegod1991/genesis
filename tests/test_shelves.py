@@ -193,6 +193,20 @@ class ShelfTests(unittest.TestCase):
         drive = self.get("/api/vault")
         self.assertEqual((drive["apps"], drive["documents"]), (["maps.apk"], ["documents/water/%s.pdf" % WATER]))
 
+    def test_a_phone_gets_an_address_and_a_code_its_camera_reads(self):
+        with mock.patch.object(self.server, "BARE", True), mock.patch.object(self.server, "PORT", 8765), \
+                mock.patch.object(self.server.phone, "addresses", return_value=["192.168.4.1", "10.0.0.7"]):
+            got = self.get("/api/phone")
+        self.assertEqual(got["links"], ["http://192.168.4.1:8765/", "http://10.0.0.7:8765/"])
+        self.assertTrue(got["qr"].startswith("<svg") and "QR code for http://192.168.4.1:8765/" in got["qr"])
+        with mock.patch.object(self.server, "BARE", False):
+            self.assertEqual(self.get("/api/phone")["links"], [], "inside a container its own addresses reach no phone")
+        status, body = self.call("/manifest.webmanifest")
+        self.assertEqual((status, json.loads(body)["display"]), (200, "standalone"), "a phone keeps it as an app")
+        for name, size in (("app-192", 192), ("app-512", 512), ("apple-touch-icon", 180)):
+            status, png = self.call("/icons/%s.png" % name)
+            self.assertEqual((status, png[:8], int.from_bytes(png[16:20], "big")), (200, b"\x89PNG\r\n\x1a\n", size), name)
+
 
 if __name__ == "__main__":
     unittest.main()

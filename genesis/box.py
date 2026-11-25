@@ -25,16 +25,21 @@ import zipfile
 from . import catalog
 from .util import ROOT, log, read_json, write_json
 
-DASHBOARD_PORT, KIWIX_PORT, OLLAMA_PORT = 8080, 8081, 11434
+# The assistant from the drive answers on a port of its own, so an Ollama the owner installed, which takes
+# 11434, keeps running beside it and the dashboard asks the drive's first.
+DASHBOARD_PORT, KIWIX_PORT, OLLAMA_PORT = 8080, 8081, 11435
 SPARE_PORTS = (8090, 8765, 8780)  # for the dashboard, when another program on the machine holds its usual port
 LIBRARY = os.path.join(".genesis", "library.xml")
 # How the archives in <vault>/tools name each machine, and what Genesis calls it.
 KIWIX = re.compile(r"^kiwix-tools_(linux-aarch64|linux-x86_64|macos-arm64|macos-x86_64|win-x86_64)"
                    r"-[\d.]+(?:-\d+)?\.(?:tar\.gz|zip)$")
-OLLAMA = re.compile(r"^ollama-linux-(arm64|amd64)\.tar\.zst$")
+# Ollama as Ollama publishes it to run with no install: for Linux packed with zstd, for Windows in a zip
+# with its libraries, for the Mac one archive whose programs run on Apple silicon and on Intel alike.
+OLLAMA = re.compile(r"^ollama-(linux-arm64|linux-amd64|windows-amd64|darwin)\.(tar\.zst|zip|tgz)$")
 SEVEN = re.compile(r"^7z\d+-linux-(arm64|x64)\.tar\.xz$")
 MACHINE = {"linux-aarch64": "linux-arm64", "linux-x86_64": "linux-x64", "arm64": "linux-arm64", "amd64": "linux-x64",
-           "x64": "linux-x64", "macos-arm64": "macos-arm64", "macos-x86_64": "macos-x64", "win-x86_64": "windows-x64"}
+           "x64": "linux-x64", "macos-arm64": "macos-arm64", "macos-x86_64": "macos-x64", "win-x86_64": "windows-x64",
+           "linux-arm64": "linux-arm64", "linux-amd64": "linux-x64", "windows-amd64": "windows-x64", "darwin": "macos"}
 
 DESKTOP = """[Desktop Entry]
 Type=Application
@@ -191,12 +196,30 @@ def _mark(folder, archive):
         f.write(os.path.basename(archive) + "\n")
 
 
-def unpack_programs(vault):
-    """Unpack the Kiwix server, Ollama and 7-Zip the drive carries, for every machine it carries them for."""
+def this_machine():
+    """What the runtime folders call this machine: its platform, and on a Mac the folder for every Mac."""
+    return (catalog.host_platform(),) + (("macos",) if sys.platform == "darwin" else ())
+
+
+def _python_zstd():
+    """"python" when this Python can read zstd itself, as 3.14 and newer can."""
+    try:
+        from compression import zstd  # noqa: F401
+        return "python"
+    except ImportError:
+        return None
+
+
+def unpack_programs(vault, only=None):
+    """Unpack the Kiwix server, Ollama and 7-Zip the drive carries, for every machine it carries them for,
+    or only for the machines named."""
     tools, done = os.path.join(vault, "tools"), []
     for name in sorted(os.listdir(tools)) if os.path.isdir(tools) else []:
         path = os.path.join(tools, name)
-        kiwix, ollama = KIWIX.match(name), OLLAMA.match(name)
+        kiwix, ollama, seven = KIWIX.match(name), OLLAMA.match(name), SEVEN.match(name)
+        machine = MACHINE[(kiwix or ollama or seven).group(1)] if (kiwix or ollama or seven) else None
+        if only and machine not in only:
+            continue
         if kiwix:
             into = os.path.join(runtime(vault, MACHINE[kiwix.group(1)]), "kiwix")
             if not _fresh(into, path):
@@ -210,28 +233,40 @@ def unpack_programs(vault):
                 _mark(into, path)
                 done.append("%s for %s" % ("the Kiwix server", MACHINE[kiwix.group(1)]))
         elif ollama:
-            into = os.path.join(runtime(vault, MACHINE[ollama.group(1)]), "ollama")
+            into = os.path.join(runtime(vault, machine), "ollama")
             if _fresh(into, path):
                 continue
-            zstd = shutil.which("zstd") or shutil.which("unzstd")
-            if not zstd:
-                log("  zstd is not installed, so %s stays packed. Install zstd and run `genesis ready` again." % name)
-                continue
+            zstd = None
+            if name.endswith(".tar.zst"):
+                zstd = shutil.which("zstd") or shutil.which("unzstd") or _python_zstd()
+                if not zstd:
+                    log("  zstd is not installed, so %s stays packed. Install zstd and run `genesis ready` again." % name)
+                    continue
+            log("  unpacking %s, which takes a minute" % name)
             shutil.rmtree(into, ignore_errors=True)
             os.makedirs(into)
-            proc = subprocess.Popen([zstd, "-dc", path], stdout=subprocess.PIPE)
-            try:
-                with tarfile.open(fileobj=proc.stdout, mode="r|") as t:
+            if name.endswith(".zip"):
+                _unzip(path, into)
+            elif name.endswith(".tgz"):
+                with tarfile.open(path) as t:  # AppleDouble shadows of the Mac's own files are no use here
+                    _unpack(((m, t.extractfile) for m in t if not os.path.basename(m.name).startswith("._")), into)
+            elif zstd == "python":
+                from compression import zstd as pyzstd  # Python 3.14 reads zstd itself
+                with pyzstd.open(path) as stream, tarfile.open(fileobj=stream, mode="r|") as t:
                     _unpack(((m, t.extractfile) for m in t), into)
-            finally:
-                proc.stdout.close()
-                if proc.wait() != 0:
-                    shutil.rmtree(into, ignore_errors=True)
-                    raise OSError("zstd could not read %s" % name)
+            else:
+                proc = subprocess.Popen([zstd, "-dc", path], stdout=subprocess.PIPE)
+                try:
+                    with tarfile.open(fileobj=proc.stdout, mode="r|") as t:
+                        _unpack(((m, t.extractfile) for m in t), into)
+                finally:
+                    proc.stdout.close()
+                    if proc.wait() != 0:
+                        shutil.rmtree(into, ignore_errors=True)
+                        raise OSError("zstd could not read %s" % name)
             _mark(into, path)
-            done.append("Ollama for %s" % MACHINE[ollama.group(1)])
-        elif SEVEN.match(name):
-            machine = MACHINE[SEVEN.match(name).group(1)]
+            done.append("Ollama for %s" % ("the Mac" if machine == "macos" else machine))
+        elif seven:
             into = os.path.join(runtime(vault, machine), "7zip")
             if _fresh(into, path):
                 continue
@@ -252,7 +287,8 @@ def unpack_programs(vault):
 def program(vault, kind, name):
     """A program for this machine: the one unpacked from the drive, or one already installed."""
     exe = name + (".exe" if os.name == "nt" else "")
-    for folder in (os.path.join(runtime(vault), kind), os.path.join(runtime(vault), kind, "bin")):
+    places = [runtime(vault)] + ([runtime(vault, "macos")] if sys.platform == "darwin" else [])
+    for folder in [os.path.join(p, kind, sub) for p in places for sub in ("", "bin")]:
         if os.path.isfile(os.path.join(folder, exe)):
             return os.path.join(folder, exe)
     return shutil.which(name)
@@ -491,29 +527,55 @@ def nothing_yet(vault):
                 or os.path.isdir(os.path.join(vault, "documents")))
 
 
+# The assistant a first start offers, by how much memory the machine has: the biggest that runs well on it.
+# A Raspberry Pi 5 with 16 GB, or a laptop with 8 or 16, gets the 4B. A PC with 24 GB or more gets the 9B.
+ASSISTANTS = ((20e9, "qwen35_9b_abliterated", "Qwen 3.5 9B"), (6e9, "qwen35_4b_abliterated", "Qwen 3.5 4B"),
+              (0, "qwen35_2b", "Qwen 3.5 2B"))
+
+
+def assistant_for(total):
+    """(catalog id, name) of the assistant for a machine with this much memory in bytes."""
+    for least, iid, name in ASSISTANTS:
+        if (total or 8e9) >= least:
+            return iid, name
+    return ASSISTANTS[-1][1:]
+
+
 def first(args, vault, ask=input):
     """The first start on a machine: offer to bring something down, so the shelves are not empty.
     Returns what was chosen: a tier, or None for empty shelves."""
     from .fetch import _free, fetch, load_config
-    from .util import human
+    from .util import human, memory
     cfg = load_config(vault)
+    total = memory()[0]
+    model, name = assistant_for(total)
+    ai = ["ollama_runtime", model]
+    sizes = {iid: catalog.entry_size(e, f) or 0 for _, iid, e, f in
+             catalog.select(ids=ai, langs=cfg["langs"], platforms=cfg["platforms"])}
+    extra = sum(sizes.values())
     size = {tier: sum(catalog.entry_size(e, f) or 0 for _, _, e, f in
                       catalog.select(tier=tier, langs=cfg["langs"], platforms=cfg["platforms"]))
             for tier in (catalog.STARTER, "seed")}
+    ram = ("this machine's %s of memory" % human(total)) if total else "most machines"
     print("\nGenesis has nothing on this machine yet. What it brings down goes to\n  %s  (%s free)\n" % (vault, human(_free(vault))))
     print("  1  Starter  about %s. Every manual and plant guide, ten books with the best of Wikipedia," % human(size[catalog.STARTER]))
     print("              a map of the world and the Bible. Minutes on a fast line.")
-    print("  2  Seed     about %s. The essentials of every pack. Hours." % human(size["seed"]))
-    print("  3  Nothing now. Open Genesis with empty shelves.\n")
+    print("  2  Starter and the assistant  about %s. The starter, and %s: a local AI that answers" % (
+        human(size[catalog.STARTER] + extra), name))
+    print("              with no internet, sized for %s.%s" % (ram, " It answers without the usual refusals."
+                                                          if "abliterated" in model else ""))
+    print("  3  Seed     about %s. The essentials of every pack, and the assistant. Hours." % human(size["seed"] + extra))
+    print("  4  Nothing now. Open Genesis with empty shelves.\n")
     print("For another drive, press Ctrl C, make a folder on it and run this again with --vault and that folder.")
     try:
-        answer = ask("Type 1, 2 or 3 and press Enter [1]: ").strip() or "1"
+        answer = ask("Type 1, 2, 3 or 4 and press Enter [2]: ").strip() or "2"
     except EOFError:
-        answer = "3"
-    tier = {"1": catalog.STARTER, "2": "seed"}.get(answer)
+        answer = "4"
+    tier = {"1": catalog.STARTER, "2": catalog.STARTER, "3": "seed"}.get(answer)
     if not tier:
         return None
-    args.tier, args.lang, args.platform, args.pack, args.id, args.tag, args.also = tier, None, None, None, None, None, None
+    args.tier, args.lang, args.platform, args.pack, args.id, args.tag = tier, None, None, None, None, None
+    args.also = ai if answer in ("2", "3") else None
     args.yes, args.keep_going, args.jobs = True, True, 4
     if fetch(args):
         log("Some of it did not come down. What is here stays. To get the rest, run: genesis fetch")
@@ -533,9 +595,10 @@ def start(args):
         os.makedirs(os.path.join(vault, ".genesis"), exist_ok=True)  # nobody to ask, or nothing wanted: empty shelves
     if not os.path.isdir(vault):
         raise SystemExit("no vault at %s: plug in the drive, or make that folder first if Genesis should live there" % vault)
-    if not program(vault, "kiwix", "kiwix-serve") and os.path.isdir(os.path.join(vault, "tools")):
-        try:  # a drive filled without `genesis ready`: the Kiwix server unpacks with nothing but Python
-            unpack_programs(vault)
+    if os.path.isdir(os.path.join(vault, "tools")):
+        try:  # a drive filled without `genesis ready`, or a newer program: they unpack with nothing but Python
+            for what in unpack_programs(vault, only=this_machine()):
+                log("unpacked " + what)
         except OSError as e:
             log("could not unpack the programs on the drive: %s" % e)
     many_files()
@@ -591,7 +654,14 @@ def stop(args):
     path = os.path.join(_run_dir(), "box.json")
     for name, pid in sorted(read_json(path, {}).items()):
         try:
-            os.kill(pid, signal.SIGTERM)
+            if os.name == "nt":
+                # Windows ends one process and leaves what it started: the model server's own runner would stay,
+                # holding a model in memory. End the whole tree.
+                if subprocess.call(["taskkill", "/PID", str(int(pid)), "/T", "/F"],
+                                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) != 0:
+                    raise OSError("no such process")
+            else:
+                os.kill(pid, signal.SIGTERM)
             log("stopped %s" % name)
         except (OSError, ValueError):
             pass
