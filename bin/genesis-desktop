@@ -1,0 +1,17 @@
+#!/bin/sh
+# What the Start Genesis and Stop Genesis icons on a Linux desktop run, in a terminal window:
+#   sh bin/genesis-desktop start     or     sh bin/genesis-desktop stop
+here=$(cd "$(dirname "$0")" && pwd)
+sh "$here/genesis" "$@"
+rc=$?
+if [ "${1:-}" = start ]; then
+  echo
+  if [ "$rc" = 0 ]; then
+    echo "Genesis keeps running after this window closes. To stop it, double click Stop Genesis."
+  else
+    echo "Genesis did not start. The lines above say why."
+  fi
+fi
+printf "Press Enter to close this window. "
+read -r _ || true
+exit "$rc"

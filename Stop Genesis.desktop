@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Stop Genesis
+Comment=Stop the Genesis dashboard, book reader and assistant
+Exec=sh -c "exec sh \\"\\${1%%/*}/bin/genesis-desktop\\" stop" genesis %k
+Icon=process-stop
+Terminal=true
+Categories=Education;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Start Genesis
+Comment=Maps, manuals, the library and the assistant, with no internet
+Exec=sh -c "exec sh \\"\\${1%%/*}/bin/genesis-desktop\\" start" genesis %k
+Icon=applications-science
+Terminal=true
+Categories=Education;
