@@ -9,6 +9,7 @@ import sys
 import tarfile
 import tempfile
 import unittest
+import zipfile
 from unittest import mock
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -69,6 +70,55 @@ class BoxTests(unittest.TestCase):
         into = os.path.join(self.vault, "runtime", "linux-arm64", "ollama")
         self.assertTrue(os.access(os.path.join(into, "bin", "ollama"), os.X_OK))
         self.assertEqual(os.readlink(os.path.join(into, "lib", "ollama", "libggml.so")), "libggml.so.1")
+
+    @unittest.skipUnless(box._python_zstd(), "needs Python 3.14 or newer")
+    def test_with_no_zstd_program_python_reads_ollama_for_linux_itself(self):
+        from compression import zstd
+        plain = io.BytesIO()
+        with tarfile.open(fileobj=plain, mode="w") as t:
+            info = tarfile.TarInfo("bin/ollama")
+            info.size, info.mode = 6, 0o755
+            t.addfile(info, io.BytesIO(b"ollama"))
+        with open(os.path.join(self.vault, "tools", "ollama-linux-amd64.tar.zst"), "wb") as f:
+            f.write(zstd.compress(plain.getvalue()))
+        with mock.patch.object(box.shutil, "which", return_value=None):
+            self.assertEqual(box.unpack_programs(self.vault), ["Ollama for linux-x64"])
+        with open(os.path.join(self.vault, "runtime", "linux-x64", "ollama", "bin", "ollama"), "rb") as f:
+            self.assertEqual(f.read(), b"ollama")
+
+    def test_ollama_for_windows_comes_out_of_its_zip(self):
+        with zipfile.ZipFile(os.path.join(self.vault, "tools", "ollama-windows-amd64.zip"), "w") as z:
+            z.writestr("ollama.exe", b"exe")
+            z.writestr("lib/ollama/ggml-base.dll", b"dll")
+        self.assertEqual(box.unpack_programs(self.vault), ["Ollama for windows-x64"])
+        into = os.path.join(self.vault, "runtime", "windows-x64", "ollama")
+        with open(os.path.join(into, "ollama.exe"), "rb") as f:
+            self.assertEqual(f.read(), b"exe")
+        self.assertTrue(os.path.isfile(os.path.join(into, "lib", "ollama", "ggml-base.dll")))
+        self.assertEqual(box.unpack_programs(self.vault), [], "done once, not on every start")
+
+    def test_one_ollama_serves_every_mac(self):
+        archive(os.path.join(self.vault, "tools", "ollama-darwin.tgz"),
+                [("ollama", b"universal"), ("._ollama", b"apple double"), ("libggml.1.dylib", b"lib")])
+        self.assertEqual(box.unpack_programs(self.vault), ["Ollama for the Mac"])
+        into = os.path.join(self.vault, "runtime", "macos", "ollama")
+        self.assertEqual(sorted(os.listdir(into)), [".from", "libggml.1.dylib", "ollama"], "no AppleDouble shadows")
+        if os.name != "nt":
+            self.assertTrue(os.access(os.path.join(into, "ollama"), os.X_OK))
+        with mock.patch.object(box.sys, "platform", "darwin"), \
+                mock.patch.object(box.catalog, "host_platform", return_value="macos-x64"), \
+                mock.patch.object(box.shutil, "which", return_value=None), mock.patch.object(box.os, "name", "posix"):
+            self.assertEqual(box.program(self.vault, "ollama", "ollama"), os.path.join(into, "", "ollama"))
+
+    def test_a_start_unpacks_only_what_this_machine_runs(self):
+        archive(os.path.join(self.vault, "tools", "ollama-darwin.tgz"), [("ollama", b"universal")])
+        self.kiwix("linux-aarch64")
+        with mock.patch.object(box.catalog, "host_platform", return_value="windows-x64"), \
+                mock.patch.object(box.sys, "platform", "win32"):
+            self.assertEqual(box.unpack_programs(self.vault, only=box.this_machine()), [])
+        with mock.patch.object(box.catalog, "host_platform", return_value="macos-arm64"), \
+                mock.patch.object(box.sys, "platform", "darwin"):
+            self.assertEqual(box.unpack_programs(self.vault, only=box.this_machine()), ["Ollama for the Mac"])
 
     def program(self, kind, name):
         folder = os.path.join(self.vault, "runtime", self.here, kind)
