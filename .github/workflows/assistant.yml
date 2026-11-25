@@ -1,0 +1,94 @@
+name: Assistant on every machine
+
+# The assistant from the vault, with no Ollama installed and no Docker: the Ollama Genesis carries for each
+# kind of machine, a model brought straight from the Ollama registry, both started by `genesis start`, and one
+# question asked through the front door as the Ask page asks it. Then a first start on a fresh copy where the
+# person presses Enter, which brings down the starter and the assistant sized to the machine.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "genesis/box.py"
+      - "genesis/fetch.py"
+      - "dashboard/server.py"
+      - "catalog/packs/ai.json"
+      - "catalog/packs/tools.json"
+      - "tools/ask_check.py"
+      - ".github/workflows/assistant.yml"
+  schedule:
+    - cron: "41 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  answer:
+    name: "The assistant answers: ${{ matrix.name }}"
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {name: "a Linux PC", os: ubuntu-latest, python: python3}
+          - {name: "Linux on ARM, as a Raspberry Pi 5 is", os: ubuntu-24.04-arm, python: python3}
+          - {name: "Windows", os: windows-latest, python: python}
+          - {name: "a Mac with Apple silicon", os: macos-latest, python: python3}
+          - {name: "a Mac with Intel", os: macos-15-intel, python: python3}
+    defaults:
+      run:
+        shell: bash
+    env:
+      PY: ${{ matrix.python }}
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Make sure no Ollama is installed, so only the one in the vault can answer
+        run: |
+          if command -v ollama; then echo "an Ollama is installed on this machine"; exit 1; fi
+          echo "GENESIS_VAULT=$RUNNER_TEMP/vault" >> "$GITHUB_ENV"
+      - name: Bring down Ollama for this machine and the smallest Qwen, with no Ollama to pull with
+        run: |
+          "$PY" -m genesis fetch --yes --id ollama_runtime --id qwen35_2b
+          "$PY" -m genesis ready
+          ls "$RUNNER_TEMP/vault/models/ollama/models/manifests/registry.ollama.ai/library/qwen3.5"
+      - name: Start it and ask
+        if: runner.os != 'Windows'
+        run: |
+          sh bin/genesis start --no-browser
+          "$PY" tools/ask_check.py --model qwen3.5:2b
+          sh bin/genesis stop
+      - name: On Windows, start it with a double click and ask
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: |
+          call "Start Genesis.cmd" --no-browser < nul || exit /b 1
+          python tools\ask_check.py --model qwen3.5:2b || exit /b 1
+          call "Stop Genesis.cmd" < nul
+      - name: What the programs wrote, when something failed
+        if: failure()
+        run: |
+          "$PY" -c "import glob, os; from genesis import box; [print('==', p) or print(open(p, errors='replace').read()[-6000:]) for p in glob.glob(os.path.join(box._run_dir(), '*.log'))]"
+
+  first:
+    name: A first start where the person presses Enter
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+      - name: Start a fresh copy and press Enter at the question
+        run: |
+          printf '\n' | script -qec "sh bin/genesis start --no-browser" /dev/null | tee "$RUNNER_TEMP/first.log"
+          grep -q "Starter and the assistant" "$RUNNER_TEMP/first.log"
+          grep -q "Genesis is up" "$RUNNER_TEMP/first.log"
+      - name: The starter and the assistant both answer
+        run: |
+          python3 tools/start_check.py --books 8 --manuals 30 --bibles 4
+          python3 tools/ask_check.py --model abliterated
+          sh bin/genesis stop
+      - name: What the programs wrote, when something failed
+        if: failure()
+        run: |
+          python3 -c "import glob, os; from genesis import box; [print('==', p) or print(open(p, errors='replace').read()[-6000:]) for p in glob.glob(os.path.join(box._run_dir(), '*.log'))]"
