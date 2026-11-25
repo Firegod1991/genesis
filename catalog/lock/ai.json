@@ -166,22 +166,6 @@
    "title": "Qwen 3.5 35B",
    "version": "6d2a5ac892aa"
   },
-  "qwen35_4b_abliterated": {
-   "dest": "models",
-   "kind": "model",
-   "license": "Apache 2.0",
-   "model": "huihui_ai/qwen3.5-abliterated:4b",
-   "note": "The quick one for a Raspberry Pi 5. Answers without the usual refusals, so it also answers wrongly or dangerously without a warning. Check what it says.",
-   "size": 3315332946,
-   "tags": [
-    "chat",
-    "vision",
-    "uncensored"
-   ],
-   "tier": "ark",
-   "title": "Qwen 3.5 4B abliterated (huihui_ai: Qwen 3.5 4B with its refusals removed)",
-   "version": "f4e010fbb0d7"
-  },
   "qwen35_9b": {
    "dest": "models",
    "kind": "model",
@@ -195,22 +179,6 @@
    "tier": "ark",
    "title": "Qwen 3.5 9B (general assistant, tools)",
    "version": "08f9698c1116"
-  },
-  "qwen35_9b_abliterated": {
-   "dest": "models",
-   "kind": "model",
-   "license": "Apache 2.0",
-   "model": "huihui_ai/qwen3.5-abliterated:9b",
-   "note": "The same kind of model as the 35B abliterated, small enough for a Raspberry Pi 5 with 8 or 16 GB: slow there, a few words a second. Answers without the usual refusals, so it also answers wrongly or dangerously without a warning. Check what it says.",
-   "size": 6594474226,
-   "tags": [
-    "chat",
-    "vision",
-    "uncensored"
-   ],
-   "tier": "ark",
-   "title": "Qwen 3.5 9B abliterated (huihui_ai: Qwen 3.5 9B with its refusals removed)",
-   "version": "62387fdc497b"
   },
   "qwen36_35b_abliterated": {
    "dest": "models",

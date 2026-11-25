@@ -193,14 +193,14 @@
    "version": "2023-11-10"
   },
   "canadian-prepper_en_bugoutconcepts": {
-   "date": "2026-08-26",
+   "date": "2026-11-24",
    "dest": "zim",
    "files": [
     {
-     "filename": "canadian-prepper_en_bugoutconcepts_2026-08.zim",
-     "sha256_url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_bugoutconcepts_2026-08.zim.sha256",
-     "size": 2886220800,
-     "url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_bugoutconcepts_2026-08.zim"
+     "filename": "canadian-prepper_en_bugoutconcepts_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_bugoutconcepts_2026-11.zim.sha256",
+     "size": 2886228992,
+     "url": "https://download.kiwix.org/zim/videos/canadian-prepper_en_bugoutconcepts_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -212,7 +212,7 @@
    ],
    "tier": "eden",
    "title": "Canadian prepper",
-   "version": "2026-08"
+   "version": "2026-11"
   },
   "canadian-prepper_en_bugoutroll": {
    "date": "2026-10-21",
@@ -1271,11 +1271,26 @@
    "version": "2026-10"
   },
   "rifle_marksmanship_mcrp_3_01a": {
-   "error": "FetchError: <urlopen error _ssl.c:1063: The handshake operation timed out> for https://archive.org/download/MCRP3-01A/MCRP3-01A.pdf",
+   "date": "2012-11-21",
+   "dest": "documents/fieldcraft",
+   "files": [
+    {
+     "filename": "rifle_marksmanship_mcrp_3-01a.pdf",
+     "sha256": "727b2bbe445ba020f70820385df1983fcf07a84f79ce3e3c73be90b920ff6d71",
+     "size": 5197257,
+     "url": "https://archive.org/download/MCRP3-01A/MCRP3-01A.pdf"
+    }
+   ],
+   "home": "https://www.marines.mil/News/Publications/MCPEL/",
    "kind": "document",
-   "status": "error",
+   "license": "US government work",
+   "note": "Chapter 2 covers inspecting, cleaning and lubricating the rifle, and keeping it working in heat, cold, wet, sand and dust. The Marine Corps site refuses programs, so this copy comes from the Internet Archive and is pinned to its checksum.",
+   "tags": [
+    "fieldcraft"
+   ],
    "tier": "seed",
-   "title": "Rifle Marksmanship (US Marine Corps MCRP 3-01A, 2001): safe handling, care and cleaning in every climate, and marksmanship"
+   "title": "Rifle Marksmanship (US Marine Corps MCRP 3-01A, 2001): safe handling, care and cleaning in every climate, and marksmanship",
+   "version": "2012-11-21"
   },
   "s2underground_en_all": {
    "date": "2026-10-12",

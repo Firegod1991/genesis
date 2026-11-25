@@ -571,7 +571,7 @@
    "version": "2021-11-23"
   },
   "bible_adz": {
-   "date": "2026-11-20",
+   "date": "2026-11-24",
    "dest": "scripture",
    "files": [
     {
@@ -606,7 +606,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Adzera: Adzera Bible",
-   "version": "2026-11-20"
+   "version": "2026-11-24"
   },
   "bible_aeb": {
    "date": "2025-04-26",
@@ -35828,7 +35828,7 @@
    "version": "2022-01-13"
   },
   "bible_ronBayash": {
-   "date": "2026-11-23",
+   "date": "2026-11-24",
    "dest": "scripture",
    "files": [
     {
@@ -35863,7 +35863,7 @@
    "rule": "bible_every_language",
    "tier": "eden",
    "title": "Romanian: Bayash Bible",
-   "version": "2026-11-23"
+   "version": "2026-11-24"
   },
   "bible_ronbl": {
    "date": "2026-10-28",
@@ -49307,12 +49307,12 @@
    "version": "2026-10"
   },
   "theographic": {
-   "date": "2026-11-24",
+   "date": "2026-11-25",
    "dest": "study/theographic",
    "files": [
     {
-     "filename": "theographic-bible-metadata-c168673.tar.gz",
-     "url": "https://github.com/robertrouse/theographic-bible-metadata/archive/c168673ae456729e208aaf7ac8702deda20fcf44.tar.gz"
+     "filename": "theographic-bible-metadata-a22047f.tar.gz",
+     "url": "https://github.com/robertrouse/theographic-bible-metadata/archive/a22047fe54aa5621f573d99222a82efb62741193.tar.gz"
     }
    ],
    "home": "https://github.com/robertrouse/theographic-bible-metadata",
@@ -49326,7 +49326,7 @@
    ],
    "tier": "seed",
    "title": "Theographic Bible Metadata: the people, places and events of the Bible, linked verse by verse",
-   "version": "c168673"
+   "version": "a22047f"
   }
  },
  "pack": "scripture"

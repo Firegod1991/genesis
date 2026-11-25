@@ -236,31 +236,31 @@
    "dest": "isos",
    "files": [
     {
-     "filename": "proxmox-ve_9.2-1.iso",
-     "sha256": "4e88fe416df9b527624a175f24c9aa07c714d3332afb1ee3dbf3879573ef2c6c",
-     "size": 1706178560,
-     "url": "https://enterprise.proxmox.com/iso/proxmox-ve_9.2-1.iso"
+     "filename": "proxmox-ve_9.3-1.iso",
+     "sha256": "cc4fc97b9ac3a5712ad5b665195753571923a18e11f5c2ebb113fdc29a50bd36",
+     "size": 1808074752,
+     "url": "https://enterprise.proxmox.com/iso/proxmox-ve_9.3-1.iso"
     }
    ],
    "kind": "iso",
    "tier": "ark",
    "title": "Proxmox VE (hypervisor)",
-   "version": "9.2-1"
+   "version": "9.3-1"
   },
   "proxmox_ve_arm64": {
    "dest": "isos",
    "files": [
     {
-     "filename": "proxmox-ve_9.2-1-arm64.iso",
-     "sha256": "b1619dcd1f5b1a6d67d77b59e7e2fa2033174551d1e1b9dc22b2171ec093abbd",
-     "size": 1581182976,
-     "url": "https://enterprise.proxmox.com/iso/proxmox-ve_9.2-1-arm64.iso"
+     "filename": "proxmox-ve_9.3-1-arm64.iso",
+     "sha256": "a09facb34d2fcc9f5d169a85b55b008784792ac4d6e25901397854251ed0a8de",
+     "size": 1665699840,
+     "url": "https://enterprise.proxmox.com/iso/proxmox-ve_9.3-1-arm64.iso"
     }
    ],
    "kind": "iso",
    "tier": "eden",
    "title": "Proxmox VE (arm64)",
-   "version": "9.2-1"
+   "version": "9.3-1"
   },
   "raspios_desktop": {
    "date": "2026-10-06",

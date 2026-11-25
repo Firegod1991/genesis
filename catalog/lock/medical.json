@@ -67,13 +67,13 @@
    "version": "2026-10-26"
   },
   "how_to_live_better_zh": {
-   "date": "2026-11-16",
+   "date": "2026-11-25",
    "dest": "documents/health",
    "files": [
     {
      "filename": "HowToLiveBetter.pdf",
-     "sha256": "d46759828c3483be49c502f0c79c5dd1a421e950a13a77545d0437fa3e7a6874",
-     "size": 11249887,
+     "sha256": "76a327494eeeaac362b9f3b918ca82edeb6bf306eeec11145583b65bdad42335",
+     "size": 11303041,
      "url": "https://github.com/eternity4719/HowToLiveBetter/releases/download/epub-latest/HowToLiveBetter.pdf"
     }
    ],
@@ -88,7 +88,7 @@
    ],
    "tier": "seed",
    "title": "高性价比人生指南 (How to Live Better, the Chinese original)",
-   "version": "2026-11-16"
+   "version": "2026-11-25"
   },
   "irp.fas.org_en_military-medicine": {
    "date": "2026-10-31",
@@ -235,14 +235,14 @@
    "version": "2026-06"
   },
   "skin-of-color-society_en_all": {
-   "date": "2026-05-28",
+   "date": "2026-11-24",
    "dest": "zim",
    "files": [
     {
-     "filename": "skin-of-color-society_en_all_2026-05.zim",
-     "sha256_url": "https://download.kiwix.org/zim/other/skin-of-color-society_en_all_2026-05.zim.sha256",
-     "size": 1136035840,
-     "url": "https://download.kiwix.org/zim/other/skin-of-color-society_en_all_2026-05.zim"
+     "filename": "skin-of-color-society_en_all_2026-11.zim",
+     "sha256_url": "https://download.kiwix.org/zim/other/skin-of-color-society_en_all_2026-11.zim.sha256",
+     "size": 1412481024,
+     "url": "https://download.kiwix.org/zim/other/skin-of-color-society_en_all_2026-11.zim"
     }
    ],
    "kind": "zim",
@@ -253,7 +253,7 @@
    ],
    "tier": "eden",
    "title": "Skin of Color Society",
-   "version": "2026-05"
+   "version": "2026-11"
   },
   "who_medicinal_plants_1": {
    "dest": "documents/medical",

@@ -1,74 +1,65 @@
-# Catalog refresh 2026-11-24
+# Catalog refresh 2026-11-25
 
 | Pack | Items | New | Updated | Removed | Failed |
 |---|---|---|---|---|---|
-| ai | 17 | 0 | 0 | 0 | 0 |
+| ai | 18 | 0 | 0 | 0 | 0 |
 | apps | 23 | 0 | 0 | 0 | 0 |
-| code | 375 | 0 | 5 | 0 | 0 |
-| isos | 24 | 0 | 1 | 0 | 1 |
+| code | 375 | 0 | 0 | 0 | 0 |
+| isos | 24 | 0 | 2 | 0 | 1 |
 | knowledge | 689 | 0 | 0 | 0 | 0 |
 | library | 248 | 0 | 0 | 0 | 0 |
 | maps | 6 | 0 | 1 | 0 | 0 |
-| medical | 45 | 0 | 0 | 0 | 0 |
-| radio | 33 | 0 | 0 | 0 | 0 |
-| scripture | 1303 | 0 | 10 | 0 | 0 |
-| services | 25 | 0 | 1 | 0 | 0 |
-| survival | 77 | 1 | 1 | 0 | 1 |
-| tools | 30 | 0 | 3 | 0 | 0 |
-
-## Updated in code
-
-* `devdocs_en_lua`: 2026-08 to 2026-11
-* `devdocs_en_statsmodels`: 2026-05 to 2026-11
-* `devdocs_en_zig`: 2026-08 to 2026-11
-* `python`: 20261123 to 20261124
-* `uv`: 0.13.9 to 0.13.10
+| medical | 45 | 0 | 2 | 0 | 0 |
+| radio | 33 | 0 | 1 | 0 | 0 |
+| scripture | 1303 | 0 | 3 | 0 | 0 |
+| services | 25 | 0 | 2 | 0 | 0 |
+| survival | 77 | 0 | 2 | 0 | 0 |
+| tools | 30 | 0 | 2 | 0 | 0 |
 
 ## Updated in isos
 
-* `tails`: 7.17.1 to 7.18
+* `proxmox_ve`: 9.2-1 to 9.3-1
+* `proxmox_ve_arm64`: 9.2-1 to 9.3-1
 
 ## Updated in maps
 
-* `planet_basemap`: 20261123 to 20261124
+* `planet_basemap`: 20261124 to 20261125
+
+## Updated in medical
+
+* `how_to_live_better_zh`: 2026-11-16 to 2026-11-25
+* `skin-of-color-society_en_all`: 2026-05 to 2026-11
+
+## Updated in radio
+
+* `chirp`: 0ad6519 to 044c7d8
 
 ## Updated in scripture
 
-* `bible_englxxup`: 2026-11-20 to 2026-11-23
-* `bible_gvs`: 2026-11-21 to 2026-11-24
-* `bible_mkj`: 2026-11-20 to 2026-11-24
-* `bible_nss`: 2026-11-20 to 2026-11-23
-* `bible_rmyArli`: 2026-11-20 to 2026-11-24
-* `bible_ronBayash`: 2026-11-20 to 2026-11-23
-* `bible_tczchongthu`: 2026-11-13 to 2026-11-23
-* `bible_tdt`: 2026-11-20 to 2026-11-24
-* `bible_tsnsa`: 2026-11-23 to 2026-11-24
-* `theographic`: b75c268 to c168673
+* `bible_adz`: 2026-11-20 to 2026-11-24
+* `bible_ronBayash`: 2026-11-23 to 2026-11-24
+* `theographic`: c168673 to a22047f
 
 ## Updated in services
 
-* `img_adsb`: 855a12d6681f to 6d77e136db65
+* `img_openwebui`: d6c085678f7e to ff7f7cbb4545
+* `img_translate`: e8e858a1f1db to cd587072f9aa
 
 ## Updated in survival
 
-* `100r.co_en_all`: 2026-08 to 2026-11
-
-## New in survival
-
-* `rifle_marksmanship_mcrp_3_01a`: Rifle Marksmanship (US Marine Corps MCRP 3-01A, 2001): safe handling, care and cleaning in every climate, and marksmanship
+* `canadian-prepper_en_bugoutconcepts`: 2026-08 to 2026-11
+* `rifle_marksmanship_mcrp_3_01a`: ? to 2012-11-21
 
 ## Updated in tools
 
-* `ffmpeg`: 2026-11-23 to 2026-11-24
-* `llama_cpp`: b12674 to b12686
-* `localsend`: 1.18.2 to 1.19.0
+* `ffmpeg`: 2026-11-24 to 2026-11-25
+* `llama_cpp`: b12686 to b12728
 
 ## Failed
 
 These lines kept their last known good version where one existed.
 
 * **isos** `collapseos`: FetchError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'collapseos.org'. (_ssl.c:1081)> for https://collapseos.org/files/collapseos-latest.tar.gz
-* **survival** `rifle_marksmanship_mcrp_3_01a`: FetchError: <urlopen error _ssl.c:1063: The handshake operation timed out> for https://archive.org/download/MCRP3-01A/MCRP3-01A.pdf
 
 ## Warnings
 

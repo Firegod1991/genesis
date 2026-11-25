@@ -1,6 +1,6 @@
 {
  "packs": {
-  "ai": 17,
+  "ai": 18,
   "apps": 23,
   "code": 375,
   "isos": 24,
@@ -14,21 +14,21 @@
   "survival": 77,
   "tools": 30
  },
- "refreshed": "2026-11-24",
+ "refreshed": "2026-11-25",
  "tiers": {
   "ark": {
-   "bytes": 482509705365,
-   "items": 657,
+   "bytes": 482616809805,
+   "items": 658,
    "unsized": 88
   },
   "eden": {
-   "bytes": 1737619205941,
-   "items": 848,
+   "bytes": 1762068026491,
+   "items": 850,
    "unsized": 107
   },
   "seed": {
-   "bytes": 23731096424,
-   "items": 400,
+   "bytes": 23736293681,
+   "items": 401,
    "unsized": 44
   }
  }
