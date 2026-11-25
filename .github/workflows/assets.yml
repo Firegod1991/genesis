@@ -35,7 +35,8 @@ jobs:
           git config user.email "193648396+Firegod1991@users.noreply.github.com"
           git add dashboard/static/vendor dashboard/static/map-light.json dashboard/static/map-dark.json
           # Files pushed through the GitHub API arrive without the executable bit.
-          git update-index --chmod=+x bin/genesis install.sh dashboard/server.py tools/screenshots.py
+          git update-index --chmod=+x bin/genesis bin/genesis-desktop install.sh dashboard/server.py tools/screenshots.py \
+            tools/package.py tools/ask_check.py "Start Genesis.command" "Stop Genesis.command" "Start Genesis.desktop" "Stop Genesis.desktop"
           if git diff --cached --quiet; then echo "Vendored files are current."; exit 0; fi
           git commit -m "dashboard: vendor pinned map library, typeface and styles"
           for _ in 1 2 3; do
