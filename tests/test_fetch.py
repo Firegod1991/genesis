@@ -1,13 +1,17 @@
 """How a fetch behaves: several downloads at once, and models that land inside the vault."""
 
 import argparse
+import hashlib
+import json
 import os
 import shutil
+import subprocess
 import sys
 import tempfile
 import threading
 import time
 import unittest
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from unittest import mock
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,7 +23,55 @@ from genesis.util import FetchError, file_hash, read_json, write_json  # noqa: E
 STUB = [sys.executable, os.path.join(ROOT, "tests", "stub_ollama.py")]
 
 
+class Registry(BaseHTTPRequestHandler):
+    """Stands in for registry.ollama.ai: manifests and the files they name, by SHA 256."""
+    blobs, manifests, asked = {}, {}, []
+
+    def log_message(self, fmt, *args):
+        pass
+
+    def do_GET(self):
+        Registry.asked.append(self.path)
+        body = None
+        if "/manifests/" in self.path:
+            body = Registry.manifests.get(self.path)
+        elif "/blobs/sha256:" in self.path:
+            body = Registry.blobs.get(self.path.rsplit("/", 1)[1])
+        if body is None:
+            self.send_response(404)
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return
+        self.send_response(200)
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+
+def publish(lib, tag, layers, corrupt=None):
+    """Put a model in the stand in registry. Returns its manifest as published."""
+    files = [b'{"model_format":"gguf"}'] + layers
+    digests = ["sha256:" + hashlib.sha256(b).hexdigest() for b in files]
+    for d, b in zip(digests, files):
+        Registry.blobs[d] = corrupt if corrupt and b == files[-1] else b
+    manifest = {"schemaVersion": 2, "config": {"digest": digests[0], "size": len(files[0])},
+                "layers": [{"digest": d, "size": len(b)} for d, b in zip(digests[1:], files[1:])]}
+    raw = json.dumps(manifest).encode()
+    Registry.manifests["/v2/%s/manifests/%s" % (lib, tag)] = raw
+    return raw
+
+
 class ModelTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.httpd = ThreadingHTTPServer(("127.0.0.1", 0), Registry)
+        threading.Thread(target=cls.httpd.serve_forever, daemon=True).start()
+        cls.base = "http://127.0.0.1:%d" % cls.httpd.server_address[1]
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.httpd.shutdown()
+
     def setUp(self):
         self.vault = tempfile.mkdtemp()
         self.store = os.path.join(self.vault, "models", "ollama", "models")
@@ -27,48 +79,81 @@ class ModelTests(unittest.TestCase):
         self.addCleanup(shutil.rmtree, self.vault, ignore_errors=True)
         self.addCleanup(self.models.close)
 
-    def world(self, command=None, stack=False, explicit=None):
-        """An Ollama on this machine or not, the stack running or not, a server named by the owner or not."""
-        env = {k: v for k, v in os.environ.items() if k != "GENESIS_OLLAMA"}
+    def world(self, stack=False, explicit=None):
+        """The stack running or not, a server named by the owner or not, and the stand in registry."""
+        env = {k: v for k, v in os.environ.items() if k not in ("GENESIS_OLLAMA",) and "proxy" not in k.lower()}
+        env["GENESIS_REGISTRY"] = self.base
         if explicit:
             env["GENESIS_OLLAMA"] = explicit
-        for patch in (mock.patch.object(fetch, "_ollama_command", return_value=command),
-                      mock.patch.object(fetch, "_stack_ollama_running", return_value=stack),
+        for patch in (mock.patch.object(fetch, "_stack_ollama_running", return_value=stack),
                       mock.patch.dict(os.environ, env, clear=True)):
             patch.start()
             self.addCleanup(patch.stop)
 
-    def test_models_land_inside_the_vault(self):
-        self.world(command=STUB)
+    def test_a_model_comes_from_the_registry_with_no_ollama_at_all(self):
+        self.world()
+        raw = publish("library/tiny", "1", [b"weights" * 100, b"a license"])
         entry = {"kind": "model", "model": "tiny:1", "version": "abc"}
         got = fetch._fetch_item(self.vault, "tiny", entry, [], None, {}, self.models)
         self.assertEqual(got, {"version": "abc", "files": [], "model": "tiny:1"})
-        self.assertTrue(os.path.isfile(os.path.join(self.store, "tiny_1")), "pulled into the vault's own store")
-        self.assertTrue(self.models.pull("tiny:2"), "one server serves the whole fetch")
-        host = self.models.host
-        self.models.close()
-        with self.assertRaises(OSError, msg="the server stops when the fetch ends"):
-            fetch._DIRECT.open(host + "/api/version", timeout=2)
+        manifest = os.path.join(self.store, "manifests", "registry.ollama.ai", "library", "tiny", "1")
+        with open(manifest, "rb") as f:
+            self.assertEqual(f.read(), raw, "the manifest exactly as the registry gave it, where Ollama looks")
+        for layer in [json.loads(raw)["config"]] + json.loads(raw)["layers"]:
+            path = os.path.join(self.store, "blobs", layer["digest"].replace(":", "-"))
+            self.assertEqual(file_hash(path, "sha256"), layer["digest"][7:])
+        self.assertFalse([n for n in os.listdir(os.path.join(self.store, "blobs")) if n.endswith(".part")])
+
+    def test_a_namespaced_model_and_a_second_pull_downloads_nothing(self):
+        self.world()
+        publish("huihui_ai/small-abliterated", "4b", [b"other weights" * 50])
+        self.assertTrue(self.models.pull("huihui_ai/small-abliterated:4b"))
+        self.assertTrue(os.path.isfile(os.path.join(
+            self.store, "manifests", "registry.ollama.ai", "huihui_ai", "small-abliterated", "4b")))
+        del Registry.asked[:]
+        self.assertTrue(self.models.pull("huihui_ai/small-abliterated:4b"))
+        self.assertEqual([p for p in Registry.asked if "/blobs/" in p], [], "files already checked are kept")
+
+    def test_a_file_that_does_not_match_its_sha256_fails_and_leaves_no_manifest(self):
+        self.world()
+        publish("library/bent", "1", [b"good weights"], corrupt=b"bad weights!")
+        with self.assertRaises(FetchError):
+            self.models.pull("bent:1")
+        self.assertFalse(os.path.exists(os.path.join(self.store, "manifests", "registry.ollama.ai", "library", "bent")))
 
     def test_a_model_the_registry_does_not_have_fails_the_item(self):
-        self.world(command=STUB)
+        self.world()
         with self.assertRaises(FetchError):
             self.models.pull("missing:1")
 
-    def test_without_any_ollama_models_are_skipped(self):
-        self.world()
-        self.assertFalse(self.models.pull("tiny:1"))
-        self.assertFalse(os.path.exists(self.store))
-
     def test_the_stack_does_the_pulling_while_it_runs(self):
-        self.world(command=STUB, stack=True)
+        self.world(stack=True)
         self.assertEqual(self.models.start(), fetch.STACK_OLLAMA)
-        self.assertIsNone(self.models.proc, "no second server beside the stack's own")
 
-    def test_a_server_named_by_the_owner_wins(self):
-        self.world(command=STUB, stack=True, explicit="10.0.0.5:11434/")
-        self.assertEqual(self.models.start(), "http://10.0.0.5:11434")
-        self.assertIsNone(self.models.proc)
+    def test_a_server_named_by_the_owner_pulls(self):
+        port = socket_port()
+        proc = subprocess.Popen(STUB, env=dict(os.environ, OLLAMA_HOST="127.0.0.1:%d" % port, OLLAMA_MODELS=self.vault))
+        self.addCleanup(proc.wait)
+        self.addCleanup(proc.kill)
+        self.world(stack=True, explicit="127.0.0.1:%d/" % port)
+        self.assertEqual(self.models.start(), "http://127.0.0.1:%d" % port)
+        for _ in range(40):
+            try:
+                if self.models.pull("tiny:1"):
+                    break
+            except FetchError:
+                raise
+            time.sleep(0.25)
+        self.assertTrue(os.path.isfile(os.path.join(self.vault, "tiny_1")), "pulled by that server")
+        with self.assertRaises(FetchError):
+            self.models.pull("missing:1")
+
+
+def socket_port():
+    import socket
+    with socket.socket() as s:
+        s.bind(("127.0.0.1", 0))
+        return s.getsockname()[1]
 
 
 class ParallelFetchTests(unittest.TestCase):
