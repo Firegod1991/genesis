@@ -30,10 +30,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
 
-from genesis import __version__, catalog, guides, maps, poi, safe  # noqa: E402
+from genesis import __version__, appicons, catalog, guides, maps, phone, poi, safe  # noqa: E402
 from genesis.util import memory, read_json, uptime  # noqa: E402
 
 STATIC = os.path.join(HERE, "static")
+PORT = 8080  # the port this server answers on, set when it starts
+mimetypes.add_type("application/manifest+json", ".webmanifest")
 VAULT = os.path.abspath(os.environ.get("GENESIS_VAULT") or os.path.join(ROOT, "vault"))
 # Folders of the vault that may be read over HTTP. Nothing else is reachable.
 MOUNTS = {"maps": "maps", "scripture": "scripture", "apps": "apps", "documents": "documents", "tools": "tools",
@@ -45,7 +47,8 @@ NOTE_NAME = re.compile(r"[\w][\w .()-]{0,80}\.(md|txt)")
 # network behind it, looking one up can hang for seconds on every click.
 BARE = os.environ.get("GENESIS_BARE") == "1"
 KIWIX = [("127.0.0.1", 8081)] if BARE else [("kiwix", 8080), ("127.0.0.1", 8081)]
-OLLAMA = [("127.0.0.1", 11434)] if BARE else [("127.0.0.1", 11434), ("ollama", 11434)]
+# The drive's own assistant answers on 11435, so an Ollama installed on the machine keeps 11434 beside it.
+OLLAMA = [("127.0.0.1", 11435), ("127.0.0.1", 11434)] + ([] if BARE else [("ollama", 11434)])
 # Full text search reads these books first: the ones a person in trouble needs an answer from.
 SEARCH_FIRST = ("survival", "medical")
 SEARCH_BOOKS, SEARCH_WAIT = 24, 12
@@ -457,6 +460,10 @@ class Handler(BaseHTTPRequestHandler):
                 return default
         if name == "services":
             return self._json(cached("services", 8, services))
+        if name == "phone":
+            # Inside a container its own addresses are not ones a phone can reach: only a bare box says.
+            links = phone.links(PORT) if BARE else []
+            return self._json({"links": links, "qr": phone.qr_svg(links[0]) if links else None})
         if name == "system":
             return self._json(cached("system", 4, system))
         if name == "vault":
@@ -542,6 +549,16 @@ class Handler(BaseHTTPRequestHandler):
             if first in MOUNTS:
                 return self._file(os.path.join(VAULT, MOUNTS[first]), rest)
             rel = path.lstrip("/") or "index.html"
+            data = appicons.png(rel)  # the home screen icon a phone keeps, drawn once and held in memory
+            if data:
+                self.send_response(200)
+                self.send_header("Content-Type", "image/png")
+                self.send_header("Content-Length", str(len(data)))
+                self.send_header("Cache-Control", "public, max-age=86400")
+                self.end_headers()
+                if self.command != "HEAD":
+                    self.wfile.write(data)
+                return None
             return self._file(STATIC, rel)
         except (BrokenPipeError, ConnectionResetError):
             return None
@@ -627,13 +644,15 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    port = int(os.environ.get("GENESIS_PORT_INTERNAL", os.environ.get("PORT", "8080")))
+    global PORT
+    port = PORT = int(os.environ.get("GENESIS_PORT_INTERNAL", os.environ.get("PORT", "8080")))
     server = ThreadingHTTPServer(("0.0.0.0", port), Handler)
     server.daemon_threads = True
     try:  # Genesis's own guides go on the shelves, brought up to date with the code; a read only drive keeps what it has
         guides.place(VAULT)
     except OSError:
         pass
+    appicons.warm()
     print("Genesis dashboard on port %d, vault %s" % (port, VAULT), flush=True)
     try:
         server.serve_forever()
