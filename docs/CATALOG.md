@@ -2971,7 +2971,7 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | Uses of Plants by the Chippewa Indians (Frances Densmore, Smithsonian, 1928) | `chippewa_plant_uses` | seed | 2024-02-02 | 18.1 MB | US government work |
 | Forgotten Foods: Introduction to Wild Edible Plants (Mississippi State University Extension) | `wild_edible_plants_primer` | seed | 2026-02-04 | 116 KB | Free to copy unchanged for nonprofit teaching, with credit |
 | Edible and Poisonous Plants of the Caribbean Region (US Navy, 1944) | `edible_poisonous_plants_caribbean` | seed | 2024-07-08 | 12.9 MB | US government work |
-| Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919) | `plants_missouri_river_region` | seed | 2023-12-23 (stale) | 7.0 MB | US government work |
+| Uses of Plants by the Indians of the Missouri River Region (Melvin R. Gilmore, Smithsonian, 1919) | `plants_missouri_river_region` | seed | 2023-12-23 | 7.0 MB | US government work |
 | Culturally Significant Plants (USDA NRCS Plant Materials Center, Manhattan, Kansas) | `culturally_significant_plants` | seed | 2019-05-30 | 3.2 MB | US government work, photos credited inside |
 | Preserving Food in Wyoming (University of Wyoming Extension, 2018) | `preserving_food_in_wyoming` | seed | 2024-02-01 | 7.0 MB | Free from the publisher |
 | Desert Foods for a Resilient Future (University of Arizona Desert Laboratory, 2021) | `desert_foods` | seed | 2022-08-15 | 22.1 MB | Free from the publisher |
@@ -3050,8 +3050,8 @@ Sizes count English content for Linux x64 plus Android apps. Other languages and
 | KeePassXC (password vault) | `keepassxc` | ark | 2.8.0 | 168.8 MB | GPL 3.0 |
 | Syncthing (sync folders between machines, no cloud) | `syncthing` | ark | 2.1.7 | 54.6 MB | MPL 2.0 |
 | restic (encrypted backups) | `restic` | ark | 0.20.0 | 50.0 MB | BSD 2 Clause |
-| Ollama (run models without Docker) | `ollama_runtime` | ark | 0.40.18 | 5.5 GB | MIT |
-| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12728 | 84.4 MB | MIT |
+| Ollama (run models without Docker) | `ollama_runtime` | ark | 0.40.18 | 5.4 GB | MIT |
+| llama.cpp (run GGUF models directly) | `llama_cpp` | ark | b12732 | 84.4 MB | MIT |
 | yt-dlp (save video while the internet lasts) | `yt_dlp` | ark | 2026.11.23 | 143.1 MB | Unlicense |
 | FFmpeg (static builds) | `ffmpeg` | ark | 2026-11-25 | 499.6 MB | GPL 3.0 |
 | VLC for Windows | `vlc_windows` | ark | 3.0.24 | 46.3 MB | GPL 2.0 |

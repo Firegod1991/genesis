@@ -2,7 +2,7 @@
 
 | Pack | Items | New | Updated | Removed | Failed |
 |---|---|---|---|---|---|
-| ai | 20 | 2 | 0 | 0 | 0 |
+| ai | 20 | 0 | 0 | 0 | 0 |
 | apps | 23 | 0 | 0 | 0 | 0 |
 | code | 375 | 0 | 0 | 0 | 0 |
 | isos | 24 | 0 | 0 | 0 | 1 |
@@ -13,20 +13,18 @@
 | radio | 33 | 0 | 0 | 0 | 0 |
 | scripture | 1303 | 0 | 0 | 0 | 0 |
 | services | 25 | 0 | 0 | 0 | 0 |
-| survival | 77 | 0 | 0 | 0 | 1 |
-| tools | 30 | 0 | 0 | 0 | 0 |
+| survival | 77 | 0 | 0 | 0 | 0 |
+| tools | 30 | 0 | 1 | 0 | 0 |
 
-## New in ai
+## Updated in tools
 
-* `qwen35_4b_abliterated`: Qwen 3.5 4B abliterated (huihui_ai: Qwen 3.5 4B with its refusals removed)
-* `qwen35_9b_abliterated`: Qwen 3.5 9B abliterated (huihui_ai: Qwen 3.5 9B with its refusals removed)
+* `llama_cpp`: b12728 to b12732
 
 ## Failed
 
 These lines kept their last known good version where one existed.
 
 * **isos** `collapseos`: FetchError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'collapseos.org'. (_ssl.c:1081)> for https://collapseos.org/files/collapseos-latest.tar.gz
-* **survival** `plants_missouri_river_region`: FetchError: <urlopen error _ssl.c:1063: The handshake operation timed out> for https://archive.org/download/usesofplantsbyin00gilm/usesofplantsbyin00gilm.pdf
 
 ## Warnings
 
