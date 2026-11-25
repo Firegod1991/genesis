@@ -315,3 +315,13 @@ html.night #read-frame { filter: grayscale(1) sepia(1) hue-rotate(-38deg) satura
 
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
 @media print { .rail, .where, .layers, .map, .need-form, .ask-form, .reader-bar { display: none; } body { display: block; background: #fff; } }
+
+/* Phones: the code a camera opens Genesis with, or how to keep it on a home screen. */
+.phone { display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: center; margin: 1.5rem 0 0;
+  padding: 1rem 1.25rem; border: 1px solid var(--rule); background: var(--sheet); }
+.phone:not(:has(.qr)) { grid-template-columns: 1fr; }
+.phone h2 { display: flex; gap: .5rem; align-items: center; margin: 0 0 .4rem; padding: 0; border: 0; font-size: 1.2rem; }
+.phone h2 .ic { width: 1.5rem; height: 1.5rem; }
+.phone p { margin: .3rem 0; line-height: 1.4; }
+.phone .qr { width: 10rem; height: 10rem; display: block; }
+@media (max-width: 40rem) { .phone { grid-template-columns: 1fr; } .phone .qr { width: 12rem; height: 12rem; } }
