@@ -39,6 +39,29 @@ That is `genesis start`. It needs Python 3 and nothing else. It starts three thi
 
 `genesis stop` stops them. Phones and laptops on the same network can open port 8080 of the box.
 
+## More on the drive, from the front door
+
+**Get more** lists every shelf with what its seed, ark and eden steps cost on this drive, and what is already on it. Tick what you want and press Download: the same `genesis fetch` runs on the box in the background, each file checked as it lands, and the page shows how far it has come. Stop leaves what came down; a second Download goes on from there. New books open in the reader as they land. A new model on the Ask page may need a stop and a start.
+
+Only someone at the box itself starts or stops a download. A phone on the network sees it come down and cannot fill the drive.
+
+## Phones, with no router: the box's own WiFi
+
+On a Raspberry Pi or a Linux PC with NetworkManager (Raspberry Pi OS has it since Bookworm):
+
+```sh
+sh genesis/bin/genesis hotspot          # the WiFi Genesis, with a password made once and kept on the drive
+sh genesis/bin/genesis hotspot stop     # back to the WiFi the box was on
+```
+
+The home page then shows two codes: one a phone camera joins the WiFi with, one that opens Genesis. Most phones open Genesis by themselves once they join, because the box answers every name they look up and the check phones make for a sign in page. That part asks for the administrator's password once; `--no-portal` leaves it out. `--name` and `--password` choose your own. The box's WiFi is the hotspot while it runs, so the box leaves the network it was on.
+
+Windows and Macs make a hotspot only by sharing a connection they have. Without one, any WiFi the computer and the phones share works the same: a router, or a phone's own hotspot.
+
+## A way there
+
+On the map, **Walk** or **Drive** beside any place in the list finds the way along the roads and paths of the map on the drive, step by step, with no internet and no routing server. It needs a map with street detail (the planet, or a region cut with `genesis maps region`) and works up to about 30 km. The map knows nothing of closures, damage, gates or flooding, and not every one way street: look before you go. When the place is off the roads, the last stretch is a bearing to walk by compass.
+
 ## On a Mac or a Windows PC
 
 The same start works there, with the book reader and the assistant. A copy of Genesis keeps its vault in a `vault` folder inside itself, and a first start offers to fill it: a starter of about 1.1 GB, the starter with the assistant, the seed tier, or nothing yet.

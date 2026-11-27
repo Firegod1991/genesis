@@ -5,10 +5,8 @@ What is planned, roughly in order. Issues and pull requests against any of it ar
 ## Next
 
 * **Proof on real hardware.** Raspberry Pi 5 install, an NVIDIA GPU, and each radio profile with a real receiver, written up in the docs.
-* **Routing in the dashboard.** Directions from your position to the nearest water or hospital using the Valhalla engine that the `routing` profile already starts.
 * **Search across the vault.** One search box over Kiwix books, scripture, documents and survival layers.
-* **Pick what to download from the dashboard.** Tick the shelves you want, see what they cost in disk space and watch them come down, with no command to type.
-* **Hotspot and captive portal** set up by `genesis hotspot`, so any phone that joins lands on the dashboard.
+* **Turn by turn in the hand.** Follow the way on a phone's own position as you walk it, and keep a route to print.
 * **Offline callsign lookup** in the dashboard from the FCC database the radio pack already carries.
 * **Season aware shortwave schedules** and satellite pass prediction from the stored orbits.
 
