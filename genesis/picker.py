@@ -178,6 +178,19 @@ def _tail(path, lines=12):
     return [ln for ln in text.replace("\r", "\n").split("\n") if ln.strip()][-lines:]
 
 
+def _landed(part, started):
+    """Bytes down of one file: the part still coming, or the whole file once it is in place and being checked,
+    so the count does not fall back between the two. A file from before this download is not counted."""
+    if os.path.isfile(part):
+        return os.path.getsize(part)
+    whole = part[:-len(".part")]
+    try:
+        st = os.stat(whole)
+    except OSError:
+        return 0
+    return st.st_size if st.st_mtime >= started - 2 else 0
+
+
 def status(vault):
     """Where the download stands: items done, bytes so far, the last lines it wrote, and whether it runs."""
     folder = _folder(vault)
@@ -192,7 +205,7 @@ def status(vault):
             finished.append(item["id"])
             so_far += item["bytes"]
             continue
-        part = sum(os.path.getsize(p) for p in item["parts"] if os.path.isfile(p))
+        part = sum(_landed(p, job.get("started", 0)) for p in item["parts"])
         if part:
             so_far += min(part, item["bytes"] or part)
             now.append(item["title"])
