@@ -110,6 +110,8 @@ Genesis runs on a computer, and every phone on the same network uses it: the map
 3. Point the phone's camera at the code on the Genesis home page.
 4. To keep it, choose **Add to Home Screen** (Safari's Share button on an iPhone, the browser menu on Android). Genesis then opens from its own icon whenever the phone is on that network.
 
+No WiFi at all? On a Raspberry Pi or a Linux PC, `genesis hotspot` makes the box a WiFi network of its own. The home page then shows a code a phone camera joins that WiFi with, and most phones open Genesis by themselves once they join. `genesis hotspot stop` puts the box back on its usual WiFi. See [docs/OFFLINE.md](docs/OFFLINE.md).
+
 The Android apps in the catalog (offline maps, mesh messaging, readers) come down to the vault and install from the **Programs** page. A Genesis app of its own for the phone, one that keeps a chosen part of the library on the phone itself, is in development.
 
 ### With git
@@ -131,6 +133,8 @@ sh genesis/bin/genesis start
 The assistant runs from the vault on every one of them: Genesis brings down the Ollama that Ollama publishes to run with no install, and the models come straight from the Ollama registry, each file checked against its SHA 256. An Ollama already installed on the machine keeps running beside it, with its own models.
 
 ### More than the starter
+
+Open **Get more** in Genesis: every shelf is listed with what each step of it costs on this drive. Tick what you want, press Download and watch it come down, each file checked as it lands. Or from a terminal:
 
 ```sh
 genesis fetch --tier seed       # the essentials of every pack, about 24 GB
@@ -193,7 +197,7 @@ genesis poi nearest --lat 43.7384 --lon 7.4246 --cat water
    0.26 km NE  water     spring           unnamed  (43.74000, 7.42700)
 ```
 
-The dashboard shows the same thing on a map and lists the nearest of each need by distance and compass bearing, so you can walk there with a compass.
+The dashboard shows the same thing on a map and lists the nearest of each need by distance and compass bearing, so you can walk there with a compass. **Walk** or **Drive** beside each place finds the way along the roads and paths of the map on the drive, turn by turn, with no internet and no routing server.
 
 ## Field skills
 
@@ -336,6 +340,8 @@ Genesis is new. This is what has and has not been proven.
 * a first start on a fresh copy that brings down the starter
 * the compose files, and the core services started from a real vault
 * the published world data fetched and queried on a clean machine
+* a way on foot and by car along the real roads of Monaco, from the map cut out of the live planet build
+* downloads chosen on the Get more page, started, followed and stopped, and the box's own WiFi, with NetworkManager stood in for
 
 **Tested by hand:**
 
@@ -343,10 +349,12 @@ Genesis is new. This is what has and has not been proven.
 * the start with no Docker from that drive on a PC: every one of the 409 books opening in the reader, and search answering from the pages inside them
 * the Windows launchers on Windows 11 from the ZIP, with the assistant answering through the PC's own Ollama
 * the Windows download on Windows 11 with every installed Python out of reach: the assistant and its model brought down straight from the Ollama registry, Ollama run from the vault beside the PC's own on a port of its own, and Qwen 3.5 2B answering at about 16 tokens a second on the processor alone; Genesis moved itself to another port when 8080 was taken, offered a phone its address, and stopped everything it started
+* Get more on the Windows download on Windows 11: the phone apps shelf (13 apps, 417 MB) and the medical seed step (2 GB) brought down from the page, every file checked; Stop part way ended the download and every program it had started, and a second Download went on from where it stopped; the new books opened in the running reader with no restart; the same requests from the laptop's own network address, as a phone's would come, were refused
+* the way on foot and by car across a map of Monaco cut on that PC, along the real streets, each in under half a second
 * the safe with the real 7-Zip on Linux and on Windows
 * the boot stick and the spare card on disk images: Ventoy installed by its own installer with a live system copied and compared, and Raspberry Pi OS written, read back and its boot files found in place
 
-**Not yet tested on real hardware:** the radio profiles with an actual SDR, the NVIDIA GPU path, a Raspberry Pi itself, and a boot stick or a spare card made on a physical stick or card and started on a real machine. The first report from a real Pi is welcome.
+**Not yet tested on real hardware:** the radio profiles with an actual SDR, the NVIDIA GPU path, a Raspberry Pi itself, the box's own WiFi (`genesis hotspot`) on a real WiFi card, and a boot stick or a spare card made on a physical stick or card and started on a real machine. The first report from a real Pi is welcome.
 
 ## Read this before you rely on it
 
