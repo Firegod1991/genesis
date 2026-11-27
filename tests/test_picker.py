@@ -107,6 +107,11 @@ class PickerTests(unittest.TestCase):
             f.write("[1/2] survival: Water\n  ok water.zim\n[2/2] survival: Big\n")
         st = picker.status(self.vault)
         self.assertEqual((st["done"], st["so_far"], st["now"], st["log"][-1]), (1, 1300, ["Big"], "[2/2] survival: Big"))
+        big = os.path.join(self.vault, "zim", "big.zim")
+        os.replace(big + ".part", big)  # in place and being checked: the count does not fall back
+        self.assertEqual(picker.status(self.vault)["so_far"], 1300)
+        os.utime(big, (st["started"] - 60, st["started"] - 60))  # a file from before this download is not counted
+        self.assertEqual(picker.status(self.vault)["so_far"], 300)
         write_json(os.path.join(folder, "done.json"), {"code": 0, "ended": time.time()})
         st = picker.status(self.vault)
         self.assertEqual((st["running"], st["result"]["code"], st["stopped"]), (False, 0, False))
