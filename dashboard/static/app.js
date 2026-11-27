@@ -61,6 +61,8 @@ function parsePosition(text) {
 
 // ---------------------------------------------------------------- map
 let map, marker, categories = {}, position = null, poiData = { type: "FeatureCollection", features: [] };
+const nothing = () => ({ type: "FeatureCollection", features: [] });
+let routeData = nothing();
 const hidden = new Set(JSON.parse(store.get("genesis.hidden") || "[]"));
 
 function hint(text) {
@@ -95,6 +97,11 @@ async function buildStyle(info) {
   const colors = ["match", ["get", "cat"]];
   for (const [id, c] of Object.entries(categories)) colors.push(id, c.color);
   colors.push("#888888");
+  style.sources.route = { type: "geojson", data: routeData };
+  style.layers.push({ id: "route-casing", type: "line", source: "route", layout: { "line-join": "round", "line-cap": "round" },
+    paint: { "line-color": night ? "#000000" : "#ffffff", "line-width": 9 } });
+  style.layers.push({ id: "route", type: "line", source: "route", layout: { "line-join": "round", "line-cap": "round" },
+    paint: { "line-color": night ? "#ff5a4d" : "#6a2880", "line-width": 5 } });
   style.sources.poi = { type: "geojson", data: poiData };
   style.layers.push({
     id: "poi", type: "circle", source: "poi",
@@ -117,12 +124,75 @@ async function loadPlaces() {
   map.getSource("poi")?.setData(poiData);
 }
 
-function placeCard(p) {
+function placeCard(p, at) {
   const tags = typeof p.tags === "string" ? JSON.parse(p.tags) : (p.tags || {});
   const card = el("div", {}, el("strong", { textContent: p.name || p.sub.replaceAll("_", " ") }),
     el("div", { textContent: `${categories[p.cat]?.label || p.cat}: ${p.sub.replaceAll("_", " ")}` }));
   for (const [k, v] of Object.entries(tags).slice(0, 6)) card.append(el("div", { textContent: `${k.replaceAll("_", " ")}: ${v}` }));
+  if (position && at) {
+    const place = { ...p, lon: at[0], lat: at[1] };
+    card.append(el("div", { className: "way" }, wayButton(place, "walk"), wayButton(place, "drive")));
+  }
   return card;
+}
+
+// ---------------------------------------------------------------- a way there, along the roads of the map
+const metresText = (m) => m < 1000 ? `${Math.max(10, Math.round(m / 10) * 10)} m` : `${(m / 1000).toFixed(m < 10000 ? 1 : 0)} km`;
+const timeText = (s) => s < 3600 ? `${Math.max(1, Math.round(s / 60))} min` : `${Math.floor(s / 3600)} h ${Math.round((s % 3600) / 60)} min`;
+const POINTS = ["north", "north east", "east", "south east", "south", "south west", "west", "north west"];
+function heading([lon1, lat1], [lon2, lat2]) {
+  const r = Math.PI / 180, dl = (lon2 - lon1) * r;
+  const y = Math.sin(dl) * Math.cos(lat2 * r);
+  const x = Math.cos(lat1 * r) * Math.sin(lat2 * r) - Math.sin(lat1 * r) * Math.cos(lat2 * r) * Math.cos(dl);
+  return (Math.atan2(y, x) / r + 360) % 360;
+}
+function wayButton(p, mode) {
+  const b = el("button", { type: "button", className: "quiet", textContent: mode === "walk" ? "Walk" : "Drive" });
+  b.addEventListener("click", (e) => { e.stopPropagation(); findWay(p, mode); });
+  return b;
+}
+function clearWay() {
+  routeData = nothing();
+  map?.getSource("route")?.setData(routeData);
+  $("#route").hidden = true;
+}
+async function findWay(p, mode) {
+  if (!position) return;
+  const box = $("#route"), name = p.name || (p.sub || "the place").replaceAll("_", " ");
+  const clear = el("button", { type: "button", className: "quiet", textContent: "Clear the way" });
+  clear.addEventListener("click", clearWay);
+  box.hidden = false;
+  box.replaceChildren(el("p", { className: "hint", textContent: `Finding the way ${mode === "walk" ? "on foot" : "by car"} to ${name} along the roads and paths of the map.` }));
+  const r = await tryApi(`route?from=${position.lat},${position.lon}&to=${p.lat},${p.lon}&mode=${mode}`, { found: false, why: "The box did not answer." });
+  if (!r.found) {
+    routeData = nothing();
+    map?.getSource("route")?.setData(routeData);
+    box.replaceChildren(el("p", { className: "hint", textContent: r.why }), clear);
+    return;
+  }
+  routeData = { type: "FeatureCollection", features: [{ type: "Feature", geometry: { type: "LineString", coordinates: r.line }, properties: {} }] };
+  if (map) {
+    map.getSource("route")?.setData(routeData);
+    const lons = r.line.map((c) => c[0]), lats = r.line.map((c) => c[1]);
+    map.fitBounds([[Math.min(...lons), Math.min(...lats)], [Math.max(...lons), Math.max(...lats)]], { padding: 48, duration: calm ? 0 : 800 });
+  }
+  const notes = [];
+  if (r.off_road[0] > 30) {
+    const deg = heading(r.line[0], r.line[1]);
+    notes.push(`The nearest road or path is ${metresText(r.off_road[0])} away, ${POINTS[Math.round(deg / 45) % 8]} of you.`);
+  }
+  if (r.off_road[1] > 30) {
+    const deg = heading(r.line[r.line.length - 2], r.line[r.line.length - 1]);
+    notes.push(`The last ${metresText(r.off_road[1])} leave the road: from where it ends, go ${POINTS[Math.round(deg / 45) % 8]}, bearing ${String(Math.round(deg) % 360).padStart(3, "0")}°.`);
+  }
+  box.replaceChildren(
+    el("h2", {}, icon("route"), `${mode === "walk" ? "On foot" : "By car"} to ${name}`),
+    el("p", { className: "route-sum" }, el("strong", { textContent: metresText(r.metres) }), `, about ${timeText(r.seconds)}. ${metresText(r.straight)} in a straight line.`),
+    ...notes.map((t) => el("p", { textContent: t })),
+    el("ol", {}, r.steps.map((st) => el("li", {}, st.text, " ", el("span", { className: "kind", textContent: metresText(st.metres) })))),
+    el("p", { className: "hint", textContent: "Worked out from the roads and paths on the map, which knows nothing of closures, damage, gates or flooding"
+      + (mode === "drive" ? ", and not every one way street" : "") + ". Look before you go." }),
+    clear);
 }
 
 async function setPosition(lat, lon, fly = true) {
@@ -139,7 +209,7 @@ async function setPosition(lat, lon, fly = true) {
   const res = await api(`poi/nearest?lat=${lat}&lon=${lon}&n=2&each=1`);
   body.replaceChildren();
   if (res.error) {
-    body.append(el("tr", {}, el("td", { colSpan: 4, className: "empty",
+    body.append(el("tr", {}, el("td", { colSpan: 5, className: "empty",
       textContent: "No survival layers installed yet. Run: genesis fetch --id survival_layers_world, or build your region with genesis poi build." })));
     return;
   }
@@ -153,17 +223,18 @@ async function setPosition(lat, lon, fly = true) {
         el("td", { className: "need" }, i === 0 ? [dot, c.label] : ""),
         el("td", {}, p.name || "Unnamed", " ", el("span", { className: "kind", textContent: p.sub.replaceAll("_", " ") })),
         el("td", { className: "num" }, el("span", { className: "km", textContent: p.km < 10 ? p.km.toFixed(2) : p.km.toFixed(0) }), " km"),
-        el("td", { className: "num", textContent: `${p.compass} ${String(p.bearing).padStart(3, "0")}°` }));
+        el("td", { className: "num", textContent: `${p.compass} ${String(p.bearing).padStart(3, "0")}°` }),
+        el("td", { className: "way" }, wayButton(p, "walk"), wayButton(p, "drive")));
       row.dataset.lat = p.lat;
       row.tabIndex = 0;
       const go = () => { map?.[calm ? "jumpTo" : "flyTo"]({ center: [p.lon, p.lat], zoom: 15 });
-        if (map) new maplibregl.Popup().setLngLat([p.lon, p.lat]).setDOMContent(placeCard(p)).addTo(map); };
+        if (map) new maplibregl.Popup().setLngLat([p.lon, p.lat]).setDOMContent(placeCard(p, [p.lon, p.lat])).addTo(map); };
       row.addEventListener("click", go);
       row.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
       body.append(row);
     });
   }
-  if (!body.children.length) body.append(el("tr", {}, el("td", { colSpan: 4, className: "empty", textContent: "Nothing mapped within 2000 km of this position." })));
+  if (!body.children.length) body.append(el("tr", {}, el("td", { colSpan: 5, className: "empty", textContent: "Nothing mapped within 2000 km of this position." })));
 }
 
 async function initMap() {
@@ -197,7 +268,7 @@ async function initMap() {
   map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
   map.on("click", (e) => {
     const hit = map.queryRenderedFeatures(e.point, { layers: ["poi"] })[0];
-    if (hit) { new maplibregl.Popup().setLngLat(hit.geometry.coordinates).setDOMContent(placeCard(hit.properties)).addTo(map); return; }
+    if (hit) { new maplibregl.Popup().setLngLat(hit.geometry.coordinates).setDOMContent(placeCard(hit.properties, hit.geometry.coordinates)).addTo(map); return; }
     setPosition(e.lngLat.lat, e.lngLat.lng, false);
   });
   map.on("mouseenter", "poi", () => { map.getCanvas().style.cursor = "pointer"; });
@@ -411,9 +482,19 @@ const onThisBox = ["localhost", "127.0.0.1", "[::1]", "::1"].includes(location.h
 const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
 function phoneCard(ph) {
   const card = $("#phone");
-  if (onThisBox && ph.links.length && ph.qr) {
-    const svg = new DOMParser().parseFromString(ph.qr, "image/svg+xml").documentElement;
-    svg.setAttribute("class", "qr");
+  const picture = (text) => { const svg = new DOMParser().parseFromString(text, "image/svg+xml").documentElement; svg.setAttribute("class", "qr"); return svg; };
+  if (onThisBox && ph.links.length && ph.qr && ph.wifi) {
+    card.replaceChildren(picture(ph.wifi.qr), el("div", {},
+      el("h2", {}, icon("wifi"), `1. Join the ${ph.wifi.name} WiFi`),
+      el("p", { textContent: "This box is a WiFi network of its own. Point the phone's camera at this code to join it, or pick it in the phone's WiFi settings." }),
+      el("p", {}, "Name ", el("code", { textContent: ph.wifi.name }), ", password ", el("code", { textContent: ph.wifi.password }))),
+    picture(ph.qr), el("div", {},
+      el("h2", {}, icon("phone"), "2. Open Genesis"),
+      el("p", { textContent: "Most phones open Genesis by themselves once they join. If one does not, point its camera at this code." }),
+      el("p", {}, "Or type ", el("code", { textContent: ph.links[0] }))));
+    card.hidden = false;
+  } else if (onThisBox && ph.links.length && ph.qr) {
+    const svg = picture(ph.qr);
     card.replaceChildren(svg, el("div", {},
       el("h2", {}, icon("phone"), "On your phone"),
       el("p", { textContent: "Join the same WiFi as this computer, or its hotspot, then point the phone's camera at this code. Every page works there, the assistant too." }),
@@ -432,6 +513,81 @@ function phoneCard(ph) {
     card.hidden = true;
   }
 }
+
+// ---------------------------------------------------------------- get more: tick shelves, watch them come down
+let getTimer = null, getDrawn = false, getFree = 0;
+const sizeText = (c) => c.items
+  ? `${bytes(c.to_get)}, ${count(c.items, "item")}${c.unsized ? ` (${c.unsized} of no published size)` : ""}`
+  : "all on the drive";
+function getChoices() {
+  const out = [];
+  for (const box of document.querySelectorAll("#get-sets input:checked")) out.push({ set: box.value });
+  for (const pick of document.querySelectorAll("#get-shelves select")) if (pick.value) out.push({ pack: pick.name, tier: pick.value });
+  return out;
+}
+let costing = 0;
+async function getCost() {
+  const choices = getChoices(), mine = ++costing, total = $("#get-total"), go = $("#get-go");
+  if (!choices.length) { total.textContent = "Nothing ticked yet."; go.disabled = true; return; }
+  total.textContent = "Adding it up";
+  const c = await tryApi("get/cost?choices=" + encodeURIComponent(JSON.stringify(choices)), null);
+  if (mine !== costing) return;
+  if (!c) { total.textContent = "The box did not answer."; go.disabled = true; return; }
+  const fits = c.to_get <= getFree * 0.95;
+  total.textContent = c.items ? `To download: ${sizeText(c)}. ${fits ? `${bytes(getFree)} free on this drive.` : `Only ${bytes(getFree)} free: tick less, or use a bigger drive.`}`
+    : "All of that is on the drive already.";
+  go.disabled = !c.items || !fits || go.dataset.locked === "1";
+}
+function getProgress(st, can) {
+  const now = $("#get-now");
+  if (!st.job) { now.hidden = true; return false; }
+  const pct = st.bytes ? Math.min(100, (st.so_far / st.bytes) * 100) : (st.items ? (st.done / st.items) * 100 : 0);
+  const failed = st.result && st.result.code !== 0;
+  const head = st.running ? "Downloading" : st.result ? (failed ? "Done, with some that did not come down" : "Done") : "Stopped";
+  const kids = [el("h2", {}, icon("get"), head), el("progress", { max: 100, value: st.running || st.result ? pct : 0 }),
+    el("p", { textContent: `${st.done} of ${count(st.items, "item")}, ${bytes(st.so_far)} of ${bytes(st.bytes)}` })];
+  if (st.running && st.now.length) kids.push(el("p", { className: "hint", textContent: "Coming down now: " + st.now.join(", ") }));
+  if (st.result) kids.push(el("p", { textContent: "New books open in the library now. A new model shows on the Ask page; if one does not, stop Genesis and start it again." }));
+  if (failed) kids.push(el("p", { className: "hint", textContent: "What did not come down stays ticked: download again to try those once more." }));
+  if (!st.running && !st.result) kids.push(el("p", { className: "hint", textContent: "Stopped part way. What came down stays, and a download of the same picks up where this one stopped." }));
+  kids.push(el("details", {}, el("summary", { textContent: "What it is doing" }), el("pre", { textContent: st.log.join("\n") })));
+  if (st.running && can) {
+    const stop = el("button", { type: "button", className: "act", textContent: "Stop" });
+    stop.addEventListener("click", async () => { stop.disabled = true; await post("get/stop", {}); loaders.get(); });
+    kids.push(el("div", { className: "actions" }, stop));
+  }
+  now.replaceChildren(...kids);
+  now.hidden = false;
+  return st.running;
+}
+function getForm(o) {
+  const sets = [];
+  if (o.starter.of) sets.push(["starter", "The starter", `Every manual and plant guide, ten books, a map of the world and the Bible. ${sizeText(o.starter)}.`, o.starter]);
+  if (o.assistant.of) sets.push(["assistant", "The assistant", `${o.assistant.name} and the Ollama that runs it: answers questions with no internet. ${sizeText(o.assistant)}.`, o.assistant]);
+  $("#get-sets").replaceChildren(...sets.map(([value, name, about, c]) => {
+    const box = el("input", { type: "checkbox", name: "set", value, disabled: !c.items });
+    box.dataset.none = c.items ? "" : "1";
+    return el("label", { className: "get-row" }, box, el("span", {}, el("strong", { textContent: name }), el("span", { textContent: about })));
+  }));
+  $("#get-shelves").replaceChildren(...o.shelves.map((sh) => {
+    const pick = el("select", { name: sh.pack, ariaLabel: sh.title },
+      el("option", { value: "", textContent: "Nothing more" }),
+      ...["seed", "ark", "eden"].map((t) => el("option", { value: t, disabled: !sh.tiers[t].items,
+        textContent: `${t[0].toUpperCase() + t.slice(1)}: ${sizeText(sh.tiers[t])}` })));
+    return el("div", { className: "get-row" }, el("span", {}, el("strong", { textContent: sh.title }), el("span", { textContent: sh.about.replaceAll("`", "") })), pick);
+  }));
+}
+$("#get-form").addEventListener("change", getCost);
+$("#get-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const go = $("#get-go"), why = $("#get-why");
+  go.disabled = true;
+  const r = await post("get/start", { choices: getChoices() }).then((x) => x.json(), () => ({ error: "The box did not answer." }));
+  if (r.error) { why.hidden = false; why.textContent = r.error; getCost(); return; }
+  why.hidden = true;
+  getDrawn = false;
+  loaders.get();
+});
 
 // ---------------------------------------------------------------- the views
 const loaders = {
@@ -459,6 +615,7 @@ const loaders = {
       ["notes", "note", "Notes", "Your own pages, kept on the drive"],
       ["safe", "lock", "Safe", safe.open ? "Open now. Lock it when you are done" : safe.exists ? "Your papers, locked behind a passphrase" : "A locked place for your own papers"],
       ["programs", "tools", "Programs", `${soft.tools.length + soft.apps.length + soft.isos.length} programs, apps and systems for other machines`],
+      ["get", "get", "Get more", "Choose more for this drive and watch it come down"],
       ["system", "gear", "System", `${bytes(sys.disk_free)} free of ${bytes(sys.disk_total)}`],
     ];
     $("#tiles").replaceChildren(...tiles.map(([view, pic, name, line]) =>
@@ -604,6 +761,21 @@ const loaders = {
     $("#programs-apps").replaceChildren(...rows(soft.apps, "phone", "None on the drive yet. Run: genesis fetch --pack apps"));
     $("#programs-tools").replaceChildren(...rows(soft.tools, "tools", "None on the drive yet. Run: genesis fetch --pack tools"));
     $("#programs-isos").replaceChildren(...rows(soft.isos, "disc", "None on the drive yet. Run: genesis fetch --pack isos"));
+  },
+
+  async get() {
+    clearTimeout(getTimer);
+    const g = await tryApi("get", null), why = $("#get-why"), go = $("#get-go");
+    if (!g) { why.hidden = false; why.textContent = "The box did not answer."; return; }
+    getFree = g.options.free;
+    const running = getProgress(g.status, g.can);
+    if (!getDrawn || (!running && go.dataset.locked === "1")) { getForm(g.options); getDrawn = true; }
+    go.dataset.locked = !g.can || running ? "1" : "";
+    for (const field of document.querySelectorAll("#get-form input, #get-form select")) field.disabled = !g.can || running || field.dataset.none === "1";
+    why.hidden = g.can;
+    why.textContent = g.why;
+    if (running) getTimer = setTimeout(() => { if (location.hash === "#get") loaders.get(); }, 2000);
+    getCost();
   },
 
   async system() {
