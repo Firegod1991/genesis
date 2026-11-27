@@ -93,6 +93,14 @@ jobs:
           curl -fsS "http://127.0.0.1:8765/api/poi/nearest?lat=43.7384&lon=7.4246&each=1" | grep -q '"water": \[{'
           curl -fsS http://127.0.0.1:8765/api/scripture | grep -q hboWLC
           curl -fsS -o /dev/null -w '%{http_code}\n' -H 'Range: bytes=0-126' http://127.0.0.1:8765/maps/europe_monaco.pmtiles | grep -q 206
+      - name: A way on foot and by car along the real roads of Monaco
+        run: |
+          PORT=8766 python3 dashboard/server.py &
+          sleep 2
+          for mode in walk drive; do
+            curl -fsS "http://127.0.0.1:8766/api/route?from=43.7311,7.4167&to=43.7480,7.4380&mode=$mode" | tee "$RUNNER_TEMP/$mode.json" | head -c 300; echo
+            python3 -c "import json,sys; r = json.load(open(sys.argv[1])); assert r['found'], r; assert r['straight'] < r['metres'] < 2.5 * r['straight'], r; assert max(r['off_road']) < 150, r; assert len(r['steps']) > 3, r; print(r['metres'], 'm,', len(r['steps']), 'steps')" "$RUNNER_TEMP/$mode.json"
+          done
       - name: Seal
         run: python3 -m genesis seal && test -s "$GENESIS_VAULT/restore/MANIFEST.json"
 

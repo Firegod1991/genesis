@@ -5,6 +5,7 @@ front page and lands on Genesis, with every page, the maps, the manuals and the 
 installed on the phone, and nothing here needs the internet.
 """
 
+import html
 import ipaddress
 import socket
 
@@ -44,16 +45,20 @@ def addresses():
     return private + [ip for ip in out if ip not in private]
 
 
-def links(port):
-    return ["http://%s%s/" % (ip, "" if port == 80 else ":%d" % port) for ip in addresses()]
+def links(port, first=None):
+    """The addresses as links. `first`, the box's own hotspot address when it runs one, leads."""
+    found = addresses()
+    if first:
+        found = [first] + [ip for ip in found if ip != first]
+    return ["http://%s%s/" % (ip, "" if port == 80 else ":%d" % port) for ip in found]
 
 
-def qr_svg(text, border=3):
+def qr_svg(text, border=3, label=None):
     """A QR code as an SVG picture, black on white so every phone camera reads it, in night vision too."""
     qr = QrCode.encode_text(text, QrCode.Ecc.MEDIUM)
     size = qr.get_size()
     parts = ["M%d,%dh1v1h-1z" % (x + border, y + border) for y in range(size) for x in range(size) if qr.get_module(x, y)]
     full = size + border * 2
     return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" shape-rendering="crispEdges" role="img" '
-            'aria-label="QR code for %s"><rect width="100%%" height="100%%" fill="#fff"/><path d="%s" fill="#000"/></svg>'
-            % (full, full, text, " ".join(parts)))
+            'aria-label="%s"><rect width="100%%" height="100%%" fill="#fff"/><path d="%s" fill="#000"/></svg>'
+            % (full, full, html.escape(label or "QR code for " + text, quote=True), " ".join(parts)))

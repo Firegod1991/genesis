@@ -325,3 +325,42 @@ html.night #read-frame { filter: grayscale(1) sepia(1) hue-rotate(-38deg) satura
 .phone p { margin: .3rem 0; line-height: 1.4; }
 .phone .qr { width: 10rem; height: 10rem; display: block; }
 @media (max-width: 40rem) { .phone { grid-template-columns: 1fr; } .phone .qr { width: 12rem; height: 12rem; } }
+
+/* A way there: the route under the map, in words. */
+.bearings td.way, .bearings th.way { white-space: nowrap; padding-left: 1.25rem; }
+.bearings td.way button, .maplibregl-popup-content .way button { padding: 0 0.6rem 0 0; }
+.maplibregl-popup-content .way { margin-top: 0.4rem; }
+.route { max-width: 54rem; margin: 1rem 0 0; padding: 0.25rem 1.25rem 0.75rem; border: 2px solid var(--revision); background: var(--sheet); }
+.route h2 { display: flex; gap: 0.5rem; align-items: center; margin: 0.75rem 0 0.4rem; padding: 0; border: 0; }
+.route-sum strong { font-size: 1.25rem; }
+.route ol { margin: 0.5rem 0; padding-left: 1.4rem; }
+.route li { padding: 0.15rem 0; }
+.route .kind { color: var(--contour); }
+
+/* Get more: the shelves to tick, and the download as it runs. */
+.get-form { max-width: 60rem; }
+.get-row { display: grid; grid-template-columns: 1fr minmax(14rem, 22rem); gap: 0.5rem 1.5rem; align-items: center;
+  padding: 0.7rem 0; border-top: 1px solid var(--rule); }
+label.get-row { grid-template-columns: auto 1fr; cursor: pointer; }
+.get-row strong { display: block; font-weight: 750; }
+.get-row span span { display: block; color: var(--contour); font-size: 0.92rem; line-height: 1.35; }
+.get-row input[type="checkbox"] { width: 1.2rem; height: 1.2rem; margin: 0; accent-color: var(--ink); }
+.get-row select { width: 100%; padding: 0.45rem 0.5rem; font: inherit; color: var(--ink); background: var(--sheet); border: 2px solid var(--ink); border-radius: 0; }
+.get-sets { margin-bottom: 1rem; }
+.get-foot { position: sticky; bottom: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem;
+  padding: 0.75rem 0; background: var(--paper); border-top: 2px solid var(--ink); }
+.get-foot output { font-weight: 650; }
+button.act:disabled { opacity: 0.45; cursor: default; }
+.get-now { max-width: 60rem; margin: 0 0 1.5rem; padding: 0.25rem 1.25rem 0.75rem; border: 2px solid var(--ink); background: var(--sheet); }
+.get-now h2 { display: flex; gap: 0.5rem; align-items: center; margin: 0.75rem 0 0.5rem; padding: 0; border: 0; }
+.get-now progress { width: 100%; height: 1.1rem; accent-color: var(--revision); }
+.get-now pre { max-height: 14rem; overflow: auto; font-size: 0.8rem; white-space: pre-wrap; }
+@media (max-width: 760px) {
+  .get-row { grid-template-columns: 1fr; }
+  .bearings td.way, .bearings th.way { padding-left: 0.5rem; }
+  .bearings td.way button { display: block; padding: 0.15rem 0; }
+  .bearings td.need { white-space: normal; }
+  .bearings th.way { white-space: normal; }
+  .bearings .km { font-size: 1.05rem; }
+  .bearings td.num { white-space: normal; padding-left: 0.4rem; }
+}

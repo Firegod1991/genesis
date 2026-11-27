@@ -28,6 +28,7 @@
   <a href="#notes" data-view="notes"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/note.svg#g"/></svg>Notes</a>
   <a href="#safe" data-view="safe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/lock.svg#g"/></svg>Safe</a>
   <a href="#programs" data-view="programs"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/tools.svg#g"/></svg>Programs</a>
+  <a href="#get" data-view="get"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/get.svg#g"/></svg>Get more</a>
   <a href="#system" data-view="system"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="icons/gear.svg#g"/></svg>System</a>
   <button id="night" type="button" aria-pressed="false" title="Red light keeps your eyes adjusted to the dark">Night vision</button>
 </nav>
@@ -74,10 +75,11 @@
     <div id="map" class="map" role="application" aria-label="Offline map"></div>
     <div class="layers" id="layers" aria-label="Map layers"></div>
     <p id="maphint" class="hint" hidden></p>
+    <div id="route" class="route" aria-live="polite" hidden></div>
     <table class="bearings" id="bearings" aria-live="polite">
       <caption>Nearest to you</caption>
-      <thead><tr><th scope="col">Need</th><th scope="col">Place</th><th scope="col" class="num">Distance</th><th scope="col" class="num">Bearing</th></tr></thead>
-      <tbody><tr><td colspan="4" class="empty">Set your position to list the nearest water, care, fuel, power and shelter.</td></tr></tbody>
+      <thead><tr><th scope="col">Need</th><th scope="col">Place</th><th scope="col" class="num">Distance</th><th scope="col" class="num">Bearing</th><th scope="col" class="way">Way there</th></tr></thead>
+      <tbody><tr><td colspan="5" class="empty">Set your position to list the nearest water, care, fuel, power and shelter.</td></tr></tbody>
     </table>
   </section>
 
@@ -157,6 +159,21 @@
     <h2>Systems to install</h2>
     <p class="hint">Whole operating systems. Write one to a USB stick to bring a dead computer back. On the box, <code>sudo genesis bootstick</code> makes a stick that starts a PC from these, and <code>sudo genesis bootstick --pi</code> writes a spare card for a Raspberry Pi.</p>
     <div id="programs-isos" class="rows"></div>
+  </section>
+
+  <section id="view-get" class="view" hidden>
+    <h1>Get more</h1>
+    <p class="lede">Tick what this drive should carry. Each shelf grows in three steps: seed holds the essentials, ark most of what is worth keeping, eden everything. Each file is checked against its publisher's checksum as it lands.</p>
+    <div id="get-now" class="get-now" aria-live="polite" hidden></div>
+    <form id="get-form" class="get-form" autocomplete="off">
+      <div id="get-sets" class="get-sets"></div>
+      <div id="get-shelves" class="get-shelves"></div>
+      <div class="get-foot">
+        <output id="get-total"></output>
+        <button type="submit" class="act" id="get-go" disabled>Download</button>
+      </div>
+    </form>
+    <p id="get-why" class="hint" hidden></p>
   </section>
 
   <section id="view-system" class="view" hidden>

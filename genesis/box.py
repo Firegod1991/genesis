@@ -488,7 +488,9 @@ def plan(vault):
     kiwix, shelf = program(vault, "kiwix", "kiwix-serve"), books(vault)
     if kiwix and shelf and reader_runs():
         listed = library(vault, shelf)
-        out.append(("library", KIWIX_PORT, [kiwix, "--port", str(KIWIX_PORT)] + (["--library", listed] if listed else shelf), {}))
+        # Given the list, the reader watches it, so books a download adds open without a restart.
+        out.append(("library", KIWIX_PORT, [kiwix, "--port", str(KIWIX_PORT)]
+                    + (["--library", "--monitorLibrary", listed] if listed else shelf), {}))
     ollama, models = program(vault, "ollama", "ollama"), os.path.join(vault, "models", "ollama", "models")
     if ollama and os.path.isdir(models):
         # Nothing on the drive is ever deleted by the model server, one model is in memory at a time,

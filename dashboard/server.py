@@ -4,13 +4,15 @@
 Serves the pages, the offline maps (with HTTP range requests, which PMTiles
 needs), the manuals with their covers, the scripture library, phone apps and
 programs, and a JSON API: services, system health, what is on the drive, the
-survival layers, search across the library, and the local assistant. It reads
-the vault and writes two places only: the notes people keep on the box, and
-Genesis's own guides, put on the shelves when it starts. The safe
-is never opened from here: this server says whether one exists, and nothing more.
+survival layers, search across the library, ways along the roads of the map,
+and the local assistant. It reads the vault and writes three things only: the
+notes people keep on the box, Genesis's own guides, put on the shelves when it
+starts, and the downloads someone at the box itself asks for. The safe is never
+opened from here: this server says whether one exists, and nothing more.
 """
 
 import http.client
+import ipaddress
 import json
 import mimetypes
 import os
@@ -30,7 +32,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
 
-from genesis import __version__, appicons, catalog, guides, maps, phone, poi, safe  # noqa: E402
+from genesis import __version__, appicons, catalog, guides, hotspot, maps, phone, picker, pmtiles, poi, route, safe  # noqa: E402
 from genesis.util import memory, read_json, uptime  # noqa: E402
 
 STATIC = os.path.join(HERE, "static")
@@ -377,6 +379,77 @@ def scripture():
     return sorted(out, key=order)
 
 
+_archives, _archives_lock = {}, threading.Lock()
+
+
+def _route_maps():
+    """The maps on the drive, opened for reading their roads, kept open while they do not change."""
+    out = []
+    for m in maps.list_maps(VAULT):
+        path = os.path.join(VAULT, "maps", m["file"])
+        try:
+            key = (path, os.path.getmtime(path), m["bytes"])
+            with _archives_lock:
+                if key not in _archives:
+                    _archives[key] = pmtiles.Archive(path)
+                out.append((m, _archives[key]))
+        except (OSError, ValueError):
+            continue
+    return out
+
+
+def find_route(a, b, mode):
+    """A way from a to b, both (lon, lat), on the most detailed map on the drive that holds both."""
+    holds = []
+    for m, arc in _route_maps():
+        w, s, e, n = arc.bounds
+        if all(w <= p[0] <= e and s <= p[1] <= n for p in (a, b)) and arc.maxzoom >= 13:
+            holds.append((-arc.maxzoom, m["bytes"], arc))
+    if not holds:
+        return {"found": False, "why": "No map on the drive has street detail for both places. Cut one for your area "
+                                       "with: genesis maps region --region <your region>"}
+    return route.route(sorted(holds, key=lambda h: h[:2])[0][2], a, b, mode)
+
+
+def _portal():
+    """The hotspot this box runs, when it sends phones that join to Genesis, else None."""
+    if not BARE:
+        return None
+    spot = cached("hotspot", 3, hotspot.active)
+    return spot if spot and spot.get("portal") else None
+
+
+def _strange_host(host):
+    """True for a name that is not this box: on the hotspot every name leads here, and the phone checking
+    for a sign in page is sent to Genesis."""
+    host = host.rsplit(":", 1)[0] if host.count(":") == 1 else host
+    host = host.strip("[]").lower().rstrip(".")
+    if not host:
+        return False
+    try:
+        ipaddress.ip_address(host)
+        return False
+    except ValueError:
+        pass
+    me = socket.gethostname().lower()
+    return host not in ("localhost", me, me + ".local")
+
+
+def _here(handler):
+    """True when the request comes from this machine itself, not from a phone or another computer."""
+    return handler.client_address[0] in ("127.0.0.1", "::1", "::ffff:127.0.0.1")
+
+
+def downloads_allowed(handler):
+    if not BARE:
+        return False, "Downloads start from the box itself here: genesis fetch, in a terminal."
+    if not os.access(VAULT, os.W_OK):
+        return False, "This user may not write to the drive. In a terminal, once: sudo chown -R $USER \"%s\"" % os.path.dirname(VAULT)
+    if not _here(handler):
+        return False, "Start downloads at the box itself. This page shows them as they come down."
+    return True, ""
+
+
 def map_list():
     found = maps.list_maps(VAULT)
     assets = os.path.isdir(os.path.join(VAULT, "maps", "assets", "fonts"))
@@ -462,8 +535,36 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(cached("services", 8, services))
         if name == "phone":
             # Inside a container its own addresses are not ones a phone can reach: only a bare box says.
-            links = phone.links(PORT) if BARE else []
-            return self._json({"links": links, "qr": phone.qr_svg(links[0]) if links else None})
+            spot = hotspot.active() if BARE else None
+            links = phone.links(PORT, first=spot and spot.get("address")) if BARE else []
+            out = {"links": links, "qr": phone.qr_svg(links[0]) if links else None}
+            if spot:
+                out["wifi"] = {"name": spot["name"], "password": spot["password"],
+                               "qr": phone.qr_svg(hotspot.join_code(spot["name"], spot["password"]),
+                                                  label="QR code that joins the %s WiFi" % spot["name"])}
+            return self._json(out)
+        if name == "get":
+            ok, why = downloads_allowed(self)
+            return self._json({"can": ok, "why": why, "status": picker.status(VAULT),
+                               "options": cached("get:%s" % VAULT, 20, lambda: picker.options(VAULT))})
+        if name == "get/cost":
+            try:
+                choices = json.loads((q.get("choices") or ["[]"])[0])
+                assert isinstance(choices, list) and all(isinstance(c, dict) for c in choices)
+                return self._json(picker.cost(VAULT, choices))
+            except (ValueError, AssertionError) as e:
+                return self._json({"error": "choices is a list of ticks: %s" % e}, 400)
+        if name == "route":
+            try:
+                a = [float(v) for v in (q.get("from") or [""])[0].split(",")]
+                b = [float(v) for v in (q.get("to") or [""])[0].split(",")]
+                assert len(a) == 2 and len(b) == 2
+            except (ValueError, AssertionError):
+                return self._json({"error": "from and to are lat,lon"}, 400)
+            mode = (q.get("mode") or ["walk"])[0]
+            if mode not in route.MODES:
+                return self._json({"error": "mode is walk or drive"}, 400)
+            return self._json(find_route((a[1], a[0]), (b[1], b[0]), mode))
         if name == "system":
             return self._json(cached("system", 4, system))
         if name == "vault":
@@ -543,6 +644,14 @@ class Handler(BaseHTTPRequestHandler):
         url = urlsplit(self.path)
         path = unquote(url.path)
         try:
+            spot = _portal()
+            if spot and _strange_host(self.headers.get("Host") or ""):
+                self.send_response(302)
+                self.send_header("Location", "http://%s:%d/" % (spot["address"], PORT))
+                self.send_header("Content-Length", "0")
+                self.send_header("Cache-Control", "no-store")
+                self.end_headers()
+                return None
             if path.startswith("/api/"):
                 return self._api(path[5:].strip("/"), parse_qs(url.query))
             first, _, rest = path.lstrip("/").partition("/")
@@ -623,6 +732,22 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json({"error": "send JSON"}, 400)
             if path == "/api/ai/chat":
                 return self._chat(data)
+            if path in ("/api/get/start", "/api/get/stop"):
+                ok, why = downloads_allowed(self)
+                if not ok:
+                    return self._json({"error": why}, 403)
+                try:
+                    if path.endswith("stop"):
+                        return self._json(picker.stop(VAULT))
+                    choices = data.get("choices")
+                    if not isinstance(choices, list) or not choices or not all(isinstance(c, dict) for c in choices):
+                        return self._json({"error": "tick at least one shelf"}, 400)
+                    done = picker.start(VAULT, choices)
+                    with _cache_lock:
+                        _cache.pop("get:%s" % VAULT, None)
+                    return self._json(done)
+                except ValueError as e:
+                    return self._json({"error": str(e)}, 409)
             if path.startswith("/api/notes/"):
                 note = path[len("/api/notes/"):]
                 if not NOTE_NAME.fullmatch(note) or not isinstance(data.get("text"), str):

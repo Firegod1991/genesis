@@ -92,6 +92,11 @@ def cmd_bootstick(args):
     return bootstick.main(args)
 
 
+def cmd_hotspot(args):
+    from . import hotspot
+    return hotspot.main(args)
+
+
 def _selection(p):
     p.add_argument("--tier", choices=[catalog.STARTER] + catalog.TIERS,
                    help="seed, ark or eden (cumulative), or starter: a first gigabyte out of seed")
@@ -203,6 +208,16 @@ def build_parser():
                    help="with lock: lock it under a new passphrase (the old one is asked for first)")
     p.add_argument("--vault")
     p.set_defaults(fn=cmd_safe)
+
+    p = sub.add_parser("hotspot", help="make this Pi or Linux PC a WiFi network of its own, so phones reach Genesis")
+    p.add_argument("action", nargs="?", choices=["start", "stop", "status"], help="with none: start")
+    p.add_argument("--name", help="the WiFi name (default Genesis, remembered)")
+    p.add_argument("--password", help="the WiFi password, 8 to 63 characters (default: made up once, remembered)")
+    p.add_argument("--device", help="the WiFi adapter, such as wlan0 (default: the first one)")
+    p.add_argument("--no-portal", action="store_true",
+                   help="do not send phones to Genesis by themselves (no administrator password needed)")
+    p.add_argument("--vault")
+    p.set_defaults(fn=cmd_hotspot)
 
     p = sub.add_parser("bootstick", help="make a USB stick that starts a PC, or a card that starts a Raspberry Pi")
     p.add_argument("--device", help="the stick or card to erase, such as /dev/sdb. With none, the candidates are listed")

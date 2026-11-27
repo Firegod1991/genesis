@@ -164,7 +164,7 @@ class BoxTests(unittest.TestCase):
                 self.assertEqual(f.read(), "a.zim b.zim ", "a damaged book does not keep the others off the list")
             self.assertIn("bad.zim", said.call_args[0][0])
             plan = {name: cmd for name, _, cmd, _ in box.plan(self.vault)}
-            self.assertEqual(plan["library"], [reader, "--port", "8081", "--library", listed])
+            self.assertEqual(plan["library"], [reader, "--port", "8081", "--library", "--monitorLibrary", listed])
             before = len(asked)
             self.assertEqual(box.list_books(self.vault), 2)
             self.assertEqual(len(asked), before, "written once, not on every start")
