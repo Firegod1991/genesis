@@ -230,8 +230,10 @@ def run(vault):
     import argparse
     from .fetch import fetch
     folder = _folder(vault)
+    with open(os.path.join(folder, "ids.txt"), encoding="utf-8") as f:
+        ids = [line.strip() for line in f if line.strip()]
     args = argparse.Namespace(vault=vault, tier=None, pack=None, tag=None, lang=None, platform=None, also=None,
-                              id=None, ids_from=os.path.join(folder, "ids.txt"), yes=True, keep_going=True, jobs=4)
+                              id=ids, yes=True, keep_going=True, jobs=4)
     code = 1
     try:
         code = fetch(args)
